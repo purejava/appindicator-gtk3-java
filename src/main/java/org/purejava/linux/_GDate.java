@@ -7,28 +7,32 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDate {
+ *      *     guint julian_days;
+ *     guint julian;
+ *     guint dmy;
+ *     guint day;
+ *     guint month;
+ *     guint year;
+ * };
+ * }
+ */
 public class _GDate {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(32).withName("julian_days"),
-            MemoryLayout.paddingLayout(1).withName("julian"),
-            MemoryLayout.paddingLayout(1).withName("dmy"),
-            MemoryLayout.paddingLayout(6).withName("day"),
-            MemoryLayout.paddingLayout(4).withName("month"),
-            MemoryLayout.paddingLayout(16).withName("year"),
-            MemoryLayout.paddingLayout(4)
-        )
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(64)
     ).withName("_GDate");
     public static MemoryLayout $LAYOUT() {
         return _GDate.$struct$LAYOUT;
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

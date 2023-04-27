@@ -7,51 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$562 {
+final class constants$562 {
 
-    static final FunctionDescriptor g_content_type_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$562() {}
+    static final FunctionDescriptor g_dbus_interface_dup_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_interface_dup_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_dup_object",
+        constants$562.g_dbus_interface_dup_object$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_skeleton_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_interface_skeleton_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_type",
+        constants$562.g_dbus_interface_skeleton_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_skeleton_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_interface_skeleton_get_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_flags",
+        constants$562.g_dbus_interface_skeleton_get_flags$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_skeleton_set_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_dbus_interface_skeleton_set_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_set_flags",
+        constants$562.g_dbus_interface_skeleton_set_flags$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_skeleton_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_content_type_is_a$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_is_a",
-        constants$562.g_content_type_is_a$FUNC
+    static final MethodHandle g_dbus_interface_skeleton_get_info$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_info",
+        constants$562.g_dbus_interface_skeleton_get_info$FUNC
     );
-    static final FunctionDescriptor g_content_type_is_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_interface_skeleton_get_vtable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_content_type_is_mime_type$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_is_mime_type",
-        constants$562.g_content_type_is_mime_type$FUNC
-    );
-    static final FunctionDescriptor g_content_type_is_unknown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_is_unknown$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_is_unknown",
-        constants$562.g_content_type_is_unknown$FUNC
-    );
-    static final FunctionDescriptor g_content_type_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_get_description$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_description",
-        constants$562.g_content_type_get_description$FUNC
-    );
-    static final FunctionDescriptor g_content_type_get_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_get_mime_type$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_mime_type",
-        constants$562.g_content_type_get_mime_type$FUNC
-    );
-    static final FunctionDescriptor g_content_type_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_icon",
-        constants$562.g_content_type_get_icon$FUNC
+    static final MethodHandle g_dbus_interface_skeleton_get_vtable$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_vtable",
+        constants$562.g_dbus_interface_skeleton_get_vtable$FUNC
     );
 }
 

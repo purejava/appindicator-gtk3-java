@@ -7,51 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1704 {
+final class constants$1704 {
 
-    static final FunctionDescriptor gtk_button_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1704() {}
+    static final FunctionDescriptor _gtk_tool_button_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_get_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_image",
-        constants$1704.gtk_button_get_image$FUNC
+    static final MethodHandle _gtk_tool_button_get_button$MH = RuntimeHelper.downcallHandle(
+        "_gtk_tool_button_get_button",
+        constants$1704._gtk_tool_button_get_button$FUNC
     );
-    static final FunctionDescriptor gtk_button_set_image_position$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_menu_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_get_type",
+        constants$1704.gtk_menu_tool_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_set_image_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_image_position",
-        constants$1704.gtk_button_set_image_position$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_image_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_get_image_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_image_position",
-        constants$1704.gtk_button_get_image_position$FUNC
+    static final MethodHandle gtk_menu_tool_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_new",
+        constants$1704.gtk_menu_tool_button_new$FUNC
     );
-    static final FunctionDescriptor gtk_button_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_new_from_stock",
+        constants$1704.gtk_menu_tool_button_new_from_stock$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_tool_button_set_menu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_set_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_always_show_image",
-        constants$1704.gtk_button_set_always_show_image$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_get_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_always_show_image",
-        constants$1704.gtk_button_get_always_show_image$FUNC
+    static final MethodHandle gtk_menu_tool_button_set_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_set_menu",
+        constants$1704.gtk_menu_tool_button_set_menu$FUNC
     );
-    static final FunctionDescriptor gtk_button_get_event_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_tool_button_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_get_event_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_event_window",
-        constants$1704.gtk_button_get_event_window$FUNC
+    static final MethodHandle gtk_menu_tool_button_get_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_get_menu",
+        constants$1704.gtk_menu_tool_button_get_menu$FUNC
     );
 }
 

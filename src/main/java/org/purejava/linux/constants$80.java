@@ -7,8 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$80 {
+final class constants$80 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$80() {}
+    static final FunctionDescriptor g_base64_decode_step$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_base64_decode_step$MH = RuntimeHelper.downcallHandle(
+        "g_base64_decode_step",
+        constants$80.g_base64_decode_step$FUNC
+    );
+    static final FunctionDescriptor g_base64_decode$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_base64_decode$MH = RuntimeHelper.downcallHandle(
+        "g_base64_decode",
+        constants$80.g_base64_decode$FUNC
+    );
     static final FunctionDescriptor g_base64_decode_inplace$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -40,22 +61,6 @@ class constants$80 {
     static final MethodHandle g_bit_unlock$MH = RuntimeHelper.downcallHandle(
         "g_bit_unlock",
         constants$80.g_bit_unlock$FUNC
-    );
-    static final FunctionDescriptor g_pointer_bit_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_pointer_bit_lock$MH = RuntimeHelper.downcallHandle(
-        "g_pointer_bit_lock",
-        constants$80.g_pointer_bit_lock$FUNC
-    );
-    static final FunctionDescriptor g_pointer_bit_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_pointer_bit_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_pointer_bit_trylock",
-        constants$80.g_pointer_bit_trylock$FUNC
     );
 }
 

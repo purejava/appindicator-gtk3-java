@@ -7,61 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$601 {
+final class constants$601 {
 
-    static final FunctionDescriptor g_dbus_connection_call_with_unix_fd_list_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$601() {}
+    static final FunctionDescriptor g_drive_is_media_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_call_with_unix_fd_list_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_with_unix_fd_list_finish",
-        constants$601.g_dbus_connection_call_with_unix_fd_list_finish$FUNC
+    static final MethodHandle g_drive_is_media_removable$MH = RuntimeHelper.downcallHandle(
+        "g_drive_is_media_removable",
+        constants$601.g_drive_is_media_removable$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_call_with_unix_fd_list_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_has_media$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_has_media$MH = RuntimeHelper.downcallHandle(
+        "g_drive_has_media",
+        constants$601.g_drive_has_media$FUNC
+    );
+    static final FunctionDescriptor g_drive_is_media_check_automatic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_is_media_check_automatic$MH = RuntimeHelper.downcallHandle(
+        "g_drive_is_media_check_automatic",
+        constants$601.g_drive_is_media_check_automatic$FUNC
+    );
+    static final FunctionDescriptor g_drive_can_poll_for_media$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_can_poll_for_media$MH = RuntimeHelper.downcallHandle(
+        "g_drive_can_poll_for_media",
+        constants$601.g_drive_can_poll_for_media$FUNC
+    );
+    static final FunctionDescriptor g_drive_can_eject$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_can_eject$MH = RuntimeHelper.downcallHandle(
+        "g_drive_can_eject",
+        constants$601.g_drive_can_eject$FUNC
+    );
+    static final FunctionDescriptor g_drive_eject$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_call_with_unix_fd_list_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_with_unix_fd_list_sync",
-        constants$601.g_dbus_connection_call_with_unix_fd_list_sync$FUNC
-    );
-    static final FunctionDescriptor GDBusInterfaceMethodCallFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDBusInterfaceMethodCallFunc$MH = RuntimeHelper.downcallHandle(
-        constants$601.GDBusInterfaceMethodCallFunc$FUNC
-    );
-    static final FunctionDescriptor GDBusInterfaceGetPropertyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusInterfaceGetPropertyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$601.GDBusInterfaceGetPropertyFunc$FUNC
+    static final MethodHandle g_drive_eject$MH = RuntimeHelper.downcallHandle(
+        "g_drive_eject",
+        constants$601.g_drive_eject$FUNC
     );
 }
 

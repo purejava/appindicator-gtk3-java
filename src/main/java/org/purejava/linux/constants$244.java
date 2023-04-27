@@ -7,52 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$244 {
+final class constants$244 {
 
-    static final FunctionDescriptor g_variant_dict_insert_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_insert_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_insert_value",
-        constants$244.g_variant_dict_insert_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$244() {}
+    static final FunctionDescriptor g_variant_dup_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_remove$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_remove",
-        constants$244.g_variant_dict_remove$FUNC
+    static final MethodHandle g_variant_dup_string$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dup_string",
+        constants$244.g_variant_dup_string$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_clear$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_get_strv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_clear$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_clear",
-        constants$244.g_variant_dict_clear$FUNC
+    static final MethodHandle g_variant_get_strv$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_strv",
+        constants$244.g_variant_get_strv$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_end$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_dup_strv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_end$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_end",
-        constants$244.g_variant_dict_end$FUNC
+    static final MethodHandle g_variant_dup_strv$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dup_strv",
+        constants$244.g_variant_dup_strv$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_objv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_ref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_ref",
-        constants$244.g_variant_dict_ref$FUNC
+    static final MethodHandle g_variant_get_objv$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_objv",
+        constants$244.g_variant_get_objv$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_dup_objv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_unref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_unref",
-        constants$244.g_variant_dict_unref$FUNC
+    static final MethodHandle g_variant_dup_objv$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dup_objv",
+        constants$244.g_variant_dup_objv$FUNC
+    );
+    static final FunctionDescriptor g_variant_get_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_get_bytestring$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_bytestring",
+        constants$244.g_variant_get_bytestring$FUNC
     );
 }
 

@@ -7,52 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1890 {
+final class constants$1890 {
 
-    static final FunctionDescriptor gtk_menu_button_set_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1890() {}
+    static final FunctionDescriptor gtk_file_chooser_confirmation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_confirmation_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_confirmation_get_type",
+        constants$1890.gtk_file_chooser_confirmation_get_type$FUNC
     );
-    static final MethodHandle gtk_menu_button_set_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_popup",
-        constants$1890.gtk_menu_button_set_popup$FUNC
+    static final FunctionDescriptor gtk_file_chooser_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_error_get_type",
+        constants$1890.gtk_file_chooser_error_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_menu_button_get_popup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_file_filter_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_filter_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_flags_get_type",
+        constants$1890.gtk_file_filter_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_menu_button_get_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_popup",
-        constants$1890.gtk_menu_button_get_popup$FUNC
+    static final FunctionDescriptor gtk_font_chooser_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_font_chooser_level_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_level_get_type",
+        constants$1890.gtk_font_chooser_level_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_menu_button_set_popover$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_icon_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_icon_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_lookup_flags_get_type",
+        constants$1890.gtk_icon_lookup_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_menu_button_set_popover$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_popover",
-        constants$1890.gtk_menu_button_set_popover$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_get_popover$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_get_popover$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_popover",
-        constants$1890.gtk_menu_button_get_popover$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_set_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_set_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_direction",
-        constants$1890.gtk_menu_button_set_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_get_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_direction",
-        constants$1890.gtk_menu_button_get_direction$FUNC
+    static final FunctionDescriptor gtk_icon_theme_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_icon_theme_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_error_get_type",
+        constants$1890.gtk_icon_theme_error_get_type$FUNC
     );
 }
 

@@ -7,49 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$929 {
+final class constants$929 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GIOModule$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$929() {}
+    static final FunctionDescriptor pango_attribute_as_font_features$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GIOModule$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GIOModule",
-        constants$929.glib_autoptr_cleanup_GIOModule$FUNC
+    static final MethodHandle pango_attribute_as_font_features$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_features",
+        constants$929.pango_attribute_as_font_features$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GIOModule$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_attr_list_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_type",
+        constants$929.pango_attr_list_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_attr_list_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_attr_list_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_new",
+        constants$929.pango_attr_list_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_list_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GIOModule$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GIOModule",
-        constants$929.glib_listautoptr_cleanup_GIOModule$FUNC
+    static final MethodHandle pango_attr_list_ref$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_ref",
+        constants$929.pango_attr_list_ref$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GIOModule$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GIOModule$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GIOModule",
-        constants$929.glib_slistautoptr_cleanup_GIOModule$FUNC
+    static final MethodHandle pango_attr_list_unref$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_unref",
+        constants$929.pango_attr_list_unref$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GIOModule$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GIOModule$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GIOModule",
-        constants$929.glib_queueautoptr_cleanup_GIOModule$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GIOStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GIOStream",
-        constants$929.glib_autoptr_clear_GIOStream$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GIOStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GIOStream",
-        constants$929.glib_autoptr_cleanup_GIOStream$FUNC
+    static final MethodHandle pango_attr_list_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_copy",
+        constants$929.pango_attr_list_copy$FUNC
     );
 }
 

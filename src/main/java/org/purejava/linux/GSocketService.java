@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSocketService extends _GSocketService {
+/**
+ * {@snippet :
+ * typedef struct _GSocketService GSocketService;
+ * }
+ */
+public final class GSocketService extends _GSocketService {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSocketService() {}
 }
 
 

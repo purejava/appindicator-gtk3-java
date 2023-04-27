@@ -7,51 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1776 {
+final class constants$1776 {
 
-    static final FunctionDescriptor gtk_native_dialog_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1776() {}
+    static final FunctionDescriptor gtk_recent_info_is_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_native_dialog_destroy$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_destroy",
-        constants$1776.gtk_native_dialog_destroy$FUNC
+    static final MethodHandle gtk_recent_info_is_local$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_is_local",
+        constants$1776.gtk_recent_info_is_local$FUNC
     );
-    static final FunctionDescriptor gtk_native_dialog_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_recent_info_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_native_dialog_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_visible",
-        constants$1776.gtk_native_dialog_get_visible$FUNC
+    static final MethodHandle gtk_recent_info_exists$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_exists",
+        constants$1776.gtk_recent_info_exists$FUNC
     );
-    static final FunctionDescriptor gtk_native_dialog_set_modal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_set_modal$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_set_modal",
-        constants$1776.gtk_native_dialog_set_modal$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_get_modal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_get_modal$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_modal",
-        constants$1776.gtk_native_dialog_get_modal$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_set_title$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_native_dialog_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_set_title",
-        constants$1776.gtk_native_dialog_set_title$FUNC
+    static final MethodHandle gtk_recent_info_match$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_match",
+        constants$1776.gtk_recent_info_match$FUNC
     );
-    static final FunctionDescriptor gtk_native_dialog_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor _gtk_recent_manager_sync$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_recent_manager_sync$MH = RuntimeHelper.downcallHandle(
+        "_gtk_recent_manager_sync",
+        constants$1776._gtk_recent_manager_sync$FUNC
+    );
+    static final FunctionDescriptor GtkRecentFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_native_dialog_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_title",
-        constants$1776.gtk_native_dialog_get_title$FUNC
+    static final FunctionDescriptor GtkRecentFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkRecentFilterFunc_UP$MH = RuntimeHelper.upcallHandle(GtkRecentFilterFunc.class, "apply", constants$1776.GtkRecentFilterFunc_UP$FUNC);
+    static final FunctionDescriptor GtkRecentFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkRecentFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1776.GtkRecentFilterFunc_DOWN$FUNC
     );
 }
 

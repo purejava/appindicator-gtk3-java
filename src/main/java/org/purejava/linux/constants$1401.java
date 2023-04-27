@@ -7,45 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1401 {
+final class constants$1401 {
 
-    static final FunctionDescriptor atk_hyperlink_is_inline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1401() {}
+    static final FunctionDescriptor gtk_text_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_type",
+        constants$1401.gtk_text_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_get_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_is_inline$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_inline",
-        constants$1401.atk_hyperlink_is_inline$FUNC
+    static final MethodHandle gtk_text_iter_get_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_offset",
+        constants$1401.gtk_text_iter_get_offset$FUNC
     );
-    static final FunctionDescriptor atk_hyperlink_get_n_anchors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_get_n_anchors$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_n_anchors",
-        constants$1401.atk_hyperlink_get_n_anchors$FUNC
+    static final MethodHandle gtk_text_iter_get_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_line",
+        constants$1401.gtk_text_iter_get_line$FUNC
     );
-    static final FunctionDescriptor atk_hyperlink_is_selected_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_line_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_is_selected_link$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_selected_link",
-        constants$1401.atk_hyperlink_is_selected_link$FUNC
+    static final MethodHandle gtk_text_iter_get_line_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_line_offset",
+        constants$1401.gtk_text_iter_get_line_offset$FUNC
     );
-    static final FunctionDescriptor atk_hyperlink_impl_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_hyperlink_impl_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_impl_get_type",
-        constants$1401.atk_hyperlink_impl_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_impl_get_hyperlink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_line_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_impl_get_hyperlink$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_impl_get_hyperlink",
-        constants$1401.atk_hyperlink_impl_get_hyperlink$FUNC
+    static final MethodHandle gtk_text_iter_get_line_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_line_index",
+        constants$1401.gtk_text_iter_get_line_index$FUNC
     );
-    static final FunctionDescriptor atk_hypertext_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_hypertext_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_hypertext_get_type",
-        constants$1401.atk_hypertext_get_type$FUNC
+    static final FunctionDescriptor gtk_text_iter_get_visible_line_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_get_visible_line_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_visible_line_offset",
+        constants$1401.gtk_text_iter_get_visible_line_offset$FUNC
     );
 }
 

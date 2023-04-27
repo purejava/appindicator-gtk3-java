@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GFunc)(void* data,void* user_data);
+ * }
+ */
 public interface GFunc {
 
-    void apply(java.lang.foreign.MemoryAddress data, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GFunc.class, fi, constants$7.GFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$7.GFunc_UP$MH, fi, constants$7.GFunc$FUNC, scope);
     }
-    static GFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$7.GFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data, (java.lang.foreign.Addressable)_user_data);
+                constants$7.GFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

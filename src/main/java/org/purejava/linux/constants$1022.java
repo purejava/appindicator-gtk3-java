@@ -7,71 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1022 {
+final class constants$1022 {
 
-    static final FunctionDescriptor hb_font_get_glyph_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1022() {}
+    static final FunctionDescriptor cairo_get_operator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_from_name$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_from_name",
-        constants$1022.hb_font_get_glyph_from_name$FUNC
+    static final MethodHandle cairo_get_operator$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_operator",
+        constants$1022.cairo_get_operator$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_get_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph",
-        constants$1022.hb_font_get_glyph$FUNC
+    static final MethodHandle cairo_get_source$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_source",
+        constants$1022.cairo_get_source$FUNC
     );
-    static final FunctionDescriptor hb_font_get_extents_for_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_get_tolerance$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_extents_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_extents_for_direction",
-        constants$1022.hb_font_get_extents_for_direction$FUNC
+    static final MethodHandle cairo_get_tolerance$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_tolerance",
+        constants$1022.cairo_get_tolerance$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_advance_for_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_get_antialias$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_advance_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_advance_for_direction",
-        constants$1022.hb_font_get_glyph_advance_for_direction$FUNC
+    static final MethodHandle cairo_get_antialias$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_antialias",
+        constants$1022.cairo_get_antialias$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_advances_for_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_has_current_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_advances_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_advances_for_direction",
-        constants$1022.hb_font_get_glyph_advances_for_direction$FUNC
+    static final MethodHandle cairo_has_current_point$MH = RuntimeHelper.downcallHandle(
+        "cairo_has_current_point",
+        constants$1022.cairo_has_current_point$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_origin_for_direction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_get_current_point$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_origin_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_origin_for_direction",
-        constants$1022.hb_font_get_glyph_origin_for_direction$FUNC
+    static final MethodHandle cairo_get_current_point$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_current_point",
+        constants$1022.cairo_get_current_point$FUNC
     );
 }
 

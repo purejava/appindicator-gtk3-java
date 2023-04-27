@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct __locale_struct {
+ *     struct __locale_data* __locales[13];
+ *     unsigned short* __ctype_b;
+ *     int* __ctype_tolower;
+ *     int* __ctype_toupper;
+ *     char* __names[13];
+ * };
+ * }
+ */
 public class __locale_struct {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.sequenceLayout(13, Constants$root.C_POINTER$LAYOUT).withName("__locales"),
         Constants$root.C_POINTER$LAYOUT.withName("__ctype_b"),
         Constants$root.C_POINTER$LAYOUT.withName("__ctype_tolower"),
@@ -26,48 +37,84 @@ public class __locale_struct {
     public static VarHandle __ctype_b$VH() {
         return __locale_struct.__ctype_b$VH;
     }
-    public static MemoryAddress __ctype_b$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_b$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned short* __ctype_b;
+     * }
+     */
+    public static MemorySegment __ctype_b$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_b$VH.get(seg);
     }
-    public static void __ctype_b$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned short* __ctype_b;
+     * }
+     */
+    public static void __ctype_b$set(MemorySegment seg, MemorySegment x) {
         __locale_struct.__ctype_b$VH.set(seg, x);
     }
-    public static MemoryAddress __ctype_b$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_b$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __ctype_b$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_b$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __ctype_b$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __ctype_b$set(MemorySegment seg, long index, MemorySegment x) {
         __locale_struct.__ctype_b$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle __ctype_tolower$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__ctype_tolower"));
     public static VarHandle __ctype_tolower$VH() {
         return __locale_struct.__ctype_tolower$VH;
     }
-    public static MemoryAddress __ctype_tolower$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_tolower$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int* __ctype_tolower;
+     * }
+     */
+    public static MemorySegment __ctype_tolower$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_tolower$VH.get(seg);
     }
-    public static void __ctype_tolower$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int* __ctype_tolower;
+     * }
+     */
+    public static void __ctype_tolower$set(MemorySegment seg, MemorySegment x) {
         __locale_struct.__ctype_tolower$VH.set(seg, x);
     }
-    public static MemoryAddress __ctype_tolower$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_tolower$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __ctype_tolower$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_tolower$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __ctype_tolower$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __ctype_tolower$set(MemorySegment seg, long index, MemorySegment x) {
         __locale_struct.__ctype_tolower$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle __ctype_toupper$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__ctype_toupper"));
     public static VarHandle __ctype_toupper$VH() {
         return __locale_struct.__ctype_toupper$VH;
     }
-    public static MemoryAddress __ctype_toupper$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_toupper$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int* __ctype_toupper;
+     * }
+     */
+    public static MemorySegment __ctype_toupper$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_toupper$VH.get(seg);
     }
-    public static void __ctype_toupper$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int* __ctype_toupper;
+     * }
+     */
+    public static void __ctype_toupper$set(MemorySegment seg, MemorySegment x) {
         __locale_struct.__ctype_toupper$VH.set(seg, x);
     }
-    public static MemoryAddress __ctype_toupper$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)__locale_struct.__ctype_toupper$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __ctype_toupper$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_toupper$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __ctype_toupper$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __ctype_toupper$set(MemorySegment seg, long index, MemorySegment x) {
         __locale_struct.__ctype_toupper$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __names$slice(MemorySegment seg) {
@@ -75,10 +122,10 @@ public class __locale_struct {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

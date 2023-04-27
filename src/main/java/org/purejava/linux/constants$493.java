@@ -7,69 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$493 {
+final class constants$493 {
 
-    static final FunctionDescriptor g_param_spec_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$493() {}
+    static final FunctionDescriptor g_application_unbind_busy_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_boxed",
-        constants$493.g_param_spec_boxed$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pointer",
-        constants$493.g_param_spec_pointer$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_value_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_value_array$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_value_array",
-        constants$493.g_param_spec_value_array$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_object$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_object",
-        constants$493.g_param_spec_object$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_override$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_override$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_override",
-        constants$493.g_param_spec_override$FUNC
+    static final MethodHandle g_application_unbind_busy_property$MH = RuntimeHelper.downcallHandle(
+        "g_application_unbind_busy_property",
+        constants$493.g_application_unbind_busy_property$FUNC
     );
-    static final FunctionDescriptor g_param_spec_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_application_command_line_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_application_command_line_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_type",
+        constants$493.g_application_command_line_get_type$FUNC
     );
-    static final MethodHandle g_param_spec_gtype$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_gtype",
-        constants$493.g_param_spec_gtype$FUNC
+    static final FunctionDescriptor g_application_command_line_get_arguments$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_arguments$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_arguments",
+        constants$493.g_application_command_line_get_arguments$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_get_options_dict$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_options_dict$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_options_dict",
+        constants$493.g_application_command_line_get_options_dict$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_get_stdin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_stdin$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_stdin",
+        constants$493.g_application_command_line_get_stdin$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_get_environ$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_environ$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_environ",
+        constants$493.g_application_command_line_get_environ$FUNC
     );
 }
 

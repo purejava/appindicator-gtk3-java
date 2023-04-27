@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMemoryOutputStream extends _GMemoryOutputStream {
+/**
+ * {@snippet :
+ * typedef struct _GMemoryOutputStream GMemoryOutputStream;
+ * }
+ */
+public final class GMemoryOutputStream extends _GMemoryOutputStream {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMemoryOutputStream() {}
 }
 
 

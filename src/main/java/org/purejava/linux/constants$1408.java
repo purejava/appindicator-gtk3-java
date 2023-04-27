@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1408 {
+final class constants$1408 {
 
-    static final FunctionDescriptor atk_relation_type_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_relation_type_for_name$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_for_name",
-        constants$1408.atk_relation_type_for_name$FUNC
-    );
-    static final FunctionDescriptor atk_relation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1408() {}
+    static final FunctionDescriptor gtk_text_iter_backward_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_relation_new$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_new",
-        constants$1408.atk_relation_new$FUNC
+    static final MethodHandle gtk_text_iter_backward_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_chars",
+        constants$1408.gtk_text_iter_backward_chars$FUNC
     );
-    static final FunctionDescriptor atk_relation_get_relation_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_get_relation_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_get_relation_type",
-        constants$1408.atk_relation_get_relation_type$FUNC
+    static final MethodHandle gtk_text_iter_forward_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_line",
+        constants$1408.gtk_text_iter_forward_line$FUNC
     );
-    static final FunctionDescriptor atk_relation_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_get_target$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_get_target",
-        constants$1408.atk_relation_get_target$FUNC
+    static final MethodHandle gtk_text_iter_backward_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_line",
+        constants$1408.gtk_text_iter_backward_line$FUNC
     );
-    static final FunctionDescriptor atk_relation_add_target$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_iter_forward_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_relation_add_target$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_add_target",
-        constants$1408.atk_relation_add_target$FUNC
+    static final MethodHandle gtk_text_iter_forward_lines$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_lines",
+        constants$1408.gtk_text_iter_forward_lines$FUNC
     );
-    static final FunctionDescriptor atk_relation_remove_target$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_lines$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_lines",
+        constants$1408.gtk_text_iter_backward_lines$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_word_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_remove_target$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_remove_target",
-        constants$1408.atk_relation_remove_target$FUNC
+    static final MethodHandle gtk_text_iter_forward_word_end$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_word_end",
+        constants$1408.gtk_text_iter_forward_word_end$FUNC
     );
 }
 

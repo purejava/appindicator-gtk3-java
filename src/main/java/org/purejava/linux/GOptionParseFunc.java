@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GOptionParseFunc)(struct _GOptionContext* context,struct _GOptionGroup* group,void* data,struct _GError** error);
+ * }
+ */
 public interface GOptionParseFunc {
 
-    int apply(java.lang.foreign.MemoryAddress context, java.lang.foreign.MemoryAddress group, java.lang.foreign.MemoryAddress data, java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GOptionParseFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GOptionParseFunc.class, fi, constants$251.GOptionParseFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GOptionParseFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$263.GOptionParseFunc_UP$MH, fi, constants$263.GOptionParseFunc$FUNC, scope);
     }
-    static GOptionParseFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _context, java.lang.foreign.MemoryAddress _group, java.lang.foreign.MemoryAddress _data, java.lang.foreign.MemoryAddress _error) -> {
+    static GOptionParseFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$252.GOptionParseFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_context, (java.lang.foreign.Addressable)_group, (java.lang.foreign.Addressable)_data, (java.lang.foreign.Addressable)_error);
+                return (int)constants$263.GOptionParseFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

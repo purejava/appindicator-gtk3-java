@@ -7,49 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$634 {
+final class constants$634 {
 
-    static final FunctionDescriptor g_dbus_object_manager_client_get_name_owner$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_get_name_owner$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_name_owner",
-        constants$634.g_dbus_object_manager_client_get_name_owner$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_server_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_manager_server_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_get_type",
-        constants$634.g_dbus_object_manager_server_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_server_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_server_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_new",
-        constants$634.g_dbus_object_manager_server_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_server_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_server_get_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_get_connection",
-        constants$634.g_dbus_object_manager_server_get_connection$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_server_set_connection$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$634() {}
+    static final FunctionDescriptor g_file_stop_mountable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_server_set_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_set_connection",
-        constants$634.g_dbus_object_manager_server_set_connection$FUNC
+    static final MethodHandle g_file_stop_mountable$MH = RuntimeHelper.downcallHandle(
+        "g_file_stop_mountable",
+        constants$634.g_file_stop_mountable$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_server_export$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_stop_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_server_export$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_export",
-        constants$634.g_dbus_object_manager_server_export$FUNC
+    static final MethodHandle g_file_stop_mountable_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_stop_mountable_finish",
+        constants$634.g_file_stop_mountable_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_poll_mountable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_poll_mountable$MH = RuntimeHelper.downcallHandle(
+        "g_file_poll_mountable",
+        constants$634.g_file_poll_mountable$FUNC
+    );
+    static final FunctionDescriptor g_file_poll_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_poll_mountable_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_poll_mountable_finish",
+        constants$634.g_file_poll_mountable_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_query_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_default_handler$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_default_handler",
+        constants$634.g_file_query_default_handler$FUNC
+    );
+    static final FunctionDescriptor g_file_query_default_handler_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_default_handler_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_default_handler_async",
+        constants$634.g_file_query_default_handler_async$FUNC
     );
 }
 

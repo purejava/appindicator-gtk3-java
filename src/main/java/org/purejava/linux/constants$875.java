@@ -7,48 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$875 {
+final class constants$875 {
 
-    static final FunctionDescriptor g_vfs_unregister_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$875() {}
+    static final FunctionDescriptor hb_font_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_parent$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_parent",
+        constants$875.hb_font_get_parent$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_face$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_unregister_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_unregister_uri_scheme",
-        constants$875.g_vfs_unregister_uri_scheme$FUNC
+    static final MethodHandle hb_font_set_face$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_face",
+        constants$875.hb_font_set_face$FUNC
     );
-    static final FunctionDescriptor g_volume_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_volume_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_type",
-        constants$875.g_volume_get_type$FUNC
-    );
-    static final FunctionDescriptor g_volume_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_name",
-        constants$875.g_volume_get_name$FUNC
+    static final MethodHandle hb_font_get_face$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_face",
+        constants$875.hb_font_get_face$FUNC
     );
-    static final FunctionDescriptor g_volume_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_set_funcs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_icon",
-        constants$875.g_volume_get_icon$FUNC
+    static final MethodHandle hb_font_set_funcs$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_funcs",
+        constants$875.hb_font_set_funcs$FUNC
     );
-    static final FunctionDescriptor g_volume_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_set_funcs_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_symbolic_icon",
-        constants$875.g_volume_get_symbolic_icon$FUNC
+    static final MethodHandle hb_font_set_funcs_data$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_funcs_data",
+        constants$875.hb_font_set_funcs_data$FUNC
     );
-    static final FunctionDescriptor g_volume_get_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_font_set_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_volume_get_uuid$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_uuid",
-        constants$875.g_volume_get_uuid$FUNC
+    static final MethodHandle hb_font_set_scale$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_scale",
+        constants$875.hb_font_set_scale$FUNC
     );
 }
 

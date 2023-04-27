@@ -7,66 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$674 {
+final class constants$674 {
 
-    static final FunctionDescriptor g_file_set_display_name_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$674() {}
+    static final FunctionDescriptor g_unix_socket_address_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_unix_socket_address_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_type_get_type",
+        constants$674.g_unix_socket_address_type_get_type$FUNC
     );
-    static final MethodHandle g_file_set_display_name_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name_async",
-        constants$674.g_file_set_display_name_async$FUNC
+    static final FunctionDescriptor g_bus_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_bus_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_bus_type_get_type",
+        constants$674.g_bus_type_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_set_display_name_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_bus_name_owner_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_bus_name_owner_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_bus_name_owner_flags_get_type",
+        constants$674.g_bus_name_owner_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_set_display_name_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name_finish",
-        constants$674.g_file_set_display_name_finish$FUNC
+    static final FunctionDescriptor g_bus_name_watcher_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_bus_name_watcher_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_bus_name_watcher_flags_get_type",
+        constants$674.g_bus_name_watcher_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_dbus_proxy_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_proxy_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_flags_get_type",
+        constants$674.g_dbus_proxy_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_delete$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete",
-        constants$674.g_file_delete$FUNC
-    );
-    static final FunctionDescriptor g_file_delete_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_delete_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete_async",
-        constants$674.g_file_delete_async$FUNC
-    );
-    static final FunctionDescriptor g_file_delete_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_delete_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete_finish",
-        constants$674.g_file_delete_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_trash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_trash$MH = RuntimeHelper.downcallHandle(
-        "g_file_trash",
-        constants$674.g_file_trash$FUNC
+    static final FunctionDescriptor g_dbus_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_get_type",
+        constants$674.g_dbus_error_get_type$FUNC
     );
 }
 

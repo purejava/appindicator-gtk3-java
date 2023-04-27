@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GBindingTransformFunc)(struct _GBinding* binding,struct _GValue* from_value,struct _GValue* to_value,void* user_data);
+ * }
+ */
 public interface GBindingTransformFunc {
 
-    int apply(java.lang.foreign.MemoryAddress binding, java.lang.foreign.MemoryAddress from_value, java.lang.foreign.MemoryAddress to_value, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GBindingTransformFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GBindingTransformFunc.class, fi, constants$483.GBindingTransformFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GBindingTransformFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$443.GBindingTransformFunc_UP$MH, fi, constants$443.GBindingTransformFunc$FUNC, scope);
     }
-    static GBindingTransformFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _binding, java.lang.foreign.MemoryAddress _from_value, java.lang.foreign.MemoryAddress _to_value, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GBindingTransformFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$483.GBindingTransformFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_binding, (java.lang.foreign.Addressable)_from_value, (java.lang.foreign.Addressable)_to_value, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$443.GBindingTransformFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,57 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$803 {
+final class constants$803 {
 
-    static final FunctionDescriptor g_settings_get_enum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$803() {}
+    static final FunctionDescriptor g_tls_backend_get_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_get_enum$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_enum",
-        constants$803.g_settings_get_enum$FUNC
+    static final MethodHandle g_tls_backend_get_server_connection_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_server_connection_type",
+        constants$803.g_tls_backend_get_server_connection_type$FUNC
     );
-    static final FunctionDescriptor g_settings_set_enum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_settings_set_enum$MH = RuntimeHelper.downcallHandle(
-        "g_settings_set_enum",
-        constants$803.g_settings_set_enum$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_backend_get_file_database_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_flags",
-        constants$803.g_settings_get_flags$FUNC
+    static final MethodHandle g_tls_backend_get_file_database_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_file_database_type",
+        constants$803.g_tls_backend_get_file_database_type$FUNC
     );
-    static final FunctionDescriptor g_settings_set_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_settings_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_settings_set_flags",
-        constants$803.g_settings_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_backend_get_dtls_client_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_get_child$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_child",
-        constants$803.g_settings_get_child$FUNC
+    static final MethodHandle g_tls_backend_get_dtls_client_connection_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_dtls_client_connection_type",
+        constants$803.g_tls_backend_get_dtls_client_connection_type$FUNC
     );
-    static final FunctionDescriptor g_settings_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_backend_get_dtls_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_is_writable$MH = RuntimeHelper.downcallHandle(
-        "g_settings_is_writable",
-        constants$803.g_settings_is_writable$FUNC
+    static final MethodHandle g_tls_backend_get_dtls_server_connection_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_dtls_server_connection_type",
+        constants$803.g_tls_backend_get_dtls_server_connection_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_certificate_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_type",
+        constants$803.g_tls_certificate_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_new_from_pem$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_new_from_pem$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_pem",
+        constants$803.g_tls_certificate_new_from_pem$FUNC
     );
 }
 

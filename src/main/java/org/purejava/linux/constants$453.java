@@ -7,65 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$453 {
+final class constants$453 {
 
-    static final FunctionDescriptor g_cclosure_marshal_STRING__OBJECT_POINTERv$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$453() {}
+    static final FunctionDescriptor g_param_spec_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_boxed",
+        constants$453.g_param_spec_boxed$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pointer",
+        constants$453.g_param_spec_pointer$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_value_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_value_array$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_value_array",
+        constants$453.g_param_spec_value_array$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_object$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_object",
+        constants$453.g_param_spec_object$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_override$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_STRING__OBJECT_POINTERv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_STRING__OBJECT_POINTERv",
-        constants$453.g_cclosure_marshal_STRING__OBJECT_POINTERv$FUNC
+    static final MethodHandle g_param_spec_override$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_override",
+        constants$453.g_param_spec_override$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_BOOLEAN__BOXED_BOXED$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_BOOLEAN__BOXED_BOXED$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_BOOLEAN__BOXED_BOXED",
-        constants$453.g_cclosure_marshal_BOOLEAN__BOXED_BOXED$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv",
-        constants$453.g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$FUNC
-    );
-    static final FunctionDescriptor GSignalCMarshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSignalCMarshaller$MH = RuntimeHelper.downcallHandle(
-        constants$453.GSignalCMarshaller$FUNC
-    );
-    static final FunctionDescriptor GSignalCVaMarshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_param_spec_gtype$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_gtype",
+        constants$453.g_param_spec_gtype$FUNC
     );
 }
 

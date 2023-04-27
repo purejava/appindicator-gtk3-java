@@ -7,15 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GHookList {
+ *     gulong seq_id;
+ *      *     guint hook_size;
+ *     guint is_setup;
+ *     GHook* hooks;
+ *     gpointer dummy3;
+ *     GHookFinalizeFunc finalize_hook;
+ *     gpointer dummy[2];
+ * };
+ * }
+ */
 public class _GHookList {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("seq_id"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(16).withName("hook_size"),
-            MemoryLayout.paddingLayout(1).withName("is_setup"),
-            MemoryLayout.paddingLayout(47)
-        ),
+        MemoryLayout.paddingLayout(64),
         Constants$root.C_POINTER$LAYOUT.withName("hooks"),
         Constants$root.C_POINTER$LAYOUT.withName("dummy3"),
         Constants$root.C_POINTER$LAYOUT.withName("finalize_hook"),
@@ -28,10 +37,22 @@ public class _GHookList {
     public static VarHandle seq_id$VH() {
         return _GHookList.seq_id$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gulong seq_id;
+     * }
+     */
     public static long seq_id$get(MemorySegment seg) {
         return (long)_GHookList.seq_id$VH.get(seg);
     }
-    public static void seq_id$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gulong seq_id;
+     * }
+     */
+    public static void seq_id$set(MemorySegment seg, long x) {
         _GHookList.seq_id$VH.set(seg, x);
     }
     public static long seq_id$get(MemorySegment seg, long index) {
@@ -44,62 +65,98 @@ public class _GHookList {
     public static VarHandle hooks$VH() {
         return _GHookList.hooks$VH;
     }
-    public static MemoryAddress hooks$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.hooks$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GHook* hooks;
+     * }
+     */
+    public static MemorySegment hooks$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GHookList.hooks$VH.get(seg);
     }
-    public static void hooks$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GHook* hooks;
+     * }
+     */
+    public static void hooks$set(MemorySegment seg, MemorySegment x) {
         _GHookList.hooks$VH.set(seg, x);
     }
-    public static MemoryAddress hooks$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.hooks$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment hooks$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GHookList.hooks$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void hooks$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void hooks$set(MemorySegment seg, long index, MemorySegment x) {
         _GHookList.hooks$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy3"));
     public static VarHandle dummy3$VH() {
         return _GHookList.dummy3$VH;
     }
-    public static MemoryAddress dummy3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.dummy3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy3;
+     * }
+     */
+    public static MemorySegment dummy3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GHookList.dummy3$VH.get(seg);
     }
-    public static void dummy3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy3;
+     * }
+     */
+    public static void dummy3$set(MemorySegment seg, MemorySegment x) {
         _GHookList.dummy3$VH.set(seg, x);
     }
-    public static MemoryAddress dummy3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.dummy3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GHookList.dummy3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy3$set(MemorySegment seg, long index, MemorySegment x) {
         _GHookList.dummy3$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle finalize_hook$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("finalize_hook"));
     public static VarHandle finalize_hook$VH() {
         return _GHookList.finalize_hook$VH;
     }
-    public static MemoryAddress finalize_hook$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.finalize_hook$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GHookFinalizeFunc finalize_hook;
+     * }
+     */
+    public static MemorySegment finalize_hook$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GHookList.finalize_hook$VH.get(seg);
     }
-    public static void finalize_hook$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GHookFinalizeFunc finalize_hook;
+     * }
+     */
+    public static void finalize_hook$set(MemorySegment seg, MemorySegment x) {
         _GHookList.finalize_hook$VH.set(seg, x);
     }
-    public static MemoryAddress finalize_hook$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GHookList.finalize_hook$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment finalize_hook$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GHookList.finalize_hook$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void finalize_hook$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void finalize_hook$set(MemorySegment seg, long index, MemorySegment x) {
         _GHookList.finalize_hook$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GHookFinalizeFunc finalize_hook (MemorySegment segment, MemorySession session) {
-        return GHookFinalizeFunc.ofAddress(finalize_hook$get(segment), session);
+    public static GHookFinalizeFunc finalize_hook(MemorySegment segment, SegmentScope scope) {
+        return GHookFinalizeFunc.ofAddress(finalize_hook$get(segment), scope);
     }
     public static MemorySegment dummy$slice(MemorySegment seg) {
         return seg.asSlice(40, 16);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,52 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$540 {
+final class constants$540 {
 
-    static final FunctionDescriptor g_application_command_line_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$540() {}
+    static final FunctionDescriptor g_datagram_based_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_getenv$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_getenv",
-        constants$540.g_application_command_line_getenv$FUNC
+    static final MethodHandle g_datagram_based_receive_messages$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_receive_messages",
+        constants$540.g_datagram_based_receive_messages$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_cwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_command_line_get_cwd$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_cwd",
-        constants$540.g_application_command_line_get_cwd$FUNC
-    );
-    static final FunctionDescriptor g_application_command_line_get_is_remote$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_command_line_get_is_remote$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_is_remote",
-        constants$540.g_application_command_line_get_is_remote$FUNC
-    );
-    static final FunctionDescriptor g_application_command_line_print$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_datagram_based_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_print$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_application_command_line_print",
-        constants$540.g_application_command_line_print$FUNC
+    static final MethodHandle g_datagram_based_send_messages$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_send_messages",
+        constants$540.g_datagram_based_send_messages$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_printerr$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_datagram_based_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_datagram_based_create_source$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_create_source",
+        constants$540.g_datagram_based_create_source$FUNC
+    );
+    static final FunctionDescriptor g_datagram_based_condition_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_datagram_based_condition_check$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_condition_check",
+        constants$540.g_datagram_based_condition_check$FUNC
+    );
+    static final FunctionDescriptor g_datagram_based_condition_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_printerr$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_application_command_line_printerr",
-        constants$540.g_application_command_line_printerr$FUNC
+    static final MethodHandle g_datagram_based_condition_wait$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_condition_wait",
+        constants$540.g_datagram_based_condition_wait$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_command_line_get_exit_status$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_exit_status",
-        constants$540.g_application_command_line_get_exit_status$FUNC
+    static final FunctionDescriptor g_data_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_data_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_get_type",
+        constants$540.g_data_input_stream_get_type$FUNC
     );
 }
 

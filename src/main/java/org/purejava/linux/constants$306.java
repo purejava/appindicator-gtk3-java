@@ -7,53 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$306 {
+final class constants$306 {
 
-    static final FunctionDescriptor g_string_chunk_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$306() {}
+    static final FunctionDescriptor g_shell_quote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_shell_quote$MH = RuntimeHelper.downcallHandle(
+        "g_shell_quote",
+        constants$306.g_shell_quote$FUNC
+    );
+    static final FunctionDescriptor g_shell_unquote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_shell_unquote$MH = RuntimeHelper.downcallHandle(
+        "g_shell_unquote",
+        constants$306.g_shell_unquote$FUNC
+    );
+    static final FunctionDescriptor g_shell_parse_argv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_shell_parse_argv$MH = RuntimeHelper.downcallHandle(
+        "g_shell_parse_argv",
+        constants$306.g_shell_parse_argv$FUNC
+    );
+    static final FunctionDescriptor g_slice_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_chunk_new$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_new",
-        constants$306.g_string_chunk_new$FUNC
+    static final MethodHandle g_slice_alloc$MH = RuntimeHelper.downcallHandle(
+        "g_slice_alloc",
+        constants$306.g_slice_alloc$FUNC
     );
-    static final FunctionDescriptor g_string_chunk_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_free$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_free",
-        constants$306.g_string_chunk_free$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_clear$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_clear",
-        constants$306.g_string_chunk_clear$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_insert$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert",
-        constants$306.g_string_chunk_insert$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_insert_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_slice_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_chunk_insert_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_len",
-        constants$306.g_string_chunk_insert_len$FUNC
+    static final MethodHandle g_slice_alloc0$MH = RuntimeHelper.downcallHandle(
+        "g_slice_alloc0",
+        constants$306.g_slice_alloc0$FUNC
     );
-    static final FunctionDescriptor g_string_chunk_insert_const$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_slice_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_string_chunk_insert_const$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_const",
-        constants$306.g_string_chunk_insert_const$FUNC
+    static final MethodHandle g_slice_copy$MH = RuntimeHelper.downcallHandle(
+        "g_slice_copy",
+        constants$306.g_slice_copy$FUNC
     );
 }
 

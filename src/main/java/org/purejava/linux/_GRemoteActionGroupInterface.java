@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GRemoteActionGroupInterface {
+ *     GTypeInterface g_iface;
+ *     void (*activate_action_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+ *     void (*change_action_state_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+ * };
+ * }
+ */
 public class _GRemoteActionGroupInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -29,20 +38,38 @@ public class _GRemoteActionGroupInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate_action_full$MH = RuntimeHelper.downcallHandle(
-        _GRemoteActionGroupInterface.activate_action_full$FUNC
+    static final FunctionDescriptor activate_action_full_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_action_full_UP$MH = RuntimeHelper.upcallHandle(activate_action_full.class, "apply", _GRemoteActionGroupInterface.activate_action_full_UP$FUNC);
+    static final FunctionDescriptor activate_action_full_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_action_full_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GRemoteActionGroupInterface.activate_action_full_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate_action_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
     public interface activate_action_full {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(activate_action_full fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate_action_full.class, fi, _GRemoteActionGroupInterface.activate_action_full$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(activate_action_full fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GRemoteActionGroupInterface.activate_action_full_UP$MH, fi, _GRemoteActionGroupInterface.activate_action_full$FUNC, scope);
         }
-        static activate_action_full ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static activate_action_full ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GRemoteActionGroupInterface.activate_action_full$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GRemoteActionGroupInterface.activate_action_full_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,20 +81,32 @@ public class _GRemoteActionGroupInterface {
     public static VarHandle activate_action_full$VH() {
         return _GRemoteActionGroupInterface.activate_action_full$VH;
     }
-    public static MemoryAddress activate_action_full$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GRemoteActionGroupInterface.activate_action_full$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate_action_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
+    public static MemorySegment activate_action_full$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GRemoteActionGroupInterface.activate_action_full$VH.get(seg);
     }
-    public static void activate_action_full$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate_action_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
+    public static void activate_action_full$set(MemorySegment seg, MemorySegment x) {
         _GRemoteActionGroupInterface.activate_action_full$VH.set(seg, x);
     }
-    public static MemoryAddress activate_action_full$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GRemoteActionGroupInterface.activate_action_full$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate_action_full$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GRemoteActionGroupInterface.activate_action_full$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate_action_full$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate_action_full$set(MemorySegment seg, long index, MemorySegment x) {
         _GRemoteActionGroupInterface.activate_action_full$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate_action_full activate_action_full (MemorySegment segment, MemorySession session) {
-        return activate_action_full.ofAddress(activate_action_full$get(segment), session);
+    public static activate_action_full activate_action_full(MemorySegment segment, SegmentScope scope) {
+        return activate_action_full.ofAddress(activate_action_full$get(segment), scope);
     }
     static final FunctionDescriptor change_action_state_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -75,20 +114,38 @@ public class _GRemoteActionGroupInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle change_action_state_full$MH = RuntimeHelper.downcallHandle(
-        _GRemoteActionGroupInterface.change_action_state_full$FUNC
+    static final FunctionDescriptor change_action_state_full_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle change_action_state_full_UP$MH = RuntimeHelper.upcallHandle(change_action_state_full.class, "apply", _GRemoteActionGroupInterface.change_action_state_full_UP$FUNC);
+    static final FunctionDescriptor change_action_state_full_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle change_action_state_full_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GRemoteActionGroupInterface.change_action_state_full_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*change_action_state_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
     public interface change_action_state_full {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(change_action_state_full fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(change_action_state_full.class, fi, _GRemoteActionGroupInterface.change_action_state_full$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(change_action_state_full fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GRemoteActionGroupInterface.change_action_state_full_UP$MH, fi, _GRemoteActionGroupInterface.change_action_state_full$FUNC, scope);
         }
-        static change_action_state_full ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static change_action_state_full ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GRemoteActionGroupInterface.change_action_state_full$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GRemoteActionGroupInterface.change_action_state_full_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -100,27 +157,39 @@ public class _GRemoteActionGroupInterface {
     public static VarHandle change_action_state_full$VH() {
         return _GRemoteActionGroupInterface.change_action_state_full$VH;
     }
-    public static MemoryAddress change_action_state_full$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GRemoteActionGroupInterface.change_action_state_full$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*change_action_state_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
+    public static MemorySegment change_action_state_full$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GRemoteActionGroupInterface.change_action_state_full$VH.get(seg);
     }
-    public static void change_action_state_full$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*change_action_state_full)(GRemoteActionGroup*,const gchar*,GVariant*,GVariant*);
+     * }
+     */
+    public static void change_action_state_full$set(MemorySegment seg, MemorySegment x) {
         _GRemoteActionGroupInterface.change_action_state_full$VH.set(seg, x);
     }
-    public static MemoryAddress change_action_state_full$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GRemoteActionGroupInterface.change_action_state_full$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment change_action_state_full$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GRemoteActionGroupInterface.change_action_state_full$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void change_action_state_full$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void change_action_state_full$set(MemorySegment seg, long index, MemorySegment x) {
         _GRemoteActionGroupInterface.change_action_state_full$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_action_state_full change_action_state_full (MemorySegment segment, MemorySession session) {
-        return change_action_state_full.ofAddress(change_action_state_full$get(segment), session);
+    public static change_action_state_full change_action_state_full(MemorySegment segment, SegmentScope scope) {
+        return change_action_state_full.ofAddress(change_action_state_full$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

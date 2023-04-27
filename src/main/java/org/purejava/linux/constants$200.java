@@ -7,43 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$200 {
+final class constants$200 {
 
-    static final FunctionDescriptor g_string_down$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$200() {}
+    static final FunctionDescriptor g_strchomp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_string_down$MH = RuntimeHelper.downcallHandle(
-        "g_string_down",
-        constants$200.g_string_down$FUNC
+    static final MethodHandle g_strchomp$MH = RuntimeHelper.downcallHandle(
+        "g_strchomp",
+        constants$200.g_strchomp$FUNC
     );
-    static final FunctionDescriptor g_string_up$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_up$MH = RuntimeHelper.downcallHandle(
-        "g_string_up",
-        constants$200.g_string_up$FUNC
-    );
-    static final FunctionDescriptor GIOFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_ascii_strcasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GIOFunc$MH = RuntimeHelper.downcallHandle(
-        constants$200.GIOFunc$FUNC
+    static final MethodHandle g_ascii_strcasecmp$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strcasecmp",
+        constants$200.g_ascii_strcasecmp$FUNC
     );
-    static final FunctionDescriptor g_io_channel_init$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_ascii_strncasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_ascii_strncasecmp$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strncasecmp",
+        constants$200.g_ascii_strncasecmp$FUNC
+    );
+    static final FunctionDescriptor g_ascii_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_ascii_strdown$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strdown",
+        constants$200.g_ascii_strdown$FUNC
+    );
+    static final FunctionDescriptor g_ascii_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_ascii_strup$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strup",
+        constants$200.g_ascii_strup$FUNC
+    );
+    static final FunctionDescriptor g_str_is_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_init$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_init",
-        constants$200.g_io_channel_init$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_ref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_ref",
-        constants$200.g_io_channel_ref$FUNC
+    static final MethodHandle g_str_is_ascii$MH = RuntimeHelper.downcallHandle(
+        "g_str_is_ascii",
+        constants$200.g_str_is_ascii$FUNC
     );
 }
 

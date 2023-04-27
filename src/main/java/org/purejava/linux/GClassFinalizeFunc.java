@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GClassFinalizeFunc)(void* g_class,void* class_data);
+ * }
+ */
 public interface GClassFinalizeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress g_class, java.lang.foreign.MemoryAddress class_data);
-    static MemorySegment allocate(GClassFinalizeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GClassFinalizeFunc.class, fi, constants$424.GClassFinalizeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GClassFinalizeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$385.GClassFinalizeFunc_UP$MH, fi, constants$385.GClassFinalizeFunc$FUNC, scope);
     }
-    static GClassFinalizeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _g_class, java.lang.foreign.MemoryAddress _class_data) -> {
+    static GClassFinalizeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$425.GClassFinalizeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_g_class, (java.lang.foreign.Addressable)_class_data);
+                constants$385.GClassFinalizeFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

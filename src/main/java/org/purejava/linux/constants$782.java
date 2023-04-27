@@ -7,47 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$782 {
+final class constants$782 {
 
-    static final FunctionDescriptor g_proxy_address_get_destination_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$782() {}
+    static final FunctionDescriptor g_srv_target_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_srv_target_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_get_type",
+        constants$782.g_srv_target_get_type$FUNC
+    );
+    static final FunctionDescriptor g_srv_target_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle g_srv_target_new$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_new",
+        constants$782.g_srv_target_new$FUNC
+    );
+    static final FunctionDescriptor g_srv_target_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_address_get_destination_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_destination_hostname",
-        constants$782.g_proxy_address_get_destination_hostname$FUNC
+    static final MethodHandle g_srv_target_copy$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_copy",
+        constants$782.g_srv_target_copy$FUNC
     );
-    static final FunctionDescriptor g_proxy_address_get_destination_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor g_srv_target_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_address_get_destination_port$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_destination_port",
-        constants$782.g_proxy_address_get_destination_port$FUNC
+    static final MethodHandle g_srv_target_free$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_free",
+        constants$782.g_srv_target_free$FUNC
     );
-    static final FunctionDescriptor g_proxy_address_get_username$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_srv_target_get_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_address_get_username$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_username",
-        constants$782.g_proxy_address_get_username$FUNC
+    static final MethodHandle g_srv_target_get_hostname$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_get_hostname",
+        constants$782.g_srv_target_get_hostname$FUNC
     );
-    static final FunctionDescriptor g_proxy_address_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_srv_target_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_address_get_password$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_password",
-        constants$782.g_proxy_address_get_password$FUNC
-    );
-    static final FunctionDescriptor g_proxy_address_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_address_get_uri$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_uri",
-        constants$782.g_proxy_address_get_uri$FUNC
-    );
-    static final FunctionDescriptor g_socket_address_enumerator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_address_enumerator_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_address_enumerator_get_type",
-        constants$782.g_socket_address_enumerator_get_type$FUNC
+    static final MethodHandle g_srv_target_get_port$MH = RuntimeHelper.downcallHandle(
+        "g_srv_target_get_port",
+        constants$782.g_srv_target_get_port$FUNC
     );
 }
 

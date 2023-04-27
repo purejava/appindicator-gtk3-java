@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkCursor {
+/**
+ * {@snippet :
+ * typedef struct _GdkCursor GdkCursor;
+ * }
+ */
+public final class GdkCursor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkCursor() {}
 }
 
 

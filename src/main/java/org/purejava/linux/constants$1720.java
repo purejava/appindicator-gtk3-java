@@ -7,48 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1720 {
+final class constants$1720 {
 
-    static final FunctionDescriptor gtk_cell_view_get_size_of_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1720() {}
+    static final FunctionDescriptor gtk_paper_size_new_from_ipp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_new_from_ipp$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_new_from_ipp",
+        constants$1720.gtk_paper_size_new_from_ipp$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_new_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_new_custom$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_new_custom",
+        constants$1720.gtk_paper_size_new_custom$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_view_get_size_of_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_get_size_of_row",
-        constants$1720.gtk_cell_view_get_size_of_row$FUNC
+    static final MethodHandle gtk_paper_size_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_copy",
+        constants$1720.gtk_paper_size_copy$FUNC
     );
-    static final FunctionDescriptor gtk_cell_view_set_background_color$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_paper_size_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_free",
+        constants$1720.gtk_paper_size_free$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_view_set_background_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_set_background_color",
-        constants$1720.gtk_cell_view_set_background_color$FUNC
+    static final MethodHandle gtk_paper_size_is_equal$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_is_equal",
+        constants$1720.gtk_paper_size_is_equal$FUNC
     );
-    static final FunctionDescriptor gtk_toggle_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toggle_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_get_type",
-        constants$1720.gtk_toggle_button_get_type$FUNC
+    static final FunctionDescriptor gtk_paper_size_get_paper_sizes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_toggle_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_toggle_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new",
-        constants$1720.gtk_toggle_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toggle_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new_with_label",
-        constants$1720.gtk_toggle_button_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toggle_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new_with_mnemonic",
-        constants$1720.gtk_toggle_button_new_with_mnemonic$FUNC
+    static final MethodHandle gtk_paper_size_get_paper_sizes$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_paper_sizes",
+        constants$1720.gtk_paper_size_get_paper_sizes$FUNC
     );
 }
 

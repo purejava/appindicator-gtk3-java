@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkUtilClass {
+ *     GObjectClass parent;
+ *     guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+ *     void (*remove_global_event_listener)(guint);
+ *     guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+ *     void (*remove_key_event_listener)(guint);
+ *     AtkObject* (*get_root)();
+ *     const gchar* (*get_toolkit_name)();
+ *     const gchar* (*get_toolkit_version)();
+ * };
+ * }
+ */
 public class _AtkUtilClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +38,10 @@ public class _AtkUtilClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent"),
         Constants$root.C_POINTER$LAYOUT.withName("add_global_event_listener"),
         Constants$root.C_POINTER$LAYOUT.withName("remove_global_event_listener"),
@@ -44,20 +61,34 @@ public class _AtkUtilClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_global_event_listener$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.add_global_event_listener$FUNC
+    static final FunctionDescriptor add_global_event_listener_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_global_event_listener_UP$MH = RuntimeHelper.upcallHandle(add_global_event_listener.class, "apply", _AtkUtilClass.add_global_event_listener_UP$FUNC);
+    static final FunctionDescriptor add_global_event_listener_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_global_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.add_global_event_listener_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+     * }
+     */
     public interface add_global_event_listener {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_global_event_listener fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_global_event_listener.class, fi, _AtkUtilClass.add_global_event_listener$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(add_global_event_listener fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.add_global_event_listener_UP$MH, fi, _AtkUtilClass.add_global_event_listener$FUNC, scope);
         }
-        static add_global_event_listener ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_global_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkUtilClass.add_global_event_listener$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_AtkUtilClass.add_global_event_listener_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -69,38 +100,62 @@ public class _AtkUtilClass {
     public static VarHandle add_global_event_listener$VH() {
         return _AtkUtilClass.add_global_event_listener$VH;
     }
-    public static MemoryAddress add_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.add_global_event_listener$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+     * }
+     */
+    public static MemorySegment add_global_event_listener$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_global_event_listener$VH.get(seg);
     }
-    public static void add_global_event_listener$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+     * }
+     */
+    public static void add_global_event_listener$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.add_global_event_listener$VH.set(seg, x);
     }
-    public static MemoryAddress add_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.add_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_global_event_listener$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_global_event_listener$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.add_global_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_global_event_listener add_global_event_listener (MemorySegment segment, MemorySession session) {
-        return add_global_event_listener.ofAddress(add_global_event_listener$get(segment), session);
+    public static add_global_event_listener add_global_event_listener(MemorySegment segment, SegmentScope scope) {
+        return add_global_event_listener.ofAddress(add_global_event_listener$get(segment), scope);
     }
     static final FunctionDescriptor remove_global_event_listener$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle remove_global_event_listener$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.remove_global_event_listener$FUNC
+    static final FunctionDescriptor remove_global_event_listener_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle remove_global_event_listener_UP$MH = RuntimeHelper.upcallHandle(remove_global_event_listener.class, "apply", _AtkUtilClass.remove_global_event_listener_UP$FUNC);
+    static final FunctionDescriptor remove_global_event_listener_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle remove_global_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.remove_global_event_listener_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*remove_global_event_listener)(guint);
+     * }
+     */
     public interface remove_global_event_listener {
 
         void apply(int _x0);
-        static MemorySegment allocate(remove_global_event_listener fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_global_event_listener.class, fi, _AtkUtilClass.remove_global_event_listener$FUNC, session);
+        static MemorySegment allocate(remove_global_event_listener fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.remove_global_event_listener_UP$MH, fi, _AtkUtilClass.remove_global_event_listener$FUNC, scope);
         }
-        static remove_global_event_listener ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static remove_global_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return (int __x0) -> {
                 try {
-                    _AtkUtilClass.remove_global_event_listener$MH.invokeExact((Addressable)symbol, __x0);
+                    _AtkUtilClass.remove_global_event_listener_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -112,39 +167,65 @@ public class _AtkUtilClass {
     public static VarHandle remove_global_event_listener$VH() {
         return _AtkUtilClass.remove_global_event_listener$VH;
     }
-    public static MemoryAddress remove_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.remove_global_event_listener$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*remove_global_event_listener)(guint);
+     * }
+     */
+    public static MemorySegment remove_global_event_listener$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_global_event_listener$VH.get(seg);
     }
-    public static void remove_global_event_listener$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*remove_global_event_listener)(guint);
+     * }
+     */
+    public static void remove_global_event_listener$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.remove_global_event_listener$VH.set(seg, x);
     }
-    public static MemoryAddress remove_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.remove_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_global_event_listener$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_global_event_listener$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.remove_global_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_global_event_listener remove_global_event_listener (MemorySegment segment, MemorySession session) {
-        return remove_global_event_listener.ofAddress(remove_global_event_listener$get(segment), session);
+    public static remove_global_event_listener remove_global_event_listener(MemorySegment segment, SegmentScope scope) {
+        return remove_global_event_listener.ofAddress(remove_global_event_listener$get(segment), scope);
     }
     static final FunctionDescriptor add_key_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_key_event_listener$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.add_key_event_listener$FUNC
+    static final FunctionDescriptor add_key_event_listener_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_key_event_listener_UP$MH = RuntimeHelper.upcallHandle(add_key_event_listener.class, "apply", _AtkUtilClass.add_key_event_listener_UP$FUNC);
+    static final FunctionDescriptor add_key_event_listener_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_key_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.add_key_event_listener_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+     * }
+     */
     public interface add_key_event_listener {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_key_event_listener fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_key_event_listener.class, fi, _AtkUtilClass.add_key_event_listener$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(add_key_event_listener fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.add_key_event_listener_UP$MH, fi, _AtkUtilClass.add_key_event_listener$FUNC, scope);
         }
-        static add_key_event_listener ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_key_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkUtilClass.add_key_event_listener$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_AtkUtilClass.add_key_event_listener_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -156,38 +237,62 @@ public class _AtkUtilClass {
     public static VarHandle add_key_event_listener$VH() {
         return _AtkUtilClass.add_key_event_listener$VH;
     }
-    public static MemoryAddress add_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.add_key_event_listener$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+     * }
+     */
+    public static MemorySegment add_key_event_listener$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_key_event_listener$VH.get(seg);
     }
-    public static void add_key_event_listener$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+     * }
+     */
+    public static void add_key_event_listener$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.add_key_event_listener$VH.set(seg, x);
     }
-    public static MemoryAddress add_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.add_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_key_event_listener$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_key_event_listener$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.add_key_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_key_event_listener add_key_event_listener (MemorySegment segment, MemorySession session) {
-        return add_key_event_listener.ofAddress(add_key_event_listener$get(segment), session);
+    public static add_key_event_listener add_key_event_listener(MemorySegment segment, SegmentScope scope) {
+        return add_key_event_listener.ofAddress(add_key_event_listener$get(segment), scope);
     }
     static final FunctionDescriptor remove_key_event_listener$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle remove_key_event_listener$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.remove_key_event_listener$FUNC
+    static final FunctionDescriptor remove_key_event_listener_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle remove_key_event_listener_UP$MH = RuntimeHelper.upcallHandle(remove_key_event_listener.class, "apply", _AtkUtilClass.remove_key_event_listener_UP$FUNC);
+    static final FunctionDescriptor remove_key_event_listener_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle remove_key_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.remove_key_event_listener_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*remove_key_event_listener)(guint);
+     * }
+     */
     public interface remove_key_event_listener {
 
         void apply(int _x0);
-        static MemorySegment allocate(remove_key_event_listener fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_key_event_listener.class, fi, _AtkUtilClass.remove_key_event_listener$FUNC, session);
+        static MemorySegment allocate(remove_key_event_listener fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.remove_key_event_listener_UP$MH, fi, _AtkUtilClass.remove_key_event_listener$FUNC, scope);
         }
-        static remove_key_event_listener ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static remove_key_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return (int __x0) -> {
                 try {
-                    _AtkUtilClass.remove_key_event_listener$MH.invokeExact((Addressable)symbol, __x0);
+                    _AtkUtilClass.remove_key_event_listener_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -199,36 +304,56 @@ public class _AtkUtilClass {
     public static VarHandle remove_key_event_listener$VH() {
         return _AtkUtilClass.remove_key_event_listener$VH;
     }
-    public static MemoryAddress remove_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.remove_key_event_listener$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*remove_key_event_listener)(guint);
+     * }
+     */
+    public static MemorySegment remove_key_event_listener$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_key_event_listener$VH.get(seg);
     }
-    public static void remove_key_event_listener$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*remove_key_event_listener)(guint);
+     * }
+     */
+    public static void remove_key_event_listener$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.remove_key_event_listener$VH.set(seg, x);
     }
-    public static MemoryAddress remove_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.remove_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_key_event_listener$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_key_event_listener$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.remove_key_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_key_event_listener remove_key_event_listener (MemorySegment segment, MemorySession session) {
-        return remove_key_event_listener.ofAddress(remove_key_event_listener$get(segment), session);
+    public static remove_key_event_listener remove_key_event_listener(MemorySegment segment, SegmentScope scope) {
+        return remove_key_event_listener.ofAddress(remove_key_event_listener$get(segment), scope);
     }
     static final FunctionDescriptor get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_root$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_root$FUNC
+    static final FunctionDescriptor get_root_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_root_UP$MH = RuntimeHelper.upcallHandle(get_root.class, "apply", _AtkUtilClass.get_root_UP$FUNC);
+    static final FunctionDescriptor get_root_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_root_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.get_root_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * AtkObject* (*get_root)();
+     * }
+     */
     public interface get_root {
 
-        java.lang.foreign.Addressable apply();
-        static MemorySegment allocate(get_root fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_root.class, fi, _AtkUtilClass.get_root$FUNC, session);
+        java.lang.foreign.MemorySegment apply();
+        static MemorySegment allocate(get_root fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.get_root_UP$MH, fi, _AtkUtilClass.get_root$FUNC, scope);
         }
-        static get_root ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static get_root ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkUtilClass.get_root$MH.invokeExact((Addressable)symbol);
+                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -240,36 +365,56 @@ public class _AtkUtilClass {
     public static VarHandle get_root$VH() {
         return _AtkUtilClass.get_root$VH;
     }
-    public static MemoryAddress get_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_root$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkObject* (*get_root)();
+     * }
+     */
+    public static MemorySegment get_root$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root$VH.get(seg);
     }
-    public static void get_root$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkObject* (*get_root)();
+     * }
+     */
+    public static void get_root$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.get_root$VH.set(seg, x);
     }
-    public static MemoryAddress get_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_root$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_root$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_root$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_root$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.get_root$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_root get_root (MemorySegment segment, MemorySession session) {
-        return get_root.ofAddress(get_root$get(segment), session);
+    public static get_root get_root(MemorySegment segment, SegmentScope scope) {
+        return get_root.ofAddress(get_root$get(segment), scope);
     }
     static final FunctionDescriptor get_toolkit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_name$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_toolkit_name$FUNC
+    static final FunctionDescriptor get_toolkit_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_toolkit_name_UP$MH = RuntimeHelper.upcallHandle(get_toolkit_name.class, "apply", _AtkUtilClass.get_toolkit_name_UP$FUNC);
+    static final FunctionDescriptor get_toolkit_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_toolkit_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.get_toolkit_name_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * const gchar* (*get_toolkit_name)();
+     * }
+     */
     public interface get_toolkit_name {
 
-        java.lang.foreign.Addressable apply();
-        static MemorySegment allocate(get_toolkit_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_toolkit_name.class, fi, _AtkUtilClass.get_toolkit_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply();
+        static MemorySegment allocate(get_toolkit_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.get_toolkit_name_UP$MH, fi, _AtkUtilClass.get_toolkit_name$FUNC, scope);
         }
-        static get_toolkit_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static get_toolkit_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_name$MH.invokeExact((Addressable)symbol);
+                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -281,36 +426,56 @@ public class _AtkUtilClass {
     public static VarHandle get_toolkit_name$VH() {
         return _AtkUtilClass.get_toolkit_name$VH;
     }
-    public static MemoryAddress get_toolkit_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_toolkit_name)();
+     * }
+     */
+    public static MemorySegment get_toolkit_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name$VH.get(seg);
     }
-    public static void get_toolkit_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_toolkit_name)();
+     * }
+     */
+    public static void get_toolkit_name$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.get_toolkit_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_toolkit_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_toolkit_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_toolkit_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_toolkit_name$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.get_toolkit_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_toolkit_name get_toolkit_name (MemorySegment segment, MemorySession session) {
-        return get_toolkit_name.ofAddress(get_toolkit_name$get(segment), session);
+    public static get_toolkit_name get_toolkit_name(MemorySegment segment, SegmentScope scope) {
+        return get_toolkit_name.ofAddress(get_toolkit_name$get(segment), scope);
     }
     static final FunctionDescriptor get_toolkit_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_version$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_toolkit_version$FUNC
+    static final FunctionDescriptor get_toolkit_version_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_toolkit_version_UP$MH = RuntimeHelper.upcallHandle(get_toolkit_version.class, "apply", _AtkUtilClass.get_toolkit_version_UP$FUNC);
+    static final FunctionDescriptor get_toolkit_version_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle get_toolkit_version_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkUtilClass.get_toolkit_version_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * const gchar* (*get_toolkit_version)();
+     * }
+     */
     public interface get_toolkit_version {
 
-        java.lang.foreign.Addressable apply();
-        static MemorySegment allocate(get_toolkit_version fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_toolkit_version.class, fi, _AtkUtilClass.get_toolkit_version$FUNC, session);
+        java.lang.foreign.MemorySegment apply();
+        static MemorySegment allocate(get_toolkit_version fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkUtilClass.get_toolkit_version_UP$MH, fi, _AtkUtilClass.get_toolkit_version$FUNC, scope);
         }
-        static get_toolkit_version ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static get_toolkit_version ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_version$MH.invokeExact((Addressable)symbol);
+                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -322,27 +487,39 @@ public class _AtkUtilClass {
     public static VarHandle get_toolkit_version$VH() {
         return _AtkUtilClass.get_toolkit_version$VH;
     }
-    public static MemoryAddress get_toolkit_version$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_version$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_toolkit_version)();
+     * }
+     */
+    public static MemorySegment get_toolkit_version$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version$VH.get(seg);
     }
-    public static void get_toolkit_version$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_toolkit_version)();
+     * }
+     */
+    public static void get_toolkit_version$set(MemorySegment seg, MemorySegment x) {
         _AtkUtilClass.get_toolkit_version$VH.set(seg, x);
     }
-    public static MemoryAddress get_toolkit_version$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkUtilClass.get_toolkit_version$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_toolkit_version$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_toolkit_version$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_toolkit_version$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkUtilClass.get_toolkit_version$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_toolkit_version get_toolkit_version (MemorySegment segment, MemorySession session) {
-        return get_toolkit_version.ofAddress(get_toolkit_version$get(segment), session);
+    public static get_toolkit_version get_toolkit_version(MemorySegment segment, SegmentScope scope) {
+        return get_toolkit_version.ofAddress(get_toolkit_version$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

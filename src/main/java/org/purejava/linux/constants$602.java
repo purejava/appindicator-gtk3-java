@@ -7,60 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$602 {
+final class constants$602 {
 
-    static final FunctionDescriptor GDBusInterfaceSetPropertyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$602() {}
+    static final FunctionDescriptor g_drive_eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_eject_finish$MH = RuntimeHelper.downcallHandle(
+        "g_drive_eject_finish",
+        constants$602.g_drive_eject_finish$FUNC
+    );
+    static final FunctionDescriptor g_drive_poll_for_media$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDBusInterfaceSetPropertyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$602.GDBusInterfaceSetPropertyFunc$FUNC
+    static final MethodHandle g_drive_poll_for_media$MH = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media",
+        constants$602.g_drive_poll_for_media$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_register_object$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_poll_for_media_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_register_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_register_object",
-        constants$602.g_dbus_connection_register_object$FUNC
+    static final MethodHandle g_drive_poll_for_media_finish$MH = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media_finish",
+        constants$602.g_drive_poll_for_media_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_register_object_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_register_object_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_register_object_with_closures",
-        constants$602.g_dbus_connection_register_object_with_closures$FUNC
+    static final MethodHandle g_drive_get_identifier$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_identifier",
+        constants$602.g_drive_get_identifier$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_unregister_object$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_unregister_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_unregister_object",
-        constants$602.g_dbus_connection_unregister_object$FUNC
-    );
-    static final FunctionDescriptor GDBusSubtreeEnumerateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
+        "g_drive_enumerate_identifiers",
+        constants$602.g_drive_enumerate_identifiers$FUNC
+    );
+    static final FunctionDescriptor g_drive_get_start_stop_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_get_start_stop_type$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_start_stop_type",
+        constants$602.g_drive_get_start_stop_type$FUNC
     );
 }
 

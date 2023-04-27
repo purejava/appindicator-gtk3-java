@@ -7,37 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$463 {
+final class constants$463 {
 
-    static final FunctionDescriptor g_variant_type_get_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_type_get_gtype$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_get_gtype",
-        constants$463.g_variant_type_get_gtype$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$463() {}
+    static final FunctionDescriptor g_value_set_boolean$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_regex_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_regex_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_type",
-        constants$463.g_regex_get_type$FUNC
+    static final MethodHandle g_value_set_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_boolean",
+        constants$463.g_value_set_boolean$FUNC
     );
-    static final FunctionDescriptor g_match_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_match_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_get_type",
-        constants$463.g_match_info_get_type$FUNC
+    static final FunctionDescriptor g_value_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_error_get_type",
-        constants$463.g_error_get_type$FUNC
+    static final MethodHandle g_value_get_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_boolean",
+        constants$463.g_value_get_boolean$FUNC
     );
-    static final FunctionDescriptor g_date_time_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_date_time_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_type",
-        constants$463.g_date_time_get_type$FUNC
+    static final FunctionDescriptor g_value_set_int$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_time_zone_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_time_zone_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_type",
-        constants$463.g_time_zone_get_type$FUNC
+    static final MethodHandle g_value_set_int$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_int",
+        constants$463.g_value_set_int$FUNC
+    );
+    static final FunctionDescriptor g_value_get_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_int$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_int",
+        constants$463.g_value_get_int$FUNC
+    );
+    static final FunctionDescriptor g_value_set_uint$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_value_set_uint$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_uint",
+        constants$463.g_value_set_uint$FUNC
+    );
+    static final FunctionDescriptor g_value_get_uint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_uint$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_uint",
+        constants$463.g_value_get_uint$FUNC
     );
 }
 

@@ -7,9 +7,30 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoRendererClass {
+ *     GObjectClass parent_class;
+ *     void (*draw_glyphs)(PangoRenderer*,PangoFont*,PangoGlyphString*,int,int);
+ *     void (*draw_rectangle)(PangoRenderer*,PangoRenderPart,int,int,int,int);
+ *     void (*draw_error_underline)(PangoRenderer*,int,int,int,int);
+ *     void (*draw_shape)(PangoRenderer*,PangoAttrShape*,int,int);
+ *     void (*draw_trapezoid)(PangoRenderer*,PangoRenderPart,double,double,double,double,double,double);
+ *     void (*draw_glyph)(PangoRenderer*,PangoFont*,PangoGlyph,double,double);
+ *     void (*part_changed)(PangoRenderer*,PangoRenderPart);
+ *     void (*begin)(PangoRenderer*);
+ *     void (*end)(PangoRenderer*);
+ *     void (*prepare_run)(PangoRenderer*,PangoLayoutRun*);
+ *     void (*draw_glyph_item)(PangoRenderer*,char*,PangoGlyphItem*,int,int);
+ *     void (*_pango_reserved2)();
+ *     void (*_pango_reserved3)();
+ *     void (*_pango_reserved4)();
+ * };
+ * }
+ */
 public class _PangoRendererClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +45,10 @@ public class _PangoRendererClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("draw_glyphs"),
         Constants$root.C_POINTER$LAYOUT.withName("draw_rectangle"),
@@ -54,20 +78,40 @@ public class _PangoRendererClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_glyphs$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_glyphs$FUNC
+    static final FunctionDescriptor draw_glyphs_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_glyphs_UP$MH = RuntimeHelper.upcallHandle(draw_glyphs.class, "apply", _PangoRendererClass.draw_glyphs_UP$FUNC);
+    static final FunctionDescriptor draw_glyphs_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_glyphs_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_glyphs_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_glyphs)(PangoRenderer*,PangoFont*,PangoGlyphString*,int,int);
+     * }
+     */
     public interface draw_glyphs {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_glyphs fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_glyphs.class, fi, _PangoRendererClass.draw_glyphs$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
+        static MemorySegment allocate(draw_glyphs fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_glyphs_UP$MH, fi, _PangoRendererClass.draw_glyphs$FUNC, scope);
         }
-        static draw_glyphs ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, int __x4) -> {
+        static draw_glyphs ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
                 try {
-                    _PangoRendererClass.draw_glyphs$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, __x4);
+                    _PangoRendererClass.draw_glyphs_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -79,20 +123,32 @@ public class _PangoRendererClass {
     public static VarHandle draw_glyphs$VH() {
         return _PangoRendererClass.draw_glyphs$VH;
     }
-    public static MemoryAddress draw_glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyphs$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_glyphs)(PangoRenderer*,PangoFont*,PangoGlyphString*,int,int);
+     * }
+     */
+    public static MemorySegment draw_glyphs$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyphs$VH.get(seg);
     }
-    public static void draw_glyphs$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_glyphs)(PangoRenderer*,PangoFont*,PangoGlyphString*,int,int);
+     * }
+     */
+    public static void draw_glyphs$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_glyphs$VH.set(seg, x);
     }
-    public static MemoryAddress draw_glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyphs$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_glyphs$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyphs$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_glyphs$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_glyphs$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_glyphs$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_glyphs draw_glyphs (MemorySegment segment, MemorySession session) {
-        return draw_glyphs.ofAddress(draw_glyphs$get(segment), session);
+    public static draw_glyphs draw_glyphs(MemorySegment segment, SegmentScope scope) {
+        return draw_glyphs.ofAddress(draw_glyphs$get(segment), scope);
     }
     static final FunctionDescriptor draw_rectangle$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -102,20 +158,42 @@ public class _PangoRendererClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_rectangle$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_rectangle$FUNC
+    static final FunctionDescriptor draw_rectangle_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_rectangle_UP$MH = RuntimeHelper.upcallHandle(draw_rectangle.class, "apply", _PangoRendererClass.draw_rectangle_UP$FUNC);
+    static final FunctionDescriptor draw_rectangle_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_rectangle_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_rectangle_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_rectangle)(PangoRenderer*,PangoRenderPart,int,int,int,int);
+     * }
+     */
     public interface draw_rectangle {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, int _x3, int _x4, int _x5);
-        static MemorySegment allocate(draw_rectangle fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_rectangle.class, fi, _PangoRendererClass.draw_rectangle$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5);
+        static MemorySegment allocate(draw_rectangle fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_rectangle_UP$MH, fi, _PangoRendererClass.draw_rectangle$FUNC, scope);
         }
-        static draw_rectangle ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, int __x3, int __x4, int __x5) -> {
+        static draw_rectangle ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4, int __x5) -> {
                 try {
-                    _PangoRendererClass.draw_rectangle$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3, __x4, __x5);
+                    _PangoRendererClass.draw_rectangle_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -127,20 +205,32 @@ public class _PangoRendererClass {
     public static VarHandle draw_rectangle$VH() {
         return _PangoRendererClass.draw_rectangle$VH;
     }
-    public static MemoryAddress draw_rectangle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_rectangle$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_rectangle)(PangoRenderer*,PangoRenderPart,int,int,int,int);
+     * }
+     */
+    public static MemorySegment draw_rectangle$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_rectangle$VH.get(seg);
     }
-    public static void draw_rectangle$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_rectangle)(PangoRenderer*,PangoRenderPart,int,int,int,int);
+     * }
+     */
+    public static void draw_rectangle$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_rectangle$VH.set(seg, x);
     }
-    public static MemoryAddress draw_rectangle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_rectangle$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_rectangle$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_rectangle$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_rectangle$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_rectangle$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_rectangle$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_rectangle draw_rectangle (MemorySegment segment, MemorySession session) {
-        return draw_rectangle.ofAddress(draw_rectangle$get(segment), session);
+    public static draw_rectangle draw_rectangle(MemorySegment segment, SegmentScope scope) {
+        return draw_rectangle.ofAddress(draw_rectangle$get(segment), scope);
     }
     static final FunctionDescriptor draw_error_underline$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -149,20 +239,40 @@ public class _PangoRendererClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_error_underline$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_error_underline$FUNC
+    static final FunctionDescriptor draw_error_underline_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_error_underline_UP$MH = RuntimeHelper.upcallHandle(draw_error_underline.class, "apply", _PangoRendererClass.draw_error_underline_UP$FUNC);
+    static final FunctionDescriptor draw_error_underline_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_error_underline_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_error_underline_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_error_underline)(PangoRenderer*,int,int,int,int);
+     * }
+     */
     public interface draw_error_underline {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_error_underline fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_error_underline.class, fi, _PangoRendererClass.draw_error_underline$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4);
+        static MemorySegment allocate(draw_error_underline fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_error_underline_UP$MH, fi, _PangoRendererClass.draw_error_underline$FUNC, scope);
         }
-        static draw_error_underline ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, int __x3, int __x4) -> {
+        static draw_error_underline ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    _PangoRendererClass.draw_error_underline$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3, __x4);
+                    _PangoRendererClass.draw_error_underline_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -174,20 +284,32 @@ public class _PangoRendererClass {
     public static VarHandle draw_error_underline$VH() {
         return _PangoRendererClass.draw_error_underline$VH;
     }
-    public static MemoryAddress draw_error_underline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_error_underline$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_error_underline)(PangoRenderer*,int,int,int,int);
+     * }
+     */
+    public static MemorySegment draw_error_underline$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_error_underline$VH.get(seg);
     }
-    public static void draw_error_underline$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_error_underline)(PangoRenderer*,int,int,int,int);
+     * }
+     */
+    public static void draw_error_underline$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_error_underline$VH.set(seg, x);
     }
-    public static MemoryAddress draw_error_underline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_error_underline$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_error_underline$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_error_underline$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_error_underline$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_error_underline$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_error_underline$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_error_underline draw_error_underline (MemorySegment segment, MemorySession session) {
-        return draw_error_underline.ofAddress(draw_error_underline$get(segment), session);
+    public static draw_error_underline draw_error_underline(MemorySegment segment, SegmentScope scope) {
+        return draw_error_underline.ofAddress(draw_error_underline$get(segment), scope);
     }
     static final FunctionDescriptor draw_shape$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -195,20 +317,38 @@ public class _PangoRendererClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_shape$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_shape$FUNC
+    static final FunctionDescriptor draw_shape_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_shape_UP$MH = RuntimeHelper.upcallHandle(draw_shape.class, "apply", _PangoRendererClass.draw_shape_UP$FUNC);
+    static final FunctionDescriptor draw_shape_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_shape_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_shape_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_shape)(PangoRenderer*,PangoAttrShape*,int,int);
+     * }
+     */
     public interface draw_shape {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3);
-        static MemorySegment allocate(draw_shape fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_shape.class, fi, _PangoRendererClass.draw_shape$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
+        static MemorySegment allocate(draw_shape fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_shape_UP$MH, fi, _PangoRendererClass.draw_shape$FUNC, scope);
         }
-        static draw_shape ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3) -> {
+        static draw_shape ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    _PangoRendererClass.draw_shape$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3);
+                    _PangoRendererClass.draw_shape_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -220,20 +360,32 @@ public class _PangoRendererClass {
     public static VarHandle draw_shape$VH() {
         return _PangoRendererClass.draw_shape$VH;
     }
-    public static MemoryAddress draw_shape$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_shape$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_shape)(PangoRenderer*,PangoAttrShape*,int,int);
+     * }
+     */
+    public static MemorySegment draw_shape$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_shape$VH.get(seg);
     }
-    public static void draw_shape$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_shape)(PangoRenderer*,PangoAttrShape*,int,int);
+     * }
+     */
+    public static void draw_shape$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_shape$VH.set(seg, x);
     }
-    public static MemoryAddress draw_shape$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_shape$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_shape$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_shape$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_shape$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_shape$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_shape$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_shape draw_shape (MemorySegment segment, MemorySession session) {
-        return draw_shape.ofAddress(draw_shape$get(segment), session);
+    public static draw_shape draw_shape(MemorySegment segment, SegmentScope scope) {
+        return draw_shape.ofAddress(draw_shape$get(segment), scope);
     }
     static final FunctionDescriptor draw_trapezoid$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -245,20 +397,46 @@ public class _PangoRendererClass {
         Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle draw_trapezoid$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_trapezoid$FUNC
+    static final FunctionDescriptor draw_trapezoid_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
+    static final MethodHandle draw_trapezoid_UP$MH = RuntimeHelper.upcallHandle(draw_trapezoid.class, "apply", _PangoRendererClass.draw_trapezoid_UP$FUNC);
+    static final FunctionDescriptor draw_trapezoid_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle draw_trapezoid_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_trapezoid_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_trapezoid)(PangoRenderer*,PangoRenderPart,double,double,double,double,double,double);
+     * }
+     */
     public interface draw_trapezoid {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7);
-        static MemorySegment allocate(draw_trapezoid fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_trapezoid.class, fi, _PangoRendererClass.draw_trapezoid$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7);
+        static MemorySegment allocate(draw_trapezoid fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_trapezoid_UP$MH, fi, _PangoRendererClass.draw_trapezoid$FUNC, scope);
         }
-        static draw_trapezoid ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, double __x2, double __x3, double __x4, double __x5, double __x6, double __x7) -> {
+        static draw_trapezoid ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, double __x2, double __x3, double __x4, double __x5, double __x6, double __x7) -> {
                 try {
-                    _PangoRendererClass.draw_trapezoid$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
+                    _PangoRendererClass.draw_trapezoid_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -270,20 +448,32 @@ public class _PangoRendererClass {
     public static VarHandle draw_trapezoid$VH() {
         return _PangoRendererClass.draw_trapezoid$VH;
     }
-    public static MemoryAddress draw_trapezoid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_trapezoid$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_trapezoid)(PangoRenderer*,PangoRenderPart,double,double,double,double,double,double);
+     * }
+     */
+    public static MemorySegment draw_trapezoid$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_trapezoid$VH.get(seg);
     }
-    public static void draw_trapezoid$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_trapezoid)(PangoRenderer*,PangoRenderPart,double,double,double,double,double,double);
+     * }
+     */
+    public static void draw_trapezoid$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_trapezoid$VH.set(seg, x);
     }
-    public static MemoryAddress draw_trapezoid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_trapezoid$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_trapezoid$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_trapezoid$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_trapezoid$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_trapezoid$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_trapezoid$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_trapezoid draw_trapezoid (MemorySegment segment, MemorySession session) {
-        return draw_trapezoid.ofAddress(draw_trapezoid$get(segment), session);
+    public static draw_trapezoid draw_trapezoid(MemorySegment segment, SegmentScope scope) {
+        return draw_trapezoid.ofAddress(draw_trapezoid$get(segment), scope);
     }
     static final FunctionDescriptor draw_glyph$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -292,20 +482,40 @@ public class _PangoRendererClass {
         Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle draw_glyph$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_glyph$FUNC
+    static final FunctionDescriptor draw_glyph_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
+    static final MethodHandle draw_glyph_UP$MH = RuntimeHelper.upcallHandle(draw_glyph.class, "apply", _PangoRendererClass.draw_glyph_UP$FUNC);
+    static final FunctionDescriptor draw_glyph_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle draw_glyph_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_glyph_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_glyph)(PangoRenderer*,PangoFont*,PangoGlyph,double,double);
+     * }
+     */
     public interface draw_glyph {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, double _x3, double _x4);
-        static MemorySegment allocate(draw_glyph fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_glyph.class, fi, _PangoRendererClass.draw_glyph$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, double _x3, double _x4);
+        static MemorySegment allocate(draw_glyph fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_glyph_UP$MH, fi, _PangoRendererClass.draw_glyph$FUNC, scope);
         }
-        static draw_glyph ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, double __x3, double __x4) -> {
+        static draw_glyph ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, double __x3, double __x4) -> {
                 try {
-                    _PangoRendererClass.draw_glyph$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, __x4);
+                    _PangoRendererClass.draw_glyph_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -317,39 +527,65 @@ public class _PangoRendererClass {
     public static VarHandle draw_glyph$VH() {
         return _PangoRendererClass.draw_glyph$VH;
     }
-    public static MemoryAddress draw_glyph$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyph$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_glyph)(PangoRenderer*,PangoFont*,PangoGlyph,double,double);
+     * }
+     */
+    public static MemorySegment draw_glyph$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyph$VH.get(seg);
     }
-    public static void draw_glyph$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_glyph)(PangoRenderer*,PangoFont*,PangoGlyph,double,double);
+     * }
+     */
+    public static void draw_glyph$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_glyph$VH.set(seg, x);
     }
-    public static MemoryAddress draw_glyph$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyph$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_glyph$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyph$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_glyph$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_glyph$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_glyph$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_glyph draw_glyph (MemorySegment segment, MemorySession session) {
-        return draw_glyph.ofAddress(draw_glyph$get(segment), session);
+    public static draw_glyph draw_glyph(MemorySegment segment, SegmentScope scope) {
+        return draw_glyph.ofAddress(draw_glyph$get(segment), scope);
     }
     static final FunctionDescriptor part_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle part_changed$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.part_changed$FUNC
+    static final FunctionDescriptor part_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle part_changed_UP$MH = RuntimeHelper.upcallHandle(part_changed.class, "apply", _PangoRendererClass.part_changed_UP$FUNC);
+    static final FunctionDescriptor part_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle part_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.part_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*part_changed)(PangoRenderer*,PangoRenderPart);
+     * }
+     */
     public interface part_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(part_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(part_changed.class, fi, _PangoRendererClass.part_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(part_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.part_changed_UP$MH, fi, _PangoRendererClass.part_changed$FUNC, scope);
         }
-        static part_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static part_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _PangoRendererClass.part_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _PangoRendererClass.part_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -361,38 +597,62 @@ public class _PangoRendererClass {
     public static VarHandle part_changed$VH() {
         return _PangoRendererClass.part_changed$VH;
     }
-    public static MemoryAddress part_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.part_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*part_changed)(PangoRenderer*,PangoRenderPart);
+     * }
+     */
+    public static MemorySegment part_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.part_changed$VH.get(seg);
     }
-    public static void part_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*part_changed)(PangoRenderer*,PangoRenderPart);
+     * }
+     */
+    public static void part_changed$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.part_changed$VH.set(seg, x);
     }
-    public static MemoryAddress part_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.part_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment part_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.part_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void part_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void part_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.part_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static part_changed part_changed (MemorySegment segment, MemorySession session) {
-        return part_changed.ofAddress(part_changed$get(segment), session);
+    public static part_changed part_changed(MemorySegment segment, SegmentScope scope) {
+        return part_changed.ofAddress(part_changed$get(segment), scope);
     }
     static final FunctionDescriptor begin$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle begin$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.begin$FUNC
+    static final FunctionDescriptor begin_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle begin_UP$MH = RuntimeHelper.upcallHandle(begin.class, "apply", _PangoRendererClass.begin_UP$FUNC);
+    static final FunctionDescriptor begin_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle begin_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.begin_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*begin)(PangoRenderer*);
+     * }
+     */
     public interface begin {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(begin fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(begin.class, fi, _PangoRendererClass.begin$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(begin fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.begin_UP$MH, fi, _PangoRendererClass.begin$FUNC, scope);
         }
-        static begin ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static begin ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _PangoRendererClass.begin$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _PangoRendererClass.begin_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -404,38 +664,62 @@ public class _PangoRendererClass {
     public static VarHandle begin$VH() {
         return _PangoRendererClass.begin$VH;
     }
-    public static MemoryAddress begin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.begin$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*begin)(PangoRenderer*);
+     * }
+     */
+    public static MemorySegment begin$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.begin$VH.get(seg);
     }
-    public static void begin$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*begin)(PangoRenderer*);
+     * }
+     */
+    public static void begin$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.begin$VH.set(seg, x);
     }
-    public static MemoryAddress begin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.begin$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment begin$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.begin$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void begin$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void begin$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.begin$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static begin begin (MemorySegment segment, MemorySession session) {
-        return begin.ofAddress(begin$get(segment), session);
+    public static begin begin(MemorySegment segment, SegmentScope scope) {
+        return begin.ofAddress(begin$get(segment), scope);
     }
     static final FunctionDescriptor end$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle end$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.end$FUNC
+    static final FunctionDescriptor end_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle end_UP$MH = RuntimeHelper.upcallHandle(end.class, "apply", _PangoRendererClass.end_UP$FUNC);
+    static final FunctionDescriptor end_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle end_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.end_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*end)(PangoRenderer*);
+     * }
+     */
     public interface end {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(end fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(end.class, fi, _PangoRendererClass.end$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(end fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.end_UP$MH, fi, _PangoRendererClass.end$FUNC, scope);
         }
-        static end ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static end ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _PangoRendererClass.end$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _PangoRendererClass.end_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -447,39 +731,65 @@ public class _PangoRendererClass {
     public static VarHandle end$VH() {
         return _PangoRendererClass.end$VH;
     }
-    public static MemoryAddress end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.end$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*end)(PangoRenderer*);
+     * }
+     */
+    public static MemorySegment end$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.end$VH.get(seg);
     }
-    public static void end$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*end)(PangoRenderer*);
+     * }
+     */
+    public static void end$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.end$VH.set(seg, x);
     }
-    public static MemoryAddress end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.end$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment end$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.end$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void end$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void end$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.end$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static end end (MemorySegment segment, MemorySession session) {
-        return end.ofAddress(end$get(segment), session);
+    public static end end(MemorySegment segment, SegmentScope scope) {
+        return end.ofAddress(end$get(segment), scope);
     }
     static final FunctionDescriptor prepare_run$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle prepare_run$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.prepare_run$FUNC
+    static final FunctionDescriptor prepare_run_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle prepare_run_UP$MH = RuntimeHelper.upcallHandle(prepare_run.class, "apply", _PangoRendererClass.prepare_run_UP$FUNC);
+    static final FunctionDescriptor prepare_run_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle prepare_run_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.prepare_run_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*prepare_run)(PangoRenderer*,PangoLayoutRun*);
+     * }
+     */
     public interface prepare_run {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(prepare_run fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(prepare_run.class, fi, _PangoRendererClass.prepare_run$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(prepare_run fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.prepare_run_UP$MH, fi, _PangoRendererClass.prepare_run$FUNC, scope);
         }
-        static prepare_run ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static prepare_run ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _PangoRendererClass.prepare_run$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _PangoRendererClass.prepare_run_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -491,20 +801,32 @@ public class _PangoRendererClass {
     public static VarHandle prepare_run$VH() {
         return _PangoRendererClass.prepare_run$VH;
     }
-    public static MemoryAddress prepare_run$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.prepare_run$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*prepare_run)(PangoRenderer*,PangoLayoutRun*);
+     * }
+     */
+    public static MemorySegment prepare_run$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.prepare_run$VH.get(seg);
     }
-    public static void prepare_run$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*prepare_run)(PangoRenderer*,PangoLayoutRun*);
+     * }
+     */
+    public static void prepare_run$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.prepare_run$VH.set(seg, x);
     }
-    public static MemoryAddress prepare_run$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.prepare_run$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment prepare_run$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.prepare_run$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void prepare_run$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void prepare_run$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.prepare_run$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static prepare_run prepare_run (MemorySegment segment, MemorySession session) {
-        return prepare_run.ofAddress(prepare_run$get(segment), session);
+    public static prepare_run prepare_run(MemorySegment segment, SegmentScope scope) {
+        return prepare_run.ofAddress(prepare_run$get(segment), scope);
     }
     static final FunctionDescriptor draw_glyph_item$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -513,20 +835,40 @@ public class _PangoRendererClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_glyph_item$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass.draw_glyph_item$FUNC
+    static final FunctionDescriptor draw_glyph_item_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_glyph_item_UP$MH = RuntimeHelper.upcallHandle(draw_glyph_item.class, "apply", _PangoRendererClass.draw_glyph_item_UP$FUNC);
+    static final FunctionDescriptor draw_glyph_item_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_glyph_item_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass.draw_glyph_item_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_glyph_item)(PangoRenderer*,char*,PangoGlyphItem*,int,int);
+     * }
+     */
     public interface draw_glyph_item {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_glyph_item fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_glyph_item.class, fi, _PangoRendererClass.draw_glyph_item$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
+        static MemorySegment allocate(draw_glyph_item fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass.draw_glyph_item_UP$MH, fi, _PangoRendererClass.draw_glyph_item$FUNC, scope);
         }
-        static draw_glyph_item ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, int __x4) -> {
+        static draw_glyph_item ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
                 try {
-                    _PangoRendererClass.draw_glyph_item$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, __x4);
+                    _PangoRendererClass.draw_glyph_item_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -538,36 +880,56 @@ public class _PangoRendererClass {
     public static VarHandle draw_glyph_item$VH() {
         return _PangoRendererClass.draw_glyph_item$VH;
     }
-    public static MemoryAddress draw_glyph_item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyph_item$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_glyph_item)(PangoRenderer*,char*,PangoGlyphItem*,int,int);
+     * }
+     */
+    public static MemorySegment draw_glyph_item$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyph_item$VH.get(seg);
     }
-    public static void draw_glyph_item$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_glyph_item)(PangoRenderer*,char*,PangoGlyphItem*,int,int);
+     * }
+     */
+    public static void draw_glyph_item$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass.draw_glyph_item$VH.set(seg, x);
     }
-    public static MemoryAddress draw_glyph_item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass.draw_glyph_item$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_glyph_item$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass.draw_glyph_item$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_glyph_item$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_glyph_item$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass.draw_glyph_item$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_glyph_item draw_glyph_item (MemorySegment segment, MemorySession session) {
-        return draw_glyph_item.ofAddress(draw_glyph_item$get(segment), session);
+    public static draw_glyph_item draw_glyph_item(MemorySegment segment, SegmentScope scope) {
+        return draw_glyph_item.ofAddress(draw_glyph_item$get(segment), scope);
     }
     static final FunctionDescriptor _pango_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _pango_reserved2$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass._pango_reserved2$FUNC
+    static final FunctionDescriptor _pango_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved2_UP$MH = RuntimeHelper.upcallHandle(_pango_reserved2.class, "apply", _PangoRendererClass._pango_reserved2_UP$FUNC);
+    static final FunctionDescriptor _pango_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass._pango_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_pango_reserved2)();
+     * }
+     */
     public interface _pango_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_pango_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_pango_reserved2.class, fi, _PangoRendererClass._pango_reserved2$FUNC, session);
+        static MemorySegment allocate(_pango_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass._pango_reserved2_UP$MH, fi, _PangoRendererClass._pango_reserved2$FUNC, scope);
         }
-        static _pango_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _pango_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _PangoRendererClass._pango_reserved2$MH.invokeExact((Addressable)symbol);
+                    _PangoRendererClass._pango_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -579,36 +941,56 @@ public class _PangoRendererClass {
     public static VarHandle _pango_reserved2$VH() {
         return _PangoRendererClass._pango_reserved2$VH;
     }
-    public static MemoryAddress _pango_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_pango_reserved2)();
+     * }
+     */
+    public static MemorySegment _pango_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved2$VH.get(seg);
     }
-    public static void _pango_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_pango_reserved2)();
+     * }
+     */
+    public static void _pango_reserved2$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass._pango_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _pango_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _pango_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _pango_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _pango_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass._pango_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _pango_reserved2 _pango_reserved2 (MemorySegment segment, MemorySession session) {
-        return _pango_reserved2.ofAddress(_pango_reserved2$get(segment), session);
+    public static _pango_reserved2 _pango_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _pango_reserved2.ofAddress(_pango_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _pango_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _pango_reserved3$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass._pango_reserved3$FUNC
+    static final FunctionDescriptor _pango_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved3_UP$MH = RuntimeHelper.upcallHandle(_pango_reserved3.class, "apply", _PangoRendererClass._pango_reserved3_UP$FUNC);
+    static final FunctionDescriptor _pango_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass._pango_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_pango_reserved3)();
+     * }
+     */
     public interface _pango_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_pango_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_pango_reserved3.class, fi, _PangoRendererClass._pango_reserved3$FUNC, session);
+        static MemorySegment allocate(_pango_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass._pango_reserved3_UP$MH, fi, _PangoRendererClass._pango_reserved3$FUNC, scope);
         }
-        static _pango_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _pango_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _PangoRendererClass._pango_reserved3$MH.invokeExact((Addressable)symbol);
+                    _PangoRendererClass._pango_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -620,36 +1002,56 @@ public class _PangoRendererClass {
     public static VarHandle _pango_reserved3$VH() {
         return _PangoRendererClass._pango_reserved3$VH;
     }
-    public static MemoryAddress _pango_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_pango_reserved3)();
+     * }
+     */
+    public static MemorySegment _pango_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved3$VH.get(seg);
     }
-    public static void _pango_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_pango_reserved3)();
+     * }
+     */
+    public static void _pango_reserved3$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass._pango_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _pango_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _pango_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _pango_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _pango_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass._pango_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _pango_reserved3 _pango_reserved3 (MemorySegment segment, MemorySession session) {
-        return _pango_reserved3.ofAddress(_pango_reserved3$get(segment), session);
+    public static _pango_reserved3 _pango_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _pango_reserved3.ofAddress(_pango_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _pango_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _pango_reserved4$MH = RuntimeHelper.downcallHandle(
-        _PangoRendererClass._pango_reserved4$FUNC
+    static final FunctionDescriptor _pango_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved4_UP$MH = RuntimeHelper.upcallHandle(_pango_reserved4.class, "apply", _PangoRendererClass._pango_reserved4_UP$FUNC);
+    static final FunctionDescriptor _pango_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _pango_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoRendererClass._pango_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_pango_reserved4)();
+     * }
+     */
     public interface _pango_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_pango_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_pango_reserved4.class, fi, _PangoRendererClass._pango_reserved4$FUNC, session);
+        static MemorySegment allocate(_pango_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoRendererClass._pango_reserved4_UP$MH, fi, _PangoRendererClass._pango_reserved4$FUNC, scope);
         }
-        static _pango_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _pango_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _PangoRendererClass._pango_reserved4$MH.invokeExact((Addressable)symbol);
+                    _PangoRendererClass._pango_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -661,27 +1063,39 @@ public class _PangoRendererClass {
     public static VarHandle _pango_reserved4$VH() {
         return _PangoRendererClass._pango_reserved4$VH;
     }
-    public static MemoryAddress _pango_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_pango_reserved4)();
+     * }
+     */
+    public static MemorySegment _pango_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved4$VH.get(seg);
     }
-    public static void _pango_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_pango_reserved4)();
+     * }
+     */
+    public static void _pango_reserved4$set(MemorySegment seg, MemorySegment x) {
         _PangoRendererClass._pango_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _pango_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRendererClass._pango_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _pango_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRendererClass._pango_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _pango_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _pango_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRendererClass._pango_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _pango_reserved4 _pango_reserved4 (MemorySegment segment, MemorySession session) {
-        return _pango_reserved4.ofAddress(_pango_reserved4$get(segment), session);
+    public static _pango_reserved4 _pango_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _pango_reserved4.ofAddress(_pango_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkTextTagTableForeach)(struct _GtkTextTag* tag,void* data);
+ * }
+ */
 public interface GtkTextTagTableForeach {
 
-    void apply(java.lang.foreign.MemoryAddress tag, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTextTagTableForeach fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTextTagTableForeach.class, fi, constants$2020.GtkTextTagTableForeach$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkTextTagTableForeach fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1823.GtkTextTagTableForeach_UP$MH, fi, constants$1823.GtkTextTagTableForeach$FUNC, scope);
     }
-    static GtkTextTagTableForeach ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _tag, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTextTagTableForeach ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$2020.GtkTextTagTableForeach$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_tag, (java.lang.foreign.Addressable)_data);
+                constants$1823.GtkTextTagTableForeach_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,61 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1188 {
+final class constants$1188 {
 
-    static final FunctionDescriptor cairo_surface_observer_add_paint_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1188() {}
+    static final FunctionDescriptor gdk_visual_get_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_depth$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_depth",
+        constants$1188.gdk_visual_get_depth$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_byte_order$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_byte_order",
+        constants$1188.gdk_visual_get_byte_order$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_colormap_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_colormap_size$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_colormap_size",
+        constants$1188.gdk_visual_get_colormap_size$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_bits_per_rgb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_bits_per_rgb$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_bits_per_rgb",
+        constants$1188.gdk_visual_get_bits_per_rgb$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_red_pixel_details$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_observer_add_paint_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_paint_callback",
-        constants$1188.cairo_surface_observer_add_paint_callback$FUNC
+    static final MethodHandle gdk_visual_get_red_pixel_details$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_red_pixel_details",
+        constants$1188.gdk_visual_get_red_pixel_details$FUNC
     );
-    static final FunctionDescriptor cairo_surface_observer_add_mask_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_visual_get_green_pixel_details$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_mask_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_mask_callback",
-        constants$1188.cairo_surface_observer_add_mask_callback$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_add_fill_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_observer_add_fill_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_fill_callback",
-        constants$1188.cairo_surface_observer_add_fill_callback$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_add_stroke_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_stroke_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_stroke_callback",
-        constants$1188.cairo_surface_observer_add_stroke_callback$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_add_glyphs_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_glyphs_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_glyphs_callback",
-        constants$1188.cairo_surface_observer_add_glyphs_callback$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_add_flush_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_flush_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_flush_callback",
-        constants$1188.cairo_surface_observer_add_flush_callback$FUNC
+    static final MethodHandle gdk_visual_get_green_pixel_details$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_green_pixel_details",
+        constants$1188.gdk_visual_get_green_pixel_details$FUNC
     );
 }
 

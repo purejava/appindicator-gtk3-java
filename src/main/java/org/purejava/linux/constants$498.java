@@ -7,52 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$498 {
+final class constants$498 {
 
-    static final FunctionDescriptor g_type_module_register_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$498() {}
+    static final FunctionDescriptor g_async_result_legacy_propagate_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_result_legacy_propagate_error$MH = RuntimeHelper.downcallHandle(
+        "g_async_result_legacy_propagate_error",
+        constants$498.g_async_result_legacy_propagate_error$FUNC
+    );
+    static final FunctionDescriptor g_async_result_is_tagged$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_result_is_tagged$MH = RuntimeHelper.downcallHandle(
+        "g_async_result_is_tagged",
+        constants$498.g_async_result_is_tagged$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_get_type",
+        constants$498.g_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_read$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read",
+        constants$498.g_input_stream_read$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_module_register_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_type",
-        constants$498.g_type_module_register_type$FUNC
+    static final MethodHandle g_input_stream_read_all$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all",
+        constants$498.g_input_stream_read_all$FUNC
     );
-    static final FunctionDescriptor g_type_module_add_interface$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_input_stream_read_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_add_interface$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_add_interface",
-        constants$498.g_type_module_add_interface$FUNC
-    );
-    static final FunctionDescriptor g_type_module_register_enum$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_module_register_enum$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_enum",
-        constants$498.g_type_module_register_enum$FUNC
-    );
-    static final FunctionDescriptor g_type_module_register_flags$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_register_flags$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_flags",
-        constants$498.g_type_module_register_flags$FUNC
-    );
-    static final FunctionDescriptor GTypePluginUse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTypePluginUse$MH = RuntimeHelper.downcallHandle(
-        constants$498.GTypePluginUse$FUNC
+    static final MethodHandle g_input_stream_read_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_bytes",
+        constants$498.g_input_stream_read_bytes$FUNC
     );
 }
 

@@ -7,54 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1481 {
+final class constants$1481 {
 
-    static final FunctionDescriptor gtk_window_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1481() {}
+    static final FunctionDescriptor gtk_tree_view_get_level_indentation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_title",
-        constants$1481.gtk_window_set_title$FUNC
+    static final MethodHandle gtk_tree_view_get_level_indentation$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_level_indentation",
+        constants$1481.gtk_tree_view_get_level_indentation$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_title",
-        constants$1481.gtk_window_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_wmclass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_tooltip_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_wmclass$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_wmclass",
-        constants$1481.gtk_window_set_wmclass$FUNC
+    static final MethodHandle gtk_tree_view_set_tooltip_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_tooltip_row",
+        constants$1481.gtk_tree_view_set_tooltip_row$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_role$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_tooltip_cell$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_role$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_role",
-        constants$1481.gtk_window_set_role$FUNC
+    static final MethodHandle gtk_tree_view_set_tooltip_cell$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_tooltip_cell",
+        constants$1481.gtk_tree_view_set_tooltip_cell$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_startup_id$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_tooltip_context$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_startup_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_startup_id",
-        constants$1481.gtk_window_set_startup_id$FUNC
+    static final MethodHandle gtk_tree_view_get_tooltip_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_tooltip_context",
+        constants$1481.gtk_tree_view_get_tooltip_context$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_role$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_set_tooltip_column$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_tooltip_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_tooltip_column",
+        constants$1481.gtk_tree_view_set_tooltip_column$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_tooltip_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_role$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_role",
-        constants$1481.gtk_window_get_role$FUNC
+    static final MethodHandle gtk_tree_view_get_tooltip_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_tooltip_column",
+        constants$1481.gtk_tree_view_get_tooltip_column$FUNC
     );
 }
 

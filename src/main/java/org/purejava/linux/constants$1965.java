@@ -7,55 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1965 {
+final class constants$1965 {
 
-    static final FunctionDescriptor gtk_range_get_upper_stepper_sensitivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1965() {}
+    static final FunctionDescriptor gtk_widget_modify_style$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_upper_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_upper_stepper_sensitivity",
-        constants$1965.gtk_range_get_upper_stepper_sensitivity$FUNC
+    static final MethodHandle gtk_widget_modify_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_style",
+        constants$1965.gtk_widget_modify_style$FUNC
     );
-    static final FunctionDescriptor gtk_range_set_increments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_increments$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_increments",
-        constants$1965.gtk_range_set_increments$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_range",
-        constants$1965.gtk_range_set_range$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_value",
-        constants$1965.gtk_range_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_modifier_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_value",
-        constants$1965.gtk_range_get_value$FUNC
+    static final MethodHandle gtk_widget_get_modifier_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_modifier_style",
+        constants$1965.gtk_widget_get_modifier_style$FUNC
     );
-    static final FunctionDescriptor gtk_range_set_show_fill_level$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_modify_fg$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_set_show_fill_level$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_show_fill_level",
-        constants$1965.gtk_range_set_show_fill_level$FUNC
+    static final MethodHandle gtk_widget_modify_fg$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_fg",
+        constants$1965.gtk_widget_modify_fg$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_modify_bg$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_modify_bg$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_bg",
+        constants$1965.gtk_widget_modify_bg$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_modify_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_modify_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_text",
+        constants$1965.gtk_widget_modify_text$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_modify_base$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_modify_base$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_base",
+        constants$1965.gtk_widget_modify_base$FUNC
     );
 }
 

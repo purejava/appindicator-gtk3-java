@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GParamSpecInt {
+ *     GParamSpec parent_instance;
+ *     gint minimum;
+ *     gint maximum;
+ *     gint default_value;
+ * };
+ * }
+ */
 public class _GParamSpecInt {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -40,10 +50,22 @@ public class _GParamSpecInt {
     public static VarHandle minimum$VH() {
         return _GParamSpecInt.minimum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint minimum;
+     * }
+     */
     public static int minimum$get(MemorySegment seg) {
         return (int)_GParamSpecInt.minimum$VH.get(seg);
     }
-    public static void minimum$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint minimum;
+     * }
+     */
+    public static void minimum$set(MemorySegment seg, int x) {
         _GParamSpecInt.minimum$VH.set(seg, x);
     }
     public static int minimum$get(MemorySegment seg, long index) {
@@ -56,10 +78,22 @@ public class _GParamSpecInt {
     public static VarHandle maximum$VH() {
         return _GParamSpecInt.maximum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint maximum;
+     * }
+     */
     public static int maximum$get(MemorySegment seg) {
         return (int)_GParamSpecInt.maximum$VH.get(seg);
     }
-    public static void maximum$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint maximum;
+     * }
+     */
+    public static void maximum$set(MemorySegment seg, int x) {
         _GParamSpecInt.maximum$VH.set(seg, x);
     }
     public static int maximum$get(MemorySegment seg, long index) {
@@ -72,10 +106,22 @@ public class _GParamSpecInt {
     public static VarHandle default_value$VH() {
         return _GParamSpecInt.default_value$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint default_value;
+     * }
+     */
     public static int default_value$get(MemorySegment seg) {
         return (int)_GParamSpecInt.default_value$VH.get(seg);
     }
-    public static void default_value$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint default_value;
+     * }
+     */
+    public static void default_value$set(MemorySegment seg, int x) {
         _GParamSpecInt.default_value$VH.set(seg, x);
     }
     public static int default_value$get(MemorySegment seg, long index) {
@@ -86,10 +132,10 @@ public class _GParamSpecInt {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

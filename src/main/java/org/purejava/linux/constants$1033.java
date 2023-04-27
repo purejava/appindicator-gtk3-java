@@ -7,51 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1033 {
+final class constants$1033 {
 
-    static final FunctionDescriptor hb_buffer_get_replacement_codepoint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_replacement_codepoint$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_replacement_codepoint",
-        constants$1033.hb_buffer_get_replacement_codepoint$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_invisible_glyph$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1033() {}
+    static final FunctionDescriptor cairo_surface_write_to_png_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_invisible_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_invisible_glyph",
-        constants$1033.hb_buffer_set_invisible_glyph$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_invisible_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_invisible_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_invisible_glyph",
-        constants$1033.hb_buffer_get_invisible_glyph$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reset$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reset",
-        constants$1033.hb_buffer_reset$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_clear_contents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_clear_contents$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_clear_contents",
-        constants$1033.hb_buffer_clear_contents$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_pre_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_pre_allocate$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_pre_allocate",
-        constants$1033.hb_buffer_pre_allocate$FUNC
+    static final MethodHandle cairo_surface_write_to_png_stream$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_write_to_png_stream",
+        constants$1033.cairo_surface_write_to_png_stream$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_user_data",
+        constants$1033.cairo_surface_get_user_data$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_user_data",
+        constants$1033.cairo_surface_set_user_data$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_mime_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_get_mime_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_mime_data",
+        constants$1033.cairo_surface_get_mime_data$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_set_mime_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_set_mime_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_mime_data",
+        constants$1033.cairo_surface_set_mime_data$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_supports_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_supports_mime_type$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_supports_mime_type",
+        constants$1033.cairo_surface_supports_mime_type$FUNC
     );
 }
 

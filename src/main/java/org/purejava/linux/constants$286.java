@@ -7,56 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$286 {
+final class constants$286 {
 
-    static final FunctionDescriptor g_sequence_foreach_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$286() {}
+    static final FunctionDescriptor g_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_foreach_range$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_foreach_range",
-        constants$286.g_sequence_foreach_range$FUNC
+    static final MethodHandle g_ref_count_inc$MH = RuntimeHelper.downcallHandle(
+        "g_ref_count_inc",
+        constants$286.g_ref_count_inc$FUNC
     );
-    static final FunctionDescriptor g_sequence_sort$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ref_count_dec$MH = RuntimeHelper.downcallHandle(
+        "g_ref_count_dec",
+        constants$286.g_ref_count_dec$FUNC
+    );
+    static final FunctionDescriptor g_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_ref_count_compare$MH = RuntimeHelper.downcallHandle(
+        "g_ref_count_compare",
+        constants$286.g_ref_count_compare$FUNC
+    );
+    static final FunctionDescriptor g_atomic_ref_count_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_sort$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_sort",
-        constants$286.g_sequence_sort$FUNC
+    static final MethodHandle g_atomic_ref_count_init$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_init",
+        constants$286.g_atomic_ref_count_init$FUNC
     );
-    static final FunctionDescriptor g_sequence_sort_iter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_atomic_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_sort_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_sort_iter",
-        constants$286.g_sequence_sort_iter$FUNC
+    static final MethodHandle g_atomic_ref_count_inc$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_inc",
+        constants$286.g_atomic_ref_count_inc$FUNC
     );
-    static final FunctionDescriptor g_sequence_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_atomic_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_is_empty$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_is_empty",
-        constants$286.g_sequence_is_empty$FUNC
-    );
-    static final FunctionDescriptor g_sequence_get_begin_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_get_begin_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_begin_iter",
-        constants$286.g_sequence_get_begin_iter$FUNC
-    );
-    static final FunctionDescriptor g_sequence_get_end_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_get_end_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_end_iter",
-        constants$286.g_sequence_get_end_iter$FUNC
+    static final MethodHandle g_atomic_ref_count_dec$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_dec",
+        constants$286.g_atomic_ref_count_dec$FUNC
     );
 }
 

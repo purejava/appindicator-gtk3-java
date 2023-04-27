@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1563 {
+final class constants$1563 {
 
-    static final FunctionDescriptor gtk_cell_editable_editing_done$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1563() {}
+    static final FunctionDescriptor gtk_event_controller_scroll_set_flags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_event_controller_scroll_set_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_scroll_set_flags",
+        constants$1563.gtk_event_controller_scroll_set_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_scroll_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_editable_editing_done$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_editing_done",
-        constants$1563.gtk_cell_editable_editing_done$FUNC
+    static final MethodHandle gtk_event_controller_scroll_get_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_scroll_get_flags",
+        constants$1563.gtk_event_controller_scroll_get_flags$FUNC
     );
-    static final FunctionDescriptor gtk_cell_editable_remove_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_expander_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_expander_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_type",
+        constants$1563.gtk_expander_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_editable_remove_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_remove_widget",
-        constants$1563.gtk_cell_editable_remove_widget$FUNC
+    static final MethodHandle gtk_expander_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_new",
+        constants$1563.gtk_expander_new$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_type",
-        constants$1563.gtk_cell_renderer_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_expander_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_get_request_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_request_mode",
-        constants$1563.gtk_cell_renderer_get_request_mode$FUNC
+    static final MethodHandle gtk_expander_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_new_with_mnemonic",
+        constants$1563.gtk_expander_new_with_mnemonic$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_expander_set_expanded$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_width",
-        constants$1563.gtk_cell_renderer_get_preferred_width$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_height_for_width",
-        constants$1563.gtk_cell_renderer_get_preferred_height_for_width$FUNC
+    static final MethodHandle gtk_expander_set_expanded$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_expanded",
+        constants$1563.gtk_expander_set_expanded$FUNC
     );
 }
 

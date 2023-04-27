@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$921 {
+final class constants$921 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GFilenameCompleter$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$921() {}
+    static final FunctionDescriptor pango_attribute_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GFilenameCompleter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GFilenameCompleter",
-        constants$921.glib_slistautoptr_cleanup_GFilenameCompleter$FUNC
+    static final MethodHandle pango_attribute_destroy$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_destroy",
+        constants$921.pango_attribute_destroy$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GFilenameCompleter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GFilenameCompleter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GFilenameCompleter",
-        constants$921.glib_queueautoptr_cleanup_GFilenameCompleter$FUNC
+    static final MethodHandle pango_attribute_equal$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_equal",
+        constants$921.pango_attribute_equal$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GFileOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_language_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GFileOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GFileOutputStream",
-        constants$921.glib_autoptr_clear_GFileOutputStream$FUNC
+    static final MethodHandle pango_attr_language_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_language_new",
+        constants$921.pango_attr_language_new$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GFileOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_family_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GFileOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GFileOutputStream",
-        constants$921.glib_autoptr_cleanup_GFileOutputStream$FUNC
+    static final MethodHandle pango_attr_family_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_family_new",
+        constants$921.pango_attr_family_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GFileOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_foreground_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GFileOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GFileOutputStream",
-        constants$921.glib_listautoptr_cleanup_GFileOutputStream$FUNC
+    static final MethodHandle pango_attr_foreground_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_foreground_new",
+        constants$921.pango_attr_foreground_new$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GFileOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_background_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GFileOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GFileOutputStream",
-        constants$921.glib_slistautoptr_cleanup_GFileOutputStream$FUNC
+    static final MethodHandle pango_attr_background_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_background_new",
+        constants$921.pango_attr_background_new$FUNC
     );
 }
 

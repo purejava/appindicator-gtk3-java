@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkColor extends _GdkColor {
+/**
+ * {@snippet :
+ * typedef struct _GdkColor GdkColor;
+ * }
+ */
+public final class GdkColor extends _GdkColor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkColor() {}
 }
 
 

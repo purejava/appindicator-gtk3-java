@@ -7,61 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$774 {
+final class constants$774 {
 
-    static final FunctionDescriptor g_permission_acquire_async$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$774() {}
+    static final FunctionDescriptor g_socket_client_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_client_connect_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_finish",
+        constants$774.g_socket_client_connect_finish$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_connect_to_host_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_client_connect_to_host_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host_async",
+        constants$774.g_socket_client_connect_to_host_async$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_connect_to_host_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_client_connect_to_host_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host_finish",
+        constants$774.g_socket_client_connect_to_host_finish$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_connect_to_service_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_permission_acquire_async$MH = RuntimeHelper.downcallHandle(
-        "g_permission_acquire_async",
-        constants$774.g_permission_acquire_async$FUNC
+    static final MethodHandle g_socket_client_connect_to_service_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service_async",
+        constants$774.g_socket_client_connect_to_service_async$FUNC
     );
-    static final FunctionDescriptor g_permission_acquire_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_client_connect_to_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_permission_acquire_finish$MH = RuntimeHelper.downcallHandle(
-        "g_permission_acquire_finish",
-        constants$774.g_permission_acquire_finish$FUNC
+    static final MethodHandle g_socket_client_connect_to_service_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service_finish",
+        constants$774.g_socket_client_connect_to_service_finish$FUNC
     );
-    static final FunctionDescriptor g_permission_release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_client_connect_to_uri_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_permission_release$MH = RuntimeHelper.downcallHandle(
-        "g_permission_release",
-        constants$774.g_permission_release$FUNC
-    );
-    static final FunctionDescriptor g_permission_release_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_release_async$MH = RuntimeHelper.downcallHandle(
-        "g_permission_release_async",
-        constants$774.g_permission_release_async$FUNC
-    );
-    static final FunctionDescriptor g_permission_release_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_release_finish$MH = RuntimeHelper.downcallHandle(
-        "g_permission_release_finish",
-        constants$774.g_permission_release_finish$FUNC
-    );
-    static final FunctionDescriptor g_permission_get_allowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_get_allowed$MH = RuntimeHelper.downcallHandle(
-        "g_permission_get_allowed",
-        constants$774.g_permission_get_allowed$FUNC
+    static final MethodHandle g_socket_client_connect_to_uri_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri_async",
+        constants$774.g_socket_client_connect_to_uri_async$FUNC
     );
 }
 

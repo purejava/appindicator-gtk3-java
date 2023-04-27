@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$747 {
+final class constants$747 {
 
-    static final FunctionDescriptor g_memory_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$747() {}
+    static final FunctionDescriptor g_settings_set_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_settings_set_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_uint64",
+        constants$747.g_settings_set_uint64$FUNC
+    );
+    static final FunctionDescriptor g_settings_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_memory_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_new",
-        constants$747.g_memory_output_stream_new$FUNC
+    static final MethodHandle g_settings_get_string$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_string",
+        constants$747.g_settings_get_string$FUNC
     );
-    static final FunctionDescriptor g_memory_output_stream_new_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_memory_output_stream_new_resizable$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_new_resizable",
-        constants$747.g_memory_output_stream_new_resizable$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_settings_set_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_memory_output_stream_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_data",
-        constants$747.g_memory_output_stream_get_data$FUNC
+    static final MethodHandle g_settings_set_string$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_string",
+        constants$747.g_settings_set_string$FUNC
     );
-    static final FunctionDescriptor g_memory_output_stream_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_settings_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_memory_output_stream_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_size",
-        constants$747.g_memory_output_stream_get_size$FUNC
+    static final MethodHandle g_settings_get_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_boolean",
+        constants$747.g_settings_get_boolean$FUNC
     );
-    static final FunctionDescriptor g_memory_output_stream_get_data_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_settings_set_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_settings_set_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_boolean",
+        constants$747.g_settings_set_boolean$FUNC
+    );
+    static final FunctionDescriptor g_settings_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_memory_output_stream_get_data_size$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_data_size",
-        constants$747.g_memory_output_stream_get_data_size$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_steal_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_steal_data$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_steal_data",
-        constants$747.g_memory_output_stream_steal_data$FUNC
+    static final MethodHandle g_settings_get_double$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_double",
+        constants$747.g_settings_get_double$FUNC
     );
 }
 

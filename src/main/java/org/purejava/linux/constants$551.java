@@ -7,72 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$551 {
+final class constants$551 {
 
-    static final FunctionDescriptor g_output_stream_writev_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$551() {}
+    static final FunctionDescriptor g_dbus_connection_get_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_writev_all$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev_all",
-        constants$551.g_output_stream_writev_all$FUNC
+    static final MethodHandle g_dbus_connection_get_stream$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_stream",
+        constants$551.g_dbus_connection_get_stream$FUNC
     );
-    static final FunctionDescriptor g_output_stream_printf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_get_guid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_output_stream_printf",
-        constants$551.g_output_stream_printf$FUNC
+    static final MethodHandle g_dbus_connection_get_guid$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_guid",
+        constants$551.g_dbus_connection_get_guid$FUNC
     );
-    static final FunctionDescriptor g_output_stream_vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_get_unique_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_vprintf",
-        constants$551.g_output_stream_vprintf$FUNC
+    static final MethodHandle g_dbus_connection_get_unique_name$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_unique_name",
+        constants$551.g_dbus_connection_get_unique_name$FUNC
     );
-    static final FunctionDescriptor g_output_stream_write_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_get_peer_credentials$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_write_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_bytes",
-        constants$551.g_output_stream_write_bytes$FUNC
+    static final MethodHandle g_dbus_connection_get_peer_credentials$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_peer_credentials",
+        constants$551.g_dbus_connection_get_peer_credentials$FUNC
     );
-    static final FunctionDescriptor g_output_stream_splice$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_get_last_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_splice$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice",
-        constants$551.g_output_stream_splice$FUNC
+    static final MethodHandle g_dbus_connection_get_last_serial$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_last_serial",
+        constants$551.g_dbus_connection_get_last_serial$FUNC
     );
-    static final FunctionDescriptor g_output_stream_flush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_get_exit_on_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_output_stream_flush$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_flush",
-        constants$551.g_output_stream_flush$FUNC
+    static final MethodHandle g_dbus_connection_get_exit_on_close$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_exit_on_close",
+        constants$551.g_dbus_connection_get_exit_on_close$FUNC
     );
 }
 

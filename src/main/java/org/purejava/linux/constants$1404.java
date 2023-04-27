@@ -7,44 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1404 {
+final class constants$1404 {
 
-    static final FunctionDescriptor atk_object_factory_create_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1404() {}
+    static final FunctionDescriptor gtk_text_iter_ends_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_factory_create_accessible$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_create_accessible",
-        constants$1404.atk_object_factory_create_accessible$FUNC
+    static final MethodHandle gtk_text_iter_ends_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_ends_tag",
+        constants$1404.gtk_text_iter_ends_tag$FUNC
     );
-    static final FunctionDescriptor atk_object_factory_invalidate$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_iter_toggles_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_factory_invalidate$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_invalidate",
-        constants$1404.atk_object_factory_invalidate$FUNC
+    static final MethodHandle gtk_text_iter_toggles_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_toggles_tag",
+        constants$1404.gtk_text_iter_toggles_tag$FUNC
     );
-    static final FunctionDescriptor atk_object_factory_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_has_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_factory_get_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_get_accessible_type",
-        constants$1404.atk_object_factory_get_accessible_type$FUNC
+    static final MethodHandle gtk_text_iter_has_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_has_tag",
+        constants$1404.gtk_text_iter_has_tag$FUNC
     );
-    static final FunctionDescriptor atk_no_op_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_no_op_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_factory_get_type",
-        constants$1404.atk_no_op_object_factory_get_type$FUNC
+    static final FunctionDescriptor gtk_text_iter_get_tags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_no_op_object_factory_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_no_op_object_factory_new$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_factory_new",
-        constants$1404.atk_no_op_object_factory_new$FUNC
+    static final MethodHandle gtk_text_iter_get_tags$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_tags",
+        constants$1404.gtk_text_iter_get_tags$FUNC
     );
-    static final FunctionDescriptor atk_plug_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_plug_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_get_type",
-        constants$1404.atk_plug_get_type$FUNC
+    static final FunctionDescriptor gtk_text_iter_editable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_editable$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_editable",
+        constants$1404.gtk_text_iter_editable$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_can_insert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_can_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_can_insert",
+        constants$1404.gtk_text_iter_can_insert$FUNC
     );
 }
 

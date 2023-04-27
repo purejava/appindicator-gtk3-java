@@ -7,70 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$828 {
+final class constants$828 {
 
-    static final FunctionDescriptor g_socket_client_connect_to_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$828() {}
+    static final FunctionDescriptor g_volume_eject$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_eject$MH = RuntimeHelper.downcallHandle(
+        "g_volume_eject",
+        constants$828.g_volume_eject$FUNC
+    );
+    static final FunctionDescriptor g_volume_eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_eject_finish$MH = RuntimeHelper.downcallHandle(
+        "g_volume_eject_finish",
+        constants$828.g_volume_eject_finish$FUNC
+    );
+    static final FunctionDescriptor g_volume_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_get_identifier$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_identifier",
+        constants$828.g_volume_get_identifier$FUNC
+    );
+    static final FunctionDescriptor g_volume_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
+        "g_volume_enumerate_identifiers",
+        constants$828.g_volume_enumerate_identifiers$FUNC
+    );
+    static final FunctionDescriptor g_volume_get_activation_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_get_activation_root$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_activation_root",
+        constants$828.g_volume_get_activation_root$FUNC
+    );
+    static final FunctionDescriptor g_volume_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_connect_to_service$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service",
-        constants$828.g_socket_client_connect_to_service$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_uri$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri",
-        constants$828.g_socket_client_connect_to_uri$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_async",
-        constants$828.g_socket_client_connect_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_finish",
-        constants$828.g_socket_client_connect_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_host_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_host_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_host_async",
-        constants$828.g_socket_client_connect_to_host_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_host_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_host_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_host_finish",
-        constants$828.g_socket_client_connect_to_host_finish$FUNC
+    static final MethodHandle g_volume_eject_with_operation$MH = RuntimeHelper.downcallHandle(
+        "g_volume_eject_with_operation",
+        constants$828.g_volume_eject_with_operation$FUNC
     );
 }
 

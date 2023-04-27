@@ -7,51 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$525 {
+final class constants$525 {
 
-    static final FunctionDescriptor g_app_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_type",
-        constants$525.g_app_info_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$525() {}
+    static final FunctionDescriptor nice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_app_info_create_from_commandline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle nice$MH = RuntimeHelper.downcallHandle(
+        "nice",
+        constants$525.nice$FUNC
+    );
+    static final FunctionDescriptor _exit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle _exit$MH = RuntimeHelper.downcallHandle(
+        "_exit",
+        constants$525._exit$FUNC
+    );
+    static final FunctionDescriptor pathconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pathconf$MH = RuntimeHelper.downcallHandle(
+        "pathconf",
+        constants$525.pathconf$FUNC
+    );
+    static final FunctionDescriptor fpathconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_create_from_commandline$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_create_from_commandline",
-        constants$525.g_app_info_create_from_commandline$FUNC
+    static final MethodHandle fpathconf$MH = RuntimeHelper.downcallHandle(
+        "fpathconf",
+        constants$525.fpathconf$FUNC
     );
-    static final FunctionDescriptor g_app_info_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor sysconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_dup$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_dup",
-        constants$525.g_app_info_dup$FUNC
+    static final MethodHandle sysconf$MH = RuntimeHelper.downcallHandle(
+        "sysconf",
+        constants$525.sysconf$FUNC
     );
-    static final FunctionDescriptor g_app_info_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor confstr$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_app_info_equal$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_equal",
-        constants$525.g_app_info_equal$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_id$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_id",
-        constants$525.g_app_info_get_id$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_name",
-        constants$525.g_app_info_get_name$FUNC
+    static final MethodHandle confstr$MH = RuntimeHelper.downcallHandle(
+        "confstr",
+        constants$525.confstr$FUNC
     );
 }
 

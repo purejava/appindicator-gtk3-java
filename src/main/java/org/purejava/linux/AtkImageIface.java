@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkImageIface extends _AtkImageIface {
+/**
+ * {@snippet :
+ * typedef struct _AtkImageIface AtkImageIface;
+ * }
+ */
+public final class AtkImageIface extends _AtkImageIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkImageIface() {}
 }
 
 

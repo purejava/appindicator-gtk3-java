@@ -7,38 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$338 {
+final class constants$338 {
 
-    static final  OfInt glib_minor_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle glib_minor_version$VH = constants$338.glib_minor_version$LAYOUT.varHandle();
-    static final MemorySegment glib_minor_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_minor_version", constants$338.glib_minor_version$LAYOUT);
-    static final  OfInt glib_micro_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle glib_micro_version$VH = constants$338.glib_micro_version$LAYOUT.varHandle();
-    static final MemorySegment glib_micro_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_micro_version", constants$338.glib_micro_version$LAYOUT);
-    static final  OfInt glib_interface_age$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle glib_interface_age$VH = constants$338.glib_interface_age$LAYOUT.varHandle();
-    static final MemorySegment glib_interface_age$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_interface_age", constants$338.glib_interface_age$LAYOUT);
-    static final  OfInt glib_binary_age$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle glib_binary_age$VH = constants$338.glib_binary_age$LAYOUT.varHandle();
-    static final MemorySegment glib_binary_age$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_binary_age", constants$338.glib_binary_age$LAYOUT);
-    static final FunctionDescriptor glib_check_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$338() {}
+    static final FunctionDescriptor g_uri_get_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_check_version$MH = RuntimeHelper.downcallHandle(
-        "glib_check_version",
-        constants$338.glib_check_version$FUNC
+    static final MethodHandle g_uri_get_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_scheme",
+        constants$338.g_uri_get_scheme$FUNC
     );
-    static final FunctionDescriptor g_mem_chunk_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_uri_get_userinfo$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mem_chunk_new$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_new",
-        constants$338.g_mem_chunk_new$FUNC
+    static final MethodHandle g_uri_get_userinfo$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_userinfo",
+        constants$338.g_uri_get_userinfo$FUNC
+    );
+    static final FunctionDescriptor g_uri_get_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_user$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_user",
+        constants$338.g_uri_get_user$FUNC
+    );
+    static final FunctionDescriptor g_uri_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_password$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_password",
+        constants$338.g_uri_get_password$FUNC
+    );
+    static final FunctionDescriptor g_uri_get_auth_params$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_auth_params$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_auth_params",
+        constants$338.g_uri_get_auth_params$FUNC
+    );
+    static final FunctionDescriptor g_uri_get_host$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_host$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_host",
+        constants$338.g_uri_get_host$FUNC
     );
 }
 

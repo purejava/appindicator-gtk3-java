@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1724 {
+final class constants$1724 {
 
-    static final FunctionDescriptor gtk_menu_item_select$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1724() {}
+    static final FunctionDescriptor gtk_page_setup_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_page_setup_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_new",
+        constants$1724.gtk_page_setup_new$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_select$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_select",
-        constants$1724.gtk_menu_item_select$FUNC
+    static final MethodHandle gtk_page_setup_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_copy",
+        constants$1724.gtk_page_setup_copy$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_deselect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_page_setup_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_deselect$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_deselect",
-        constants$1724.gtk_menu_item_deselect$FUNC
+    static final MethodHandle gtk_page_setup_get_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_orientation",
+        constants$1724.gtk_page_setup_get_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_activate",
-        constants$1724.gtk_menu_item_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_toggle_size_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_toggle_size_request$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_toggle_size_request",
-        constants$1724.gtk_menu_item_toggle_size_request$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_toggle_size_allocate$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_page_setup_set_orientation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_toggle_size_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_toggle_size_allocate",
-        constants$1724.gtk_menu_item_toggle_size_allocate$FUNC
+    static final MethodHandle gtk_page_setup_set_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_orientation",
+        constants$1724.gtk_page_setup_set_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_set_right_justified$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_page_setup_get_paper_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_get_paper_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_paper_size",
+        constants$1724.gtk_page_setup_get_paper_size$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_set_paper_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_set_right_justified$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_right_justified",
-        constants$1724.gtk_menu_item_set_right_justified$FUNC
+    static final MethodHandle gtk_page_setup_set_paper_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_paper_size",
+        constants$1724.gtk_page_setup_set_paper_size$FUNC
     );
 }
 

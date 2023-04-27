@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkToggleAction extends _GtkToggleAction {
+/**
+ * {@snippet :
+ * typedef struct _GtkToggleAction GtkToggleAction;
+ * }
+ */
+public final class GtkToggleAction extends _GtkToggleAction {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkToggleAction() {}
 }
 
 

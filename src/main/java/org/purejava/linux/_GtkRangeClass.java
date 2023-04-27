@@ -7,9 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRangeClass {
+ *     GtkWidgetClass parent_class;
+ *     gchar* slider_detail;
+ *     gchar* stepper_detail;
+ *     void (*value_changed)(GtkRange*);
+ *     void (*adjust_bounds)(GtkRange*,gdouble);
+ *     void (*move_slider)(GtkRange*,GtkScrollType);
+ *     void (*get_range_border)(GtkRange*,GtkBorder*);
+ *     gboolean (*change_value)(GtkRange*,GtkScrollType,gdouble);
+ *     void (*get_range_size_request)(GtkRange*,GtkOrientation,gint*,gint*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ * };
+ * }
+ */
 public class _GtkRangeClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +43,10 @@ public class _GtkRangeClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent_class"),
             Constants$root.C_INT$LAYOUT.withName("activate_signal"),
             MemoryLayout.paddingLayout(32),
@@ -137,51 +158,87 @@ public class _GtkRangeClass {
     public static VarHandle slider_detail$VH() {
         return _GtkRangeClass.slider_detail$VH;
     }
-    public static MemoryAddress slider_detail$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.slider_detail$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* slider_detail;
+     * }
+     */
+    public static MemorySegment slider_detail$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.slider_detail$VH.get(seg);
     }
-    public static void slider_detail$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* slider_detail;
+     * }
+     */
+    public static void slider_detail$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.slider_detail$VH.set(seg, x);
     }
-    public static MemoryAddress slider_detail$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.slider_detail$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment slider_detail$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.slider_detail$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void slider_detail$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void slider_detail$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.slider_detail$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle stepper_detail$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("stepper_detail"));
     public static VarHandle stepper_detail$VH() {
         return _GtkRangeClass.stepper_detail$VH;
     }
-    public static MemoryAddress stepper_detail$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.stepper_detail$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* stepper_detail;
+     * }
+     */
+    public static MemorySegment stepper_detail$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.stepper_detail$VH.get(seg);
     }
-    public static void stepper_detail$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* stepper_detail;
+     * }
+     */
+    public static void stepper_detail$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.stepper_detail$VH.set(seg, x);
     }
-    public static MemoryAddress stepper_detail$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.stepper_detail$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stepper_detail$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.stepper_detail$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stepper_detail$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stepper_detail$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.stepper_detail$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final FunctionDescriptor value_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.value_changed$FUNC
+    static final FunctionDescriptor value_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_changed_UP$MH = RuntimeHelper.upcallHandle(value_changed.class, "apply", _GtkRangeClass.value_changed_UP$FUNC);
+    static final FunctionDescriptor value_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.value_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*value_changed)(GtkRange*);
+     * }
+     */
     public interface value_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(value_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_changed.class, fi, _GtkRangeClass.value_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(value_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.value_changed_UP$MH, fi, _GtkRangeClass.value_changed$FUNC, scope);
         }
-        static value_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static value_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkRangeClass.value_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkRangeClass.value_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -193,39 +250,65 @@ public class _GtkRangeClass {
     public static VarHandle value_changed$VH() {
         return _GtkRangeClass.value_changed$VH;
     }
-    public static MemoryAddress value_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.value_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*value_changed)(GtkRange*);
+     * }
+     */
+    public static MemorySegment value_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.value_changed$VH.get(seg);
     }
-    public static void value_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*value_changed)(GtkRange*);
+     * }
+     */
+    public static void value_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.value_changed$VH.set(seg, x);
     }
-    public static MemoryAddress value_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.value_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.value_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.value_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_changed value_changed (MemorySegment segment, MemorySession session) {
-        return value_changed.ofAddress(value_changed$get(segment), session);
+    public static value_changed value_changed(MemorySegment segment, SegmentScope scope) {
+        return value_changed.ofAddress(value_changed$get(segment), scope);
     }
     static final FunctionDescriptor adjust_bounds$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle adjust_bounds$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.adjust_bounds$FUNC
+    static final FunctionDescriptor adjust_bounds_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
+    static final MethodHandle adjust_bounds_UP$MH = RuntimeHelper.upcallHandle(adjust_bounds.class, "apply", _GtkRangeClass.adjust_bounds_UP$FUNC);
+    static final FunctionDescriptor adjust_bounds_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle adjust_bounds_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.adjust_bounds_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*adjust_bounds)(GtkRange*,gdouble);
+     * }
+     */
     public interface adjust_bounds {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, double _x1);
-        static MemorySegment allocate(adjust_bounds fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(adjust_bounds.class, fi, _GtkRangeClass.adjust_bounds$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, double _x1);
+        static MemorySegment allocate(adjust_bounds fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.adjust_bounds_UP$MH, fi, _GtkRangeClass.adjust_bounds$FUNC, scope);
         }
-        static adjust_bounds ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, double __x1) -> {
+        static adjust_bounds ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, double __x1) -> {
                 try {
-                    _GtkRangeClass.adjust_bounds$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkRangeClass.adjust_bounds_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -237,39 +320,65 @@ public class _GtkRangeClass {
     public static VarHandle adjust_bounds$VH() {
         return _GtkRangeClass.adjust_bounds$VH;
     }
-    public static MemoryAddress adjust_bounds$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.adjust_bounds$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*adjust_bounds)(GtkRange*,gdouble);
+     * }
+     */
+    public static MemorySegment adjust_bounds$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.adjust_bounds$VH.get(seg);
     }
-    public static void adjust_bounds$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*adjust_bounds)(GtkRange*,gdouble);
+     * }
+     */
+    public static void adjust_bounds$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.adjust_bounds$VH.set(seg, x);
     }
-    public static MemoryAddress adjust_bounds$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.adjust_bounds$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment adjust_bounds$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.adjust_bounds$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void adjust_bounds$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void adjust_bounds$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.adjust_bounds$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adjust_bounds adjust_bounds (MemorySegment segment, MemorySession session) {
-        return adjust_bounds.ofAddress(adjust_bounds$get(segment), session);
+    public static adjust_bounds adjust_bounds(MemorySegment segment, SegmentScope scope) {
+        return adjust_bounds.ofAddress(adjust_bounds$get(segment), scope);
     }
     static final FunctionDescriptor move_slider$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle move_slider$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.move_slider$FUNC
+    static final FunctionDescriptor move_slider_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle move_slider_UP$MH = RuntimeHelper.upcallHandle(move_slider.class, "apply", _GtkRangeClass.move_slider_UP$FUNC);
+    static final FunctionDescriptor move_slider_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle move_slider_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.move_slider_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*move_slider)(GtkRange*,GtkScrollType);
+     * }
+     */
     public interface move_slider {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(move_slider fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(move_slider.class, fi, _GtkRangeClass.move_slider$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(move_slider fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.move_slider_UP$MH, fi, _GtkRangeClass.move_slider$FUNC, scope);
         }
-        static move_slider ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static move_slider ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkRangeClass.move_slider$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkRangeClass.move_slider_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -281,39 +390,65 @@ public class _GtkRangeClass {
     public static VarHandle move_slider$VH() {
         return _GtkRangeClass.move_slider$VH;
     }
-    public static MemoryAddress move_slider$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.move_slider$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*move_slider)(GtkRange*,GtkScrollType);
+     * }
+     */
+    public static MemorySegment move_slider$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.move_slider$VH.get(seg);
     }
-    public static void move_slider$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*move_slider)(GtkRange*,GtkScrollType);
+     * }
+     */
+    public static void move_slider$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.move_slider$VH.set(seg, x);
     }
-    public static MemoryAddress move_slider$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.move_slider$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment move_slider$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.move_slider$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void move_slider$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void move_slider$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.move_slider$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_slider move_slider (MemorySegment segment, MemorySession session) {
-        return move_slider.ofAddress(move_slider$get(segment), session);
+    public static move_slider move_slider(MemorySegment segment, SegmentScope scope) {
+        return move_slider.ofAddress(move_slider$get(segment), scope);
     }
     static final FunctionDescriptor get_range_border$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_range_border$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.get_range_border$FUNC
+    static final FunctionDescriptor get_range_border_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_range_border_UP$MH = RuntimeHelper.upcallHandle(get_range_border.class, "apply", _GtkRangeClass.get_range_border_UP$FUNC);
+    static final FunctionDescriptor get_range_border_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_range_border_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.get_range_border_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*get_range_border)(GtkRange*,GtkBorder*);
+     * }
+     */
     public interface get_range_border {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_range_border fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_range_border.class, fi, _GtkRangeClass.get_range_border$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(get_range_border fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.get_range_border_UP$MH, fi, _GtkRangeClass.get_range_border$FUNC, scope);
         }
-        static get_range_border ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_range_border ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkRangeClass.get_range_border$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkRangeClass.get_range_border_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -325,40 +460,68 @@ public class _GtkRangeClass {
     public static VarHandle get_range_border$VH() {
         return _GtkRangeClass.get_range_border$VH;
     }
-    public static MemoryAddress get_range_border$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.get_range_border$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*get_range_border)(GtkRange*,GtkBorder*);
+     * }
+     */
+    public static MemorySegment get_range_border$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.get_range_border$VH.get(seg);
     }
-    public static void get_range_border$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*get_range_border)(GtkRange*,GtkBorder*);
+     * }
+     */
+    public static void get_range_border$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.get_range_border$VH.set(seg, x);
     }
-    public static MemoryAddress get_range_border$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.get_range_border$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_range_border$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.get_range_border$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_range_border$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_range_border$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.get_range_border$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_range_border get_range_border (MemorySegment segment, MemorySession session) {
-        return get_range_border.ofAddress(get_range_border$get(segment), session);
+    public static get_range_border get_range_border(MemorySegment segment, SegmentScope scope) {
+        return get_range_border.ofAddress(get_range_border$get(segment), scope);
     }
     static final FunctionDescriptor change_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle change_value$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.change_value$FUNC
+    static final FunctionDescriptor change_value_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
+    static final MethodHandle change_value_UP$MH = RuntimeHelper.upcallHandle(change_value.class, "apply", _GtkRangeClass.change_value_UP$FUNC);
+    static final FunctionDescriptor change_value_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle change_value_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.change_value_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*change_value)(GtkRange*,GtkScrollType,gdouble);
+     * }
+     */
     public interface change_value {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, double _x2);
-        static MemorySegment allocate(change_value fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(change_value.class, fi, _GtkRangeClass.change_value$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, double _x2);
+        static MemorySegment allocate(change_value fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.change_value_UP$MH, fi, _GtkRangeClass.change_value$FUNC, scope);
         }
-        static change_value ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, double __x2) -> {
+        static change_value ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, double __x2) -> {
                 try {
-                    return (int)_GtkRangeClass.change_value$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (int)_GtkRangeClass.change_value_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -370,20 +533,32 @@ public class _GtkRangeClass {
     public static VarHandle change_value$VH() {
         return _GtkRangeClass.change_value$VH;
     }
-    public static MemoryAddress change_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.change_value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*change_value)(GtkRange*,GtkScrollType,gdouble);
+     * }
+     */
+    public static MemorySegment change_value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.change_value$VH.get(seg);
     }
-    public static void change_value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*change_value)(GtkRange*,GtkScrollType,gdouble);
+     * }
+     */
+    public static void change_value$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.change_value$VH.set(seg, x);
     }
-    public static MemoryAddress change_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.change_value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment change_value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.change_value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void change_value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void change_value$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.change_value$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_value change_value (MemorySegment segment, MemorySession session) {
-        return change_value.ofAddress(change_value$get(segment), session);
+    public static change_value change_value(MemorySegment segment, SegmentScope scope) {
+        return change_value.ofAddress(change_value$get(segment), scope);
     }
     static final FunctionDescriptor get_range_size_request$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -391,20 +566,38 @@ public class _GtkRangeClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_range_size_request$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass.get_range_size_request$FUNC
+    static final FunctionDescriptor get_range_size_request_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_range_size_request_UP$MH = RuntimeHelper.upcallHandle(get_range_size_request.class, "apply", _GtkRangeClass.get_range_size_request_UP$FUNC);
+    static final FunctionDescriptor get_range_size_request_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_range_size_request_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass.get_range_size_request_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*get_range_size_request)(GtkRange*,GtkOrientation,gint*,gint*);
+     * }
+     */
     public interface get_range_size_request {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(get_range_size_request fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_range_size_request.class, fi, _GtkRangeClass.get_range_size_request$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(get_range_size_request fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass.get_range_size_request_UP$MH, fi, _GtkRangeClass.get_range_size_request$FUNC, scope);
         }
-        static get_range_size_request ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static get_range_size_request ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkRangeClass.get_range_size_request$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkRangeClass.get_range_size_request_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -416,36 +609,56 @@ public class _GtkRangeClass {
     public static VarHandle get_range_size_request$VH() {
         return _GtkRangeClass.get_range_size_request$VH;
     }
-    public static MemoryAddress get_range_size_request$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.get_range_size_request$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*get_range_size_request)(GtkRange*,GtkOrientation,gint*,gint*);
+     * }
+     */
+    public static MemorySegment get_range_size_request$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.get_range_size_request$VH.get(seg);
     }
-    public static void get_range_size_request$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*get_range_size_request)(GtkRange*,GtkOrientation,gint*,gint*);
+     * }
+     */
+    public static void get_range_size_request$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass.get_range_size_request$VH.set(seg, x);
     }
-    public static MemoryAddress get_range_size_request$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass.get_range_size_request$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_range_size_request$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass.get_range_size_request$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_range_size_request$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_range_size_request$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass.get_range_size_request$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_range_size_request get_range_size_request (MemorySegment segment, MemorySession session) {
-        return get_range_size_request.ofAddress(get_range_size_request$get(segment), session);
+    public static get_range_size_request get_range_size_request(MemorySegment segment, SegmentScope scope) {
+        return get_range_size_request.ofAddress(get_range_size_request$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkRangeClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkRangeClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass._gtk_reserved1_UP$MH, fi, _GtkRangeClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRangeClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkRangeClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -457,36 +670,56 @@ public class _GtkRangeClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkRangeClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkRangeClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkRangeClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass._gtk_reserved2_UP$MH, fi, _GtkRangeClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRangeClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkRangeClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -498,36 +731,56 @@ public class _GtkRangeClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkRangeClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkRangeClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkRangeClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRangeClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkRangeClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRangeClass._gtk_reserved3_UP$MH, fi, _GtkRangeClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRangeClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkRangeClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -539,27 +792,39 @@ public class _GtkRangeClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkRangeClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkRangeClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRangeClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRangeClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRangeClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

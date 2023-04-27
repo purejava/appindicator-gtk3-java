@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1276 {
+final class constants$1276 {
 
-    static final FunctionDescriptor gdk_display_supports_composite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1276() {}
+    static final FunctionDescriptor gtk_widget_hide_on_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_supports_composite$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_composite",
-        constants$1276.gdk_display_supports_composite$FUNC
+    static final MethodHandle gtk_widget_hide_on_delete$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_hide_on_delete",
+        constants$1276.gtk_widget_hide_on_delete$FUNC
     );
-    static final FunctionDescriptor gdk_display_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_override_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_override_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_override_color",
+        constants$1276.gtk_widget_override_color$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_override_background_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_override_background_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_override_background_color",
+        constants$1276.gtk_widget_override_background_color$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_override_font$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_notify_startup_complete",
-        constants$1276.gdk_display_notify_startup_complete$FUNC
+    static final MethodHandle gtk_widget_override_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_override_font",
+        constants$1276.gtk_widget_override_font$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_device_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_override_symbolic_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_device_manager$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_device_manager",
-        constants$1276.gdk_display_get_device_manager$FUNC
+    static final MethodHandle gtk_widget_override_symbolic_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_override_symbolic_color",
+        constants$1276.gtk_widget_override_symbolic_color$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_app_launch_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_override_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_app_launch_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_app_launch_context",
-        constants$1276.gdk_display_get_app_launch_context$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_default_seat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_default_seat$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_default_seat",
-        constants$1276.gdk_display_get_default_seat$FUNC
-    );
-    static final FunctionDescriptor gdk_display_list_seats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_list_seats$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_list_seats",
-        constants$1276.gdk_display_list_seats$FUNC
+    static final MethodHandle gtk_widget_override_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_override_cursor",
+        constants$1276.gtk_widget_override_cursor$FUNC
     );
 }
 

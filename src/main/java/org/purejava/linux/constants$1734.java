@@ -7,54 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1734 {
+final class constants$1734 {
 
-    static final FunctionDescriptor gtk_clipboard_wait_for_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_text",
-        constants$1734.gtk_clipboard_wait_for_text$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1734() {}
+    static final FunctionDescriptor gtk_places_sidebar_set_drop_targets_visible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_set_drop_targets_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_drop_targets_visible",
+        constants$1734.gtk_places_sidebar_set_drop_targets_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_get_show_trash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_get_show_trash$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_trash",
+        constants$1734.gtk_places_sidebar_get_show_trash$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_set_show_trash$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_set_show_trash$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_trash",
+        constants$1734.gtk_places_sidebar_set_show_trash$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_set_show_other_locations$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_set_show_other_locations$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_other_locations",
+        constants$1734.gtk_places_sidebar_set_show_other_locations$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_get_show_other_locations$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_wait_for_rich_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_rich_text",
-        constants$1734.gtk_clipboard_wait_for_rich_text$FUNC
+    static final MethodHandle gtk_places_sidebar_get_show_other_locations$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_other_locations",
+        constants$1734.gtk_places_sidebar_get_show_other_locations$FUNC
     );
-    static final FunctionDescriptor gtk_clipboard_wait_for_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_image",
-        constants$1734.gtk_clipboard_wait_for_image$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_uris",
-        constants$1734.gtk_clipboard_wait_for_uris$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_places_sidebar_set_show_starred_location$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_wait_for_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_targets",
-        constants$1734.gtk_clipboard_wait_for_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_is_text_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_is_text_available$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_text_available",
-        constants$1734.gtk_clipboard_wait_is_text_available$FUNC
+    static final MethodHandle gtk_places_sidebar_set_show_starred_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_starred_location",
+        constants$1734.gtk_places_sidebar_set_show_starred_location$FUNC
     );
 }
 

@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1364 {
+final class constants$1364 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkEvent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1364() {}
+    static final FunctionDescriptor gtk_tree_path_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkEvent$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkEvent",
-        constants$1364.glib_queueautoptr_cleanup_GdkEvent$FUNC
+    static final MethodHandle gtk_tree_path_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_free",
+        constants$1364.gtk_tree_path_free$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GdkFrameTimings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GdkFrameTimings$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkFrameTimings",
-        constants$1364.glib_autoptr_clear_GdkFrameTimings$FUNC
+    static final MethodHandle gtk_tree_path_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_copy",
+        constants$1364.gtk_tree_path_copy$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkFrameTimings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_path_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_get_type",
+        constants$1364.gtk_tree_path_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GdkFrameTimings$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkFrameTimings",
-        constants$1364.glib_autoptr_cleanup_GdkFrameTimings$FUNC
+    static final MethodHandle gtk_tree_path_compare$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_compare",
+        constants$1364.gtk_tree_path_compare$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkFrameTimings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_next$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkFrameTimings$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkFrameTimings",
-        constants$1364.glib_listautoptr_cleanup_GdkFrameTimings$FUNC
+    static final MethodHandle gtk_tree_path_next$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_next",
+        constants$1364.gtk_tree_path_next$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkFrameTimings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_prev$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkFrameTimings$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkFrameTimings",
-        constants$1364.glib_slistautoptr_cleanup_GdkFrameTimings$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkFrameTimings$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkFrameTimings$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkFrameTimings",
-        constants$1364.glib_queueautoptr_cleanup_GdkFrameTimings$FUNC
+    static final MethodHandle gtk_tree_path_prev$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_prev",
+        constants$1364.gtk_tree_path_prev$FUNC
     );
 }
 

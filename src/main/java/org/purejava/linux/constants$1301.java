@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1301 {
+final class constants$1301 {
 
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_iter_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_get_pixbuf",
-        constants$1301.gdk_pixbuf_animation_iter_get_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_on_currently_loading_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_iter_on_currently_loading_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_on_currently_loading_frame",
-        constants$1301.gdk_pixbuf_animation_iter_on_currently_loading_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1301() {}
+    static final FunctionDescriptor gtk_window_set_transient_for$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_animation_iter_advance$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_advance",
-        constants$1301.gdk_pixbuf_animation_iter_advance$FUNC
+    static final MethodHandle gtk_window_set_transient_for$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_transient_for",
+        constants$1301.gtk_window_set_transient_for$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_simple_anim_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_type",
-        constants$1301.gdk_pixbuf_simple_anim_get_type$FUNC
+    static final FunctionDescriptor gtk_window_get_transient_for$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_simple_anim_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_iter_get_type",
-        constants$1301.gdk_pixbuf_simple_anim_iter_get_type$FUNC
+    static final MethodHandle gtk_window_get_transient_for$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_transient_for",
+        constants$1301.gtk_window_get_transient_for$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor gtk_window_set_attached_to$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_simple_anim_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_new",
-        constants$1301.gdk_pixbuf_simple_anim_new$FUNC
+    static final MethodHandle gtk_window_set_attached_to$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_attached_to",
+        constants$1301.gtk_window_set_attached_to$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_attached_to$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_attached_to$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_attached_to",
+        constants$1301.gtk_window_get_attached_to$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_opacity$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_opacity$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_opacity",
+        constants$1301.gtk_window_set_opacity$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_opacity$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_opacity$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_opacity",
+        constants$1301.gtk_window_get_opacity$FUNC
     );
 }
 

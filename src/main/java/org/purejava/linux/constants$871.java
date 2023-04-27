@@ -7,54 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$871 {
+final class constants$871 {
 
-    static final FunctionDescriptor g_tls_password_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_password_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_type",
-        constants$871.g_tls_password_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_password_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$871() {}
+    static final FunctionDescriptor hb_font_get_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_password_new$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_new",
-        constants$871.g_tls_password_new$FUNC
+    static final MethodHandle hb_font_get_glyph$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph",
+        constants$871.hb_font_get_glyph$FUNC
     );
-    static final FunctionDescriptor g_tls_password_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_extents_for_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_extents_for_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_extents_for_direction",
+        constants$871.hb_font_get_extents_for_direction$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_advance_for_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_password_get_value$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_value",
-        constants$871.g_tls_password_get_value$FUNC
+    static final MethodHandle hb_font_get_glyph_advance_for_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_advance_for_direction",
+        constants$871.hb_font_get_glyph_advance_for_direction$FUNC
     );
-    static final FunctionDescriptor g_tls_password_set_value$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_advances_for_direction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_tls_password_set_value$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_value",
-        constants$871.g_tls_password_set_value$FUNC
+    static final MethodHandle hb_font_get_glyph_advances_for_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_advances_for_direction",
+        constants$871.hb_font_get_glyph_advances_for_direction$FUNC
     );
-    static final FunctionDescriptor g_tls_password_set_value_full$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_origin_for_direction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_password_set_value_full$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_value_full",
-        constants$871.g_tls_password_set_value_full$FUNC
+    static final MethodHandle hb_font_get_glyph_origin_for_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_origin_for_direction",
+        constants$871.hb_font_get_glyph_origin_for_direction$FUNC
     );
-    static final FunctionDescriptor g_tls_password_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_font_add_glyph_origin_for_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_password_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_flags",
-        constants$871.g_tls_password_get_flags$FUNC
+    static final MethodHandle hb_font_add_glyph_origin_for_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_font_add_glyph_origin_for_direction",
+        constants$871.hb_font_add_glyph_origin_for_direction$FUNC
     );
 }
 

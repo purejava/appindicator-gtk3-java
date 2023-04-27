@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAlignment extends _GtkAlignment {
+/**
+ * {@snippet :
+ * typedef struct _GtkAlignment GtkAlignment;
+ * }
+ */
+public final class GtkAlignment extends _GtkAlignment {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAlignment() {}
 }
 
 

@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1117 {
+final class constants$1117 {
 
-    static final FunctionDescriptor pango_layout_set_indent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1117() {}
+    static final FunctionDescriptor gdk_display_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_indent$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_indent",
-        constants$1117.pango_layout_set_indent$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_indent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_indent$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_indent",
-        constants$1117.pango_layout_get_indent$FUNC
+    static final MethodHandle gdk_display_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_notify_startup_complete",
+        constants$1117.gdk_display_notify_startup_complete$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_spacing$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_spacing",
-        constants$1117.pango_layout_set_spacing$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_display_get_device_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_spacing$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_spacing",
-        constants$1117.pango_layout_get_spacing$FUNC
+    static final MethodHandle gdk_display_get_device_manager$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_device_manager",
+        constants$1117.gdk_display_get_device_manager$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_line_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_line_spacing$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_line_spacing",
-        constants$1117.pango_layout_set_line_spacing$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_line_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+    static final FunctionDescriptor gdk_display_get_app_launch_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_line_spacing$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line_spacing",
-        constants$1117.pango_layout_get_line_spacing$FUNC
+    static final MethodHandle gdk_display_get_app_launch_context$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_app_launch_context",
+        constants$1117.gdk_display_get_app_launch_context$FUNC
+    );
+    static final FunctionDescriptor gdk_display_get_default_seat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_get_default_seat$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_default_seat",
+        constants$1117.gdk_display_get_default_seat$FUNC
+    );
+    static final FunctionDescriptor gdk_display_list_seats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_list_seats$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_list_seats",
+        constants$1117.gdk_display_list_seats$FUNC
+    );
+    static final FunctionDescriptor gdk_display_get_n_monitors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_get_n_monitors$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_n_monitors",
+        constants$1117.gdk_display_get_n_monitors$FUNC
     );
 }
 

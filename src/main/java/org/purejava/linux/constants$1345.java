@@ -7,64 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1345 {
+final class constants$1345 {
 
-    static final FunctionDescriptor gdk_property_change$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1345() {}
+    static final FunctionDescriptor gtk_accel_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_property_change$MH = RuntimeHelper.downcallHandle(
-        "gdk_property_change",
-        constants$1345.gdk_property_change$FUNC
+    static final MethodHandle gtk_accel_label_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_new",
+        constants$1345.gtk_accel_label_new$FUNC
     );
-    static final FunctionDescriptor gdk_property_delete$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_accel_label_get_accel_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_label_get_accel_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_get_accel_widget",
+        constants$1345.gtk_accel_label_get_accel_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_label_get_accel_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_label_get_accel_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_get_accel_width",
+        constants$1345.gtk_accel_label_get_accel_width$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_label_set_accel_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_property_delete$MH = RuntimeHelper.downcallHandle(
-        "gdk_property_delete",
-        constants$1345.gdk_property_delete$FUNC
+    static final MethodHandle gtk_accel_label_set_accel_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_set_accel_widget",
+        constants$1345.gtk_accel_label_set_accel_widget$FUNC
     );
-    static final FunctionDescriptor gdk_text_property_to_utf8_list_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_accel_label_set_accel_closure$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_text_property_to_utf8_list_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_text_property_to_utf8_list_for_display",
-        constants$1345.gdk_text_property_to_utf8_list_for_display$FUNC
+    static final MethodHandle gtk_accel_label_set_accel_closure$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_set_accel_closure",
+        constants$1345.gtk_accel_label_set_accel_closure$FUNC
     );
-    static final FunctionDescriptor gdk_utf8_to_string_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_label_refetch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_utf8_to_string_target$MH = RuntimeHelper.downcallHandle(
-        "gdk_utf8_to_string_target",
-        constants$1345.gdk_utf8_to_string_target$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_owner_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_set$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set",
-        constants$1345.gdk_selection_owner_set$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_owner_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get",
-        constants$1345.gdk_selection_owner_get$FUNC
+    static final MethodHandle gtk_accel_label_refetch$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_refetch",
+        constants$1345.gtk_accel_label_refetch$FUNC
     );
 }
 

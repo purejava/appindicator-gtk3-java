@@ -7,47 +7,42 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1523 {
+final class constants$1523 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GtkMenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1523() {}
+    static final FunctionDescriptor gtk_cell_renderer_text_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_text_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_text_new",
+        constants$1523.gtk_cell_renderer_text_new$FUNC
     );
-    static final MethodHandle glib_autoptr_clear_GtkMenu$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkMenu",
-        constants$1523.glib_autoptr_clear_GtkMenu$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_text_set_fixed_height_from_font$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkMenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle gtk_cell_renderer_text_set_fixed_height_from_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_text_set_fixed_height_from_font",
+        constants$1523.gtk_cell_renderer_text_set_fixed_height_from_font$FUNC
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkMenu$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkMenu",
-        constants$1523.glib_autoptr_cleanup_GtkMenu$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_accel_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_accel_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_accel_get_type",
+        constants$1523.gtk_cell_renderer_accel_get_type$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkMenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_accel_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_accel_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_accel_new",
+        constants$1523.gtk_cell_renderer_accel_new$FUNC
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkMenu$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkMenu",
-        constants$1523.glib_listautoptr_cleanup_GtkMenu$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_combo_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_combo_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_combo_get_type",
+        constants$1523.gtk_cell_renderer_combo_get_type$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkMenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkMenu$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkMenu",
-        constants$1523.glib_slistautoptr_cleanup_GtkMenu$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkMenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkMenu$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkMenu",
-        constants$1523.glib_queueautoptr_cleanup_GtkMenu$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_label_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_type",
-        constants$1523.gtk_label_get_type$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_combo_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_combo_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_combo_new",
+        constants$1523.gtk_cell_renderer_combo_new$FUNC
     );
 }
 

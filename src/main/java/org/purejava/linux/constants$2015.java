@@ -7,54 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2015 {
+final class constants$2015 {
 
-    static final FunctionDescriptor gtk_spin_button_get_update_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_update_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_update_policy",
-        constants$2015.gtk_spin_button_get_update_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_numeric$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_numeric$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_numeric",
-        constants$2015.gtk_spin_button_set_numeric$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_numeric$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_numeric$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_numeric",
-        constants$2015.gtk_spin_button_get_numeric$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_spin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_spin$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_spin",
-        constants$2015.gtk_spin_button_spin$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_wrap",
-        constants$2015.gtk_spin_button_set_wrap$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_wrap",
-        constants$2015.gtk_spin_button_get_wrap$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2015() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("selinux::context");
+    static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("trash::item-count");
+    static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("trash::orig-path");
+    static final MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("trash::deletion-date");
+    static final MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("recent::modified");
+    static final MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-memory-monitor");
 }
 
 

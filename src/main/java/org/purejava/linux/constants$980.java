@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$980 {
+final class constants$980 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsDatabase$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$980() {}
+    static final FunctionDescriptor open_memstream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsDatabase",
-        constants$980.glib_listautoptr_cleanup_GTlsDatabase$FUNC
+    static final MethodHandle open_memstream$MH = RuntimeHelper.downcallHandle(
+        "open_memstream",
+        constants$980.open_memstream$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor setbuf$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsDatabase",
-        constants$980.glib_slistautoptr_cleanup_GTlsDatabase$FUNC
+    static final MethodHandle setbuf$MH = RuntimeHelper.downcallHandle(
+        "setbuf",
+        constants$980.setbuf$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor setvbuf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle setvbuf$MH = RuntimeHelper.downcallHandle(
+        "setvbuf",
+        constants$980.setvbuf$FUNC
+    );
+    static final FunctionDescriptor setbuffer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle setbuffer$MH = RuntimeHelper.downcallHandle(
+        "setbuffer",
+        constants$980.setbuffer$FUNC
+    );
+    static final FunctionDescriptor setlinebuf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsDatabase",
-        constants$980.glib_queueautoptr_cleanup_GTlsDatabase$FUNC
+    static final MethodHandle setlinebuf$MH = RuntimeHelper.downcallHandle(
+        "setlinebuf",
+        constants$980.setlinebuf$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsFileDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsFileDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsFileDatabase",
-        constants$980.glib_autoptr_clear_GTlsFileDatabase$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsFileDatabase$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GTlsFileDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsFileDatabase",
-        constants$980.glib_autoptr_cleanup_GTlsFileDatabase$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsFileDatabase$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsFileDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsFileDatabase",
-        constants$980.glib_listautoptr_cleanup_GTlsFileDatabase$FUNC
+    static final MethodHandle fprintf$MH = RuntimeHelper.downcallHandleVariadic(
+        "fprintf",
+        constants$980.fprintf$FUNC
     );
 }
 

@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1543 {
+final class constants$1543 {
 
-    static final FunctionDescriptor gtk_adjustment_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1543() {}
+    static final FunctionDescriptor gtk_clipboard_wait_for_contents$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_value",
-        constants$1543.gtk_adjustment_get_value$FUNC
+    static final MethodHandle gtk_clipboard_wait_for_contents$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_contents",
+        constants$1543.gtk_clipboard_wait_for_contents$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_value",
-        constants$1543.gtk_adjustment_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_lower$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_clipboard_wait_for_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_lower$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_lower",
-        constants$1543.gtk_adjustment_get_lower$FUNC
+    static final MethodHandle gtk_clipboard_wait_for_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_text",
+        constants$1543.gtk_clipboard_wait_for_text$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_lower$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_clipboard_wait_for_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_lower$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_lower",
-        constants$1543.gtk_adjustment_set_lower$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_upper$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_upper$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_upper",
-        constants$1543.gtk_adjustment_get_upper$FUNC
+    static final MethodHandle gtk_clipboard_wait_for_rich_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_rich_text",
+        constants$1543.gtk_clipboard_wait_for_rich_text$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_upper$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_clipboard_wait_for_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_wait_for_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_image",
+        constants$1543.gtk_clipboard_wait_for_image$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_wait_for_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_wait_for_uris$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_uris",
+        constants$1543.gtk_clipboard_wait_for_uris$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_wait_for_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_set_upper$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_upper",
-        constants$1543.gtk_adjustment_set_upper$FUNC
+    static final MethodHandle gtk_clipboard_wait_for_targets$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_for_targets",
+        constants$1543.gtk_clipboard_wait_for_targets$FUNC
     );
 }
 

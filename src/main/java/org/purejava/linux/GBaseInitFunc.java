@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GBaseInitFunc)(void* g_class);
+ * }
+ */
 public interface GBaseInitFunc {
 
-    void apply(java.lang.foreign.MemoryAddress g_class);
-    static MemorySegment allocate(GBaseInitFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GBaseInitFunc.class, fi, constants$423.GBaseInitFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GBaseInitFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$384.GBaseInitFunc_UP$MH, fi, constants$384.GBaseInitFunc$FUNC, scope);
     }
-    static GBaseInitFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _g_class) -> {
+    static GBaseInitFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$424.GBaseInitFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_g_class);
+                constants$384.GBaseInitFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

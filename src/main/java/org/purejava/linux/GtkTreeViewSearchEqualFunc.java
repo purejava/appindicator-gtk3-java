@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeViewSearchEqualFunc)(struct _GtkTreeModel* model,int column,char* key,struct _GtkTreeIter* iter,void* search_data);
+ * }
+ */
 public interface GtkTreeViewSearchEqualFunc {
 
-    int apply(java.lang.foreign.MemoryAddress model, int column, java.lang.foreign.MemoryAddress key, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress search_data);
-    static MemorySegment allocate(GtkTreeViewSearchEqualFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeViewSearchEqualFunc.class, fi, constants$1653.GtkTreeViewSearchEqualFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment model, int column, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment search_data);
+    static MemorySegment allocate(GtkTreeViewSearchEqualFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1463.GtkTreeViewSearchEqualFunc_UP$MH, fi, constants$1463.GtkTreeViewSearchEqualFunc$FUNC, scope);
     }
-    static GtkTreeViewSearchEqualFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, int _column, java.lang.foreign.MemoryAddress _key, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _search_data) -> {
+    static GtkTreeViewSearchEqualFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _model, int _column, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _search_data) -> {
             try {
-                return (int)constants$1653.GtkTreeViewSearchEqualFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, _column, (java.lang.foreign.Addressable)_key, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_search_data);
+                return (int)constants$1463.GtkTreeViewSearchEqualFunc_DOWN$MH.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

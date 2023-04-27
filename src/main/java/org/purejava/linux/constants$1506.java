@@ -7,47 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1506 {
+final class constants$1506 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkDialog$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1506() {}
+    static final FunctionDescriptor gtk_builder_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkDialog$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkDialog",
-        constants$1506.glib_queueautoptr_cleanup_GtkDialog$FUNC
+    static final MethodHandle gtk_builder_new_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_resource",
+        constants$1506.gtk_builder_new_from_resource$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_about_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_type",
-        constants$1506.gtk_about_dialog_get_type$FUNC
+    static final FunctionDescriptor gtk_builder_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor gtk_about_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_about_dialog_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_new",
-        constants$1506.gtk_about_dialog_new$FUNC
+    static final MethodHandle gtk_builder_new_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_string",
+        constants$1506.gtk_builder_new_from_string$FUNC
     );
-    static final FunctionDescriptor gtk_show_about_dialog$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_add_callback_symbol$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_show_about_dialog$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_show_about_dialog",
-        constants$1506.gtk_show_about_dialog$FUNC
+    static final MethodHandle gtk_builder_add_callback_symbol$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_add_callback_symbol",
+        constants$1506.gtk_builder_add_callback_symbol$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_program_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_program_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_program_name",
-        constants$1506.gtk_about_dialog_get_program_name$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_program_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_add_callback_symbols$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_program_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_program_name",
-        constants$1506.gtk_about_dialog_set_program_name$FUNC
+    static final MethodHandle gtk_builder_add_callback_symbols$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_builder_add_callback_symbols",
+        constants$1506.gtk_builder_add_callback_symbols$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_lookup_callback_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_lookup_callback_symbol$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_lookup_callback_symbol",
+        constants$1506.gtk_builder_lookup_callback_symbol$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_set_application$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_set_application$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_set_application",
+        constants$1506.gtk_builder_set_application$FUNC
     );
 }
 

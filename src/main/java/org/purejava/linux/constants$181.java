@@ -7,63 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$181 {
+final class constants$181 {
 
-    static final FunctionDescriptor g_child_watch_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$181() {}
+    static final FunctionDescriptor g_source_remove_by_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_remove_by_user_data$MH = RuntimeHelper.downcallHandle(
+        "g_source_remove_by_user_data",
+        constants$181.g_source_remove_by_user_data$FUNC
+    );
+    static final FunctionDescriptor g_source_remove_by_funcs_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_remove_by_funcs_user_data$MH = RuntimeHelper.downcallHandle(
+        "g_source_remove_by_funcs_user_data",
+        constants$181.g_source_remove_by_funcs_user_data$FUNC
+    );
+    static final FunctionDescriptor GClearHandleFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final FunctionDescriptor GClearHandleFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GClearHandleFunc_UP$MH = RuntimeHelper.upcallHandle(GClearHandleFunc.class, "apply", constants$181.GClearHandleFunc_UP$FUNC);
+    static final FunctionDescriptor GClearHandleFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GClearHandleFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$181.GClearHandleFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_clear_handle_id$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_clear_handle_id$MH = RuntimeHelper.downcallHandle(
+        "g_clear_handle_id",
+        constants$181.g_clear_handle_id$FUNC
+    );
+    static final FunctionDescriptor g_timeout_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_child_watch_add_full$MH = RuntimeHelper.downcallHandle(
-        "g_child_watch_add_full",
-        constants$181.g_child_watch_add_full$FUNC
-    );
-    static final FunctionDescriptor g_child_watch_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_child_watch_add$MH = RuntimeHelper.downcallHandle(
-        "g_child_watch_add",
-        constants$181.g_child_watch_add$FUNC
-    );
-    static final FunctionDescriptor g_idle_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_idle_add$MH = RuntimeHelper.downcallHandle(
-        "g_idle_add",
-        constants$181.g_idle_add$FUNC
-    );
-    static final FunctionDescriptor g_idle_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_idle_add_full$MH = RuntimeHelper.downcallHandle(
-        "g_idle_add_full",
-        constants$181.g_idle_add_full$FUNC
-    );
-    static final FunctionDescriptor g_idle_remove_by_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_idle_remove_by_data$MH = RuntimeHelper.downcallHandle(
-        "g_idle_remove_by_data",
-        constants$181.g_idle_remove_by_data$FUNC
-    );
-    static final FunctionDescriptor g_main_context_invoke_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_invoke_full$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_invoke_full",
-        constants$181.g_main_context_invoke_full$FUNC
+    static final MethodHandle g_timeout_add_full$MH = RuntimeHelper.downcallHandle(
+        "g_timeout_add_full",
+        constants$181.g_timeout_add_full$FUNC
     );
 }
 

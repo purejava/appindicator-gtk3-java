@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GHookCompareFunc)(struct _GHook* new_hook,struct _GHook* sibling);
+ * }
+ */
 public interface GHookCompareFunc {
 
-    int apply(java.lang.foreign.MemoryAddress new_hook, java.lang.foreign.MemoryAddress sibling);
-    static MemorySegment allocate(GHookCompareFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GHookCompareFunc.class, fi, constants$152.GHookCompareFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GHookCompareFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$154.GHookCompareFunc_UP$MH, fi, constants$154.GHookCompareFunc$FUNC, scope);
     }
-    static GHookCompareFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _new_hook, java.lang.foreign.MemoryAddress _sibling) -> {
+    static GHookCompareFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$152.GHookCompareFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_new_hook, (java.lang.foreign.Addressable)_sibling);
+                return (int)constants$154.GHookCompareFunc_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

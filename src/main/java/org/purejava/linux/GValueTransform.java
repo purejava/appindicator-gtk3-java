@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GValueTransform)(struct _GValue* src_value,struct _GValue* dest_value);
+ * }
+ */
 public interface GValueTransform {
 
-    void apply(java.lang.foreign.MemoryAddress src_value, java.lang.foreign.MemoryAddress dest_value);
-    static MemorySegment allocate(GValueTransform fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GValueTransform.class, fi, constants$433.GValueTransform$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GValueTransform fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$394.GValueTransform_UP$MH, fi, constants$394.GValueTransform$FUNC, scope);
     }
-    static GValueTransform ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _src_value, java.lang.foreign.MemoryAddress _dest_value) -> {
+    static GValueTransform ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$434.GValueTransform$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_src_value, (java.lang.foreign.Addressable)_dest_value);
+                constants$394.GValueTransform_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

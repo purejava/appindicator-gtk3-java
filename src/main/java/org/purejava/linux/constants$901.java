@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$901 {
+final class constants$901 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$901() {}
+    static final FunctionDescriptor pango_matrix_transform_distance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusInterfaceSkeleton",
-        constants$901.glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$FUNC
+    static final MethodHandle pango_matrix_transform_distance$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_distance",
+        constants$901.pango_matrix_transform_distance$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_matrix_transform_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusInterfaceSkeleton",
-        constants$901.glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$FUNC
+    static final MethodHandle pango_matrix_transform_rectangle$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_rectangle",
+        constants$901.pango_matrix_transform_rectangle$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_matrix_transform_pixel_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDBusMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusMenuModel",
-        constants$901.glib_autoptr_clear_GDBusMenuModel$FUNC
+    static final MethodHandle pango_matrix_transform_pixel_rectangle$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_pixel_rectangle",
+        constants$901.pango_matrix_transform_pixel_rectangle$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_matrix_get_font_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDBusMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusMenuModel",
-        constants$901.glib_autoptr_cleanup_GDBusMenuModel$FUNC
+    static final MethodHandle pango_matrix_get_font_scale_factor$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_font_scale_factor",
+        constants$901.pango_matrix_get_font_scale_factor$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_matrix_get_font_scale_factors$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusMenuModel",
-        constants$901.glib_listautoptr_cleanup_GDBusMenuModel$FUNC
+    static final MethodHandle pango_matrix_get_font_scale_factors$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_font_scale_factors",
+        constants$901.pango_matrix_get_font_scale_factors$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_matrix_get_slant_ratio$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusMenuModel",
-        constants$901.glib_slistautoptr_cleanup_GDBusMenuModel$FUNC
+    static final MethodHandle pango_matrix_get_slant_ratio$MH = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_slant_ratio",
+        constants$901.pango_matrix_get_slant_ratio$FUNC
     );
 }
 

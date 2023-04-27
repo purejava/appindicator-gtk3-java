@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$897 {
+final class constants$897 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDataOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$897() {}
+    static final FunctionDescriptor hb_version$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDataOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDataOutputStream",
-        constants$897.glib_queueautoptr_cleanup_GDataOutputStream$FUNC
+    static final MethodHandle hb_version$MH = RuntimeHelper.downcallHandle(
+        "hb_version",
+        constants$897.hb_version$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_version_string$MH = RuntimeHelper.downcallHandle(
+        "hb_version_string",
+        constants$897.hb_version_string$FUNC
+    );
+    static final FunctionDescriptor hb_version_atleast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_version_atleast$MH = RuntimeHelper.downcallHandle(
+        "hb_version_atleast",
+        constants$897.hb_version_atleast$FUNC
+    );
+    static final FunctionDescriptor pango_coverage_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_coverage_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_get_type",
+        constants$897.pango_coverage_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_coverage_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_coverage_new$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_new",
+        constants$897.pango_coverage_new$FUNC
+    );
+    static final FunctionDescriptor pango_coverage_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDBusActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusActionGroup",
-        constants$897.glib_autoptr_clear_GDBusActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GDBusActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusActionGroup",
-        constants$897.glib_autoptr_cleanup_GDBusActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusActionGroup",
-        constants$897.glib_listautoptr_cleanup_GDBusActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusActionGroup",
-        constants$897.glib_slistautoptr_cleanup_GDBusActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusActionGroup",
-        constants$897.glib_queueautoptr_cleanup_GDBusActionGroup$FUNC
+    static final MethodHandle pango_coverage_ref$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_ref",
+        constants$897.pango_coverage_ref$FUNC
     );
 }
 

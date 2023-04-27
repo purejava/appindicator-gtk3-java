@@ -7,51 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1495 {
+final class constants$1495 {
 
-    static final FunctionDescriptor gtk_window_unstick$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1495() {}
+    static final FunctionDescriptor gtk_assistant_next_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_unstick$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_unstick",
-        constants$1495.gtk_window_unstick$FUNC
+    static final MethodHandle gtk_assistant_next_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_next_page",
+        constants$1495.gtk_assistant_next_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_maximize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_previous_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_maximize$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_maximize",
-        constants$1495.gtk_window_maximize$FUNC
+    static final MethodHandle gtk_assistant_previous_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_previous_page",
+        constants$1495.gtk_assistant_previous_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_unmaximize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_get_current_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_unmaximize$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_unmaximize",
-        constants$1495.gtk_window_unmaximize$FUNC
+    static final MethodHandle gtk_assistant_get_current_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_current_page",
+        constants$1495.gtk_assistant_get_current_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_fullscreen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_fullscreen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_fullscreen",
-        constants$1495.gtk_window_fullscreen$FUNC
-    );
-    static final FunctionDescriptor gtk_window_unfullscreen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_unfullscreen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_unfullscreen",
-        constants$1495.gtk_window_unfullscreen$FUNC
-    );
-    static final FunctionDescriptor gtk_window_fullscreen_on_monitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_assistant_set_current_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_fullscreen_on_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_fullscreen_on_monitor",
-        constants$1495.gtk_window_fullscreen_on_monitor$FUNC
+    static final MethodHandle gtk_assistant_set_current_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_current_page",
+        constants$1495.gtk_assistant_set_current_page$FUNC
+    );
+    static final FunctionDescriptor gtk_assistant_get_n_pages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_assistant_get_n_pages$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_n_pages",
+        constants$1495.gtk_assistant_get_n_pages$FUNC
+    );
+    static final FunctionDescriptor gtk_assistant_get_nth_page$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_assistant_get_nth_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_nth_page",
+        constants$1495.gtk_assistant_get_nth_page$FUNC
     );
 }
 

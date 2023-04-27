@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$896 {
+final class constants$896 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDataInputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$896() {}
+    static final FunctionDescriptor hb_shape_plan_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDataInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDataInputStream",
-        constants$896.glib_slistautoptr_cleanup_GDataInputStream$FUNC
+    static final MethodHandle hb_shape_plan_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_destroy",
+        constants$896.hb_shape_plan_destroy$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDataInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_shape_plan_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_shape_plan_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_set_user_data",
+        constants$896.hb_shape_plan_set_user_data$FUNC
+    );
+    static final FunctionDescriptor hb_shape_plan_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDataInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDataInputStream",
-        constants$896.glib_queueautoptr_cleanup_GDataInputStream$FUNC
+    static final MethodHandle hb_shape_plan_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_get_user_data",
+        constants$896.hb_shape_plan_get_user_data$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDataOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_shape_plan_execute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_shape_plan_execute$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_execute",
+        constants$896.hb_shape_plan_execute$FUNC
+    );
+    static final FunctionDescriptor hb_shape_plan_get_shaper$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDataOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDataOutputStream",
-        constants$896.glib_autoptr_clear_GDataOutputStream$FUNC
+    static final MethodHandle hb_shape_plan_get_shaper$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_get_shaper",
+        constants$896.hb_shape_plan_get_shaper$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDataOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_style_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDataOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDataOutputStream",
-        constants$896.glib_autoptr_cleanup_GDataOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDataOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GDataOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDataOutputStream",
-        constants$896.glib_listautoptr_cleanup_GDataOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDataOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GDataOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDataOutputStream",
-        constants$896.glib_slistautoptr_cleanup_GDataOutputStream$FUNC
+    static final MethodHandle hb_style_get_value$MH = RuntimeHelper.downcallHandle(
+        "hb_style_get_value",
+        constants$896.hb_style_get_value$FUNC
     );
 }
 

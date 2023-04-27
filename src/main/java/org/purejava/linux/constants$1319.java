@@ -7,61 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1319 {
+final class constants$1319 {
 
-    static final FunctionDescriptor gdk_cairo_region$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1319() {}
+    static final FunctionDescriptor gtk_dialog_add_buttons$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cairo_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_region",
-        constants$1319.gdk_cairo_region$FUNC
+    static final MethodHandle gtk_dialog_add_buttons$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_dialog_add_buttons",
+        constants$1319.gtk_dialog_add_buttons$FUNC
     );
-    static final FunctionDescriptor gdk_cairo_region_create_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_region_create_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_region_create_from_surface",
-        constants$1319.gdk_cairo_region_create_from_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_set_source_color$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_dialog_set_response_sensitive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_set_source_color$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_color",
-        constants$1319.gdk_cairo_set_source_color$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_surface_create_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_surface_create_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_surface_create_from_pixbuf",
-        constants$1319.gdk_cairo_surface_create_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_draw_from_gl$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_cairo_draw_from_gl$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_draw_from_gl",
-        constants$1319.gdk_cairo_draw_from_gl$FUNC
+    static final MethodHandle gtk_dialog_set_response_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_set_response_sensitive",
+        constants$1319.gtk_dialog_set_response_sensitive$FUNC
     );
-    static final FunctionDescriptor gdk_cairo_get_drawing_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_dialog_set_default_response$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_set_default_response$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_set_default_response",
+        constants$1319.gtk_dialog_set_default_response$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_get_widget_for_response$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_get_widget_for_response$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_widget_for_response",
+        constants$1319.gtk_dialog_get_widget_for_response$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_get_response_for_widget$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cairo_get_drawing_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_get_drawing_context",
-        constants$1319.gdk_cairo_get_drawing_context$FUNC
+    static final MethodHandle gtk_dialog_get_response_for_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_response_for_widget",
+        constants$1319.gtk_dialog_get_response_for_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_alternative_dialog_button_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_alternative_dialog_button_order$MH = RuntimeHelper.downcallHandle(
+        "gtk_alternative_dialog_button_order",
+        constants$1319.gtk_alternative_dialog_button_order$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoGlyphInfo {
+ *     PangoGlyph glyph;
+ *     PangoGlyphGeometry geometry;
+ *     PangoGlyphVisAttr attr;
+ * };
+ * }
+ */
 public class _PangoGlyphInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("glyph"),
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("width"),
@@ -17,11 +26,7 @@ public class _PangoGlyphInfo {
             Constants$root.C_INT$LAYOUT.withName("y_offset")
         ).withName("geometry"),
         MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("is_cluster_start"),
-                MemoryLayout.paddingLayout(1).withName("is_color"),
-                MemoryLayout.paddingLayout(30)
-            )
+            MemoryLayout.paddingLayout(32)
         ).withName("attr")
     ).withName("_PangoGlyphInfo");
     public static MemoryLayout $LAYOUT() {
@@ -31,10 +36,22 @@ public class _PangoGlyphInfo {
     public static VarHandle glyph$VH() {
         return _PangoGlyphInfo.glyph$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoGlyph glyph;
+     * }
+     */
     public static int glyph$get(MemorySegment seg) {
         return (int)_PangoGlyphInfo.glyph$VH.get(seg);
     }
-    public static void glyph$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoGlyph glyph;
+     * }
+     */
+    public static void glyph$set(MemorySegment seg, int x) {
         _PangoGlyphInfo.glyph$VH.set(seg, x);
     }
     public static int glyph$get(MemorySegment seg, long index) {
@@ -51,10 +68,10 @@ public class _PangoGlyphInfo {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

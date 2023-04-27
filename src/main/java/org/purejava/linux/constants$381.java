@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$381 {
+final class constants$381 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$381() {}
+    static final FunctionDescriptor g_type_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDate$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDate",
-        constants$381.glib_queueautoptr_cleanup_GDate$FUNC
+    static final MethodHandle g_type_depth$MH = RuntimeHelper.downcallHandle(
+        "g_type_depth",
+        constants$381.g_type_depth$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_next_base$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDir$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDir",
-        constants$381.glib_autoptr_clear_GDir$FUNC
+    static final MethodHandle g_type_next_base$MH = RuntimeHelper.downcallHandle(
+        "g_type_next_base",
+        constants$381.g_type_next_base$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDir$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDir",
-        constants$381.glib_autoptr_cleanup_GDir$FUNC
+    static final MethodHandle g_type_is_a$MH = RuntimeHelper.downcallHandle(
+        "g_type_is_a",
+        constants$381.g_type_is_a$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_class_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDir$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDir",
-        constants$381.glib_listautoptr_cleanup_GDir$FUNC
+    static final MethodHandle g_type_class_ref$MH = RuntimeHelper.downcallHandle(
+        "g_type_class_ref",
+        constants$381.g_type_class_ref$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_class_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDir$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDir",
-        constants$381.glib_slistautoptr_cleanup_GDir$FUNC
+    static final MethodHandle g_type_class_peek$MH = RuntimeHelper.downcallHandle(
+        "g_type_class_peek",
+        constants$381.g_type_class_peek$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_class_peek_static$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDir$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDir",
-        constants$381.glib_queueautoptr_cleanup_GDir$FUNC
+    static final MethodHandle g_type_class_peek_static$MH = RuntimeHelper.downcallHandle(
+        "g_type_class_peek_static",
+        constants$381.g_type_class_peek_static$FUNC
     );
 }
 

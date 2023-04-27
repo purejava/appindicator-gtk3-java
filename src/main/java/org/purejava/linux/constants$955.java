@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$955 {
+final class constants$955 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSettingsSchema$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$955() {}
+    static final FunctionDescriptor pango_tab_array_get_positions_in_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSettingsSchema$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSettingsSchema",
-        constants$955.glib_listautoptr_cleanup_GSettingsSchema$FUNC
+    static final MethodHandle pango_tab_array_get_positions_in_pixels$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_positions_in_pixels",
+        constants$955.pango_tab_array_get_positions_in_pixels$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSettingsSchema$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_tab_array_set_positions_in_pixels$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_tab_array_set_positions_in_pixels$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_set_positions_in_pixels",
+        constants$955.pango_tab_array_set_positions_in_pixels$FUNC
+    );
+    static final FunctionDescriptor pango_tab_array_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSettingsSchema$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSettingsSchema",
-        constants$955.glib_slistautoptr_cleanup_GSettingsSchema$FUNC
+    static final MethodHandle pango_tab_array_to_string$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_to_string",
+        constants$955.pango_tab_array_to_string$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSettingsSchema$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_tab_array_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSettingsSchema$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSettingsSchema",
-        constants$955.glib_queueautoptr_cleanup_GSettingsSchema$FUNC
+    static final MethodHandle pango_tab_array_from_string$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_from_string",
+        constants$955.pango_tab_array_from_string$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSettingsSchemaKey$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_tab_array_set_decimal_point$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSettingsSchemaKey$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSettingsSchemaKey",
-        constants$955.glib_autoptr_clear_GSettingsSchemaKey$FUNC
+    static final MethodHandle pango_tab_array_set_decimal_point$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_set_decimal_point",
+        constants$955.pango_tab_array_set_decimal_point$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSettingsSchemaKey$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_tab_array_get_decimal_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSettingsSchemaKey$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSettingsSchemaKey",
-        constants$955.glib_autoptr_cleanup_GSettingsSchemaKey$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSettingsSchemaKey$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GSettingsSchemaKey$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSettingsSchemaKey",
-        constants$955.glib_listautoptr_cleanup_GSettingsSchemaKey$FUNC
+    static final MethodHandle pango_tab_array_get_decimal_point$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_decimal_point",
+        constants$955.pango_tab_array_get_decimal_point$FUNC
     );
 }
 

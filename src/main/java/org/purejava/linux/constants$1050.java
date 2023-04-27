@@ -7,57 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1050 {
+final class constants$1050 {
 
-    static final FunctionDescriptor pango_matrix_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_free$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_free",
-        constants$1050.pango_matrix_free$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_matrix_translate$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_translate",
-        constants$1050.pango_matrix_translate$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_matrix_scale$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_scale",
-        constants$1050.pango_matrix_scale$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_matrix_rotate$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_rotate",
-        constants$1050.pango_matrix_rotate$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_concat$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_concat$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_concat",
-        constants$1050.pango_matrix_concat$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_transform_point$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1050() {}
+    static final FunctionDescriptor cairo_matrix_transform_distance$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_matrix_transform_point$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_point",
-        constants$1050.pango_matrix_transform_point$FUNC
+    static final MethodHandle cairo_matrix_transform_distance$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_transform_distance",
+        constants$1050.cairo_matrix_transform_distance$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_transform_point$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_transform_point$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_transform_point",
+        constants$1050.cairo_matrix_transform_point$FUNC
+    );
+    static final FunctionDescriptor cairo_region_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle cairo_region_create$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_create",
+        constants$1050.cairo_region_create$FUNC
+    );
+    static final FunctionDescriptor cairo_region_create_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_create_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_create_rectangle",
+        constants$1050.cairo_region_create_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_region_create_rectangles$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_region_create_rectangles$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_create_rectangles",
+        constants$1050.cairo_region_create_rectangles$FUNC
+    );
+    static final FunctionDescriptor cairo_region_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_copy$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_copy",
+        constants$1050.cairo_region_copy$FUNC
     );
 }
 

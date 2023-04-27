@@ -7,52 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$816 {
+final class constants$816 {
 
-    static final FunctionDescriptor g_socket_get_remote_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$816() {}
+    static final FunctionDescriptor g_tls_interaction_invoke_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_remote_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_remote_address",
-        constants$816.g_socket_get_remote_address$FUNC
+    static final MethodHandle g_tls_interaction_invoke_request_certificate$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_invoke_request_certificate",
+        constants$816.g_tls_interaction_invoke_request_certificate$FUNC
     );
-    static final FunctionDescriptor g_socket_set_blocking$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_interaction_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_blocking",
-        constants$816.g_socket_set_blocking$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_blocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_blocking",
-        constants$816.g_socket_get_blocking$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_keepalive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_keepalive$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_keepalive",
-        constants$816.g_socket_set_keepalive$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_keepalive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_keepalive$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_keepalive",
-        constants$816.g_socket_get_keepalive$FUNC
+    static final MethodHandle g_tls_interaction_request_certificate$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate",
+        constants$816.g_tls_interaction_request_certificate$FUNC
     );
-    static final FunctionDescriptor g_socket_get_listen_backlog$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tls_interaction_request_certificate_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_listen_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_listen_backlog",
-        constants$816.g_socket_get_listen_backlog$FUNC
+    static final MethodHandle g_tls_interaction_request_certificate_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate_async",
+        constants$816.g_tls_interaction_request_certificate_async$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_request_certificate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_interaction_request_certificate_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate_finish",
+        constants$816.g_tls_interaction_request_certificate_finish$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_password_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_type",
+        constants$816.g_tls_password_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_password_new$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_new",
+        constants$816.g_tls_password_new$FUNC
     );
 }
 

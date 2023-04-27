@@ -7,62 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1152 {
+final class constants$1152 {
 
-    static final FunctionDescriptor pango_parse_enum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1152() {}
+    static final FunctionDescriptor pango_cairo_context_set_resolution$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_cairo_context_set_resolution$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_set_resolution",
+        constants$1152.pango_cairo_context_set_resolution$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_context_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_parse_enum$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_enum",
-        constants$1152.pango_parse_enum$FUNC
+    static final MethodHandle pango_cairo_context_get_resolution$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_resolution",
+        constants$1152.pango_cairo_context_get_resolution$FUNC
     );
-    static final FunctionDescriptor pango_parse_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pango_cairo_context_set_shape_renderer$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_style$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_style",
-        constants$1152.pango_parse_style$FUNC
-    );
-    static final FunctionDescriptor pango_parse_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_variant$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_variant",
-        constants$1152.pango_parse_variant$FUNC
-    );
-    static final FunctionDescriptor pango_parse_weight$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_weight$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_weight",
-        constants$1152.pango_parse_weight$FUNC
-    );
-    static final FunctionDescriptor pango_parse_stretch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_stretch$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_stretch",
-        constants$1152.pango_parse_stretch$FUNC
-    );
-    static final FunctionDescriptor pango_quantize_line_geometry$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_quantize_line_geometry$MH = RuntimeHelper.downcallHandle(
-        "pango_quantize_line_geometry",
-        constants$1152.pango_quantize_line_geometry$FUNC
+    static final MethodHandle pango_cairo_context_set_shape_renderer$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_set_shape_renderer",
+        constants$1152.pango_cairo_context_set_shape_renderer$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_context_get_shape_renderer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_context_get_shape_renderer$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_shape_renderer",
+        constants$1152.pango_cairo_context_get_shape_renderer$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_create_context$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_context",
+        constants$1152.pango_cairo_create_context$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_create_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_create_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_layout",
+        constants$1152.pango_cairo_create_layout$FUNC
     );
 }
 

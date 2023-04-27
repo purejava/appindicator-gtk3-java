@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1627 {
+final class constants$1627 {
 
-    static final FunctionDescriptor gtk_list_store_swap$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1627() {}
+    static final FunctionDescriptor gtk_style_properties_lookup_property$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_swap$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_swap",
-        constants$1627.gtk_list_store_swap$FUNC
+    static final MethodHandle gtk_style_properties_lookup_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_lookup_property",
+        constants$1627.gtk_style_properties_lookup_property$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_move_after$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_properties_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_style_properties_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_new",
+        constants$1627.gtk_style_properties_new$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_map_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_move_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_move_after",
-        constants$1627.gtk_list_store_move_after$FUNC
+    static final MethodHandle gtk_style_properties_map_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_map_color",
+        constants$1627.gtk_style_properties_map_color$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_move_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_move_before$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_move_before",
-        constants$1627.gtk_list_store_move_before$FUNC
-    );
-    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_properties_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeModelFilterVisibleFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1627.GtkTreeModelFilterVisibleFunc$FUNC
+    static final MethodHandle gtk_style_properties_lookup_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_lookup_color",
+        constants$1627.gtk_style_properties_lookup_color$FUNC
     );
-    static final FunctionDescriptor GtkTreeModelFilterModifyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_properties_set_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_set_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_set_property",
+        constants$1627.gtk_style_properties_set_property$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_set_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_set_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_set_valist",
+        constants$1627.gtk_style_properties_set_valist$FUNC
     );
 }
 

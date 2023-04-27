@@ -7,59 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$280 {
+final class constants$280 {
 
-    static final FunctionDescriptor g_match_info_is_partial_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$280() {}
+    static final FunctionDescriptor g_queue_peek_tail_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_is_partial_match$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_is_partial_match",
-        constants$280.g_match_info_is_partial_match$FUNC
+    static final MethodHandle g_queue_peek_tail_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_tail_link",
+        constants$280.g_queue_peek_tail_link$FUNC
     );
-    static final FunctionDescriptor g_match_info_expand_references$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_expand_references$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_expand_references",
-        constants$280.g_match_info_expand_references$FUNC
-    );
-    static final FunctionDescriptor g_match_info_fetch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_peek_nth_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_match_info_fetch$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch",
-        constants$280.g_match_info_fetch$FUNC
+    static final MethodHandle g_queue_peek_nth_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_nth_link",
+        constants$280.g_queue_peek_nth_link$FUNC
     );
-    static final FunctionDescriptor g_match_info_fetch_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_link_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_fetch_pos$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_pos",
-        constants$280.g_match_info_fetch_pos$FUNC
+    static final MethodHandle g_queue_link_index$MH = RuntimeHelper.downcallHandle(
+        "g_queue_link_index",
+        constants$280.g_queue_link_index$FUNC
     );
-    static final FunctionDescriptor g_match_info_fetch_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_unlink$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_fetch_named$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named",
-        constants$280.g_match_info_fetch_named$FUNC
+    static final MethodHandle g_queue_unlink$MH = RuntimeHelper.downcallHandle(
+        "g_queue_unlink",
+        constants$280.g_queue_unlink$FUNC
     );
-    static final FunctionDescriptor g_match_info_fetch_named_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_delete_link$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_fetch_named_pos$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named_pos",
-        constants$280.g_match_info_fetch_named_pos$FUNC
+    static final MethodHandle g_queue_delete_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_delete_link",
+        constants$280.g_queue_delete_link$FUNC
+    );
+    static final FunctionDescriptor g_rand_new_with_seed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_rand_new_with_seed$MH = RuntimeHelper.downcallHandle(
+        "g_rand_new_with_seed",
+        constants$280.g_rand_new_with_seed$FUNC
     );
 }
 

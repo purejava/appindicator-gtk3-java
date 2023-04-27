@@ -7,61 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$998 {
+final class constants$998 {
 
-    static final FunctionDescriptor hb_unicode_funcs_set_script_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$998() {}
+    static final FunctionDescriptor cairo_pop_group_to_source$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_script_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_script_func",
-        constants$998.hb_unicode_funcs_set_script_func$FUNC
+    static final MethodHandle cairo_pop_group_to_source$MH = RuntimeHelper.downcallHandle(
+        "cairo_pop_group_to_source",
+        constants$998.cairo_pop_group_to_source$FUNC
     );
-    static final FunctionDescriptor hb_unicode_funcs_set_compose_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_compose_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_compose_func",
-        constants$998.hb_unicode_funcs_set_compose_func$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_decompose_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_decompose_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_decompose_func",
-        constants$998.hb_unicode_funcs_set_decompose_func$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_combining_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_set_operator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_combining_class$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_combining_class",
-        constants$998.hb_unicode_combining_class$FUNC
+    static final MethodHandle cairo_set_operator$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_operator",
+        constants$998.cairo_set_operator$FUNC
     );
-    static final FunctionDescriptor hb_unicode_general_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_set_source$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_general_category$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_general_category",
-        constants$998.hb_unicode_general_category$FUNC
+    static final MethodHandle cairo_set_source$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_source",
+        constants$998.cairo_set_source$FUNC
     );
-    static final FunctionDescriptor hb_unicode_mirroring$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_set_source_rgb$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_unicode_mirroring$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_mirroring",
-        constants$998.hb_unicode_mirroring$FUNC
+    static final MethodHandle cairo_set_source_rgb$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_source_rgb",
+        constants$998.cairo_set_source_rgb$FUNC
+    );
+    static final FunctionDescriptor cairo_set_source_rgba$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_source_rgba$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_source_rgba",
+        constants$998.cairo_set_source_rgba$FUNC
+    );
+    static final FunctionDescriptor cairo_set_source_surface$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_source_surface$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_source_surface",
+        constants$998.cairo_set_source_surface$FUNC
     );
 }
 

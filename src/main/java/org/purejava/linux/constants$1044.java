@@ -7,71 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1044 {
+final class constants$1044 {
 
-    static final FunctionDescriptor hb_shape_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1044() {}
+    static final FunctionDescriptor cairo_pattern_add_color_stop_rgb$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_add_color_stop_rgb$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_add_color_stop_rgb",
+        constants$1044.cairo_pattern_add_color_stop_rgb$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_add_color_stop_rgba$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_add_color_stop_rgba$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_add_color_stop_rgba",
+        constants$1044.cairo_pattern_add_color_stop_rgba$FUNC
+    );
+    static final FunctionDescriptor cairo_mesh_pattern_begin_patch$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_shape_full$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_full",
-        constants$1044.hb_shape_full$FUNC
+    static final MethodHandle cairo_mesh_pattern_begin_patch$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_begin_patch",
+        constants$1044.cairo_mesh_pattern_begin_patch$FUNC
     );
-    static final FunctionDescriptor hb_shape_list_shapers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_shape_list_shapers$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_list_shapers",
-        constants$1044.hb_shape_list_shapers$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_mesh_pattern_end_patch$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_shape_plan_create$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create",
-        constants$1044.hb_shape_plan_create$FUNC
+    static final MethodHandle cairo_mesh_pattern_end_patch$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_end_patch",
+        constants$1044.cairo_mesh_pattern_end_patch$FUNC
     );
-    static final FunctionDescriptor hb_shape_plan_create_cached$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_mesh_pattern_curve_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_shape_plan_create_cached$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create_cached",
-        constants$1044.hb_shape_plan_create_cached$FUNC
+    static final MethodHandle cairo_mesh_pattern_curve_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_curve_to",
+        constants$1044.cairo_mesh_pattern_curve_to$FUNC
     );
-    static final FunctionDescriptor hb_shape_plan_create2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_mesh_pattern_line_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_shape_plan_create2$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create2",
-        constants$1044.hb_shape_plan_create2$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_create_cached2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_create_cached2$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create_cached2",
-        constants$1044.hb_shape_plan_create_cached2$FUNC
+    static final MethodHandle cairo_mesh_pattern_line_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_line_to",
+        constants$1044.cairo_mesh_pattern_line_to$FUNC
     );
 }
 

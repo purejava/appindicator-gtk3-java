@@ -7,62 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$829 {
+final class constants$829 {
 
-    static final FunctionDescriptor g_socket_client_connect_to_service_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_service_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_async",
-        constants$829.g_socket_client_connect_to_service_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$829() {}
+    static final FunctionDescriptor g_volume_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_connect_to_service_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_finish",
-        constants$829.g_socket_client_connect_to_service_finish$FUNC
+    static final MethodHandle g_volume_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
+        "g_volume_eject_with_operation_finish",
+        constants$829.g_volume_eject_with_operation_finish$FUNC
     );
-    static final FunctionDescriptor g_socket_client_connect_to_uri_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_volume_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_get_sort_key$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_sort_key",
+        constants$829.g_volume_get_sort_key$FUNC
+    );
+    static final FunctionDescriptor g_zlib_compressor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_zlib_compressor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_get_type",
+        constants$829.g_zlib_compressor_get_type$FUNC
+    );
+    static final FunctionDescriptor g_zlib_compressor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_zlib_compressor_new$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_new",
+        constants$829.g_zlib_compressor_new$FUNC
+    );
+    static final FunctionDescriptor g_zlib_compressor_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_zlib_compressor_get_file_info$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_get_file_info",
+        constants$829.g_zlib_compressor_get_file_info$FUNC
+    );
+    static final FunctionDescriptor g_zlib_compressor_set_file_info$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_connect_to_uri_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri_async",
-        constants$829.g_socket_client_connect_to_uri_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_uri_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_uri_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri_finish",
-        constants$829.g_socket_client_connect_to_uri_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_add_application_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_add_application_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_add_application_proxy",
-        constants$829.g_socket_client_add_application_proxy$FUNC
-    );
-    static final FunctionDescriptor g_socket_connectable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_connectable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_get_type",
-        constants$829.g_socket_connectable_get_type$FUNC
+    static final MethodHandle g_zlib_compressor_set_file_info$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_set_file_info",
+        constants$829.g_zlib_compressor_set_file_info$FUNC
     );
 }
 

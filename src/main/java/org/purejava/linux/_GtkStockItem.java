@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkStockItem {
+ *     gchar* stock_id;
+ *     gchar* label;
+ *     GdkModifierType modifier;
+ *     guint keyval;
+ *     gchar* translation_domain;
+ * };
+ * }
+ */
 public class _GtkStockItem {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("stock_id"),
         Constants$root.C_POINTER$LAYOUT.withName("label"),
         Constants$root.C_INT$LAYOUT.withName("modifier"),
@@ -23,42 +34,78 @@ public class _GtkStockItem {
     public static VarHandle stock_id$VH() {
         return _GtkStockItem.stock_id$VH;
     }
-    public static MemoryAddress stock_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.stock_id$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* stock_id;
+     * }
+     */
+    public static MemorySegment stock_id$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.stock_id$VH.get(seg);
     }
-    public static void stock_id$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* stock_id;
+     * }
+     */
+    public static void stock_id$set(MemorySegment seg, MemorySegment x) {
         _GtkStockItem.stock_id$VH.set(seg, x);
     }
-    public static MemoryAddress stock_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.stock_id$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stock_id$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.stock_id$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stock_id$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stock_id$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStockItem.stock_id$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle label$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("label"));
     public static VarHandle label$VH() {
         return _GtkStockItem.label$VH;
     }
-    public static MemoryAddress label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.label$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* label;
+     * }
+     */
+    public static MemorySegment label$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.label$VH.get(seg);
     }
-    public static void label$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* label;
+     * }
+     */
+    public static void label$set(MemorySegment seg, MemorySegment x) {
         _GtkStockItem.label$VH.set(seg, x);
     }
-    public static MemoryAddress label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.label$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment label$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.label$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void label$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void label$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStockItem.label$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle modifier$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("modifier"));
     public static VarHandle modifier$VH() {
         return _GtkStockItem.modifier$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkModifierType modifier;
+     * }
+     */
     public static int modifier$get(MemorySegment seg) {
         return (int)_GtkStockItem.modifier$VH.get(seg);
     }
-    public static void modifier$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkModifierType modifier;
+     * }
+     */
+    public static void modifier$set(MemorySegment seg, int x) {
         _GtkStockItem.modifier$VH.set(seg, x);
     }
     public static int modifier$get(MemorySegment seg, long index) {
@@ -71,10 +118,22 @@ public class _GtkStockItem {
     public static VarHandle keyval$VH() {
         return _GtkStockItem.keyval$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint keyval;
+     * }
+     */
     public static int keyval$get(MemorySegment seg) {
         return (int)_GtkStockItem.keyval$VH.get(seg);
     }
-    public static void keyval$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint keyval;
+     * }
+     */
+    public static void keyval$set(MemorySegment seg, int x) {
         _GtkStockItem.keyval$VH.set(seg, x);
     }
     public static int keyval$get(MemorySegment seg, long index) {
@@ -87,24 +146,36 @@ public class _GtkStockItem {
     public static VarHandle translation_domain$VH() {
         return _GtkStockItem.translation_domain$VH;
     }
-    public static MemoryAddress translation_domain$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.translation_domain$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* translation_domain;
+     * }
+     */
+    public static MemorySegment translation_domain$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.translation_domain$VH.get(seg);
     }
-    public static void translation_domain$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* translation_domain;
+     * }
+     */
+    public static void translation_domain$set(MemorySegment seg, MemorySegment x) {
         _GtkStockItem.translation_domain$VH.set(seg, x);
     }
-    public static MemoryAddress translation_domain$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStockItem.translation_domain$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment translation_domain$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStockItem.translation_domain$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void translation_domain$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void translation_domain$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStockItem.translation_domain$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

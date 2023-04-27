@@ -7,44 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$374 {
+final class constants$374 {
 
-    static final FunctionDescriptor g_static_private_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$374() {}
+    static final FunctionDescriptor pthread_atfork$__child$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor pthread_atfork$__child_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__child_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__child.class, "apply", constants$374.pthread_atfork$__child_UP$FUNC);
+    static final FunctionDescriptor pthread_atfork$__child_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__child_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$374.pthread_atfork$__child_DOWN$FUNC
+    );
+    static final FunctionDescriptor pthread_atfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_private_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_free",
-        constants$374.g_static_private_free$FUNC
+    static final MethodHandle pthread_atfork$MH = RuntimeHelper.downcallHandle(
+        "pthread_atfork",
+        constants$374.pthread_atfork$FUNC
     );
-    static final FunctionDescriptor g_once_init_enter_impl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_static_mutex_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_once_init_enter_impl$MH = RuntimeHelper.downcallHandle(
-        "g_once_init_enter_impl",
-        constants$374.g_once_init_enter_impl$FUNC
+    static final MethodHandle g_static_mutex_init$MH = RuntimeHelper.downcallHandle(
+        "g_static_mutex_init",
+        constants$374.g_static_mutex_init$FUNC
     );
-    static final FunctionDescriptor g_thread_init$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_mutex_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_init$MH = RuntimeHelper.downcallHandle(
-        "g_thread_init",
-        constants$374.g_thread_init$FUNC
+    static final MethodHandle g_static_mutex_free$MH = RuntimeHelper.downcallHandle(
+        "g_static_mutex_free",
+        constants$374.g_static_mutex_free$FUNC
     );
-    static final FunctionDescriptor g_thread_init_with_errorcheck_mutexes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_mutex_get_mutex_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_init_with_errorcheck_mutexes$MH = RuntimeHelper.downcallHandle(
-        "g_thread_init_with_errorcheck_mutexes",
-        constants$374.g_thread_init_with_errorcheck_mutexes$FUNC
+    static final MethodHandle g_static_mutex_get_mutex_impl$MH = RuntimeHelper.downcallHandle(
+        "g_static_mutex_get_mutex_impl",
+        constants$374.g_static_mutex_get_mutex_impl$FUNC
     );
-    static final FunctionDescriptor g_thread_get_initialized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_get_initialized$MH = RuntimeHelper.downcallHandle(
-        "g_thread_get_initialized",
-        constants$374.g_thread_get_initialized$FUNC
-    );
-    static final  OfInt g_threads_got_initialized$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle g_threads_got_initialized$VH = constants$374.g_threads_got_initialized$LAYOUT.varHandle();
-    static final MemorySegment g_threads_got_initialized$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_threads_got_initialized", constants$374.g_threads_got_initialized$LAYOUT);
 }
 
 

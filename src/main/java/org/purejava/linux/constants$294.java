@@ -7,88 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$294 {
+final class constants$294 {
 
-    static final FunctionDescriptor g_spawn_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_spawn_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_error_quark",
-        constants$294.g_spawn_error_quark$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$294() {}
+    static final FunctionDescriptor g_match_info_get_match_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_spawn_exit_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_spawn_exit_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_exit_error_quark",
-        constants$294.g_spawn_exit_error_quark$FUNC
+    static final MethodHandle g_match_info_get_match_count$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_get_match_count",
+        constants$294.g_match_info_get_match_count$FUNC
     );
-    static final FunctionDescriptor g_spawn_async$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_match_info_is_partial_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_match_info_is_partial_match$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_is_partial_match",
+        constants$294.g_match_info_is_partial_match$FUNC
+    );
+    static final FunctionDescriptor g_match_info_expand_references$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_spawn_async$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_async",
-        constants$294.g_spawn_async$FUNC
+    static final MethodHandle g_match_info_expand_references$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_expand_references",
+        constants$294.g_match_info_expand_references$FUNC
     );
-    static final FunctionDescriptor g_spawn_async_with_pipes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_match_info_fetch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_match_info_fetch$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch",
+        constants$294.g_match_info_fetch$FUNC
+    );
+    static final FunctionDescriptor g_match_info_fetch_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_spawn_async_with_pipes$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_async_with_pipes",
-        constants$294.g_spawn_async_with_pipes$FUNC
+    static final MethodHandle g_match_info_fetch_pos$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_pos",
+        constants$294.g_match_info_fetch_pos$FUNC
     );
-    static final FunctionDescriptor g_spawn_async_with_pipes_and_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_match_info_fetch_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_spawn_async_with_pipes_and_fds$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_async_with_pipes_and_fds",
-        constants$294.g_spawn_async_with_pipes_and_fds$FUNC
-    );
-    static final FunctionDescriptor g_spawn_async_with_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_spawn_async_with_fds$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_async_with_fds",
-        constants$294.g_spawn_async_with_fds$FUNC
+    static final MethodHandle g_match_info_fetch_named$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_named",
+        constants$294.g_match_info_fetch_named$FUNC
     );
 }
 

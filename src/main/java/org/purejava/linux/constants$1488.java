@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1488 {
+final class constants$1488 {
 
-    static final FunctionDescriptor gtk_window_get_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1488() {}
+    static final FunctionDescriptor gtk_combo_box_popdown$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_resizable$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_resizable",
-        constants$1488.gtk_window_get_resizable$FUNC
+    static final MethodHandle gtk_combo_box_popdown$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_popdown",
+        constants$1488.gtk_combo_box_popdown$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_gravity$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_get_popup_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_get_popup_accessible$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_popup_accessible",
+        constants$1488.gtk_combo_box_get_popup_accessible$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_id_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_get_id_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_id_column",
+        constants$1488.gtk_combo_box_get_id_column$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_set_id_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_gravity$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_gravity",
-        constants$1488.gtk_window_set_gravity$FUNC
+    static final MethodHandle gtk_combo_box_set_id_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_id_column",
+        constants$1488.gtk_combo_box_set_id_column$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_get_active_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_gravity$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_gravity",
-        constants$1488.gtk_window_get_gravity$FUNC
+    static final MethodHandle gtk_combo_box_get_active_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_active_id",
+        constants$1488.gtk_combo_box_get_active_id$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_geometry_hints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_geometry_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_geometry_hints",
-        constants$1488.gtk_window_set_geometry_hints$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_screen$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_set_active_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_screen",
-        constants$1488.gtk_window_set_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_screen",
-        constants$1488.gtk_window_get_screen$FUNC
+    static final MethodHandle gtk_combo_box_set_active_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_active_id",
+        constants$1488.gtk_combo_box_set_active_id$FUNC
     );
 }
 

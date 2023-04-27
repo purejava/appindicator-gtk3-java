@@ -7,59 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1851 {
+final class constants$1851 {
 
-    static final FunctionDescriptor gtk_icon_view_get_item_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_at_pos",
-        constants$1851.gtk_icon_view_get_item_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_visible_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_visible_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_visible_range",
-        constants$1851.gtk_icon_view_get_visible_range$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1851() {}
+    static final FunctionDescriptor gtk_text_view_set_input_hints$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_activate_on_single_click",
-        constants$1851.gtk_icon_view_set_activate_on_single_click$FUNC
+    static final MethodHandle gtk_text_view_set_input_hints$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_input_hints",
+        constants$1851.gtk_text_view_set_input_hints$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_input_hints$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_activate_on_single_click",
-        constants$1851.gtk_icon_view_get_activate_on_single_click$FUNC
+    static final MethodHandle gtk_text_view_get_input_hints$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_input_hints",
+        constants$1851.gtk_text_view_get_input_hints$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_selected_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_selected_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_selected_foreach",
-        constants$1851.gtk_icon_view_selected_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_selection_mode$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_set_monospace$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_selection_mode",
-        constants$1851.gtk_icon_view_set_selection_mode$FUNC
+    static final MethodHandle gtk_text_view_set_monospace$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_monospace",
+        constants$1851.gtk_text_view_set_monospace$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_monospace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_monospace$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_monospace",
+        constants$1851.gtk_text_view_get_monospace$FUNC
+    );
+    static final FunctionDescriptor gtk_toolbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_toolbar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_type",
+        constants$1851.gtk_toolbar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_toolbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_toolbar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_new",
+        constants$1851.gtk_toolbar_new$FUNC
     );
 }
 

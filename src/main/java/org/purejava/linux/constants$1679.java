@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1679 {
+final class constants$1679 {
 
-    static final FunctionDescriptor gtk_app_chooser_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_app_chooser_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_type",
-        constants$1679.gtk_app_chooser_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_new",
-        constants$1679.gtk_app_chooser_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_append_separator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_append_separator$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_append_separator",
-        constants$1679.gtk_app_chooser_button_append_separator$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_append_custom_item$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1679() {}
+    static final FunctionDescriptor gtk_list_box_set_header_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_append_custom_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_append_custom_item",
-        constants$1679.gtk_app_chooser_button_append_custom_item$FUNC
+    static final MethodHandle gtk_list_box_set_header_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_set_header_func",
+        constants$1679.gtk_list_box_set_header_func$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_button_set_active_custom_item$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_invalidate_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_invalidate_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_invalidate_filter",
+        constants$1679.gtk_list_box_invalidate_filter$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_invalidate_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_invalidate_sort$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_invalidate_sort",
+        constants$1679.gtk_list_box_invalidate_sort$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_invalidate_headers$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_invalidate_headers$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_invalidate_headers",
+        constants$1679.gtk_list_box_invalidate_headers$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_set_active_custom_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_active_custom_item",
-        constants$1679.gtk_app_chooser_button_set_active_custom_item$FUNC
+    static final MethodHandle gtk_list_box_set_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_set_sort_func",
+        constants$1679.gtk_list_box_set_sort_func$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_button_set_show_dialog_item$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_set_show_dialog_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_show_dialog_item",
-        constants$1679.gtk_app_chooser_button_set_show_dialog_item$FUNC
+    static final MethodHandle gtk_list_box_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_set_activate_on_single_click",
+        constants$1679.gtk_list_box_set_activate_on_single_click$FUNC
     );
 }
 

@@ -7,56 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$502 {
+final class constants$502 {
 
-    static final FunctionDescriptor g_value_array_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$502() {}
+    static final FunctionDescriptor g_filter_input_stream_get_close_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_insert$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_insert",
-        constants$502.g_value_array_insert$FUNC
+    static final MethodHandle g_filter_input_stream_get_close_base_stream$MH = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_close_base_stream",
+        constants$502.g_filter_input_stream_get_close_base_stream$FUNC
     );
-    static final FunctionDescriptor g_value_array_remove$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_filter_input_stream_set_close_base_stream$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_value_array_remove$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_remove",
-        constants$502.g_value_array_remove$FUNC
+    static final MethodHandle g_filter_input_stream_set_close_base_stream$MH = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_set_close_base_stream",
+        constants$502.g_filter_input_stream_set_close_base_stream$FUNC
     );
-    static final FunctionDescriptor g_value_array_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_buffered_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_buffered_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_get_type",
+        constants$502.g_buffered_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_buffered_input_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_sort",
-        constants$502.g_value_array_sort$FUNC
+    static final MethodHandle g_buffered_input_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_new",
+        constants$502.g_buffered_input_stream_new$FUNC
     );
-    static final FunctionDescriptor g_value_array_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_buffered_input_stream_new_sized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_buffered_input_stream_new_sized$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_new_sized",
+        constants$502.g_buffered_input_stream_new_sized$FUNC
+    );
+    static final FunctionDescriptor g_buffered_input_stream_get_buffer_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_sort_with_data",
-        constants$502.g_value_array_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_value_set_char$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_value_set_char$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_char",
-        constants$502.g_value_set_char$FUNC
-    );
-    static final FunctionDescriptor g_value_get_char$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_char$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_char",
-        constants$502.g_value_get_char$FUNC
+    static final MethodHandle g_buffered_input_stream_get_buffer_size$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_get_buffer_size",
+        constants$502.g_buffered_input_stream_get_buffer_size$FUNC
     );
 }
 

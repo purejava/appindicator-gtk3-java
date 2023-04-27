@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkWindow {
+/**
+ * {@snippet :
+ * typedef struct _AtkWindow AtkWindow;
+ * }
+ */
+public final class AtkWindow {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkWindow() {}
 }
 
 

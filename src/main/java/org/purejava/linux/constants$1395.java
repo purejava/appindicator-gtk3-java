@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1395 {
+final class constants$1395 {
 
-    static final FunctionDescriptor atk_attribute_set_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1395() {}
+    static final FunctionDescriptor gtk_tree_view_column_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_set_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_reorderable",
+        constants$1395.gtk_tree_view_column_set_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_attribute_set_free$MH = RuntimeHelper.downcallHandle(
-        "atk_attribute_set_free",
-        constants$1395.atk_attribute_set_free$FUNC
+    static final MethodHandle gtk_tree_view_column_get_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_reorderable",
+        constants$1395.gtk_tree_view_column_get_reorderable$FUNC
     );
-    static final FunctionDescriptor atk_text_attribute_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_text_attribute_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_name",
-        constants$1395.atk_text_attribute_get_name$FUNC
+    static final MethodHandle gtk_tree_view_column_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_column_id",
+        constants$1395.gtk_tree_view_column_set_sort_column_id$FUNC
     );
-    static final FunctionDescriptor atk_text_attribute_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_text_attribute_for_name$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_for_name",
-        constants$1395.atk_text_attribute_for_name$FUNC
+    static final MethodHandle gtk_tree_view_column_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sort_column_id",
+        constants$1395.gtk_tree_view_column_get_sort_column_id$FUNC
     );
-    static final FunctionDescriptor atk_text_attribute_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_text_attribute_get_value$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_value",
-        constants$1395.atk_text_attribute_get_value$FUNC
-    );
-    static final FunctionDescriptor atk_text_scroll_substring_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_set_sort_indicator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_text_scroll_substring_to$MH = RuntimeHelper.downcallHandle(
-        "atk_text_scroll_substring_to",
-        constants$1395.atk_text_scroll_substring_to$FUNC
+    static final MethodHandle gtk_tree_view_column_set_sort_indicator$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_indicator",
+        constants$1395.gtk_tree_view_column_set_sort_indicator$FUNC
     );
-    static final FunctionDescriptor atk_text_scroll_substring_to_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_tree_view_column_get_sort_indicator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_text_scroll_substring_to_point$MH = RuntimeHelper.downcallHandle(
-        "atk_text_scroll_substring_to_point",
-        constants$1395.atk_text_scroll_substring_to_point$FUNC
+    static final MethodHandle gtk_tree_view_column_get_sort_indicator$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sort_indicator",
+        constants$1395.gtk_tree_view_column_get_sort_indicator$FUNC
     );
 }
 

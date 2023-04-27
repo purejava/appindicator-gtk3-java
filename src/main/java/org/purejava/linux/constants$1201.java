@@ -7,60 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1201 {
+final class constants$1201 {
 
-    static final FunctionDescriptor cairo_pattern_create_rgb$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_create_rgb$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_rgb",
-        constants$1201.cairo_pattern_create_rgb$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_create_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_create_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_rgba",
-        constants$1201.cairo_pattern_create_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_create_for_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1201() {}
+    static final FunctionDescriptor atk_object_get_n_accessible_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_create_for_surface$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_for_surface",
-        constants$1201.cairo_pattern_create_for_surface$FUNC
+    static final MethodHandle atk_object_get_n_accessible_children$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_n_accessible_children",
+        constants$1201.atk_object_get_n_accessible_children$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_create_linear$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor atk_object_ref_accessible_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_pattern_create_linear$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_linear",
-        constants$1201.cairo_pattern_create_linear$FUNC
+    static final MethodHandle atk_object_ref_accessible_child$MH = RuntimeHelper.downcallHandle(
+        "atk_object_ref_accessible_child",
+        constants$1201.atk_object_ref_accessible_child$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_create_radial$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor atk_object_ref_relation_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_create_radial$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_radial",
-        constants$1201.cairo_pattern_create_radial$FUNC
+    static final MethodHandle atk_object_ref_relation_set$MH = RuntimeHelper.downcallHandle(
+        "atk_object_ref_relation_set",
+        constants$1201.atk_object_ref_relation_set$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_create_mesh$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_pattern_create_mesh$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_mesh",
-        constants$1201.cairo_pattern_create_mesh$FUNC
+    static final FunctionDescriptor atk_object_get_role$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_get_role$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_role",
+        constants$1201.atk_object_get_role$FUNC
+    );
+    static final FunctionDescriptor atk_object_get_layer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_get_layer$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_layer",
+        constants$1201.atk_object_get_layer$FUNC
+    );
+    static final FunctionDescriptor atk_object_get_mdi_zorder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_get_mdi_zorder$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_mdi_zorder",
+        constants$1201.atk_object_get_mdi_zorder$FUNC
     );
 }
 

@@ -7,47 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2033 {
+final class constants$2033 {
 
-    static final FunctionDescriptor gtk_text_buffer_begin_user_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_begin_user_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_begin_user_action",
-        constants$2033.gtk_text_buffer_begin_user_action$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_end_user_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_end_user_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_end_user_action",
-        constants$2033.gtk_text_buffer_end_user_action$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_copy_target_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_copy_target_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_copy_target_list",
-        constants$2033.gtk_text_buffer_get_copy_target_list$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_paste_target_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_paste_target_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_paste_target_list",
-        constants$2033.gtk_text_buffer_get_paste_target_list$FUNC
-    );
-    static final FunctionDescriptor GtkTextBufferSerializeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTextBufferSerializeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$2033.GtkTextBufferSerializeFunc$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2033() {}
+    static final MemorySegment GTK_STYLE_CLASS_SCALE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale");
+    static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale-has-marks-above");
+    static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale-has-marks-below");
+    static final MemorySegment GTK_STYLE_CLASS_HEADER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("header");
+    static final MemorySegment GTK_STYLE_CLASS_ACCELERATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("accelerator");
+    static final MemorySegment GTK_STYLE_CLASS_RAISED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("raised");
 }
 
 

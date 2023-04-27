@@ -7,67 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$205 {
+final class constants$205 {
 
-    static final FunctionDescriptor g_io_channel_read_line_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$205() {}
+    static final FunctionDescriptor g_str_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_str_match_string$MH = RuntimeHelper.downcallHandle(
+        "g_str_match_string",
+        constants$205.g_str_match_string$FUNC
+    );
+    static final FunctionDescriptor g_strv_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_read_line_string$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_line_string",
-        constants$205.g_io_channel_read_line_string$FUNC
+    static final MethodHandle g_strv_contains$MH = RuntimeHelper.downcallHandle(
+        "g_strv_contains",
+        constants$205.g_strv_contains$FUNC
     );
-    static final FunctionDescriptor g_io_channel_read_to_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_strv_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_read_to_end$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_to_end",
-        constants$205.g_io_channel_read_to_end$FUNC
+    static final MethodHandle g_strv_equal$MH = RuntimeHelper.downcallHandle(
+        "g_strv_equal",
+        constants$205.g_strv_equal$FUNC
     );
-    static final FunctionDescriptor g_io_channel_read_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_number_parser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_number_parser_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_number_parser_error_quark",
+        constants$205.g_number_parser_error_quark$FUNC
     );
-    static final MethodHandle g_io_channel_read_chars$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_chars",
-        constants$205.g_io_channel_read_chars$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_read_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_unichar",
-        constants$205.g_io_channel_read_unichar$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_write_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_write_chars$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_write_chars",
-        constants$205.g_io_channel_write_chars$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_write_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_ascii_string_to_signed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_write_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_write_unichar",
-        constants$205.g_io_channel_write_unichar$FUNC
+    static final MethodHandle g_ascii_string_to_signed$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_string_to_signed",
+        constants$205.g_ascii_string_to_signed$FUNC
+    );
+    static final FunctionDescriptor g_ascii_string_to_unsigned$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ascii_string_to_unsigned$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_string_to_unsigned",
+        constants$205.g_ascii_string_to_unsigned$FUNC
     );
 }
 

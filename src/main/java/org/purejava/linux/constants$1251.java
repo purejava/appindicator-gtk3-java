@@ -7,61 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1251 {
+final class constants$1251 {
 
-    static final FunctionDescriptor gdk_window_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1251() {}
+    static final FunctionDescriptor gtk_widget_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_width",
-        constants$1251.gdk_window_get_width$FUNC
+    static final MethodHandle gtk_widget_get_frame_clock$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_frame_clock",
+        constants$1251.gtk_widget_get_frame_clock$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_height",
-        constants$1251.gdk_window_get_height$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_size_request$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_position$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_position",
-        constants$1251.gdk_window_get_position$FUNC
+    static final MethodHandle gtk_widget_size_request$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_size_request",
+        constants$1251.gtk_widget_size_request$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_size_allocate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_size_allocate$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_size_allocate",
+        constants$1251.gtk_widget_size_allocate$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_size_allocate_with_baseline$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_size_allocate_with_baseline$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_size_allocate_with_baseline",
+        constants$1251.gtk_widget_size_allocate_with_baseline$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_request_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_request_mode",
+        constants$1251.gtk_widget_get_request_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_origin$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_origin",
-        constants$1251.gdk_window_get_origin$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_root_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_root_coords$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_root_coords",
-        constants$1251.gdk_window_get_root_coords$FUNC
-    );
-    static final FunctionDescriptor gdk_window_coords_to_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_coords_to_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_to_parent",
-        constants$1251.gdk_window_coords_to_parent$FUNC
+    static final MethodHandle gtk_widget_get_preferred_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_width",
+        constants$1251.gtk_widget_get_preferred_width$FUNC
     );
 }
 

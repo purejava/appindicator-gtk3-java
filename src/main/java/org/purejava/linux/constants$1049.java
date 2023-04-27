@@ -7,48 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1049 {
+final class constants$1049 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoCoverage$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoCoverage$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoCoverage",
-        constants$1049.glib_queueautoptr_cleanup_PangoCoverage$FUNC
-    );
-    static final FunctionDescriptor pango_units_from_double$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1049() {}
+    static final FunctionDescriptor cairo_matrix_init_rotate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle pango_units_from_double$MH = RuntimeHelper.downcallHandle(
-        "pango_units_from_double",
-        constants$1049.pango_units_from_double$FUNC
+    static final MethodHandle cairo_matrix_init_rotate$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_rotate",
+        constants$1049.cairo_matrix_init_rotate$FUNC
     );
-    static final FunctionDescriptor pango_units_to_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_matrix_translate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle pango_units_to_double$MH = RuntimeHelper.downcallHandle(
-        "pango_units_to_double",
-        constants$1049.pango_units_to_double$FUNC
+    static final MethodHandle cairo_matrix_translate$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_translate",
+        constants$1049.cairo_matrix_translate$FUNC
     );
-    static final FunctionDescriptor pango_extents_to_pixels$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_matrix_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_scale$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_scale",
+        constants$1049.cairo_matrix_scale$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_rotate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_rotate$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_rotate",
+        constants$1049.cairo_matrix_rotate$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_invert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_invert$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_invert",
+        constants$1049.cairo_matrix_invert$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_multiply$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_extents_to_pixels$MH = RuntimeHelper.downcallHandle(
-        "pango_extents_to_pixels",
-        constants$1049.pango_extents_to_pixels$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_matrix_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_get_type",
-        constants$1049.pango_matrix_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_copy",
-        constants$1049.pango_matrix_copy$FUNC
+    static final MethodHandle cairo_matrix_multiply$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_multiply",
+        constants$1049.cairo_matrix_multiply$FUNC
     );
 }
 

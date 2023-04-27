@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1356 {
+final class constants$1356 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkDisplay$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1356() {}
+    static final FunctionDescriptor gtk_app_chooser_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_app_chooser_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_get_type",
+        constants$1356.gtk_app_chooser_dialog_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_app_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GdkDisplay$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkDisplay",
-        constants$1356.glib_autoptr_cleanup_GdkDisplay$FUNC
+    static final MethodHandle gtk_app_chooser_dialog_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_new",
+        constants$1356.gtk_app_chooser_dialog_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkDisplay$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_dialog_new_for_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkDisplay$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkDisplay",
-        constants$1356.glib_listautoptr_cleanup_GdkDisplay$FUNC
+    static final MethodHandle gtk_app_chooser_dialog_new_for_content_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_new_for_content_type",
+        constants$1356.gtk_app_chooser_dialog_new_for_content_type$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkDisplay$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_dialog_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkDisplay$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkDisplay",
-        constants$1356.glib_slistautoptr_cleanup_GdkDisplay$FUNC
+    static final MethodHandle gtk_app_chooser_dialog_get_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_get_widget",
+        constants$1356.gtk_app_chooser_dialog_get_widget$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkDisplay$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_dialog_set_heading$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkDisplay$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkDisplay",
-        constants$1356.glib_queueautoptr_cleanup_GdkDisplay$FUNC
+    static final MethodHandle gtk_app_chooser_dialog_set_heading$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_set_heading",
+        constants$1356.gtk_app_chooser_dialog_set_heading$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GdkDisplayManager$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_dialog_get_heading$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GdkDisplayManager$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkDisplayManager",
-        constants$1356.glib_autoptr_clear_GdkDisplayManager$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkDisplayManager$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GdkDisplayManager$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkDisplayManager",
-        constants$1356.glib_autoptr_cleanup_GdkDisplayManager$FUNC
+    static final MethodHandle gtk_app_chooser_dialog_get_heading$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_dialog_get_heading",
+        constants$1356.gtk_app_chooser_dialog_get_heading$FUNC
     );
 }
 

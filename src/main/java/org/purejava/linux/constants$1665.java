@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1665 {
+final class constants$1665 {
 
-    static final FunctionDescriptor gtk_tree_view_get_enable_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_enable_search$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_enable_search",
-        constants$1665.gtk_tree_view_get_enable_search$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_search_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_search_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_column",
-        constants$1665.gtk_tree_view_get_search_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_search_column$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1665() {}
+    static final FunctionDescriptor gtk_info_bar_set_message_type$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_search_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_column",
-        constants$1665.gtk_tree_view_set_search_column$FUNC
+    static final MethodHandle gtk_info_bar_set_message_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_set_message_type",
+        constants$1665.gtk_info_bar_set_message_type$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_search_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_info_bar_get_message_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_search_equal_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_equal_func",
-        constants$1665.gtk_tree_view_get_search_equal_func$FUNC
+    static final MethodHandle gtk_info_bar_get_message_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_get_message_type",
+        constants$1665.gtk_info_bar_get_message_type$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_search_equal_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_info_bar_set_show_close_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_set_show_close_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_set_show_close_button",
+        constants$1665.gtk_info_bar_set_show_close_button$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_get_show_close_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_search_equal_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_equal_func",
-        constants$1665.gtk_tree_view_set_search_equal_func$FUNC
+    static final MethodHandle gtk_info_bar_get_show_close_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_get_show_close_button",
+        constants$1665.gtk_info_bar_get_show_close_button$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_search_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_info_bar_set_revealed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_set_revealed$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_set_revealed",
+        constants$1665.gtk_info_bar_set_revealed$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_get_revealed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_search_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_entry",
-        constants$1665.gtk_tree_view_get_search_entry$FUNC
+    static final MethodHandle gtk_info_bar_get_revealed$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_get_revealed",
+        constants$1665.gtk_info_bar_get_revealed$FUNC
     );
 }
 

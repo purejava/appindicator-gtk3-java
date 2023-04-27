@@ -7,63 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$289 {
+final class constants$289 {
 
-    static final FunctionDescriptor g_sequence_move_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$289() {}
+    static final FunctionDescriptor g_regex_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_move_range$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_move_range",
-        constants$289.g_sequence_move_range$FUNC
+    static final MethodHandle g_regex_unref$MH = RuntimeHelper.downcallHandle(
+        "g_regex_unref",
+        constants$289.g_regex_unref$FUNC
     );
-    static final FunctionDescriptor g_sequence_search$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_regex_get_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_search$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_search",
-        constants$289.g_sequence_search$FUNC
+    static final MethodHandle g_regex_get_pattern$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_pattern",
+        constants$289.g_regex_get_pattern$FUNC
     );
-    static final FunctionDescriptor g_sequence_search_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_regex_get_max_backref$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_search_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_search_iter",
-        constants$289.g_sequence_search_iter$FUNC
+    static final MethodHandle g_regex_get_max_backref$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_max_backref",
+        constants$289.g_regex_get_max_backref$FUNC
     );
-    static final FunctionDescriptor g_sequence_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_regex_get_capture_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_lookup",
-        constants$289.g_sequence_lookup$FUNC
+    static final MethodHandle g_regex_get_capture_count$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_capture_count",
+        constants$289.g_regex_get_capture_count$FUNC
     );
-    static final FunctionDescriptor g_sequence_lookup_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_regex_get_has_cr_or_lf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_lookup_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_lookup_iter",
-        constants$289.g_sequence_lookup_iter$FUNC
+    static final MethodHandle g_regex_get_has_cr_or_lf$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_has_cr_or_lf",
+        constants$289.g_regex_get_has_cr_or_lf$FUNC
     );
-    static final FunctionDescriptor g_sequence_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_regex_get_max_lookbehind$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_get$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get",
-        constants$289.g_sequence_get$FUNC
+    static final MethodHandle g_regex_get_max_lookbehind$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_max_lookbehind",
+        constants$289.g_regex_get_max_lookbehind$FUNC
     );
 }
 

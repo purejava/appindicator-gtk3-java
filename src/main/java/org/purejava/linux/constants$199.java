@@ -7,59 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$199 {
+final class constants$199 {
 
-    static final FunctionDescriptor g_string_vprintf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_string_vprintf",
-        constants$199.g_string_vprintf$FUNC
-    );
-    static final FunctionDescriptor g_string_printf$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$199() {}
+    static final FunctionDescriptor g_ascii_strtod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_string_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_string_printf",
-        constants$199.g_string_printf$FUNC
+    static final MethodHandle g_ascii_strtod$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strtod",
+        constants$199.g_ascii_strtod$FUNC
     );
-    static final FunctionDescriptor g_string_append_vprintf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_append_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_string_append_vprintf",
-        constants$199.g_string_append_vprintf$FUNC
-    );
-    static final FunctionDescriptor g_string_append_printf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_append_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_string_append_printf",
-        constants$199.g_string_append_printf$FUNC
-    );
-    static final FunctionDescriptor g_string_append_uri_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ascii_strtoull$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_string_append_uri_escaped$MH = RuntimeHelper.downcallHandle(
-        "g_string_append_uri_escaped",
-        constants$199.g_string_append_uri_escaped$FUNC
+    static final MethodHandle g_ascii_strtoull$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strtoull",
+        constants$199.g_ascii_strtoull$FUNC
     );
-    static final FunctionDescriptor g_string_append_c_inline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ascii_strtoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_string_append_c_inline$MH = RuntimeHelper.downcallHandle(
-        "g_string_append_c_inline",
-        constants$199.g_string_append_c_inline$FUNC
+    static final MethodHandle g_ascii_strtoll$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_strtoll",
+        constants$199.g_ascii_strtoll$FUNC
+    );
+    static final FunctionDescriptor g_ascii_dtostr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_ascii_dtostr$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_dtostr",
+        constants$199.g_ascii_dtostr$FUNC
+    );
+    static final FunctionDescriptor g_ascii_formatd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_ascii_formatd$MH = RuntimeHelper.downcallHandle(
+        "g_ascii_formatd",
+        constants$199.g_ascii_formatd$FUNC
+    );
+    static final FunctionDescriptor g_strchug$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strchug$MH = RuntimeHelper.downcallHandle(
+        "g_strchug",
+        constants$199.g_strchug$FUNC
     );
 }
 

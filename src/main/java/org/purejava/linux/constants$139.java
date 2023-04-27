@@ -7,8 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$139 {
+final class constants$139 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$139() {}
+    static final FunctionDescriptor g_node_last_sibling$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_last_sibling$MH = RuntimeHelper.downcallHandle(
+        "g_node_last_sibling",
+        constants$139.g_node_last_sibling$FUNC
+    );
+    static final FunctionDescriptor g_list_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_list_alloc$MH = RuntimeHelper.downcallHandle(
+        "g_list_alloc",
+        constants$139.g_list_alloc$FUNC
+    );
+    static final FunctionDescriptor g_list_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_free$MH = RuntimeHelper.downcallHandle(
+        "g_list_free",
+        constants$139.g_list_free$FUNC
+    );
+    static final FunctionDescriptor g_list_free_1$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_free_1$MH = RuntimeHelper.downcallHandle(
+        "g_list_free_1",
+        constants$139.g_list_free_1$FUNC
+    );
+    static final FunctionDescriptor g_list_free_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_free_full$MH = RuntimeHelper.downcallHandle(
+        "g_list_free_full",
+        constants$139.g_list_free_full$FUNC
+    );
     static final FunctionDescriptor g_list_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -16,51 +52,6 @@ class constants$139 {
     static final MethodHandle g_list_append$MH = RuntimeHelper.downcallHandle(
         "g_list_append",
         constants$139.g_list_append$FUNC
-    );
-    static final FunctionDescriptor g_list_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_list_prepend",
-        constants$139.g_list_prepend$FUNC
-    );
-    static final FunctionDescriptor g_list_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_insert$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert",
-        constants$139.g_list_insert$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_sorted$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_sorted",
-        constants$139.g_list_insert_sorted$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_sorted_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_sorted_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_sorted_with_data",
-        constants$139.g_list_insert_sorted_with_data$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_before$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_before",
-        constants$139.g_list_insert_before$FUNC
     );
 }
 

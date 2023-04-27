@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$388 {
+final class constants$388 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GPtrArray$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$388() {}
+    static final FunctionDescriptor g_type_add_interface_dynamic$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GPtrArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GPtrArray",
-        constants$388.glib_autoptr_cleanup_GPtrArray$FUNC
+    static final MethodHandle g_type_add_interface_dynamic$MH = RuntimeHelper.downcallHandle(
+        "g_type_add_interface_dynamic",
+        constants$388.g_type_add_interface_dynamic$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GPtrArray$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_interface_add_prerequisite$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_type_interface_add_prerequisite$MH = RuntimeHelper.downcallHandle(
+        "g_type_interface_add_prerequisite",
+        constants$388.g_type_interface_add_prerequisite$FUNC
+    );
+    static final FunctionDescriptor g_type_interface_prerequisites$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GPtrArray$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GPtrArray",
-        constants$388.glib_listautoptr_cleanup_GPtrArray$FUNC
+    static final MethodHandle g_type_interface_prerequisites$MH = RuntimeHelper.downcallHandle(
+        "g_type_interface_prerequisites",
+        constants$388.g_type_interface_prerequisites$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GPtrArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_interface_instantiatable_prerequisite$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GPtrArray$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GPtrArray",
-        constants$388.glib_slistautoptr_cleanup_GPtrArray$FUNC
+    static final MethodHandle g_type_interface_instantiatable_prerequisite$MH = RuntimeHelper.downcallHandle(
+        "g_type_interface_instantiatable_prerequisite",
+        constants$388.g_type_interface_instantiatable_prerequisite$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GPtrArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_class_add_private$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GPtrArray$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GPtrArray",
-        constants$388.glib_queueautoptr_cleanup_GPtrArray$FUNC
+    static final MethodHandle g_type_class_add_private$MH = RuntimeHelper.downcallHandle(
+        "g_type_class_add_private",
+        constants$388.g_type_class_add_private$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GByteArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_add_instance_private$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GByteArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GByteArray",
-        constants$388.glib_autoptr_clear_GByteArray$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GByteArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GByteArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GByteArray",
-        constants$388.glib_autoptr_cleanup_GByteArray$FUNC
+    static final MethodHandle g_type_add_instance_private$MH = RuntimeHelper.downcallHandle(
+        "g_type_add_instance_private",
+        constants$388.g_type_add_instance_private$FUNC
     );
 }
 

@@ -7,37 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$728 {
+final class constants$728 {
 
-    static final FunctionDescriptor g_tls_certificate_request_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_certificate_request_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_request_flags_get_type",
-        constants$728.g_tls_certificate_request_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$728() {}
+    static final FunctionDescriptor g_proxy_address_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_tls_protocol_version_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_protocol_version_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_protocol_version_get_type",
-        constants$728.g_tls_protocol_version_get_type$FUNC
+    static final MethodHandle g_proxy_address_get_password$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_password",
+        constants$728.g_proxy_address_get_password$FUNC
     );
-    static final FunctionDescriptor g_io_module_scope_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_module_scope_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_flags_get_type",
-        constants$728.g_io_module_scope_flags_get_type$FUNC
+    static final FunctionDescriptor g_proxy_address_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_socket_client_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_client_event_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_event_get_type",
-        constants$728.g_socket_client_event_get_type$FUNC
+    static final MethodHandle g_proxy_address_get_uri$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_uri",
+        constants$728.g_proxy_address_get_uri$FUNC
     );
-    static final FunctionDescriptor g_socket_listener_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_listener_event_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_event_get_type",
-        constants$728.g_socket_listener_event_get_type$FUNC
+    static final FunctionDescriptor g_socket_address_enumerator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_address_enumerator_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_get_type",
+        constants$728.g_socket_address_enumerator_get_type$FUNC
     );
-    static final FunctionDescriptor g_test_dbus_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_test_dbus_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_flags_get_type",
-        constants$728.g_test_dbus_flags_get_type$FUNC
+    static final FunctionDescriptor g_socket_address_enumerator_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_address_enumerator_next$MH = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_next",
+        constants$728.g_socket_address_enumerator_next$FUNC
+    );
+    static final FunctionDescriptor g_socket_address_enumerator_next_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_address_enumerator_next_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_next_async",
+        constants$728.g_socket_address_enumerator_next_async$FUNC
+    );
+    static final FunctionDescriptor g_socket_address_enumerator_next_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_address_enumerator_next_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_next_finish",
+        constants$728.g_socket_address_enumerator_next_finish$FUNC
     );
 }
 

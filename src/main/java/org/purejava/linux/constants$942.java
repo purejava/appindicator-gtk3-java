@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$942 {
+final class constants$942 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GNetworkService$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$942() {}
+    static final FunctionDescriptor pango_glyph_string_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_glyph_string_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_get_type",
+        constants$942.pango_glyph_string_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_glyph_string_new$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_new",
+        constants$942.pango_glyph_string_new$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_string_set_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_glyph_string_set_size$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_set_size",
+        constants$942.pango_glyph_string_set_size$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_string_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GNetworkService$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GNetworkService",
-        constants$942.glib_queueautoptr_cleanup_GNetworkService$FUNC
+    static final MethodHandle pango_glyph_string_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_copy",
+        constants$942.pango_glyph_string_copy$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GNotification$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GNotification$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GNotification",
-        constants$942.glib_autoptr_clear_GNotification$FUNC
+    static final MethodHandle pango_glyph_string_free$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_free",
+        constants$942.pango_glyph_string_free$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GNotification$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GNotification$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GNotification",
-        constants$942.glib_autoptr_cleanup_GNotification$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GNotification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GNotification$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GNotification",
-        constants$942.glib_listautoptr_cleanup_GNotification$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GNotification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GNotification$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GNotification",
-        constants$942.glib_slistautoptr_cleanup_GNotification$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GNotification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GNotification$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GNotification",
-        constants$942.glib_queueautoptr_cleanup_GNotification$FUNC
+    static final MethodHandle pango_glyph_string_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_extents",
+        constants$942.pango_glyph_string_extents$FUNC
     );
 }
 

@@ -7,9 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkWindowAttr {
+ *     gchar* title;
+ *     gint event_mask;
+ *     gint x;
+ *     gint y;
+ *     gint width;
+ *     gint height;
+ *     GdkWindowWindowClass wclass;
+ *     GdkVisual* visual;
+ *     GdkWindowType window_type;
+ *     GdkCursor* cursor;
+ *     gchar* wmclass_name;
+ *     gchar* wmclass_class;
+ *     gboolean override_redirect;
+ *     GdkWindowTypeHint type_hint;
+ * };
+ * }
+ */
 public class _GdkWindowAttr {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("title"),
         Constants$root.C_INT$LAYOUT.withName("event_mask"),
         Constants$root.C_INT$LAYOUT.withName("x"),
@@ -33,26 +53,50 @@ public class _GdkWindowAttr {
     public static VarHandle title$VH() {
         return _GdkWindowAttr.title$VH;
     }
-    public static MemoryAddress title$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.title$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* title;
+     * }
+     */
+    public static MemorySegment title$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.title$VH.get(seg);
     }
-    public static void title$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* title;
+     * }
+     */
+    public static void title$set(MemorySegment seg, MemorySegment x) {
         _GdkWindowAttr.title$VH.set(seg, x);
     }
-    public static MemoryAddress title$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.title$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment title$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.title$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void title$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void title$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkWindowAttr.title$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle event_mask$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("event_mask"));
     public static VarHandle event_mask$VH() {
         return _GdkWindowAttr.event_mask$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint event_mask;
+     * }
+     */
     public static int event_mask$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.event_mask$VH.get(seg);
     }
-    public static void event_mask$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint event_mask;
+     * }
+     */
+    public static void event_mask$set(MemorySegment seg, int x) {
         _GdkWindowAttr.event_mask$VH.set(seg, x);
     }
     public static int event_mask$get(MemorySegment seg, long index) {
@@ -65,10 +109,22 @@ public class _GdkWindowAttr {
     public static VarHandle x$VH() {
         return _GdkWindowAttr.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint x;
+     * }
+     */
     public static int x$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, int x) {
         _GdkWindowAttr.x$VH.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
@@ -81,10 +137,22 @@ public class _GdkWindowAttr {
     public static VarHandle y$VH() {
         return _GdkWindowAttr.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint y;
+     * }
+     */
     public static int y$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, int x) {
         _GdkWindowAttr.y$VH.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
@@ -97,10 +165,22 @@ public class _GdkWindowAttr {
     public static VarHandle width$VH() {
         return _GdkWindowAttr.width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint width;
+     * }
+     */
     public static int width$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.width$VH.get(seg);
     }
-    public static void width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint width;
+     * }
+     */
+    public static void width$set(MemorySegment seg, int x) {
         _GdkWindowAttr.width$VH.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
@@ -113,10 +193,22 @@ public class _GdkWindowAttr {
     public static VarHandle height$VH() {
         return _GdkWindowAttr.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint height;
+     * }
+     */
     public static int height$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, int x) {
         _GdkWindowAttr.height$VH.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
@@ -129,10 +221,22 @@ public class _GdkWindowAttr {
     public static VarHandle wclass$VH() {
         return _GdkWindowAttr.wclass$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindowWindowClass wclass;
+     * }
+     */
     public static int wclass$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.wclass$VH.get(seg);
     }
-    public static void wclass$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindowWindowClass wclass;
+     * }
+     */
+    public static void wclass$set(MemorySegment seg, int x) {
         _GdkWindowAttr.wclass$VH.set(seg, x);
     }
     public static int wclass$get(MemorySegment seg, long index) {
@@ -145,26 +249,50 @@ public class _GdkWindowAttr {
     public static VarHandle visual$VH() {
         return _GdkWindowAttr.visual$VH;
     }
-    public static MemoryAddress visual$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.visual$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkVisual* visual;
+     * }
+     */
+    public static MemorySegment visual$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.visual$VH.get(seg);
     }
-    public static void visual$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkVisual* visual;
+     * }
+     */
+    public static void visual$set(MemorySegment seg, MemorySegment x) {
         _GdkWindowAttr.visual$VH.set(seg, x);
     }
-    public static MemoryAddress visual$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.visual$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment visual$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.visual$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void visual$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void visual$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkWindowAttr.visual$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle window_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window_type"));
     public static VarHandle window_type$VH() {
         return _GdkWindowAttr.window_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindowType window_type;
+     * }
+     */
     public static int window_type$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.window_type$VH.get(seg);
     }
-    public static void window_type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindowType window_type;
+     * }
+     */
+    public static void window_type$set(MemorySegment seg, int x) {
         _GdkWindowAttr.window_type$VH.set(seg, x);
     }
     public static int window_type$get(MemorySegment seg, long index) {
@@ -177,58 +305,106 @@ public class _GdkWindowAttr {
     public static VarHandle cursor$VH() {
         return _GdkWindowAttr.cursor$VH;
     }
-    public static MemoryAddress cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.cursor$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkCursor* cursor;
+     * }
+     */
+    public static MemorySegment cursor$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.cursor$VH.get(seg);
     }
-    public static void cursor$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkCursor* cursor;
+     * }
+     */
+    public static void cursor$set(MemorySegment seg, MemorySegment x) {
         _GdkWindowAttr.cursor$VH.set(seg, x);
     }
-    public static MemoryAddress cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.cursor$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment cursor$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.cursor$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void cursor$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void cursor$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkWindowAttr.cursor$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle wmclass_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("wmclass_name"));
     public static VarHandle wmclass_name$VH() {
         return _GdkWindowAttr.wmclass_name$VH;
     }
-    public static MemoryAddress wmclass_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.wmclass_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* wmclass_name;
+     * }
+     */
+    public static MemorySegment wmclass_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.wmclass_name$VH.get(seg);
     }
-    public static void wmclass_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* wmclass_name;
+     * }
+     */
+    public static void wmclass_name$set(MemorySegment seg, MemorySegment x) {
         _GdkWindowAttr.wmclass_name$VH.set(seg, x);
     }
-    public static MemoryAddress wmclass_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.wmclass_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment wmclass_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.wmclass_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void wmclass_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void wmclass_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkWindowAttr.wmclass_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle wmclass_class$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("wmclass_class"));
     public static VarHandle wmclass_class$VH() {
         return _GdkWindowAttr.wmclass_class$VH;
     }
-    public static MemoryAddress wmclass_class$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.wmclass_class$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* wmclass_class;
+     * }
+     */
+    public static MemorySegment wmclass_class$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.wmclass_class$VH.get(seg);
     }
-    public static void wmclass_class$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* wmclass_class;
+     * }
+     */
+    public static void wmclass_class$set(MemorySegment seg, MemorySegment x) {
         _GdkWindowAttr.wmclass_class$VH.set(seg, x);
     }
-    public static MemoryAddress wmclass_class$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkWindowAttr.wmclass_class$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment wmclass_class$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkWindowAttr.wmclass_class$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void wmclass_class$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void wmclass_class$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkWindowAttr.wmclass_class$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle override_redirect$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("override_redirect"));
     public static VarHandle override_redirect$VH() {
         return _GdkWindowAttr.override_redirect$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean override_redirect;
+     * }
+     */
     public static int override_redirect$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.override_redirect$VH.get(seg);
     }
-    public static void override_redirect$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean override_redirect;
+     * }
+     */
+    public static void override_redirect$set(MemorySegment seg, int x) {
         _GdkWindowAttr.override_redirect$VH.set(seg, x);
     }
     public static int override_redirect$get(MemorySegment seg, long index) {
@@ -241,10 +417,22 @@ public class _GdkWindowAttr {
     public static VarHandle type_hint$VH() {
         return _GdkWindowAttr.type_hint$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindowTypeHint type_hint;
+     * }
+     */
     public static int type_hint$get(MemorySegment seg) {
         return (int)_GdkWindowAttr.type_hint$VH.get(seg);
     }
-    public static void type_hint$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindowTypeHint type_hint;
+     * }
+     */
+    public static void type_hint$set(MemorySegment seg, int x) {
         _GdkWindowAttr.type_hint$VH.set(seg, x);
     }
     public static int type_hint$get(MemorySegment seg, long index) {
@@ -255,10 +443,10 @@ public class _GdkWindowAttr {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

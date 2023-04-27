@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoFontMap extends _PangoFontMap {
+/**
+ * {@snippet :
+ * typedef struct _PangoFontMap PangoFontMap;
+ * }
+ */
+public final class PangoFontMap extends _PangoFontMap {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoFontMap() {}
 }
 
 

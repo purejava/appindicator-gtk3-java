@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSizeGroupClass extends _GtkSizeGroupClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkSizeGroupClass GtkSizeGroupClass;
+ * }
+ */
+public final class GtkSizeGroupClass extends _GtkSizeGroupClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSizeGroupClass() {}
 }
 
 

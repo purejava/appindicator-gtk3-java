@@ -7,9 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkCalendarClass {
+ *     GtkWidgetClass parent_class;
+ *     void (*month_changed)(GtkCalendar*);
+ *     void (*day_selected)(GtkCalendar*);
+ *     void (*day_selected_double_click)(GtkCalendar*);
+ *     void (*prev_month)(GtkCalendar*);
+ *     void (*next_month)(GtkCalendar*);
+ *     void (*prev_year)(GtkCalendar*);
+ *     void (*next_year)(GtkCalendar*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ * };
+ * }
+ */
 public class _GtkCalendarClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +43,10 @@ public class _GtkCalendarClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent_class"),
             Constants$root.C_INT$LAYOUT.withName("activate_signal"),
             MemoryLayout.paddingLayout(32),
@@ -136,20 +157,32 @@ public class _GtkCalendarClass {
     static final FunctionDescriptor month_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle month_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.month_changed$FUNC
+    static final FunctionDescriptor month_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle month_changed_UP$MH = RuntimeHelper.upcallHandle(month_changed.class, "apply", _GtkCalendarClass.month_changed_UP$FUNC);
+    static final FunctionDescriptor month_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle month_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.month_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*month_changed)(GtkCalendar*);
+     * }
+     */
     public interface month_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(month_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(month_changed.class, fi, _GtkCalendarClass.month_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(month_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.month_changed_UP$MH, fi, _GtkCalendarClass.month_changed$FUNC, scope);
         }
-        static month_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static month_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.month_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.month_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -161,38 +194,62 @@ public class _GtkCalendarClass {
     public static VarHandle month_changed$VH() {
         return _GtkCalendarClass.month_changed$VH;
     }
-    public static MemoryAddress month_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.month_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*month_changed)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment month_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.month_changed$VH.get(seg);
     }
-    public static void month_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*month_changed)(GtkCalendar*);
+     * }
+     */
+    public static void month_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.month_changed$VH.set(seg, x);
     }
-    public static MemoryAddress month_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.month_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment month_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.month_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void month_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void month_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.month_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static month_changed month_changed (MemorySegment segment, MemorySession session) {
-        return month_changed.ofAddress(month_changed$get(segment), session);
+    public static month_changed month_changed(MemorySegment segment, SegmentScope scope) {
+        return month_changed.ofAddress(month_changed$get(segment), scope);
     }
     static final FunctionDescriptor day_selected$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle day_selected$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.day_selected$FUNC
+    static final FunctionDescriptor day_selected_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle day_selected_UP$MH = RuntimeHelper.upcallHandle(day_selected.class, "apply", _GtkCalendarClass.day_selected_UP$FUNC);
+    static final FunctionDescriptor day_selected_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle day_selected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.day_selected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*day_selected)(GtkCalendar*);
+     * }
+     */
     public interface day_selected {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(day_selected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(day_selected.class, fi, _GtkCalendarClass.day_selected$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(day_selected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.day_selected_UP$MH, fi, _GtkCalendarClass.day_selected$FUNC, scope);
         }
-        static day_selected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static day_selected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.day_selected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.day_selected_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -204,38 +261,62 @@ public class _GtkCalendarClass {
     public static VarHandle day_selected$VH() {
         return _GtkCalendarClass.day_selected$VH;
     }
-    public static MemoryAddress day_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.day_selected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*day_selected)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment day_selected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.day_selected$VH.get(seg);
     }
-    public static void day_selected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*day_selected)(GtkCalendar*);
+     * }
+     */
+    public static void day_selected$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.day_selected$VH.set(seg, x);
     }
-    public static MemoryAddress day_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.day_selected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment day_selected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.day_selected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void day_selected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void day_selected$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.day_selected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static day_selected day_selected (MemorySegment segment, MemorySession session) {
-        return day_selected.ofAddress(day_selected$get(segment), session);
+    public static day_selected day_selected(MemorySegment segment, SegmentScope scope) {
+        return day_selected.ofAddress(day_selected$get(segment), scope);
     }
     static final FunctionDescriptor day_selected_double_click$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle day_selected_double_click$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.day_selected_double_click$FUNC
+    static final FunctionDescriptor day_selected_double_click_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle day_selected_double_click_UP$MH = RuntimeHelper.upcallHandle(day_selected_double_click.class, "apply", _GtkCalendarClass.day_selected_double_click_UP$FUNC);
+    static final FunctionDescriptor day_selected_double_click_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle day_selected_double_click_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.day_selected_double_click_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*day_selected_double_click)(GtkCalendar*);
+     * }
+     */
     public interface day_selected_double_click {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(day_selected_double_click fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(day_selected_double_click.class, fi, _GtkCalendarClass.day_selected_double_click$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(day_selected_double_click fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.day_selected_double_click_UP$MH, fi, _GtkCalendarClass.day_selected_double_click$FUNC, scope);
         }
-        static day_selected_double_click ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static day_selected_double_click ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.day_selected_double_click$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.day_selected_double_click_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -247,38 +328,62 @@ public class _GtkCalendarClass {
     public static VarHandle day_selected_double_click$VH() {
         return _GtkCalendarClass.day_selected_double_click$VH;
     }
-    public static MemoryAddress day_selected_double_click$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.day_selected_double_click$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*day_selected_double_click)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment day_selected_double_click$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.day_selected_double_click$VH.get(seg);
     }
-    public static void day_selected_double_click$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*day_selected_double_click)(GtkCalendar*);
+     * }
+     */
+    public static void day_selected_double_click$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.day_selected_double_click$VH.set(seg, x);
     }
-    public static MemoryAddress day_selected_double_click$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.day_selected_double_click$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment day_selected_double_click$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.day_selected_double_click$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void day_selected_double_click$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void day_selected_double_click$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.day_selected_double_click$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static day_selected_double_click day_selected_double_click (MemorySegment segment, MemorySession session) {
-        return day_selected_double_click.ofAddress(day_selected_double_click$get(segment), session);
+    public static day_selected_double_click day_selected_double_click(MemorySegment segment, SegmentScope scope) {
+        return day_selected_double_click.ofAddress(day_selected_double_click$get(segment), scope);
     }
     static final FunctionDescriptor prev_month$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle prev_month$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.prev_month$FUNC
+    static final FunctionDescriptor prev_month_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle prev_month_UP$MH = RuntimeHelper.upcallHandle(prev_month.class, "apply", _GtkCalendarClass.prev_month_UP$FUNC);
+    static final FunctionDescriptor prev_month_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle prev_month_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.prev_month_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*prev_month)(GtkCalendar*);
+     * }
+     */
     public interface prev_month {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(prev_month fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(prev_month.class, fi, _GtkCalendarClass.prev_month$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(prev_month fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.prev_month_UP$MH, fi, _GtkCalendarClass.prev_month$FUNC, scope);
         }
-        static prev_month ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static prev_month ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.prev_month$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.prev_month_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -290,38 +395,62 @@ public class _GtkCalendarClass {
     public static VarHandle prev_month$VH() {
         return _GtkCalendarClass.prev_month$VH;
     }
-    public static MemoryAddress prev_month$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.prev_month$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*prev_month)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment prev_month$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.prev_month$VH.get(seg);
     }
-    public static void prev_month$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*prev_month)(GtkCalendar*);
+     * }
+     */
+    public static void prev_month$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.prev_month$VH.set(seg, x);
     }
-    public static MemoryAddress prev_month$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.prev_month$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment prev_month$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.prev_month$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void prev_month$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void prev_month$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.prev_month$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static prev_month prev_month (MemorySegment segment, MemorySession session) {
-        return prev_month.ofAddress(prev_month$get(segment), session);
+    public static prev_month prev_month(MemorySegment segment, SegmentScope scope) {
+        return prev_month.ofAddress(prev_month$get(segment), scope);
     }
     static final FunctionDescriptor next_month$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next_month$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.next_month$FUNC
+    static final FunctionDescriptor next_month_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_month_UP$MH = RuntimeHelper.upcallHandle(next_month.class, "apply", _GtkCalendarClass.next_month_UP$FUNC);
+    static final FunctionDescriptor next_month_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_month_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.next_month_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*next_month)(GtkCalendar*);
+     * }
+     */
     public interface next_month {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(next_month fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next_month.class, fi, _GtkCalendarClass.next_month$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(next_month fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.next_month_UP$MH, fi, _GtkCalendarClass.next_month$FUNC, scope);
         }
-        static next_month ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static next_month ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.next_month$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.next_month_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -333,38 +462,62 @@ public class _GtkCalendarClass {
     public static VarHandle next_month$VH() {
         return _GtkCalendarClass.next_month$VH;
     }
-    public static MemoryAddress next_month$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.next_month$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*next_month)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment next_month$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.next_month$VH.get(seg);
     }
-    public static void next_month$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*next_month)(GtkCalendar*);
+     * }
+     */
+    public static void next_month$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.next_month$VH.set(seg, x);
     }
-    public static MemoryAddress next_month$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.next_month$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next_month$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.next_month$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next_month$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next_month$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.next_month$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next_month next_month (MemorySegment segment, MemorySession session) {
-        return next_month.ofAddress(next_month$get(segment), session);
+    public static next_month next_month(MemorySegment segment, SegmentScope scope) {
+        return next_month.ofAddress(next_month$get(segment), scope);
     }
     static final FunctionDescriptor prev_year$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle prev_year$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.prev_year$FUNC
+    static final FunctionDescriptor prev_year_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle prev_year_UP$MH = RuntimeHelper.upcallHandle(prev_year.class, "apply", _GtkCalendarClass.prev_year_UP$FUNC);
+    static final FunctionDescriptor prev_year_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle prev_year_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.prev_year_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*prev_year)(GtkCalendar*);
+     * }
+     */
     public interface prev_year {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(prev_year fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(prev_year.class, fi, _GtkCalendarClass.prev_year$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(prev_year fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.prev_year_UP$MH, fi, _GtkCalendarClass.prev_year$FUNC, scope);
         }
-        static prev_year ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static prev_year ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.prev_year$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.prev_year_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -376,38 +529,62 @@ public class _GtkCalendarClass {
     public static VarHandle prev_year$VH() {
         return _GtkCalendarClass.prev_year$VH;
     }
-    public static MemoryAddress prev_year$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.prev_year$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*prev_year)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment prev_year$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.prev_year$VH.get(seg);
     }
-    public static void prev_year$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*prev_year)(GtkCalendar*);
+     * }
+     */
+    public static void prev_year$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.prev_year$VH.set(seg, x);
     }
-    public static MemoryAddress prev_year$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.prev_year$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment prev_year$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.prev_year$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void prev_year$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void prev_year$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.prev_year$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static prev_year prev_year (MemorySegment segment, MemorySession session) {
-        return prev_year.ofAddress(prev_year$get(segment), session);
+    public static prev_year prev_year(MemorySegment segment, SegmentScope scope) {
+        return prev_year.ofAddress(prev_year$get(segment), scope);
     }
     static final FunctionDescriptor next_year$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next_year$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass.next_year$FUNC
+    static final FunctionDescriptor next_year_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_year_UP$MH = RuntimeHelper.upcallHandle(next_year.class, "apply", _GtkCalendarClass.next_year_UP$FUNC);
+    static final FunctionDescriptor next_year_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_year_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass.next_year_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*next_year)(GtkCalendar*);
+     * }
+     */
     public interface next_year {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(next_year fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next_year.class, fi, _GtkCalendarClass.next_year$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(next_year fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass.next_year_UP$MH, fi, _GtkCalendarClass.next_year$FUNC, scope);
         }
-        static next_year ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static next_year ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCalendarClass.next_year$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCalendarClass.next_year_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -419,36 +596,56 @@ public class _GtkCalendarClass {
     public static VarHandle next_year$VH() {
         return _GtkCalendarClass.next_year$VH;
     }
-    public static MemoryAddress next_year$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.next_year$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*next_year)(GtkCalendar*);
+     * }
+     */
+    public static MemorySegment next_year$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.next_year$VH.get(seg);
     }
-    public static void next_year$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*next_year)(GtkCalendar*);
+     * }
+     */
+    public static void next_year$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass.next_year$VH.set(seg, x);
     }
-    public static MemoryAddress next_year$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass.next_year$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next_year$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass.next_year$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next_year$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next_year$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass.next_year$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next_year next_year (MemorySegment segment, MemorySession session) {
-        return next_year.ofAddress(next_year$get(segment), session);
+    public static next_year next_year(MemorySegment segment, SegmentScope scope) {
+        return next_year.ofAddress(next_year$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkCalendarClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkCalendarClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass._gtk_reserved1_UP$MH, fi, _GtkCalendarClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCalendarClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkCalendarClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -460,36 +657,56 @@ public class _GtkCalendarClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkCalendarClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkCalendarClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkCalendarClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass._gtk_reserved2_UP$MH, fi, _GtkCalendarClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCalendarClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkCalendarClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -501,36 +718,56 @@ public class _GtkCalendarClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkCalendarClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkCalendarClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkCalendarClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass._gtk_reserved3_UP$MH, fi, _GtkCalendarClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCalendarClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkCalendarClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -542,36 +779,56 @@ public class _GtkCalendarClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkCalendarClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkCalendarClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkCalendarClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCalendarClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkCalendarClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCalendarClass._gtk_reserved4_UP$MH, fi, _GtkCalendarClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCalendarClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkCalendarClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -583,27 +840,39 @@ public class _GtkCalendarClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkCalendarClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCalendarClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCalendarClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCalendarClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

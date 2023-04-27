@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1303 {
+final class constants$1303 {
 
-    static final FunctionDescriptor gdk_pixbuf_format_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_name",
-        constants$1303.gdk_pixbuf_format_get_name$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_description$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_description",
-        constants$1303.gdk_pixbuf_format_get_description$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_mime_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_mime_types$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_mime_types",
-        constants$1303.gdk_pixbuf_format_get_mime_types$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_extensions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_extensions$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_extensions",
-        constants$1303.gdk_pixbuf_format_get_extensions$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_is_save_option_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1303() {}
+    static final FunctionDescriptor gtk_window_set_urgency_hint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_urgency_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_urgency_hint",
+        constants$1303.gtk_window_set_urgency_hint$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_urgency_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_format_is_save_option_supported$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_save_option_supported",
-        constants$1303.gdk_pixbuf_format_is_save_option_supported$FUNC
+    static final MethodHandle gtk_window_get_urgency_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_urgency_hint",
+        constants$1303.gtk_window_get_urgency_hint$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_format_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_accept_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_accept_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_accept_focus",
+        constants$1303.gtk_window_set_accept_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_accept_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_format_is_writable$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_writable",
-        constants$1303.gdk_pixbuf_format_is_writable$FUNC
+    static final MethodHandle gtk_window_get_accept_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_accept_focus",
+        constants$1303.gtk_window_get_accept_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_focus_on_map$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_focus_on_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_focus_on_map",
+        constants$1303.gtk_window_set_focus_on_map$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_focus_on_map$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_focus_on_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_focus_on_map",
+        constants$1303.gtk_window_get_focus_on_map$FUNC
     );
 }
 

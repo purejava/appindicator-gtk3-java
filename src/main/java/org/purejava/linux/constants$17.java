@@ -7,8 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$17 {
+final class constants$17 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$17() {}
+    static final FunctionDescriptor strncasecmp_l$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strncasecmp_l$MH = RuntimeHelper.downcallHandle(
+        "strncasecmp_l",
+        constants$17.strncasecmp_l$FUNC
+    );
+    static final FunctionDescriptor explicit_bzero$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle explicit_bzero$MH = RuntimeHelper.downcallHandle(
+        "explicit_bzero",
+        constants$17.explicit_bzero$FUNC
+    );
     static final FunctionDescriptor strsep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -39,24 +59,6 @@ class constants$17 {
     static final MethodHandle stpcpy$MH = RuntimeHelper.downcallHandle(
         "stpcpy",
         constants$17.stpcpy$FUNC
-    );
-    static final FunctionDescriptor __stpncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle __stpncpy$MH = RuntimeHelper.downcallHandle(
-        "__stpncpy",
-        constants$17.__stpncpy$FUNC
-    );
-    static final FunctionDescriptor stpncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle stpncpy$MH = RuntimeHelper.downcallHandle(
-        "stpncpy",
-        constants$17.stpncpy$FUNC
     );
 }
 

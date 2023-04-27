@@ -7,47 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2003 {
+final class constants$2003 {
 
-    static final FunctionDescriptor gtk_separator_tool_item_get_draw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_separator_tool_item_get_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_separator_tool_item_get_draw",
-        constants$2003.gtk_separator_tool_item_get_draw$FUNC
-    );
-    static final FunctionDescriptor gtk_separator_tool_item_set_draw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_separator_tool_item_set_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_separator_tool_item_set_draw",
-        constants$2003.gtk_separator_tool_item_set_draw$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_settings_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_type",
-        constants$2003.gtk_settings_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_settings_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_default",
-        constants$2003.gtk_settings_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_get_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_get_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_for_screen",
-        constants$2003.gtk_settings_get_for_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_install_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_install_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_install_property",
-        constants$2003.gtk_settings_install_property$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2003() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("id::filesystem");
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-read");
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-write");
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-execute");
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-delete");
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-trash");
 }
 
 

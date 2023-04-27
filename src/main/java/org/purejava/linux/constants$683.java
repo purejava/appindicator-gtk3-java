@@ -7,64 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$683 {
+final class constants$683 {
 
-    static final FunctionDescriptor g_file_stop_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$683() {}
+    static final FunctionDescriptor g_module_make_resident$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_module_make_resident$MH = RuntimeHelper.downcallHandle(
+        "g_module_make_resident",
+        constants$683.g_module_make_resident$FUNC
+    );
+    static final FunctionDescriptor g_module_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_module_error$MH = RuntimeHelper.downcallHandle(
+        "g_module_error",
+        constants$683.g_module_error$FUNC
+    );
+    static final FunctionDescriptor g_module_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_stop_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable_finish",
-        constants$683.g_file_stop_mountable_finish$FUNC
+    static final MethodHandle g_module_symbol$MH = RuntimeHelper.downcallHandle(
+        "g_module_symbol",
+        constants$683.g_module_symbol$FUNC
     );
-    static final FunctionDescriptor g_file_poll_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_module_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_module_name$MH = RuntimeHelper.downcallHandle(
+        "g_module_name",
+        constants$683.g_module_name$FUNC
+    );
+    static final FunctionDescriptor g_module_build_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_poll_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable",
-        constants$683.g_file_poll_mountable$FUNC
+    static final MethodHandle g_module_build_path$MH = RuntimeHelper.downcallHandle(
+        "g_module_build_path",
+        constants$683.g_module_build_path$FUNC
     );
-    static final FunctionDescriptor g_file_poll_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_io_module_scope_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_file_poll_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable_finish",
-        constants$683.g_file_poll_mountable_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_query_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler",
-        constants$683.g_file_query_default_handler$FUNC
-    );
-    static final FunctionDescriptor g_file_query_default_handler_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_default_handler_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler_async",
-        constants$683.g_file_query_default_handler_async$FUNC
-    );
-    static final FunctionDescriptor g_file_query_default_handler_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_default_handler_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler_finish",
-        constants$683.g_file_query_default_handler_finish$FUNC
+    static final MethodHandle g_io_module_scope_new$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_scope_new",
+        constants$683.g_io_module_scope_new$FUNC
     );
 }
 

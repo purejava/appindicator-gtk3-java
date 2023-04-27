@@ -7,54 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1996 {
+final class constants$1996 {
 
-    static final FunctionDescriptor gtk_scrolled_window_get_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_policy",
-        constants$1996.gtk_scrolled_window_get_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_placement$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_placement",
-        constants$1996.gtk_scrolled_window_set_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_unset_placement$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_unset_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_unset_placement",
-        constants$1996.gtk_scrolled_window_unset_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_placement$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_placement",
-        constants$1996.gtk_scrolled_window_get_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_shadow_type",
-        constants$1996.gtk_scrolled_window_set_shadow_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_shadow_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_shadow_type",
-        constants$1996.gtk_scrolled_window_get_shadow_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1996() {}
+    static final MemorySegment G_CSET_A_2_Z$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    static final MemorySegment G_CSET_a_2_z$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("abcdefghijklmnopqrstuvwxyz");
+    static final MemorySegment G_CSET_DIGITS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("0123456789");
+    static final MemorySegment G_CSET_LATINC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd");
+    static final MemorySegment G_CSET_LATINS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd");
+    static final MemorySegment G_TEST_OPTION_ISOLATE_DIRS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("isolate_dirs");
 }
 
 

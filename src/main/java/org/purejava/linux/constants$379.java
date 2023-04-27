@@ -7,49 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$379 {
+final class constants$379 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GChecksum$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$379() {}
+    static final OfInt g_threads_got_initialized$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle g_threads_got_initialized$VH = constants$379.g_threads_got_initialized$LAYOUT.varHandle();
+    static final MemorySegment g_threads_got_initialized$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_threads_got_initialized", constants$379.g_threads_got_initialized$LAYOUT);
+    static final FunctionDescriptor g_mutex_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_mutex_new$MH = RuntimeHelper.downcallHandle(
+        "g_mutex_new",
+        constants$379.g_mutex_new$FUNC
+    );
+    static final FunctionDescriptor g_mutex_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GChecksum$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GChecksum",
-        constants$379.glib_listautoptr_cleanup_GChecksum$FUNC
+    static final MethodHandle g_mutex_free$MH = RuntimeHelper.downcallHandle(
+        "g_mutex_free",
+        constants$379.g_mutex_free$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GChecksum$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cond_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_cond_new$MH = RuntimeHelper.downcallHandle(
+        "g_cond_new",
+        constants$379.g_cond_new$FUNC
+    );
+    static final FunctionDescriptor g_cond_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GChecksum$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GChecksum",
-        constants$379.glib_slistautoptr_cleanup_GChecksum$FUNC
+    static final MethodHandle g_cond_free$MH = RuntimeHelper.downcallHandle(
+        "g_cond_free",
+        constants$379.g_cond_free$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GChecksum$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cond_timed_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GChecksum$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GChecksum",
-        constants$379.glib_queueautoptr_cleanup_GChecksum$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GDateTime$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GDateTime$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDateTime",
-        constants$379.glib_autoptr_clear_GDateTime$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDateTime$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GDateTime$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDateTime",
-        constants$379.glib_autoptr_cleanup_GDateTime$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDateTime$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GDateTime$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDateTime",
-        constants$379.glib_listautoptr_cleanup_GDateTime$FUNC
+    static final MethodHandle g_cond_timed_wait$MH = RuntimeHelper.downcallHandle(
+        "g_cond_timed_wait",
+        constants$379.g_cond_timed_wait$FUNC
     );
 }
 

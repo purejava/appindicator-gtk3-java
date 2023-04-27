@@ -7,54 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1254 {
+final class constants$1254 {
 
-    static final FunctionDescriptor gdk_window_peek_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_peek_children$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_peek_children",
-        constants$1254.gdk_window_peek_children$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_children_with_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1254() {}
+    static final FunctionDescriptor gtk_widget_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_children_with_user_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_children_with_user_data",
-        constants$1254.gdk_window_get_children_with_user_data$FUNC
+    static final MethodHandle gtk_widget_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_event",
+        constants$1254.gtk_widget_event$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_events",
-        constants$1254.gdk_window_get_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_events",
-        constants$1254.gdk_window_set_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_device_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_device_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_events",
-        constants$1254.gdk_window_set_device_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_device_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_send_expose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_device_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_events",
-        constants$1254.gdk_window_get_device_events$FUNC
+    static final MethodHandle gtk_widget_send_expose$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_send_expose",
+        constants$1254.gtk_widget_send_expose$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_send_focus_change$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_send_focus_change$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_send_focus_change",
+        constants$1254.gtk_widget_send_focus_change$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_activate",
+        constants$1254.gtk_widget_activate$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_reparent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_reparent$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_reparent",
+        constants$1254.gtk_widget_reparent$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_intersect$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_intersect",
+        constants$1254.gtk_widget_intersect$FUNC
     );
 }
 

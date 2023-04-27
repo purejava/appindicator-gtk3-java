@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GBusNameAppearedCallback)(struct _GDBusConnection* connection,char* name,char* name_owner,void* user_data);
+ * }
+ */
 public interface GBusNameAppearedCallback {
 
-    void apply(java.lang.foreign.MemoryAddress connection, java.lang.foreign.MemoryAddress name, java.lang.foreign.MemoryAddress name_owner, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GBusNameAppearedCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GBusNameAppearedCallback.class, fi, constants$629.GBusNameAppearedCallback$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GBusNameAppearedCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$583.GBusNameAppearedCallback_UP$MH, fi, constants$583.GBusNameAppearedCallback$FUNC, scope);
     }
-    static GBusNameAppearedCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _connection, java.lang.foreign.MemoryAddress _name, java.lang.foreign.MemoryAddress _name_owner, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GBusNameAppearedCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$629.GBusNameAppearedCallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_connection, (java.lang.foreign.Addressable)_name, (java.lang.foreign.Addressable)_name_owner, (java.lang.foreign.Addressable)_user_data);
+                constants$583.GBusNameAppearedCallback_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

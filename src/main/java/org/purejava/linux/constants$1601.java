@@ -7,52 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1601 {
+final class constants$1601 {
 
-    static final FunctionDescriptor gtk_text_iter_backward_sentence_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1601() {}
+    static final FunctionDescriptor gtk_gesture_handles_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_sentence_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_sentence_start",
-        constants$1601.gtk_text_iter_backward_sentence_start$FUNC
+    static final MethodHandle gtk_gesture_handles_sequence$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_handles_sequence",
+        constants$1601.gtk_gesture_handles_sequence$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_sentence_ends$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_last_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_sentence_ends$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_sentence_ends",
-        constants$1601.gtk_text_iter_forward_sentence_ends$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_backward_sentence_starts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_sentence_starts$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_sentence_starts",
-        constants$1601.gtk_text_iter_backward_sentence_starts$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_cursor_position",
-        constants$1601.gtk_text_iter_forward_cursor_position$FUNC
+    static final MethodHandle gtk_gesture_get_last_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_last_event",
+        constants$1601.gtk_gesture_get_last_event$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_cursor_position",
-        constants$1601.gtk_text_iter_backward_cursor_position$FUNC
+    static final MethodHandle gtk_gesture_get_point$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_point",
+        constants$1601.gtk_gesture_get_point$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_bounding_box$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_cursor_positions$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_cursor_positions",
-        constants$1601.gtk_text_iter_forward_cursor_positions$FUNC
+    static final MethodHandle gtk_gesture_get_bounding_box$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_bounding_box",
+        constants$1601.gtk_gesture_get_bounding_box$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_get_bounding_box_center$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_get_bounding_box_center$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_bounding_box_center",
+        constants$1601.gtk_gesture_get_bounding_box_center$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_is_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_is_active",
+        constants$1601.gtk_gesture_is_active$FUNC
     );
 }
 

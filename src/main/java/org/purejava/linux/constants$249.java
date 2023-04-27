@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$249 {
+final class constants$249 {
 
-    static final FunctionDescriptor g_log_writer_default_set_use_stderr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_writer_default_set_use_stderr$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_set_use_stderr",
-        constants$249.g_log_writer_default_set_use_stderr$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_default_would_drop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$249() {}
+    static final FunctionDescriptor g_variant_byteswap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_writer_default_would_drop$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_would_drop",
-        constants$249.g_log_writer_default_would_drop$FUNC
+    static final MethodHandle g_variant_byteswap$MH = RuntimeHelper.downcallHandle(
+        "g_variant_byteswap",
+        constants$249.g_variant_byteswap$FUNC
     );
-    static final FunctionDescriptor g_log_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_log_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_log_get_debug_enabled",
-        constants$249.g_log_get_debug_enabled$FUNC
-    );
-    static final FunctionDescriptor g_log_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_log_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_debug_enabled",
-        constants$249.g_log_set_debug_enabled$FUNC
+    static final MethodHandle g_variant_new_from_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_from_bytes",
+        constants$249.g_variant_new_from_bytes$FUNC
     );
-    static final FunctionDescriptor _g_log_fallback_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _g_log_fallback_handler$MH = RuntimeHelper.downcallHandle(
-        "_g_log_fallback_handler",
-        constants$249._g_log_fallback_handler$FUNC
+    static final MethodHandle g_variant_new_from_data$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_from_data",
+        constants$249.g_variant_new_from_data$FUNC
     );
-    static final FunctionDescriptor g_return_if_fail_warning$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_iter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_iter_new$MH = RuntimeHelper.downcallHandle(
+        "g_variant_iter_new",
+        constants$249.g_variant_iter_new$FUNC
+    );
+    static final FunctionDescriptor g_variant_iter_init$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_return_if_fail_warning$MH = RuntimeHelper.downcallHandle(
-        "g_return_if_fail_warning",
-        constants$249.g_return_if_fail_warning$FUNC
+    static final MethodHandle g_variant_iter_init$MH = RuntimeHelper.downcallHandle(
+        "g_variant_iter_init",
+        constants$249.g_variant_iter_init$FUNC
+    );
+    static final FunctionDescriptor g_variant_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_iter_copy$MH = RuntimeHelper.downcallHandle(
+        "g_variant_iter_copy",
+        constants$249.g_variant_iter_copy$FUNC
     );
 }
 

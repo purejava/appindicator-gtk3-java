@@ -7,37 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1325 {
+final class constants$1325 {
 
-    static final FunctionDescriptor gdk_drag_cancel_reason_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_drag_cancel_reason_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_cancel_reason_get_type",
-        constants$1325.gdk_drag_cancel_reason_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1325() {}
+    static final FunctionDescriptor gtk_about_dialog_get_documenters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_drag_protocol_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_drag_protocol_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_protocol_get_type",
-        constants$1325.gdk_drag_protocol_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_documenters$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_documenters",
+        constants$1325.gtk_about_dialog_get_documenters$FUNC
     );
-    static final FunctionDescriptor gdk_filter_return_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_filter_return_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_filter_return_get_type",
-        constants$1325.gdk_filter_return_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_set_documenters$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_event_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_event_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_type_get_type",
-        constants$1325.gdk_event_type_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_set_documenters$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_documenters",
+        constants$1325.gtk_about_dialog_set_documenters$FUNC
     );
-    static final FunctionDescriptor gdk_visibility_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_visibility_state_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visibility_state_get_type",
-        constants$1325.gdk_visibility_state_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_get_artists$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_touchpad_gesture_phase_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_touchpad_gesture_phase_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_touchpad_gesture_phase_get_type",
-        constants$1325.gdk_touchpad_gesture_phase_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_artists$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_artists",
+        constants$1325.gtk_about_dialog_get_artists$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_artists$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_artists$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_artists",
+        constants$1325.gtk_about_dialog_set_artists$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_get_translator_credits$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_get_translator_credits$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_translator_credits",
+        constants$1325.gtk_about_dialog_get_translator_credits$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_translator_credits$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_translator_credits$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_translator_credits",
+        constants$1325.gtk_about_dialog_set_translator_credits$FUNC
     );
 }
 

@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTypeQuery {
+ *     GType type;
+ *     const gchar* type_name;
+ *     guint class_size;
+ *     guint instance_size;
+ * };
+ * }
+ */
 public class _GTypeQuery {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("type"),
         Constants$root.C_POINTER$LAYOUT.withName("type_name"),
         Constants$root.C_INT$LAYOUT.withName("class_size"),
@@ -22,10 +32,22 @@ public class _GTypeQuery {
     public static VarHandle type$VH() {
         return _GTypeQuery.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GType type;
+     * }
+     */
     public static long type$get(MemorySegment seg) {
         return (long)_GTypeQuery.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, long x) {
         _GTypeQuery.type$VH.set(seg, x);
     }
     public static long type$get(MemorySegment seg, long index) {
@@ -38,26 +60,50 @@ public class _GTypeQuery {
     public static VarHandle type_name$VH() {
         return _GTypeQuery.type_name$VH;
     }
-    public static MemoryAddress type_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeQuery.type_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* type_name;
+     * }
+     */
+    public static MemorySegment type_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeQuery.type_name$VH.get(seg);
     }
-    public static void type_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* type_name;
+     * }
+     */
+    public static void type_name$set(MemorySegment seg, MemorySegment x) {
         _GTypeQuery.type_name$VH.set(seg, x);
     }
-    public static MemoryAddress type_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeQuery.type_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment type_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeQuery.type_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void type_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void type_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeQuery.type_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle class_size$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("class_size"));
     public static VarHandle class_size$VH() {
         return _GTypeQuery.class_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint class_size;
+     * }
+     */
     public static int class_size$get(MemorySegment seg) {
         return (int)_GTypeQuery.class_size$VH.get(seg);
     }
-    public static void class_size$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint class_size;
+     * }
+     */
+    public static void class_size$set(MemorySegment seg, int x) {
         _GTypeQuery.class_size$VH.set(seg, x);
     }
     public static int class_size$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class _GTypeQuery {
     public static VarHandle instance_size$VH() {
         return _GTypeQuery.instance_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint instance_size;
+     * }
+     */
     public static int instance_size$get(MemorySegment seg) {
         return (int)_GTypeQuery.instance_size$VH.get(seg);
     }
-    public static void instance_size$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint instance_size;
+     * }
+     */
+    public static void instance_size$set(MemorySegment seg, int x) {
         _GTypeQuery.instance_size$VH.set(seg, x);
     }
     public static int instance_size$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class _GTypeQuery {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

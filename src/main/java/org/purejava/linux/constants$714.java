@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$714 {
+final class constants$714 {
 
-    static final FunctionDescriptor g_inet_address_mask_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$714() {}
+    static final FunctionDescriptor g_volume_monitor_adopt_orphan_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_mask_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_length",
-        constants$714.g_inet_address_mask_get_length$FUNC
+    static final MethodHandle g_volume_monitor_adopt_orphan_mount$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_adopt_orphan_mount",
+        constants$714.g_volume_monitor_adopt_orphan_mount$FUNC
     );
-    static final FunctionDescriptor g_inet_address_mask_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_native_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_native_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_native_volume_monitor_get_type",
+        constants$714.g_native_volume_monitor_get_type$FUNC
+    );
+    static final FunctionDescriptor g_network_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_network_address_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_network_address_get_type",
+        constants$714.g_network_address_get_type$FUNC
+    );
+    static final FunctionDescriptor g_network_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle g_inet_address_mask_matches$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_matches",
-        constants$714.g_inet_address_mask_matches$FUNC
+    static final MethodHandle g_network_address_new$MH = RuntimeHelper.downcallHandle(
+        "g_network_address_new",
+        constants$714.g_network_address_new$FUNC
     );
-    static final FunctionDescriptor g_inet_address_mask_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_network_address_new_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle g_network_address_new_loopback$MH = RuntimeHelper.downcallHandle(
+        "g_network_address_new_loopback",
+        constants$714.g_network_address_new_loopback$FUNC
+    );
+    static final FunctionDescriptor g_network_address_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_mask_equal$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_equal",
-        constants$714.g_inet_address_mask_equal$FUNC
-    );
-    static final FunctionDescriptor g_socket_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_address_get_type",
-        constants$714.g_socket_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_address_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_address_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_socket_address_get_family",
-        constants$714.g_socket_address_get_family$FUNC
-    );
-    static final FunctionDescriptor g_socket_address_new_from_native$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_socket_address_new_from_native$MH = RuntimeHelper.downcallHandle(
-        "g_socket_address_new_from_native",
-        constants$714.g_socket_address_new_from_native$FUNC
+    static final MethodHandle g_network_address_parse$MH = RuntimeHelper.downcallHandle(
+        "g_network_address_parse",
+        constants$714.g_network_address_parse$FUNC
     );
 }
 

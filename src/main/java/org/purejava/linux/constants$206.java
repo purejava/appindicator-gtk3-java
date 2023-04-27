@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$206 {
+final class constants$206 {
 
-    static final FunctionDescriptor g_io_channel_seek_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$206() {}
+    static final FunctionDescriptor g_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_seek_position$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_seek_position",
-        constants$206.g_io_channel_seek_position$FUNC
+    static final MethodHandle g_string_new$MH = RuntimeHelper.downcallHandle(
+        "g_string_new",
+        constants$206.g_string_new$FUNC
     );
-    static final FunctionDescriptor g_io_channel_new_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_string_new_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_new_len$MH = RuntimeHelper.downcallHandle(
+        "g_string_new_len",
+        constants$206.g_string_new_len$FUNC
+    );
+    static final FunctionDescriptor g_string_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_sized_new$MH = RuntimeHelper.downcallHandle(
+        "g_string_sized_new",
+        constants$206.g_string_sized_new$FUNC
+    );
+    static final FunctionDescriptor g_string_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_new_file$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_new_file",
-        constants$206.g_io_channel_new_file$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_io_channel_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_error_quark",
-        constants$206.g_io_channel_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_channel_error_from_errno$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_error_from_errno",
-        constants$206.g_io_channel_error_from_errno$FUNC
+    static final MethodHandle g_string_free$MH = RuntimeHelper.downcallHandle(
+        "g_string_free",
+        constants$206.g_string_free$FUNC
     );
-    static final FunctionDescriptor g_io_channel_unix_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_channel_unix_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_unix_new",
-        constants$206.g_io_channel_unix_new$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_unix_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_string_free_and_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_unix_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_unix_get_fd",
-        constants$206.g_io_channel_unix_get_fd$FUNC
+    static final MethodHandle g_string_free_and_steal$MH = RuntimeHelper.downcallHandle(
+        "g_string_free_and_steal",
+        constants$206.g_string_free_and_steal$FUNC
+    );
+    static final FunctionDescriptor g_string_free_to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_string_free_to_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_string_free_to_bytes",
+        constants$206.g_string_free_to_bytes$FUNC
     );
 }
 

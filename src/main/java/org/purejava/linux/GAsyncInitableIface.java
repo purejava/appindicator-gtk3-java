@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GAsyncInitableIface extends _GAsyncInitableIface {
+/**
+ * {@snippet :
+ * typedef struct _GAsyncInitableIface GAsyncInitableIface;
+ * }
+ */
+public final class GAsyncInitableIface extends _GAsyncInitableIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GAsyncInitableIface() {}
 }
 
 

@@ -7,48 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$318 {
+final class constants$318 {
 
-    static final FunctionDescriptor g_test_log_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_test_log_buffer_new$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_new",
-        constants$318.g_test_log_buffer_new$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$318() {}
+    static final FunctionDescriptor g_test_trap_fork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_test_log_buffer_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_test_trap_fork$MH = RuntimeHelper.downcallHandle(
+        "g_test_trap_fork",
+        constants$318.g_test_trap_fork$FUNC
     );
-    static final MethodHandle g_test_log_buffer_free$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_free",
-        constants$318.g_test_log_buffer_free$FUNC
-    );
-    static final FunctionDescriptor g_test_log_buffer_push$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_test_trap_subprocess$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_test_trap_subprocess$MH = RuntimeHelper.downcallHandle(
+        "g_test_trap_subprocess",
+        constants$318.g_test_trap_subprocess$FUNC
+    );
+    static final FunctionDescriptor g_test_trap_has_passed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_test_trap_has_passed$MH = RuntimeHelper.downcallHandle(
+        "g_test_trap_has_passed",
+        constants$318.g_test_trap_has_passed$FUNC
+    );
+    static final FunctionDescriptor g_test_trap_reached_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_test_trap_reached_timeout$MH = RuntimeHelper.downcallHandle(
+        "g_test_trap_reached_timeout",
+        constants$318.g_test_trap_reached_timeout$FUNC
+    );
+    static final FunctionDescriptor g_test_rand_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_test_rand_int$MH = RuntimeHelper.downcallHandle(
+        "g_test_rand_int",
+        constants$318.g_test_rand_int$FUNC
+    );
+    static final FunctionDescriptor g_test_rand_int_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_test_log_buffer_push$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_push",
-        constants$318.g_test_log_buffer_push$FUNC
-    );
-    static final FunctionDescriptor g_test_log_buffer_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_log_buffer_pop$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_pop",
-        constants$318.g_test_log_buffer_pop$FUNC
-    );
-    static final FunctionDescriptor g_test_log_msg_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_log_msg_free$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_msg_free",
-        constants$318.g_test_log_msg_free$FUNC
-    );
-    static final FunctionDescriptor GTestLogFatalFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_test_rand_int_range$MH = RuntimeHelper.downcallHandle(
+        "g_test_rand_int_range",
+        constants$318.g_test_rand_int_range$FUNC
     );
 }
 

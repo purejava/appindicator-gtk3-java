@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1812 {
+final class constants$1812 {
 
-    static final FunctionDescriptor gtk_header_bar_set_title$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1812() {}
+    static final FunctionDescriptor gtk_stack_get_visible_child_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stack_get_visible_child_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_get_visible_child_name",
+        constants$1812.gtk_stack_get_visible_child_name$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_set_visible_child_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_title",
-        constants$1812.gtk_header_bar_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_title",
-        constants$1812.gtk_header_bar_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_set_subtitle$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_header_bar_set_subtitle$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_subtitle",
-        constants$1812.gtk_header_bar_set_subtitle$FUNC
+    static final MethodHandle gtk_stack_set_visible_child_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_set_visible_child_full",
+        constants$1812.gtk_stack_set_visible_child_full$FUNC
     );
-    static final FunctionDescriptor gtk_header_bar_get_subtitle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_get_subtitle$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_subtitle",
-        constants$1812.gtk_header_bar_get_subtitle$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_set_custom_title$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_stack_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_stack_set_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_set_homogeneous",
+        constants$1812.gtk_stack_set_homogeneous$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_header_bar_set_custom_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_custom_title",
-        constants$1812.gtk_header_bar_set_custom_title$FUNC
+    static final MethodHandle gtk_stack_get_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_get_homogeneous",
+        constants$1812.gtk_stack_get_homogeneous$FUNC
     );
-    static final FunctionDescriptor gtk_header_bar_get_custom_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_stack_set_hhomogeneous$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_stack_set_hhomogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_set_hhomogeneous",
+        constants$1812.gtk_stack_set_hhomogeneous$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_get_hhomogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_header_bar_get_custom_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_custom_title",
-        constants$1812.gtk_header_bar_get_custom_title$FUNC
+    static final MethodHandle gtk_stack_get_hhomogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_get_hhomogeneous",
+        constants$1812.gtk_stack_get_hhomogeneous$FUNC
     );
 }
 

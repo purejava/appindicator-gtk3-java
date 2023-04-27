@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkToolbarPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkToolbarPrivate GtkToolbarPrivate;
+ * }
+ */
+public final class GtkToolbarPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkToolbarPrivate() {}
 }
 
 

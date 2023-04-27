@@ -7,45 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1245 {
+final class constants$1245 {
 
-    static final FunctionDescriptor gdk_window_set_static_gravities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_static_gravities$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_static_gravities",
-        constants$1245.gdk_window_set_static_gravities$FUNC
-    );
-    static final FunctionDescriptor GdkWindowInvalidateHandlerFunc$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1245() {}
+    static final FunctionDescriptor atk_value_set_current_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkWindowInvalidateHandlerFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1245.GdkWindowInvalidateHandlerFunc$FUNC
+    static final MethodHandle atk_value_set_current_value$MH = RuntimeHelper.downcallHandle(
+        "atk_value_set_current_value",
+        constants$1245.atk_value_set_current_value$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_invalidate_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_value_get_minimum_increment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_invalidate_handler$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_invalidate_handler",
-        constants$1245.gdk_window_set_invalidate_handler$FUNC
+    static final MethodHandle atk_value_get_minimum_increment$MH = RuntimeHelper.downcallHandle(
+        "atk_value_get_minimum_increment",
+        constants$1245.atk_value_get_minimum_increment$FUNC
     );
-    static final FunctionDescriptor gdk_window_has_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_value_get_value_and_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_has_native$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_has_native",
-        constants$1245.gdk_window_has_native$FUNC
+    static final MethodHandle atk_value_get_value_and_text$MH = RuntimeHelper.downcallHandle(
+        "atk_value_get_value_and_text",
+        constants$1245.atk_value_get_value_and_text$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_type_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor atk_value_get_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_type_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_type_hint",
-        constants$1245.gdk_window_set_type_hint$FUNC
+    static final MethodHandle atk_value_get_range$MH = RuntimeHelper.downcallHandle(
+        "atk_value_get_range",
+        constants$1245.atk_value_get_range$FUNC
+    );
+    static final FunctionDescriptor atk_value_get_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_value_get_increment$MH = RuntimeHelper.downcallHandle(
+        "atk_value_get_increment",
+        constants$1245.atk_value_get_increment$FUNC
+    );
+    static final FunctionDescriptor atk_value_get_sub_ranges$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_value_get_sub_ranges$MH = RuntimeHelper.downcallHandle(
+        "atk_value_get_sub_ranges",
+        constants$1245.atk_value_get_sub_ranges$FUNC
     );
 }
 

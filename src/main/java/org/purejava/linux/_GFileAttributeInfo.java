@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GFileAttributeInfo {
+ *     char* name;
+ *     GFileAttributeType type;
+ *     GFileAttributeInfoFlags flags;
+ * };
+ * }
+ */
 public class _GFileAttributeInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("name"),
         Constants$root.C_INT$LAYOUT.withName("type"),
         Constants$root.C_INT$LAYOUT.withName("flags")
@@ -21,26 +30,50 @@ public class _GFileAttributeInfo {
     public static VarHandle name$VH() {
         return _GFileAttributeInfo.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GFileAttributeInfo.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GFileAttributeInfo.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _GFileAttributeInfo.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GFileAttributeInfo.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GFileAttributeInfo.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _GFileAttributeInfo.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
         return _GFileAttributeInfo.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFileAttributeType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GFileAttributeInfo.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFileAttributeType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GFileAttributeInfo.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _GFileAttributeInfo {
     public static VarHandle flags$VH() {
         return _GFileAttributeInfo.flags$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFileAttributeInfoFlags flags;
+     * }
+     */
     public static int flags$get(MemorySegment seg) {
         return (int)_GFileAttributeInfo.flags$VH.get(seg);
     }
-    public static void flags$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFileAttributeInfoFlags flags;
+     * }
+     */
+    public static void flags$set(MemorySegment seg, int x) {
         _GFileAttributeInfo.flags$VH.set(seg, x);
     }
     public static int flags$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _GFileAttributeInfo {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

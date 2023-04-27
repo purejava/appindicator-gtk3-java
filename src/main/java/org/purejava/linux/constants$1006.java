@@ -7,52 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1006 {
+final class constants$1006 {
 
-    static final FunctionDescriptor hb_face_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1006() {}
+    static final FunctionDescriptor cairo_in_fill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_in_fill$MH = RuntimeHelper.downcallHandle(
+        "cairo_in_fill",
+        constants$1006.cairo_in_fill$FUNC
+    );
+    static final FunctionDescriptor cairo_in_clip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_in_clip$MH = RuntimeHelper.downcallHandle(
+        "cairo_in_clip",
+        constants$1006.cairo_in_clip$FUNC
+    );
+    static final FunctionDescriptor cairo_stroke_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_face_is_immutable",
-        constants$1006.hb_face_is_immutable$FUNC
+    static final MethodHandle cairo_stroke_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_stroke_extents",
+        constants$1006.cairo_stroke_extents$FUNC
     );
-    static final FunctionDescriptor hb_face_reference_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_fill_extents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_face_reference_table$MH = RuntimeHelper.downcallHandle(
-        "hb_face_reference_table",
-        constants$1006.hb_face_reference_table$FUNC
-    );
-    static final FunctionDescriptor hb_face_reference_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_reference_blob$MH = RuntimeHelper.downcallHandle(
-        "hb_face_reference_blob",
-        constants$1006.hb_face_reference_blob$FUNC
+    static final MethodHandle cairo_fill_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_fill_extents",
+        constants$1006.cairo_fill_extents$FUNC
     );
-    static final FunctionDescriptor hb_face_set_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_face_set_index$MH = RuntimeHelper.downcallHandle(
-        "hb_face_set_index",
-        constants$1006.hb_face_set_index$FUNC
-    );
-    static final FunctionDescriptor hb_face_get_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_reset_clip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_get_index$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_index",
-        constants$1006.hb_face_get_index$FUNC
+    static final MethodHandle cairo_reset_clip$MH = RuntimeHelper.downcallHandle(
+        "cairo_reset_clip",
+        constants$1006.cairo_reset_clip$FUNC
     );
-    static final FunctionDescriptor hb_face_set_upem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_clip$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_set_upem$MH = RuntimeHelper.downcallHandle(
-        "hb_face_set_upem",
-        constants$1006.hb_face_set_upem$FUNC
+    static final MethodHandle cairo_clip$MH = RuntimeHelper.downcallHandle(
+        "cairo_clip",
+        constants$1006.cairo_clip$FUNC
     );
 }
 

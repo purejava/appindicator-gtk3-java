@@ -7,53 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1845 {
+final class constants$1845 {
 
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_icon_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1845() {}
+    static final FunctionDescriptor gtk_text_view_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_im_context_filter_keypress",
+        constants$1845.gtk_text_view_im_context_filter_keypress$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_reset_im_context$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_reset_im_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_reset_im_context",
+        constants$1845.gtk_text_view_reset_im_context$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_add_child_at_anchor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_add_child_at_anchor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_add_child_at_anchor",
+        constants$1845.gtk_text_view_add_child_at_anchor$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_add_child_in_window$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_add_child_in_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_add_child_in_window",
+        constants$1845.gtk_text_view_add_child_in_window$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_move_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_move_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_move_child",
+        constants$1845.gtk_text_view_move_child$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_set_wrap_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tooltip_set_icon_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_icon_name",
-        constants$1845.gtk_tooltip_set_icon_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_icon_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_gicon",
-        constants$1845.gtk_tooltip_set_icon_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_custom$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_custom$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_custom",
-        constants$1845.gtk_tooltip_set_custom$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_tip_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_tip_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_tip_area",
-        constants$1845.gtk_tooltip_set_tip_area$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_trigger_tooltip_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_trigger_tooltip_query$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_trigger_tooltip_query",
-        constants$1845.gtk_tooltip_trigger_tooltip_query$FUNC
-    );
-    static final FunctionDescriptor GtkIconViewForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle gtk_text_view_set_wrap_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_wrap_mode",
+        constants$1845.gtk_text_view_set_wrap_mode$FUNC
     );
 }
 

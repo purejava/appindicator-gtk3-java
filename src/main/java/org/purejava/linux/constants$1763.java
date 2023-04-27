@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1763 {
+final class constants$1763 {
 
-    static final FunctionDescriptor gtk_file_chooser_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_filename",
-        constants$1763.gtk_file_chooser_get_filename$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_filename$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1763() {}
+    static final FunctionDescriptor gtk_radio_menu_item_set_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_filename",
-        constants$1763.gtk_file_chooser_set_filename$FUNC
+    static final MethodHandle gtk_radio_menu_item_set_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_menu_item_set_group",
+        constants$1763.gtk_radio_menu_item_set_group$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_select_filename$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_radio_menu_item_join_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_select_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_filename",
-        constants$1763.gtk_file_chooser_select_filename$FUNC
+    static final MethodHandle gtk_radio_menu_item_join_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_menu_item_join_group",
+        constants$1763.gtk_radio_menu_item_join_group$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_unselect_filename$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_toggle_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_toggle_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_tool_button_get_type",
+        constants$1763.gtk_toggle_tool_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_toggle_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_toggle_tool_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_tool_button_new",
+        constants$1763.gtk_toggle_tool_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_toggle_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_toggle_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_tool_button_new_from_stock",
+        constants$1763.gtk_toggle_tool_button_new_from_stock$FUNC
+    );
+    static final FunctionDescriptor gtk_toggle_tool_button_set_active$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_unselect_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_filename",
-        constants$1763.gtk_file_chooser_unselect_filename$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_select_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_all",
-        constants$1763.gtk_file_chooser_select_all$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_all",
-        constants$1763.gtk_file_chooser_unselect_all$FUNC
+    static final MethodHandle gtk_toggle_tool_button_set_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_tool_button_set_active",
+        constants$1763.gtk_toggle_tool_button_set_active$FUNC
     );
 }
 

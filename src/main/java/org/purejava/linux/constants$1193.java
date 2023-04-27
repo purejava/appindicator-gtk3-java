@@ -7,57 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1193 {
+final class constants$1193 {
 
-    static final FunctionDescriptor cairo_surface_supports_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1193() {}
+    static final FunctionDescriptor gtk_accelerator_parse_with_keycode$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_supports_mime_type$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_supports_mime_type",
-        constants$1193.cairo_surface_supports_mime_type$FUNC
+    static final MethodHandle gtk_accelerator_parse_with_keycode$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_parse_with_keycode",
+        constants$1193.gtk_accelerator_parse_with_keycode$FUNC
     );
-    static final FunctionDescriptor cairo_surface_get_font_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_font_options",
-        constants$1193.cairo_surface_get_font_options$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_flush$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_flush",
-        constants$1193.cairo_surface_flush$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_mark_dirty$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_mark_dirty$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_mark_dirty",
-        constants$1193.cairo_surface_mark_dirty$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_mark_dirty_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accelerator_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accelerator_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_name",
+        constants$1193.gtk_accelerator_name$FUNC
+    );
+    static final FunctionDescriptor gtk_accelerator_name_with_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_mark_dirty_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_mark_dirty_rectangle",
-        constants$1193.cairo_surface_mark_dirty_rectangle$FUNC
+    static final MethodHandle gtk_accelerator_name_with_keycode$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_name_with_keycode",
+        constants$1193.gtk_accelerator_name_with_keycode$FUNC
     );
-    static final FunctionDescriptor cairo_surface_set_device_scale$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_accelerator_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accelerator_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_get_label",
+        constants$1193.gtk_accelerator_get_label$FUNC
+    );
+    static final FunctionDescriptor gtk_accelerator_get_label_with_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_set_device_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_device_scale",
-        constants$1193.cairo_surface_set_device_scale$FUNC
+    static final MethodHandle gtk_accelerator_get_label_with_keycode$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_get_label_with_keycode",
+        constants$1193.gtk_accelerator_get_label_with_keycode$FUNC
+    );
+    static final FunctionDescriptor gtk_accelerator_set_default_mod_mask$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accelerator_set_default_mod_mask$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_set_default_mod_mask",
+        constants$1193.gtk_accelerator_set_default_mod_mask$FUNC
     );
 }
 

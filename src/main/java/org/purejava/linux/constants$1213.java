@@ -7,47 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1213 {
+final class constants$1213 {
 
-    static final FunctionDescriptor cairo_region_xor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1213() {}
+    static final FunctionDescriptor atk_component_scroll_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_region_xor$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_xor",
-        constants$1213.cairo_region_xor$FUNC
+    static final MethodHandle atk_component_scroll_to$MH = RuntimeHelper.downcallHandle(
+        "atk_component_scroll_to",
+        constants$1213.atk_component_scroll_to$FUNC
     );
-    static final FunctionDescriptor cairo_region_xor_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_component_scroll_to_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_component_scroll_to_point$MH = RuntimeHelper.downcallHandle(
+        "atk_component_scroll_to_point",
+        constants$1213.atk_component_scroll_to_point$FUNC
+    );
+    static final FunctionDescriptor atk_document_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_document_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_document_get_type",
+        constants$1213.atk_document_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_document_get_document_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_region_xor_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_xor_rectangle",
-        constants$1213.cairo_region_xor_rectangle$FUNC
+    static final MethodHandle atk_document_get_document_type$MH = RuntimeHelper.downcallHandle(
+        "atk_document_get_document_type",
+        constants$1213.atk_document_get_document_type$FUNC
     );
-    static final FunctionDescriptor cairo_debug_reset_static_data$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle cairo_debug_reset_static_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_debug_reset_static_data",
-        constants$1213.cairo_debug_reset_static_data$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_type",
-        constants$1213.gdk_device_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_document_get_document$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_name",
-        constants$1213.gdk_device_get_name$FUNC
+    static final MethodHandle atk_document_get_document$MH = RuntimeHelper.downcallHandle(
+        "atk_document_get_document",
+        constants$1213.atk_document_get_document$FUNC
     );
-    static final FunctionDescriptor gdk_device_get_has_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_document_get_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_has_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_has_cursor",
-        constants$1213.gdk_device_get_has_cursor$FUNC
+    static final MethodHandle atk_document_get_locale$MH = RuntimeHelper.downcallHandle(
+        "atk_document_get_locale",
+        constants$1213.atk_document_get_locale$FUNC
     );
 }
 

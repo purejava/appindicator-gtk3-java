@@ -7,53 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$988 {
+final class constants$988 {
 
-    static final FunctionDescriptor hb_tag_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_tag_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_tag_from_string",
-        constants$988.hb_tag_from_string$FUNC
-    );
-    static final FunctionDescriptor hb_tag_to_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$988() {}
+    static final FunctionDescriptor rewind$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_tag_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_tag_to_string",
-        constants$988.hb_tag_to_string$FUNC
+    static final MethodHandle rewind$MH = RuntimeHelper.downcallHandle(
+        "rewind",
+        constants$988.rewind$FUNC
     );
-    static final FunctionDescriptor hb_direction_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor fseeko$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_direction_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_direction_from_string",
-        constants$988.hb_direction_from_string$FUNC
+    static final MethodHandle fseeko$MH = RuntimeHelper.downcallHandle(
+        "fseeko",
+        constants$988.fseeko$FUNC
     );
-    static final FunctionDescriptor hb_direction_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_direction_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_direction_to_string",
-        constants$988.hb_direction_to_string$FUNC
-    );
-    static final FunctionDescriptor hb_language_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_language_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_language_from_string",
-        constants$988.hb_language_from_string$FUNC
-    );
-    static final FunctionDescriptor hb_language_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor ftello$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_language_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_language_to_string",
-        constants$988.hb_language_to_string$FUNC
+    static final MethodHandle ftello$MH = RuntimeHelper.downcallHandle(
+        "ftello",
+        constants$988.ftello$FUNC
+    );
+    static final FunctionDescriptor fgetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle fgetpos$MH = RuntimeHelper.downcallHandle(
+        "fgetpos",
+        constants$988.fgetpos$FUNC
+    );
+    static final FunctionDescriptor fsetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle fsetpos$MH = RuntimeHelper.downcallHandle(
+        "fsetpos",
+        constants$988.fsetpos$FUNC
+    );
+    static final FunctionDescriptor clearerr$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle clearerr$MH = RuntimeHelper.downcallHandle(
+        "clearerr",
+        constants$988.clearerr$FUNC
     );
 }
 

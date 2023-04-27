@@ -7,52 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$503 {
+final class constants$503 {
 
-    static final FunctionDescriptor g_value_set_schar$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$503() {}
+    static final FunctionDescriptor g_buffered_input_stream_set_buffer_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_value_set_schar$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_schar",
-        constants$503.g_value_set_schar$FUNC
+    static final MethodHandle g_buffered_input_stream_set_buffer_size$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_set_buffer_size",
+        constants$503.g_buffered_input_stream_set_buffer_size$FUNC
     );
-    static final FunctionDescriptor g_value_get_schar$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+    static final FunctionDescriptor g_buffered_input_stream_get_available$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_schar$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_schar",
-        constants$503.g_value_get_schar$FUNC
+    static final MethodHandle g_buffered_input_stream_get_available$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_get_available",
+        constants$503.g_buffered_input_stream_get_available$FUNC
     );
-    static final FunctionDescriptor g_value_set_uchar$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_buffered_input_stream_peek$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_value_set_uchar$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_uchar",
-        constants$503.g_value_set_uchar$FUNC
+    static final MethodHandle g_buffered_input_stream_peek$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_peek",
+        constants$503.g_buffered_input_stream_peek$FUNC
     );
-    static final FunctionDescriptor g_value_get_uchar$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+    static final FunctionDescriptor g_buffered_input_stream_peek_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_uchar$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_uchar",
-        constants$503.g_value_get_uchar$FUNC
+    static final MethodHandle g_buffered_input_stream_peek_buffer$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_peek_buffer",
+        constants$503.g_buffered_input_stream_peek_buffer$FUNC
     );
-    static final FunctionDescriptor g_value_set_boolean$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_buffered_input_stream_fill$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_set_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_boolean",
-        constants$503.g_value_set_boolean$FUNC
-    );
-    static final FunctionDescriptor g_value_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_boolean",
-        constants$503.g_value_get_boolean$FUNC
+    static final MethodHandle g_buffered_input_stream_fill$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill",
+        constants$503.g_buffered_input_stream_fill$FUNC
+    );
+    static final FunctionDescriptor g_buffered_input_stream_fill_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_buffered_input_stream_fill_async$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill_async",
+        constants$503.g_buffered_input_stream_fill_async$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardTargetsReceivedFunc)(struct _GtkClipboard* clipboard,struct _GdkAtom** atoms,int n_atoms,void* data);
+ * }
+ */
 public interface GtkClipboardTargetsReceivedFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress atoms, int n_atoms, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkClipboardTargetsReceivedFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardTargetsReceivedFunc.class, fi, constants$1730.GtkClipboardTargetsReceivedFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment atoms, int n_atoms, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkClipboardTargetsReceivedFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1539.GtkClipboardTargetsReceivedFunc_UP$MH, fi, constants$1539.GtkClipboardTargetsReceivedFunc$FUNC, scope);
     }
-    static GtkClipboardTargetsReceivedFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _atoms, int _n_atoms, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkClipboardTargetsReceivedFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _atoms, int _n_atoms, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1730.GtkClipboardTargetsReceivedFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_atoms, _n_atoms, (java.lang.foreign.Addressable)_data);
+                constants$1539.GtkClipboardTargetsReceivedFunc_DOWN$MH.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

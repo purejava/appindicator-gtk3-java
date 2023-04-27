@@ -7,59 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1111 {
+final class constants$1111 {
 
-    static final FunctionDescriptor pango_tab_array_resize$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1111() {}
+    static final FunctionDescriptor gdk_display_get_n_screens$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_get_n_screens$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_n_screens",
+        constants$1111.gdk_display_get_n_screens$FUNC
+    );
+    static final FunctionDescriptor gdk_display_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_tab_array_resize$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_resize",
-        constants$1111.pango_tab_array_resize$FUNC
+    static final MethodHandle gdk_display_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_screen",
+        constants$1111.gdk_display_get_screen$FUNC
     );
-    static final FunctionDescriptor pango_tab_array_set_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_set_tab$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_set_tab",
-        constants$1111.pango_tab_array_set_tab$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_get_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_display_get_default_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_tab_array_get_tab$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_tab",
-        constants$1111.pango_tab_array_get_tab$FUNC
+    static final MethodHandle gdk_display_get_default_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_default_screen",
+        constants$1111.gdk_display_get_default_screen$FUNC
     );
-    static final FunctionDescriptor pango_tab_array_get_tabs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_get_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_tabs",
-        constants$1111.pango_tab_array_get_tabs$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_get_positions_in_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_get_positions_in_pixels$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_positions_in_pixels",
-        constants$1111.pango_tab_array_get_positions_in_pixels$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_set_positions_in_pixels$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_pointer_ungrab$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_tab_array_set_positions_in_pixels$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_set_positions_in_pixels",
-        constants$1111.pango_tab_array_set_positions_in_pixels$FUNC
+    static final MethodHandle gdk_display_pointer_ungrab$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_pointer_ungrab",
+        constants$1111.gdk_display_pointer_ungrab$FUNC
+    );
+    static final FunctionDescriptor gdk_display_keyboard_ungrab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_display_keyboard_ungrab$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_keyboard_ungrab",
+        constants$1111.gdk_display_keyboard_ungrab$FUNC
+    );
+    static final FunctionDescriptor gdk_display_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_pointer_is_grabbed",
+        constants$1111.gdk_display_pointer_is_grabbed$FUNC
     );
 }
 

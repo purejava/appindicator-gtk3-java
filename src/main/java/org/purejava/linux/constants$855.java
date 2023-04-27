@@ -7,50 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$855 {
+final class constants$855 {
 
-    static final FunctionDescriptor g_themed_icon_new_from_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$855() {}
+    static final FunctionDescriptor hb_draw_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_draw_funcs_create$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_create",
+        constants$855.hb_draw_funcs_create$FUNC
     );
-    static final MethodHandle g_themed_icon_new_from_names$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_from_names",
-        constants$855.g_themed_icon_new_from_names$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_prepend_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_draw_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_themed_icon_prepend_name$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_prepend_name",
-        constants$855.g_themed_icon_prepend_name$FUNC
+    static final MethodHandle hb_draw_funcs_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_reference",
+        constants$855.hb_draw_funcs_reference$FUNC
     );
-    static final FunctionDescriptor g_themed_icon_append_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_draw_funcs_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_funcs_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_destroy",
+        constants$855.hb_draw_funcs_destroy$FUNC
+    );
+    static final FunctionDescriptor hb_draw_funcs_make_immutable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_funcs_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_make_immutable",
+        constants$855.hb_draw_funcs_make_immutable$FUNC
+    );
+    static final FunctionDescriptor hb_draw_funcs_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_funcs_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_is_immutable",
+        constants$855.hb_draw_funcs_is_immutable$FUNC
+    );
+    static final FunctionDescriptor hb_draw_move_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
     );
-    static final MethodHandle g_themed_icon_append_name$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_append_name",
-        constants$855.g_themed_icon_append_name$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_get_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_themed_icon_get_names$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_get_names",
-        constants$855.g_themed_icon_get_names$FUNC
-    );
-    static final FunctionDescriptor g_threaded_socket_service_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_threaded_socket_service_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_threaded_socket_service_get_type",
-        constants$855.g_threaded_socket_service_get_type$FUNC
-    );
-    static final FunctionDescriptor g_threaded_socket_service_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_threaded_socket_service_new$MH = RuntimeHelper.downcallHandle(
-        "g_threaded_socket_service_new",
-        constants$855.g_threaded_socket_service_new$FUNC
+    static final MethodHandle hb_draw_move_to$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_move_to",
+        constants$855.hb_draw_move_to$FUNC
     );
 }
 

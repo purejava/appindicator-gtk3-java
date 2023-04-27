@@ -7,58 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1911 {
+final class constants$1911 {
 
-    static final FunctionDescriptor gtk_notebook_get_tab_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1911() {}
+    static final FunctionDescriptor _gtk_action_add_to_proxy_list$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_tab_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_label",
-        constants$1911.gtk_notebook_get_tab_label$FUNC
+    static final MethodHandle _gtk_action_add_to_proxy_list$MH = RuntimeHelper.downcallHandle(
+        "_gtk_action_add_to_proxy_list",
+        constants$1911._gtk_action_add_to_proxy_list$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_set_tab_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_set_tab_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_label",
-        constants$1911.gtk_notebook_set_tab_label$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_set_tab_label_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor _gtk_action_remove_from_proxy_list$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_set_tab_label_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_label_text",
-        constants$1911.gtk_notebook_set_tab_label_text$FUNC
+    static final MethodHandle _gtk_action_remove_from_proxy_list$MH = RuntimeHelper.downcallHandle(
+        "_gtk_action_remove_from_proxy_list",
+        constants$1911._gtk_action_remove_from_proxy_list$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_tab_label_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor _gtk_action_emit_activate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle _gtk_action_emit_activate$MH = RuntimeHelper.downcallHandle(
+        "_gtk_action_emit_activate",
+        constants$1911._gtk_action_emit_activate$FUNC
+    );
+    static final FunctionDescriptor gtk_action_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_tab_label_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_label_text",
-        constants$1911.gtk_notebook_get_tab_label_text$FUNC
+    static final MethodHandle gtk_action_set_accel_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_accel_path",
+        constants$1911.gtk_action_set_accel_path$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_menu_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_action_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_menu_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_menu_label",
-        constants$1911.gtk_notebook_get_menu_label$FUNC
+    static final MethodHandle gtk_action_set_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_accel_group",
+        constants$1911.gtk_action_set_accel_group$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_set_menu_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor _gtk_action_sync_menu_visible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_notebook_set_menu_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_menu_label",
-        constants$1911.gtk_notebook_set_menu_label$FUNC
+    static final MethodHandle _gtk_action_sync_menu_visible$MH = RuntimeHelper.downcallHandle(
+        "_gtk_action_sync_menu_visible",
+        constants$1911._gtk_action_sync_menu_visible$FUNC
     );
 }
 

@@ -7,8 +7,31 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$104 {
+final class constants$104 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$104() {}
+    static final FunctionDescriptor g_checksum_reset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_checksum_reset$MH = RuntimeHelper.downcallHandle(
+        "g_checksum_reset",
+        constants$104.g_checksum_reset$FUNC
+    );
+    static final FunctionDescriptor g_checksum_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_checksum_copy$MH = RuntimeHelper.downcallHandle(
+        "g_checksum_copy",
+        constants$104.g_checksum_copy$FUNC
+    );
+    static final FunctionDescriptor g_checksum_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_checksum_free$MH = RuntimeHelper.downcallHandle(
+        "g_checksum_free",
+        constants$104.g_checksum_free$FUNC
+    );
     static final FunctionDescriptor g_checksum_update$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -33,32 +56,6 @@ class constants$104 {
     static final MethodHandle g_checksum_get_digest$MH = RuntimeHelper.downcallHandle(
         "g_checksum_get_digest",
         constants$104.g_checksum_get_digest$FUNC
-    );
-    static final FunctionDescriptor g_compute_checksum_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_compute_checksum_for_data$MH = RuntimeHelper.downcallHandle(
-        "g_compute_checksum_for_data",
-        constants$104.g_compute_checksum_for_data$FUNC
-    );
-    static final FunctionDescriptor g_compute_checksum_for_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_compute_checksum_for_string$MH = RuntimeHelper.downcallHandle(
-        "g_compute_checksum_for_string",
-        constants$104.g_compute_checksum_for_string$FUNC
-    );
-    static final FunctionDescriptor g_compute_checksum_for_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_compute_checksum_for_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_compute_checksum_for_bytes",
-        constants$104.g_compute_checksum_for_bytes$FUNC
     );
 }
 

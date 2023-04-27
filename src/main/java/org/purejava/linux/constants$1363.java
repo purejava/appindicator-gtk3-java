@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1363 {
+final class constants$1363 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkWindow$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1363() {}
+    static final FunctionDescriptor gtk_tree_path_new_first$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tree_path_new_first$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_new_first",
+        constants$1363.gtk_tree_path_new_first$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_append_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_path_append_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_append_index",
+        constants$1363.gtk_tree_path_append_index$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_prepend_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_path_prepend_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_prepend_index",
+        constants$1363.gtk_tree_path_prepend_index$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_get_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkWindow",
-        constants$1363.glib_slistautoptr_cleanup_GdkWindow$FUNC
+    static final MethodHandle gtk_tree_path_get_depth$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_get_depth",
+        constants$1363.gtk_tree_path_get_depth$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkWindow$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_get_indices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkWindow",
-        constants$1363.glib_queueautoptr_cleanup_GdkWindow$FUNC
+    static final MethodHandle gtk_tree_path_get_indices$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_get_indices",
+        constants$1363.gtk_tree_path_get_indices$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GdkEvent$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_get_indices_with_depth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GdkEvent$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkEvent",
-        constants$1363.glib_autoptr_clear_GdkEvent$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkEvent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GdkEvent$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkEvent",
-        constants$1363.glib_autoptr_cleanup_GdkEvent$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkEvent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GdkEvent$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkEvent",
-        constants$1363.glib_listautoptr_cleanup_GdkEvent$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkEvent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkEvent$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkEvent",
-        constants$1363.glib_slistautoptr_cleanup_GdkEvent$FUNC
+    static final MethodHandle gtk_tree_path_get_indices_with_depth$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_get_indices_with_depth",
+        constants$1363.gtk_tree_path_get_indices_with_depth$FUNC
     );
 }
 

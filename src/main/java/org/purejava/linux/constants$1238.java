@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1238 {
+final class constants$1238 {
 
-    static final FunctionDescriptor gdk_window_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1238() {}
+    static final FunctionDescriptor atk_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_table_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_type",
+        constants$1238.atk_table_get_type$FUNC
     );
-    static final MethodHandle gdk_window_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_screen",
-        constants$1238.gdk_window_get_screen$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_display",
-        constants$1238.gdk_window_get_display$FUNC
-    );
-    static final FunctionDescriptor gdk_window_at_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_table_ref_at$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_table_ref_at$MH = RuntimeHelper.downcallHandle(
+        "atk_table_ref_at",
+        constants$1238.atk_table_ref_at$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_index_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_table_get_index_at$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_index_at",
+        constants$1238.atk_table_get_index_at$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_column_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_table_get_column_at_index$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_column_at_index",
+        constants$1238.atk_table_get_column_at_index$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_row_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_table_get_row_at_index$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_row_at_index",
+        constants$1238.atk_table_get_row_at_index$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_at_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_at_pointer",
-        constants$1238.gdk_window_at_pointer$FUNC
-    );
-    static final FunctionDescriptor gdk_window_show$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_show$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_show",
-        constants$1238.gdk_window_show$FUNC
-    );
-    static final FunctionDescriptor gdk_window_hide$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_hide$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_hide",
-        constants$1238.gdk_window_hide$FUNC
-    );
-    static final FunctionDescriptor gdk_window_withdraw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_withdraw$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_withdraw",
-        constants$1238.gdk_window_withdraw$FUNC
+    static final MethodHandle atk_table_get_n_columns$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_n_columns",
+        constants$1238.atk_table_get_n_columns$FUNC
     );
 }
 

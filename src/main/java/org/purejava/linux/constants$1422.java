@@ -7,44 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1422 {
+final class constants$1422 {
 
-    static final FunctionDescriptor atk_misc_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_misc_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_misc_get_type",
-        constants$1422.atk_misc_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_misc_threads_enter$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1422() {}
+    static final FunctionDescriptor gtk_selection_data_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_misc_threads_enter$MH = RuntimeHelper.downcallHandle(
-        "atk_misc_threads_enter",
-        constants$1422.atk_misc_threads_enter$FUNC
+    static final MethodHandle gtk_selection_data_get_uris$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_uris",
+        constants$1422.gtk_selection_data_get_uris$FUNC
     );
-    static final FunctionDescriptor atk_misc_threads_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_misc_threads_leave$MH = RuntimeHelper.downcallHandle(
-        "atk_misc_threads_leave",
-        constants$1422.atk_misc_threads_leave$FUNC
-    );
-    static final FunctionDescriptor atk_misc_get_instance$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_misc_get_instance$MH = RuntimeHelper.downcallHandle(
-        "atk_misc_get_instance",
-        constants$1422.atk_misc_get_instance$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_value_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_type",
-        constants$1422.atk_value_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_current_value$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_selection_data_get_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_value_get_current_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_current_value",
-        constants$1422.atk_value_get_current_value$FUNC
+    static final MethodHandle gtk_selection_data_get_targets$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_targets",
+        constants$1422.gtk_selection_data_get_targets$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_targets_include_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_targets_include_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_text",
+        constants$1422.gtk_selection_data_targets_include_text$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_targets_include_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_targets_include_rich_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_rich_text",
+        constants$1422.gtk_selection_data_targets_include_rich_text$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_targets_include_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_targets_include_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_image",
+        constants$1422.gtk_selection_data_targets_include_image$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_targets_include_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_targets_include_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_uri",
+        constants$1422.gtk_selection_data_targets_include_uri$FUNC
     );
 }
 

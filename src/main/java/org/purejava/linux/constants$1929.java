@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1929 {
+final class constants$1929 {
 
-    static final FunctionDescriptor gtk_places_sidebar_get_show_desktop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1929() {}
+    static final FunctionDescriptor gtk_font_selection_get_size_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_get_show_desktop$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_show_desktop",
-        constants$1929.gtk_places_sidebar_get_show_desktop$FUNC
+    static final MethodHandle gtk_font_selection_get_size_list$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_size_list",
+        constants$1929.gtk_font_selection_get_size_list$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_set_show_desktop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_places_sidebar_set_show_desktop$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_set_show_desktop",
-        constants$1929.gtk_places_sidebar_set_show_desktop$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_get_show_connect_to_server$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_selection_get_preview_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_get_show_connect_to_server$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_show_connect_to_server",
-        constants$1929.gtk_places_sidebar_get_show_connect_to_server$FUNC
+    static final MethodHandle gtk_font_selection_get_preview_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_preview_entry",
+        constants$1929.gtk_font_selection_get_preview_entry$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_set_show_connect_to_server$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_places_sidebar_set_show_connect_to_server$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_set_show_connect_to_server",
-        constants$1929.gtk_places_sidebar_set_show_connect_to_server$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_get_show_enter_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_selection_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_get_show_enter_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_show_enter_location",
-        constants$1929.gtk_places_sidebar_get_show_enter_location$FUNC
+    static final MethodHandle gtk_font_selection_get_family$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_family",
+        constants$1929.gtk_font_selection_get_family$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_set_show_enter_location$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_font_selection_get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_set_show_enter_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_set_show_enter_location",
-        constants$1929.gtk_places_sidebar_set_show_enter_location$FUNC
+    static final MethodHandle gtk_font_selection_get_face$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_face",
+        constants$1929.gtk_font_selection_get_face$FUNC
+    );
+    static final FunctionDescriptor gtk_font_selection_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_selection_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_size",
+        constants$1929.gtk_font_selection_get_size$FUNC
+    );
+    static final FunctionDescriptor gtk_font_selection_get_font_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_selection_get_font_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_font_name",
+        constants$1929.gtk_font_selection_get_font_name$FUNC
     );
 }
 

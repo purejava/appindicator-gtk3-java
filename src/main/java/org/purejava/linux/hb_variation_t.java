@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct hb_variation_t {
+ *     hb_tag_t tag;
+ *     float value;
+ * };
+ * }
+ */
 public class hb_variation_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("tag"),
         Constants$root.C_FLOAT$LAYOUT.withName("value")
     ).withName("hb_variation_t");
@@ -20,10 +28,22 @@ public class hb_variation_t {
     public static VarHandle tag$VH() {
         return hb_variation_t.tag$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_tag_t tag;
+     * }
+     */
     public static int tag$get(MemorySegment seg) {
         return (int)hb_variation_t.tag$VH.get(seg);
     }
-    public static void tag$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_tag_t tag;
+     * }
+     */
+    public static void tag$set(MemorySegment seg, int x) {
         hb_variation_t.tag$VH.set(seg, x);
     }
     public static int tag$get(MemorySegment seg, long index) {
@@ -36,10 +56,22 @@ public class hb_variation_t {
     public static VarHandle value$VH() {
         return hb_variation_t.value$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * float value;
+     * }
+     */
     public static float value$get(MemorySegment seg) {
         return (float)hb_variation_t.value$VH.get(seg);
     }
-    public static void value$set( MemorySegment seg, float x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * float value;
+     * }
+     */
+    public static void value$set(MemorySegment seg, float x) {
         hb_variation_t.value$VH.set(seg, x);
     }
     public static float value$get(MemorySegment seg, long index) {
@@ -50,10 +82,10 @@ public class hb_variation_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

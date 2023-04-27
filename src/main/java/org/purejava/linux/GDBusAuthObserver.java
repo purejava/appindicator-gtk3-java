@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusAuthObserver {
+/**
+ * {@snippet :
+ * typedef struct _GDBusAuthObserver GDBusAuthObserver;
+ * }
+ */
+public final class GDBusAuthObserver {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusAuthObserver() {}
 }
 
 

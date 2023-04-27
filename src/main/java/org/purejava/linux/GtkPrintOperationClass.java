@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPrintOperationClass extends _GtkPrintOperationClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkPrintOperationClass GtkPrintOperationClass;
+ * }
+ */
+public final class GtkPrintOperationClass extends _GtkPrintOperationClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPrintOperationClass() {}
 }
 
 

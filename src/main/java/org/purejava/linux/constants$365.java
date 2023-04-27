@@ -7,53 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$365 {
+final class constants$365 {
 
-    static final FunctionDescriptor pthread_condattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_condattr_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_init",
-        constants$365.pthread_condattr_init$FUNC
-    );
-    static final FunctionDescriptor pthread_condattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_condattr_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_destroy",
-        constants$365.pthread_condattr_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_condattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$365() {}
+    static final FunctionDescriptor pthread_mutexattr_getprioceiling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_condattr_getpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_getpshared",
-        constants$365.pthread_condattr_getpshared$FUNC
+    static final MethodHandle pthread_mutexattr_getprioceiling$MH = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getprioceiling",
+        constants$365.pthread_mutexattr_getprioceiling$FUNC
     );
-    static final FunctionDescriptor pthread_condattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_mutexattr_setprioceiling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_condattr_setpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_setpshared",
-        constants$365.pthread_condattr_setpshared$FUNC
+    static final MethodHandle pthread_mutexattr_setprioceiling$MH = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setprioceiling",
+        constants$365.pthread_mutexattr_setprioceiling$FUNC
     );
-    static final FunctionDescriptor pthread_condattr_getclock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_mutexattr_getrobust$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_condattr_getclock$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_getclock",
-        constants$365.pthread_condattr_getclock$FUNC
+    static final MethodHandle pthread_mutexattr_getrobust$MH = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getrobust",
+        constants$365.pthread_mutexattr_getrobust$FUNC
     );
-    static final FunctionDescriptor pthread_condattr_setclock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_mutexattr_setrobust$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_condattr_setclock$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_setclock",
-        constants$365.pthread_condattr_setclock$FUNC
+    static final MethodHandle pthread_mutexattr_setrobust$MH = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setrobust",
+        constants$365.pthread_mutexattr_setrobust$FUNC
+    );
+    static final FunctionDescriptor pthread_rwlock_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_rwlock_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_init",
+        constants$365.pthread_rwlock_init$FUNC
+    );
+    static final FunctionDescriptor pthread_rwlock_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_rwlock_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_destroy",
+        constants$365.pthread_rwlock_destroy$FUNC
     );
 }
 

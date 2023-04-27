@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GActionMapInterface {
+ *     GTypeInterface g_iface;
+ *     GAction* (*lookup_action)(GActionMap*,const gchar*);
+ *     void (*add_action)(GActionMap*,GAction*);
+ *     void (*remove_action)(GActionMap*,const gchar*);
+ * };
+ * }
+ */
 public class _GActionMapInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -28,20 +38,34 @@ public class _GActionMapInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_action$MH = RuntimeHelper.downcallHandle(
-        _GActionMapInterface.lookup_action$FUNC
+    static final FunctionDescriptor lookup_action_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_action_UP$MH = RuntimeHelper.upcallHandle(lookup_action.class, "apply", _GActionMapInterface.lookup_action_UP$FUNC);
+    static final FunctionDescriptor lookup_action_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionMapInterface.lookup_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GAction* (*lookup_action)(GActionMap*,const gchar*);
+     * }
+     */
     public interface lookup_action {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(lookup_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_action.class, fi, _GActionMapInterface.lookup_action$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(lookup_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionMapInterface.lookup_action_UP$MH, fi, _GActionMapInterface.lookup_action$FUNC, scope);
         }
-        static lookup_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static lookup_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionMapInterface.lookup_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GActionMapInterface.lookup_action_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -53,39 +77,65 @@ public class _GActionMapInterface {
     public static VarHandle lookup_action$VH() {
         return _GActionMapInterface.lookup_action$VH;
     }
-    public static MemoryAddress lookup_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.lookup_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GAction* (*lookup_action)(GActionMap*,const gchar*);
+     * }
+     */
+    public static MemorySegment lookup_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.lookup_action$VH.get(seg);
     }
-    public static void lookup_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GAction* (*lookup_action)(GActionMap*,const gchar*);
+     * }
+     */
+    public static void lookup_action$set(MemorySegment seg, MemorySegment x) {
         _GActionMapInterface.lookup_action$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.lookup_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.lookup_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionMapInterface.lookup_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_action lookup_action (MemorySegment segment, MemorySession session) {
-        return lookup_action.ofAddress(lookup_action$get(segment), session);
+    public static lookup_action lookup_action(MemorySegment segment, SegmentScope scope) {
+        return lookup_action.ofAddress(lookup_action$get(segment), scope);
     }
     static final FunctionDescriptor add_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_action$MH = RuntimeHelper.downcallHandle(
-        _GActionMapInterface.add_action$FUNC
+    static final FunctionDescriptor add_action_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_action_UP$MH = RuntimeHelper.upcallHandle(add_action.class, "apply", _GActionMapInterface.add_action_UP$FUNC);
+    static final FunctionDescriptor add_action_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionMapInterface.add_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*add_action)(GActionMap*,GAction*);
+     * }
+     */
     public interface add_action {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_action.class, fi, _GActionMapInterface.add_action$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(add_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionMapInterface.add_action_UP$MH, fi, _GActionMapInterface.add_action$FUNC, scope);
         }
-        static add_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GActionMapInterface.add_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GActionMapInterface.add_action_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -97,39 +147,65 @@ public class _GActionMapInterface {
     public static VarHandle add_action$VH() {
         return _GActionMapInterface.add_action$VH;
     }
-    public static MemoryAddress add_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.add_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*add_action)(GActionMap*,GAction*);
+     * }
+     */
+    public static MemorySegment add_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.add_action$VH.get(seg);
     }
-    public static void add_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*add_action)(GActionMap*,GAction*);
+     * }
+     */
+    public static void add_action$set(MemorySegment seg, MemorySegment x) {
         _GActionMapInterface.add_action$VH.set(seg, x);
     }
-    public static MemoryAddress add_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.add_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.add_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionMapInterface.add_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_action add_action (MemorySegment segment, MemorySession session) {
-        return add_action.ofAddress(add_action$get(segment), session);
+    public static add_action add_action(MemorySegment segment, SegmentScope scope) {
+        return add_action.ofAddress(add_action$get(segment), scope);
     }
     static final FunctionDescriptor remove_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle remove_action$MH = RuntimeHelper.downcallHandle(
-        _GActionMapInterface.remove_action$FUNC
+    static final FunctionDescriptor remove_action_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle remove_action_UP$MH = RuntimeHelper.upcallHandle(remove_action.class, "apply", _GActionMapInterface.remove_action_UP$FUNC);
+    static final FunctionDescriptor remove_action_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle remove_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionMapInterface.remove_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*remove_action)(GActionMap*,const gchar*);
+     * }
+     */
     public interface remove_action {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(remove_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_action.class, fi, _GActionMapInterface.remove_action$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(remove_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionMapInterface.remove_action_UP$MH, fi, _GActionMapInterface.remove_action$FUNC, scope);
         }
-        static remove_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static remove_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GActionMapInterface.remove_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GActionMapInterface.remove_action_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -141,27 +217,39 @@ public class _GActionMapInterface {
     public static VarHandle remove_action$VH() {
         return _GActionMapInterface.remove_action$VH;
     }
-    public static MemoryAddress remove_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.remove_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*remove_action)(GActionMap*,const gchar*);
+     * }
+     */
+    public static MemorySegment remove_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.remove_action$VH.get(seg);
     }
-    public static void remove_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*remove_action)(GActionMap*,const gchar*);
+     * }
+     */
+    public static void remove_action$set(MemorySegment seg, MemorySegment x) {
         _GActionMapInterface.remove_action$VH.set(seg, x);
     }
-    public static MemoryAddress remove_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionMapInterface.remove_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionMapInterface.remove_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionMapInterface.remove_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_action remove_action (MemorySegment segment, MemorySession session) {
-        return remove_action.ofAddress(remove_action$get(segment), session);
+    public static remove_action remove_action(MemorySegment segment, SegmentScope scope) {
+        return remove_action.ofAddress(remove_action$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

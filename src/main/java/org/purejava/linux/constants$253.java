@@ -7,51 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$253 {
+final class constants$253 {
 
-    static final FunctionDescriptor g_option_context_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$253() {}
+    static final FunctionDescriptor g_variant_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_context_get_summary$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_get_summary",
-        constants$253.g_option_context_get_summary$FUNC
+    static final MethodHandle g_variant_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_new",
+        constants$253.g_variant_new$FUNC
     );
-    static final FunctionDescriptor g_option_context_set_description$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_get$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_context_set_description$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_set_description",
-        constants$253.g_option_context_set_description$FUNC
+    static final MethodHandle g_variant_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_get",
+        constants$253.g_variant_get$FUNC
     );
-    static final FunctionDescriptor g_option_context_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_new_va$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_context_get_description$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_get_description",
-        constants$253.g_option_context_get_description$FUNC
+    static final MethodHandle g_variant_new_va$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_va",
+        constants$253.g_variant_new_va$FUNC
     );
-    static final FunctionDescriptor g_option_context_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_get_va$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_context_free$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_free",
-        constants$253.g_option_context_free$FUNC
+    static final MethodHandle g_variant_get_va$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_va",
+        constants$253.g_variant_get_va$FUNC
     );
-    static final FunctionDescriptor g_option_context_set_help_enabled$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_check_format_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_option_context_set_help_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_set_help_enabled",
-        constants$253.g_option_context_set_help_enabled$FUNC
+    static final MethodHandle g_variant_check_format_string$MH = RuntimeHelper.downcallHandle(
+        "g_variant_check_format_string",
+        constants$253.g_variant_check_format_string$FUNC
     );
-    static final FunctionDescriptor g_option_context_get_help_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_variant_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_context_get_help_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_get_help_enabled",
-        constants$253.g_option_context_get_help_enabled$FUNC
+    static final MethodHandle g_variant_parse$MH = RuntimeHelper.downcallHandle(
+        "g_variant_parse",
+        constants$253.g_variant_parse$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkIMContextSimple extends _GtkIMContextSimple {
+/**
+ * {@snippet :
+ * typedef struct _GtkIMContextSimple GtkIMContextSimple;
+ * }
+ */
+public final class GtkIMContextSimple extends _GtkIMContextSimple {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkIMContextSimple() {}
 }
 
 

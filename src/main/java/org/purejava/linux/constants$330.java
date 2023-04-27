@@ -7,60 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$330 {
+final class constants$330 {
 
-    static final FunctionDescriptor g_tree_foreach_node$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$330() {}
+    static final FunctionDescriptor GTraverseNodeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GTraverseNodeFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTraverseNodeFunc_UP$MH = RuntimeHelper.upcallHandle(GTraverseNodeFunc.class, "apply", constants$330.GTraverseNodeFunc_UP$FUNC);
+    static final FunctionDescriptor GTraverseNodeFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTraverseNodeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$330.GTraverseNodeFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_tree_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tree_new$MH = RuntimeHelper.downcallHandle(
+        "g_tree_new",
+        constants$330.g_tree_new$FUNC
+    );
+    static final FunctionDescriptor g_tree_new_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tree_new_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_tree_new_with_data",
+        constants$330.g_tree_new_with_data$FUNC
+    );
+    static final FunctionDescriptor g_tree_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_foreach_node$MH = RuntimeHelper.downcallHandle(
-        "g_tree_foreach_node",
-        constants$330.g_tree_foreach_node$FUNC
+    static final MethodHandle g_tree_new_full$MH = RuntimeHelper.downcallHandle(
+        "g_tree_new_full",
+        constants$330.g_tree_new_full$FUNC
     );
-    static final FunctionDescriptor g_tree_traverse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tree_node_first$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_traverse$MH = RuntimeHelper.downcallHandle(
-        "g_tree_traverse",
-        constants$330.g_tree_traverse$FUNC
-    );
-    static final FunctionDescriptor g_tree_search_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_search_node$MH = RuntimeHelper.downcallHandle(
-        "g_tree_search_node",
-        constants$330.g_tree_search_node$FUNC
-    );
-    static final FunctionDescriptor g_tree_search$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_search$MH = RuntimeHelper.downcallHandle(
-        "g_tree_search",
-        constants$330.g_tree_search$FUNC
-    );
-    static final FunctionDescriptor g_tree_lower_bound$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_lower_bound$MH = RuntimeHelper.downcallHandle(
-        "g_tree_lower_bound",
-        constants$330.g_tree_lower_bound$FUNC
-    );
-    static final FunctionDescriptor g_tree_upper_bound$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_upper_bound$MH = RuntimeHelper.downcallHandle(
-        "g_tree_upper_bound",
-        constants$330.g_tree_upper_bound$FUNC
+    static final MethodHandle g_tree_node_first$MH = RuntimeHelper.downcallHandle(
+        "g_tree_node_first",
+        constants$330.g_tree_node_first$FUNC
     );
 }
 

@@ -7,49 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1181 {
+final class constants$1181 {
 
-    static final FunctionDescriptor cairo_user_font_face_get_unicode_to_glyph_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1181() {}
+    static final FunctionDescriptor gdk_atom_intern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_atom_intern$MH = RuntimeHelper.downcallHandle(
+        "gdk_atom_intern",
+        constants$1181.gdk_atom_intern$FUNC
+    );
+    static final FunctionDescriptor gdk_atom_intern_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_user_font_face_get_unicode_to_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_get_unicode_to_glyph_func",
-        constants$1181.cairo_user_font_face_get_unicode_to_glyph_func$FUNC
+    static final MethodHandle gdk_atom_intern_static_string$MH = RuntimeHelper.downcallHandle(
+        "gdk_atom_intern_static_string",
+        constants$1181.gdk_atom_intern_static_string$FUNC
     );
-    static final FunctionDescriptor cairo_get_operator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_atom_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_operator$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_operator",
-        constants$1181.cairo_get_operator$FUNC
+    static final MethodHandle gdk_atom_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_atom_name",
+        constants$1181.gdk_atom_name$FUNC
     );
-    static final FunctionDescriptor cairo_get_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_property_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_source$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_source",
-        constants$1181.cairo_get_source$FUNC
+    static final MethodHandle gdk_property_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_property_get",
+        constants$1181.gdk_property_get$FUNC
     );
-    static final FunctionDescriptor cairo_get_tolerance$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gdk_property_change$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_property_change$MH = RuntimeHelper.downcallHandle(
+        "gdk_property_change",
+        constants$1181.gdk_property_change$FUNC
+    );
+    static final FunctionDescriptor gdk_property_delete$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_tolerance$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_tolerance",
-        constants$1181.cairo_get_tolerance$FUNC
-    );
-    static final FunctionDescriptor cairo_get_antialias$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_antialias$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_antialias",
-        constants$1181.cairo_get_antialias$FUNC
-    );
-    static final FunctionDescriptor cairo_has_current_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_has_current_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_has_current_point",
-        constants$1181.cairo_has_current_point$FUNC
+    static final MethodHandle gdk_property_delete$MH = RuntimeHelper.downcallHandle(
+        "gdk_property_delete",
+        constants$1181.gdk_property_delete$FUNC
     );
 }
 

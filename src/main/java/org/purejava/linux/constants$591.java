@@ -7,59 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$591 {
+final class constants$591 {
 
-    static final FunctionDescriptor g_data_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_new",
-        constants$591.g_data_output_stream_new$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_set_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_set_byte_order",
-        constants$591.g_data_output_stream_set_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_get_byte_order",
-        constants$591.g_data_output_stream_get_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_byte$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$591() {}
+    static final FunctionDescriptor g_dbus_object_skeleton_set_object_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_output_stream_put_byte$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_byte",
-        constants$591.g_data_output_stream_put_byte$FUNC
+    static final MethodHandle g_dbus_object_skeleton_set_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_set_object_path",
+        constants$591.g_dbus_object_skeleton_set_object_path$FUNC
     );
-    static final FunctionDescriptor g_data_output_stream_put_int16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_proxy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_proxy_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_type",
+        constants$591.g_dbus_proxy_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_new$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_output_stream_put_int16$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_int16",
-        constants$591.g_data_output_stream_put_int16$FUNC
+    static final MethodHandle g_dbus_proxy_new$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new",
+        constants$591.g_dbus_proxy_new$FUNC
     );
-    static final FunctionDescriptor g_data_output_stream_put_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor g_dbus_proxy_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_output_stream_put_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_uint16",
-        constants$591.g_data_output_stream_put_uint16$FUNC
+    static final MethodHandle g_dbus_proxy_new_finish$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_finish",
+        constants$591.g_dbus_proxy_new_finish$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_new_sync$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_sync",
+        constants$591.g_dbus_proxy_new_sync$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_new_for_bus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_new_for_bus$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_for_bus",
+        constants$591.g_dbus_proxy_new_for_bus$FUNC
     );
 }
 

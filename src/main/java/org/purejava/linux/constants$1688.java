@@ -7,58 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1688 {
+final class constants$1688 {
 
-    static final FunctionDescriptor gtk_assistant_set_page_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1688() {}
+    static final FunctionDescriptor gtk_menu_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_bar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_new",
+        constants$1688.gtk_menu_bar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_bar_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_set_page_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_title",
-        constants$1688.gtk_assistant_set_page_title$FUNC
+    static final MethodHandle gtk_menu_bar_new_from_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_new_from_model",
+        constants$1688.gtk_menu_bar_new_from_model$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_get_page_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_bar_get_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_get_page_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_title",
-        constants$1688.gtk_assistant_get_page_title$FUNC
+    static final MethodHandle gtk_menu_bar_get_pack_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_get_pack_direction",
+        constants$1688.gtk_menu_bar_get_pack_direction$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_set_page_header_image$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_bar_set_pack_direction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_bar_set_pack_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_set_pack_direction",
+        constants$1688.gtk_menu_bar_set_pack_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_bar_get_child_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_set_page_header_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_header_image",
-        constants$1688.gtk_assistant_set_page_header_image$FUNC
+    static final MethodHandle gtk_menu_bar_get_child_pack_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_get_child_pack_direction",
+        constants$1688.gtk_menu_bar_get_child_pack_direction$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_get_page_header_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_bar_set_child_pack_direction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_assistant_get_page_header_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_header_image",
-        constants$1688.gtk_assistant_get_page_header_image$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_page_side_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_page_side_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_side_image",
-        constants$1688.gtk_assistant_set_page_side_image$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_get_page_side_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_get_page_side_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_side_image",
-        constants$1688.gtk_assistant_get_page_side_image$FUNC
+    static final MethodHandle gtk_menu_bar_set_child_pack_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_set_child_pack_direction",
+        constants$1688.gtk_menu_bar_set_child_pack_direction$FUNC
     );
 }
 

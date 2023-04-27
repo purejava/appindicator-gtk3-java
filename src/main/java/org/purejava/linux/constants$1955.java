@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1955 {
+final class constants$1955 {
 
-    static final FunctionDescriptor gtk_progress_bar_set_text$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1955() {}
+    static final FunctionDescriptor gtk_status_icon_get_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_status_icon_get_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_gicon",
+        constants$1955.gtk_status_icon_get_gicon$FUNC
+    );
+    static final FunctionDescriptor gtk_status_icon_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_status_icon_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_size",
+        constants$1955.gtk_status_icon_get_size$FUNC
+    );
+    static final FunctionDescriptor gtk_status_icon_set_screen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_progress_bar_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_text",
-        constants$1955.gtk_progress_bar_set_text$FUNC
+    static final MethodHandle gtk_status_icon_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_screen",
+        constants$1955.gtk_status_icon_set_screen$FUNC
     );
-    static final FunctionDescriptor gtk_progress_bar_set_fraction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gtk_status_icon_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_progress_bar_set_fraction$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_fraction",
-        constants$1955.gtk_progress_bar_set_fraction$FUNC
+    static final MethodHandle gtk_status_icon_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_screen",
+        constants$1955.gtk_status_icon_get_screen$FUNC
     );
-    static final FunctionDescriptor gtk_progress_bar_set_pulse_step$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_progress_bar_set_pulse_step$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_pulse_step",
-        constants$1955.gtk_progress_bar_set_pulse_step$FUNC
-    );
-    static final FunctionDescriptor gtk_progress_bar_set_inverted$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_status_icon_set_has_tooltip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_progress_bar_set_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_inverted",
-        constants$1955.gtk_progress_bar_set_inverted$FUNC
+    static final MethodHandle gtk_status_icon_set_has_tooltip$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_has_tooltip",
+        constants$1955.gtk_status_icon_set_has_tooltip$FUNC
     );
-    static final FunctionDescriptor gtk_progress_bar_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_status_icon_set_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_progress_bar_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_text",
-        constants$1955.gtk_progress_bar_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_progress_bar_get_fraction$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_progress_bar_get_fraction$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_fraction",
-        constants$1955.gtk_progress_bar_get_fraction$FUNC
+    static final MethodHandle gtk_status_icon_set_tooltip_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_tooltip_text",
+        constants$1955.gtk_status_icon_set_tooltip_text$FUNC
     );
 }
 

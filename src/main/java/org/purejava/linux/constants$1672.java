@@ -7,44 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1672 {
+final class constants$1672 {
 
-    static final FunctionDescriptor gtk_combo_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_combo_box_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_type",
-        constants$1672.gtk_combo_box_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new",
-        constants$1672.gtk_combo_box_new$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1672() {}
+    static final FunctionDescriptor gtk_link_button_set_uri$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_new_with_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_area",
-        constants$1672.gtk_combo_box_new_with_area$FUNC
+    static final MethodHandle gtk_link_button_set_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_set_uri",
+        constants$1672.gtk_link_button_set_uri$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_new_with_area_and_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_link_button_get_visited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_new_with_area_and_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_area_and_entry",
-        constants$1672.gtk_combo_box_new_with_area_and_entry$FUNC
+    static final MethodHandle gtk_link_button_get_visited$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_get_visited",
+        constants$1672.gtk_link_button_get_visited$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_new_with_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_new_with_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_entry",
-        constants$1672.gtk_combo_box_new_with_entry$FUNC
+    static final FunctionDescriptor gtk_link_button_set_visited$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_combo_box_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle gtk_link_button_set_visited$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_set_visited",
+        constants$1672.gtk_link_button_set_visited$FUNC
+    );
+    static final FunctionDescriptor GtkListBoxFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_new_with_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_model",
-        constants$1672.gtk_combo_box_new_with_model$FUNC
+    static final FunctionDescriptor GtkListBoxFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GtkListBoxFilterFunc_UP$MH = RuntimeHelper.upcallHandle(GtkListBoxFilterFunc.class, "apply", constants$1672.GtkListBoxFilterFunc_UP$FUNC);
+    static final FunctionDescriptor GtkListBoxFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkListBoxFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1672.GtkListBoxFilterFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkListBoxSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkListBoxSortFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkListBoxSortFunc_UP$MH = RuntimeHelper.upcallHandle(GtkListBoxSortFunc.class, "apply", constants$1672.GtkListBoxSortFunc_UP$FUNC);
 }
 
 

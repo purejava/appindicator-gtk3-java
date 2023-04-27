@@ -7,82 +7,81 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$452 {
+final class constants$452 {
 
-    static final FunctionDescriptor g_cclosure_marshal_VOID__VARIANTv$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$452() {}
+    static final FunctionDescriptor g_param_spec_enum$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__VARIANTv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__VARIANTv",
-        constants$452.g_cclosure_marshal_VOID__VARIANTv$FUNC
+    static final MethodHandle g_param_spec_enum$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_enum",
+        constants$452.g_param_spec_enum$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UINT_POINTER$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__UINT_POINTER$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UINT_POINTER",
-        constants$452.g_cclosure_marshal_VOID__UINT_POINTER$FUNC
+    static final MethodHandle g_param_spec_flags$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_flags",
+        constants$452.g_param_spec_flags$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UINT_POINTERv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_float$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__UINT_POINTERv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UINT_POINTERv",
-        constants$452.g_cclosure_marshal_VOID__UINT_POINTERv$FUNC
+    static final MethodHandle g_param_spec_float$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_float",
+        constants$452.g_param_spec_float$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_BOOLEAN__FLAGS$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_double$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_BOOLEAN__FLAGS$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_BOOLEAN__FLAGS",
-        constants$452.g_cclosure_marshal_BOOLEAN__FLAGS$FUNC
+    static final MethodHandle g_param_spec_double$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_double",
+        constants$452.g_param_spec_double$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_BOOLEAN__FLAGSv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_BOOLEAN__FLAGSv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_BOOLEAN__FLAGSv",
-        constants$452.g_cclosure_marshal_BOOLEAN__FLAGSv$FUNC
+    static final MethodHandle g_param_spec_string$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_string",
+        constants$452.g_param_spec_string$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_STRING__OBJECT_POINTER$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_param$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_STRING__OBJECT_POINTER$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_STRING__OBJECT_POINTER",
-        constants$452.g_cclosure_marshal_STRING__OBJECT_POINTER$FUNC
+    static final MethodHandle g_param_spec_param$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_param",
+        constants$452.g_param_spec_param$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkToolButton extends _GtkToolButton {
+/**
+ * {@snippet :
+ * typedef struct _GtkToolButton GtkToolButton;
+ * }
+ */
+public final class GtkToolButton extends _GtkToolButton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkToolButton() {}
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkEventBox extends _GtkEventBox {
+/**
+ * {@snippet :
+ * typedef struct _GtkEventBox GtkEventBox;
+ * }
+ */
+public final class GtkEventBox extends _GtkEventBox {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkEventBox() {}
 }
 
 

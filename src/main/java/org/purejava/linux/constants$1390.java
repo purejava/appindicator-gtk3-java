@@ -7,52 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1390 {
+final class constants$1390 {
 
-    static final FunctionDescriptor atk_document_get_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_document_get_locale$MH = RuntimeHelper.downcallHandle(
-        "atk_document_get_locale",
-        constants$1390.atk_document_get_locale$FUNC
-    );
-    static final FunctionDescriptor atk_document_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_document_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_document_get_attributes",
-        constants$1390.atk_document_get_attributes$FUNC
-    );
-    static final FunctionDescriptor atk_document_get_attribute_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1390() {}
+    static final FunctionDescriptor gtk_tree_view_column_set_attributes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_document_get_attribute_value$MH = RuntimeHelper.downcallHandle(
-        "atk_document_get_attribute_value",
-        constants$1390.atk_document_get_attribute_value$FUNC
+    static final MethodHandle gtk_tree_view_column_set_attributes$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_view_column_set_attributes",
+        constants$1390.gtk_tree_view_column_set_attributes$FUNC
     );
-    static final FunctionDescriptor atk_document_set_attribute_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_set_cell_data_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_document_set_attribute_value$MH = RuntimeHelper.downcallHandle(
-        "atk_document_set_attribute_value",
-        constants$1390.atk_document_set_attribute_value$FUNC
+    static final MethodHandle gtk_tree_view_column_set_cell_data_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_cell_data_func",
+        constants$1390.gtk_tree_view_column_set_cell_data_func$FUNC
     );
-    static final FunctionDescriptor atk_document_get_current_page_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_clear_attributes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_document_get_current_page_number$MH = RuntimeHelper.downcallHandle(
-        "atk_document_get_current_page_number",
-        constants$1390.atk_document_get_current_page_number$FUNC
+    static final MethodHandle gtk_tree_view_column_clear_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_clear_attributes",
+        constants$1390.gtk_tree_view_column_clear_attributes$FUNC
     );
-    static final FunctionDescriptor atk_document_get_page_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_set_spacing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_set_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_spacing",
+        constants$1390.gtk_tree_view_column_set_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_document_get_page_count$MH = RuntimeHelper.downcallHandle(
-        "atk_document_get_page_count",
-        constants$1390.atk_document_get_page_count$FUNC
+    static final MethodHandle gtk_tree_view_column_get_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_spacing",
+        constants$1390.gtk_tree_view_column_get_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_set_visible$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_set_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_visible",
+        constants$1390.gtk_tree_view_column_set_visible$FUNC
     );
 }
 

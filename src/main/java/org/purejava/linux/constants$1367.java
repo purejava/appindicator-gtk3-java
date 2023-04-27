@@ -7,56 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1367 {
+final class constants$1367 {
 
-    static final FunctionDescriptor gtk_accel_group_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_get_modifier_mask",
-        constants$1367.gtk_accel_group_get_modifier_mask$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_lock$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_lock",
-        constants$1367.gtk_accel_group_lock$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_unlock$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_unlock",
-        constants$1367.gtk_accel_group_unlock$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_connect$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1367() {}
+    static final FunctionDescriptor gtk_tree_row_reference_inserted$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_group_connect$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect",
-        constants$1367.gtk_accel_group_connect$FUNC
+    static final MethodHandle gtk_tree_row_reference_inserted$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_inserted",
+        constants$1367.gtk_tree_row_reference_inserted$FUNC
     );
-    static final FunctionDescriptor gtk_accel_group_connect_by_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_row_reference_deleted$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_row_reference_deleted$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_deleted",
+        constants$1367.gtk_tree_row_reference_deleted$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_row_reference_reordered$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_group_connect_by_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect_by_path",
-        constants$1367.gtk_accel_group_connect_by_path$FUNC
+    static final MethodHandle gtk_tree_row_reference_reordered$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_reordered",
+        constants$1367.gtk_tree_row_reference_reordered$FUNC
     );
-    static final FunctionDescriptor gtk_accel_group_disconnect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_group_disconnect$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect",
-        constants$1367.gtk_accel_group_disconnect$FUNC
+    static final MethodHandle gtk_tree_iter_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_iter_copy",
+        constants$1367.gtk_tree_iter_copy$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_iter_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_iter_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_iter_free",
+        constants$1367.gtk_tree_iter_free$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_iter_get_type",
+        constants$1367.gtk_tree_iter_get_type$FUNC
     );
 }
 

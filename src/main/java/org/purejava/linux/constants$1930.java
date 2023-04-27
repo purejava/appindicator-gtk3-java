@@ -7,53 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1930 {
+final class constants$1930 {
 
-    static final FunctionDescriptor gtk_places_sidebar_set_local_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_places_sidebar_set_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_set_local_only",
-        constants$1930.gtk_places_sidebar_set_local_only$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_get_local_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_places_sidebar_get_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_local_only",
-        constants$1930.gtk_places_sidebar_get_local_only$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_add_shortcut$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1930() {}
+    static final FunctionDescriptor gtk_font_selection_set_font_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_add_shortcut$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_add_shortcut",
-        constants$1930.gtk_places_sidebar_add_shortcut$FUNC
+    static final MethodHandle gtk_font_selection_set_font_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_set_font_name",
+        constants$1930.gtk_font_selection_set_font_name$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_remove_shortcut$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_font_selection_get_preview_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_selection_get_preview_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_preview_text",
+        constants$1930.gtk_font_selection_get_preview_text$FUNC
+    );
+    static final FunctionDescriptor gtk_font_selection_set_preview_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_remove_shortcut$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_remove_shortcut",
-        constants$1930.gtk_places_sidebar_remove_shortcut$FUNC
+    static final MethodHandle gtk_font_selection_set_preview_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_set_preview_text",
+        constants$1930.gtk_font_selection_set_preview_text$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_list_shortcuts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_font_selection_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_font_selection_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_dialog_get_type",
+        constants$1930.gtk_font_selection_dialog_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_font_selection_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_list_shortcuts$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_list_shortcuts",
-        constants$1930.gtk_places_sidebar_list_shortcuts$FUNC
+    static final MethodHandle gtk_font_selection_dialog_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_dialog_new",
+        constants$1930.gtk_font_selection_dialog_new$FUNC
     );
-    static final FunctionDescriptor gtk_places_sidebar_get_nth_bookmark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_font_selection_dialog_get_ok_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_get_nth_bookmark$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_nth_bookmark",
-        constants$1930.gtk_places_sidebar_get_nth_bookmark$FUNC
+    static final MethodHandle gtk_font_selection_dialog_get_ok_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_dialog_get_ok_button",
+        constants$1930.gtk_font_selection_dialog_get_ok_button$FUNC
     );
 }
 

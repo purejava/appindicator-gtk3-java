@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GSettingsBindGetMapping)(struct _GValue* value,struct _GVariant* variant,void* user_data);
+ * }
+ */
 public interface GSettingsBindGetMapping {
 
-    int apply(java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress variant, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GSettingsBindGetMapping fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSettingsBindGetMapping.class, fi, constants$805.GSettingsBindGetMapping$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GSettingsBindGetMapping fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$750.GSettingsBindGetMapping_UP$MH, fi, constants$750.GSettingsBindGetMapping$FUNC, scope);
     }
-    static GSettingsBindGetMapping ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _variant, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GSettingsBindGetMapping ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$805.GSettingsBindGetMapping$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_variant, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$750.GSettingsBindGetMapping_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,61 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$460 {
+final class constants$460 {
 
-    static final FunctionDescriptor g_signal_handlers_disconnect_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$460() {}
+    static final FunctionDescriptor g_type_plugin_complete_interface_info$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_disconnect_matched$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_disconnect_matched",
-        constants$460.g_signal_handlers_disconnect_matched$FUNC
-    );
-    static final FunctionDescriptor g_clear_signal_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_signal_handler$MH = RuntimeHelper.downcallHandle(
-        "g_clear_signal_handler",
-        constants$460.g_clear_signal_handler$FUNC
-    );
-    static final FunctionDescriptor g_signal_override_class_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_override_class_closure$MH = RuntimeHelper.downcallHandle(
-        "g_signal_override_class_closure",
-        constants$460.g_signal_override_class_closure$FUNC
+    static final MethodHandle g_type_plugin_complete_interface_info$MH = RuntimeHelper.downcallHandle(
+        "g_type_plugin_complete_interface_info",
+        constants$460.g_type_plugin_complete_interface_info$FUNC
     );
-    static final FunctionDescriptor g_signal_override_class_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_value_array_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_get_type",
+        constants$460.g_value_array_get_type$FUNC
+    );
+    static final FunctionDescriptor g_value_array_get_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_value_array_get_nth$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_get_nth",
+        constants$460.g_value_array_get_nth$FUNC
+    );
+    static final FunctionDescriptor g_value_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_value_array_new$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_new",
+        constants$460.g_value_array_new$FUNC
+    );
+    static final FunctionDescriptor g_value_array_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_override_class_handler$MH = RuntimeHelper.downcallHandle(
-        "g_signal_override_class_handler",
-        constants$460.g_signal_override_class_handler$FUNC
+    static final MethodHandle g_value_array_free$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_free",
+        constants$460.g_value_array_free$FUNC
     );
-    static final FunctionDescriptor g_signal_chain_from_overridden$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_value_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_chain_from_overridden$MH = RuntimeHelper.downcallHandle(
-        "g_signal_chain_from_overridden",
-        constants$460.g_signal_chain_from_overridden$FUNC
-    );
-    static final FunctionDescriptor g_signal_chain_from_overridden_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_chain_from_overridden_handler$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_chain_from_overridden_handler",
-        constants$460.g_signal_chain_from_overridden_handler$FUNC
+    static final MethodHandle g_value_array_copy$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_copy",
+        constants$460.g_value_array_copy$FUNC
     );
 }
 

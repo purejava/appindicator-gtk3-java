@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$304 {
+final class constants$304 {
 
-    static final FunctionDescriptor g_strfreev$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$304() {}
+    static final FunctionDescriptor g_sequence_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strfreev$MH = RuntimeHelper.downcallHandle(
-        "g_strfreev",
-        constants$304.g_strfreev$FUNC
+    static final MethodHandle g_sequence_get$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_get",
+        constants$304.g_sequence_get$FUNC
     );
-    static final FunctionDescriptor g_strdupv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strdupv$MH = RuntimeHelper.downcallHandle(
-        "g_strdupv",
-        constants$304.g_strdupv$FUNC
-    );
-    static final FunctionDescriptor g_strv_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_length$MH = RuntimeHelper.downcallHandle(
-        "g_strv_length",
-        constants$304.g_strv_length$FUNC
-    );
-    static final FunctionDescriptor g_stpcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_stpcpy$MH = RuntimeHelper.downcallHandle(
-        "g_stpcpy",
-        constants$304.g_stpcpy$FUNC
+    static final MethodHandle g_sequence_set$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_set",
+        constants$304.g_sequence_set$FUNC
     );
-    static final FunctionDescriptor g_str_to_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_iter_is_begin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_str_to_ascii$MH = RuntimeHelper.downcallHandle(
-        "g_str_to_ascii",
-        constants$304.g_str_to_ascii$FUNC
+    static final MethodHandle g_sequence_iter_is_begin$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_iter_is_begin",
+        constants$304.g_sequence_iter_is_begin$FUNC
     );
-    static final FunctionDescriptor g_str_tokenize_and_fold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_str_tokenize_and_fold$MH = RuntimeHelper.downcallHandle(
-        "g_str_tokenize_and_fold",
-        constants$304.g_str_tokenize_and_fold$FUNC
+    static final MethodHandle g_sequence_iter_is_end$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_iter_is_end",
+        constants$304.g_sequence_iter_is_end$FUNC
+    );
+    static final FunctionDescriptor g_sequence_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_sequence_iter_next$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_iter_next",
+        constants$304.g_sequence_iter_next$FUNC
+    );
+    static final FunctionDescriptor g_sequence_iter_prev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_sequence_iter_prev$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_iter_prev",
+        constants$304.g_sequence_iter_prev$FUNC
     );
 }
 

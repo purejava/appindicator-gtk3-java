@@ -7,51 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1406 {
+final class constants$1406 {
 
-    static final FunctionDescriptor atk_range_get_lower_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1406() {}
+    static final FunctionDescriptor gtk_text_iter_starts_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_get_lower_limit$MH = RuntimeHelper.downcallHandle(
-        "atk_range_get_lower_limit",
-        constants$1406.atk_range_get_lower_limit$FUNC
+    static final MethodHandle gtk_text_iter_starts_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_starts_line",
+        constants$1406.gtk_text_iter_starts_line$FUNC
     );
-    static final FunctionDescriptor atk_range_get_upper_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_ends_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_get_upper_limit$MH = RuntimeHelper.downcallHandle(
-        "atk_range_get_upper_limit",
-        constants$1406.atk_range_get_upper_limit$FUNC
+    static final MethodHandle gtk_text_iter_ends_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_ends_line",
+        constants$1406.gtk_text_iter_ends_line$FUNC
     );
-    static final FunctionDescriptor atk_range_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_is_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_get_description$MH = RuntimeHelper.downcallHandle(
-        "atk_range_get_description",
-        constants$1406.atk_range_get_description$FUNC
+    static final MethodHandle gtk_text_iter_is_cursor_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_is_cursor_position",
+        constants$1406.gtk_text_iter_is_cursor_position$FUNC
     );
-    static final FunctionDescriptor atk_range_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_chars_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_new$MH = RuntimeHelper.downcallHandle(
-        "atk_range_new",
-        constants$1406.atk_range_new$FUNC
+    static final MethodHandle gtk_text_iter_get_chars_in_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_chars_in_line",
+        constants$1406.gtk_text_iter_get_chars_in_line$FUNC
     );
-    static final FunctionDescriptor atk_registry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_registry_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_registry_get_type",
-        constants$1406.atk_registry_get_type$FUNC
+    static final FunctionDescriptor gtk_text_iter_get_bytes_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_registry_set_factory_type$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle gtk_text_iter_get_bytes_in_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_bytes_in_line",
+        constants$1406.gtk_text_iter_get_bytes_in_line$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_registry_set_factory_type$MH = RuntimeHelper.downcallHandle(
-        "atk_registry_set_factory_type",
-        constants$1406.atk_registry_set_factory_type$FUNC
+    static final MethodHandle gtk_text_iter_get_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_attributes",
+        constants$1406.gtk_text_iter_get_attributes$FUNC
     );
 }
 

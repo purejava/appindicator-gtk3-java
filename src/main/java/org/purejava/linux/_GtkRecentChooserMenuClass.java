@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRecentChooserMenuClass {
+ *     GtkMenuClass parent_class;
+ *     void (*gtk_recent1)();
+ *     void (*gtk_recent2)();
+ *     void (*gtk_recent3)();
+ *     void (*gtk_recent4)();
+ * };
+ * }
+ */
 public class _GtkRecentChooserMenuClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -28,7 +39,10 @@ public class _GtkRecentChooserMenuClass {
                             Constants$root.C_POINTER$LAYOUT.withName("notify"),
                             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                         ).withName("parent_class"),
                         Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                         MemoryLayout.paddingLayout(32),
@@ -128,10 +142,7 @@ public class _GtkRecentChooserMenuClass {
                     Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                    MemoryLayout.structLayout(
-                        MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                        MemoryLayout.paddingLayout(63)
-                    ),
+                    MemoryLayout.paddingLayout(64),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -141,10 +152,7 @@ public class _GtkRecentChooserMenuClass {
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved8")
                 ).withName("parent_class"),
-                MemoryLayout.structLayout(
-                    MemoryLayout.paddingLayout(1).withName("submenu_placement"),
-                    MemoryLayout.paddingLayout(63)
-                ),
+                MemoryLayout.paddingLayout(64),
                 Constants$root.C_POINTER$LAYOUT.withName("deactivate"),
                 Constants$root.C_POINTER$LAYOUT.withName("selection_done"),
                 Constants$root.C_POINTER$LAYOUT.withName("move_current"),
@@ -176,20 +184,28 @@ public class _GtkRecentChooserMenuClass {
         return seg.asSlice(0, 1120);
     }
     static final FunctionDescriptor gtk_recent1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_recent1$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserMenuClass.gtk_recent1$FUNC
+    static final FunctionDescriptor gtk_recent1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent1_UP$MH = RuntimeHelper.upcallHandle(gtk_recent1.class, "apply", _GtkRecentChooserMenuClass.gtk_recent1_UP$FUNC);
+    static final FunctionDescriptor gtk_recent1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserMenuClass.gtk_recent1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*gtk_recent1)();
+     * }
+     */
     public interface gtk_recent1 {
 
         void apply();
-        static MemorySegment allocate(gtk_recent1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(gtk_recent1.class, fi, _GtkRecentChooserMenuClass.gtk_recent1$FUNC, session);
+        static MemorySegment allocate(gtk_recent1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserMenuClass.gtk_recent1_UP$MH, fi, _GtkRecentChooserMenuClass.gtk_recent1$FUNC, scope);
         }
-        static gtk_recent1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static gtk_recent1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRecentChooserMenuClass.gtk_recent1$MH.invokeExact((Addressable)symbol);
+                    _GtkRecentChooserMenuClass.gtk_recent1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -201,36 +217,56 @@ public class _GtkRecentChooserMenuClass {
     public static VarHandle gtk_recent1$VH() {
         return _GtkRecentChooserMenuClass.gtk_recent1$VH;
     }
-    public static MemoryAddress gtk_recent1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*gtk_recent1)();
+     * }
+     */
+    public static MemorySegment gtk_recent1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent1$VH.get(seg);
     }
-    public static void gtk_recent1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*gtk_recent1)();
+     * }
+     */
+    public static void gtk_recent1$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent1$VH.set(seg, x);
     }
-    public static MemoryAddress gtk_recent1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment gtk_recent1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void gtk_recent1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void gtk_recent1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static gtk_recent1 gtk_recent1 (MemorySegment segment, MemorySession session) {
-        return gtk_recent1.ofAddress(gtk_recent1$get(segment), session);
+    public static gtk_recent1 gtk_recent1(MemorySegment segment, SegmentScope scope) {
+        return gtk_recent1.ofAddress(gtk_recent1$get(segment), scope);
     }
     static final FunctionDescriptor gtk_recent2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_recent2$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserMenuClass.gtk_recent2$FUNC
+    static final FunctionDescriptor gtk_recent2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent2_UP$MH = RuntimeHelper.upcallHandle(gtk_recent2.class, "apply", _GtkRecentChooserMenuClass.gtk_recent2_UP$FUNC);
+    static final FunctionDescriptor gtk_recent2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserMenuClass.gtk_recent2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*gtk_recent2)();
+     * }
+     */
     public interface gtk_recent2 {
 
         void apply();
-        static MemorySegment allocate(gtk_recent2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(gtk_recent2.class, fi, _GtkRecentChooserMenuClass.gtk_recent2$FUNC, session);
+        static MemorySegment allocate(gtk_recent2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserMenuClass.gtk_recent2_UP$MH, fi, _GtkRecentChooserMenuClass.gtk_recent2$FUNC, scope);
         }
-        static gtk_recent2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static gtk_recent2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRecentChooserMenuClass.gtk_recent2$MH.invokeExact((Addressable)symbol);
+                    _GtkRecentChooserMenuClass.gtk_recent2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -242,36 +278,56 @@ public class _GtkRecentChooserMenuClass {
     public static VarHandle gtk_recent2$VH() {
         return _GtkRecentChooserMenuClass.gtk_recent2$VH;
     }
-    public static MemoryAddress gtk_recent2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*gtk_recent2)();
+     * }
+     */
+    public static MemorySegment gtk_recent2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent2$VH.get(seg);
     }
-    public static void gtk_recent2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*gtk_recent2)();
+     * }
+     */
+    public static void gtk_recent2$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent2$VH.set(seg, x);
     }
-    public static MemoryAddress gtk_recent2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment gtk_recent2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void gtk_recent2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void gtk_recent2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static gtk_recent2 gtk_recent2 (MemorySegment segment, MemorySession session) {
-        return gtk_recent2.ofAddress(gtk_recent2$get(segment), session);
+    public static gtk_recent2 gtk_recent2(MemorySegment segment, SegmentScope scope) {
+        return gtk_recent2.ofAddress(gtk_recent2$get(segment), scope);
     }
     static final FunctionDescriptor gtk_recent3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_recent3$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserMenuClass.gtk_recent3$FUNC
+    static final FunctionDescriptor gtk_recent3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent3_UP$MH = RuntimeHelper.upcallHandle(gtk_recent3.class, "apply", _GtkRecentChooserMenuClass.gtk_recent3_UP$FUNC);
+    static final FunctionDescriptor gtk_recent3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserMenuClass.gtk_recent3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*gtk_recent3)();
+     * }
+     */
     public interface gtk_recent3 {
 
         void apply();
-        static MemorySegment allocate(gtk_recent3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(gtk_recent3.class, fi, _GtkRecentChooserMenuClass.gtk_recent3$FUNC, session);
+        static MemorySegment allocate(gtk_recent3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserMenuClass.gtk_recent3_UP$MH, fi, _GtkRecentChooserMenuClass.gtk_recent3$FUNC, scope);
         }
-        static gtk_recent3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static gtk_recent3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRecentChooserMenuClass.gtk_recent3$MH.invokeExact((Addressable)symbol);
+                    _GtkRecentChooserMenuClass.gtk_recent3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,36 +339,56 @@ public class _GtkRecentChooserMenuClass {
     public static VarHandle gtk_recent3$VH() {
         return _GtkRecentChooserMenuClass.gtk_recent3$VH;
     }
-    public static MemoryAddress gtk_recent3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*gtk_recent3)();
+     * }
+     */
+    public static MemorySegment gtk_recent3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent3$VH.get(seg);
     }
-    public static void gtk_recent3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*gtk_recent3)();
+     * }
+     */
+    public static void gtk_recent3$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent3$VH.set(seg, x);
     }
-    public static MemoryAddress gtk_recent3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment gtk_recent3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void gtk_recent3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void gtk_recent3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static gtk_recent3 gtk_recent3 (MemorySegment segment, MemorySession session) {
-        return gtk_recent3.ofAddress(gtk_recent3$get(segment), session);
+    public static gtk_recent3 gtk_recent3(MemorySegment segment, SegmentScope scope) {
+        return gtk_recent3.ofAddress(gtk_recent3$get(segment), scope);
     }
     static final FunctionDescriptor gtk_recent4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_recent4$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserMenuClass.gtk_recent4$FUNC
+    static final FunctionDescriptor gtk_recent4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent4_UP$MH = RuntimeHelper.upcallHandle(gtk_recent4.class, "apply", _GtkRecentChooserMenuClass.gtk_recent4_UP$FUNC);
+    static final FunctionDescriptor gtk_recent4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_recent4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserMenuClass.gtk_recent4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*gtk_recent4)();
+     * }
+     */
     public interface gtk_recent4 {
 
         void apply();
-        static MemorySegment allocate(gtk_recent4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(gtk_recent4.class, fi, _GtkRecentChooserMenuClass.gtk_recent4$FUNC, session);
+        static MemorySegment allocate(gtk_recent4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserMenuClass.gtk_recent4_UP$MH, fi, _GtkRecentChooserMenuClass.gtk_recent4$FUNC, scope);
         }
-        static gtk_recent4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static gtk_recent4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRecentChooserMenuClass.gtk_recent4$MH.invokeExact((Addressable)symbol);
+                    _GtkRecentChooserMenuClass.gtk_recent4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -324,27 +400,39 @@ public class _GtkRecentChooserMenuClass {
     public static VarHandle gtk_recent4$VH() {
         return _GtkRecentChooserMenuClass.gtk_recent4$VH;
     }
-    public static MemoryAddress gtk_recent4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*gtk_recent4)();
+     * }
+     */
+    public static MemorySegment gtk_recent4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent4$VH.get(seg);
     }
-    public static void gtk_recent4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*gtk_recent4)();
+     * }
+     */
+    public static void gtk_recent4$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent4$VH.set(seg, x);
     }
-    public static MemoryAddress gtk_recent4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserMenuClass.gtk_recent4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment gtk_recent4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserMenuClass.gtk_recent4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void gtk_recent4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void gtk_recent4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserMenuClass.gtk_recent4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static gtk_recent4 gtk_recent4 (MemorySegment segment, MemorySession session) {
-        return gtk_recent4.ofAddress(gtk_recent4$get(segment), session);
+    public static gtk_recent4 gtk_recent4(MemorySegment segment, SegmentScope scope) {
+        return gtk_recent4.ofAddress(gtk_recent4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,57 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1991 {
+final class constants$1991 {
 
-    static final FunctionDescriptor gtk_scale_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_new",
-        constants$1991.gtk_scale_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_set_icons$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_set_icons$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_set_icons",
-        constants$1991.gtk_scale_button_set_icons$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_value",
-        constants$1991.gtk_scale_button_get_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_set_value",
-        constants$1991.gtk_scale_button_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_adjustment",
-        constants$1991.gtk_scale_button_get_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_set_adjustment",
-        constants$1991.gtk_scale_button_set_adjustment$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1991() {}
+    static final MemorySegment SIG_DFL$ADDR = MemorySegment.ofAddress(0L);
+    static final MemorySegment SIG_IGN$ADDR = MemorySegment.ofAddress(1L);
+    static final MemorySegment G_STR_DELIMITERS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("_-|> <.");
+    static final MemorySegment G_KEY_FILE_DESKTOP_GROUP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Desktop Entry");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Type");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Version");
 }
 
 

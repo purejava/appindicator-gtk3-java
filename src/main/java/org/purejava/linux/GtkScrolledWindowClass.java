@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkScrolledWindowClass extends _GtkScrolledWindowClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkScrolledWindowClass GtkScrolledWindowClass;
+ * }
+ */
+public final class GtkScrolledWindowClass extends _GtkScrolledWindowClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkScrolledWindowClass() {}
 }
 
 

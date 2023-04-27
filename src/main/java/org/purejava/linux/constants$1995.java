@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1995 {
+final class constants$1995 {
 
-    static final FunctionDescriptor gtk_scrolled_window_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_vadjustment",
-        constants$1995.gtk_scrolled_window_set_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_hadjustment",
-        constants$1995.gtk_scrolled_window_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_vadjustment",
-        constants$1995.gtk_scrolled_window_get_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_hscrollbar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_hscrollbar$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_hscrollbar",
-        constants$1995.gtk_scrolled_window_get_hscrollbar$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_vscrollbar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_vscrollbar$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_vscrollbar",
-        constants$1995.gtk_scrolled_window_get_vscrollbar$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_policy",
-        constants$1995.gtk_scrolled_window_set_policy$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1995() {}
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ACTIONS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Actions");
+    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_APPLICATION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Application");
+    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_LINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Link");
+    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_DIRECTORY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Directory");
+    static final MemorySegment G_LOG_DOMAIN$ADDR = MemorySegment.ofAddress(0L);
+    static final MemorySegment G_OPTION_REMAINING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
 }
 
 

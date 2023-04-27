@@ -7,29 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$730 {
+final class constants$730 {
 
-    static final FunctionDescriptor g_settings_bind_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_bind_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_flags_get_type",
-        constants$730.g_settings_bind_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor GModuleCheckInit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$730() {}
+    static final FunctionDescriptor g_proxy_resolver_lookup_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GModuleCheckInit$MH = RuntimeHelper.downcallHandle(
-        constants$730.GModuleCheckInit$FUNC
+    static final MethodHandle g_proxy_resolver_lookup_finish$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_lookup_finish",
+        constants$730.g_proxy_resolver_lookup_finish$FUNC
     );
-    static final FunctionDescriptor GModuleUnload$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_remote_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_remote_action_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_remote_action_group_get_type",
+        constants$730.g_remote_action_group_get_type$FUNC
+    );
+    static final FunctionDescriptor g_remote_action_group_activate_action_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GModuleUnload$MH = RuntimeHelper.downcallHandle(
-        constants$730.GModuleUnload$FUNC
+    static final MethodHandle g_remote_action_group_activate_action_full$MH = RuntimeHelper.downcallHandle(
+        "g_remote_action_group_activate_action_full",
+        constants$730.g_remote_action_group_activate_action_full$FUNC
     );
-    static final FunctionDescriptor g_module_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_module_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_module_error_quark",
-        constants$730.g_module_error_quark$FUNC
+    static final FunctionDescriptor g_remote_action_group_change_action_state_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_remote_action_group_change_action_state_full$MH = RuntimeHelper.downcallHandle(
+        "g_remote_action_group_change_action_state_full",
+        constants$730.g_remote_action_group_change_action_state_full$FUNC
+    );
+    static final FunctionDescriptor g_resolver_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resolver_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_get_type",
+        constants$730.g_resolver_get_type$FUNC
+    );
+    static final FunctionDescriptor g_resolver_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_resolver_get_default$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_get_default",
+        constants$730.g_resolver_get_default$FUNC
     );
 }
 

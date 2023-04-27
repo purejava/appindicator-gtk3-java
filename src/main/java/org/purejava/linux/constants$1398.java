@@ -7,37 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1398 {
+final class constants$1398 {
 
-    static final FunctionDescriptor atk_relation_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_relation_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_get_type",
-        constants$1398.atk_relation_type_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1398() {}
+    static final FunctionDescriptor gtk_text_attributes_copy_values$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_state_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_state_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_get_type",
-        constants$1398.atk_state_type_get_type$FUNC
+    static final MethodHandle gtk_text_attributes_copy_values$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_attributes_copy_values",
+        constants$1398.gtk_text_attributes_copy_values$FUNC
     );
-    static final FunctionDescriptor atk_text_attribute_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_attribute_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_type",
-        constants$1398.atk_text_attribute_get_type$FUNC
+    static final FunctionDescriptor gtk_text_attributes_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_text_boundary_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_boundary_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_boundary_get_type",
-        constants$1398.atk_text_boundary_get_type$FUNC
+    static final MethodHandle gtk_text_attributes_unref$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_attributes_unref",
+        constants$1398.gtk_text_attributes_unref$FUNC
     );
-    static final FunctionDescriptor atk_text_granularity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_granularity_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_granularity_get_type",
-        constants$1398.atk_text_granularity_get_type$FUNC
+    static final FunctionDescriptor gtk_text_attributes_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_text_clip_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_clip_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_clip_type_get_type",
-        constants$1398.atk_text_clip_type_get_type$FUNC
+    static final MethodHandle gtk_text_attributes_ref$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_attributes_ref",
+        constants$1398.gtk_text_attributes_ref$FUNC
+    );
+    static final FunctionDescriptor gtk_text_attributes_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_attributes_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_attributes_get_type",
+        constants$1398.gtk_text_attributes_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_text_child_anchor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_child_anchor_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_child_anchor_get_type",
+        constants$1398.gtk_text_child_anchor_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_text_child_anchor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_text_child_anchor_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_child_anchor_new",
+        constants$1398.gtk_text_child_anchor_new$FUNC
     );
 }
 

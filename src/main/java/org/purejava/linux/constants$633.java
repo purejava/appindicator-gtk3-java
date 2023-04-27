@@ -7,34 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$633 {
+final class constants$633 {
 
-    static final FunctionDescriptor g_dbus_object_manager_client_new_for_bus$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$633() {}
+    static final FunctionDescriptor g_file_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_new_for_bus$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus",
-        constants$633.g_dbus_object_manager_client_new_for_bus$FUNC
+    static final MethodHandle g_file_monitor$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor",
+        constants$633.g_file_monitor$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_for_bus_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_measure_disk_usage$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_new_for_bus_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus_finish",
-        constants$633.g_dbus_object_manager_client_new_for_bus_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_for_bus_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -44,30 +32,56 @@ class constants$633 {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_new_for_bus_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus_sync",
-        constants$633.g_dbus_object_manager_client_new_for_bus_sync$FUNC
+    static final MethodHandle g_file_measure_disk_usage$MH = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage",
+        constants$633.g_file_measure_disk_usage$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_client_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_measure_disk_usage_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_get_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_connection",
-        constants$633.g_dbus_object_manager_client_get_connection$FUNC
+    static final MethodHandle g_file_measure_disk_usage_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage_async",
+        constants$633.g_file_measure_disk_usage_async$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_client_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_measure_disk_usage_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_flags",
-        constants$633.g_dbus_object_manager_client_get_flags$FUNC
+    static final MethodHandle g_file_measure_disk_usage_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage_finish",
+        constants$633.g_file_measure_disk_usage_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_client_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_start_mountable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_name",
-        constants$633.g_dbus_object_manager_client_get_name$FUNC
+    static final MethodHandle g_file_start_mountable$MH = RuntimeHelper.downcallHandle(
+        "g_file_start_mountable",
+        constants$633.g_file_start_mountable$FUNC
+    );
+    static final FunctionDescriptor g_file_start_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_start_mountable_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_start_mountable_finish",
+        constants$633.g_file_start_mountable_finish$FUNC
     );
 }
 

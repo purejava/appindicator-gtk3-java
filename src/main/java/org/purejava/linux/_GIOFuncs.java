@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GIOFuncs {
+ *     GIOStatus (*io_read)(GIOChannel*,gchar*,gsize,gsize*,GError**);
+ *     GIOStatus (*io_write)(GIOChannel*,const gchar*,gsize,gsize*,GError**);
+ *     GIOStatus (*io_seek)(GIOChannel*,gint64,GSeekType,GError**);
+ *     GIOStatus (*io_close)(GIOChannel*,GError**);
+ *     GSource* (*io_create_watch)(GIOChannel*,GIOCondition);
+ *     void (*io_free)(GIOChannel*);
+ *     GIOStatus (*io_set_flags)(GIOChannel*,GIOFlags,GError**);
+ *     GIOFlags (*io_get_flags)(GIOChannel*);
+ * };
+ * }
+ */
 public class _GIOFuncs {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("io_read"),
         Constants$root.C_POINTER$LAYOUT.withName("io_write"),
         Constants$root.C_POINTER$LAYOUT.withName("io_seek"),
@@ -29,20 +43,40 @@ public class _GIOFuncs {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_read$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_read$FUNC
+    static final FunctionDescriptor io_read_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_read_UP$MH = RuntimeHelper.upcallHandle(io_read.class, "apply", _GIOFuncs.io_read_UP$FUNC);
+    static final FunctionDescriptor io_read_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_read_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_read_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOStatus (*io_read)(GIOChannel*,gchar*,gsize,gsize*,GError**);
+     * }
+     */
     public interface io_read {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(io_read fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_read.class, fi, _GIOFuncs.io_read$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(io_read fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_read_UP$MH, fi, _GIOFuncs.io_read$FUNC, scope);
         }
-        static io_read ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static io_read ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GIOFuncs.io_read$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (int)_GIOFuncs.io_read_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,20 +88,32 @@ public class _GIOFuncs {
     public static VarHandle io_read$VH() {
         return _GIOFuncs.io_read$VH;
     }
-    public static MemoryAddress io_read$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_read$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOStatus (*io_read)(GIOChannel*,gchar*,gsize,gsize*,GError**);
+     * }
+     */
+    public static MemorySegment io_read$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_read$VH.get(seg);
     }
-    public static void io_read$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOStatus (*io_read)(GIOChannel*,gchar*,gsize,gsize*,GError**);
+     * }
+     */
+    public static void io_read$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_read$VH.set(seg, x);
     }
-    public static MemoryAddress io_read$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_read$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_read$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_read$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_read$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_read$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_read$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_read io_read (MemorySegment segment, MemorySession session) {
-        return io_read.ofAddress(io_read$get(segment), session);
+    public static io_read io_read(MemorySegment segment, SegmentScope scope) {
+        return io_read.ofAddress(io_read$get(segment), scope);
     }
     static final FunctionDescriptor io_write$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -76,20 +122,40 @@ public class _GIOFuncs {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_write$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_write$FUNC
+    static final FunctionDescriptor io_write_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_write_UP$MH = RuntimeHelper.upcallHandle(io_write.class, "apply", _GIOFuncs.io_write_UP$FUNC);
+    static final FunctionDescriptor io_write_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_write_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_write_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOStatus (*io_write)(GIOChannel*,const gchar*,gsize,gsize*,GError**);
+     * }
+     */
     public interface io_write {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(io_write fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_write.class, fi, _GIOFuncs.io_write$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(io_write fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_write_UP$MH, fi, _GIOFuncs.io_write$FUNC, scope);
         }
-        static io_write ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static io_write ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GIOFuncs.io_write$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (int)_GIOFuncs.io_write_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -101,20 +167,32 @@ public class _GIOFuncs {
     public static VarHandle io_write$VH() {
         return _GIOFuncs.io_write$VH;
     }
-    public static MemoryAddress io_write$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_write$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOStatus (*io_write)(GIOChannel*,const gchar*,gsize,gsize*,GError**);
+     * }
+     */
+    public static MemorySegment io_write$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_write$VH.get(seg);
     }
-    public static void io_write$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOStatus (*io_write)(GIOChannel*,const gchar*,gsize,gsize*,GError**);
+     * }
+     */
+    public static void io_write$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_write$VH.set(seg, x);
     }
-    public static MemoryAddress io_write$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_write$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_write$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_write$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_write$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_write$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_write$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_write io_write (MemorySegment segment, MemorySession session) {
-        return io_write.ofAddress(io_write$get(segment), session);
+    public static io_write io_write(MemorySegment segment, SegmentScope scope) {
+        return io_write.ofAddress(io_write$get(segment), scope);
     }
     static final FunctionDescriptor io_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -122,20 +200,38 @@ public class _GIOFuncs {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_seek$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_seek$FUNC
+    static final FunctionDescriptor io_seek_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_seek_UP$MH = RuntimeHelper.upcallHandle(io_seek.class, "apply", _GIOFuncs.io_seek_UP$FUNC);
+    static final FunctionDescriptor io_seek_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_seek_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_seek_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOStatus (*io_seek)(GIOChannel*,gint64,GSeekType,GError**);
+     * }
+     */
     public interface io_seek {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, long _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(io_seek fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_seek.class, fi, _GIOFuncs.io_seek$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(io_seek fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_seek_UP$MH, fi, _GIOFuncs.io_seek$FUNC, scope);
         }
-        static io_seek ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, long __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static io_seek ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GIOFuncs.io_seek$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GIOFuncs.io_seek_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -147,39 +243,65 @@ public class _GIOFuncs {
     public static VarHandle io_seek$VH() {
         return _GIOFuncs.io_seek$VH;
     }
-    public static MemoryAddress io_seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_seek$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOStatus (*io_seek)(GIOChannel*,gint64,GSeekType,GError**);
+     * }
+     */
+    public static MemorySegment io_seek$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_seek$VH.get(seg);
     }
-    public static void io_seek$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOStatus (*io_seek)(GIOChannel*,gint64,GSeekType,GError**);
+     * }
+     */
+    public static void io_seek$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_seek$VH.set(seg, x);
     }
-    public static MemoryAddress io_seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_seek$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_seek$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_seek$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_seek$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_seek$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_seek$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_seek io_seek (MemorySegment segment, MemorySession session) {
-        return io_seek.ofAddress(io_seek$get(segment), session);
+    public static io_seek io_seek(MemorySegment segment, SegmentScope scope) {
+        return io_seek.ofAddress(io_seek$get(segment), scope);
     }
     static final FunctionDescriptor io_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_close$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_close$FUNC
+    static final FunctionDescriptor io_close_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_close_UP$MH = RuntimeHelper.upcallHandle(io_close.class, "apply", _GIOFuncs.io_close_UP$FUNC);
+    static final FunctionDescriptor io_close_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_close_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_close_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOStatus (*io_close)(GIOChannel*,GError**);
+     * }
+     */
     public interface io_close {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(io_close fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_close.class, fi, _GIOFuncs.io_close$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(io_close fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_close_UP$MH, fi, _GIOFuncs.io_close$FUNC, scope);
         }
-        static io_close ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static io_close ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GIOFuncs.io_close$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GIOFuncs.io_close_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -191,39 +313,65 @@ public class _GIOFuncs {
     public static VarHandle io_close$VH() {
         return _GIOFuncs.io_close$VH;
     }
-    public static MemoryAddress io_close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_close$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOStatus (*io_close)(GIOChannel*,GError**);
+     * }
+     */
+    public static MemorySegment io_close$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_close$VH.get(seg);
     }
-    public static void io_close$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOStatus (*io_close)(GIOChannel*,GError**);
+     * }
+     */
+    public static void io_close$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_close$VH.set(seg, x);
     }
-    public static MemoryAddress io_close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_close$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_close$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_close$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_close$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_close$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_close$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_close io_close (MemorySegment segment, MemorySession session) {
-        return io_close.ofAddress(io_close$get(segment), session);
+    public static io_close io_close(MemorySegment segment, SegmentScope scope) {
+        return io_close.ofAddress(io_close$get(segment), scope);
     }
     static final FunctionDescriptor io_create_watch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle io_create_watch$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_create_watch$FUNC
+    static final FunctionDescriptor io_create_watch_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle io_create_watch_UP$MH = RuntimeHelper.upcallHandle(io_create_watch.class, "apply", _GIOFuncs.io_create_watch_UP$FUNC);
+    static final FunctionDescriptor io_create_watch_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle io_create_watch_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_create_watch_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSource* (*io_create_watch)(GIOChannel*,GIOCondition);
+     * }
+     */
     public interface io_create_watch {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(io_create_watch fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_create_watch.class, fi, _GIOFuncs.io_create_watch$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(io_create_watch fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_create_watch_UP$MH, fi, _GIOFuncs.io_create_watch$FUNC, scope);
         }
-        static io_create_watch ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static io_create_watch ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GIOFuncs.io_create_watch$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (java.lang.foreign.MemorySegment)_GIOFuncs.io_create_watch_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -235,38 +383,62 @@ public class _GIOFuncs {
     public static VarHandle io_create_watch$VH() {
         return _GIOFuncs.io_create_watch$VH;
     }
-    public static MemoryAddress io_create_watch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_create_watch$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSource* (*io_create_watch)(GIOChannel*,GIOCondition);
+     * }
+     */
+    public static MemorySegment io_create_watch$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_create_watch$VH.get(seg);
     }
-    public static void io_create_watch$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSource* (*io_create_watch)(GIOChannel*,GIOCondition);
+     * }
+     */
+    public static void io_create_watch$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_create_watch$VH.set(seg, x);
     }
-    public static MemoryAddress io_create_watch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_create_watch$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_create_watch$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_create_watch$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_create_watch$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_create_watch$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_create_watch$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_create_watch io_create_watch (MemorySegment segment, MemorySession session) {
-        return io_create_watch.ofAddress(io_create_watch$get(segment), session);
+    public static io_create_watch io_create_watch(MemorySegment segment, SegmentScope scope) {
+        return io_create_watch.ofAddress(io_create_watch$get(segment), scope);
     }
     static final FunctionDescriptor io_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_free$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_free$FUNC
+    static final FunctionDescriptor io_free_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_free_UP$MH = RuntimeHelper.upcallHandle(io_free.class, "apply", _GIOFuncs.io_free_UP$FUNC);
+    static final FunctionDescriptor io_free_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_free_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_free_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*io_free)(GIOChannel*);
+     * }
+     */
     public interface io_free {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(io_free fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_free.class, fi, _GIOFuncs.io_free$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(io_free fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_free_UP$MH, fi, _GIOFuncs.io_free$FUNC, scope);
         }
-        static io_free ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static io_free ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GIOFuncs.io_free$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GIOFuncs.io_free_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -278,40 +450,68 @@ public class _GIOFuncs {
     public static VarHandle io_free$VH() {
         return _GIOFuncs.io_free$VH;
     }
-    public static MemoryAddress io_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_free$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*io_free)(GIOChannel*);
+     * }
+     */
+    public static MemorySegment io_free$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_free$VH.get(seg);
     }
-    public static void io_free$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*io_free)(GIOChannel*);
+     * }
+     */
+    public static void io_free$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_free$VH.set(seg, x);
     }
-    public static MemoryAddress io_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_free$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_free$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_free$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_free$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_free$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_free$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_free io_free (MemorySegment segment, MemorySession session) {
-        return io_free.ofAddress(io_free$get(segment), session);
+    public static io_free io_free(MemorySegment segment, SegmentScope scope) {
+        return io_free.ofAddress(io_free$get(segment), scope);
     }
     static final FunctionDescriptor io_set_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_set_flags$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_set_flags$FUNC
+    static final FunctionDescriptor io_set_flags_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_set_flags_UP$MH = RuntimeHelper.upcallHandle(io_set_flags.class, "apply", _GIOFuncs.io_set_flags_UP$FUNC);
+    static final FunctionDescriptor io_set_flags_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_set_flags_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_set_flags_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOStatus (*io_set_flags)(GIOChannel*,GIOFlags,GError**);
+     * }
+     */
     public interface io_set_flags {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(io_set_flags fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_set_flags.class, fi, _GIOFuncs.io_set_flags$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(io_set_flags fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_set_flags_UP$MH, fi, _GIOFuncs.io_set_flags$FUNC, scope);
         }
-        static io_set_flags ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static io_set_flags ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GIOFuncs.io_set_flags$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GIOFuncs.io_set_flags_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -323,38 +523,62 @@ public class _GIOFuncs {
     public static VarHandle io_set_flags$VH() {
         return _GIOFuncs.io_set_flags$VH;
     }
-    public static MemoryAddress io_set_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_set_flags$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOStatus (*io_set_flags)(GIOChannel*,GIOFlags,GError**);
+     * }
+     */
+    public static MemorySegment io_set_flags$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_set_flags$VH.get(seg);
     }
-    public static void io_set_flags$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOStatus (*io_set_flags)(GIOChannel*,GIOFlags,GError**);
+     * }
+     */
+    public static void io_set_flags$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_set_flags$VH.set(seg, x);
     }
-    public static MemoryAddress io_set_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_set_flags$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_set_flags$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_set_flags$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_set_flags$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_set_flags$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_set_flags$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_set_flags io_set_flags (MemorySegment segment, MemorySession session) {
-        return io_set_flags.ofAddress(io_set_flags$get(segment), session);
+    public static io_set_flags io_set_flags(MemorySegment segment, SegmentScope scope) {
+        return io_set_flags.ofAddress(io_set_flags$get(segment), scope);
     }
     static final FunctionDescriptor io_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle io_get_flags$MH = RuntimeHelper.downcallHandle(
-        _GIOFuncs.io_get_flags$FUNC
+    static final FunctionDescriptor io_get_flags_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle io_get_flags_UP$MH = RuntimeHelper.upcallHandle(io_get_flags.class, "apply", _GIOFuncs.io_get_flags_UP$FUNC);
+    static final FunctionDescriptor io_get_flags_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle io_get_flags_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIOFuncs.io_get_flags_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIOFlags (*io_get_flags)(GIOChannel*);
+     * }
+     */
     public interface io_get_flags {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(io_get_flags fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(io_get_flags.class, fi, _GIOFuncs.io_get_flags$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(io_get_flags fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIOFuncs.io_get_flags_UP$MH, fi, _GIOFuncs.io_get_flags$FUNC, scope);
         }
-        static io_get_flags ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static io_get_flags ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GIOFuncs.io_get_flags$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GIOFuncs.io_get_flags_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -366,27 +590,39 @@ public class _GIOFuncs {
     public static VarHandle io_get_flags$VH() {
         return _GIOFuncs.io_get_flags$VH;
     }
-    public static MemoryAddress io_get_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_get_flags$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOFlags (*io_get_flags)(GIOChannel*);
+     * }
+     */
+    public static MemorySegment io_get_flags$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_get_flags$VH.get(seg);
     }
-    public static void io_get_flags$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOFlags (*io_get_flags)(GIOChannel*);
+     * }
+     */
+    public static void io_get_flags$set(MemorySegment seg, MemorySegment x) {
         _GIOFuncs.io_get_flags$VH.set(seg, x);
     }
-    public static MemoryAddress io_get_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOFuncs.io_get_flags$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment io_get_flags$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOFuncs.io_get_flags$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void io_get_flags$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void io_get_flags$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOFuncs.io_get_flags$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static io_get_flags io_get_flags (MemorySegment segment, MemorySession session) {
-        return io_get_flags.ofAddress(io_get_flags$get(segment), session);
+    public static io_get_flags io_get_flags(MemorySegment segment, SegmentScope scope) {
+        return io_get_flags.ofAddress(io_get_flags$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

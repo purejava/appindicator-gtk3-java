@@ -7,52 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$580 {
+final class constants$580 {
 
-    static final FunctionDescriptor getdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle getdomainname$MH = RuntimeHelper.downcallHandle(
-        "getdomainname",
-        constants$580.getdomainname$FUNC
-    );
-    static final FunctionDescriptor setdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle setdomainname$MH = RuntimeHelper.downcallHandle(
-        "setdomainname",
-        constants$580.setdomainname$FUNC
-    );
-    static final FunctionDescriptor vhangup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle vhangup$MH = RuntimeHelper.downcallHandle(
-        "vhangup",
-        constants$580.vhangup$FUNC
-    );
-    static final FunctionDescriptor revoke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$580() {}
+    static final FunctionDescriptor g_dbus_method_invocation_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle revoke$MH = RuntimeHelper.downcallHandle(
-        "revoke",
-        constants$580.revoke$FUNC
+    static final MethodHandle g_dbus_method_invocation_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_user_data",
+        constants$580.g_dbus_method_invocation_get_user_data$FUNC
     );
-    static final FunctionDescriptor profil$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_method_invocation_return_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle profil$MH = RuntimeHelper.downcallHandle(
-        "profil",
-        constants$580.profil$FUNC
-    );
-    static final FunctionDescriptor acct$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle acct$MH = RuntimeHelper.downcallHandle(
-        "acct",
-        constants$580.acct$FUNC
+    static final MethodHandle g_dbus_method_invocation_return_value$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value",
+        constants$580.g_dbus_method_invocation_return_value$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_return_value_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value_with_unix_fd_list",
+        constants$580.g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_return_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_return_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_method_invocation_return_error",
+        constants$580.g_dbus_method_invocation_return_error$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_return_error_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_return_error_valist$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_error_valist",
+        constants$580.g_dbus_method_invocation_return_error_valist$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_return_error_literal$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_return_error_literal$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_error_literal",
+        constants$580.g_dbus_method_invocation_return_error_literal$FUNC
     );
 }
 

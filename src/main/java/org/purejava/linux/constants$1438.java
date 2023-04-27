@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1438 {
+final class constants$1438 {
 
-    static final FunctionDescriptor gtk_widget_get_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1438() {}
+    static final FunctionDescriptor GtkTreeModelFilterModifyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_sensitive",
-        constants$1438.gtk_widget_get_sensitive$FUNC
+    static final MethodHandle GtkTreeModelFilterModifyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1438.GtkTreeModelFilterModifyFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_widget_is_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_model_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_model_filter_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_get_type",
+        constants$1438.gtk_tree_model_filter_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_is_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_sensitive",
-        constants$1438.gtk_widget_is_sensitive$FUNC
+    static final MethodHandle gtk_tree_model_filter_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_new",
+        constants$1438.gtk_tree_model_filter_new$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_visible$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_filter_set_visible_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_filter_set_visible_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_set_visible_func",
+        constants$1438.gtk_tree_model_filter_set_visible_func$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_filter_set_modify_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_filter_set_modify_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_set_modify_func",
+        constants$1438.gtk_tree_model_filter_set_modify_func$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_filter_set_visible_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_visible",
-        constants$1438.gtk_widget_set_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_visible",
-        constants$1438.gtk_widget_get_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_visible",
-        constants$1438.gtk_widget_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_has_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_has_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_has_window",
-        constants$1438.gtk_widget_set_has_window$FUNC
+    static final MethodHandle gtk_tree_model_filter_set_visible_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_set_visible_column",
+        constants$1438.gtk_tree_model_filter_set_visible_column$FUNC
     );
 }
 

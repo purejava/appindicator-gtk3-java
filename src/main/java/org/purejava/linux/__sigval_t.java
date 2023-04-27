@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class __sigval_t extends sigval {
+/**
+ * {@snippet :
+ * typedef union sigval __sigval_t;
+ * }
+ */
+public final class __sigval_t extends sigval {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private __sigval_t() {}
 }
 
 

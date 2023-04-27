@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDebugControllerDBusClass {
+ *     GObjectClass parent_class;
+ *     gboolean (*authorize)(GDebugControllerDBus*,GDBusMethodInvocation*);
+ *     gpointer padding[12];
+ * };
+ * }
+ */
 public class _GDebugControllerDBusClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +33,10 @@ public class _GDebugControllerDBusClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("authorize"),
         MemoryLayout.sequenceLayout(12, Constants$root.C_POINTER$LAYOUT).withName("padding")
@@ -39,20 +51,34 @@ public class _GDebugControllerDBusClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle authorize$MH = RuntimeHelper.downcallHandle(
-        _GDebugControllerDBusClass.authorize$FUNC
+    static final FunctionDescriptor authorize_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle authorize_UP$MH = RuntimeHelper.upcallHandle(authorize.class, "apply", _GDebugControllerDBusClass.authorize_UP$FUNC);
+    static final FunctionDescriptor authorize_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle authorize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDebugControllerDBusClass.authorize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*authorize)(GDebugControllerDBus*,GDBusMethodInvocation*);
+     * }
+     */
     public interface authorize {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(authorize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(authorize.class, fi, _GDebugControllerDBusClass.authorize$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(authorize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDebugControllerDBusClass.authorize_UP$MH, fi, _GDebugControllerDBusClass.authorize$FUNC, scope);
         }
-        static authorize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static authorize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GDebugControllerDBusClass.authorize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GDebugControllerDBusClass.authorize_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -64,30 +90,42 @@ public class _GDebugControllerDBusClass {
     public static VarHandle authorize$VH() {
         return _GDebugControllerDBusClass.authorize$VH;
     }
-    public static MemoryAddress authorize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDebugControllerDBusClass.authorize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*authorize)(GDebugControllerDBus*,GDBusMethodInvocation*);
+     * }
+     */
+    public static MemorySegment authorize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDebugControllerDBusClass.authorize$VH.get(seg);
     }
-    public static void authorize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*authorize)(GDebugControllerDBus*,GDBusMethodInvocation*);
+     * }
+     */
+    public static void authorize$set(MemorySegment seg, MemorySegment x) {
         _GDebugControllerDBusClass.authorize$VH.set(seg, x);
     }
-    public static MemoryAddress authorize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDebugControllerDBusClass.authorize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment authorize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDebugControllerDBusClass.authorize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void authorize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void authorize$set(MemorySegment seg, long index, MemorySegment x) {
         _GDebugControllerDBusClass.authorize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static authorize authorize (MemorySegment segment, MemorySession session) {
-        return authorize.ofAddress(authorize$get(segment), session);
+    public static authorize authorize(MemorySegment segment, SegmentScope scope) {
+        return authorize.ofAddress(authorize$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(144, 96);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

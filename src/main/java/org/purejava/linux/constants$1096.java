@@ -7,54 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1096 {
+final class constants$1096 {
 
-    static final FunctionDescriptor pango_context_get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_metrics$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_metrics",
-        constants$1096.pango_context_get_metrics$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_font_description$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_set_font_description$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_font_description",
-        constants$1096.pango_context_set_font_description$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_font_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_font_description$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_font_description",
-        constants$1096.pango_context_get_font_description$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_language$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_language",
-        constants$1096.pango_context_get_language$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_language$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_set_language$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_language",
-        constants$1096.pango_context_set_language$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_base_dir$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1096() {}
+    static final FunctionDescriptor gdk_window_get_source_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_context_set_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_base_dir",
-        constants$1096.pango_context_set_base_dir$FUNC
+    static final MethodHandle gdk_window_get_source_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_source_events",
+        constants$1096.gdk_window_get_source_events$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_icon_list$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_icon_list$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_icon_list",
+        constants$1096.gdk_window_set_icon_list$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_icon_name",
+        constants$1096.gdk_window_set_icon_name$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_group$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_group",
+        constants$1096.gdk_window_set_group$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_group$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_group",
+        constants$1096.gdk_window_get_group$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_decorations$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_decorations$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_decorations",
+        constants$1096.gdk_window_set_decorations$FUNC
     );
 }
 

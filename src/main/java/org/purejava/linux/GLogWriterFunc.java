@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * enum  (*GLogWriterFunc)(enum  log_level,struct _GLogField* fields,unsigned long n_fields,void* user_data);
+ * }
+ */
 public interface GLogWriterFunc {
 
-    int apply(int log_level, java.lang.foreign.MemoryAddress fields, long n_fields, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GLogWriterFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GLogWriterFunc.class, fi, constants$247.GLogWriterFunc$FUNC, session);
+    int apply(int log_level, java.lang.foreign.MemorySegment fields, long n_fields, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GLogWriterFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$258.GLogWriterFunc_UP$MH, fi, constants$258.GLogWriterFunc$FUNC, scope);
     }
-    static GLogWriterFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int _log_level, java.lang.foreign.MemoryAddress _fields, long _n_fields, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GLogWriterFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int _log_level, java.lang.foreign.MemorySegment _fields, long _n_fields, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$247.GLogWriterFunc$MH.invokeExact((Addressable)symbol, _log_level, (java.lang.foreign.Addressable)_fields, _n_fields, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$258.GLogWriterFunc_DOWN$MH.invokeExact(symbol, _log_level, _fields, _n_fields, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

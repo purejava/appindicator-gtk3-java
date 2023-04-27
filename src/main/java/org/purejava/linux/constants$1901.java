@@ -7,49 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1901 {
+final class constants$1901 {
 
-    static final FunctionDescriptor _gtk_tool_button_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1901() {}
+    static final FunctionDescriptor gtk_widget_path_append_with_siblings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle _gtk_tool_button_get_button$MH = RuntimeHelper.downcallHandle(
-        "_gtk_tool_button_get_button",
-        constants$1901._gtk_tool_button_get_button$FUNC
+    static final MethodHandle gtk_widget_path_append_with_siblings$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_append_with_siblings",
+        constants$1901.gtk_widget_path_append_with_siblings$FUNC
     );
-    static final FunctionDescriptor gtk_menu_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_get_type",
-        constants$1901.gtk_menu_tool_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_path_append_for_widget$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_tool_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_new",
-        constants$1901.gtk_menu_tool_button_new$FUNC
+    static final MethodHandle gtk_widget_path_append_for_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_append_for_widget",
+        constants$1901.gtk_widget_path_append_for_widget$FUNC
     );
-    static final FunctionDescriptor gtk_menu_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_new_from_stock",
-        constants$1901.gtk_menu_tool_button_new_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_tool_button_set_menu$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_path_iter_get_object_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_iter_get_object_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_object_type",
+        constants$1901.gtk_widget_path_iter_get_object_type$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_iter_set_object_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_iter_set_object_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_set_object_type",
+        constants$1901.gtk_widget_path_iter_set_object_type$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_iter_get_object_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_iter_get_object_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_object_name",
+        constants$1901.gtk_widget_path_iter_get_object_name$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_iter_set_object_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_tool_button_set_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_menu",
-        constants$1901.gtk_menu_tool_button_set_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_tool_button_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_tool_button_get_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_get_menu",
-        constants$1901.gtk_menu_tool_button_get_menu$FUNC
+    static final MethodHandle gtk_widget_path_iter_set_object_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_set_object_name",
+        constants$1901.gtk_widget_path_iter_set_object_name$FUNC
     );
 }
 

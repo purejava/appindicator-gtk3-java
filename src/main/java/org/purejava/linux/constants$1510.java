@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1510 {
+final class constants$1510 {
 
-    static final FunctionDescriptor gtk_about_dialog_get_documenters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1510() {}
+    static final FunctionDescriptor gtk_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_documenters$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_documenters",
-        constants$1510.gtk_about_dialog_get_documenters$FUNC
+    static final MethodHandle gtk_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_new_with_mnemonic",
+        constants$1510.gtk_button_new_with_mnemonic$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_documenters$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_clicked$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_documenters$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_documenters",
-        constants$1510.gtk_about_dialog_set_documenters$FUNC
+    static final MethodHandle gtk_button_clicked$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_clicked",
+        constants$1510.gtk_button_clicked$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_artists$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_pressed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_artists$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_artists",
-        constants$1510.gtk_about_dialog_get_artists$FUNC
+    static final MethodHandle gtk_button_pressed$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_pressed",
+        constants$1510.gtk_button_pressed$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_artists$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_released$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_artists$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_artists",
-        constants$1510.gtk_about_dialog_set_artists$FUNC
+    static final MethodHandle gtk_button_released$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_released",
+        constants$1510.gtk_button_released$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_translator_credits$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_enter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_translator_credits$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_translator_credits",
-        constants$1510.gtk_about_dialog_get_translator_credits$FUNC
+    static final MethodHandle gtk_button_enter$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_enter",
+        constants$1510.gtk_button_enter$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_translator_credits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_leave$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_translator_credits$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_translator_credits",
-        constants$1510.gtk_about_dialog_set_translator_credits$FUNC
+    static final MethodHandle gtk_button_leave$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_leave",
+        constants$1510.gtk_button_leave$FUNC
     );
 }
 

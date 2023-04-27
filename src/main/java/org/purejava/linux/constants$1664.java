@@ -7,59 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1664 {
+final class constants$1664 {
 
-    static final FunctionDescriptor gtk_tree_view_unset_rows_drag_dest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_unset_rows_drag_dest$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_unset_rows_drag_dest",
-        constants$1664.gtk_tree_view_unset_rows_drag_dest$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_drag_dest_row$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1664() {}
+    static final FunctionDescriptor gtk_info_bar_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_drag_dest_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_drag_dest_row",
-        constants$1664.gtk_tree_view_set_drag_dest_row$FUNC
+    static final MethodHandle gtk_info_bar_add_action_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_add_action_widget",
+        constants$1664.gtk_info_bar_add_action_widget$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_drag_dest_row$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_info_bar_add_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_drag_dest_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_drag_dest_row",
-        constants$1664.gtk_tree_view_get_drag_dest_row$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_dest_row_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_dest_row_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_dest_row_at_pos",
-        constants$1664.gtk_tree_view_get_dest_row_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_create_row_drag_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_create_row_drag_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_create_row_drag_icon",
-        constants$1664.gtk_tree_view_create_row_drag_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_enable_search$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_enable_search$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_enable_search",
-        constants$1664.gtk_tree_view_set_enable_search$FUNC
+    static final MethodHandle gtk_info_bar_add_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_add_button",
+        constants$1664.gtk_info_bar_add_button$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_add_buttons$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_add_buttons$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_info_bar_add_buttons",
+        constants$1664.gtk_info_bar_add_buttons$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_set_response_sensitive$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_set_response_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_set_response_sensitive",
+        constants$1664.gtk_info_bar_set_response_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_set_default_response$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_set_default_response$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_set_default_response",
+        constants$1664.gtk_info_bar_set_default_response$FUNC
+    );
+    static final FunctionDescriptor gtk_info_bar_response$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_info_bar_response$MH = RuntimeHelper.downcallHandle(
+        "gtk_info_bar_response",
+        constants$1664.gtk_info_bar_response$FUNC
     );
 }
 

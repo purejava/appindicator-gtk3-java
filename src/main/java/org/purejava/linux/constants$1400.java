@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1400 {
+final class constants$1400 {
 
-    static final FunctionDescriptor atk_hyperlink_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_hyperlink_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_type",
-        constants$1400.atk_hyperlink_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1400() {}
+    static final FunctionDescriptor gtk_text_tag_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_hyperlink_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle gtk_text_tag_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_tag_event",
+        constants$1400.gtk_text_tag_event$FUNC
+    );
+    static final FunctionDescriptor gtk_text_tag_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_get_uri$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_uri",
-        constants$1400.atk_hyperlink_get_uri$FUNC
+    static final MethodHandle gtk_text_tag_changed$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_tag_changed",
+        constants$1400.gtk_text_tag_changed$FUNC
     );
-    static final FunctionDescriptor atk_hyperlink_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_get_buffer$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_buffer",
+        constants$1400.gtk_text_iter_get_buffer$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_copy",
+        constants$1400.gtk_text_iter_copy$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_free",
+        constants$1400.gtk_text_iter_free$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_assign$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_object$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_object",
-        constants$1400.atk_hyperlink_get_object$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_end_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_hyperlink_get_end_index$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_end_index",
-        constants$1400.atk_hyperlink_get_end_index$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_start_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_start_index$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_start_index",
-        constants$1400.atk_hyperlink_get_start_index$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_is_valid$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_valid",
-        constants$1400.atk_hyperlink_is_valid$FUNC
+    static final MethodHandle gtk_text_iter_assign$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_assign",
+        constants$1400.gtk_text_iter_assign$FUNC
     );
 }
 

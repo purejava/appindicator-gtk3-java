@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$378 {
+final class constants$378 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GBytes$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$378() {}
+    static final FunctionDescriptor g_static_private_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GBytes$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GBytes",
-        constants$378.glib_autoptr_cleanup_GBytes$FUNC
+    static final MethodHandle g_static_private_set$MH = RuntimeHelper.downcallHandle(
+        "g_static_private_set",
+        constants$378.g_static_private_set$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GBytes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_private_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GBytes$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GBytes",
-        constants$378.glib_listautoptr_cleanup_GBytes$FUNC
+    static final MethodHandle g_static_private_free$MH = RuntimeHelper.downcallHandle(
+        "g_static_private_free",
+        constants$378.g_static_private_free$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GBytes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_once_init_enter_impl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GBytes$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GBytes",
-        constants$378.glib_slistautoptr_cleanup_GBytes$FUNC
+    static final MethodHandle g_once_init_enter_impl$MH = RuntimeHelper.downcallHandle(
+        "g_once_init_enter_impl",
+        constants$378.g_once_init_enter_impl$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GBytes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GBytes$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GBytes",
-        constants$378.glib_queueautoptr_cleanup_GBytes$FUNC
+    static final MethodHandle g_thread_init$MH = RuntimeHelper.downcallHandle(
+        "g_thread_init",
+        constants$378.g_thread_init$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GChecksum$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_init_with_errorcheck_mutexes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GChecksum$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GChecksum",
-        constants$378.glib_autoptr_clear_GChecksum$FUNC
+    static final MethodHandle g_thread_init_with_errorcheck_mutexes$MH = RuntimeHelper.downcallHandle(
+        "g_thread_init_with_errorcheck_mutexes",
+        constants$378.g_thread_init_with_errorcheck_mutexes$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GChecksum$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GChecksum$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GChecksum",
-        constants$378.glib_autoptr_cleanup_GChecksum$FUNC
+    static final FunctionDescriptor g_thread_get_initialized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_thread_get_initialized$MH = RuntimeHelper.downcallHandle(
+        "g_thread_get_initialized",
+        constants$378.g_thread_get_initialized$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GClosureMarshal)(struct _GClosure* closure,struct _GValue* return_value,unsigned int n_param_values,struct _GValue* param_values,void* invocation_hint,void* marshal_data);
+ * }
+ */
 public interface GClosureMarshal {
 
-    void apply(java.lang.foreign.MemoryAddress closure, java.lang.foreign.MemoryAddress return_value, int n_param_values, java.lang.foreign.MemoryAddress param_values, java.lang.foreign.MemoryAddress invocation_hint, java.lang.foreign.MemoryAddress marshal_data);
-    static MemorySegment allocate(GClosureMarshal fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GClosureMarshal.class, fi, constants$442.GClosureMarshal$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GClosureMarshal fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$403.GClosureMarshal_UP$MH, fi, constants$403.GClosureMarshal$FUNC, scope);
     }
-    static GClosureMarshal ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _closure, java.lang.foreign.MemoryAddress _return_value, int _n_param_values, java.lang.foreign.MemoryAddress _param_values, java.lang.foreign.MemoryAddress _invocation_hint, java.lang.foreign.MemoryAddress _marshal_data) -> {
+    static GClosureMarshal ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$442.GClosureMarshal$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_closure, (java.lang.foreign.Addressable)_return_value, _n_param_values, (java.lang.foreign.Addressable)_param_values, (java.lang.foreign.Addressable)_invocation_hint, (java.lang.foreign.Addressable)_marshal_data);
+                constants$403.GClosureMarshal_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct random_data {
+ *     int32_t* fptr;
+ *     int32_t* rptr;
+ *     int32_t* state;
+ *     int rand_type;
+ *     int rand_deg;
+ *     int rand_sep;
+ *     int32_t* end_ptr;
+ * };
+ * }
+ */
 public class random_data {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("fptr"),
         Constants$root.C_POINTER$LAYOUT.withName("rptr"),
         Constants$root.C_POINTER$LAYOUT.withName("state"),
@@ -26,58 +39,106 @@ public class random_data {
     public static VarHandle fptr$VH() {
         return random_data.fptr$VH;
     }
-    public static MemoryAddress fptr$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)random_data.fptr$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int32_t* fptr;
+     * }
+     */
+    public static MemorySegment fptr$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)random_data.fptr$VH.get(seg);
     }
-    public static void fptr$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int32_t* fptr;
+     * }
+     */
+    public static void fptr$set(MemorySegment seg, MemorySegment x) {
         random_data.fptr$VH.set(seg, x);
     }
-    public static MemoryAddress fptr$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)random_data.fptr$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment fptr$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)random_data.fptr$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void fptr$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void fptr$set(MemorySegment seg, long index, MemorySegment x) {
         random_data.fptr$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle rptr$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("rptr"));
     public static VarHandle rptr$VH() {
         return random_data.rptr$VH;
     }
-    public static MemoryAddress rptr$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)random_data.rptr$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int32_t* rptr;
+     * }
+     */
+    public static MemorySegment rptr$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)random_data.rptr$VH.get(seg);
     }
-    public static void rptr$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int32_t* rptr;
+     * }
+     */
+    public static void rptr$set(MemorySegment seg, MemorySegment x) {
         random_data.rptr$VH.set(seg, x);
     }
-    public static MemoryAddress rptr$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)random_data.rptr$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment rptr$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)random_data.rptr$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void rptr$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void rptr$set(MemorySegment seg, long index, MemorySegment x) {
         random_data.rptr$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle state$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("state"));
     public static VarHandle state$VH() {
         return random_data.state$VH;
     }
-    public static MemoryAddress state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)random_data.state$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int32_t* state;
+     * }
+     */
+    public static MemorySegment state$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)random_data.state$VH.get(seg);
     }
-    public static void state$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int32_t* state;
+     * }
+     */
+    public static void state$set(MemorySegment seg, MemorySegment x) {
         random_data.state$VH.set(seg, x);
     }
-    public static MemoryAddress state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)random_data.state$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment state$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)random_data.state$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void state$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void state$set(MemorySegment seg, long index, MemorySegment x) {
         random_data.state$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle rand_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("rand_type"));
     public static VarHandle rand_type$VH() {
         return random_data.rand_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int rand_type;
+     * }
+     */
     public static int rand_type$get(MemorySegment seg) {
         return (int)random_data.rand_type$VH.get(seg);
     }
-    public static void rand_type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int rand_type;
+     * }
+     */
+    public static void rand_type$set(MemorySegment seg, int x) {
         random_data.rand_type$VH.set(seg, x);
     }
     public static int rand_type$get(MemorySegment seg, long index) {
@@ -90,10 +151,22 @@ public class random_data {
     public static VarHandle rand_deg$VH() {
         return random_data.rand_deg$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int rand_deg;
+     * }
+     */
     public static int rand_deg$get(MemorySegment seg) {
         return (int)random_data.rand_deg$VH.get(seg);
     }
-    public static void rand_deg$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int rand_deg;
+     * }
+     */
+    public static void rand_deg$set(MemorySegment seg, int x) {
         random_data.rand_deg$VH.set(seg, x);
     }
     public static int rand_deg$get(MemorySegment seg, long index) {
@@ -106,10 +179,22 @@ public class random_data {
     public static VarHandle rand_sep$VH() {
         return random_data.rand_sep$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int rand_sep;
+     * }
+     */
     public static int rand_sep$get(MemorySegment seg) {
         return (int)random_data.rand_sep$VH.get(seg);
     }
-    public static void rand_sep$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int rand_sep;
+     * }
+     */
+    public static void rand_sep$set(MemorySegment seg, int x) {
         random_data.rand_sep$VH.set(seg, x);
     }
     public static int rand_sep$get(MemorySegment seg, long index) {
@@ -122,24 +207,36 @@ public class random_data {
     public static VarHandle end_ptr$VH() {
         return random_data.end_ptr$VH;
     }
-    public static MemoryAddress end_ptr$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)random_data.end_ptr$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int32_t* end_ptr;
+     * }
+     */
+    public static MemorySegment end_ptr$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)random_data.end_ptr$VH.get(seg);
     }
-    public static void end_ptr$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int32_t* end_ptr;
+     * }
+     */
+    public static void end_ptr$set(MemorySegment seg, MemorySegment x) {
         random_data.end_ptr$VH.set(seg, x);
     }
-    public static MemoryAddress end_ptr$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)random_data.end_ptr$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment end_ptr$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)random_data.end_ptr$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void end_ptr$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void end_ptr$set(MemorySegment seg, long index, MemorySegment x) {
         random_data.end_ptr$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

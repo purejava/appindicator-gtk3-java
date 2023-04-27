@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$152 {
+final class constants$152 {
 
-    static final FunctionDescriptor g_hmac_get_digest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$152() {}
+    static final FunctionDescriptor g_double_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_double_hash$MH = RuntimeHelper.downcallHandle(
+        "g_double_hash",
+        constants$152.g_double_hash$FUNC
+    );
+    static final FunctionDescriptor g_direct_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_direct_hash$MH = RuntimeHelper.downcallHandle(
+        "g_direct_hash",
+        constants$152.g_direct_hash$FUNC
+    );
+    static final FunctionDescriptor g_direct_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hmac_get_digest$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_get_digest",
-        constants$152.g_hmac_get_digest$FUNC
+    static final MethodHandle g_direct_equal$MH = RuntimeHelper.downcallHandle(
+        "g_direct_equal",
+        constants$152.g_direct_equal$FUNC
     );
-    static final FunctionDescriptor g_compute_hmac_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_hmac_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_compute_hmac_for_data$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_data",
-        constants$152.g_compute_hmac_for_data$FUNC
+    static final MethodHandle g_hmac_new$MH = RuntimeHelper.downcallHandle(
+        "g_hmac_new",
+        constants$152.g_hmac_new$FUNC
     );
-    static final FunctionDescriptor g_compute_hmac_for_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_compute_hmac_for_string$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_string",
-        constants$152.g_compute_hmac_for_string$FUNC
-    );
-    static final FunctionDescriptor g_compute_hmac_for_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_hmac_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_compute_hmac_for_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_bytes",
-        constants$152.g_compute_hmac_for_bytes$FUNC
+    static final MethodHandle g_hmac_copy$MH = RuntimeHelper.downcallHandle(
+        "g_hmac_copy",
+        constants$152.g_hmac_copy$FUNC
     );
-    static final FunctionDescriptor GHookCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_hmac_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHookCompareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$152.GHookCompareFunc$FUNC
+    static final MethodHandle g_hmac_ref$MH = RuntimeHelper.downcallHandle(
+        "g_hmac_ref",
+        constants$152.g_hmac_ref$FUNC
     );
 }
 

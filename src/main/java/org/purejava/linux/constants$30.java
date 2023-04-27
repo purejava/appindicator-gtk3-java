@@ -7,56 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$30 {
+final class constants$30 {
 
-    static final FunctionDescriptor g_atomic_pointer_set$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$30() {}
+    static final FunctionDescriptor g_byte_array_sort$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_pointer_set$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_set",
-        constants$30.g_atomic_pointer_set$FUNC
+    static final MethodHandle g_byte_array_sort$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_sort",
+        constants$30.g_byte_array_sort$FUNC
     );
-    static final FunctionDescriptor g_atomic_pointer_compare_and_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_byte_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_pointer_compare_and_exchange$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_compare_and_exchange",
-        constants$30.g_atomic_pointer_compare_and_exchange$FUNC
+    static final MethodHandle g_byte_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_sort_with_data",
+        constants$30.g_byte_array_sort_with_data$FUNC
     );
-    static final FunctionDescriptor g_atomic_pointer_add$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_atomic_int_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_get$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_get",
+        constants$30.g_atomic_int_get$FUNC
+    );
+    static final FunctionDescriptor g_atomic_int_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_atomic_pointer_add$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_add",
-        constants$30.g_atomic_pointer_add$FUNC
+    static final MethodHandle g_atomic_int_set$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_set",
+        constants$30.g_atomic_int_set$FUNC
     );
-    static final FunctionDescriptor g_atomic_pointer_and$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_atomic_int_inc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_pointer_and$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_and",
-        constants$30.g_atomic_pointer_and$FUNC
+    static final MethodHandle g_atomic_int_inc$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_inc",
+        constants$30.g_atomic_int_inc$FUNC
     );
-    static final FunctionDescriptor g_atomic_pointer_or$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_atomic_int_dec_and_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_pointer_or$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_or",
-        constants$30.g_atomic_pointer_or$FUNC
-    );
-    static final FunctionDescriptor g_atomic_pointer_xor$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_pointer_xor$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_xor",
-        constants$30.g_atomic_pointer_xor$FUNC
+    static final MethodHandle g_atomic_int_dec_and_test$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_dec_and_test",
+        constants$30.g_atomic_int_dec_and_test$FUNC
     );
 }
 

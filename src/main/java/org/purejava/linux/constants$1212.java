@@ -7,55 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1212 {
+final class constants$1212 {
 
-    static final FunctionDescriptor cairo_region_subtract$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1212() {}
+    static final FunctionDescriptor atk_component_grab_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_region_subtract$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_subtract",
-        constants$1212.cairo_region_subtract$FUNC
+    static final MethodHandle atk_component_grab_focus$MH = RuntimeHelper.downcallHandle(
+        "atk_component_grab_focus",
+        constants$1212.atk_component_grab_focus$FUNC
     );
-    static final FunctionDescriptor cairo_region_subtract_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_component_remove_focus_handler$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_component_remove_focus_handler$MH = RuntimeHelper.downcallHandle(
+        "atk_component_remove_focus_handler",
+        constants$1212.atk_component_remove_focus_handler$FUNC
+    );
+    static final FunctionDescriptor atk_component_set_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_component_set_extents$MH = RuntimeHelper.downcallHandle(
+        "atk_component_set_extents",
+        constants$1212.atk_component_set_extents$FUNC
+    );
+    static final FunctionDescriptor atk_component_set_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_component_set_position$MH = RuntimeHelper.downcallHandle(
+        "atk_component_set_position",
+        constants$1212.atk_component_set_position$FUNC
+    );
+    static final FunctionDescriptor atk_component_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_component_set_size$MH = RuntimeHelper.downcallHandle(
+        "atk_component_set_size",
+        constants$1212.atk_component_set_size$FUNC
+    );
+    static final FunctionDescriptor atk_component_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_region_subtract_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_subtract_rectangle",
-        constants$1212.cairo_region_subtract_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_region_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_intersect$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_intersect",
-        constants$1212.cairo_region_intersect$FUNC
-    );
-    static final FunctionDescriptor cairo_region_intersect_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_intersect_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_intersect_rectangle",
-        constants$1212.cairo_region_intersect_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_region_union$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_union$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_union",
-        constants$1212.cairo_region_union$FUNC
-    );
-    static final FunctionDescriptor cairo_region_union_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_union_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_union_rectangle",
-        constants$1212.cairo_region_union_rectangle$FUNC
+    static final MethodHandle atk_component_get_alpha$MH = RuntimeHelper.downcallHandle(
+        "atk_component_get_alpha",
+        constants$1212.atk_component_get_alpha$FUNC
     );
 }
 

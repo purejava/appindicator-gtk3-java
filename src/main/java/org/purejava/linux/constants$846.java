@@ -7,64 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$846 {
+final class constants$846 {
 
-    static final FunctionDescriptor g_task_report_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_report_error$MH = RuntimeHelper.downcallHandle(
-        "g_task_report_error",
-        constants$846.g_task_report_error$FUNC
-    );
-    static final FunctionDescriptor g_task_report_new_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_report_new_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_task_report_new_error",
-        constants$846.g_task_report_new_error$FUNC
-    );
-    static final FunctionDescriptor g_task_set_task_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$846() {}
+    static final FunctionDescriptor hb_set_union$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_set_task_data$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_task_data",
-        constants$846.g_task_set_task_data$FUNC
+    static final MethodHandle hb_set_union$MH = RuntimeHelper.downcallHandle(
+        "hb_set_union",
+        constants$846.hb_set_union$FUNC
     );
-    static final FunctionDescriptor g_task_set_priority$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_task_set_priority$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_priority",
-        constants$846.g_task_set_priority$FUNC
-    );
-    static final FunctionDescriptor g_task_set_check_cancellable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_task_set_check_cancellable$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_check_cancellable",
-        constants$846.g_task_set_check_cancellable$FUNC
-    );
-    static final FunctionDescriptor g_task_set_source_tag$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_intersect$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_set_source_tag$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_source_tag",
-        constants$846.g_task_set_source_tag$FUNC
+    static final MethodHandle hb_set_intersect$MH = RuntimeHelper.downcallHandle(
+        "hb_set_intersect",
+        constants$846.hb_set_intersect$FUNC
+    );
+    static final FunctionDescriptor hb_set_subtract$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_subtract$MH = RuntimeHelper.downcallHandle(
+        "hb_set_subtract",
+        constants$846.hb_set_subtract$FUNC
+    );
+    static final FunctionDescriptor hb_set_symmetric_difference$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_symmetric_difference$MH = RuntimeHelper.downcallHandle(
+        "hb_set_symmetric_difference",
+        constants$846.hb_set_symmetric_difference$FUNC
+    );
+    static final FunctionDescriptor hb_set_get_population$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_get_population$MH = RuntimeHelper.downcallHandle(
+        "hb_set_get_population",
+        constants$846.hb_set_get_population$FUNC
+    );
+    static final FunctionDescriptor hb_set_get_min$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_get_min$MH = RuntimeHelper.downcallHandle(
+        "hb_set_get_min",
+        constants$846.hb_set_get_min$FUNC
     );
 }
 

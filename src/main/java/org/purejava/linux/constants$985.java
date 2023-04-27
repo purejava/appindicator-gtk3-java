@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$985 {
+final class constants$985 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GVolume$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$985() {}
+    static final FunctionDescriptor fputc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GVolume$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GVolume",
-        constants$985.glib_listautoptr_cleanup_GVolume$FUNC
+    static final MethodHandle fputc_unlocked$MH = RuntimeHelper.downcallHandle(
+        "fputc_unlocked",
+        constants$985.fputc_unlocked$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GVolume$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor putc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GVolume$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GVolume",
-        constants$985.glib_slistautoptr_cleanup_GVolume$FUNC
+    static final MethodHandle putc_unlocked$MH = RuntimeHelper.downcallHandle(
+        "putc_unlocked",
+        constants$985.putc_unlocked$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVolume$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor putchar_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle putchar_unlocked$MH = RuntimeHelper.downcallHandle(
+        "putchar_unlocked",
+        constants$985.putchar_unlocked$FUNC
+    );
+    static final FunctionDescriptor getw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVolume$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVolume",
-        constants$985.glib_queueautoptr_cleanup_GVolume$FUNC
+    static final MethodHandle getw$MH = RuntimeHelper.downcallHandle(
+        "getw",
+        constants$985.getw$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor putw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GVolumeMonitor",
-        constants$985.glib_autoptr_clear_GVolumeMonitor$FUNC
+    static final MethodHandle putw$MH = RuntimeHelper.downcallHandle(
+        "putw",
+        constants$985.putw$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GVolumeMonitor",
-        constants$985.glib_autoptr_cleanup_GVolumeMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GVolumeMonitor",
-        constants$985.glib_listautoptr_cleanup_GVolumeMonitor$FUNC
+    static final MethodHandle fgets$MH = RuntimeHelper.downcallHandle(
+        "fgets",
+        constants$985.fgets$FUNC
     );
 }
 

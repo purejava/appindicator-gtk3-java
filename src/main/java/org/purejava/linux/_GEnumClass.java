@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GEnumClass {
+ *     GTypeClass g_type_class;
+ *     gint minimum;
+ *     gint maximum;
+ *     guint n_values;
+ *     GEnumValue* values;
+ * };
+ * }
+ */
 public class _GEnumClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
         ).withName("g_type_class"),
@@ -29,10 +40,22 @@ public class _GEnumClass {
     public static VarHandle minimum$VH() {
         return _GEnumClass.minimum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint minimum;
+     * }
+     */
     public static int minimum$get(MemorySegment seg) {
         return (int)_GEnumClass.minimum$VH.get(seg);
     }
-    public static void minimum$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint minimum;
+     * }
+     */
+    public static void minimum$set(MemorySegment seg, int x) {
         _GEnumClass.minimum$VH.set(seg, x);
     }
     public static int minimum$get(MemorySegment seg, long index) {
@@ -45,10 +68,22 @@ public class _GEnumClass {
     public static VarHandle maximum$VH() {
         return _GEnumClass.maximum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint maximum;
+     * }
+     */
     public static int maximum$get(MemorySegment seg) {
         return (int)_GEnumClass.maximum$VH.get(seg);
     }
-    public static void maximum$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint maximum;
+     * }
+     */
+    public static void maximum$set(MemorySegment seg, int x) {
         _GEnumClass.maximum$VH.set(seg, x);
     }
     public static int maximum$get(MemorySegment seg, long index) {
@@ -61,10 +96,22 @@ public class _GEnumClass {
     public static VarHandle n_values$VH() {
         return _GEnumClass.n_values$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint n_values;
+     * }
+     */
     public static int n_values$get(MemorySegment seg) {
         return (int)_GEnumClass.n_values$VH.get(seg);
     }
-    public static void n_values$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint n_values;
+     * }
+     */
+    public static void n_values$set(MemorySegment seg, int x) {
         _GEnumClass.n_values$VH.set(seg, x);
     }
     public static int n_values$get(MemorySegment seg, long index) {
@@ -77,24 +124,36 @@ public class _GEnumClass {
     public static VarHandle values$VH() {
         return _GEnumClass.values$VH;
     }
-    public static MemoryAddress values$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GEnumClass.values$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GEnumValue* values;
+     * }
+     */
+    public static MemorySegment values$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GEnumClass.values$VH.get(seg);
     }
-    public static void values$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GEnumValue* values;
+     * }
+     */
+    public static void values$set(MemorySegment seg, MemorySegment x) {
         _GEnumClass.values$VH.set(seg, x);
     }
-    public static MemoryAddress values$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GEnumClass.values$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment values$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GEnumClass.values$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void values$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void values$set(MemorySegment seg, long index, MemorySegment x) {
         _GEnumClass.values$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

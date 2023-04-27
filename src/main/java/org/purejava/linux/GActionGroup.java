@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GActionGroup {
+/**
+ * {@snippet :
+ * typedef struct _GActionGroup GActionGroup;
+ * }
+ */
+public final class GActionGroup {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GActionGroup() {}
 }
 
 

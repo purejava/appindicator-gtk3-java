@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GAppInfoMonitor {
+/**
+ * {@snippet :
+ * typedef struct _GAppInfoMonitor GAppInfoMonitor;
+ * }
+ */
+public final class GAppInfoMonitor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GAppInfoMonitor() {}
 }
 
 

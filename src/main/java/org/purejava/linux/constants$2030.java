@@ -7,61 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2030 {
+final class constants$2030 {
 
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_line_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_iter_at_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_line_index",
-        constants$2030.gtk_text_buffer_get_iter_at_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_iter_at_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_offset",
-        constants$2030.gtk_text_buffer_get_iter_at_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_iter_at_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_line",
-        constants$2030.gtk_text_buffer_get_iter_at_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_start_iter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_start_iter$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_start_iter",
-        constants$2030.gtk_text_buffer_get_start_iter$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_end_iter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_end_iter$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_end_iter",
-        constants$2030.gtk_text_buffer_get_end_iter$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_bounds$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_bounds$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_bounds",
-        constants$2030.gtk_text_buffer_get_bounds$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2030() {}
+    static final MemorySegment GTK_STYLE_CLASS_RUBBERBAND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("rubberband");
+    static final MemorySegment GTK_STYLE_CLASS_CSD$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("csd");
+    static final MemorySegment GTK_STYLE_CLASS_TOOLTIP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("tooltip");
+    static final MemorySegment GTK_STYLE_CLASS_MENU$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menu");
+    static final MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("context-menu");
+    static final MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("touch-selection");
 }
 
 

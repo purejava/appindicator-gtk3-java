@@ -7,50 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$659 {
+final class constants$659 {
 
-    static final FunctionDescriptor g_dtls_connection_get_ciphersuite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_ciphersuite_name$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_ciphersuite_name",
-        constants$659.g_dtls_connection_get_ciphersuite_name$FUNC
-    );
-    static final FunctionDescriptor g_dtls_client_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dtls_client_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_client_connection_get_type",
-        constants$659.g_dtls_client_connection_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dtls_client_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_client_connection_new$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_client_connection_new",
-        constants$659.g_dtls_client_connection_new$FUNC
-    );
-    static final FunctionDescriptor g_dtls_client_connection_get_validation_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_client_connection_get_validation_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_client_connection_get_validation_flags",
-        constants$659.g_dtls_client_connection_get_validation_flags$FUNC
-    );
-    static final FunctionDescriptor g_dtls_client_connection_set_validation_flags$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$659() {}
+    static final FunctionDescriptor g_file_monitor_set_rate_limit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_dtls_client_connection_set_validation_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_client_connection_set_validation_flags",
-        constants$659.g_dtls_client_connection_set_validation_flags$FUNC
+    static final MethodHandle g_file_monitor_set_rate_limit$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_set_rate_limit",
+        constants$659.g_file_monitor_set_rate_limit$FUNC
     );
-    static final FunctionDescriptor g_dtls_client_connection_get_server_identity$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_monitor_emit_event$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_monitor_emit_event$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_emit_event",
+        constants$659.g_file_monitor_emit_event$FUNC
+    );
+    static final FunctionDescriptor g_filename_completer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_filename_completer_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_type",
+        constants$659.g_filename_completer_get_type$FUNC
+    );
+    static final FunctionDescriptor g_filename_completer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_filename_completer_new$MH = RuntimeHelper.downcallHandle(
+        "g_filename_completer_new",
+        constants$659.g_filename_completer_new$FUNC
+    );
+    static final FunctionDescriptor g_filename_completer_get_completion_suffix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dtls_client_connection_get_server_identity$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_client_connection_get_server_identity",
-        constants$659.g_dtls_client_connection_get_server_identity$FUNC
+    static final MethodHandle g_filename_completer_get_completion_suffix$MH = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completion_suffix",
+        constants$659.g_filename_completer_get_completion_suffix$FUNC
+    );
+    static final FunctionDescriptor g_filename_completer_get_completions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_filename_completer_get_completions$MH = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completions",
+        constants$659.g_filename_completer_get_completions$FUNC
     );
 }
 

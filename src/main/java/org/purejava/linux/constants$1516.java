@@ -7,52 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1516 {
+final class constants$1516 {
 
-    static final FunctionDescriptor gtk_menu_shell_bind_model$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1516() {}
+    static final FunctionDescriptor gtk_calendar_get_date$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_calendar_get_date$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_get_date",
+        constants$1516.gtk_calendar_get_date$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_set_detail_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_calendar_set_detail_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_set_detail_func",
+        constants$1516.gtk_calendar_set_detail_func$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_set_detail_width_chars$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_bind_model",
-        constants$1516.gtk_menu_shell_bind_model$FUNC
+    static final MethodHandle gtk_calendar_set_detail_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_set_detail_width_chars",
+        constants$1516.gtk_calendar_set_detail_width_chars$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkMenuShell$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_calendar_set_detail_height_rows$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_calendar_set_detail_height_rows$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_set_detail_height_rows",
+        constants$1516.gtk_calendar_set_detail_height_rows$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_get_detail_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkMenuShell$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkMenuShell",
-        constants$1516.glib_autoptr_clear_GtkMenuShell$FUNC
+    static final MethodHandle gtk_calendar_get_detail_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_get_detail_width_chars",
+        constants$1516.gtk_calendar_get_detail_width_chars$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkMenuShell$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_calendar_get_detail_height_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkMenuShell$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkMenuShell",
-        constants$1516.glib_autoptr_cleanup_GtkMenuShell$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkMenuShell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkMenuShell$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkMenuShell",
-        constants$1516.glib_listautoptr_cleanup_GtkMenuShell$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkMenuShell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkMenuShell$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkMenuShell",
-        constants$1516.glib_slistautoptr_cleanup_GtkMenuShell$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkMenuShell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkMenuShell$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkMenuShell",
-        constants$1516.glib_queueautoptr_cleanup_GtkMenuShell$FUNC
+    static final MethodHandle gtk_calendar_get_detail_height_rows$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_get_detail_height_rows",
+        constants$1516.gtk_calendar_get_detail_height_rows$FUNC
     );
 }
 

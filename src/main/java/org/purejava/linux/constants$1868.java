@@ -7,34 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1868 {
+final class constants$1868 {
 
-    static final FunctionDescriptor GtkListBoxFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkListBoxFilterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1868.GtkListBoxFilterFunc$FUNC
-    );
-    static final FunctionDescriptor GtkListBoxSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1868() {}
+    static final FunctionDescriptor gtk_tree_model_sort_convert_child_iter_to_iter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkListBoxSortFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1868.GtkListBoxSortFunc$FUNC
+    static final MethodHandle gtk_tree_model_sort_convert_child_iter_to_iter$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_child_iter_to_iter",
+        constants$1868.gtk_tree_model_sort_convert_child_iter_to_iter$FUNC
     );
-    static final FunctionDescriptor GtkListBoxUpdateHeaderFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_sort_convert_path_to_child_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_sort_convert_path_to_child_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_path_to_child_path",
+        constants$1868.gtk_tree_model_sort_convert_path_to_child_path$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_sort_convert_iter_to_child_iter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkListBoxUpdateHeaderFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1868.GtkListBoxUpdateHeaderFunc$FUNC
+    static final MethodHandle gtk_tree_model_sort_convert_iter_to_child_iter$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_iter_to_child_iter",
+        constants$1868.gtk_tree_model_sort_convert_iter_to_child_iter$FUNC
     );
-    static final FunctionDescriptor GtkListBoxCreateWidgetFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_model_sort_reset_default_sort_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_sort_reset_default_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_reset_default_sort_func",
+        constants$1868.gtk_tree_model_sort_reset_default_sort_func$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_sort_clear_cache$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_sort_clear_cache$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_clear_cache",
+        constants$1868.gtk_tree_model_sort_clear_cache$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_sort_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_sort_iter_is_valid$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_iter_is_valid",
+        constants$1868.gtk_tree_model_sort_iter_is_valid$FUNC
     );
 }
 

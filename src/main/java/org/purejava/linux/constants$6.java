@@ -7,29 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$6 {
+final class constants$6 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$6() {}
     static final FunctionDescriptor GCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCompareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareFunc$FUNC
+    static final FunctionDescriptor GCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GCompareFunc.class, "apply", constants$6.GCompareFunc_UP$FUNC);
+    static final FunctionDescriptor GCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$6.GCompareFunc_DOWN$FUNC
     );
     static final FunctionDescriptor GCompareDataFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCompareDataFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareDataFunc$FUNC
+    static final FunctionDescriptor GCompareDataFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCompareDataFunc_UP$MH = RuntimeHelper.upcallHandle(GCompareDataFunc.class, "apply", constants$6.GCompareDataFunc_UP$FUNC);
+    static final FunctionDescriptor GCompareDataFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCompareDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$6.GCompareDataFunc_DOWN$FUNC
     );
     static final FunctionDescriptor GEqualFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GEqualFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GEqualFunc$FUNC
+    static final FunctionDescriptor GEqualFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GEqualFunc_UP$MH = RuntimeHelper.upcallHandle(GEqualFunc.class, "apply", constants$6.GEqualFunc_UP$FUNC);
+    static final FunctionDescriptor GEqualFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GEqualFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$6.GEqualFunc_DOWN$FUNC
     );
 }
 

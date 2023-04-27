@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoGlyphGeometry {
+ *     PangoGlyphUnit width;
+ *     PangoGlyphUnit x_offset;
+ *     PangoGlyphUnit y_offset;
+ * };
+ * }
+ */
 public class _PangoGlyphGeometry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("width"),
         Constants$root.C_INT$LAYOUT.withName("x_offset"),
         Constants$root.C_INT$LAYOUT.withName("y_offset")
@@ -21,10 +30,22 @@ public class _PangoGlyphGeometry {
     public static VarHandle width$VH() {
         return _PangoGlyphGeometry.width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoGlyphUnit width;
+     * }
+     */
     public static int width$get(MemorySegment seg) {
         return (int)_PangoGlyphGeometry.width$VH.get(seg);
     }
-    public static void width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoGlyphUnit width;
+     * }
+     */
+    public static void width$set(MemorySegment seg, int x) {
         _PangoGlyphGeometry.width$VH.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class _PangoGlyphGeometry {
     public static VarHandle x_offset$VH() {
         return _PangoGlyphGeometry.x_offset$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoGlyphUnit x_offset;
+     * }
+     */
     public static int x_offset$get(MemorySegment seg) {
         return (int)_PangoGlyphGeometry.x_offset$VH.get(seg);
     }
-    public static void x_offset$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoGlyphUnit x_offset;
+     * }
+     */
+    public static void x_offset$set(MemorySegment seg, int x) {
         _PangoGlyphGeometry.x_offset$VH.set(seg, x);
     }
     public static int x_offset$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _PangoGlyphGeometry {
     public static VarHandle y_offset$VH() {
         return _PangoGlyphGeometry.y_offset$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoGlyphUnit y_offset;
+     * }
+     */
     public static int y_offset$get(MemorySegment seg) {
         return (int)_PangoGlyphGeometry.y_offset$VH.get(seg);
     }
-    public static void y_offset$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoGlyphUnit y_offset;
+     * }
+     */
+    public static void y_offset$set(MemorySegment seg, int x) {
         _PangoGlyphGeometry.y_offset$VH.set(seg, x);
     }
     public static int y_offset$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _PangoGlyphGeometry {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

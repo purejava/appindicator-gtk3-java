@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTextTagTable extends _GtkTextTagTable {
+/**
+ * {@snippet :
+ * typedef struct _GtkTextTagTable GtkTextTagTable;
+ * }
+ */
+public final class GtkTextTagTable extends _GtkTextTagTable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTextTagTable() {}
 }
 
 

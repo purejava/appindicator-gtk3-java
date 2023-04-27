@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1124 {
+final class constants$1124 {
 
-    static final FunctionDescriptor pango_layout_get_lines_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1124() {}
+    static final FunctionDescriptor gdk_app_launch_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_app_launch_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_get_type",
+        constants$1124.gdk_app_launch_context_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_app_launch_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_app_launch_context_new$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_new",
+        constants$1124.gdk_app_launch_context_new$FUNC
+    );
+    static final FunctionDescriptor gdk_app_launch_context_set_display$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_lines_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_lines_readonly",
-        constants$1124.pango_layout_get_lines_readonly$FUNC
+    static final MethodHandle gdk_app_launch_context_set_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_display",
+        constants$1124.gdk_app_launch_context_set_display$FUNC
     );
-    static final FunctionDescriptor pango_layout_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_app_launch_context_set_screen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_app_launch_context_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_screen",
+        constants$1124.gdk_app_launch_context_set_screen$FUNC
+    );
+    static final FunctionDescriptor gdk_app_launch_context_set_desktop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_serialize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_serialize",
-        constants$1124.pango_layout_serialize$FUNC
+    static final MethodHandle gdk_app_launch_context_set_desktop$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_desktop",
+        constants$1124.gdk_app_launch_context_set_desktop$FUNC
     );
-    static final FunctionDescriptor pango_layout_write_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_app_launch_context_set_timestamp$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_write_to_file$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_write_to_file",
-        constants$1124.pango_layout_write_to_file$FUNC
-    );
-    static final FunctionDescriptor pango_layout_deserialize_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle pango_layout_deserialize_error_quark$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize_error_quark",
-        constants$1124.pango_layout_deserialize_error_quark$FUNC
-    );
-    static final FunctionDescriptor pango_layout_deserialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_deserialize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize",
-        constants$1124.pango_layout_deserialize$FUNC
-    );
-    static final FunctionDescriptor pango_layout_line_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_line_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_get_type",
-        constants$1124.pango_layout_line_get_type$FUNC
+    static final MethodHandle gdk_app_launch_context_set_timestamp$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_timestamp",
+        constants$1124.gdk_app_launch_context_set_timestamp$FUNC
     );
 }
 

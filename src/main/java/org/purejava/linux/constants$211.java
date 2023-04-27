@@ -7,68 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$211 {
+final class constants$211 {
 
-    static final FunctionDescriptor g_key_file_get_locale_for_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$211() {}
+    static final FunctionDescriptor g_string_printf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_string_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_string_printf",
+        constants$211.g_string_printf$FUNC
+    );
+    static final FunctionDescriptor g_string_append_vprintf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_locale_for_key$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_locale_for_key",
-        constants$211.g_key_file_get_locale_for_key$FUNC
+    static final MethodHandle g_string_append_vprintf$MH = RuntimeHelper.downcallHandle(
+        "g_string_append_vprintf",
+        constants$211.g_string_append_vprintf$FUNC
     );
-    static final FunctionDescriptor g_key_file_set_locale_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_string_append_printf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_set_locale_string$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_locale_string",
-        constants$211.g_key_file_set_locale_string$FUNC
+    static final MethodHandle g_string_append_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_string_append_printf",
+        constants$211.g_string_append_printf$FUNC
     );
-    static final FunctionDescriptor g_key_file_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_boolean",
-        constants$211.g_key_file_get_boolean$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_boolean$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_string_append_uri_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_key_file_set_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_boolean",
-        constants$211.g_key_file_set_boolean$FUNC
+    static final MethodHandle g_string_append_uri_escaped$MH = RuntimeHelper.downcallHandle(
+        "g_string_append_uri_escaped",
+        constants$211.g_string_append_uri_escaped$FUNC
     );
-    static final FunctionDescriptor g_key_file_get_integer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_string_down$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_integer$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_integer",
-        constants$211.g_key_file_get_integer$FUNC
+    static final MethodHandle g_string_down$MH = RuntimeHelper.downcallHandle(
+        "g_string_down",
+        constants$211.g_string_down$FUNC
     );
-    static final FunctionDescriptor g_key_file_set_integer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_string_up$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_set_integer$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_integer",
-        constants$211.g_key_file_set_integer$FUNC
+    static final MethodHandle g_string_up$MH = RuntimeHelper.downcallHandle(
+        "g_string_up",
+        constants$211.g_string_up$FUNC
     );
 }
 

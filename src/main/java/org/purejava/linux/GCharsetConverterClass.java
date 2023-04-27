@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GCharsetConverterClass extends _GCharsetConverterClass {
+/**
+ * {@snippet :
+ * typedef struct _GCharsetConverterClass GCharsetConverterClass;
+ * }
+ */
+public final class GCharsetConverterClass extends _GCharsetConverterClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GCharsetConverterClass() {}
 }
 
 

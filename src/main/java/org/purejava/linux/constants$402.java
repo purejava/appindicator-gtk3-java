@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$402 {
+final class constants$402 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GScanner$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$402() {}
+    static final FunctionDescriptor g_param_spec_pool_list_owned$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_param_spec_pool_list_owned$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list_owned",
+        constants$402.g_param_spec_pool_list_owned$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_pool_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GScanner$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GScanner",
-        constants$402.glib_queueautoptr_cleanup_GScanner$FUNC
+    static final MethodHandle g_param_spec_pool_list$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list",
+        constants$402.g_param_spec_pool_list$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSequence$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor GCallback_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GCallback_UP$MH = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$402.GCallback_UP$FUNC);
+    static final FunctionDescriptor GCallback_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$402.GCallback_DOWN$FUNC
+    );
+    static final FunctionDescriptor GClosureNotify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSequence$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSequence",
-        constants$402.glib_autoptr_clear_GSequence$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSequence$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GClosureNotify_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSequence$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSequence",
-        constants$402.glib_autoptr_cleanup_GSequence$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSequence$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GClosureNotify_UP$MH = RuntimeHelper.upcallHandle(GClosureNotify.class, "apply", constants$402.GClosureNotify_UP$FUNC);
+    static final FunctionDescriptor GClosureNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSequence$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSequence",
-        constants$402.glib_listautoptr_cleanup_GSequence$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSequence$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GSequence$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSequence",
-        constants$402.glib_slistautoptr_cleanup_GSequence$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSequence$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GSequence$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSequence",
-        constants$402.glib_queueautoptr_cleanup_GSequence$FUNC
+    static final MethodHandle GClosureNotify_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$402.GClosureNotify_DOWN$FUNC
     );
 }
 

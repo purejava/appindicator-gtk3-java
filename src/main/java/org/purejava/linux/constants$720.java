@@ -7,37 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$720 {
+final class constants$720 {
 
-    static final FunctionDescriptor g_ask_password_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_ask_password_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_ask_password_flags_get_type",
-        constants$720.g_ask_password_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$720() {}
+    static final FunctionDescriptor g_notification_set_default_action$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_password_save_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_password_save_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_password_save_get_type",
-        constants$720.g_password_save_get_type$FUNC
+    static final MethodHandle g_notification_set_default_action$MH = RuntimeHelper.downcallHandle(
+        "g_notification_set_default_action",
+        constants$720.g_notification_set_default_action$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_operation_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_result_get_type",
-        constants$720.g_mount_operation_result_get_type$FUNC
+    static final FunctionDescriptor g_notification_set_default_action_and_target$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_output_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_output_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice_flags_get_type",
-        constants$720.g_output_stream_splice_flags_get_type$FUNC
+    static final MethodHandle g_notification_set_default_action_and_target$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_notification_set_default_action_and_target",
+        constants$720.g_notification_set_default_action_and_target$FUNC
     );
-    static final FunctionDescriptor g_io_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_flags_get_type",
-        constants$720.g_io_stream_splice_flags_get_type$FUNC
+    static final FunctionDescriptor g_notification_set_default_action_and_target_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_emblem_origin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_emblem_origin_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_origin_get_type",
-        constants$720.g_emblem_origin_get_type$FUNC
+    static final MethodHandle g_notification_set_default_action_and_target_value$MH = RuntimeHelper.downcallHandle(
+        "g_notification_set_default_action_and_target_value",
+        constants$720.g_notification_set_default_action_and_target_value$FUNC
+    );
+    static final FunctionDescriptor g_permission_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_permission_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_permission_get_type",
+        constants$720.g_permission_get_type$FUNC
+    );
+    static final FunctionDescriptor g_permission_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_permission_acquire$MH = RuntimeHelper.downcallHandle(
+        "g_permission_acquire",
+        constants$720.g_permission_acquire$FUNC
+    );
+    static final FunctionDescriptor g_permission_acquire_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_permission_acquire_async$MH = RuntimeHelper.downcallHandle(
+        "g_permission_acquire_async",
+        constants$720.g_permission_acquire_async$FUNC
     );
 }
 

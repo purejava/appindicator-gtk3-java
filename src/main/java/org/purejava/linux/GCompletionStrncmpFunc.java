@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GCompletionStrncmpFunc)(char* s1,char* s2,unsigned long n);
+ * }
+ */
 public interface GCompletionStrncmpFunc {
 
-    int apply(java.lang.foreign.MemoryAddress s1, java.lang.foreign.MemoryAddress s2, long n);
-    static MemorySegment allocate(GCompletionStrncmpFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GCompletionStrncmpFunc.class, fi, constants$344.GCompletionStrncmpFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment s1, java.lang.foreign.MemorySegment s2, long n);
+    static MemorySegment allocate(GCompletionStrncmpFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$348.GCompletionStrncmpFunc_UP$MH, fi, constants$348.GCompletionStrncmpFunc$FUNC, scope);
     }
-    static GCompletionStrncmpFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _s1, java.lang.foreign.MemoryAddress _s2, long _n) -> {
+    static GCompletionStrncmpFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _s1, java.lang.foreign.MemorySegment _s2, long _n) -> {
             try {
-                return (int)constants$344.GCompletionStrncmpFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_s1, (java.lang.foreign.Addressable)_s2, _n);
+                return (int)constants$348.GCompletionStrncmpFunc_DOWN$MH.invokeExact(symbol, _s1, _s2, _n);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,52 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$826 {
+final class constants$826 {
 
-    static final FunctionDescriptor g_socket_client_get_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$826() {}
+    static final FunctionDescriptor g_volume_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_volume_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_type",
+        constants$826.g_volume_get_type$FUNC
+    );
+    static final FunctionDescriptor g_volume_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_get_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_timeout",
-        constants$826.g_socket_client_get_timeout$FUNC
+    static final MethodHandle g_volume_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_name",
+        constants$826.g_volume_get_name$FUNC
     );
-    static final FunctionDescriptor g_socket_client_set_timeout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_timeout",
-        constants$826.g_socket_client_set_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_enable_proxy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_volume_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_get_enable_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_enable_proxy",
-        constants$826.g_socket_client_get_enable_proxy$FUNC
+    static final MethodHandle g_volume_get_icon$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_icon",
+        constants$826.g_volume_get_icon$FUNC
     );
-    static final FunctionDescriptor g_socket_client_set_enable_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_enable_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_enable_proxy",
-        constants$826.g_socket_client_set_enable_proxy$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_tls$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_volume_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_get_tls$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_tls",
-        constants$826.g_socket_client_get_tls$FUNC
+    static final MethodHandle g_volume_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_symbolic_icon",
+        constants$826.g_volume_get_symbolic_icon$FUNC
     );
-    static final FunctionDescriptor g_socket_client_set_tls$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_volume_get_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_set_tls$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_tls",
-        constants$826.g_socket_client_set_tls$FUNC
+    static final MethodHandle g_volume_get_uuid$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_uuid",
+        constants$826.g_volume_get_uuid$FUNC
+    );
+    static final FunctionDescriptor g_volume_get_drive$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_get_drive$MH = RuntimeHelper.downcallHandle(
+        "g_volume_get_drive",
+        constants$826.g_volume_get_drive$FUNC
     );
 }
 

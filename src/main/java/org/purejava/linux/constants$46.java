@@ -7,53 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$46 {
+final class constants$46 {
 
-    static final FunctionDescriptor setstate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$46() {}
+    static final FunctionDescriptor l64a$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle l64a$MH = RuntimeHelper.downcallHandle(
+        "l64a",
+        constants$46.l64a$FUNC
+    );
+    static final FunctionDescriptor a64l$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle setstate$MH = RuntimeHelper.downcallHandle(
-        "setstate",
-        constants$46.setstate$FUNC
+    static final MethodHandle a64l$MH = RuntimeHelper.downcallHandle(
+        "a64l",
+        constants$46.a64l$FUNC
     );
-    static final FunctionDescriptor random_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle random_r$MH = RuntimeHelper.downcallHandle(
-        "random_r",
-        constants$46.random_r$FUNC
-    );
-    static final FunctionDescriptor srandom_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle srandom_r$MH = RuntimeHelper.downcallHandle(
-        "srandom_r",
-        constants$46.srandom_r$FUNC
-    );
-    static final FunctionDescriptor initstate_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor select$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle initstate_r$MH = RuntimeHelper.downcallHandle(
-        "initstate_r",
-        constants$46.initstate_r$FUNC
-    );
-    static final FunctionDescriptor setstate_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle setstate_r$MH = RuntimeHelper.downcallHandle(
-        "setstate_r",
-        constants$46.setstate_r$FUNC
+    static final MethodHandle select$MH = RuntimeHelper.downcallHandle(
+        "select",
+        constants$46.select$FUNC
     );
-    static final FunctionDescriptor rand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle rand$MH = RuntimeHelper.downcallHandle(
-        "rand",
-        constants$46.rand$FUNC
+    static final FunctionDescriptor pselect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pselect$MH = RuntimeHelper.downcallHandle(
+        "pselect",
+        constants$46.pselect$FUNC
+    );
+    static final FunctionDescriptor random$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle random$MH = RuntimeHelper.downcallHandle(
+        "random",
+        constants$46.random$FUNC
+    );
+    static final FunctionDescriptor srandom$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle srandom$MH = RuntimeHelper.downcallHandle(
+        "srandom",
+        constants$46.srandom$FUNC
     );
 }
 

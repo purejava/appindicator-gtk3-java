@@ -7,54 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1457 {
+final class constants$1457 {
 
-    static final FunctionDescriptor gtk_widget_pop_composite_child$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_widget_pop_composite_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_pop_composite_child",
-        constants$1457.gtk_widget_pop_composite_child$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1457() {}
+    static final FunctionDescriptor gtk_entry_get_progress_pulse_step$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_widget_class_install_style_property$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle gtk_entry_get_progress_pulse_step$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_progress_pulse_step",
+        constants$1457.gtk_entry_get_progress_pulse_step$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_progress_pulse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_progress_pulse$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_progress_pulse",
+        constants$1457.gtk_entry_progress_pulse$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_placeholder_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_placeholder_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_placeholder_text",
+        constants$1457.gtk_entry_get_placeholder_text$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_placeholder_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_class_install_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_install_style_property",
-        constants$1457.gtk_widget_class_install_style_property$FUNC
+    static final MethodHandle gtk_entry_set_placeholder_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_placeholder_text",
+        constants$1457.gtk_entry_set_placeholder_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_class_install_style_property_parser$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_icon_from_pixbuf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_class_install_style_property_parser$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_install_style_property_parser",
-        constants$1457.gtk_widget_class_install_style_property_parser$FUNC
+    static final MethodHandle gtk_entry_set_icon_from_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_from_pixbuf",
+        constants$1457.gtk_entry_set_icon_from_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_widget_class_find_style_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_set_icon_from_stock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_class_find_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_find_style_property",
-        constants$1457.gtk_widget_class_find_style_property$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_list_style_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_list_style_properties$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_list_style_properties",
-        constants$1457.gtk_widget_class_list_style_properties$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_style_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_style_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_style_get_property",
-        constants$1457.gtk_widget_style_get_property$FUNC
+    static final MethodHandle gtk_entry_set_icon_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_from_stock",
+        constants$1457.gtk_entry_set_icon_from_stock$FUNC
     );
 }
 

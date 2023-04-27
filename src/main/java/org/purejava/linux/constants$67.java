@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$67 {
+final class constants$67 {
 
-    static final FunctionDescriptor g_rec_mutex_locker_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$67() {}
+    static final FunctionDescriptor g_cond_wait_until$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_cond_wait_until$MH = RuntimeHelper.downcallHandle(
+        "g_cond_wait_until",
+        constants$67.g_cond_wait_until$FUNC
+    );
+    static final FunctionDescriptor g_private_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rec_mutex_locker_new$MH = RuntimeHelper.downcallHandle(
-        "g_rec_mutex_locker_new",
-        constants$67.g_rec_mutex_locker_new$FUNC
+    static final MethodHandle g_private_get$MH = RuntimeHelper.downcallHandle(
+        "g_private_get",
+        constants$67.g_private_get$FUNC
     );
-    static final FunctionDescriptor g_rec_mutex_locker_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_private_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rec_mutex_locker_free$MH = RuntimeHelper.downcallHandle(
-        "g_rec_mutex_locker_free",
-        constants$67.g_rec_mutex_locker_free$FUNC
+    static final MethodHandle g_private_set$MH = RuntimeHelper.downcallHandle(
+        "g_private_set",
+        constants$67.g_private_set$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_writer_locker_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_private_replace$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_writer_locker_new$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_locker_new",
-        constants$67.g_rw_lock_writer_locker_new$FUNC
+    static final MethodHandle g_private_replace$MH = RuntimeHelper.downcallHandle(
+        "g_private_replace",
+        constants$67.g_private_replace$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_writer_locker_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_once_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_writer_locker_free$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_locker_free",
-        constants$67.g_rw_lock_writer_locker_free$FUNC
+    static final MethodHandle g_once_impl$MH = RuntimeHelper.downcallHandle(
+        "g_once_impl",
+        constants$67.g_once_impl$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_reader_locker_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_once_init_enter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_reader_locker_new$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_reader_locker_new",
-        constants$67.g_rw_lock_reader_locker_new$FUNC
-    );
-    static final FunctionDescriptor g_rw_lock_reader_locker_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_reader_locker_free$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_reader_locker_free",
-        constants$67.g_rw_lock_reader_locker_free$FUNC
+    static final MethodHandle g_once_init_enter$MH = RuntimeHelper.downcallHandle(
+        "g_once_init_enter",
+        constants$67.g_once_init_enter$FUNC
     );
 }
 

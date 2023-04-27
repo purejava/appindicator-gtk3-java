@@ -7,55 +7,78 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$292 {
+final class constants$292 {
 
-    static final FunctionDescriptor g_shell_unquote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_shell_unquote$MH = RuntimeHelper.downcallHandle(
-        "g_shell_unquote",
-        constants$292.g_shell_unquote$FUNC
-    );
-    static final FunctionDescriptor g_shell_parse_argv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$292() {}
+    static final FunctionDescriptor g_regex_split_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_shell_parse_argv$MH = RuntimeHelper.downcallHandle(
-        "g_shell_parse_argv",
-        constants$292.g_shell_parse_argv$FUNC
-    );
-    static final FunctionDescriptor g_slice_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_slice_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_slice_alloc",
-        constants$292.g_slice_alloc$FUNC
-    );
-    static final FunctionDescriptor g_slice_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_slice_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_slice_alloc0",
-        constants$292.g_slice_alloc0$FUNC
-    );
-    static final FunctionDescriptor g_slice_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slice_copy$MH = RuntimeHelper.downcallHandle(
-        "g_slice_copy",
-        constants$292.g_slice_copy$FUNC
+    static final MethodHandle g_regex_split_full$MH = RuntimeHelper.downcallHandle(
+        "g_regex_split_full",
+        constants$292.g_regex_split_full$FUNC
     );
-    static final FunctionDescriptor g_slice_free1$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_regex_replace$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slice_free1$MH = RuntimeHelper.downcallHandle(
-        "g_slice_free1",
-        constants$292.g_slice_free1$FUNC
+    static final MethodHandle g_regex_replace$MH = RuntimeHelper.downcallHandle(
+        "g_regex_replace",
+        constants$292.g_regex_replace$FUNC
+    );
+    static final FunctionDescriptor g_regex_replace_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_replace_literal$MH = RuntimeHelper.downcallHandle(
+        "g_regex_replace_literal",
+        constants$292.g_regex_replace_literal$FUNC
+    );
+    static final FunctionDescriptor g_regex_replace_eval$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_replace_eval$MH = RuntimeHelper.downcallHandle(
+        "g_regex_replace_eval",
+        constants$292.g_regex_replace_eval$FUNC
+    );
+    static final FunctionDescriptor g_regex_check_replacement$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_check_replacement$MH = RuntimeHelper.downcallHandle(
+        "g_regex_check_replacement",
+        constants$292.g_regex_check_replacement$FUNC
+    );
+    static final FunctionDescriptor g_match_info_get_regex$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_match_info_get_regex$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_get_regex",
+        constants$292.g_match_info_get_regex$FUNC
     );
 }
 

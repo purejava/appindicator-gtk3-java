@@ -7,53 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1151 {
+final class constants$1151 {
 
-    static final FunctionDescriptor pango_trim_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1151() {}
+    static final FunctionDescriptor pango_cairo_font_map_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_trim_string$MH = RuntimeHelper.downcallHandle(
-        "pango_trim_string",
-        constants$1151.pango_trim_string$FUNC
+    static final MethodHandle pango_cairo_font_map_create_context$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_create_context",
+        constants$1151.pango_cairo_font_map_create_context$FUNC
     );
-    static final FunctionDescriptor pango_read_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pango_cairo_font_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_cairo_font_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_get_type",
+        constants$1151.pango_cairo_font_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_get_scaled_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_font_get_scaled_font$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_get_scaled_font",
+        constants$1151.pango_cairo_font_get_scaled_font$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_update_context$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_read_line$MH = RuntimeHelper.downcallHandle(
-        "pango_read_line",
-        constants$1151.pango_read_line$FUNC
+    static final MethodHandle pango_cairo_update_context$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_update_context",
+        constants$1151.pango_cairo_update_context$FUNC
     );
-    static final FunctionDescriptor pango_skip_space$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_skip_space$MH = RuntimeHelper.downcallHandle(
-        "pango_skip_space",
-        constants$1151.pango_skip_space$FUNC
-    );
-    static final FunctionDescriptor pango_scan_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pango_cairo_context_set_font_options$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_scan_word$MH = RuntimeHelper.downcallHandle(
-        "pango_scan_word",
-        constants$1151.pango_scan_word$FUNC
+    static final MethodHandle pango_cairo_context_set_font_options$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_set_font_options",
+        constants$1151.pango_cairo_context_set_font_options$FUNC
     );
-    static final FunctionDescriptor pango_scan_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pango_cairo_context_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_scan_string$MH = RuntimeHelper.downcallHandle(
-        "pango_scan_string",
-        constants$1151.pango_scan_string$FUNC
-    );
-    static final FunctionDescriptor pango_scan_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_scan_int$MH = RuntimeHelper.downcallHandle(
-        "pango_scan_int",
-        constants$1151.pango_scan_int$FUNC
+    static final MethodHandle pango_cairo_context_get_font_options$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_font_options",
+        constants$1151.pango_cairo_context_get_font_options$FUNC
     );
 }
 

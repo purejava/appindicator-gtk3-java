@@ -7,42 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$519 {
+final class constants$519 {
 
-    static final FunctionDescriptor GDBusProxyTypeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$519() {}
+    static final FunctionDescriptor g_converter_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_converter_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_converter_output_stream_get_type",
+        constants$519.g_converter_output_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_converter_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_converter_output_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_converter_output_stream_new",
+        constants$519.g_converter_output_stream_new$FUNC
+    );
+    static final FunctionDescriptor g_converter_output_stream_get_converter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_converter_output_stream_get_converter$MH = RuntimeHelper.downcallHandle(
+        "g_converter_output_stream_get_converter",
+        constants$519.g_converter_output_stream_get_converter$FUNC
+    );
+    static final FunctionDescriptor access$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle access$MH = RuntimeHelper.downcallHandle(
+        "access",
+        constants$519.access$FUNC
+    );
+    static final FunctionDescriptor faccessat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GDBusProxyTypeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$519.GDBusProxyTypeFunc$FUNC
+    static final MethodHandle faccessat$MH = RuntimeHelper.downcallHandle(
+        "faccessat",
+        constants$519.faccessat$FUNC
     );
-    static final FunctionDescriptor g_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_type",
-        constants$519.g_action_get_type$FUNC
+    static final FunctionDescriptor lseek$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_name",
-        constants$519.g_action_get_name$FUNC
-    );
-    static final FunctionDescriptor g_action_get_parameter_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_get_parameter_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_parameter_type",
-        constants$519.g_action_get_parameter_type$FUNC
-    );
-    static final FunctionDescriptor g_action_get_state_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_get_state_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_state_type",
-        constants$519.g_action_get_state_type$FUNC
+    static final MethodHandle lseek$MH = RuntimeHelper.downcallHandle(
+        "lseek",
+        constants$519.lseek$FUNC
     );
 }
 

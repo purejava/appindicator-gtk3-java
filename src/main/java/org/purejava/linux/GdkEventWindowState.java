@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventWindowState extends _GdkEventWindowState {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventWindowState GdkEventWindowState;
+ * }
+ */
+public final class GdkEventWindowState extends _GdkEventWindowState {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventWindowState() {}
 }
 
 

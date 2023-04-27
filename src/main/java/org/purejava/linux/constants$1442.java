@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1442 {
+final class constants$1442 {
 
-    static final FunctionDescriptor gtk_widget_set_window$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1442() {}
+    static final FunctionDescriptor gtk_entry_completion_compute_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_window",
-        constants$1442.gtk_widget_set_window$FUNC
+    static final MethodHandle gtk_entry_completion_compute_prefix$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_compute_prefix",
+        constants$1442.gtk_entry_completion_compute_prefix$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_completion_complete$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_window",
-        constants$1442.gtk_widget_get_window$FUNC
+    static final MethodHandle gtk_entry_completion_complete$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_complete",
+        constants$1442.gtk_entry_completion_complete$FUNC
     );
-    static final FunctionDescriptor gtk_widget_register_window$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_insert_prefix$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_insert_prefix$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_insert_prefix",
+        constants$1442.gtk_entry_completion_insert_prefix$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_insert_action_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_register_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_register_window",
-        constants$1442.gtk_widget_register_window$FUNC
+    static final MethodHandle gtk_entry_completion_insert_action_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_insert_action_text",
+        constants$1442.gtk_entry_completion_insert_action_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_unregister_window$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_insert_action_markup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_unregister_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_unregister_window",
-        constants$1442.gtk_widget_unregister_window$FUNC
+    static final MethodHandle gtk_entry_completion_insert_action_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_insert_action_markup",
+        constants$1442.gtk_entry_completion_insert_action_markup$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_allocated_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_entry_completion_delete_action$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_allocated_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_width",
-        constants$1442.gtk_widget_get_allocated_width$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_allocated_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_allocated_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_height",
-        constants$1442.gtk_widget_get_allocated_height$FUNC
+    static final MethodHandle gtk_entry_completion_delete_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_delete_action",
+        constants$1442.gtk_entry_completion_delete_action$FUNC
     );
 }
 

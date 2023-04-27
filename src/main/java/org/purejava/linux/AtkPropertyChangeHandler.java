@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*AtkPropertyChangeHandler)(struct _AtkObject* obj,struct _AtkPropertyValues* vals);
+ * }
+ */
 public interface AtkPropertyChangeHandler {
 
-    void apply(java.lang.foreign.MemoryAddress obj, java.lang.foreign.MemoryAddress vals);
-    static MemorySegment allocate(AtkPropertyChangeHandler fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(AtkPropertyChangeHandler.class, fi, constants$1375.AtkPropertyChangeHandler$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(AtkPropertyChangeHandler fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1199.AtkPropertyChangeHandler_UP$MH, fi, constants$1199.AtkPropertyChangeHandler$FUNC, scope);
     }
-    static AtkPropertyChangeHandler ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _obj, java.lang.foreign.MemoryAddress _vals) -> {
+    static AtkPropertyChangeHandler ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1375.AtkPropertyChangeHandler$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_obj, (java.lang.foreign.Addressable)_vals);
+                constants$1199.AtkPropertyChangeHandler_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

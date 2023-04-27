@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$134 {
+final class constants$134 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$134() {}
+    static final FunctionDescriptor g_mem_profile$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_mem_profile$MH = RuntimeHelper.downcallHandle(
+        "g_mem_profile",
+        constants$134.g_mem_profile$FUNC
+    );
+    static final FunctionDescriptor GNodeTraverseFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GNodeTraverseFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GNodeTraverseFunc_UP$MH = RuntimeHelper.upcallHandle(GNodeTraverseFunc.class, "apply", constants$134.GNodeTraverseFunc_UP$FUNC);
+    static final FunctionDescriptor GNodeTraverseFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GNodeTraverseFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$134.GNodeTraverseFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GNodeForeachFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GNodeForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GNodeForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GNodeForeachFunc.class, "apply", constants$134.GNodeForeachFunc_UP$FUNC);
+    static final FunctionDescriptor GNodeForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GNodeForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$134.GNodeForeachFunc_DOWN$FUNC
+    );
     static final FunctionDescriptor g_node_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
     static final MethodHandle g_node_new$MH = RuntimeHelper.downcallHandle(
         "g_node_new",
         constants$134.g_node_new$FUNC
-    );
-    static final FunctionDescriptor g_node_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_node_destroy",
-        constants$134.g_node_destroy$FUNC
-    );
-    static final FunctionDescriptor g_node_unlink$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_unlink$MH = RuntimeHelper.downcallHandle(
-        "g_node_unlink",
-        constants$134.g_node_unlink$FUNC
-    );
-    static final FunctionDescriptor g_node_copy_deep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_copy_deep$MH = RuntimeHelper.downcallHandle(
-        "g_node_copy_deep",
-        constants$134.g_node_copy_deep$FUNC
-    );
-    static final FunctionDescriptor g_node_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_copy$MH = RuntimeHelper.downcallHandle(
-        "g_node_copy",
-        constants$134.g_node_copy$FUNC
-    );
-    static final FunctionDescriptor g_node_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_insert$MH = RuntimeHelper.downcallHandle(
-        "g_node_insert",
-        constants$134.g_node_insert$FUNC
     );
 }
 

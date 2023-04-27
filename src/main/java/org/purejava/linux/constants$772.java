@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$772 {
+final class constants$772 {
 
-    static final FunctionDescriptor g_notification_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_set_icon$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_icon",
-        constants$772.g_notification_set_icon$FUNC
-    );
-    static final FunctionDescriptor g_notification_set_urgent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$772() {}
+    static final FunctionDescriptor g_socket_client_set_enable_proxy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_notification_set_urgent$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_urgent",
-        constants$772.g_notification_set_urgent$FUNC
+    static final MethodHandle g_socket_client_set_enable_proxy$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_enable_proxy",
+        constants$772.g_socket_client_set_enable_proxy$FUNC
     );
-    static final FunctionDescriptor g_notification_set_priority$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_client_get_tls$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_client_get_tls$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_tls",
+        constants$772.g_socket_client_get_tls$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_set_tls$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_notification_set_priority$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_priority",
-        constants$772.g_notification_set_priority$FUNC
+    static final MethodHandle g_socket_client_set_tls$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_tls",
+        constants$772.g_socket_client_set_tls$FUNC
     );
-    static final FunctionDescriptor g_notification_set_category$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_client_get_tls_validation_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_notification_set_category$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_category",
-        constants$772.g_notification_set_category$FUNC
+    static final MethodHandle g_socket_client_get_tls_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_tls_validation_flags",
+        constants$772.g_socket_client_get_tls_validation_flags$FUNC
     );
-    static final FunctionDescriptor g_notification_add_button$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_client_set_tls_validation_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_client_set_tls_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_tls_validation_flags",
+        constants$772.g_socket_client_set_tls_validation_flags$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_get_proxy_resolver$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_notification_add_button$MH = RuntimeHelper.downcallHandle(
-        "g_notification_add_button",
-        constants$772.g_notification_add_button$FUNC
-    );
-    static final FunctionDescriptor g_notification_add_button_with_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_add_button_with_target$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_notification_add_button_with_target",
-        constants$772.g_notification_add_button_with_target$FUNC
+    static final MethodHandle g_socket_client_get_proxy_resolver$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_proxy_resolver",
+        constants$772.g_socket_client_get_proxy_resolver$FUNC
     );
 }
 

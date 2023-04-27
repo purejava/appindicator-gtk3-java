@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1255 {
+final class constants$1255 {
 
-    static final FunctionDescriptor gdk_window_set_source_events$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1255() {}
+    static final FunctionDescriptor gtk_widget_region_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_region_intersect$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_region_intersect",
+        constants$1255.gtk_widget_region_intersect$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_freeze_child_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_freeze_child_notify$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_freeze_child_notify",
+        constants$1255.gtk_widget_freeze_child_notify$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_child_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_child_notify$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_child_notify",
+        constants$1255.gtk_widget_child_notify$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_thaw_child_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_thaw_child_notify$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_thaw_child_notify",
+        constants$1255.gtk_widget_thaw_child_notify$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_can_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_source_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_source_events",
-        constants$1255.gdk_window_set_source_events$FUNC
+    static final MethodHandle gtk_widget_set_can_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_can_focus",
+        constants$1255.gtk_widget_set_can_focus$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_source_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_source_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_source_events",
-        constants$1255.gdk_window_get_source_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_icon_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_can_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_list",
-        constants$1255.gdk_window_set_icon_list$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_name",
-        constants$1255.gdk_window_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_group",
-        constants$1255.gdk_window_set_group$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_group",
-        constants$1255.gdk_window_get_group$FUNC
+    static final MethodHandle gtk_widget_get_can_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_can_focus",
+        constants$1255.gtk_widget_get_can_focus$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkAssistantPageFunc)(int current_page,void* data);
+ * }
+ */
 public interface GtkAssistantPageFunc {
 
-    int apply(int current_page, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkAssistantPageFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkAssistantPageFunc.class, fi, constants$1685.GtkAssistantPageFunc$FUNC, session);
+    int apply(int current_page, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkAssistantPageFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1494.GtkAssistantPageFunc_UP$MH, fi, constants$1494.GtkAssistantPageFunc$FUNC, scope);
     }
-    static GtkAssistantPageFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int _current_page, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkAssistantPageFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int _current_page, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$1685.GtkAssistantPageFunc$MH.invokeExact((Addressable)symbol, _current_page, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1494.GtkAssistantPageFunc_DOWN$MH.invokeExact(symbol, _current_page, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

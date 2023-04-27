@@ -7,59 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1561 {
+final class constants$1561 {
 
-    static final FunctionDescriptor gtk_tree_model_unref_node$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1561() {}
+    static final FunctionDescriptor gtk_event_controller_get_propagation_phase$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_event_controller_get_propagation_phase$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_get_propagation_phase",
+        constants$1561.gtk_event_controller_get_propagation_phase$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_set_propagation_phase$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_event_controller_set_propagation_phase$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_set_propagation_phase",
+        constants$1561.gtk_event_controller_set_propagation_phase$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_key_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_event_controller_key_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_get_type",
+        constants$1561.gtk_event_controller_key_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_key_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_event_controller_key_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_new",
+        constants$1561.gtk_event_controller_key_new$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_key_set_im_context$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_unref_node$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_unref_node",
-        constants$1561.gtk_tree_model_unref_node$FUNC
+    static final MethodHandle gtk_event_controller_key_set_im_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_set_im_context",
+        constants$1561.gtk_event_controller_key_set_im_context$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_event_controller_key_get_im_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_model_get",
-        constants$1561.gtk_tree_model_get$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_valist",
-        constants$1561.gtk_tree_model_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_foreach",
-        constants$1561.gtk_tree_model_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_row_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_row_changed$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_changed",
-        constants$1561.gtk_tree_model_row_changed$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_row_inserted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_row_inserted$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_inserted",
-        constants$1561.gtk_tree_model_row_inserted$FUNC
+    static final MethodHandle gtk_event_controller_key_get_im_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_get_im_context",
+        constants$1561.gtk_event_controller_key_get_im_context$FUNC
     );
 }
 

@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$644 {
+final class constants$644 {
 
-    static final FunctionDescriptor g_dbus_gvariant_to_gvalue$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$644() {}
+    static final FunctionDescriptor g_file_info_get_attribute_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_gvariant_to_gvalue$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_gvariant_to_gvalue",
-        constants$644.g_dbus_gvariant_to_gvalue$FUNC
+    static final MethodHandle g_file_info_get_attribute_int32$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_int32",
+        constants$644.g_file_info_get_attribute_int32$FUNC
     );
-    static final FunctionDescriptor g_dbus_gvalue_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_gvalue_to_gvariant$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_gvalue_to_gvariant",
-        constants$644.g_dbus_gvalue_to_gvariant$FUNC
+    static final MethodHandle g_file_info_get_attribute_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_uint64",
+        constants$644.g_file_info_get_attribute_uint64$FUNC
     );
-    static final FunctionDescriptor g_dbus_escape_object_path_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_escape_object_path_bytestring$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path_bytestring",
-        constants$644.g_dbus_escape_object_path_bytestring$FUNC
+    static final MethodHandle g_file_info_get_attribute_int64$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_int64",
+        constants$644.g_file_info_get_attribute_int64$FUNC
     );
-    static final FunctionDescriptor g_dbus_escape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_escape_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path",
-        constants$644.g_dbus_escape_object_path$FUNC
+    static final MethodHandle g_file_info_get_attribute_object$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_object",
+        constants$644.g_file_info_get_attribute_object$FUNC
     );
-    static final FunctionDescriptor g_dbus_unescape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_stringv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_unescape_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_unescape_object_path",
-        constants$644.g_dbus_unescape_object_path$FUNC
+    static final MethodHandle g_file_info_get_attribute_stringv$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_stringv",
+        constants$644.g_file_info_get_attribute_stringv$FUNC
     );
-    static final FunctionDescriptor g_debug_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_debug_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_get_type",
-        constants$644.g_debug_controller_get_type$FUNC
+    static final FunctionDescriptor g_file_info_set_attribute$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_info_set_attribute$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute",
+        constants$644.g_file_info_set_attribute$FUNC
     );
 }
 

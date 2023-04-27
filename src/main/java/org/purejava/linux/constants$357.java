@@ -7,48 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$357 {
+final class constants$357 {
 
-    static final FunctionDescriptor pthread_cancel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pthread_cancel$MH = RuntimeHelper.downcallHandle(
-        "pthread_cancel",
-        constants$357.pthread_cancel$FUNC
-    );
-    static final FunctionDescriptor pthread_testcancel$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_testcancel$MH = RuntimeHelper.downcallHandle(
-        "pthread_testcancel",
-        constants$357.pthread_testcancel$FUNC
-    );
-    static final FunctionDescriptor __pthread_register_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __pthread_register_cancel$MH = RuntimeHelper.downcallHandle(
-        "__pthread_register_cancel",
-        constants$357.__pthread_register_cancel$FUNC
-    );
-    static final FunctionDescriptor __pthread_unregister_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __pthread_unregister_cancel$MH = RuntimeHelper.downcallHandle(
-        "__pthread_unregister_cancel",
-        constants$357.__pthread_unregister_cancel$FUNC
-    );
-    static final FunctionDescriptor __pthread_unwind_next$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __pthread_unwind_next$MH = RuntimeHelper.downcallHandle(
-        "__pthread_unwind_next",
-        constants$357.__pthread_unwind_next$FUNC
-    );
-    static final FunctionDescriptor __sigsetjmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$357() {}
+    static final FunctionDescriptor pthread_attr_setdetachstate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle __sigsetjmp$MH = RuntimeHelper.downcallHandle(
-        "__sigsetjmp",
-        constants$357.__sigsetjmp$FUNC
+    static final MethodHandle pthread_attr_setdetachstate$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setdetachstate",
+        constants$357.pthread_attr_setdetachstate$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_getguardsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_attr_getguardsize$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getguardsize",
+        constants$357.pthread_attr_getguardsize$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_setguardsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle pthread_attr_setguardsize$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setguardsize",
+        constants$357.pthread_attr_setguardsize$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_getschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_attr_getschedparam$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getschedparam",
+        constants$357.pthread_attr_getschedparam$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_setschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_attr_setschedparam$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setschedparam",
+        constants$357.pthread_attr_setschedparam$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_getschedpolicy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_attr_getschedpolicy$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getschedpolicy",
+        constants$357.pthread_attr_getschedpolicy$FUNC
     );
 }
 

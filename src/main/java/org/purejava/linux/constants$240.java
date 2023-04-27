@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$240 {
+final class constants$240 {
 
-    static final FunctionDescriptor g_variant_builder_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$240() {}
+    static final FunctionDescriptor g_variant_new_take_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_init$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_init",
-        constants$240.g_variant_builder_init$FUNC
+    static final MethodHandle g_variant_new_take_string$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_take_string",
+        constants$240.g_variant_new_take_string$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_end$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_new_printf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_end$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_end",
-        constants$240.g_variant_builder_end$FUNC
+    static final MethodHandle g_variant_new_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_new_printf",
+        constants$240.g_variant_new_printf$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_clear$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_new_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_clear$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_clear",
-        constants$240.g_variant_builder_clear$FUNC
+    static final MethodHandle g_variant_new_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_object_path",
+        constants$240.g_variant_new_object_path$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_open$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_is_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_open$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_open",
-        constants$240.g_variant_builder_open$FUNC
+    static final MethodHandle g_variant_is_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_variant_is_object_path",
+        constants$240.g_variant_is_object_path$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_close$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_new_signature$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_close$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_close",
-        constants$240.g_variant_builder_close$FUNC
+    static final MethodHandle g_variant_new_signature$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_signature",
+        constants$240.g_variant_new_signature$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_add_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_is_signature$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_builder_add_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_add_value",
-        constants$240.g_variant_builder_add_value$FUNC
+    static final MethodHandle g_variant_is_signature$MH = RuntimeHelper.downcallHandle(
+        "g_variant_is_signature",
+        constants$240.g_variant_is_signature$FUNC
     );
 }
 

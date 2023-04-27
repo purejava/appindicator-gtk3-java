@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1483 {
+final class constants$1483 {
 
-    static final FunctionDescriptor gtk_window_set_default$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1483() {}
+    static final FunctionDescriptor gtk_combo_box_new_with_model_and_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_new_with_model_and_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new_with_model_and_entry",
+        constants$1483.gtk_combo_box_new_with_model_and_entry$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_wrap_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_get_wrap_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_wrap_width",
+        constants$1483.gtk_combo_box_get_wrap_width$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_set_wrap_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_set_wrap_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_wrap_width",
+        constants$1483.gtk_combo_box_set_wrap_width$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_row_span_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default",
-        constants$1483.gtk_window_set_default$FUNC
+    static final MethodHandle gtk_combo_box_get_row_span_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_row_span_column",
+        constants$1483.gtk_combo_box_get_row_span_column$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_default_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_default_widget",
-        constants$1483.gtk_window_get_default_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_window_activate_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_activate_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_activate_default",
-        constants$1483.gtk_window_activate_default$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_transient_for$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_set_row_span_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_set_row_span_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_row_span_column",
+        constants$1483.gtk_combo_box_set_row_span_column$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_column_span_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_transient_for$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_transient_for",
-        constants$1483.gtk_window_set_transient_for$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_transient_for$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_transient_for$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_transient_for",
-        constants$1483.gtk_window_get_transient_for$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_attached_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_attached_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_attached_to",
-        constants$1483.gtk_window_set_attached_to$FUNC
+    static final MethodHandle gtk_combo_box_get_column_span_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_column_span_column",
+        constants$1483.gtk_combo_box_get_column_span_column$FUNC
     );
 }
 

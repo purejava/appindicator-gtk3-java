@@ -7,48 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2019 {
+final class constants$2019 {
 
-    static final FunctionDescriptor gtk_statusbar_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_remove_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_remove_all",
-        constants$2019.gtk_statusbar_remove_all$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_get_message_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_get_message_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_get_message_area",
-        constants$2019.gtk_statusbar_get_message_area$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_switch_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_type",
-        constants$2019.gtk_switch_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_switch_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_new",
-        constants$2019.gtk_switch_new$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_set_active$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_switch_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_set_active",
-        constants$2019.gtk_switch_set_active$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_switch_get_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_active",
-        constants$2019.gtk_switch_get_active$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2019() {}
+    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix-device");
+    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("label");
+    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("uuid");
+    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("nfs-mount");
+    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("class");
+    static final MemorySegment PANGO_VERSION_STRING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.50.12");
 }
 
 

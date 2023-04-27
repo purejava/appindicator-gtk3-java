@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$902 {
+final class constants$902 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$902() {}
+    static final FunctionDescriptor pango_script_for_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_script_for_unichar$MH = RuntimeHelper.downcallHandle(
+        "pango_script_for_unichar",
+        constants$902.pango_script_for_unichar$FUNC
+    );
+    static final FunctionDescriptor pango_script_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_script_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_script_iter_get_type",
+        constants$902.pango_script_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_script_iter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_script_iter_new$MH = RuntimeHelper.downcallHandle(
+        "pango_script_iter_new",
+        constants$902.pango_script_iter_new$FUNC
+    );
+    static final FunctionDescriptor pango_script_iter_get_range$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusMenuModel",
-        constants$902.glib_queueautoptr_cleanup_GDBusMenuModel$FUNC
+    static final MethodHandle pango_script_iter_get_range$MH = RuntimeHelper.downcallHandle(
+        "pango_script_iter_get_range",
+        constants$902.pango_script_iter_get_range$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusMessage$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_script_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDBusMessage$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusMessage",
-        constants$902.glib_autoptr_clear_GDBusMessage$FUNC
+    static final MethodHandle pango_script_iter_next$MH = RuntimeHelper.downcallHandle(
+        "pango_script_iter_next",
+        constants$902.pango_script_iter_next$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusMessage$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_script_iter_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDBusMessage$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusMessage",
-        constants$902.glib_autoptr_cleanup_GDBusMessage$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusMessage$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusMessage$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusMessage",
-        constants$902.glib_listautoptr_cleanup_GDBusMessage$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusMessage$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusMessage$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusMessage",
-        constants$902.glib_slistautoptr_cleanup_GDBusMessage$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusMessage$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusMessage$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusMessage",
-        constants$902.glib_queueautoptr_cleanup_GDBusMessage$FUNC
+    static final MethodHandle pango_script_iter_free$MH = RuntimeHelper.downcallHandle(
+        "pango_script_iter_free",
+        constants$902.pango_script_iter_free$FUNC
     );
 }
 

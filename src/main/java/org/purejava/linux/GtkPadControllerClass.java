@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPadControllerClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkPadControllerClass GtkPadControllerClass;
+ * }
+ */
+public final class GtkPadControllerClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPadControllerClass() {}
 }
 
 

@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1848 {
+final class constants$1848 {
 
-    static final FunctionDescriptor gtk_icon_view_get_pixbuf_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1848() {}
+    static final FunctionDescriptor gtk_text_view_get_pixels_inside_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_pixbuf_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_pixbuf_column",
-        constants$1848.gtk_icon_view_get_pixbuf_column$FUNC
+    static final MethodHandle gtk_text_view_get_pixels_inside_wrap$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_pixels_inside_wrap",
+        constants$1848.gtk_text_view_get_pixels_inside_wrap$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_item_orientation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_set_justification$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_item_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_orientation",
-        constants$1848.gtk_icon_view_set_item_orientation$FUNC
+    static final MethodHandle gtk_text_view_set_justification$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_justification",
+        constants$1848.gtk_text_view_set_justification$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_item_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_justification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_item_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_orientation",
-        constants$1848.gtk_icon_view_get_item_orientation$FUNC
+    static final MethodHandle gtk_text_view_get_justification$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_justification",
+        constants$1848.gtk_text_view_get_justification$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_columns$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_set_left_margin$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_columns",
-        constants$1848.gtk_icon_view_set_columns$FUNC
+    static final MethodHandle gtk_text_view_set_left_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_left_margin",
+        constants$1848.gtk_text_view_set_left_margin$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_left_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_columns",
-        constants$1848.gtk_icon_view_get_columns$FUNC
+    static final MethodHandle gtk_text_view_get_left_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_left_margin",
+        constants$1848.gtk_text_view_get_left_margin$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_item_width$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_set_right_margin$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_item_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_width",
-        constants$1848.gtk_icon_view_set_item_width$FUNC
+    static final MethodHandle gtk_text_view_set_right_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_right_margin",
+        constants$1848.gtk_text_view_set_right_margin$FUNC
     );
 }
 

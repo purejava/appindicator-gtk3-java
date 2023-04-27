@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkActivatable {
+/**
+ * {@snippet :
+ * typedef struct _GtkActivatable GtkActivatable;
+ * }
+ */
+public final class GtkActivatable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkActivatable() {}
 }
 
 

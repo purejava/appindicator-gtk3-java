@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1202 {
+final class constants$1202 {
 
-    static final FunctionDescriptor cairo_pattern_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1202() {}
+    static final FunctionDescriptor atk_object_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_reference",
-        constants$1202.cairo_pattern_reference$FUNC
+    static final MethodHandle atk_object_get_attributes$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_attributes",
+        constants$1202.atk_object_get_attributes$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_object_ref_state_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_destroy",
-        constants$1202.cairo_pattern_destroy$FUNC
+    static final MethodHandle atk_object_ref_state_set$MH = RuntimeHelper.downcallHandle(
+        "atk_object_ref_state_set",
+        constants$1202.atk_object_ref_state_set$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_object_get_index_in_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_reference_count",
-        constants$1202.cairo_pattern_get_reference_count$FUNC
+    static final MethodHandle atk_object_get_index_in_parent$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_index_in_parent",
+        constants$1202.atk_object_get_index_in_parent$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_status",
-        constants$1202.cairo_pattern_status$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_object_set_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_user_data",
-        constants$1202.cairo_pattern_get_user_data$FUNC
+    static final MethodHandle atk_object_set_name$MH = RuntimeHelper.downcallHandle(
+        "atk_object_set_name",
+        constants$1202.atk_object_set_name$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_object_set_description$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_user_data",
-        constants$1202.cairo_pattern_set_user_data$FUNC
+    static final MethodHandle atk_object_set_description$MH = RuntimeHelper.downcallHandle(
+        "atk_object_set_description",
+        constants$1202.atk_object_set_description$FUNC
+    );
+    static final FunctionDescriptor atk_object_set_parent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_set_parent$MH = RuntimeHelper.downcallHandle(
+        "atk_object_set_parent",
+        constants$1202.atk_object_set_parent$FUNC
     );
 }
 

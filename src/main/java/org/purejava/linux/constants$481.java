@@ -7,52 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$481 {
+final class constants$481 {
 
-    static final FunctionDescriptor g_object_force_floating$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_force_floating$MH = RuntimeHelper.downcallHandle(
-        "g_object_force_floating",
-        constants$481.g_object_force_floating$FUNC
-    );
-    static final FunctionDescriptor g_object_run_dispose$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_run_dispose$MH = RuntimeHelper.downcallHandle(
-        "g_object_run_dispose",
-        constants$481.g_object_run_dispose$FUNC
-    );
-    static final FunctionDescriptor g_value_take_object$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$481() {}
+    static final FunctionDescriptor g_app_info_launch_uris_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_take_object$MH = RuntimeHelper.downcallHandle(
-        "g_value_take_object",
-        constants$481.g_value_take_object$FUNC
+    static final MethodHandle g_app_info_launch_uris_finish$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_launch_uris_finish",
+        constants$481.g_app_info_launch_uris_finish$FUNC
     );
-    static final FunctionDescriptor g_value_set_object_take_ownership$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_app_info_should_show$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_should_show$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_should_show",
+        constants$481.g_app_info_should_show$FUNC
+    );
+    static final FunctionDescriptor g_app_info_set_as_default_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_set_object_take_ownership$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_object_take_ownership",
-        constants$481.g_value_set_object_take_ownership$FUNC
+    static final MethodHandle g_app_info_set_as_default_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_set_as_default_for_type",
+        constants$481.g_app_info_set_as_default_for_type$FUNC
     );
-    static final FunctionDescriptor g_object_compat_control$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_app_info_set_as_default_for_extension$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_compat_control$MH = RuntimeHelper.downcallHandle(
-        "g_object_compat_control",
-        constants$481.g_object_compat_control$FUNC
+    static final MethodHandle g_app_info_set_as_default_for_extension$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_set_as_default_for_extension",
+        constants$481.g_app_info_set_as_default_for_extension$FUNC
     );
-    static final FunctionDescriptor g_clear_object$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_app_info_add_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_clear_object$MH = RuntimeHelper.downcallHandle(
-        "g_clear_object",
-        constants$481.g_clear_object$FUNC
+    static final MethodHandle g_app_info_add_supports_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_add_supports_type",
+        constants$481.g_app_info_add_supports_type$FUNC
+    );
+    static final FunctionDescriptor g_app_info_can_remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_can_remove_supports_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_can_remove_supports_type",
+        constants$481.g_app_info_can_remove_supports_type$FUNC
     );
 }
 

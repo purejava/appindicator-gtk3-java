@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1841 {
+final class constants$1841 {
 
-    static final FunctionDescriptor gtk_icon_info_get_base_scale$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_base_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_base_scale",
-        constants$1841.gtk_icon_info_get_base_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_filename",
-        constants$1841.gtk_icon_info_get_filename$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_builtin_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_builtin_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_builtin_pixbuf",
-        constants$1841.gtk_icon_info_get_builtin_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_is_symbolic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_is_symbolic$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_is_symbolic",
-        constants$1841.gtk_icon_info_is_symbolic$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1841() {}
+    static final FunctionDescriptor gtk_text_view_get_visible_rect$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_load_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_icon",
-        constants$1841.gtk_icon_info_load_icon$FUNC
+    static final MethodHandle gtk_text_view_get_visible_rect$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_visible_rect",
+        constants$1841.gtk_text_view_get_visible_rect$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_load_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_set_cursor_visible$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_set_cursor_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_cursor_visible",
+        constants$1841.gtk_text_view_set_cursor_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_cursor_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_cursor_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_cursor_visible",
+        constants$1841.gtk_text_view_get_cursor_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_reset_cursor_blink$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_reset_cursor_blink$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_reset_cursor_blink",
+        constants$1841.gtk_text_view_reset_cursor_blink$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_cursor_locations$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_load_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_surface",
-        constants$1841.gtk_icon_info_load_surface$FUNC
+    static final MethodHandle gtk_text_view_get_cursor_locations$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_cursor_locations",
+        constants$1841.gtk_text_view_get_cursor_locations$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_iter_location$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_iter_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_iter_location",
+        constants$1841.gtk_text_view_get_iter_location$FUNC
     );
 }
 

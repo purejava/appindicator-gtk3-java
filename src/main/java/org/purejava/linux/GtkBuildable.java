@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkBuildable {
+/**
+ * {@snippet :
+ * typedef struct _GtkBuildable GtkBuildable;
+ * }
+ */
+public final class GtkBuildable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkBuildable() {}
 }
 
 

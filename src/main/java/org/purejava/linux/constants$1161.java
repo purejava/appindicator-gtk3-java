@@ -7,61 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1161 {
+final class constants$1161 {
 
-    static final FunctionDescriptor cairo_device_to_user_distance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1161() {}
+    static final FunctionDescriptor gdk_device_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_device_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_type_get_type",
+        constants$1161.gdk_device_type_get_type$FUNC
     );
-    static final MethodHandle cairo_device_to_user_distance$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_to_user_distance",
-        constants$1161.cairo_device_to_user_distance$FUNC
+    static final FunctionDescriptor gdk_device_pad_feature_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_device_pad_feature_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_feature_get_type",
+        constants$1161.gdk_device_pad_feature_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_new_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_device_tool_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_device_tool_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_type_get_type",
+        constants$1161.gdk_device_tool_type_get_type$FUNC
     );
-    static final MethodHandle cairo_new_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_new_path",
-        constants$1161.cairo_new_path$FUNC
+    static final FunctionDescriptor gdk_drag_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_drag_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_action_get_type",
+        constants$1161.gdk_drag_action_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_move_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_drag_cancel_reason_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_drag_cancel_reason_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_cancel_reason_get_type",
+        constants$1161.gdk_drag_cancel_reason_get_type$FUNC
     );
-    static final MethodHandle cairo_move_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_move_to",
-        constants$1161.cairo_move_to$FUNC
-    );
-    static final FunctionDescriptor cairo_new_sub_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_new_sub_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_new_sub_path",
-        constants$1161.cairo_new_sub_path$FUNC
-    );
-    static final FunctionDescriptor cairo_line_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_line_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_line_to",
-        constants$1161.cairo_line_to$FUNC
-    );
-    static final FunctionDescriptor cairo_curve_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_curve_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_curve_to",
-        constants$1161.cairo_curve_to$FUNC
+    static final FunctionDescriptor gdk_drag_protocol_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_drag_protocol_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_protocol_get_type",
+        constants$1161.gdk_drag_protocol_get_type$FUNC
     );
 }
 

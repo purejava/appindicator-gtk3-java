@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GNetworkMonitorInterface {
+ *     GTypeInterface g_iface;
+ *     void (*network_changed)(GNetworkMonitor*,gboolean);
+ *     gboolean (*can_reach)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GError**);
+ *     void (*can_reach_async)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*can_reach_finish)(GNetworkMonitor*,GAsyncResult*,GError**);
+ * };
+ * }
+ */
 public class _GNetworkMonitorInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -29,20 +40,34 @@ public class _GNetworkMonitorInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle network_changed$MH = RuntimeHelper.downcallHandle(
-        _GNetworkMonitorInterface.network_changed$FUNC
+    static final FunctionDescriptor network_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle network_changed_UP$MH = RuntimeHelper.upcallHandle(network_changed.class, "apply", _GNetworkMonitorInterface.network_changed_UP$FUNC);
+    static final FunctionDescriptor network_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle network_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GNetworkMonitorInterface.network_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*network_changed)(GNetworkMonitor*,gboolean);
+     * }
+     */
     public interface network_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(network_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(network_changed.class, fi, _GNetworkMonitorInterface.network_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(network_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GNetworkMonitorInterface.network_changed_UP$MH, fi, _GNetworkMonitorInterface.network_changed$FUNC, scope);
         }
-        static network_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static network_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GNetworkMonitorInterface.network_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GNetworkMonitorInterface.network_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,20 +79,32 @@ public class _GNetworkMonitorInterface {
     public static VarHandle network_changed$VH() {
         return _GNetworkMonitorInterface.network_changed$VH;
     }
-    public static MemoryAddress network_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.network_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*network_changed)(GNetworkMonitor*,gboolean);
+     * }
+     */
+    public static MemorySegment network_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.network_changed$VH.get(seg);
     }
-    public static void network_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*network_changed)(GNetworkMonitor*,gboolean);
+     * }
+     */
+    public static void network_changed$set(MemorySegment seg, MemorySegment x) {
         _GNetworkMonitorInterface.network_changed$VH.set(seg, x);
     }
-    public static MemoryAddress network_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.network_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment network_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.network_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void network_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void network_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GNetworkMonitorInterface.network_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static network_changed network_changed (MemorySegment segment, MemorySession session) {
-        return network_changed.ofAddress(network_changed$get(segment), session);
+    public static network_changed network_changed(MemorySegment segment, SegmentScope scope) {
+        return network_changed.ofAddress(network_changed$get(segment), scope);
     }
     static final FunctionDescriptor can_reach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -75,20 +112,38 @@ public class _GNetworkMonitorInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_reach$MH = RuntimeHelper.downcallHandle(
-        _GNetworkMonitorInterface.can_reach$FUNC
+    static final FunctionDescriptor can_reach_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_reach_UP$MH = RuntimeHelper.upcallHandle(can_reach.class, "apply", _GNetworkMonitorInterface.can_reach_UP$FUNC);
+    static final FunctionDescriptor can_reach_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_reach_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GNetworkMonitorInterface.can_reach_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_reach)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GError**);
+     * }
+     */
     public interface can_reach {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(can_reach fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_reach.class, fi, _GNetworkMonitorInterface.can_reach$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(can_reach fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GNetworkMonitorInterface.can_reach_UP$MH, fi, _GNetworkMonitorInterface.can_reach$FUNC, scope);
         }
-        static can_reach ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static can_reach ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GNetworkMonitorInterface.can_reach$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GNetworkMonitorInterface.can_reach_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -100,20 +155,32 @@ public class _GNetworkMonitorInterface {
     public static VarHandle can_reach$VH() {
         return _GNetworkMonitorInterface.can_reach$VH;
     }
-    public static MemoryAddress can_reach$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_reach)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment can_reach$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach$VH.get(seg);
     }
-    public static void can_reach$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_reach)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GError**);
+     * }
+     */
+    public static void can_reach$set(MemorySegment seg, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach$VH.set(seg, x);
     }
-    public static MemoryAddress can_reach$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_reach$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_reach$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_reach$set(MemorySegment seg, long index, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_reach can_reach (MemorySegment segment, MemorySession session) {
-        return can_reach.ofAddress(can_reach$get(segment), session);
+    public static can_reach can_reach(MemorySegment segment, SegmentScope scope) {
+        return can_reach.ofAddress(can_reach$get(segment), scope);
     }
     static final FunctionDescriptor can_reach_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -122,20 +189,40 @@ public class _GNetworkMonitorInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_reach_async$MH = RuntimeHelper.downcallHandle(
-        _GNetworkMonitorInterface.can_reach_async$FUNC
+    static final FunctionDescriptor can_reach_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_reach_async_UP$MH = RuntimeHelper.upcallHandle(can_reach_async.class, "apply", _GNetworkMonitorInterface.can_reach_async_UP$FUNC);
+    static final FunctionDescriptor can_reach_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_reach_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GNetworkMonitorInterface.can_reach_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*can_reach_async)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface can_reach_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(can_reach_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_reach_async.class, fi, _GNetworkMonitorInterface.can_reach_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(can_reach_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GNetworkMonitorInterface.can_reach_async_UP$MH, fi, _GNetworkMonitorInterface.can_reach_async$FUNC, scope);
         }
-        static can_reach_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static can_reach_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GNetworkMonitorInterface.can_reach_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GNetworkMonitorInterface.can_reach_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -147,40 +234,68 @@ public class _GNetworkMonitorInterface {
     public static VarHandle can_reach_async$VH() {
         return _GNetworkMonitorInterface.can_reach_async$VH;
     }
-    public static MemoryAddress can_reach_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*can_reach_async)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment can_reach_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach_async$VH.get(seg);
     }
-    public static void can_reach_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*can_reach_async)(GNetworkMonitor*,GSocketConnectable*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void can_reach_async$set(MemorySegment seg, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach_async$VH.set(seg, x);
     }
-    public static MemoryAddress can_reach_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_reach_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_reach_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_reach_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_reach_async can_reach_async (MemorySegment segment, MemorySession session) {
-        return can_reach_async.ofAddress(can_reach_async$get(segment), session);
+    public static can_reach_async can_reach_async(MemorySegment segment, SegmentScope scope) {
+        return can_reach_async.ofAddress(can_reach_async$get(segment), scope);
     }
     static final FunctionDescriptor can_reach_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_reach_finish$MH = RuntimeHelper.downcallHandle(
-        _GNetworkMonitorInterface.can_reach_finish$FUNC
+    static final FunctionDescriptor can_reach_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_reach_finish_UP$MH = RuntimeHelper.upcallHandle(can_reach_finish.class, "apply", _GNetworkMonitorInterface.can_reach_finish_UP$FUNC);
+    static final FunctionDescriptor can_reach_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_reach_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GNetworkMonitorInterface.can_reach_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_reach_finish)(GNetworkMonitor*,GAsyncResult*,GError**);
+     * }
+     */
     public interface can_reach_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(can_reach_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_reach_finish.class, fi, _GNetworkMonitorInterface.can_reach_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(can_reach_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GNetworkMonitorInterface.can_reach_finish_UP$MH, fi, _GNetworkMonitorInterface.can_reach_finish$FUNC, scope);
         }
-        static can_reach_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static can_reach_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GNetworkMonitorInterface.can_reach_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GNetworkMonitorInterface.can_reach_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -192,27 +307,39 @@ public class _GNetworkMonitorInterface {
     public static VarHandle can_reach_finish$VH() {
         return _GNetworkMonitorInterface.can_reach_finish$VH;
     }
-    public static MemoryAddress can_reach_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_reach_finish)(GNetworkMonitor*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment can_reach_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach_finish$VH.get(seg);
     }
-    public static void can_reach_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_reach_finish)(GNetworkMonitor*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void can_reach_finish$set(MemorySegment seg, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach_finish$VH.set(seg, x);
     }
-    public static MemoryAddress can_reach_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNetworkMonitorInterface.can_reach_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_reach_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNetworkMonitorInterface.can_reach_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_reach_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_reach_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GNetworkMonitorInterface.can_reach_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_reach_finish can_reach_finish (MemorySegment segment, MemorySession session) {
-        return can_reach_finish.ofAddress(can_reach_finish$get(segment), session);
+    public static can_reach_finish can_reach_finish(MemorySegment segment, SegmentScope scope) {
+        return can_reach_finish.ofAddress(can_reach_finish$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,68 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$681 {
+final class constants$681 {
 
-    static final FunctionDescriptor g_file_eject_mountable_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$681() {}
+    static final FunctionDescriptor g_memory_monitor_warning_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_memory_monitor_warning_level_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_warning_level_get_type",
+        constants$681.g_memory_monitor_warning_level_get_type$FUNC
+    );
+    static final FunctionDescriptor g_resolver_name_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resolver_name_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_name_lookup_flags_get_type",
+        constants$681.g_resolver_name_lookup_flags_get_type$FUNC
+    );
+    static final FunctionDescriptor g_settings_bind_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_settings_bind_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_settings_bind_flags_get_type",
+        constants$681.g_settings_bind_flags_get_type$FUNC
+    );
+    static final FunctionDescriptor GModuleCheckInit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_eject_mountable_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable_with_operation_finish",
-        constants$681.g_file_eject_mountable_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_build_attribute_list_for_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GModuleCheckInit_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_build_attribute_list_for_copy$MH = RuntimeHelper.downcallHandle(
-        "g_file_build_attribute_list_for_copy",
-        constants$681.g_file_build_attribute_list_for_copy$FUNC
-    );
-    static final FunctionDescriptor g_file_copy_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GModuleCheckInit_UP$MH = RuntimeHelper.upcallHandle(GModuleCheckInit.class, "apply", constants$681.GModuleCheckInit_UP$FUNC);
+    static final FunctionDescriptor GModuleCheckInit_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_copy_attributes$MH = RuntimeHelper.downcallHandle(
-        "g_file_copy_attributes",
-        constants$681.g_file_copy_attributes$FUNC
+    static final MethodHandle GModuleCheckInit_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$681.GModuleCheckInit_DOWN$FUNC
     );
-    static final FunctionDescriptor g_file_monitor_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GModuleUnload$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_monitor_directory$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_directory",
-        constants$681.g_file_monitor_directory$FUNC
-    );
-    static final FunctionDescriptor g_file_monitor_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GModuleUnload_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_monitor_file$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_file",
-        constants$681.g_file_monitor_file$FUNC
-    );
-    static final FunctionDescriptor g_file_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_monitor$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor",
-        constants$681.g_file_monitor$FUNC
-    );
+    static final MethodHandle GModuleUnload_UP$MH = RuntimeHelper.upcallHandle(GModuleUnload.class, "apply", constants$681.GModuleUnload_UP$FUNC);
 }
 
 

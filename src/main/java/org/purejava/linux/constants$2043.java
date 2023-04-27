@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2043 {
+final class constants$2043 {
 
-    static final FunctionDescriptor gtk_text_view_get_wrap_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_wrap_mode",
-        constants$2043.gtk_text_view_get_wrap_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_editable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_editable$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_editable",
-        constants$2043.gtk_text_view_set_editable$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_editable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_editable$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_editable",
-        constants$2043.gtk_text_view_get_editable$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_overwrite$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_overwrite$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_overwrite",
-        constants$2043.gtk_text_view_set_overwrite$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_overwrite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_overwrite$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_overwrite",
-        constants$2043.gtk_text_view_get_overwrite$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_accepts_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_accepts_tab$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_accepts_tab",
-        constants$2043.gtk_text_view_set_accepts_tab$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2043() {}
+    static final MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("high");
+    static final MemorySegment GTK_LEVEL_BAR_OFFSET_FULL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("full");
+    static final MemorySegment GTK_PAPER_NAME_A3$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("iso_a3");
+    static final MemorySegment GTK_PAPER_NAME_A4$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("iso_a4");
+    static final MemorySegment GTK_PAPER_NAME_A5$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("iso_a5");
+    static final MemorySegment GTK_PAPER_NAME_B5$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("iso_b5");
 }
 
 

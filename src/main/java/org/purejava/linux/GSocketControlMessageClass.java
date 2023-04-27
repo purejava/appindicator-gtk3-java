@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSocketControlMessageClass extends _GSocketControlMessageClass {
+/**
+ * {@snippet :
+ * typedef struct _GSocketControlMessageClass GSocketControlMessageClass;
+ * }
+ */
+public final class GSocketControlMessageClass extends _GSocketControlMessageClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSocketControlMessageClass() {}
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkBuilderConnectFunc)(struct _GtkBuilder* builder,struct _GObject* object,char* signal_name,char* handler_name,struct _GObject* connect_object,enum  flags,void* user_data);
+ * }
+ */
 public interface GtkBuilderConnectFunc {
 
-    void apply(java.lang.foreign.MemoryAddress builder, java.lang.foreign.MemoryAddress object, java.lang.foreign.MemoryAddress signal_name, java.lang.foreign.MemoryAddress handler_name, java.lang.foreign.MemoryAddress connect_object, int flags, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkBuilderConnectFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkBuilderConnectFunc.class, fi, constants$1373.GtkBuilderConnectFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment builder, java.lang.foreign.MemorySegment object, java.lang.foreign.MemorySegment signal_name, java.lang.foreign.MemorySegment handler_name, java.lang.foreign.MemorySegment connect_object, int flags, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkBuilderConnectFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1195.GtkBuilderConnectFunc_UP$MH, fi, constants$1195.GtkBuilderConnectFunc$FUNC, scope);
     }
-    static GtkBuilderConnectFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _builder, java.lang.foreign.MemoryAddress _object, java.lang.foreign.MemoryAddress _signal_name, java.lang.foreign.MemoryAddress _handler_name, java.lang.foreign.MemoryAddress _connect_object, int _flags, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkBuilderConnectFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _builder, java.lang.foreign.MemorySegment _object, java.lang.foreign.MemorySegment _signal_name, java.lang.foreign.MemorySegment _handler_name, java.lang.foreign.MemorySegment _connect_object, int _flags, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1373.GtkBuilderConnectFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_builder, (java.lang.foreign.Addressable)_object, (java.lang.foreign.Addressable)_signal_name, (java.lang.foreign.Addressable)_handler_name, (java.lang.foreign.Addressable)_connect_object, _flags, (java.lang.foreign.Addressable)_user_data);
+                constants$1195.GtkBuilderConnectFunc_DOWN$MH.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkIconViewForeachFunc)(struct _GtkIconView* icon_view,struct _GtkTreePath* path,void* data);
+ * }
+ */
 public interface GtkIconViewForeachFunc {
 
-    void apply(java.lang.foreign.MemoryAddress icon_view, java.lang.foreign.MemoryAddress path, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkIconViewForeachFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkIconViewForeachFunc.class, fi, constants$1845.GtkIconViewForeachFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkIconViewForeachFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1650.GtkIconViewForeachFunc_UP$MH, fi, constants$1650.GtkIconViewForeachFunc$FUNC, scope);
     }
-    static GtkIconViewForeachFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _icon_view, java.lang.foreign.MemoryAddress _path, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkIconViewForeachFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1846.GtkIconViewForeachFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_icon_view, (java.lang.foreign.Addressable)_path, (java.lang.foreign.Addressable)_data);
+                constants$1650.GtkIconViewForeachFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

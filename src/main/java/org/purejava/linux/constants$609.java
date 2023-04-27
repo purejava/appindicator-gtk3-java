@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$609 {
+final class constants$609 {
 
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$609() {}
+    static final FunctionDescriptor g_dtls_connection_get_protocol_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_get_properties$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_properties",
-        constants$609.g_dbus_interface_skeleton_get_properties$FUNC
+    static final MethodHandle g_dtls_connection_get_protocol_version$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_protocol_version",
+        constants$609.g_dtls_connection_get_protocol_version$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_flush$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_dtls_connection_get_ciphersuite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_flush$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_flush",
-        constants$609.g_dbus_interface_skeleton_flush$FUNC
+    static final MethodHandle g_dtls_connection_get_ciphersuite_name$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_ciphersuite_name",
+        constants$609.g_dtls_connection_get_ciphersuite_name$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_export$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dtls_client_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dtls_client_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_get_type",
+        constants$609.g_dtls_client_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dtls_client_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dtls_client_connection_new$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_new",
+        constants$609.g_dtls_client_connection_new$FUNC
+    );
+    static final FunctionDescriptor g_dtls_client_connection_get_validation_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dtls_client_connection_get_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_get_validation_flags",
+        constants$609.g_dtls_client_connection_get_validation_flags$FUNC
+    );
+    static final FunctionDescriptor g_dtls_client_connection_set_validation_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_export$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_export",
-        constants$609.g_dbus_interface_skeleton_export$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_skeleton_unexport$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_unexport$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_unexport",
-        constants$609.g_dbus_interface_skeleton_unexport$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_skeleton_unexport_from_connection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_unexport_from_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_unexport_from_connection",
-        constants$609.g_dbus_interface_skeleton_unexport_from_connection$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_get_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_connection",
-        constants$609.g_dbus_interface_skeleton_get_connection$FUNC
+    static final MethodHandle g_dtls_client_connection_set_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_set_validation_flags",
+        constants$609.g_dtls_client_connection_set_validation_flags$FUNC
     );
 }
 

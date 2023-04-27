@@ -7,48 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2000 {
+final class constants$2000 {
 
-    static final FunctionDescriptor gtk_scrolled_window_get_propagate_natural_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_propagate_natural_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_propagate_natural_height",
-        constants$2000.gtk_scrolled_window_get_propagate_natural_height$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_search_bar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_get_type",
-        constants$2000.gtk_search_bar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_search_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_new",
-        constants$2000.gtk_search_bar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_connect_entry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_connect_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_connect_entry",
-        constants$2000.gtk_search_bar_connect_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_get_search_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_get_search_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_get_search_mode",
-        constants$2000.gtk_search_bar_get_search_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_set_search_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_set_search_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_set_search_mode",
-        constants$2000.gtk_search_bar_set_search_mode$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2000() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-virtual");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-volatile");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::name");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::display-name");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::edit-name");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::copy-name");
 }
 
 

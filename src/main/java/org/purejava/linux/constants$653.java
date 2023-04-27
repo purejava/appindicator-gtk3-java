@@ -7,63 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$653 {
+final class constants$653 {
 
-    static final FunctionDescriptor g_drive_can_start_degraded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$653() {}
+    static final FunctionDescriptor g_file_attribute_matcher_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_can_start_degraded$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_start_degraded",
-        constants$653.g_drive_can_start_degraded$FUNC
+    static final MethodHandle g_file_attribute_matcher_new$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_new",
+        constants$653.g_file_attribute_matcher_new$FUNC
     );
-    static final FunctionDescriptor g_drive_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_attribute_matcher_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_start$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start",
-        constants$653.g_drive_start$FUNC
+    static final MethodHandle g_file_attribute_matcher_ref$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_ref",
+        constants$653.g_file_attribute_matcher_ref$FUNC
     );
-    static final FunctionDescriptor g_drive_start_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_attribute_matcher_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_start_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start_finish",
-        constants$653.g_drive_start_finish$FUNC
+    static final MethodHandle g_file_attribute_matcher_unref$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_unref",
+        constants$653.g_file_attribute_matcher_unref$FUNC
     );
-    static final FunctionDescriptor g_drive_can_stop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_can_stop$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_stop",
-        constants$653.g_drive_can_stop$FUNC
-    );
-    static final FunctionDescriptor g_drive_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_attribute_matcher_subtract$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_stop$MH = RuntimeHelper.downcallHandle(
-        "g_drive_stop",
-        constants$653.g_drive_stop$FUNC
+    static final MethodHandle g_file_attribute_matcher_subtract$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_subtract",
+        constants$653.g_file_attribute_matcher_subtract$FUNC
     );
-    static final FunctionDescriptor g_drive_stop_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_attribute_matcher_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_stop_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_stop_finish",
-        constants$653.g_drive_stop_finish$FUNC
+    static final MethodHandle g_file_attribute_matcher_matches$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches",
+        constants$653.g_file_attribute_matcher_matches$FUNC
+    );
+    static final FunctionDescriptor g_file_attribute_matcher_matches_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_attribute_matcher_matches_only$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches_only",
+        constants$653.g_file_attribute_matcher_matches_only$FUNC
     );
 }
 

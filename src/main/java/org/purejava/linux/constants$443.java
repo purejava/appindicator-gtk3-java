@@ -7,59 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$443 {
+final class constants$443 {
 
-    static final FunctionDescriptor GVaClosureMarshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$443() {}
+    static final FunctionDescriptor g_weak_ref_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GVaClosureMarshal$MH = RuntimeHelper.downcallHandle(
-        constants$443.GVaClosureMarshal$FUNC
+    static final MethodHandle g_weak_ref_get$MH = RuntimeHelper.downcallHandle(
+        "g_weak_ref_get",
+        constants$443.g_weak_ref_get$FUNC
     );
-    static final FunctionDescriptor g_cclosure_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_weak_ref_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_new$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_new",
-        constants$443.g_cclosure_new$FUNC
+    static final MethodHandle g_weak_ref_set$MH = RuntimeHelper.downcallHandle(
+        "g_weak_ref_set",
+        constants$443.g_weak_ref_set$FUNC
     );
-    static final FunctionDescriptor g_cclosure_new_swap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GBindingTransformFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_new_swap$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_new_swap",
-        constants$443.g_cclosure_new_swap$FUNC
-    );
-    static final FunctionDescriptor g_signal_type_cclosure_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_type_cclosure_new$MH = RuntimeHelper.downcallHandle(
-        "g_signal_type_cclosure_new",
-        constants$443.g_signal_type_cclosure_new$FUNC
-    );
-    static final FunctionDescriptor g_closure_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GBindingTransformFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_ref$MH = RuntimeHelper.downcallHandle(
-        "g_closure_ref",
-        constants$443.g_closure_ref$FUNC
-    );
-    static final FunctionDescriptor g_closure_sink$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GBindingTransformFunc_UP$MH = RuntimeHelper.upcallHandle(GBindingTransformFunc.class, "apply", constants$443.GBindingTransformFunc_UP$FUNC);
+    static final FunctionDescriptor GBindingTransformFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_sink$MH = RuntimeHelper.downcallHandle(
-        "g_closure_sink",
-        constants$443.g_closure_sink$FUNC
+    static final MethodHandle GBindingTransformFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$443.GBindingTransformFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_binding_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_binding_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_binding_flags_get_type",
+        constants$443.g_binding_flags_get_type$FUNC
+    );
+    static final FunctionDescriptor g_binding_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_binding_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_type",
+        constants$443.g_binding_get_type$FUNC
     );
 }
 

@@ -7,49 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$964 {
+final class constants$964 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GSocketClient$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$964() {}
+    static final FunctionDescriptor pango_layout_index_to_pos$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSocketClient$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSocketClient",
-        constants$964.glib_autoptr_cleanup_GSocketClient$FUNC
+    static final MethodHandle pango_layout_index_to_pos$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_index_to_pos",
+        constants$964.pango_layout_index_to_pos$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSocketClient$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_index_to_line_x$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSocketClient$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSocketClient",
-        constants$964.glib_listautoptr_cleanup_GSocketClient$FUNC
+    static final MethodHandle pango_layout_index_to_line_x$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_index_to_line_x",
+        constants$964.pango_layout_index_to_line_x$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSocketClient$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_get_cursor_pos$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSocketClient$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSocketClient",
-        constants$964.glib_slistautoptr_cleanup_GSocketClient$FUNC
+    static final MethodHandle pango_layout_get_cursor_pos$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_cursor_pos",
+        constants$964.pango_layout_get_cursor_pos$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSocketClient$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_get_caret_pos$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSocketClient$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSocketClient",
-        constants$964.glib_queueautoptr_cleanup_GSocketClient$FUNC
+    static final MethodHandle pango_layout_get_caret_pos$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_caret_pos",
+        constants$964.pango_layout_get_caret_pos$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSocketConnectable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_move_cursor_visually$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSocketConnectable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSocketConnectable",
-        constants$964.glib_autoptr_clear_GSocketConnectable$FUNC
+    static final MethodHandle pango_layout_move_cursor_visually$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_move_cursor_visually",
+        constants$964.pango_layout_move_cursor_visually$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSocketConnectable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_xy_to_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSocketConnectable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSocketConnectable",
-        constants$964.glib_autoptr_cleanup_GSocketConnectable$FUNC
+    static final MethodHandle pango_layout_xy_to_index$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_xy_to_index",
+        constants$964.pango_layout_xy_to_index$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCalendar extends _GtkCalendar {
+/**
+ * {@snippet :
+ * typedef struct _GtkCalendar GtkCalendar;
+ * }
+ */
+public final class GtkCalendar extends _GtkCalendar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCalendar() {}
 }
 
 

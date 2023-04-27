@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFontChooserWidgetClass extends _GtkFontChooserWidgetClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkFontChooserWidgetClass GtkFontChooserWidgetClass;
+ * }
+ */
+public final class GtkFontChooserWidgetClass extends _GtkFontChooserWidgetClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFontChooserWidgetClass() {}
 }
 
 

@@ -7,59 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1186 {
+final class constants$1186 {
 
-    static final FunctionDescriptor cairo_device_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1186() {}
+    static final FunctionDescriptor gdk_visual_get_best_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_visual_get_best_depth$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_depth",
+        constants$1186.gdk_visual_get_best_depth$FUNC
     );
-    static final MethodHandle cairo_device_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_destroy",
-        constants$1186.cairo_device_destroy$FUNC
+    static final FunctionDescriptor gdk_visual_get_best_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_visual_get_best_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_type",
+        constants$1186.gdk_visual_get_best_type$FUNC
     );
-    static final FunctionDescriptor cairo_device_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_visual_get_system$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_visual_get_system$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_system",
+        constants$1186.gdk_visual_get_system$FUNC
     );
-    static final MethodHandle cairo_device_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_get_reference_count",
-        constants$1186.cairo_device_get_reference_count$FUNC
+    static final FunctionDescriptor gdk_visual_get_best$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_visual_get_best$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best",
+        constants$1186.gdk_visual_get_best$FUNC
     );
-    static final FunctionDescriptor cairo_device_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_get_user_data",
-        constants$1186.cairo_device_get_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_device_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_set_user_data",
-        constants$1186.cairo_device_set_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_create_similar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_visual_get_best_with_depth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_create_similar$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_similar",
-        constants$1186.cairo_surface_create_similar$FUNC
+    static final MethodHandle gdk_visual_get_best_with_depth$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_depth",
+        constants$1186.gdk_visual_get_best_with_depth$FUNC
     );
-    static final FunctionDescriptor cairo_surface_create_similar_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_visual_get_best_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_create_similar_image$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_similar_image",
-        constants$1186.cairo_surface_create_similar_image$FUNC
+    static final MethodHandle gdk_visual_get_best_with_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_type",
+        constants$1186.gdk_visual_get_best_with_type$FUNC
     );
 }
 

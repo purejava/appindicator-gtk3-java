@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$268 {
+final class constants$268 {
 
-    static final FunctionDescriptor g_rand_int_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$268() {}
+    static final FunctionDescriptor g_option_group_set_parse_hooks$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_rand_int_range$MH = RuntimeHelper.downcallHandle(
-        "g_rand_int_range",
-        constants$268.g_rand_int_range$FUNC
-    );
-    static final FunctionDescriptor g_rand_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rand_double$MH = RuntimeHelper.downcallHandle(
-        "g_rand_double",
-        constants$268.g_rand_double$FUNC
+    static final MethodHandle g_option_group_set_parse_hooks$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_set_parse_hooks",
+        constants$268.g_option_group_set_parse_hooks$FUNC
     );
-    static final FunctionDescriptor g_rand_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor g_option_group_set_error_hook$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rand_double_range$MH = RuntimeHelper.downcallHandle(
-        "g_rand_double_range",
-        constants$268.g_rand_double_range$FUNC
+    static final MethodHandle g_option_group_set_error_hook$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_set_error_hook",
+        constants$268.g_option_group_set_error_hook$FUNC
     );
-    static final FunctionDescriptor g_random_set_seed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_option_group_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_random_set_seed$MH = RuntimeHelper.downcallHandle(
-        "g_random_set_seed",
-        constants$268.g_random_set_seed$FUNC
+    static final MethodHandle g_option_group_free$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_free",
+        constants$268.g_option_group_free$FUNC
     );
-    static final FunctionDescriptor g_random_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_random_int$MH = RuntimeHelper.downcallHandle(
-        "g_random_int",
-        constants$268.g_random_int$FUNC
+    static final FunctionDescriptor g_option_group_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_random_int_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle g_option_group_ref$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_ref",
+        constants$268.g_option_group_ref$FUNC
     );
-    static final MethodHandle g_random_int_range$MH = RuntimeHelper.downcallHandle(
-        "g_random_int_range",
-        constants$268.g_random_int_range$FUNC
+    static final FunctionDescriptor g_option_group_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_option_group_unref$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_unref",
+        constants$268.g_option_group_unref$FUNC
+    );
+    static final FunctionDescriptor g_option_group_add_entries$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_option_group_add_entries$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_add_entries",
+        constants$268.g_option_group_add_entries$FUNC
     );
 }
 

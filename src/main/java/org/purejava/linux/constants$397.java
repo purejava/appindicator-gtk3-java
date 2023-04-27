@@ -7,49 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$397 {
+final class constants$397 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GPatternSpec$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$397() {}
+    static final FunctionDescriptor g_param_spec_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GPatternSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GPatternSpec",
-        constants$397.glib_autoptr_clear_GPatternSpec$FUNC
+    static final MethodHandle g_param_spec_ref_sink$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_ref_sink",
+        constants$397.g_param_spec_ref_sink$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GPatternSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_get_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_qdata",
+        constants$397.g_param_spec_get_qdata$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_set_qdata$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GPatternSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GPatternSpec",
-        constants$397.glib_autoptr_cleanup_GPatternSpec$FUNC
+    static final MethodHandle g_param_spec_set_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_set_qdata",
+        constants$397.g_param_spec_set_qdata$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GPatternSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_set_qdata_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GPatternSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GPatternSpec",
-        constants$397.glib_listautoptr_cleanup_GPatternSpec$FUNC
+    static final MethodHandle g_param_spec_set_qdata_full$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_set_qdata_full",
+        constants$397.g_param_spec_set_qdata_full$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GPatternSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_steal_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_steal_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_steal_qdata",
+        constants$397.g_param_spec_steal_qdata$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_get_redirect_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GPatternSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GPatternSpec",
-        constants$397.glib_slistautoptr_cleanup_GPatternSpec$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GPatternSpec$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GPatternSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GPatternSpec",
-        constants$397.glib_queueautoptr_cleanup_GPatternSpec$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GQueue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GQueue$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GQueue",
-        constants$397.glib_autoptr_clear_GQueue$FUNC
+    static final MethodHandle g_param_spec_get_redirect_target$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_redirect_target",
+        constants$397.g_param_spec_get_redirect_target$FUNC
     );
 }
 

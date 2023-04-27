@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1913 {
+final class constants$1913 {
 
-    static final FunctionDescriptor gtk_notebook_set_tab_detachable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_set_tab_detachable$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_detachable",
-        constants$1913.gtk_notebook_set_tab_detachable$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_detach_tab$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1913() {}
+    static final FunctionDescriptor gtk_action_set_stock_id$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_detach_tab$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_detach_tab",
-        constants$1913.gtk_notebook_detach_tab$FUNC
+    static final MethodHandle gtk_action_set_stock_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_stock_id",
+        constants$1913.gtk_action_set_stock_id$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_action_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_stock_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_get_stock_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_stock_id",
+        constants$1913.gtk_action_get_stock_id$FUNC
+    );
+    static final FunctionDescriptor gtk_action_set_gicon$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_action_widget",
-        constants$1913.gtk_notebook_get_action_widget$FUNC
+    static final MethodHandle gtk_action_set_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_gicon",
+        constants$1913.gtk_action_set_gicon$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_set_action_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_get_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_get_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_gicon",
+        constants$1913.gtk_action_get_gicon$FUNC
+    );
+    static final FunctionDescriptor gtk_action_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_set_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_action_widget",
-        constants$1913.gtk_notebook_set_action_widget$FUNC
+    static final MethodHandle gtk_action_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_icon_name",
+        constants$1913.gtk_action_set_icon_name$FUNC
     );
-    static final FunctionDescriptor gtk_offscreen_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_offscreen_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_type",
-        constants$1913.gtk_offscreen_window_get_type$FUNC
+    static final FunctionDescriptor gtk_action_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_offscreen_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_offscreen_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_new",
-        constants$1913.gtk_offscreen_window_new$FUNC
+    static final MethodHandle gtk_action_get_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_icon_name",
+        constants$1913.gtk_action_get_icon_name$FUNC
     );
 }
 

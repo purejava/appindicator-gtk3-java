@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMountOperation extends _GMountOperation {
+/**
+ * {@snippet :
+ * typedef struct _GMountOperation GMountOperation;
+ * }
+ */
+public final class GMountOperation extends _GMountOperation {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMountOperation() {}
 }
 
 

@@ -7,48 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$497 {
+final class constants$497 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTypeModule$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GTypeModule$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTypeModule",
-        constants$497.glib_slistautoptr_cleanup_GTypeModule$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTypeModule$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GTypeModule$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTypeModule",
-        constants$497.glib_queueautoptr_cleanup_GTypeModule$FUNC
-    );
-    static final FunctionDescriptor g_type_module_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_type_module_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_get_type",
-        constants$497.g_type_module_get_type$FUNC
-    );
-    static final FunctionDescriptor g_type_module_use$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_use$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_use",
-        constants$497.g_type_module_use$FUNC
-    );
-    static final FunctionDescriptor g_type_module_unuse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_unuse$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_unuse",
-        constants$497.g_type_module_unuse$FUNC
-    );
-    static final FunctionDescriptor g_type_module_set_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$497() {}
+    static final FunctionDescriptor g_async_initable_newv_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_module_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_set_name",
-        constants$497.g_type_module_set_name$FUNC
+    static final MethodHandle g_async_initable_newv_async$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_newv_async",
+        constants$497.g_async_initable_newv_async$FUNC
+    );
+    static final FunctionDescriptor g_async_initable_new_valist_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_initable_new_valist_async$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_new_valist_async",
+        constants$497.g_async_initable_new_valist_async$FUNC
+    );
+    static final FunctionDescriptor g_async_initable_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_initable_new_finish$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_new_finish",
+        constants$497.g_async_initable_new_finish$FUNC
+    );
+    static final FunctionDescriptor g_async_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_async_result_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_async_result_get_type",
+        constants$497.g_async_result_get_type$FUNC
+    );
+    static final FunctionDescriptor g_async_result_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_result_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "g_async_result_get_user_data",
+        constants$497.g_async_result_get_user_data$FUNC
+    );
+    static final FunctionDescriptor g_async_result_get_source_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_result_get_source_object$MH = RuntimeHelper.downcallHandle(
+        "g_async_result_get_source_object",
+        constants$497.g_async_result_get_source_object$FUNC
     );
 }
 

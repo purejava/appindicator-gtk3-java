@@ -7,56 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1684 {
+final class constants$1684 {
 
-    static final FunctionDescriptor gtk_frame_set_label_align$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1684() {}
+    static final FunctionDescriptor gtk_get_locale_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_locale_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_locale_direction",
+        constants$1684.gtk_get_locale_direction$FUNC
     );
-    static final MethodHandle gtk_frame_set_label_align$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_set_label_align",
-        constants$1684.gtk_frame_set_label_align$FUNC
+    static final FunctionDescriptor gtk_events_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_events_pending$MH = RuntimeHelper.downcallHandle(
+        "gtk_events_pending",
+        constants$1684.gtk_events_pending$FUNC
     );
-    static final FunctionDescriptor gtk_frame_get_label_align$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_main_do_event$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_frame_get_label_align$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_get_label_align",
-        constants$1684.gtk_frame_get_label_align$FUNC
+    static final MethodHandle gtk_main_do_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_main_do_event",
+        constants$1684.gtk_main_do_event$FUNC
     );
-    static final FunctionDescriptor gtk_frame_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$1684.gtk_main$FUNC
     );
-    static final MethodHandle gtk_frame_set_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_set_shadow_type",
-        constants$1684.gtk_frame_set_shadow_type$FUNC
+    static final FunctionDescriptor gtk_main_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_main_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_main_level",
+        constants$1684.gtk_main_level$FUNC
     );
-    static final FunctionDescriptor gtk_frame_get_shadow_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_frame_get_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_get_shadow_type",
-        constants$1684.gtk_frame_get_shadow_type$FUNC
-    );
-    static final FunctionDescriptor gtk_aspect_frame_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_aspect_frame_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_aspect_frame_get_type",
-        constants$1684.gtk_aspect_frame_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_aspect_frame_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_aspect_frame_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_aspect_frame_new",
-        constants$1684.gtk_aspect_frame_new$FUNC
+    static final FunctionDescriptor gtk_main_quit$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_main_quit$MH = RuntimeHelper.downcallHandle(
+        "gtk_main_quit",
+        constants$1684.gtk_main_quit$FUNC
     );
 }
 

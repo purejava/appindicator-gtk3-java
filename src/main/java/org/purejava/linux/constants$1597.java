@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1597 {
+final class constants$1597 {
 
-    static final FunctionDescriptor gtk_text_iter_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1597() {}
+    static final FunctionDescriptor gtk_font_chooser_set_font$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_language$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_language",
-        constants$1597.gtk_text_iter_get_language$FUNC
+    static final MethodHandle gtk_font_chooser_set_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_font",
+        constants$1597.gtk_font_chooser_set_font$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_preview_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_is_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_end",
-        constants$1597.gtk_text_iter_is_end$FUNC
+    static final MethodHandle gtk_font_chooser_get_preview_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_preview_text",
+        constants$1597.gtk_font_chooser_get_preview_text$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_is_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_set_preview_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_is_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_start",
-        constants$1597.gtk_text_iter_is_start$FUNC
+    static final MethodHandle gtk_font_chooser_set_preview_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_preview_text",
+        constants$1597.gtk_font_chooser_set_preview_text$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_show_preview_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_char",
-        constants$1597.gtk_text_iter_forward_char$FUNC
+    static final MethodHandle gtk_font_chooser_get_show_preview_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_show_preview_entry",
+        constants$1597.gtk_font_chooser_get_show_preview_entry$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_char",
-        constants$1597.gtk_text_iter_backward_char$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_set_show_preview_entry$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_chars",
-        constants$1597.gtk_text_iter_forward_chars$FUNC
+    static final MethodHandle gtk_font_chooser_set_show_preview_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_show_preview_entry",
+        constants$1597.gtk_font_chooser_set_show_preview_entry$FUNC
+    );
+    static final FunctionDescriptor gtk_font_chooser_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_chooser_set_filter_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_filter_func",
+        constants$1597.gtk_font_chooser_set_filter_func$FUNC
     );
 }
 

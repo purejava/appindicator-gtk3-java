@@ -7,54 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1620 {
+final class constants$1620 {
 
-    static final FunctionDescriptor gtk_im_context_set_client_window$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1620() {}
+    static final FunctionDescriptor gtk_icon_factory_lookup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_factory_lookup_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_lookup_default",
+        constants$1620.gtk_icon_factory_lookup_default$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_size_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_im_context_set_client_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_set_client_window",
-        constants$1620.gtk_im_context_set_client_window$FUNC
+    static final MethodHandle gtk_icon_size_lookup$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_lookup",
+        constants$1620.gtk_icon_size_lookup$FUNC
     );
-    static final FunctionDescriptor gtk_im_context_get_preedit_string$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_size_lookup_for_settings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_get_preedit_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_get_preedit_string",
-        constants$1620.gtk_im_context_get_preedit_string$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_filter_keypress",
-        constants$1620.gtk_im_context_filter_keypress$FUNC
+    static final MethodHandle gtk_icon_size_lookup_for_settings$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_lookup_for_settings",
+        constants$1620.gtk_icon_size_lookup_for_settings$FUNC
     );
-    static final FunctionDescriptor gtk_im_context_focus_in$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_size_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_size_register$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_register",
+        constants$1620.gtk_icon_size_register$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_size_register_alias$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_size_register_alias$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_register_alias",
+        constants$1620.gtk_icon_size_register_alias$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_size_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_im_context_focus_in$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_focus_in",
-        constants$1620.gtk_im_context_focus_in$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_focus_out$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_focus_out$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_focus_out",
-        constants$1620.gtk_im_context_focus_out$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_reset",
-        constants$1620.gtk_im_context_reset$FUNC
+    static final MethodHandle gtk_icon_size_from_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_from_name",
+        constants$1620.gtk_icon_size_from_name$FUNC
     );
 }
 

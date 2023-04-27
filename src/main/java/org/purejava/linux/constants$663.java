@@ -7,48 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$663 {
+final class constants$663 {
 
-    static final FunctionDescriptor g_emblemed_icon_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$663() {}
+    static final FunctionDescriptor g_inet_address_get_is_link_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_emblemed_icon_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_get_icon",
-        constants$663.g_emblemed_icon_get_icon$FUNC
+    static final MethodHandle g_inet_address_get_is_link_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_link_local",
+        constants$663.g_inet_address_get_is_link_local$FUNC
     );
-    static final FunctionDescriptor g_emblemed_icon_get_emblems$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_get_is_site_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_emblemed_icon_get_emblems$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_get_emblems",
-        constants$663.g_emblemed_icon_get_emblems$FUNC
+    static final MethodHandle g_inet_address_get_is_site_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_site_local",
+        constants$663.g_inet_address_get_is_site_local$FUNC
     );
-    static final FunctionDescriptor g_emblemed_icon_add_emblem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_get_is_multicast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_emblemed_icon_add_emblem$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_add_emblem",
-        constants$663.g_emblemed_icon_add_emblem$FUNC
+    static final MethodHandle g_inet_address_get_is_multicast$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_multicast",
+        constants$663.g_inet_address_get_is_multicast$FUNC
     );
-    static final FunctionDescriptor g_emblemed_icon_clear_emblems$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_inet_address_get_is_mc_global$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_emblemed_icon_clear_emblems$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_clear_emblems",
-        constants$663.g_emblemed_icon_clear_emblems$FUNC
+    static final MethodHandle g_inet_address_get_is_mc_global$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_mc_global",
+        constants$663.g_inet_address_get_is_mc_global$FUNC
     );
-    static final FunctionDescriptor g_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_type",
-        constants$663.g_file_get_type$FUNC
-    );
-    static final FunctionDescriptor g_file_new_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_get_is_mc_link_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_new_for_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_for_path",
-        constants$663.g_file_new_for_path$FUNC
+    static final MethodHandle g_inet_address_get_is_mc_link_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_mc_link_local",
+        constants$663.g_inet_address_get_is_mc_link_local$FUNC
+    );
+    static final FunctionDescriptor g_inet_address_get_is_mc_node_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_inet_address_get_is_mc_node_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_mc_node_local",
+        constants$663.g_inet_address_get_is_mc_node_local$FUNC
     );
 }
 

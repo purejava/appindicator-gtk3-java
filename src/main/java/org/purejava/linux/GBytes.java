@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GBytes {
+/**
+ * {@snippet :
+ * typedef struct _GBytes GBytes;
+ * }
+ */
+public final class GBytes {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GBytes() {}
 }
 
 

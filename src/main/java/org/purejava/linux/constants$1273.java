@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1273 {
+final class constants$1273 {
 
-    static final FunctionDescriptor gdk_display_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1273() {}
+    static final FunctionDescriptor gtk_widget_set_valign$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_display_set_double_click_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_set_double_click_time",
-        constants$1273.gdk_display_set_double_click_time$FUNC
+    static final MethodHandle gtk_widget_set_valign$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_valign",
+        constants$1273.gtk_widget_set_valign$FUNC
     );
-    static final FunctionDescriptor gdk_display_set_double_click_distance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_display_set_double_click_distance$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_set_double_click_distance",
-        constants$1273.gdk_display_set_double_click_distance$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_display_get_default$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_default",
-        constants$1273.gdk_display_get_default$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_margin_left$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_pointer",
-        constants$1273.gdk_display_get_pointer$FUNC
+    static final MethodHandle gtk_widget_get_margin_left$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_margin_left",
+        constants$1273.gtk_widget_get_margin_left$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_window_at_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_margin_left$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_window_at_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_window_at_pointer",
-        constants$1273.gdk_display_get_window_at_pointer$FUNC
-    );
-    static final FunctionDescriptor gdk_display_warp_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_display_warp_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_warp_pointer",
-        constants$1273.gdk_display_warp_pointer$FUNC
+    static final MethodHandle gtk_widget_set_margin_left$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_margin_left",
+        constants$1273.gtk_widget_set_margin_left$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_margin_right$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_margin_right$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_margin_right",
+        constants$1273.gtk_widget_get_margin_right$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_margin_right$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_margin_right$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_margin_right",
+        constants$1273.gtk_widget_set_margin_right$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_margin_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_margin_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_margin_start",
+        constants$1273.gtk_widget_get_margin_start$FUNC
     );
 }
 

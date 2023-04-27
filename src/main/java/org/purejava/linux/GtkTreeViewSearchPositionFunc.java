@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkTreeViewSearchPositionFunc)(struct _GtkTreeView* tree_view,struct _GtkWidget* search_dialog,void* user_data);
+ * }
+ */
 public interface GtkTreeViewSearchPositionFunc {
 
-    void apply(java.lang.foreign.MemoryAddress tree_view, java.lang.foreign.MemoryAddress search_dialog, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkTreeViewSearchPositionFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeViewSearchPositionFunc.class, fi, constants$1654.GtkTreeViewSearchPositionFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTreeViewSearchPositionFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1464.GtkTreeViewSearchPositionFunc_UP$MH, fi, constants$1464.GtkTreeViewSearchPositionFunc$FUNC, scope);
     }
-    static GtkTreeViewSearchPositionFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _tree_view, java.lang.foreign.MemoryAddress _search_dialog, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkTreeViewSearchPositionFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1654.GtkTreeViewSearchPositionFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_tree_view, (java.lang.foreign.Addressable)_search_dialog, (java.lang.foreign.Addressable)_user_data);
+                constants$1464.GtkTreeViewSearchPositionFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

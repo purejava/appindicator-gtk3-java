@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$184 {
+final class constants$184 {
 
-    static final FunctionDescriptor g_unichar_isdigit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$184() {}
+    static final StructLayout g_timeout_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_timeout_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_timeout_funcs", constants$184.g_timeout_funcs$LAYOUT);
+    static final StructLayout g_child_watch_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_child_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_child_watch_funcs", constants$184.g_child_watch_funcs$LAYOUT);
+    static final StructLayout g_idle_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_idle_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_idle_funcs", constants$184.g_idle_funcs$LAYOUT);
+    static final StructLayout g_unix_signal_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_unix_signal_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_signal_funcs", constants$184.g_unix_signal_funcs$LAYOUT);
+    static final StructLayout g_unix_fd_source_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_unix_fd_source_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_fd_source_funcs", constants$184.g_unix_fd_source_funcs$LAYOUT);
+    static final FunctionDescriptor g_unicode_script_to_iso15924$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_isdigit$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isdigit",
-        constants$184.g_unichar_isdigit$FUNC
-    );
-    static final FunctionDescriptor g_unichar_isgraph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_isgraph$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isgraph",
-        constants$184.g_unichar_isgraph$FUNC
-    );
-    static final FunctionDescriptor g_unichar_islower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_islower$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_islower",
-        constants$184.g_unichar_islower$FUNC
-    );
-    static final FunctionDescriptor g_unichar_isprint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_isprint$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isprint",
-        constants$184.g_unichar_isprint$FUNC
-    );
-    static final FunctionDescriptor g_unichar_ispunct$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_ispunct$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_ispunct",
-        constants$184.g_unichar_ispunct$FUNC
-    );
-    static final FunctionDescriptor g_unichar_isspace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_isspace$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isspace",
-        constants$184.g_unichar_isspace$FUNC
+    static final MethodHandle g_unicode_script_to_iso15924$MH = RuntimeHelper.downcallHandle(
+        "g_unicode_script_to_iso15924",
+        constants$184.g_unicode_script_to_iso15924$FUNC
     );
 }
 

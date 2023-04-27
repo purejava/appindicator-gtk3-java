@@ -7,34 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1375 {
+final class constants$1375 {
 
-    static final FunctionDescriptor atk_state_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1375() {}
+    static final FunctionDescriptor gtk_cell_renderer_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_state_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_get_name",
-        constants$1375.atk_state_type_get_name$FUNC
+    static final MethodHandle gtk_cell_renderer_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_activate",
+        constants$1375.gtk_cell_renderer_activate$FUNC
     );
-    static final FunctionDescriptor atk_state_type_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_start_editing$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_state_type_for_name$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_for_name",
-        constants$1375.atk_state_type_for_name$FUNC
+    static final MethodHandle gtk_cell_renderer_start_editing$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_start_editing",
+        constants$1375.gtk_cell_renderer_start_editing$FUNC
     );
-    static final FunctionDescriptor AtkFunction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_set_fixed_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle AtkFunction$MH = RuntimeHelper.downcallHandle(
-        constants$1375.AtkFunction$FUNC
+    static final MethodHandle gtk_cell_renderer_set_fixed_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_set_fixed_size",
+        constants$1375.gtk_cell_renderer_set_fixed_size$FUNC
     );
-    static final FunctionDescriptor AtkPropertyChangeHandler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_renderer_get_fixed_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle AtkPropertyChangeHandler$MH = RuntimeHelper.downcallHandle(
-        constants$1375.AtkPropertyChangeHandler$FUNC
+    static final MethodHandle gtk_cell_renderer_get_fixed_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_fixed_size",
+        constants$1375.gtk_cell_renderer_get_fixed_size$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_set_alignment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_set_alignment$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_set_alignment",
+        constants$1375.gtk_cell_renderer_set_alignment$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_get_alignment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_get_alignment$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_alignment",
+        constants$1375.gtk_cell_renderer_get_alignment$FUNC
     );
 }
 

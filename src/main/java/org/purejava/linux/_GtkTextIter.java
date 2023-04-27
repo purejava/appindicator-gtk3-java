@@ -7,9 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTextIter {
+ *     gpointer dummy1;
+ *     gpointer dummy2;
+ *     gint dummy3;
+ *     gint dummy4;
+ *     gint dummy5;
+ *     gint dummy6;
+ *     gint dummy7;
+ *     gint dummy8;
+ *     gpointer dummy9;
+ *     gpointer dummy10;
+ *     gint dummy11;
+ *     gint dummy12;
+ *     gint dummy13;
+ *     gpointer dummy14;
+ * };
+ * }
+ */
 public class _GtkTextIter {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("dummy1"),
         Constants$root.C_POINTER$LAYOUT.withName("dummy2"),
         Constants$root.C_INT$LAYOUT.withName("dummy3"),
@@ -33,42 +53,78 @@ public class _GtkTextIter {
     public static VarHandle dummy1$VH() {
         return _GtkTextIter.dummy1$VH;
     }
-    public static MemoryAddress dummy1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy1;
+     * }
+     */
+    public static MemorySegment dummy1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy1$VH.get(seg);
     }
-    public static void dummy1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy1;
+     * }
+     */
+    public static void dummy1$set(MemorySegment seg, MemorySegment x) {
         _GtkTextIter.dummy1$VH.set(seg, x);
     }
-    public static MemoryAddress dummy1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextIter.dummy1$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
     public static VarHandle dummy2$VH() {
         return _GtkTextIter.dummy2$VH;
     }
-    public static MemoryAddress dummy2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy2;
+     * }
+     */
+    public static MemorySegment dummy2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy2$VH.get(seg);
     }
-    public static void dummy2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy2;
+     * }
+     */
+    public static void dummy2$set(MemorySegment seg, MemorySegment x) {
         _GtkTextIter.dummy2$VH.set(seg, x);
     }
-    public static MemoryAddress dummy2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextIter.dummy2$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy3"));
     public static VarHandle dummy3$VH() {
         return _GtkTextIter.dummy3$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy3;
+     * }
+     */
     public static int dummy3$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy3$VH.get(seg);
     }
-    public static void dummy3$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy3;
+     * }
+     */
+    public static void dummy3$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy3$VH.set(seg, x);
     }
     public static int dummy3$get(MemorySegment seg, long index) {
@@ -81,10 +137,22 @@ public class _GtkTextIter {
     public static VarHandle dummy4$VH() {
         return _GtkTextIter.dummy4$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy4;
+     * }
+     */
     public static int dummy4$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy4$VH.get(seg);
     }
-    public static void dummy4$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy4;
+     * }
+     */
+    public static void dummy4$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy4$VH.set(seg, x);
     }
     public static int dummy4$get(MemorySegment seg, long index) {
@@ -97,10 +165,22 @@ public class _GtkTextIter {
     public static VarHandle dummy5$VH() {
         return _GtkTextIter.dummy5$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy5;
+     * }
+     */
     public static int dummy5$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy5$VH.get(seg);
     }
-    public static void dummy5$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy5;
+     * }
+     */
+    public static void dummy5$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy5$VH.set(seg, x);
     }
     public static int dummy5$get(MemorySegment seg, long index) {
@@ -113,10 +193,22 @@ public class _GtkTextIter {
     public static VarHandle dummy6$VH() {
         return _GtkTextIter.dummy6$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy6;
+     * }
+     */
     public static int dummy6$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy6$VH.get(seg);
     }
-    public static void dummy6$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy6;
+     * }
+     */
+    public static void dummy6$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy6$VH.set(seg, x);
     }
     public static int dummy6$get(MemorySegment seg, long index) {
@@ -129,10 +221,22 @@ public class _GtkTextIter {
     public static VarHandle dummy7$VH() {
         return _GtkTextIter.dummy7$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy7;
+     * }
+     */
     public static int dummy7$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy7$VH.get(seg);
     }
-    public static void dummy7$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy7;
+     * }
+     */
+    public static void dummy7$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy7$VH.set(seg, x);
     }
     public static int dummy7$get(MemorySegment seg, long index) {
@@ -145,10 +249,22 @@ public class _GtkTextIter {
     public static VarHandle dummy8$VH() {
         return _GtkTextIter.dummy8$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy8;
+     * }
+     */
     public static int dummy8$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy8$VH.get(seg);
     }
-    public static void dummy8$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy8;
+     * }
+     */
+    public static void dummy8$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy8$VH.set(seg, x);
     }
     public static int dummy8$get(MemorySegment seg, long index) {
@@ -161,42 +277,78 @@ public class _GtkTextIter {
     public static VarHandle dummy9$VH() {
         return _GtkTextIter.dummy9$VH;
     }
-    public static MemoryAddress dummy9$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy9$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy9;
+     * }
+     */
+    public static MemorySegment dummy9$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy9$VH.get(seg);
     }
-    public static void dummy9$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy9;
+     * }
+     */
+    public static void dummy9$set(MemorySegment seg, MemorySegment x) {
         _GtkTextIter.dummy9$VH.set(seg, x);
     }
-    public static MemoryAddress dummy9$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy9$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy9$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy9$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy9$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy9$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextIter.dummy9$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy10$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy10"));
     public static VarHandle dummy10$VH() {
         return _GtkTextIter.dummy10$VH;
     }
-    public static MemoryAddress dummy10$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy10$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy10;
+     * }
+     */
+    public static MemorySegment dummy10$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy10$VH.get(seg);
     }
-    public static void dummy10$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy10;
+     * }
+     */
+    public static void dummy10$set(MemorySegment seg, MemorySegment x) {
         _GtkTextIter.dummy10$VH.set(seg, x);
     }
-    public static MemoryAddress dummy10$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy10$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy10$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy10$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy10$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy10$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextIter.dummy10$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy11$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy11"));
     public static VarHandle dummy11$VH() {
         return _GtkTextIter.dummy11$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy11;
+     * }
+     */
     public static int dummy11$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy11$VH.get(seg);
     }
-    public static void dummy11$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy11;
+     * }
+     */
+    public static void dummy11$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy11$VH.set(seg, x);
     }
     public static int dummy11$get(MemorySegment seg, long index) {
@@ -209,10 +361,22 @@ public class _GtkTextIter {
     public static VarHandle dummy12$VH() {
         return _GtkTextIter.dummy12$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy12;
+     * }
+     */
     public static int dummy12$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy12$VH.get(seg);
     }
-    public static void dummy12$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy12;
+     * }
+     */
+    public static void dummy12$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy12$VH.set(seg, x);
     }
     public static int dummy12$get(MemorySegment seg, long index) {
@@ -225,10 +389,22 @@ public class _GtkTextIter {
     public static VarHandle dummy13$VH() {
         return _GtkTextIter.dummy13$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy13;
+     * }
+     */
     public static int dummy13$get(MemorySegment seg) {
         return (int)_GtkTextIter.dummy13$VH.get(seg);
     }
-    public static void dummy13$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy13;
+     * }
+     */
+    public static void dummy13$set(MemorySegment seg, int x) {
         _GtkTextIter.dummy13$VH.set(seg, x);
     }
     public static int dummy13$get(MemorySegment seg, long index) {
@@ -241,24 +417,36 @@ public class _GtkTextIter {
     public static VarHandle dummy14$VH() {
         return _GtkTextIter.dummy14$VH;
     }
-    public static MemoryAddress dummy14$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy14$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy14;
+     * }
+     */
+    public static MemorySegment dummy14$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy14$VH.get(seg);
     }
-    public static void dummy14$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy14;
+     * }
+     */
+    public static void dummy14$set(MemorySegment seg, MemorySegment x) {
         _GtkTextIter.dummy14$VH.set(seg, x);
     }
-    public static MemoryAddress dummy14$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextIter.dummy14$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy14$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextIter.dummy14$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy14$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy14$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextIter.dummy14$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

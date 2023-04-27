@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1822 {
+final class constants$1822 {
 
-    static final FunctionDescriptor gtk_style_properties_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_style_properties_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_get_type",
-        constants$1822.gtk_style_properties_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_register_property$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1822() {}
+    static final FunctionDescriptor gtk_statusbar_remove_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_statusbar_remove_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_remove_all",
+        constants$1822.gtk_statusbar_remove_all$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_get_message_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_register_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_register_property",
-        constants$1822.gtk_style_properties_register_property$FUNC
+    static final MethodHandle gtk_statusbar_get_message_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_get_message_area",
+        constants$1822.gtk_statusbar_get_message_area$FUNC
     );
-    static final FunctionDescriptor gtk_style_properties_lookup_property$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_switch_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_switch_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_get_type",
+        constants$1822.gtk_switch_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_switch_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_switch_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_new",
+        constants$1822.gtk_switch_new$FUNC
+    );
+    static final FunctionDescriptor gtk_switch_set_active$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_switch_set_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_set_active",
+        constants$1822.gtk_switch_set_active$FUNC
+    );
+    static final FunctionDescriptor gtk_switch_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_lookup_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_lookup_property",
-        constants$1822.gtk_style_properties_lookup_property$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_style_properties_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_new",
-        constants$1822.gtk_style_properties_new$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_map_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_properties_map_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_map_color",
-        constants$1822.gtk_style_properties_map_color$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_properties_lookup_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_lookup_color",
-        constants$1822.gtk_style_properties_lookup_color$FUNC
+    static final MethodHandle gtk_switch_get_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_get_active",
+        constants$1822.gtk_switch_get_active$FUNC
     );
 }
 

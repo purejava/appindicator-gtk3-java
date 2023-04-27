@@ -7,64 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1348 {
+final class constants$1348 {
 
-    static final FunctionDescriptor gdk_threads_set_lock_functions$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1348() {}
+    static final FunctionDescriptor gtk_accel_map_load_scanner$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_load_scanner$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_load_scanner",
+        constants$1348.gtk_accel_map_load_scanner$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_save_fd$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_save_fd$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_save_fd",
+        constants$1348.gtk_accel_map_save_fd$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_lock_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_lock_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_lock_path",
+        constants$1348.gtk_accel_map_lock_path$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_unlock_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_unlock_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_unlock_path",
+        constants$1348.gtk_accel_map_unlock_path$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_add_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_add_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_add_filter",
+        constants$1348.gtk_accel_map_add_filter$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_foreach_unfiltered$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_threads_set_lock_functions$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_set_lock_functions",
-        constants$1348.gdk_threads_set_lock_functions$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_idle_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_idle_full$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_idle_full",
-        constants$1348.gdk_threads_add_idle_full$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_idle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_idle$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_idle",
-        constants$1348.gdk_threads_add_idle$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_timeout_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_timeout_full$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_timeout_full",
-        constants$1348.gdk_threads_add_timeout_full$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_timeout$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_timeout",
-        constants$1348.gdk_threads_add_timeout$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_timeout_seconds_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_timeout_seconds_full$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_timeout_seconds_full",
-        constants$1348.gdk_threads_add_timeout_seconds_full$FUNC
+    static final MethodHandle gtk_accel_map_foreach_unfiltered$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_foreach_unfiltered",
+        constants$1348.gtk_accel_map_foreach_unfiltered$FUNC
     );
 }
 

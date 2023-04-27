@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCssProvider extends _GtkCssProvider {
+/**
+ * {@snippet :
+ * typedef struct _GtkCssProvider GtkCssProvider;
+ * }
+ */
+public final class GtkCssProvider extends _GtkCssProvider {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCssProvider() {}
 }
 
 

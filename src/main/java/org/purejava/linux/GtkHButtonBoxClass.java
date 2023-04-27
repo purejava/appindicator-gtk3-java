@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHButtonBoxClass extends _GtkHButtonBoxClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkHButtonBoxClass GtkHButtonBoxClass;
+ * }
+ */
+public final class GtkHButtonBoxClass extends _GtkHButtonBoxClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHButtonBoxClass() {}
 }
 
 

@@ -7,46 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$312 {
+final class constants$312 {
 
-    static final FunctionDescriptor g_test_failed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_failed$MH = RuntimeHelper.downcallHandle(
-        "g_test_failed",
-        constants$312.g_test_failed$FUNC
-    );
-    static final FunctionDescriptor g_test_set_nonfatal_assertions$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_set_nonfatal_assertions$MH = RuntimeHelper.downcallHandle(
-        "g_test_set_nonfatal_assertions",
-        constants$312.g_test_set_nonfatal_assertions$FUNC
-    );
-    static final FunctionDescriptor g_test_message$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$312() {}
+    static final FunctionDescriptor g_strv_builder_add_many$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_message$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_message",
-        constants$312.g_test_message$FUNC
+    static final MethodHandle g_strv_builder_add_many$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_strv_builder_add_many",
+        constants$312.g_strv_builder_add_many$FUNC
     );
-    static final FunctionDescriptor g_test_bug_base$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strv_builder_end$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_bug_base$MH = RuntimeHelper.downcallHandle(
-        "g_test_bug_base",
-        constants$312.g_test_bug_base$FUNC
+    static final MethodHandle g_strv_builder_end$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_end",
+        constants$312.g_strv_builder_end$FUNC
     );
-    static final FunctionDescriptor g_test_bug$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor __errno_location$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle __errno_location$MH = RuntimeHelper.downcallHandle(
+        "__errno_location",
+        constants$312.__errno_location$FUNC
+    );
+    static final FunctionDescriptor GTestFunc$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor GTestFunc_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GTestFunc_UP$MH = RuntimeHelper.upcallHandle(GTestFunc.class, "apply", constants$312.GTestFunc_UP$FUNC);
+    static final FunctionDescriptor GTestFunc_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GTestFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$312.GTestFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GTestDataFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_bug$MH = RuntimeHelper.downcallHandle(
-        "g_test_bug",
-        constants$312.g_test_bug$FUNC
-    );
-    static final FunctionDescriptor g_test_summary$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GTestDataFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_summary$MH = RuntimeHelper.downcallHandle(
-        "g_test_summary",
-        constants$312.g_test_summary$FUNC
-    );
+    static final MethodHandle GTestDataFunc_UP$MH = RuntimeHelper.upcallHandle(GTestDataFunc.class, "apply", constants$312.GTestDataFunc_UP$FUNC);
 }
 
 

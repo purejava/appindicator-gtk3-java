@@ -7,44 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$797 {
+final class constants$797 {
 
-    static final FunctionDescriptor g_settings_schema_key_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_get_description$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_description",
-        constants$797.g_settings_schema_key_get_description$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_type",
-        constants$797.g_settings_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_list_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_list_schemas$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_schemas",
-        constants$797.g_settings_list_schemas$FUNC
-    );
-    static final FunctionDescriptor g_settings_list_relocatable_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_list_relocatable_schemas$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_relocatable_schemas",
-        constants$797.g_settings_list_relocatable_schemas$FUNC
-    );
-    static final FunctionDescriptor g_settings_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_new$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new",
-        constants$797.g_settings_new$FUNC
-    );
-    static final FunctionDescriptor g_settings_new_with_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$797() {}
+    static final FunctionDescriptor g_task_propagate_int$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_new_with_path$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_path",
-        constants$797.g_settings_new_with_path$FUNC
+    static final MethodHandle g_task_propagate_int$MH = RuntimeHelper.downcallHandle(
+        "g_task_propagate_int",
+        constants$797.g_task_propagate_int$FUNC
+    );
+    static final FunctionDescriptor g_task_propagate_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_propagate_value$MH = RuntimeHelper.downcallHandle(
+        "g_task_propagate_value",
+        constants$797.g_task_propagate_value$FUNC
+    );
+    static final FunctionDescriptor g_task_had_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_had_error$MH = RuntimeHelper.downcallHandle(
+        "g_task_had_error",
+        constants$797.g_task_had_error$FUNC
+    );
+    static final FunctionDescriptor g_task_get_completed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_get_completed$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_completed",
+        constants$797.g_task_get_completed$FUNC
+    );
+    static final FunctionDescriptor g_tcp_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tcp_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_connection_get_type",
+        constants$797.g_tcp_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tcp_connection_set_graceful_disconnect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_tcp_connection_set_graceful_disconnect$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_connection_set_graceful_disconnect",
+        constants$797.g_tcp_connection_set_graceful_disconnect$FUNC
     );
 }
 

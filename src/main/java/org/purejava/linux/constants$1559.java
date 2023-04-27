@@ -7,57 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1559 {
+final class constants$1559 {
 
-    static final FunctionDescriptor gtk_tree_model_get_string_from_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1559() {}
+    static final FunctionDescriptor gtk_drawing_area_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_drawing_area_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_drawing_area_get_type",
+        constants$1559.gtk_drawing_area_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_drawing_area_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_drawing_area_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_drawing_area_new",
+        constants$1559.gtk_drawing_area_new$FUNC
+    );
+    static final FunctionDescriptor gtk_event_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_event_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_box_get_type",
+        constants$1559.gtk_event_box_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_event_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_event_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_box_new",
+        constants$1559.gtk_event_box_new$FUNC
+    );
+    static final FunctionDescriptor gtk_event_box_get_visible_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_string_from_iter$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_string_from_iter",
-        constants$1559.gtk_tree_model_get_string_from_iter$FUNC
+    static final MethodHandle gtk_event_box_get_visible_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_box_get_visible_window",
+        constants$1559.gtk_event_box_get_visible_window$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_get_iter_first$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_event_box_set_visible_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_iter_first$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_iter_first",
-        constants$1559.gtk_tree_model_get_iter_first$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_get_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_path",
-        constants$1559.gtk_tree_model_get_path$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_get_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_value",
-        constants$1559.gtk_tree_model_get_value$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_iter_previous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_iter_previous$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_previous",
-        constants$1559.gtk_tree_model_iter_previous$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_iter_next$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_next",
-        constants$1559.gtk_tree_model_iter_next$FUNC
+    static final MethodHandle gtk_event_box_set_visible_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_box_set_visible_window",
+        constants$1559.gtk_event_box_set_visible_window$FUNC
     );
 }
 

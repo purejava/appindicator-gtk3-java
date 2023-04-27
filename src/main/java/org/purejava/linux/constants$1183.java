@@ -7,52 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1183 {
+final class constants$1183 {
 
-    static final FunctionDescriptor cairo_get_dash_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_dash_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_dash_count",
-        constants$1183.cairo_get_dash_count$FUNC
-    );
-    static final FunctionDescriptor cairo_get_dash$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1183() {}
+    static final FunctionDescriptor gdk_selection_convert$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_get_dash$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_dash",
-        constants$1183.cairo_get_dash$FUNC
+    static final MethodHandle gdk_selection_convert$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_convert",
+        constants$1183.gdk_selection_convert$FUNC
     );
-    static final FunctionDescriptor cairo_get_matrix$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_selection_property_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_matrix",
-        constants$1183.cairo_get_matrix$FUNC
+    static final MethodHandle gdk_selection_property_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_property_get",
+        constants$1183.gdk_selection_property_get$FUNC
     );
-    static final FunctionDescriptor cairo_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_selection_send_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_selection_send_notify$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_send_notify",
+        constants$1183.gdk_selection_send_notify$FUNC
+    );
+    static final FunctionDescriptor gdk_selection_send_notify_for_display$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_selection_send_notify_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_send_notify_for_display",
+        constants$1183.gdk_selection_send_notify_for_display$FUNC
+    );
+    static final FunctionDescriptor gdk_test_render_sync$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_target$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_target",
-        constants$1183.cairo_get_target$FUNC
+    static final MethodHandle gdk_test_render_sync$MH = RuntimeHelper.downcallHandle(
+        "gdk_test_render_sync",
+        constants$1183.gdk_test_render_sync$FUNC
     );
-    static final FunctionDescriptor cairo_get_group_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_test_simulate_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_get_group_target$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_group_target",
-        constants$1183.cairo_get_group_target$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_path",
-        constants$1183.cairo_copy_path$FUNC
+    static final MethodHandle gdk_test_simulate_key$MH = RuntimeHelper.downcallHandle(
+        "gdk_test_simulate_key",
+        constants$1183.gdk_test_simulate_key$FUNC
     );
 }
 

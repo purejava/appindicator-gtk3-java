@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GAsyncResultIface {
+ *     GTypeInterface g_iface;
+ *     gpointer (*get_user_data)(GAsyncResult*);
+ *     GObject* (*get_source_object)(GAsyncResult*);
+ *     gboolean (*is_tagged)(GAsyncResult*,gpointer);
+ * };
+ * }
+ */
 public class _GAsyncResultIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -27,20 +37,32 @@ public class _GAsyncResultIface {
     static final FunctionDescriptor get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_user_data$MH = RuntimeHelper.downcallHandle(
-        _GAsyncResultIface.get_user_data$FUNC
+    static final FunctionDescriptor get_user_data_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_user_data_UP$MH = RuntimeHelper.upcallHandle(get_user_data.class, "apply", _GAsyncResultIface.get_user_data_UP$FUNC);
+    static final FunctionDescriptor get_user_data_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_user_data_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAsyncResultIface.get_user_data_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gpointer (*get_user_data)(GAsyncResult*);
+     * }
+     */
     public interface get_user_data {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_user_data fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_user_data.class, fi, _GAsyncResultIface.get_user_data$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_user_data fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAsyncResultIface.get_user_data_UP$MH, fi, _GAsyncResultIface.get_user_data$FUNC, scope);
         }
-        static get_user_data ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_user_data ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_user_data$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_user_data_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -52,38 +74,62 @@ public class _GAsyncResultIface {
     public static VarHandle get_user_data$VH() {
         return _GAsyncResultIface.get_user_data$VH;
     }
-    public static MemoryAddress get_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_user_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer (*get_user_data)(GAsyncResult*);
+     * }
+     */
+    public static MemorySegment get_user_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_user_data$VH.get(seg);
     }
-    public static void get_user_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer (*get_user_data)(GAsyncResult*);
+     * }
+     */
+    public static void get_user_data$set(MemorySegment seg, MemorySegment x) {
         _GAsyncResultIface.get_user_data$VH.set(seg, x);
     }
-    public static MemoryAddress get_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_user_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_user_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_user_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_user_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_user_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GAsyncResultIface.get_user_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_user_data get_user_data (MemorySegment segment, MemorySession session) {
-        return get_user_data.ofAddress(get_user_data$get(segment), session);
+    public static get_user_data get_user_data(MemorySegment segment, SegmentScope scope) {
+        return get_user_data.ofAddress(get_user_data$get(segment), scope);
     }
     static final FunctionDescriptor get_source_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_source_object$MH = RuntimeHelper.downcallHandle(
-        _GAsyncResultIface.get_source_object$FUNC
+    static final FunctionDescriptor get_source_object_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_source_object_UP$MH = RuntimeHelper.upcallHandle(get_source_object.class, "apply", _GAsyncResultIface.get_source_object_UP$FUNC);
+    static final FunctionDescriptor get_source_object_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_source_object_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAsyncResultIface.get_source_object_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GObject* (*get_source_object)(GAsyncResult*);
+     * }
+     */
     public interface get_source_object {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_source_object fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_source_object.class, fi, _GAsyncResultIface.get_source_object$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_source_object fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAsyncResultIface.get_source_object_UP$MH, fi, _GAsyncResultIface.get_source_object$FUNC, scope);
         }
-        static get_source_object ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_source_object ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_source_object$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_source_object_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -95,39 +141,65 @@ public class _GAsyncResultIface {
     public static VarHandle get_source_object$VH() {
         return _GAsyncResultIface.get_source_object$VH;
     }
-    public static MemoryAddress get_source_object$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_source_object$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GObject* (*get_source_object)(GAsyncResult*);
+     * }
+     */
+    public static MemorySegment get_source_object$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_source_object$VH.get(seg);
     }
-    public static void get_source_object$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GObject* (*get_source_object)(GAsyncResult*);
+     * }
+     */
+    public static void get_source_object$set(MemorySegment seg, MemorySegment x) {
         _GAsyncResultIface.get_source_object$VH.set(seg, x);
     }
-    public static MemoryAddress get_source_object$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.get_source_object$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_source_object$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.get_source_object$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_source_object$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_source_object$set(MemorySegment seg, long index, MemorySegment x) {
         _GAsyncResultIface.get_source_object$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_source_object get_source_object (MemorySegment segment, MemorySession session) {
-        return get_source_object.ofAddress(get_source_object$get(segment), session);
+    public static get_source_object get_source_object(MemorySegment segment, SegmentScope scope) {
+        return get_source_object.ofAddress(get_source_object$get(segment), scope);
     }
     static final FunctionDescriptor is_tagged$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_tagged$MH = RuntimeHelper.downcallHandle(
-        _GAsyncResultIface.is_tagged$FUNC
+    static final FunctionDescriptor is_tagged_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_tagged_UP$MH = RuntimeHelper.upcallHandle(is_tagged.class, "apply", _GAsyncResultIface.is_tagged_UP$FUNC);
+    static final FunctionDescriptor is_tagged_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_tagged_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAsyncResultIface.is_tagged_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_tagged)(GAsyncResult*,gpointer);
+     * }
+     */
     public interface is_tagged {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(is_tagged fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_tagged.class, fi, _GAsyncResultIface.is_tagged$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(is_tagged fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAsyncResultIface.is_tagged_UP$MH, fi, _GAsyncResultIface.is_tagged$FUNC, scope);
         }
-        static is_tagged ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static is_tagged ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GAsyncResultIface.is_tagged$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GAsyncResultIface.is_tagged_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -139,27 +211,39 @@ public class _GAsyncResultIface {
     public static VarHandle is_tagged$VH() {
         return _GAsyncResultIface.is_tagged$VH;
     }
-    public static MemoryAddress is_tagged$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.is_tagged$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_tagged)(GAsyncResult*,gpointer);
+     * }
+     */
+    public static MemorySegment is_tagged$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.is_tagged$VH.get(seg);
     }
-    public static void is_tagged$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_tagged)(GAsyncResult*,gpointer);
+     * }
+     */
+    public static void is_tagged$set(MemorySegment seg, MemorySegment x) {
         _GAsyncResultIface.is_tagged$VH.set(seg, x);
     }
-    public static MemoryAddress is_tagged$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAsyncResultIface.is_tagged$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_tagged$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAsyncResultIface.is_tagged$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_tagged$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_tagged$set(MemorySegment seg, long index, MemorySegment x) {
         _GAsyncResultIface.is_tagged$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_tagged is_tagged (MemorySegment segment, MemorySession session) {
-        return is_tagged.ofAddress(is_tagged$get(segment), session);
+    public static is_tagged is_tagged(MemorySegment segment, SegmentScope scope) {
+        return is_tagged.ofAddress(is_tagged$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

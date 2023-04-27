@@ -7,54 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1000 {
+final class constants$1000 {
 
-    static final FunctionDescriptor hb_set_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_set_destroy",
-        constants$1000.hb_set_destroy$FUNC
-    );
-    static final FunctionDescriptor hb_set_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1000() {}
+    static final FunctionDescriptor cairo_set_dash$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_dash$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_dash",
+        constants$1000.cairo_set_dash$FUNC
+    );
+    static final FunctionDescriptor cairo_set_miter_limit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_miter_limit$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_miter_limit",
+        constants$1000.cairo_set_miter_limit$FUNC
+    );
+    static final FunctionDescriptor cairo_translate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_set_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_set_set_user_data",
-        constants$1000.hb_set_set_user_data$FUNC
+    static final MethodHandle cairo_translate$MH = RuntimeHelper.downcallHandle(
+        "cairo_translate",
+        constants$1000.cairo_translate$FUNC
     );
-    static final FunctionDescriptor hb_set_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_scale$MH = RuntimeHelper.downcallHandle(
+        "cairo_scale",
+        constants$1000.cairo_scale$FUNC
+    );
+    static final FunctionDescriptor cairo_rotate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_rotate$MH = RuntimeHelper.downcallHandle(
+        "cairo_rotate",
+        constants$1000.cairo_rotate$FUNC
+    );
+    static final FunctionDescriptor cairo_transform$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_user_data",
-        constants$1000.hb_set_get_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_set_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_allocation_successful$MH = RuntimeHelper.downcallHandle(
-        "hb_set_allocation_successful",
-        constants$1000.hb_set_allocation_successful$FUNC
-    );
-    static final FunctionDescriptor hb_set_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_clear$MH = RuntimeHelper.downcallHandle(
-        "hb_set_clear",
-        constants$1000.hb_set_clear$FUNC
-    );
-    static final FunctionDescriptor hb_set_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_is_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_empty",
-        constants$1000.hb_set_is_empty$FUNC
+    static final MethodHandle cairo_transform$MH = RuntimeHelper.downcallHandle(
+        "cairo_transform",
+        constants$1000.cairo_transform$FUNC
     );
 }
 

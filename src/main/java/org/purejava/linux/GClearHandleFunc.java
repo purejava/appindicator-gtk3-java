@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GClearHandleFunc)(unsigned int handle_id);
+ * }
+ */
 public interface GClearHandleFunc {
 
     void apply(int handle_id);
-    static MemorySegment allocate(GClearHandleFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GClearHandleFunc.class, fi, constants$179.GClearHandleFunc$FUNC, session);
+    static MemorySegment allocate(GClearHandleFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$181.GClearHandleFunc_UP$MH, fi, constants$181.GClearHandleFunc$FUNC, scope);
     }
-    static GClearHandleFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static GClearHandleFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return (int _handle_id) -> {
             try {
-                constants$180.GClearHandleFunc$MH.invokeExact((Addressable)symbol, _handle_id);
+                constants$181.GClearHandleFunc_DOWN$MH.invokeExact(symbol, _handle_id);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,75 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$277 {
+final class constants$277 {
 
-    static final FunctionDescriptor g_regex_match_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$277() {}
+    static final FunctionDescriptor g_queue_peek_head$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_match_full$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match_full",
-        constants$277.g_regex_match_full$FUNC
+    static final MethodHandle g_queue_peek_head$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_head",
+        constants$277.g_queue_peek_head$FUNC
     );
-    static final FunctionDescriptor g_regex_match_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_peek_tail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_match_all$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match_all",
-        constants$277.g_regex_match_all$FUNC
+    static final MethodHandle g_queue_peek_tail$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_tail",
+        constants$277.g_queue_peek_tail$FUNC
     );
-    static final FunctionDescriptor g_regex_match_all_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_match_all_full$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match_all_full",
-        constants$277.g_regex_match_all_full$FUNC
-    );
-    static final FunctionDescriptor g_regex_split_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_regex_split_simple$MH = RuntimeHelper.downcallHandle(
-        "g_regex_split_simple",
-        constants$277.g_regex_split_simple$FUNC
-    );
-    static final FunctionDescriptor g_regex_split$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_peek_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_regex_split$MH = RuntimeHelper.downcallHandle(
-        "g_regex_split",
-        constants$277.g_regex_split$FUNC
+    static final MethodHandle g_queue_peek_nth$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_nth",
+        constants$277.g_queue_peek_nth$FUNC
     );
-    static final FunctionDescriptor g_regex_split_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_split_full$MH = RuntimeHelper.downcallHandle(
-        "g_regex_split_full",
-        constants$277.g_regex_split_full$FUNC
+    static final MethodHandle g_queue_index$MH = RuntimeHelper.downcallHandle(
+        "g_queue_index",
+        constants$277.g_queue_index$FUNC
+    );
+    static final FunctionDescriptor g_queue_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_remove$MH = RuntimeHelper.downcallHandle(
+        "g_queue_remove",
+        constants$277.g_queue_remove$FUNC
+    );
+    static final FunctionDescriptor g_queue_remove_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_remove_all$MH = RuntimeHelper.downcallHandle(
+        "g_queue_remove_all",
+        constants$277.g_queue_remove_all$FUNC
     );
 }
 

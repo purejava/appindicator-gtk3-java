@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GPrintFunc)(char* string);
+ * }
+ */
 public interface GPrintFunc {
 
-    void apply(java.lang.foreign.MemoryAddress string);
-    static MemorySegment allocate(GPrintFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GPrintFunc.class, fi, constants$250.GPrintFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GPrintFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$262.GPrintFunc_UP$MH, fi, constants$262.GPrintFunc$FUNC, scope);
     }
-    static GPrintFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _string) -> {
+    static GPrintFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$250.GPrintFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_string);
+                constants$262.GPrintFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

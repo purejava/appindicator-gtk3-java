@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$835 {
+final class constants$835 {
 
-    static final FunctionDescriptor g_socket_listener_accept$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$835() {}
+    static final FunctionDescriptor hb_blob_copy_writable_or_fail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_blob_copy_writable_or_fail$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_copy_writable_or_fail",
+        constants$835.hb_blob_copy_writable_or_fail$FUNC
+    );
+    static final FunctionDescriptor hb_blob_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_blob_get_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_get_empty",
+        constants$835.hb_blob_get_empty$FUNC
+    );
+    static final FunctionDescriptor hb_blob_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_blob_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_reference",
+        constants$835.hb_blob_reference$FUNC
+    );
+    static final FunctionDescriptor hb_blob_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_blob_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_destroy",
+        constants$835.hb_blob_destroy$FUNC
+    );
+    static final FunctionDescriptor hb_blob_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_blob_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_set_user_data",
+        constants$835.hb_blob_set_user_data$FUNC
+    );
+    static final FunctionDescriptor hb_blob_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_listener_accept$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept",
-        constants$835.g_socket_listener_accept$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_accept_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_accept_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept_async",
-        constants$835.g_socket_listener_accept_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_accept_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_accept_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept_finish",
-        constants$835.g_socket_listener_accept_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_close$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_close",
-        constants$835.g_socket_listener_close$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_service_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_get_type",
-        constants$835.g_socket_service_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_socket_service_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_new",
-        constants$835.g_socket_service_new$FUNC
+    static final MethodHandle hb_blob_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_get_user_data",
+        constants$835.hb_blob_get_user_data$FUNC
     );
 }
 

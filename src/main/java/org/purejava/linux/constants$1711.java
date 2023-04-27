@@ -7,47 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1711 {
+final class constants$1711 {
 
-    static final FunctionDescriptor GtkCellLayoutDataFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellLayoutDataFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1711.GtkCellLayoutDataFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_get_type",
-        constants$1711.gtk_cell_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_layout_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1711() {}
+    static final FunctionDescriptor gtk_notebook_get_nth_page$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_layout_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_pack_start",
-        constants$1711.gtk_cell_layout_pack_start$FUNC
+    static final MethodHandle gtk_notebook_get_nth_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_nth_page",
+        constants$1711.gtk_notebook_get_nth_page$FUNC
     );
-    static final FunctionDescriptor gtk_cell_layout_pack_end$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_notebook_get_n_pages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_get_n_pages$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_n_pages",
+        constants$1711.gtk_notebook_get_n_pages$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_page_num$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_page_num$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_page_num",
+        constants$1711.gtk_notebook_page_num$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_set_current_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_layout_pack_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_pack_end",
-        constants$1711.gtk_cell_layout_pack_end$FUNC
+    static final MethodHandle gtk_notebook_set_current_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_set_current_page",
+        constants$1711.gtk_notebook_set_current_page$FUNC
     );
-    static final FunctionDescriptor gtk_cell_layout_get_cells$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_notebook_next_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_layout_get_cells$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_get_cells",
-        constants$1711.gtk_cell_layout_get_cells$FUNC
+    static final MethodHandle gtk_notebook_next_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_next_page",
+        constants$1711.gtk_notebook_next_page$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_prev_page$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_prev_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_prev_page",
+        constants$1711.gtk_notebook_prev_page$FUNC
     );
 }
 

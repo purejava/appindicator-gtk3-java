@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$884 {
+final class constants$884 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GApplicationCommandLine$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$884() {}
+    static final FunctionDescriptor hb_buffer_clear_contents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GApplicationCommandLine$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GApplicationCommandLine",
-        constants$884.glib_autoptr_cleanup_GApplicationCommandLine$FUNC
+    static final MethodHandle hb_buffer_clear_contents$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_clear_contents",
+        constants$884.hb_buffer_clear_contents$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GApplicationCommandLine$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_pre_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_pre_allocate$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_pre_allocate",
+        constants$884.hb_buffer_pre_allocate$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GApplicationCommandLine$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GApplicationCommandLine",
-        constants$884.glib_listautoptr_cleanup_GApplicationCommandLine$FUNC
+    static final MethodHandle hb_buffer_allocation_successful$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_allocation_successful",
+        constants$884.hb_buffer_allocation_successful$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GApplicationCommandLine$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_reverse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GApplicationCommandLine$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GApplicationCommandLine",
-        constants$884.glib_slistautoptr_cleanup_GApplicationCommandLine$FUNC
+    static final MethodHandle hb_buffer_reverse$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse",
+        constants$884.hb_buffer_reverse$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GApplicationCommandLine$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_reverse_range$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_reverse_range$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse_range",
+        constants$884.hb_buffer_reverse_range$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_reverse_clusters$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GApplicationCommandLine$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GApplicationCommandLine",
-        constants$884.glib_queueautoptr_cleanup_GApplicationCommandLine$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GApplication",
-        constants$884.glib_autoptr_clear_GApplication$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GApplication",
-        constants$884.glib_autoptr_cleanup_GApplication$FUNC
+    static final MethodHandle hb_buffer_reverse_clusters$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse_clusters",
+        constants$884.hb_buffer_reverse_clusters$FUNC
     );
 }
 

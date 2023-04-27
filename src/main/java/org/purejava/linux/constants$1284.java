@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1284 {
+final class constants$1284 {
 
-    static final FunctionDescriptor gdk_app_launch_context_set_timestamp$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1284() {}
+    static final FunctionDescriptor gtk_requisition_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_requisition_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_requisition_free",
+        constants$1284.gtk_requisition_free$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_in_destruction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_in_destruction$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_in_destruction",
+        constants$1284.gtk_widget_in_destruction$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_style_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_style_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_style_context",
+        constants$1284.gtk_widget_get_style_context$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_path",
+        constants$1284.gtk_widget_get_path$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_class_set_css_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_app_launch_context_set_timestamp$MH = RuntimeHelper.downcallHandle(
-        "gdk_app_launch_context_set_timestamp",
-        constants$1284.gdk_app_launch_context_set_timestamp$FUNC
-    );
-    static final FunctionDescriptor gdk_app_launch_context_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_app_launch_context_set_icon$MH = RuntimeHelper.downcallHandle(
-        "gdk_app_launch_context_set_icon",
-        constants$1284.gdk_app_launch_context_set_icon$FUNC
+    static final MethodHandle gtk_widget_class_set_css_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_css_name",
+        constants$1284.gtk_widget_class_set_css_name$FUNC
     );
-    static final FunctionDescriptor gdk_app_launch_context_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_class_get_css_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_app_launch_context_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_app_launch_context_set_icon_name",
-        constants$1284.gdk_app_launch_context_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gdk_color_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_color_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_get_type",
-        constants$1284.gdk_color_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_color_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_color_copy$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_copy",
-        constants$1284.gdk_color_copy$FUNC
-    );
-    static final FunctionDescriptor gdk_color_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_color_free$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_free",
-        constants$1284.gdk_color_free$FUNC
+    static final MethodHandle gtk_widget_class_get_css_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_get_css_name",
+        constants$1284.gtk_widget_class_get_css_name$FUNC
     );
 }
 

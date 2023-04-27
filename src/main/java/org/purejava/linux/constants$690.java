@@ -7,48 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$690 {
+final class constants$690 {
 
-    static final FunctionDescriptor g_file_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_type",
-        constants$690.g_file_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_file_info_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_file_info_new$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_new",
-        constants$690.g_file_info_new$FUNC
-    );
-    static final FunctionDescriptor g_file_info_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_dup$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_dup",
-        constants$690.g_file_info_dup$FUNC
-    );
-    static final FunctionDescriptor g_file_info_copy_into$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$690() {}
+    static final FunctionDescriptor g_list_store_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_copy_into$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_copy_into",
-        constants$690.g_file_info_copy_into$FUNC
+    static final MethodHandle g_list_store_sort$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_sort",
+        constants$690.g_list_store_sort$FUNC
     );
-    static final FunctionDescriptor g_file_info_has_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_list_store_append$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_has_attribute$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_has_attribute",
-        constants$690.g_file_info_has_attribute$FUNC
+    static final MethodHandle g_list_store_append$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_append",
+        constants$690.g_list_store_append$FUNC
     );
-    static final FunctionDescriptor g_file_info_has_namespace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_list_store_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_list_store_remove$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_remove",
+        constants$690.g_list_store_remove$FUNC
+    );
+    static final FunctionDescriptor g_list_store_remove_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_store_remove_all$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_remove_all",
+        constants$690.g_list_store_remove_all$FUNC
+    );
+    static final FunctionDescriptor g_list_store_splice$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_list_store_splice$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_splice",
+        constants$690.g_list_store_splice$FUNC
+    );
+    static final FunctionDescriptor g_list_store_find$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_has_namespace$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_has_namespace",
-        constants$690.g_file_info_has_namespace$FUNC
+    static final MethodHandle g_list_store_find$MH = RuntimeHelper.downcallHandle(
+        "g_list_store_find",
+        constants$690.g_list_store_find$FUNC
     );
 }
 

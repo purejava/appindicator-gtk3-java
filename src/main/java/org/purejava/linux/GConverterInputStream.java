@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GConverterInputStream extends _GConverterInputStream {
+/**
+ * {@snippet :
+ * typedef struct _GConverterInputStream GConverterInputStream;
+ * }
+ */
+public final class GConverterInputStream extends _GConverterInputStream {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GConverterInputStream() {}
 }
 
 

@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkBindingSignal {
+ *     GtkBindingSignal* next;
+ *     gchar* signal_name;
+ *     guint n_args;
+ *     GtkBindingArg* args;
+ * };
+ * }
+ */
 public class _GtkBindingSignal {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("next"),
         Constants$root.C_POINTER$LAYOUT.withName("signal_name"),
         Constants$root.C_INT$LAYOUT.withName("n_args"),
@@ -23,42 +33,78 @@ public class _GtkBindingSignal {
     public static VarHandle next$VH() {
         return _GtkBindingSignal.next$VH;
     }
-    public static MemoryAddress next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.next$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkBindingSignal* next;
+     * }
+     */
+    public static MemorySegment next$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.next$VH.get(seg);
     }
-    public static void next$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkBindingSignal* next;
+     * }
+     */
+    public static void next$set(MemorySegment seg, MemorySegment x) {
         _GtkBindingSignal.next$VH.set(seg, x);
     }
-    public static MemoryAddress next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.next$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.next$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkBindingSignal.next$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle signal_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("signal_name"));
     public static VarHandle signal_name$VH() {
         return _GtkBindingSignal.signal_name$VH;
     }
-    public static MemoryAddress signal_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.signal_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* signal_name;
+     * }
+     */
+    public static MemorySegment signal_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.signal_name$VH.get(seg);
     }
-    public static void signal_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* signal_name;
+     * }
+     */
+    public static void signal_name$set(MemorySegment seg, MemorySegment x) {
         _GtkBindingSignal.signal_name$VH.set(seg, x);
     }
-    public static MemoryAddress signal_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.signal_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment signal_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.signal_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void signal_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void signal_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkBindingSignal.signal_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle n_args$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_args"));
     public static VarHandle n_args$VH() {
         return _GtkBindingSignal.n_args$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint n_args;
+     * }
+     */
     public static int n_args$get(MemorySegment seg) {
         return (int)_GtkBindingSignal.n_args$VH.get(seg);
     }
-    public static void n_args$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint n_args;
+     * }
+     */
+    public static void n_args$set(MemorySegment seg, int x) {
         _GtkBindingSignal.n_args$VH.set(seg, x);
     }
     public static int n_args$get(MemorySegment seg, long index) {
@@ -71,24 +117,36 @@ public class _GtkBindingSignal {
     public static VarHandle args$VH() {
         return _GtkBindingSignal.args$VH;
     }
-    public static MemoryAddress args$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.args$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkBindingArg* args;
+     * }
+     */
+    public static MemorySegment args$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.args$VH.get(seg);
     }
-    public static void args$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkBindingArg* args;
+     * }
+     */
+    public static void args$set(MemorySegment seg, MemorySegment x) {
         _GtkBindingSignal.args$VH.set(seg, x);
     }
-    public static MemoryAddress args$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkBindingSignal.args$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment args$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkBindingSignal.args$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void args$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void args$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkBindingSignal.args$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

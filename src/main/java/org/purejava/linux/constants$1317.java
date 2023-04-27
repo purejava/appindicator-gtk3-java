@@ -7,62 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1317 {
+final class constants$1317 {
 
-    static final FunctionDescriptor pango_cairo_show_layout$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1317() {}
+    static final FunctionDescriptor gtk_window_get_has_resize_grip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_has_resize_grip$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_has_resize_grip",
+        constants$1317.gtk_window_get_has_resize_grip$FUNC
+    );
+    static final FunctionDescriptor gtk_window_resize_grip_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_resize_grip_is_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_resize_grip_is_visible",
+        constants$1317.gtk_window_resize_grip_is_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_resize_grip_area$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_show_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_show_layout",
-        constants$1317.pango_cairo_show_layout$FUNC
+    static final MethodHandle gtk_window_get_resize_grip_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_resize_grip_area",
+        constants$1317.gtk_window_get_resize_grip_area$FUNC
     );
-    static final FunctionDescriptor pango_cairo_show_error_underline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_cairo_show_error_underline$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_show_error_underline",
-        constants$1317.pango_cairo_show_error_underline$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_glyph_string_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_titlebar$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_glyph_string_path$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_glyph_string_path",
-        constants$1317.pango_cairo_glyph_string_path$FUNC
+    static final MethodHandle gtk_window_set_titlebar$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_titlebar",
+        constants$1317.gtk_window_set_titlebar$FUNC
     );
-    static final FunctionDescriptor pango_cairo_layout_line_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_get_titlebar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_layout_line_path$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_layout_line_path",
-        constants$1317.pango_cairo_layout_line_path$FUNC
+    static final MethodHandle gtk_window_get_titlebar$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_titlebar",
+        constants$1317.gtk_window_get_titlebar$FUNC
     );
-    static final FunctionDescriptor pango_cairo_layout_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_is_maximized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_layout_path$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_layout_path",
-        constants$1317.pango_cairo_layout_path$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_error_underline_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_cairo_error_underline_path$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_error_underline_path",
-        constants$1317.pango_cairo_error_underline_path$FUNC
+    static final MethodHandle gtk_window_is_maximized$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_is_maximized",
+        constants$1317.gtk_window_is_maximized$FUNC
     );
 }
 

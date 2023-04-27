@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$655 {
+final class constants$655 {
 
-    static final FunctionDescriptor g_dtls_connection_set_certificate$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$655() {}
+    static final FunctionDescriptor g_file_input_stream_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dtls_connection_set_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_certificate",
-        constants$655.g_dtls_connection_set_certificate$FUNC
+    static final MethodHandle g_file_input_stream_query_info_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info_finish",
+        constants$655.g_file_input_stream_query_info_finish$FUNC
     );
-    static final FunctionDescriptor g_dtls_connection_get_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_io_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_io_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_io_error_quark",
+        constants$655.g_io_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_io_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_error_from_errno$MH = RuntimeHelper.downcallHandle(
+        "g_io_error_from_errno",
+        constants$655.g_io_error_from_errno$FUNC
+    );
+    static final FunctionDescriptor g_io_error_from_file_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_error_from_file_error$MH = RuntimeHelper.downcallHandle(
+        "g_io_error_from_file_error",
+        constants$655.g_io_error_from_file_error$FUNC
+    );
+    static final FunctionDescriptor g_io_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_stream_get_type",
+        constants$655.g_io_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_io_stream_get_input_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dtls_connection_get_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_certificate",
-        constants$655.g_dtls_connection_get_certificate$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_set_interaction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_set_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_interaction",
-        constants$655.g_dtls_connection_set_interaction$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_interaction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_interaction",
-        constants$655.g_dtls_connection_get_interaction$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_peer_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_peer_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_peer_certificate",
-        constants$655.g_dtls_connection_get_peer_certificate$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_peer_certificate_errors",
-        constants$655.g_dtls_connection_get_peer_certificate_errors$FUNC
+    static final MethodHandle g_io_stream_get_input_stream$MH = RuntimeHelper.downcallHandle(
+        "g_io_stream_get_input_stream",
+        constants$655.g_io_stream_get_input_stream$FUNC
     );
 }
 

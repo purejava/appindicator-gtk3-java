@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$815 {
+final class constants$815 {
 
-    static final FunctionDescriptor g_socket_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_new_from_fd$MH = RuntimeHelper.downcallHandle(
-        "g_socket_new_from_fd",
-        constants$815.g_socket_new_from_fd$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_fd",
-        constants$815.g_socket_get_fd$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_family",
-        constants$815.g_socket_get_family$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_socket_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_socket_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_socket_type",
-        constants$815.g_socket_get_socket_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_protocol",
-        constants$815.g_socket_get_protocol$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$815() {}
+    static final FunctionDescriptor g_tls_file_database_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_local_address",
-        constants$815.g_socket_get_local_address$FUNC
+    static final MethodHandle g_tls_file_database_new$MH = RuntimeHelper.downcallHandle(
+        "g_tls_file_database_new",
+        constants$815.g_tls_file_database_new$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_interaction_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_get_type",
+        constants$815.g_tls_interaction_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_invoke_ask_password$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_interaction_invoke_ask_password$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_invoke_ask_password",
+        constants$815.g_tls_interaction_invoke_ask_password$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_ask_password$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_interaction_ask_password$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_ask_password",
+        constants$815.g_tls_interaction_ask_password$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_ask_password_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_interaction_ask_password_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_ask_password_async",
+        constants$815.g_tls_interaction_ask_password_async$FUNC
+    );
+    static final FunctionDescriptor g_tls_interaction_ask_password_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_interaction_ask_password_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_ask_password_finish",
+        constants$815.g_tls_interaction_ask_password_finish$FUNC
     );
 }
 

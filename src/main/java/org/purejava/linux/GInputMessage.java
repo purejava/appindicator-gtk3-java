@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GInputMessage extends _GInputMessage {
+/**
+ * {@snippet :
+ * typedef struct _GInputMessage GInputMessage;
+ * }
+ */
+public final class GInputMessage extends _GInputMessage {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GInputMessage() {}
 }
 
 

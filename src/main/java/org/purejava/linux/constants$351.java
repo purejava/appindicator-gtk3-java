@@ -7,46 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$351 {
+final class constants$351 {
 
-    static final FunctionDescriptor pthread_create$__start_routine$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_create$__start_routine$MH = RuntimeHelper.downcallHandle(
-        constants$351.pthread_create$__start_routine$FUNC
-    );
-    static final FunctionDescriptor pthread_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$351() {}
+    static final FunctionDescriptor g_relation_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_relation_count$MH = RuntimeHelper.downcallHandle(
+        "g_relation_count",
+        constants$351.g_relation_count$FUNC
+    );
+    static final FunctionDescriptor g_relation_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_relation_exists$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_exists",
+        constants$351.g_relation_exists$FUNC
+    );
+    static final FunctionDescriptor g_relation_print$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_relation_print$MH = RuntimeHelper.downcallHandle(
+        "g_relation_print",
+        constants$351.g_relation_print$FUNC
+    );
+    static final FunctionDescriptor g_tuples_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tuples_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_tuples_destroy",
+        constants$351.g_tuples_destroy$FUNC
+    );
+    static final FunctionDescriptor g_tuples_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_create$MH = RuntimeHelper.downcallHandle(
-        "pthread_create",
-        constants$351.pthread_create$FUNC
+    static final MethodHandle g_tuples_index$MH = RuntimeHelper.downcallHandle(
+        "g_tuples_index",
+        constants$351.g_tuples_index$FUNC
     );
-    static final FunctionDescriptor pthread_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_exit$MH = RuntimeHelper.downcallHandle(
-        "pthread_exit",
-        constants$351.pthread_exit$FUNC
-    );
-    static final FunctionDescriptor pthread_join$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_join$MH = RuntimeHelper.downcallHandle(
-        "pthread_join",
-        constants$351.pthread_join$FUNC
-    );
-    static final FunctionDescriptor pthread_detach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pthread_detach$MH = RuntimeHelper.downcallHandle(
-        "pthread_detach",
-        constants$351.pthread_detach$FUNC
-    );
+    static final StructLayout g_thread_functions_for_glib_use$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("mutex_new"),
+        Constants$root.C_POINTER$LAYOUT.withName("mutex_lock"),
+        Constants$root.C_POINTER$LAYOUT.withName("mutex_trylock"),
+        Constants$root.C_POINTER$LAYOUT.withName("mutex_unlock"),
+        Constants$root.C_POINTER$LAYOUT.withName("mutex_free"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_new"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_signal"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_broadcast"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_wait"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_timed_wait"),
+        Constants$root.C_POINTER$LAYOUT.withName("cond_free"),
+        Constants$root.C_POINTER$LAYOUT.withName("private_new"),
+        Constants$root.C_POINTER$LAYOUT.withName("private_get"),
+        Constants$root.C_POINTER$LAYOUT.withName("private_set"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_create"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_yield"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_join"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_exit"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_set_priority"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_self"),
+        Constants$root.C_POINTER$LAYOUT.withName("thread_equal")
+    ).withName("_GThreadFunctions");
+    static final MemorySegment g_thread_functions_for_glib_use$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_functions_for_glib_use", constants$351.g_thread_functions_for_glib_use$LAYOUT);
 }
 
 

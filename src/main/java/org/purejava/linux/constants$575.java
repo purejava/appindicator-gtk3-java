@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$575 {
+final class constants$575 {
 
-    static final FunctionDescriptor setregid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle setregid$MH = RuntimeHelper.downcallHandle(
-        "setregid",
-        constants$575.setregid$FUNC
-    );
-    static final FunctionDescriptor setegid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle setegid$MH = RuntimeHelper.downcallHandle(
-        "setegid",
-        constants$575.setegid$FUNC
-    );
-    static final FunctionDescriptor fork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle fork$MH = RuntimeHelper.downcallHandle(
-        "fork",
-        constants$575.fork$FUNC
-    );
-    static final FunctionDescriptor vfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle vfork$MH = RuntimeHelper.downcallHandle(
-        "vfork",
-        constants$575.vfork$FUNC
-    );
-    static final FunctionDescriptor ttyname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle ttyname$MH = RuntimeHelper.downcallHandle(
-        "ttyname",
-        constants$575.ttyname$FUNC
-    );
-    static final FunctionDescriptor ttyname_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$575() {}
+    static final FunctionDescriptor g_dbus_message_set_interface$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ttyname_r$MH = RuntimeHelper.downcallHandle(
-        "ttyname_r",
-        constants$575.ttyname_r$FUNC
+    static final MethodHandle g_dbus_message_set_interface$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_interface",
+        constants$575.g_dbus_message_set_interface$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_get_member$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_get_member$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_member",
+        constants$575.g_dbus_message_get_member$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_set_member$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_set_member$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_member",
+        constants$575.g_dbus_message_set_member$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_path",
+        constants$575.g_dbus_message_get_path$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_set_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_set_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_path",
+        constants$575.g_dbus_message_set_path$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_get_sender$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_get_sender$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_sender",
+        constants$575.g_dbus_message_get_sender$FUNC
     );
 }
 

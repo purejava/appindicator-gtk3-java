@@ -7,37 +7,42 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoLogAttr {
+ *      *     guint is_line_break;
+ *     guint is_mandatory_break;
+ *     guint is_char_break;
+ *     guint is_white;
+ *     guint is_cursor_position;
+ *     guint is_word_start;
+ *     guint is_word_end;
+ *     guint is_sentence_boundary;
+ *     guint is_sentence_start;
+ *     guint is_sentence_end;
+ *     guint backspace_deletes_character;
+ *     guint is_expandable_space;
+ *     guint is_word_boundary;
+ *     guint break_inserts_hyphen;
+ *     guint break_removes_preceding;
+ *     guint reserved;
+ * };
+ * }
+ */
 public class _PangoLogAttr {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("is_line_break"),
-            MemoryLayout.paddingLayout(1).withName("is_mandatory_break"),
-            MemoryLayout.paddingLayout(1).withName("is_char_break"),
-            MemoryLayout.paddingLayout(1).withName("is_white"),
-            MemoryLayout.paddingLayout(1).withName("is_cursor_position"),
-            MemoryLayout.paddingLayout(1).withName("is_word_start"),
-            MemoryLayout.paddingLayout(1).withName("is_word_end"),
-            MemoryLayout.paddingLayout(1).withName("is_sentence_boundary"),
-            MemoryLayout.paddingLayout(1).withName("is_sentence_start"),
-            MemoryLayout.paddingLayout(1).withName("is_sentence_end"),
-            MemoryLayout.paddingLayout(1).withName("backspace_deletes_character"),
-            MemoryLayout.paddingLayout(1).withName("is_expandable_space"),
-            MemoryLayout.paddingLayout(1).withName("is_word_boundary"),
-            MemoryLayout.paddingLayout(1).withName("break_inserts_hyphen"),
-            MemoryLayout.paddingLayout(1).withName("break_removes_preceding"),
-            MemoryLayout.paddingLayout(17).withName("reserved")
-        )
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(32)
     ).withName("_PangoLogAttr");
     public static MemoryLayout $LAYOUT() {
         return _PangoLogAttr.$struct$LAYOUT;
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

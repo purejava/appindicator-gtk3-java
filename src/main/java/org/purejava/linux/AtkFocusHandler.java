@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*AtkFocusHandler)(struct _AtkObject* object,int focus_in);
+ * }
+ */
 public interface AtkFocusHandler {
 
-    void apply(java.lang.foreign.MemoryAddress object, int focus_in);
-    static MemorySegment allocate(AtkFocusHandler fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(AtkFocusHandler.class, fi, constants$1386.AtkFocusHandler$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment colors, int n_colors);
+    static MemorySegment allocate(AtkFocusHandler fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1210.AtkFocusHandler_UP$MH, fi, constants$1210.AtkFocusHandler$FUNC, scope);
     }
-    static AtkFocusHandler ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _object, int _focus_in) -> {
+    static AtkFocusHandler ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$1386.AtkFocusHandler$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_object, _focus_in);
+                constants$1210.AtkFocusHandler_DOWN$MH.invokeExact(symbol, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

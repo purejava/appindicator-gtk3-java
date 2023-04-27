@@ -7,58 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$258 {
+final class constants$258 {
 
-    static final FunctionDescriptor g_pattern_spec_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$258() {}
+    static final FunctionDescriptor g_log$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pattern_spec_copy$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_copy",
-        constants$258.g_pattern_spec_copy$FUNC
+    static final MethodHandle g_log$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_log",
+        constants$258.g_log$FUNC
     );
-    static final FunctionDescriptor g_pattern_spec_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_equal$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_equal",
-        constants$258.g_pattern_spec_equal$FUNC
-    );
-    static final FunctionDescriptor g_pattern_spec_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_match$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_match",
-        constants$258.g_pattern_spec_match$FUNC
-    );
-    static final FunctionDescriptor g_pattern_spec_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_match_string$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_match_string",
-        constants$258.g_pattern_spec_match_string$FUNC
-    );
-    static final FunctionDescriptor g_pattern_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_logv$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pattern_match$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match",
-        constants$258.g_pattern_match$FUNC
+    static final MethodHandle g_logv$MH = RuntimeHelper.downcallHandle(
+        "g_logv",
+        constants$258.g_logv$FUNC
     );
-    static final FunctionDescriptor g_pattern_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_log_set_fatal_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_log_set_fatal_mask$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_fatal_mask",
+        constants$258.g_log_set_fatal_mask$FUNC
+    );
+    static final FunctionDescriptor g_log_set_always_fatal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_log_set_always_fatal$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_always_fatal",
+        constants$258.g_log_set_always_fatal$FUNC
+    );
+    static final FunctionDescriptor GLogWriterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pattern_match_string$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match_string",
-        constants$258.g_pattern_match_string$FUNC
+    static final FunctionDescriptor GLogWriterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GLogWriterFunc_UP$MH = RuntimeHelper.upcallHandle(GLogWriterFunc.class, "apply", constants$258.GLogWriterFunc_UP$FUNC);
+    static final FunctionDescriptor GLogWriterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GLogWriterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$258.GLogWriterFunc_DOWN$FUNC
     );
 }
 

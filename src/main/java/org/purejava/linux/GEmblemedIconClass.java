@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GEmblemedIconClass extends _GEmblemedIconClass {
+/**
+ * {@snippet :
+ * typedef struct _GEmblemedIconClass GEmblemedIconClass;
+ * }
+ */
+public final class GEmblemedIconClass extends _GEmblemedIconClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GEmblemedIconClass() {}
 }
 
 

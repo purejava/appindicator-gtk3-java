@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$647 {
+final class constants$647 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GDebugControllerDBus$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$647() {}
+    static final FunctionDescriptor g_file_info_get_is_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDebugControllerDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDebugControllerDBus",
-        constants$647.glib_autoptr_cleanup_GDebugControllerDBus$FUNC
+    static final MethodHandle g_file_info_get_is_hidden$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_hidden",
+        constants$647.g_file_info_get_is_hidden$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDebugControllerDBus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_is_backup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDebugControllerDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDebugControllerDBus",
-        constants$647.glib_listautoptr_cleanup_GDebugControllerDBus$FUNC
+    static final MethodHandle g_file_info_get_is_backup$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_backup",
+        constants$647.g_file_info_get_is_backup$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDebugControllerDBus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_is_symlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDebugControllerDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDebugControllerDBus",
-        constants$647.glib_slistautoptr_cleanup_GDebugControllerDBus$FUNC
+    static final MethodHandle g_file_info_get_is_symlink$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_symlink",
+        constants$647.g_file_info_get_is_symlink$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDebugControllerDBus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDebugControllerDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDebugControllerDBus",
-        constants$647.glib_queueautoptr_cleanup_GDebugControllerDBus$FUNC
+    static final MethodHandle g_file_info_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_name",
+        constants$647.g_file_info_get_name$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDebugControllerDBusClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDebugControllerDBusClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDebugControllerDBusClass",
-        constants$647.glib_autoptr_clear_GDebugControllerDBusClass$FUNC
+    static final MethodHandle g_file_info_get_display_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_display_name",
+        constants$647.g_file_info_get_display_name$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDebugControllerDBusClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_edit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDebugControllerDBusClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDebugControllerDBusClass",
-        constants$647.glib_autoptr_cleanup_GDebugControllerDBusClass$FUNC
+    static final MethodHandle g_file_info_get_edit_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_edit_name",
+        constants$647.g_file_info_get_edit_name$FUNC
     );
 }
 

@@ -7,32 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$165 {
+final class constants$165 {
 
-    static final FunctionDescriptor g_clear_slist$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$165() {}
+    static final FunctionDescriptor g_slist_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_clear_slist$MH = RuntimeHelper.downcallHandle(
-        "g_clear_slist",
-        constants$165.g_clear_slist$FUNC
+    static final MethodHandle g_slist_find_custom$MH = RuntimeHelper.downcallHandle(
+        "g_slist_find_custom",
+        constants$165.g_slist_find_custom$FUNC
     );
-    static final FunctionDescriptor GSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_slist_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSourceFunc$MH = RuntimeHelper.downcallHandle(
-        constants$165.GSourceFunc$FUNC
+    static final MethodHandle g_slist_position$MH = RuntimeHelper.downcallHandle(
+        "g_slist_position",
+        constants$165.g_slist_position$FUNC
     );
-    static final FunctionDescriptor GChildWatchFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_slist_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GChildWatchFunc$MH = RuntimeHelper.downcallHandle(
-        constants$165.GChildWatchFunc$FUNC
+    static final MethodHandle g_slist_index$MH = RuntimeHelper.downcallHandle(
+        "g_slist_index",
+        constants$165.g_slist_index$FUNC
     );
-    static final FunctionDescriptor GSourceDisposeFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_slist_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_slist_last$MH = RuntimeHelper.downcallHandle(
+        "g_slist_last",
+        constants$165.g_slist_last$FUNC
+    );
+    static final FunctionDescriptor g_slist_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_slist_length$MH = RuntimeHelper.downcallHandle(
+        "g_slist_length",
+        constants$165.g_slist_length$FUNC
+    );
+    static final FunctionDescriptor g_slist_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_slist_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_slist_foreach",
+        constants$165.g_slist_foreach$FUNC
     );
 }
 

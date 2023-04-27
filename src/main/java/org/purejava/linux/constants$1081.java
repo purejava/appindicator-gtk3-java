@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1081 {
+final class constants$1081 {
 
-    static final FunctionDescriptor pango_attribute_as_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1081() {}
+    static final FunctionDescriptor gdk_window_lower$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_string",
-        constants$1081.pango_attribute_as_string$FUNC
+    static final MethodHandle gdk_window_lower$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_lower",
+        constants$1081.gdk_window_lower$FUNC
     );
-    static final FunctionDescriptor pango_attribute_as_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_restack$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_restack$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_restack",
+        constants$1081.gdk_window_restack$FUNC
+    );
+    static final FunctionDescriptor gdk_window_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_focus$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_focus",
+        constants$1081.gdk_window_focus$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_user_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_language$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_language",
-        constants$1081.pango_attribute_as_language$FUNC
+    static final MethodHandle gdk_window_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_user_data",
+        constants$1081.gdk_window_set_user_data$FUNC
     );
-    static final FunctionDescriptor pango_attribute_as_int$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_set_override_redirect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_override_redirect$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_override_redirect",
+        constants$1081.gdk_window_set_override_redirect$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_accept_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_int$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_int",
-        constants$1081.pango_attribute_as_int$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_as_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_as_size$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_size",
-        constants$1081.pango_attribute_as_size$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_as_float$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_as_float$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_float",
-        constants$1081.pango_attribute_as_float$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_as_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_as_color$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_color",
-        constants$1081.pango_attribute_as_color$FUNC
+    static final MethodHandle gdk_window_get_accept_focus$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_accept_focus",
+        constants$1081.gdk_window_get_accept_focus$FUNC
     );
 }
 

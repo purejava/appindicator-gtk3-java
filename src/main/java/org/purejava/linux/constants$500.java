@@ -7,51 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$500 {
+final class constants$500 {
 
-    static final FunctionDescriptor g_type_plugin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_type_plugin_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_get_type",
-        constants$500.g_type_plugin_get_type$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_use$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_use$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_use",
-        constants$500.g_type_plugin_use$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_unuse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_unuse$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_unuse",
-        constants$500.g_type_plugin_unuse$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$500() {}
+    static final FunctionDescriptor g_input_stream_read_bytes_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_plugin_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_type_info",
-        constants$500.g_type_plugin_complete_type_info$FUNC
+    static final MethodHandle g_input_stream_read_bytes_async$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_bytes_async",
+        constants$500.g_input_stream_read_bytes_async$FUNC
     );
-    static final FunctionDescriptor g_type_plugin_complete_interface_info$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_input_stream_read_bytes_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_plugin_complete_interface_info$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_interface_info",
-        constants$500.g_type_plugin_complete_interface_info$FUNC
+    static final MethodHandle g_input_stream_read_bytes_finish$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_bytes_finish",
+        constants$500.g_input_stream_read_bytes_finish$FUNC
     );
-    static final FunctionDescriptor g_value_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_value_array_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_get_type",
-        constants$500.g_value_array_get_type$FUNC
+    static final FunctionDescriptor g_input_stream_skip_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_skip_async$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_skip_async",
+        constants$500.g_input_stream_skip_async$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_skip_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_skip_finish$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_skip_finish",
+        constants$500.g_input_stream_skip_finish$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_close_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_close_async$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_close_async",
+        constants$500.g_input_stream_close_async$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_close_finish$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_close_finish",
+        constants$500.g_input_stream_close_finish$FUNC
     );
 }
 

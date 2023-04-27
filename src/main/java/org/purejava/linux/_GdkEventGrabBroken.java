@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkEventGrabBroken {
+ *     GdkEventType type;
+ *     GdkWindow* window;
+ *     gint8 send_event;
+ *     gboolean keyboard;
+ *     gboolean implicit;
+ *     GdkWindow* grab_window;
+ * };
+ * }
+ */
 public class _GdkEventGrabBroken {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("window"),
@@ -27,10 +39,22 @@ public class _GdkEventGrabBroken {
     public static VarHandle type$VH() {
         return _GdkEventGrabBroken.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEventGrabBroken.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEventGrabBroken.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -43,26 +67,50 @@ public class _GdkEventGrabBroken {
     public static VarHandle window$VH() {
         return _GdkEventGrabBroken.window$VH;
     }
-    public static MemoryAddress window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventGrabBroken.window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static MemorySegment window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventGrabBroken.window$VH.get(seg);
     }
-    public static void window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static void window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventGrabBroken.window$VH.set(seg, x);
     }
-    public static MemoryAddress window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventGrabBroken.window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventGrabBroken.window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventGrabBroken.window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
         return _GdkEventGrabBroken.send_event$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
     public static byte send_event$get(MemorySegment seg) {
         return (byte)_GdkEventGrabBroken.send_event$VH.get(seg);
     }
-    public static void send_event$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
+    public static void send_event$set(MemorySegment seg, byte x) {
         _GdkEventGrabBroken.send_event$VH.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
@@ -75,10 +123,22 @@ public class _GdkEventGrabBroken {
     public static VarHandle keyboard$VH() {
         return _GdkEventGrabBroken.keyboard$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean keyboard;
+     * }
+     */
     public static int keyboard$get(MemorySegment seg) {
         return (int)_GdkEventGrabBroken.keyboard$VH.get(seg);
     }
-    public static void keyboard$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean keyboard;
+     * }
+     */
+    public static void keyboard$set(MemorySegment seg, int x) {
         _GdkEventGrabBroken.keyboard$VH.set(seg, x);
     }
     public static int keyboard$get(MemorySegment seg, long index) {
@@ -91,10 +151,22 @@ public class _GdkEventGrabBroken {
     public static VarHandle implicit$VH() {
         return _GdkEventGrabBroken.implicit$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean implicit;
+     * }
+     */
     public static int implicit$get(MemorySegment seg) {
         return (int)_GdkEventGrabBroken.implicit$VH.get(seg);
     }
-    public static void implicit$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean implicit;
+     * }
+     */
+    public static void implicit$set(MemorySegment seg, int x) {
         _GdkEventGrabBroken.implicit$VH.set(seg, x);
     }
     public static int implicit$get(MemorySegment seg, long index) {
@@ -107,24 +179,36 @@ public class _GdkEventGrabBroken {
     public static VarHandle grab_window$VH() {
         return _GdkEventGrabBroken.grab_window$VH;
     }
-    public static MemoryAddress grab_window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventGrabBroken.grab_window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* grab_window;
+     * }
+     */
+    public static MemorySegment grab_window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventGrabBroken.grab_window$VH.get(seg);
     }
-    public static void grab_window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* grab_window;
+     * }
+     */
+    public static void grab_window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventGrabBroken.grab_window$VH.set(seg, x);
     }
-    public static MemoryAddress grab_window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventGrabBroken.grab_window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment grab_window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventGrabBroken.grab_window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void grab_window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void grab_window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventGrabBroken.grab_window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

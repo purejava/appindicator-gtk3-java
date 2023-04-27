@@ -7,50 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1029 {
+final class constants$1029 {
 
-    static final FunctionDescriptor hb_buffer_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_buffer_create$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_create",
-        constants$1029.hb_buffer_create$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_buffer_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_empty",
-        constants$1029.hb_buffer_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reference",
-        constants$1029.hb_buffer_reference$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_destroy",
-        constants$1029.hb_buffer_destroy$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1029() {}
+    static final FunctionDescriptor cairo_surface_observer_add_mask_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_user_data",
-        constants$1029.hb_buffer_set_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_user_data",
-        constants$1029.hb_buffer_get_user_data$FUNC
+    static final MethodHandle cairo_surface_observer_add_mask_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_mask_callback",
+        constants$1029.cairo_surface_observer_add_mask_callback$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_fill_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_fill_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_fill_callback",
+        constants$1029.cairo_surface_observer_add_fill_callback$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_stroke_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_stroke_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_stroke_callback",
+        constants$1029.cairo_surface_observer_add_stroke_callback$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_glyphs_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_glyphs_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_glyphs_callback",
+        constants$1029.cairo_surface_observer_add_glyphs_callback$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_flush_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_flush_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_flush_callback",
+        constants$1029.cairo_surface_observer_add_flush_callback$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_finish_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_finish_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_finish_callback",
+        constants$1029.cairo_surface_observer_add_finish_callback$FUNC
     );
 }
 

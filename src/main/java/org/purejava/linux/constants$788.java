@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$788 {
+final class constants$788 {
 
-    static final FunctionDescriptor g_resolver_lookup_records_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$788() {}
+    static final FunctionDescriptor g_subprocess_launcher_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_subprocess_launcher_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_get_type",
+        constants$788.g_subprocess_launcher_get_type$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_new$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_new",
+        constants$788.g_subprocess_launcher_new$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_spawn$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_records_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_async",
-        constants$788.g_resolver_lookup_records_async$FUNC
+    static final MethodHandle g_subprocess_launcher_spawn$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_subprocess_launcher_spawn",
+        constants$788.g_subprocess_launcher_spawn$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_records_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_launcher_spawnv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_records_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_finish",
-        constants$788.g_resolver_lookup_records_finish$FUNC
+    static final MethodHandle g_subprocess_launcher_spawnv$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_spawnv",
+        constants$788.g_subprocess_launcher_spawnv$FUNC
     );
-    static final FunctionDescriptor g_resolver_free_targets$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_subprocess_launcher_set_environ$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_free_targets$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_free_targets",
-        constants$788.g_resolver_free_targets$FUNC
+    static final MethodHandle g_subprocess_launcher_set_environ$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_environ",
+        constants$788.g_subprocess_launcher_set_environ$FUNC
     );
-    static final FunctionDescriptor g_resolver_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_resolver_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_error_quark",
-        constants$788.g_resolver_error_quark$FUNC
+    static final FunctionDescriptor g_subprocess_launcher_setenv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_resource_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_resource_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_resource_error_quark",
-        constants$788.g_resource_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_resource_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resource_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resource_get_type",
-        constants$788.g_resource_get_type$FUNC
+    static final MethodHandle g_subprocess_launcher_setenv$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_setenv",
+        constants$788.g_subprocess_launcher_setenv$FUNC
     );
 }
 

@@ -7,58 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1221 {
+final class constants$1221 {
 
-    static final FunctionDescriptor gdk_drag_status$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1221() {}
+    static final FunctionDescriptor atk_editable_text_paste_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_status$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_status",
-        constants$1221.gdk_drag_status$FUNC
+    static final MethodHandle atk_editable_text_paste_text$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_paste_text",
+        constants$1221.atk_editable_text_paste_text$FUNC
     );
-    static final FunctionDescriptor gdk_drop_reply$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_gobject_accessible_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_gobject_accessible_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_gobject_accessible_get_type",
+        constants$1221.atk_gobject_accessible_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_gobject_accessible_for_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_gobject_accessible_for_object$MH = RuntimeHelper.downcallHandle(
+        "atk_gobject_accessible_for_object",
+        constants$1221.atk_gobject_accessible_for_object$FUNC
+    );
+    static final FunctionDescriptor atk_gobject_accessible_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_gobject_accessible_get_object$MH = RuntimeHelper.downcallHandle(
+        "atk_gobject_accessible_get_object",
+        constants$1221.atk_gobject_accessible_get_object$FUNC
+    );
+    static final FunctionDescriptor atk_hyperlink_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_hyperlink_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_get_type",
+        constants$1221.atk_hyperlink_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_hyperlink_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drop_reply$MH = RuntimeHelper.downcallHandle(
-        "gdk_drop_reply",
-        constants$1221.gdk_drop_reply$FUNC
-    );
-    static final FunctionDescriptor gdk_drop_finish$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drop_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_drop_finish",
-        constants$1221.gdk_drop_finish$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_get_selection",
-        constants$1221.gdk_drag_get_selection$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_begin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_begin$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_begin",
-        constants$1221.gdk_drag_begin$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_begin_for_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_begin_for_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_begin_for_device",
-        constants$1221.gdk_drag_begin_for_device$FUNC
+    static final MethodHandle atk_hyperlink_get_uri$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_get_uri",
+        constants$1221.atk_hyperlink_get_uri$FUNC
     );
 }
 

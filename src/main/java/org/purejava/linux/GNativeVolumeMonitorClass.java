@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GNativeVolumeMonitorClass extends _GNativeVolumeMonitorClass {
+/**
+ * {@snippet :
+ * typedef struct _GNativeVolumeMonitorClass GNativeVolumeMonitorClass;
+ * }
+ */
+public final class GNativeVolumeMonitorClass extends _GNativeVolumeMonitorClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GNativeVolumeMonitorClass() {}
 }
 
 

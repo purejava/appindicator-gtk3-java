@@ -7,55 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1083 {
+final class constants$1083 {
 
-    static final FunctionDescriptor pango_attr_list_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_unref$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_unref",
-        constants$1083.pango_attr_list_unref$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_copy",
-        constants$1083.pango_attr_list_copy$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_insert$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_insert",
-        constants$1083.pango_attr_list_insert$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_insert_before$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_insert_before",
-        constants$1083.pango_attr_list_insert_before$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_change$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_change$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_change",
-        constants$1083.pango_attr_list_change$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_splice$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1083() {}
+    static final FunctionDescriptor gdk_window_move_region$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_list_splice$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_splice",
-        constants$1083.pango_attr_list_splice$FUNC
+    static final MethodHandle gdk_window_move_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_move_region",
+        constants$1083.gdk_window_move_region$FUNC
+    );
+    static final FunctionDescriptor gdk_window_ensure_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_ensure_native$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_ensure_native",
+        constants$1083.gdk_window_ensure_native$FUNC
+    );
+    static final FunctionDescriptor gdk_window_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_shape_combine_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_shape_combine_region",
+        constants$1083.gdk_window_shape_combine_region$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_child_shapes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_child_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_child_shapes",
+        constants$1083.gdk_window_set_child_shapes$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_composited$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_composited",
+        constants$1083.gdk_window_get_composited$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_composited$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_composited$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_composited",
+        constants$1083.gdk_window_set_composited$FUNC
     );
 }
 

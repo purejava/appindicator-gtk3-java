@@ -7,16 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkAccelGroupEntry {
+ *     GtkAccelKey key;
+ *     GClosure* closure;
+ *     GQuark accel_path_quark;
+ * };
+ * }
+ */
 public class _GtkAccelGroupEntry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("accel_key"),
             Constants$root.C_INT$LAYOUT.withName("accel_mods"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(16).withName("accel_flags"),
-                MemoryLayout.paddingLayout(16)
-            )
+            MemoryLayout.paddingLayout(32)
         ).withName("key"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("closure"),
@@ -33,26 +39,50 @@ public class _GtkAccelGroupEntry {
     public static VarHandle closure$VH() {
         return _GtkAccelGroupEntry.closure$VH;
     }
-    public static MemoryAddress closure$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkAccelGroupEntry.closure$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GClosure* closure;
+     * }
+     */
+    public static MemorySegment closure$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkAccelGroupEntry.closure$VH.get(seg);
     }
-    public static void closure$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GClosure* closure;
+     * }
+     */
+    public static void closure$set(MemorySegment seg, MemorySegment x) {
         _GtkAccelGroupEntry.closure$VH.set(seg, x);
     }
-    public static MemoryAddress closure$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkAccelGroupEntry.closure$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment closure$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkAccelGroupEntry.closure$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void closure$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void closure$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkAccelGroupEntry.closure$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle accel_path_quark$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accel_path_quark"));
     public static VarHandle accel_path_quark$VH() {
         return _GtkAccelGroupEntry.accel_path_quark$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GQuark accel_path_quark;
+     * }
+     */
     public static int accel_path_quark$get(MemorySegment seg) {
         return (int)_GtkAccelGroupEntry.accel_path_quark$VH.get(seg);
     }
-    public static void accel_path_quark$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GQuark accel_path_quark;
+     * }
+     */
+    public static void accel_path_quark$set(MemorySegment seg, int x) {
         _GtkAccelGroupEntry.accel_path_quark$VH.set(seg, x);
     }
     public static int accel_path_quark$get(MemorySegment seg, long index) {
@@ -63,10 +93,10 @@ public class _GtkAccelGroupEntry {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

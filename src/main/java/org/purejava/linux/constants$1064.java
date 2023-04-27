@@ -7,50 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1064 {
+final class constants$1064 {
 
-    static final FunctionDescriptor pango_font_family_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_family_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_type",
-        constants$1064.pango_font_family_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1064() {}
+    static final FunctionDescriptor gdk_drag_context_get_drag_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_font_family_list_faces$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle gdk_drag_context_get_drag_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_drag_window",
+        constants$1064.gdk_drag_context_get_drag_window$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_set_hotspot$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_set_hotspot$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_set_hotspot",
+        constants$1064.gdk_drag_context_set_hotspot$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_manage_dnd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_manage_dnd$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_manage_dnd",
+        constants$1064.gdk_drag_context_manage_dnd$FUNC
+    );
+    static final FunctionDescriptor gdk_device_tool_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_device_tool_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_type",
+        constants$1064.gdk_device_tool_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_device_tool_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_family_list_faces$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_list_faces",
-        constants$1064.pango_font_family_list_faces$FUNC
+    static final MethodHandle gdk_device_tool_get_serial$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_serial",
+        constants$1064.gdk_device_tool_get_serial$FUNC
     );
-    static final FunctionDescriptor pango_font_family_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_device_tool_get_hardware_id$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_family_get_name$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_name",
-        constants$1064.pango_font_family_get_name$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_is_monospace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_is_monospace$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_is_monospace",
-        constants$1064.pango_font_family_is_monospace$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_is_variable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_is_variable$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_is_variable",
-        constants$1064.pango_font_family_is_variable$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_get_face$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_face",
-        constants$1064.pango_font_family_get_face$FUNC
+    static final MethodHandle gdk_device_tool_get_hardware_id$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_hardware_id",
+        constants$1064.gdk_device_tool_get_hardware_id$FUNC
     );
 }
 

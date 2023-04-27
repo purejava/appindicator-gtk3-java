@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkArrow extends _GtkArrow {
+/**
+ * {@snippet :
+ * typedef struct _GtkArrow GtkArrow;
+ * }
+ */
+public final class GtkArrow extends _GtkArrow {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkArrow() {}
 }
 
 

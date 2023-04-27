@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellRendererSpin extends _GtkCellRendererSpin {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellRendererSpin GtkCellRendererSpin;
+ * }
+ */
+public final class GtkCellRendererSpin extends _GtkCellRendererSpin {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellRendererSpin() {}
 }
 
 

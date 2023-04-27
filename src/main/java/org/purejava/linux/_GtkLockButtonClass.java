@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkLockButtonClass {
+ *     GtkButtonClass parent_class;
+ *     void (*reserved0)();
+ *     void (*reserved1)();
+ *     void (*reserved2)();
+ *     void (*reserved3)();
+ *     void (*reserved4)();
+ *     void (*reserved5)();
+ *     void (*reserved6)();
+ *     void (*reserved7)();
+ * };
+ * }
+ */
 public class _GtkLockButtonClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -28,7 +43,10 @@ public class _GtkLockButtonClass {
                             Constants$root.C_POINTER$LAYOUT.withName("notify"),
                             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                         ).withName("parent_class"),
                         Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                         MemoryLayout.paddingLayout(32),
@@ -128,10 +146,7 @@ public class _GtkLockButtonClass {
                     Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                    MemoryLayout.structLayout(
-                        MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                        MemoryLayout.paddingLayout(63)
-                    ),
+                    MemoryLayout.paddingLayout(64),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -173,20 +188,28 @@ public class _GtkLockButtonClass {
         return seg.asSlice(0, 1088);
     }
     static final FunctionDescriptor reserved0$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved0$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved0$FUNC
+    static final FunctionDescriptor reserved0_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved0_UP$MH = RuntimeHelper.upcallHandle(reserved0.class, "apply", _GtkLockButtonClass.reserved0_UP$FUNC);
+    static final FunctionDescriptor reserved0_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved0_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved0_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved0)();
+     * }
+     */
     public interface reserved0 {
 
         void apply();
-        static MemorySegment allocate(reserved0 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved0.class, fi, _GtkLockButtonClass.reserved0$FUNC, session);
+        static MemorySegment allocate(reserved0 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved0_UP$MH, fi, _GtkLockButtonClass.reserved0$FUNC, scope);
         }
-        static reserved0 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved0 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved0$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved0_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -198,36 +221,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved0$VH() {
         return _GtkLockButtonClass.reserved0$VH;
     }
-    public static MemoryAddress reserved0$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved0$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved0)();
+     * }
+     */
+    public static MemorySegment reserved0$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved0$VH.get(seg);
     }
-    public static void reserved0$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved0)();
+     * }
+     */
+    public static void reserved0$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved0$VH.set(seg, x);
     }
-    public static MemoryAddress reserved0$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved0$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved0$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved0$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved0$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved0$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved0$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved0 reserved0 (MemorySegment segment, MemorySession session) {
-        return reserved0.ofAddress(reserved0$get(segment), session);
+    public static reserved0 reserved0(MemorySegment segment, SegmentScope scope) {
+        return reserved0.ofAddress(reserved0$get(segment), scope);
     }
     static final FunctionDescriptor reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved1$FUNC
+    static final FunctionDescriptor reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved1_UP$MH = RuntimeHelper.upcallHandle(reserved1.class, "apply", _GtkLockButtonClass.reserved1_UP$FUNC);
+    static final FunctionDescriptor reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved1)();
+     * }
+     */
     public interface reserved1 {
 
         void apply();
-        static MemorySegment allocate(reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved1.class, fi, _GtkLockButtonClass.reserved1$FUNC, session);
+        static MemorySegment allocate(reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved1_UP$MH, fi, _GtkLockButtonClass.reserved1$FUNC, scope);
         }
-        static reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -239,36 +282,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved1$VH() {
         return _GtkLockButtonClass.reserved1$VH;
     }
-    public static MemoryAddress reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved1)();
+     * }
+     */
+    public static MemorySegment reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved1$VH.get(seg);
     }
-    public static void reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved1)();
+     * }
+     */
+    public static void reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved1 reserved1 (MemorySegment segment, MemorySession session) {
-        return reserved1.ofAddress(reserved1$get(segment), session);
+    public static reserved1 reserved1(MemorySegment segment, SegmentScope scope) {
+        return reserved1.ofAddress(reserved1$get(segment), scope);
     }
     static final FunctionDescriptor reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved2$FUNC
+    static final FunctionDescriptor reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved2_UP$MH = RuntimeHelper.upcallHandle(reserved2.class, "apply", _GtkLockButtonClass.reserved2_UP$FUNC);
+    static final FunctionDescriptor reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved2)();
+     * }
+     */
     public interface reserved2 {
 
         void apply();
-        static MemorySegment allocate(reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved2.class, fi, _GtkLockButtonClass.reserved2$FUNC, session);
+        static MemorySegment allocate(reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved2_UP$MH, fi, _GtkLockButtonClass.reserved2$FUNC, scope);
         }
-        static reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -280,36 +343,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved2$VH() {
         return _GtkLockButtonClass.reserved2$VH;
     }
-    public static MemoryAddress reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved2)();
+     * }
+     */
+    public static MemorySegment reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved2$VH.get(seg);
     }
-    public static void reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved2)();
+     * }
+     */
+    public static void reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved2 reserved2 (MemorySegment segment, MemorySession session) {
-        return reserved2.ofAddress(reserved2$get(segment), session);
+    public static reserved2 reserved2(MemorySegment segment, SegmentScope scope) {
+        return reserved2.ofAddress(reserved2$get(segment), scope);
     }
     static final FunctionDescriptor reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved3$FUNC
+    static final FunctionDescriptor reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved3_UP$MH = RuntimeHelper.upcallHandle(reserved3.class, "apply", _GtkLockButtonClass.reserved3_UP$FUNC);
+    static final FunctionDescriptor reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved3)();
+     * }
+     */
     public interface reserved3 {
 
         void apply();
-        static MemorySegment allocate(reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved3.class, fi, _GtkLockButtonClass.reserved3$FUNC, session);
+        static MemorySegment allocate(reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved3_UP$MH, fi, _GtkLockButtonClass.reserved3$FUNC, scope);
         }
-        static reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -321,36 +404,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved3$VH() {
         return _GtkLockButtonClass.reserved3$VH;
     }
-    public static MemoryAddress reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved3)();
+     * }
+     */
+    public static MemorySegment reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved3$VH.get(seg);
     }
-    public static void reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved3)();
+     * }
+     */
+    public static void reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved3 reserved3 (MemorySegment segment, MemorySession session) {
-        return reserved3.ofAddress(reserved3$get(segment), session);
+    public static reserved3 reserved3(MemorySegment segment, SegmentScope scope) {
+        return reserved3.ofAddress(reserved3$get(segment), scope);
     }
     static final FunctionDescriptor reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved4$FUNC
+    static final FunctionDescriptor reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved4_UP$MH = RuntimeHelper.upcallHandle(reserved4.class, "apply", _GtkLockButtonClass.reserved4_UP$FUNC);
+    static final FunctionDescriptor reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved4)();
+     * }
+     */
     public interface reserved4 {
 
         void apply();
-        static MemorySegment allocate(reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved4.class, fi, _GtkLockButtonClass.reserved4$FUNC, session);
+        static MemorySegment allocate(reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved4_UP$MH, fi, _GtkLockButtonClass.reserved4$FUNC, scope);
         }
-        static reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -362,36 +465,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved4$VH() {
         return _GtkLockButtonClass.reserved4$VH;
     }
-    public static MemoryAddress reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved4)();
+     * }
+     */
+    public static MemorySegment reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved4$VH.get(seg);
     }
-    public static void reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved4)();
+     * }
+     */
+    public static void reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved4 reserved4 (MemorySegment segment, MemorySession session) {
-        return reserved4.ofAddress(reserved4$get(segment), session);
+    public static reserved4 reserved4(MemorySegment segment, SegmentScope scope) {
+        return reserved4.ofAddress(reserved4$get(segment), scope);
     }
     static final FunctionDescriptor reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved5$FUNC
+    static final FunctionDescriptor reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved5_UP$MH = RuntimeHelper.upcallHandle(reserved5.class, "apply", _GtkLockButtonClass.reserved5_UP$FUNC);
+    static final FunctionDescriptor reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved5)();
+     * }
+     */
     public interface reserved5 {
 
         void apply();
-        static MemorySegment allocate(reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved5.class, fi, _GtkLockButtonClass.reserved5$FUNC, session);
+        static MemorySegment allocate(reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved5_UP$MH, fi, _GtkLockButtonClass.reserved5$FUNC, scope);
         }
-        static reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -403,36 +526,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved5$VH() {
         return _GtkLockButtonClass.reserved5$VH;
     }
-    public static MemoryAddress reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved5)();
+     * }
+     */
+    public static MemorySegment reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved5$VH.get(seg);
     }
-    public static void reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved5)();
+     * }
+     */
+    public static void reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved5 reserved5 (MemorySegment segment, MemorySession session) {
-        return reserved5.ofAddress(reserved5$get(segment), session);
+    public static reserved5 reserved5(MemorySegment segment, SegmentScope scope) {
+        return reserved5.ofAddress(reserved5$get(segment), scope);
     }
     static final FunctionDescriptor reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved6$FUNC
+    static final FunctionDescriptor reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved6_UP$MH = RuntimeHelper.upcallHandle(reserved6.class, "apply", _GtkLockButtonClass.reserved6_UP$FUNC);
+    static final FunctionDescriptor reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved6)();
+     * }
+     */
     public interface reserved6 {
 
         void apply();
-        static MemorySegment allocate(reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved6.class, fi, _GtkLockButtonClass.reserved6$FUNC, session);
+        static MemorySegment allocate(reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved6_UP$MH, fi, _GtkLockButtonClass.reserved6$FUNC, scope);
         }
-        static reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -444,36 +587,56 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved6$VH() {
         return _GtkLockButtonClass.reserved6$VH;
     }
-    public static MemoryAddress reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved6)();
+     * }
+     */
+    public static MemorySegment reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved6$VH.get(seg);
     }
-    public static void reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved6)();
+     * }
+     */
+    public static void reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved6 reserved6 (MemorySegment segment, MemorySession session) {
-        return reserved6.ofAddress(reserved6$get(segment), session);
+    public static reserved6 reserved6(MemorySegment segment, SegmentScope scope) {
+        return reserved6.ofAddress(reserved6$get(segment), scope);
     }
     static final FunctionDescriptor reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved7$MH = RuntimeHelper.downcallHandle(
-        _GtkLockButtonClass.reserved7$FUNC
+    static final FunctionDescriptor reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved7_UP$MH = RuntimeHelper.upcallHandle(reserved7.class, "apply", _GtkLockButtonClass.reserved7_UP$FUNC);
+    static final FunctionDescriptor reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLockButtonClass.reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*reserved7)();
+     * }
+     */
     public interface reserved7 {
 
         void apply();
-        static MemorySegment allocate(reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reserved7.class, fi, _GtkLockButtonClass.reserved7$FUNC, session);
+        static MemorySegment allocate(reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLockButtonClass.reserved7_UP$MH, fi, _GtkLockButtonClass.reserved7$FUNC, scope);
         }
-        static reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLockButtonClass.reserved7$MH.invokeExact((Addressable)symbol);
+                    _GtkLockButtonClass.reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -485,27 +648,39 @@ public class _GtkLockButtonClass {
     public static VarHandle reserved7$VH() {
         return _GtkLockButtonClass.reserved7$VH;
     }
-    public static MemoryAddress reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reserved7)();
+     * }
+     */
+    public static MemorySegment reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved7$VH.get(seg);
     }
-    public static void reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reserved7)();
+     * }
+     */
+    public static void reserved7$set(MemorySegment seg, MemorySegment x) {
         _GtkLockButtonClass.reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLockButtonClass.reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLockButtonClass.reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLockButtonClass.reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved7 reserved7 (MemorySegment segment, MemorySession session) {
-        return reserved7.ofAddress(reserved7$get(segment), session);
+    public static reserved7 reserved7(MemorySegment segment, SegmentScope scope) {
+        return reserved7.ofAddress(reserved7$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$72 {
+final class constants$72 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$72() {}
+    static final FunctionDescriptor g_async_queue_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_queue_remove$MH = RuntimeHelper.downcallHandle(
+        "g_async_queue_remove",
+        constants$72.g_async_queue_remove$FUNC
+    );
+    static final FunctionDescriptor g_async_queue_remove_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_async_queue_remove_unlocked$MH = RuntimeHelper.downcallHandle(
+        "g_async_queue_remove_unlocked",
+        constants$72.g_async_queue_remove_unlocked$FUNC
+    );
     static final FunctionDescriptor g_async_queue_push_front$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -40,12 +58,6 @@ class constants$72 {
     static final MethodHandle g_async_queue_timed_pop_unlocked$MH = RuntimeHelper.downcallHandle(
         "g_async_queue_timed_pop_unlocked",
         constants$72.g_async_queue_timed_pop_unlocked$FUNC
-    );
-    static final FunctionDescriptor __sighandler_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __sighandler_t$MH = RuntimeHelper.downcallHandle(
-        constants$72.__sighandler_t$FUNC
     );
 }
 

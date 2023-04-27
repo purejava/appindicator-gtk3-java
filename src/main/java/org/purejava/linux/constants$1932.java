@@ -7,44 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1932 {
+final class constants$1932 {
 
-    static final FunctionDescriptor gtk_places_sidebar_get_show_starred_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1932() {}
+    static final FunctionDescriptor gtk_symbolic_color_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_symbolic_color_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_get_type",
+        constants$1932.gtk_symbolic_color_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_symbolic_color_new_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_places_sidebar_get_show_starred_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_show_starred_location",
-        constants$1932.gtk_places_sidebar_get_show_starred_location$FUNC
+    static final MethodHandle gtk_symbolic_color_new_literal$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_literal",
+        constants$1932.gtk_symbolic_color_new_literal$FUNC
     );
-    static final FunctionDescriptor gtk_popover_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_popover_menu_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_menu_get_type",
-        constants$1932.gtk_popover_menu_get_type$FUNC
+    static final FunctionDescriptor gtk_symbolic_color_new_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_popover_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_popover_menu_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_menu_new",
-        constants$1932.gtk_popover_menu_new$FUNC
+    static final MethodHandle gtk_symbolic_color_new_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_name",
+        constants$1932.gtk_symbolic_color_new_name$FUNC
     );
-    static final FunctionDescriptor gtk_popover_menu_open_submenu$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_symbolic_color_new_shade$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_popover_menu_open_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_menu_open_submenu",
-        constants$1932.gtk_popover_menu_open_submenu$FUNC
+    static final MethodHandle gtk_symbolic_color_new_shade$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_shade",
+        constants$1932.gtk_symbolic_color_new_shade$FUNC
     );
-    static final FunctionDescriptor gtk_print_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_type",
-        constants$1932.gtk_print_context_get_type$FUNC
+    static final FunctionDescriptor gtk_symbolic_color_new_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final FunctionDescriptor gtk_print_context_get_cairo_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle gtk_symbolic_color_new_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_alpha",
+        constants$1932.gtk_symbolic_color_new_alpha$FUNC
     );
-    static final MethodHandle gtk_print_context_get_cairo_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_cairo_context",
-        constants$1932.gtk_print_context_get_cairo_context$FUNC
+    static final FunctionDescriptor gtk_symbolic_color_new_mix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_symbolic_color_new_mix$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_mix",
+        constants$1932.gtk_symbolic_color_new_mix$FUNC
     );
 }
 

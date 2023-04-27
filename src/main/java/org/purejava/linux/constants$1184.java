@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1184 {
+final class constants$1184 {
 
-    static final FunctionDescriptor cairo_copy_path_flat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1184() {}
+    static final FunctionDescriptor gdk_test_simulate_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_copy_path_flat$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_path_flat",
-        constants$1184.cairo_copy_path_flat$FUNC
+    static final MethodHandle gdk_test_simulate_button$MH = RuntimeHelper.downcallHandle(
+        "gdk_test_simulate_button",
+        constants$1184.gdk_test_simulate_button$FUNC
     );
-    static final FunctionDescriptor cairo_append_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_threads_init$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_threads_init$MH = RuntimeHelper.downcallHandle(
+        "gdk_threads_init",
+        constants$1184.gdk_threads_init$FUNC
+    );
+    static final FunctionDescriptor gdk_threads_enter$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_threads_enter$MH = RuntimeHelper.downcallHandle(
+        "gdk_threads_enter",
+        constants$1184.gdk_threads_enter$FUNC
+    );
+    static final FunctionDescriptor gdk_threads_leave$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_threads_leave$MH = RuntimeHelper.downcallHandle(
+        "gdk_threads_leave",
+        constants$1184.gdk_threads_leave$FUNC
+    );
+    static final FunctionDescriptor gdk_threads_set_lock_functions$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_append_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_append_path",
-        constants$1184.cairo_append_path$FUNC
+    static final MethodHandle gdk_threads_set_lock_functions$MH = RuntimeHelper.downcallHandle(
+        "gdk_threads_set_lock_functions",
+        constants$1184.gdk_threads_set_lock_functions$FUNC
     );
-    static final FunctionDescriptor cairo_path_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_threads_add_idle_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_path_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_path_destroy",
-        constants$1184.cairo_path_destroy$FUNC
-    );
-    static final FunctionDescriptor cairo_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_status",
-        constants$1184.cairo_status$FUNC
-    );
-    static final FunctionDescriptor cairo_status_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_status_to_string$MH = RuntimeHelper.downcallHandle(
-        "cairo_status_to_string",
-        constants$1184.cairo_status_to_string$FUNC
-    );
-    static final FunctionDescriptor cairo_device_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_reference",
-        constants$1184.cairo_device_reference$FUNC
+    static final MethodHandle gdk_threads_add_idle_full$MH = RuntimeHelper.downcallHandle(
+        "gdk_threads_add_idle_full",
+        constants$1184.gdk_threads_add_idle_full$FUNC
     );
 }
 

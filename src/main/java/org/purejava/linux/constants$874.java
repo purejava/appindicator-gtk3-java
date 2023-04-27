@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$874 {
+final class constants$874 {
 
-    static final FunctionDescriptor g_vfs_get_file_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$874() {}
+    static final FunctionDescriptor hb_font_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_get_file_for_uri$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_file_for_uri",
-        constants$874.g_vfs_get_file_for_uri$FUNC
+    static final MethodHandle hb_font_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_user_data",
+        constants$874.hb_font_get_user_data$FUNC
     );
-    static final FunctionDescriptor g_vfs_get_supported_uri_schemes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_make_immutable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_get_supported_uri_schemes$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_supported_uri_schemes",
-        constants$874.g_vfs_get_supported_uri_schemes$FUNC
+    static final MethodHandle hb_font_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_font_make_immutable",
+        constants$874.hb_font_make_immutable$FUNC
     );
-    static final FunctionDescriptor g_vfs_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_parse_name",
-        constants$874.g_vfs_parse_name$FUNC
+    static final MethodHandle hb_font_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_font_is_immutable",
+        constants$874.hb_font_is_immutable$FUNC
     );
-    static final FunctionDescriptor g_vfs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_vfs_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_default",
-        constants$874.g_vfs_get_default$FUNC
+    static final FunctionDescriptor hb_font_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_vfs_get_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_vfs_get_local$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_local",
-        constants$874.g_vfs_get_local$FUNC
+    static final MethodHandle hb_font_get_serial$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_serial",
+        constants$874.hb_font_get_serial$FUNC
     );
-    static final FunctionDescriptor g_vfs_register_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_changed$MH = RuntimeHelper.downcallHandle(
+        "hb_font_changed",
+        constants$874.hb_font_changed$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_parent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_register_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_register_uri_scheme",
-        constants$874.g_vfs_register_uri_scheme$FUNC
+    static final MethodHandle hb_font_set_parent$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_parent",
+        constants$874.hb_font_set_parent$FUNC
     );
 }
 

@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1860 {
+final class constants$1860 {
 
-    static final FunctionDescriptor gtk_info_bar_set_default_response$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1860() {}
+    static final FunctionDescriptor gtk_tool_palette_get_drop_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_set_default_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_default_response",
-        constants$1860.gtk_info_bar_set_default_response$FUNC
+    static final MethodHandle gtk_tool_palette_get_drop_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_drop_group",
+        constants$1860.gtk_tool_palette_get_drop_group$FUNC
     );
-    static final FunctionDescriptor gtk_info_bar_response$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_palette_get_drag_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_response",
-        constants$1860.gtk_info_bar_response$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_set_message_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_set_message_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_message_type",
-        constants$1860.gtk_info_bar_set_message_type$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_get_message_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_get_message_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_message_type",
-        constants$1860.gtk_info_bar_get_message_type$FUNC
+    static final MethodHandle gtk_tool_palette_get_drag_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_drag_item",
+        constants$1860.gtk_tool_palette_get_drag_item$FUNC
     );
-    static final FunctionDescriptor gtk_info_bar_set_show_close_button$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_palette_set_drag_source$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_set_show_close_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_show_close_button",
-        constants$1860.gtk_info_bar_set_show_close_button$FUNC
+    static final MethodHandle gtk_tool_palette_set_drag_source$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_drag_source",
+        constants$1860.gtk_tool_palette_set_drag_source$FUNC
     );
-    static final FunctionDescriptor gtk_info_bar_get_show_close_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tool_palette_add_drag_dest$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_palette_add_drag_dest$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_add_drag_dest",
+        constants$1860.gtk_tool_palette_add_drag_dest$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_get_show_close_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_show_close_button",
-        constants$1860.gtk_info_bar_get_show_close_button$FUNC
+    static final MethodHandle gtk_tool_palette_get_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_hadjustment",
+        constants$1860.gtk_tool_palette_get_hadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_palette_get_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_vadjustment",
+        constants$1860.gtk_tool_palette_get_vadjustment$FUNC
     );
 }
 

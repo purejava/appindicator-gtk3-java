@@ -7,48 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$879 {
+final class constants$879 {
 
-    static final FunctionDescriptor g_zlib_compressor_set_file_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$879() {}
+    static final FunctionDescriptor hb_buffer_create_similar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_zlib_compressor_set_file_info$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_set_file_info",
-        constants$879.g_zlib_compressor_set_file_info$FUNC
+    static final MethodHandle hb_buffer_create_similar$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_create_similar",
+        constants$879.hb_buffer_create_similar$FUNC
     );
-    static final FunctionDescriptor g_zlib_decompressor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_zlib_decompressor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_decompressor_get_type",
-        constants$879.g_zlib_decompressor_get_type$FUNC
+    static final FunctionDescriptor hb_buffer_reset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_zlib_decompressor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle hb_buffer_reset$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_reset",
+        constants$879.hb_buffer_reset$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_buffer_get_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_empty",
+        constants$879.hb_buffer_get_empty$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_buffer_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_reference",
+        constants$879.hb_buffer_reference$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_buffer_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_destroy",
+        constants$879.hb_buffer_destroy$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_zlib_decompressor_new$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_decompressor_new",
-        constants$879.g_zlib_decompressor_new$FUNC
-    );
-    static final FunctionDescriptor g_zlib_decompressor_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_zlib_decompressor_get_file_info$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_decompressor_get_file_info",
-        constants$879.g_zlib_decompressor_get_file_info$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GAction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GAction$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GAction",
-        constants$879.glib_autoptr_clear_GAction$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GAction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GAction$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GAction",
-        constants$879.glib_autoptr_cleanup_GAction$FUNC
+    static final MethodHandle hb_buffer_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_user_data",
+        constants$879.hb_buffer_set_user_data$FUNC
     );
 }
 

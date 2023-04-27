@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$187 {
+final class constants$187 {
 
-    static final FunctionDescriptor g_unichar_xdigit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$187() {}
+    static final FunctionDescriptor g_unichar_istitle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_xdigit_value$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_xdigit_value",
-        constants$187.g_unichar_xdigit_value$FUNC
+    static final MethodHandle g_unichar_istitle$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_istitle",
+        constants$187.g_unichar_istitle$FUNC
     );
-    static final FunctionDescriptor g_unichar_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_isdefined$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_type$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_type",
-        constants$187.g_unichar_type$FUNC
+    static final MethodHandle g_unichar_isdefined$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_isdefined",
+        constants$187.g_unichar_isdefined$FUNC
     );
-    static final FunctionDescriptor g_unichar_break_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_iswide$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_break_type$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_break_type",
-        constants$187.g_unichar_break_type$FUNC
+    static final MethodHandle g_unichar_iswide$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_iswide",
+        constants$187.g_unichar_iswide$FUNC
     );
-    static final FunctionDescriptor g_unichar_combining_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_iswide_cjk$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_combining_class$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_combining_class",
-        constants$187.g_unichar_combining_class$FUNC
+    static final MethodHandle g_unichar_iswide_cjk$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_iswide_cjk",
+        constants$187.g_unichar_iswide_cjk$FUNC
     );
-    static final FunctionDescriptor g_unichar_get_mirror_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unichar_get_mirror_char$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_get_mirror_char",
-        constants$187.g_unichar_get_mirror_char$FUNC
-    );
-    static final FunctionDescriptor g_unichar_get_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_iszerowidth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_get_script$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_get_script",
-        constants$187.g_unichar_get_script$FUNC
+    static final MethodHandle g_unichar_iszerowidth$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_iszerowidth",
+        constants$187.g_unichar_iszerowidth$FUNC
+    );
+    static final FunctionDescriptor g_unichar_ismark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_unichar_ismark$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_ismark",
+        constants$187.g_unichar_ismark$FUNC
     );
 }
 

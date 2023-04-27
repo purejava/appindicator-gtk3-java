@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1862 {
+final class constants$1862 {
 
-    static final FunctionDescriptor gtk_invisible_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1862() {}
+    static final FunctionDescriptor gtk_tool_shell_get_relief_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_invisible_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_invisible_get_screen",
-        constants$1862.gtk_invisible_get_screen$FUNC
+    static final MethodHandle gtk_tool_shell_get_relief_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_relief_style",
+        constants$1862.gtk_tool_shell_get_relief_style$FUNC
     );
-    static final FunctionDescriptor gtk_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_layout_get_type",
-        constants$1862.gtk_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_layout_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_shell_rebuild_menu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_layout_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_layout_new",
-        constants$1862.gtk_layout_new$FUNC
+    static final MethodHandle gtk_tool_shell_rebuild_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_rebuild_menu",
+        constants$1862.gtk_tool_shell_rebuild_menu$FUNC
     );
-    static final FunctionDescriptor gtk_layout_get_bin_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_shell_get_text_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_layout_get_bin_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_layout_get_bin_window",
-        constants$1862.gtk_layout_get_bin_window$FUNC
+    static final MethodHandle gtk_tool_shell_get_text_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_text_orientation",
+        constants$1862.gtk_tool_shell_get_text_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_layout_put$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_tool_shell_get_text_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_layout_put$MH = RuntimeHelper.downcallHandle(
-        "gtk_layout_put",
-        constants$1862.gtk_layout_put$FUNC
+    static final MethodHandle gtk_tool_shell_get_text_alignment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_text_alignment",
+        constants$1862.gtk_tool_shell_get_text_alignment$FUNC
     );
-    static final FunctionDescriptor gtk_layout_move$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_tool_shell_get_ellipsize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_layout_move$MH = RuntimeHelper.downcallHandle(
-        "gtk_layout_move",
-        constants$1862.gtk_layout_move$FUNC
+    static final MethodHandle gtk_tool_shell_get_ellipsize_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_ellipsize_mode",
+        constants$1862.gtk_tool_shell_get_ellipsize_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_shell_get_text_size_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_shell_get_text_size_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_text_size_group",
+        constants$1862.gtk_tool_shell_get_text_size_group$FUNC
     );
 }
 

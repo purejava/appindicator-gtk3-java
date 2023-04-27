@@ -7,49 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1921 {
+final class constants$1921 {
 
-    static final FunctionDescriptor gtk_page_setup_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_page_setup_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_new",
-        constants$1921.gtk_page_setup_new$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_copy",
-        constants$1921.gtk_page_setup_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_get_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_orientation",
-        constants$1921.gtk_page_setup_get_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_set_orientation$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1921() {}
+    static final FunctionDescriptor gtk_action_group_add_toggle_actions_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_set_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_set_orientation",
-        constants$1921.gtk_page_setup_set_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_get_paper_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_get_paper_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_paper_size",
-        constants$1921.gtk_page_setup_get_paper_size$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_set_paper_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_page_setup_set_paper_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_set_paper_size",
-        constants$1921.gtk_page_setup_set_paper_size$FUNC
+    static final MethodHandle gtk_action_group_add_toggle_actions_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_toggle_actions_full",
+        constants$1921.gtk_action_group_add_toggle_actions_full$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_add_radio_actions_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_add_radio_actions_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_radio_actions_full",
+        constants$1921.gtk_action_group_add_radio_actions_full$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_set_translate_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_translate_func",
+        constants$1921.gtk_action_group_set_translate_func$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_set_translation_domain$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_translation_domain",
+        constants$1921.gtk_action_group_set_translation_domain$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_translate_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_translate_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_translate_string",
+        constants$1921.gtk_action_group_translate_string$FUNC
+    );
+    static final FunctionDescriptor _gtk_action_group_emit_connect_proxy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle _gtk_action_group_emit_connect_proxy$MH = RuntimeHelper.downcallHandle(
+        "_gtk_action_group_emit_connect_proxy",
+        constants$1921._gtk_action_group_emit_connect_proxy$FUNC
     );
 }
 

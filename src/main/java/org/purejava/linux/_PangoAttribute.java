@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoAttribute {
+ *     const PangoAttrClass* klass;
+ *     guint start_index;
+ *     guint end_index;
+ * };
+ * }
+ */
 public class _PangoAttribute {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("klass"),
         Constants$root.C_INT$LAYOUT.withName("start_index"),
         Constants$root.C_INT$LAYOUT.withName("end_index")
@@ -21,26 +30,50 @@ public class _PangoAttribute {
     public static VarHandle klass$VH() {
         return _PangoAttribute.klass$VH;
     }
-    public static MemoryAddress klass$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoAttribute.klass$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const PangoAttrClass* klass;
+     * }
+     */
+    public static MemorySegment klass$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoAttribute.klass$VH.get(seg);
     }
-    public static void klass$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const PangoAttrClass* klass;
+     * }
+     */
+    public static void klass$set(MemorySegment seg, MemorySegment x) {
         _PangoAttribute.klass$VH.set(seg, x);
     }
-    public static MemoryAddress klass$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoAttribute.klass$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment klass$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoAttribute.klass$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void klass$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void klass$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoAttribute.klass$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle start_index$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
     public static VarHandle start_index$VH() {
         return _PangoAttribute.start_index$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint start_index;
+     * }
+     */
     public static int start_index$get(MemorySegment seg) {
         return (int)_PangoAttribute.start_index$VH.get(seg);
     }
-    public static void start_index$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint start_index;
+     * }
+     */
+    public static void start_index$set(MemorySegment seg, int x) {
         _PangoAttribute.start_index$VH.set(seg, x);
     }
     public static int start_index$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _PangoAttribute {
     public static VarHandle end_index$VH() {
         return _PangoAttribute.end_index$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint end_index;
+     * }
+     */
     public static int end_index$get(MemorySegment seg) {
         return (int)_PangoAttribute.end_index$VH.get(seg);
     }
-    public static void end_index$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint end_index;
+     * }
+     */
+    public static void end_index$set(MemorySegment seg, int x) {
         _PangoAttribute.end_index$VH.set(seg, x);
     }
     public static int end_index$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _PangoAttribute {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

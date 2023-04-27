@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1501 {
+final class constants$1501 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkWindow$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1501() {}
+    static final FunctionDescriptor gtk_binding_set_by_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkWindow",
-        constants$1501.glib_listautoptr_cleanup_GtkWindow$FUNC
+    static final MethodHandle gtk_binding_set_by_class$MH = RuntimeHelper.downcallHandle(
+        "gtk_binding_set_by_class",
+        constants$1501.gtk_binding_set_by_class$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkWindow$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_binding_set_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkWindow",
-        constants$1501.glib_slistautoptr_cleanup_GtkWindow$FUNC
+    static final MethodHandle gtk_binding_set_find$MH = RuntimeHelper.downcallHandle(
+        "gtk_binding_set_find",
+        constants$1501.gtk_binding_set_find$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkWindow$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_bindings_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_bindings_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_bindings_activate",
+        constants$1501.gtk_bindings_activate$FUNC
+    );
+    static final FunctionDescriptor gtk_bindings_activate_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkWindow",
-        constants$1501.glib_queueautoptr_cleanup_GtkWindow$FUNC
+    static final MethodHandle gtk_bindings_activate_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_bindings_activate_event",
+        constants$1501.gtk_bindings_activate_event$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkWindowGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_binding_set_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkWindowGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkWindowGroup",
-        constants$1501.glib_autoptr_clear_GtkWindowGroup$FUNC
+    static final MethodHandle gtk_binding_set_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_binding_set_activate",
+        constants$1501.gtk_binding_set_activate$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkWindowGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_binding_entry_skip$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkWindowGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkWindowGroup",
-        constants$1501.glib_autoptr_cleanup_GtkWindowGroup$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkWindowGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkWindowGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkWindowGroup",
-        constants$1501.glib_listautoptr_cleanup_GtkWindowGroup$FUNC
+    static final MethodHandle gtk_binding_entry_skip$MH = RuntimeHelper.downcallHandle(
+        "gtk_binding_entry_skip",
+        constants$1501.gtk_binding_entry_skip$FUNC
     );
 }
 

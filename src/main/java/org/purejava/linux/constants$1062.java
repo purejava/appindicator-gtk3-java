@@ -7,47 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1062 {
+final class constants$1062 {
 
-    static final FunctionDescriptor pango_font_metrics_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_metrics_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_type",
-        constants$1062.pango_font_metrics_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1062() {}
+    static final FunctionDescriptor gdk_drop_reply$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_font_metrics_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle gdk_drop_reply$MH = RuntimeHelper.downcallHandle(
+        "gdk_drop_reply",
+        constants$1062.gdk_drop_reply$FUNC
+    );
+    static final FunctionDescriptor gdk_drop_finish$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drop_finish$MH = RuntimeHelper.downcallHandle(
+        "gdk_drop_finish",
+        constants$1062.gdk_drop_finish$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_ref$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_ref",
-        constants$1062.pango_font_metrics_ref$FUNC
+    static final MethodHandle gdk_drag_get_selection$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_get_selection",
+        constants$1062.gdk_drag_get_selection$FUNC
     );
-    static final FunctionDescriptor pango_font_metrics_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_drag_begin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_unref$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_unref",
-        constants$1062.pango_font_metrics_unref$FUNC
+    static final MethodHandle gdk_drag_begin$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin",
+        constants$1062.gdk_drag_begin$FUNC
     );
-    static final FunctionDescriptor pango_font_metrics_get_ascent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_drag_begin_for_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_get_ascent$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_ascent",
-        constants$1062.pango_font_metrics_get_ascent$FUNC
+    static final MethodHandle gdk_drag_begin_for_device$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin_for_device",
+        constants$1062.gdk_drag_begin_for_device$FUNC
     );
-    static final FunctionDescriptor pango_font_metrics_get_descent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_drag_begin_from_point$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_get_descent$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_descent",
-        constants$1062.pango_font_metrics_get_descent$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_height$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_height",
-        constants$1062.pango_font_metrics_get_height$FUNC
+    static final MethodHandle gdk_drag_begin_from_point$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin_from_point",
+        constants$1062.gdk_drag_begin_from_point$FUNC
     );
 }
 

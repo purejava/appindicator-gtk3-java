@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkGestureZoom {
+/**
+ * {@snippet :
+ * typedef struct _GtkGestureZoom GtkGestureZoom;
+ * }
+ */
+public final class GtkGestureZoom {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkGestureZoom() {}
 }
 
 

@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$13 {
+final class constants$13 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$13() {}
+    static final FunctionDescriptor strrchr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle strrchr$MH = RuntimeHelper.downcallHandle(
+        "strrchr",
+        constants$13.strrchr$FUNC
+    );
+    static final FunctionDescriptor strcspn$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strcspn$MH = RuntimeHelper.downcallHandle(
+        "strcspn",
+        constants$13.strcspn$FUNC
+    );
     static final FunctionDescriptor strspn$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -40,24 +58,6 @@ class constants$13 {
     static final MethodHandle strtok$MH = RuntimeHelper.downcallHandle(
         "strtok",
         constants$13.strtok$FUNC
-    );
-    static final FunctionDescriptor __strtok_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __strtok_r$MH = RuntimeHelper.downcallHandle(
-        "__strtok_r",
-        constants$13.__strtok_r$FUNC
-    );
-    static final FunctionDescriptor strtok_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtok_r$MH = RuntimeHelper.downcallHandle(
-        "strtok_r",
-        constants$13.strtok_r$FUNC
     );
 }
 

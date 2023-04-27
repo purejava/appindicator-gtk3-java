@@ -7,9 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GVolumeMonitorClass {
+ *     GObjectClass parent_class;
+ *     void (*volume_added)(GVolumeMonitor*,GVolume*);
+ *     void (*volume_removed)(GVolumeMonitor*,GVolume*);
+ *     void (*volume_changed)(GVolumeMonitor*,GVolume*);
+ *     void (*mount_added)(GVolumeMonitor*,GMount*);
+ *     void (*mount_removed)(GVolumeMonitor*,GMount*);
+ *     void (*mount_pre_unmount)(GVolumeMonitor*,GMount*);
+ *     void (*mount_changed)(GVolumeMonitor*,GMount*);
+ *     void (*drive_connected)(GVolumeMonitor*,GDrive*);
+ *     void (*drive_disconnected)(GVolumeMonitor*,GDrive*);
+ *     void (*drive_changed)(GVolumeMonitor*,GDrive*);
+ *     gboolean (*is_supported)();
+ *     GList* (*get_connected_drives)(GVolumeMonitor*);
+ *     GList* (*get_volumes)(GVolumeMonitor*);
+ *     GList* (*get_mounts)(GVolumeMonitor*);
+ *     GVolume* (*get_volume_for_uuid)(GVolumeMonitor*,char*);
+ *     GMount* (*get_mount_for_uuid)(GVolumeMonitor*,char*);
+ *     GVolume* (*adopt_orphan_mount)(GMount*,GVolumeMonitor*);
+ *     void (*drive_eject_button)(GVolumeMonitor*,GDrive*);
+ *     void (*drive_stop_button)(GVolumeMonitor*,GDrive*);
+ *     void (*_g_reserved1)();
+ *     void (*_g_reserved2)();
+ *     void (*_g_reserved3)();
+ *     void (*_g_reserved4)();
+ *     void (*_g_reserved5)();
+ *     void (*_g_reserved6)();
+ * };
+ * }
+ */
 public class _GVolumeMonitorClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +56,10 @@ public class _GVolumeMonitorClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("volume_added"),
         Constants$root.C_POINTER$LAYOUT.withName("volume_removed"),
@@ -62,20 +97,34 @@ public class _GVolumeMonitorClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle volume_added$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.volume_added$FUNC
+    static final FunctionDescriptor volume_added_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle volume_added_UP$MH = RuntimeHelper.upcallHandle(volume_added.class, "apply", _GVolumeMonitorClass.volume_added_UP$FUNC);
+    static final FunctionDescriptor volume_added_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle volume_added_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.volume_added_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*volume_added)(GVolumeMonitor*,GVolume*);
+     * }
+     */
     public interface volume_added {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(volume_added fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(volume_added.class, fi, _GVolumeMonitorClass.volume_added$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(volume_added fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.volume_added_UP$MH, fi, _GVolumeMonitorClass.volume_added$FUNC, scope);
         }
-        static volume_added ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static volume_added ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.volume_added$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.volume_added_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -87,39 +136,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle volume_added$VH() {
         return _GVolumeMonitorClass.volume_added$VH;
     }
-    public static MemoryAddress volume_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_added$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*volume_added)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static MemorySegment volume_added$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_added$VH.get(seg);
     }
-    public static void volume_added$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*volume_added)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static void volume_added$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.volume_added$VH.set(seg, x);
     }
-    public static MemoryAddress volume_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_added$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment volume_added$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_added$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void volume_added$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void volume_added$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.volume_added$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static volume_added volume_added (MemorySegment segment, MemorySession session) {
-        return volume_added.ofAddress(volume_added$get(segment), session);
+    public static volume_added volume_added(MemorySegment segment, SegmentScope scope) {
+        return volume_added.ofAddress(volume_added$get(segment), scope);
     }
     static final FunctionDescriptor volume_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle volume_removed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.volume_removed$FUNC
+    static final FunctionDescriptor volume_removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle volume_removed_UP$MH = RuntimeHelper.upcallHandle(volume_removed.class, "apply", _GVolumeMonitorClass.volume_removed_UP$FUNC);
+    static final FunctionDescriptor volume_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle volume_removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.volume_removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*volume_removed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
     public interface volume_removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(volume_removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(volume_removed.class, fi, _GVolumeMonitorClass.volume_removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(volume_removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.volume_removed_UP$MH, fi, _GVolumeMonitorClass.volume_removed$FUNC, scope);
         }
-        static volume_removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static volume_removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.volume_removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.volume_removed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -131,39 +206,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle volume_removed$VH() {
         return _GVolumeMonitorClass.volume_removed$VH;
     }
-    public static MemoryAddress volume_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*volume_removed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static MemorySegment volume_removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_removed$VH.get(seg);
     }
-    public static void volume_removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*volume_removed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static void volume_removed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.volume_removed$VH.set(seg, x);
     }
-    public static MemoryAddress volume_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment volume_removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void volume_removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void volume_removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.volume_removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static volume_removed volume_removed (MemorySegment segment, MemorySession session) {
-        return volume_removed.ofAddress(volume_removed$get(segment), session);
+    public static volume_removed volume_removed(MemorySegment segment, SegmentScope scope) {
+        return volume_removed.ofAddress(volume_removed$get(segment), scope);
     }
     static final FunctionDescriptor volume_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle volume_changed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.volume_changed$FUNC
+    static final FunctionDescriptor volume_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle volume_changed_UP$MH = RuntimeHelper.upcallHandle(volume_changed.class, "apply", _GVolumeMonitorClass.volume_changed_UP$FUNC);
+    static final FunctionDescriptor volume_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle volume_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.volume_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*volume_changed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
     public interface volume_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(volume_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(volume_changed.class, fi, _GVolumeMonitorClass.volume_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(volume_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.volume_changed_UP$MH, fi, _GVolumeMonitorClass.volume_changed$FUNC, scope);
         }
-        static volume_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static volume_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.volume_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.volume_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -175,39 +276,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle volume_changed$VH() {
         return _GVolumeMonitorClass.volume_changed$VH;
     }
-    public static MemoryAddress volume_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*volume_changed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static MemorySegment volume_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_changed$VH.get(seg);
     }
-    public static void volume_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*volume_changed)(GVolumeMonitor*,GVolume*);
+     * }
+     */
+    public static void volume_changed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.volume_changed$VH.set(seg, x);
     }
-    public static MemoryAddress volume_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.volume_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment volume_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.volume_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void volume_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void volume_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.volume_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static volume_changed volume_changed (MemorySegment segment, MemorySession session) {
-        return volume_changed.ofAddress(volume_changed$get(segment), session);
+    public static volume_changed volume_changed(MemorySegment segment, SegmentScope scope) {
+        return volume_changed.ofAddress(volume_changed$get(segment), scope);
     }
     static final FunctionDescriptor mount_added$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_added$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.mount_added$FUNC
+    static final FunctionDescriptor mount_added_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_added_UP$MH = RuntimeHelper.upcallHandle(mount_added.class, "apply", _GVolumeMonitorClass.mount_added_UP$FUNC);
+    static final FunctionDescriptor mount_added_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_added_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.mount_added_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*mount_added)(GVolumeMonitor*,GMount*);
+     * }
+     */
     public interface mount_added {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(mount_added fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_added.class, fi, _GVolumeMonitorClass.mount_added$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(mount_added fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.mount_added_UP$MH, fi, _GVolumeMonitorClass.mount_added$FUNC, scope);
         }
-        static mount_added ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static mount_added ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.mount_added$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.mount_added_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -219,39 +346,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle mount_added$VH() {
         return _GVolumeMonitorClass.mount_added$VH;
     }
-    public static MemoryAddress mount_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_added$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*mount_added)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static MemorySegment mount_added$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_added$VH.get(seg);
     }
-    public static void mount_added$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*mount_added)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static void mount_added$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.mount_added$VH.set(seg, x);
     }
-    public static MemoryAddress mount_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_added$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_added$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_added$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_added$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_added$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.mount_added$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_added mount_added (MemorySegment segment, MemorySession session) {
-        return mount_added.ofAddress(mount_added$get(segment), session);
+    public static mount_added mount_added(MemorySegment segment, SegmentScope scope) {
+        return mount_added.ofAddress(mount_added$get(segment), scope);
     }
     static final FunctionDescriptor mount_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_removed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.mount_removed$FUNC
+    static final FunctionDescriptor mount_removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_removed_UP$MH = RuntimeHelper.upcallHandle(mount_removed.class, "apply", _GVolumeMonitorClass.mount_removed_UP$FUNC);
+    static final FunctionDescriptor mount_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.mount_removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*mount_removed)(GVolumeMonitor*,GMount*);
+     * }
+     */
     public interface mount_removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(mount_removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_removed.class, fi, _GVolumeMonitorClass.mount_removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(mount_removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.mount_removed_UP$MH, fi, _GVolumeMonitorClass.mount_removed$FUNC, scope);
         }
-        static mount_removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static mount_removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.mount_removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.mount_removed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -263,39 +416,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle mount_removed$VH() {
         return _GVolumeMonitorClass.mount_removed$VH;
     }
-    public static MemoryAddress mount_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*mount_removed)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static MemorySegment mount_removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_removed$VH.get(seg);
     }
-    public static void mount_removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*mount_removed)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static void mount_removed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.mount_removed$VH.set(seg, x);
     }
-    public static MemoryAddress mount_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.mount_removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_removed mount_removed (MemorySegment segment, MemorySession session) {
-        return mount_removed.ofAddress(mount_removed$get(segment), session);
+    public static mount_removed mount_removed(MemorySegment segment, SegmentScope scope) {
+        return mount_removed.ofAddress(mount_removed$get(segment), scope);
     }
     static final FunctionDescriptor mount_pre_unmount$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_pre_unmount$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.mount_pre_unmount$FUNC
+    static final FunctionDescriptor mount_pre_unmount_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_pre_unmount_UP$MH = RuntimeHelper.upcallHandle(mount_pre_unmount.class, "apply", _GVolumeMonitorClass.mount_pre_unmount_UP$FUNC);
+    static final FunctionDescriptor mount_pre_unmount_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_pre_unmount_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.mount_pre_unmount_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*mount_pre_unmount)(GVolumeMonitor*,GMount*);
+     * }
+     */
     public interface mount_pre_unmount {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(mount_pre_unmount fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_pre_unmount.class, fi, _GVolumeMonitorClass.mount_pre_unmount$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(mount_pre_unmount fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.mount_pre_unmount_UP$MH, fi, _GVolumeMonitorClass.mount_pre_unmount$FUNC, scope);
         }
-        static mount_pre_unmount ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static mount_pre_unmount ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.mount_pre_unmount$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.mount_pre_unmount_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -307,39 +486,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle mount_pre_unmount$VH() {
         return _GVolumeMonitorClass.mount_pre_unmount$VH;
     }
-    public static MemoryAddress mount_pre_unmount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_pre_unmount$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*mount_pre_unmount)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static MemorySegment mount_pre_unmount$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_pre_unmount$VH.get(seg);
     }
-    public static void mount_pre_unmount$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*mount_pre_unmount)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static void mount_pre_unmount$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.mount_pre_unmount$VH.set(seg, x);
     }
-    public static MemoryAddress mount_pre_unmount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_pre_unmount$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_pre_unmount$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_pre_unmount$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_pre_unmount$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_pre_unmount$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.mount_pre_unmount$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_pre_unmount mount_pre_unmount (MemorySegment segment, MemorySession session) {
-        return mount_pre_unmount.ofAddress(mount_pre_unmount$get(segment), session);
+    public static mount_pre_unmount mount_pre_unmount(MemorySegment segment, SegmentScope scope) {
+        return mount_pre_unmount.ofAddress(mount_pre_unmount$get(segment), scope);
     }
     static final FunctionDescriptor mount_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_changed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.mount_changed$FUNC
+    static final FunctionDescriptor mount_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_changed_UP$MH = RuntimeHelper.upcallHandle(mount_changed.class, "apply", _GVolumeMonitorClass.mount_changed_UP$FUNC);
+    static final FunctionDescriptor mount_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.mount_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*mount_changed)(GVolumeMonitor*,GMount*);
+     * }
+     */
     public interface mount_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(mount_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_changed.class, fi, _GVolumeMonitorClass.mount_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(mount_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.mount_changed_UP$MH, fi, _GVolumeMonitorClass.mount_changed$FUNC, scope);
         }
-        static mount_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static mount_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.mount_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.mount_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -351,39 +556,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle mount_changed$VH() {
         return _GVolumeMonitorClass.mount_changed$VH;
     }
-    public static MemoryAddress mount_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*mount_changed)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static MemorySegment mount_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_changed$VH.get(seg);
     }
-    public static void mount_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*mount_changed)(GVolumeMonitor*,GMount*);
+     * }
+     */
+    public static void mount_changed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.mount_changed$VH.set(seg, x);
     }
-    public static MemoryAddress mount_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.mount_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.mount_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.mount_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_changed mount_changed (MemorySegment segment, MemorySession session) {
-        return mount_changed.ofAddress(mount_changed$get(segment), session);
+    public static mount_changed mount_changed(MemorySegment segment, SegmentScope scope) {
+        return mount_changed.ofAddress(mount_changed$get(segment), scope);
     }
     static final FunctionDescriptor drive_connected$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drive_connected$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.drive_connected$FUNC
+    static final FunctionDescriptor drive_connected_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drive_connected_UP$MH = RuntimeHelper.upcallHandle(drive_connected.class, "apply", _GVolumeMonitorClass.drive_connected_UP$FUNC);
+    static final FunctionDescriptor drive_connected_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drive_connected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.drive_connected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*drive_connected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
     public interface drive_connected {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drive_connected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drive_connected.class, fi, _GVolumeMonitorClass.drive_connected$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(drive_connected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.drive_connected_UP$MH, fi, _GVolumeMonitorClass.drive_connected$FUNC, scope);
         }
-        static drive_connected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drive_connected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.drive_connected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.drive_connected_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -395,39 +626,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle drive_connected$VH() {
         return _GVolumeMonitorClass.drive_connected$VH;
     }
-    public static MemoryAddress drive_connected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_connected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*drive_connected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static MemorySegment drive_connected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_connected$VH.get(seg);
     }
-    public static void drive_connected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*drive_connected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static void drive_connected$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.drive_connected$VH.set(seg, x);
     }
-    public static MemoryAddress drive_connected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_connected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drive_connected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_connected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drive_connected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drive_connected$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.drive_connected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drive_connected drive_connected (MemorySegment segment, MemorySession session) {
-        return drive_connected.ofAddress(drive_connected$get(segment), session);
+    public static drive_connected drive_connected(MemorySegment segment, SegmentScope scope) {
+        return drive_connected.ofAddress(drive_connected$get(segment), scope);
     }
     static final FunctionDescriptor drive_disconnected$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drive_disconnected$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.drive_disconnected$FUNC
+    static final FunctionDescriptor drive_disconnected_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drive_disconnected_UP$MH = RuntimeHelper.upcallHandle(drive_disconnected.class, "apply", _GVolumeMonitorClass.drive_disconnected_UP$FUNC);
+    static final FunctionDescriptor drive_disconnected_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drive_disconnected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.drive_disconnected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*drive_disconnected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
     public interface drive_disconnected {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drive_disconnected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drive_disconnected.class, fi, _GVolumeMonitorClass.drive_disconnected$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(drive_disconnected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.drive_disconnected_UP$MH, fi, _GVolumeMonitorClass.drive_disconnected$FUNC, scope);
         }
-        static drive_disconnected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drive_disconnected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.drive_disconnected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.drive_disconnected_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -439,39 +696,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle drive_disconnected$VH() {
         return _GVolumeMonitorClass.drive_disconnected$VH;
     }
-    public static MemoryAddress drive_disconnected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_disconnected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*drive_disconnected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static MemorySegment drive_disconnected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_disconnected$VH.get(seg);
     }
-    public static void drive_disconnected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*drive_disconnected)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static void drive_disconnected$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.drive_disconnected$VH.set(seg, x);
     }
-    public static MemoryAddress drive_disconnected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_disconnected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drive_disconnected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_disconnected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drive_disconnected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drive_disconnected$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.drive_disconnected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drive_disconnected drive_disconnected (MemorySegment segment, MemorySession session) {
-        return drive_disconnected.ofAddress(drive_disconnected$get(segment), session);
+    public static drive_disconnected drive_disconnected(MemorySegment segment, SegmentScope scope) {
+        return drive_disconnected.ofAddress(drive_disconnected$get(segment), scope);
     }
     static final FunctionDescriptor drive_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drive_changed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.drive_changed$FUNC
+    static final FunctionDescriptor drive_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drive_changed_UP$MH = RuntimeHelper.upcallHandle(drive_changed.class, "apply", _GVolumeMonitorClass.drive_changed_UP$FUNC);
+    static final FunctionDescriptor drive_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drive_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.drive_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*drive_changed)(GVolumeMonitor*,GDrive*);
+     * }
+     */
     public interface drive_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drive_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drive_changed.class, fi, _GVolumeMonitorClass.drive_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(drive_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.drive_changed_UP$MH, fi, _GVolumeMonitorClass.drive_changed$FUNC, scope);
         }
-        static drive_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drive_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.drive_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.drive_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -483,36 +766,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle drive_changed$VH() {
         return _GVolumeMonitorClass.drive_changed$VH;
     }
-    public static MemoryAddress drive_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*drive_changed)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static MemorySegment drive_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_changed$VH.get(seg);
     }
-    public static void drive_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*drive_changed)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static void drive_changed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.drive_changed$VH.set(seg, x);
     }
-    public static MemoryAddress drive_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drive_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drive_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drive_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.drive_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drive_changed drive_changed (MemorySegment segment, MemorySession session) {
-        return drive_changed.ofAddress(drive_changed$get(segment), session);
+    public static drive_changed drive_changed(MemorySegment segment, SegmentScope scope) {
+        return drive_changed.ofAddress(drive_changed$get(segment), scope);
     }
     static final FunctionDescriptor is_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle is_supported$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.is_supported$FUNC
+    static final FunctionDescriptor is_supported_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle is_supported_UP$MH = RuntimeHelper.upcallHandle(is_supported.class, "apply", _GVolumeMonitorClass.is_supported_UP$FUNC);
+    static final FunctionDescriptor is_supported_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle is_supported_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.is_supported_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * gboolean (*is_supported)();
+     * }
+     */
     public interface is_supported {
 
         int apply();
-        static MemorySegment allocate(is_supported fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_supported.class, fi, _GVolumeMonitorClass.is_supported$FUNC, session);
+        static MemorySegment allocate(is_supported fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.is_supported_UP$MH, fi, _GVolumeMonitorClass.is_supported$FUNC, scope);
         }
-        static is_supported ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static is_supported ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    return (int)_GVolumeMonitorClass.is_supported$MH.invokeExact((Addressable)symbol);
+                    return (int)_GVolumeMonitorClass.is_supported_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -524,38 +827,62 @@ public class _GVolumeMonitorClass {
     public static VarHandle is_supported$VH() {
         return _GVolumeMonitorClass.is_supported$VH;
     }
-    public static MemoryAddress is_supported$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.is_supported$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_supported)();
+     * }
+     */
+    public static MemorySegment is_supported$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.is_supported$VH.get(seg);
     }
-    public static void is_supported$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_supported)();
+     * }
+     */
+    public static void is_supported$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.is_supported$VH.set(seg, x);
     }
-    public static MemoryAddress is_supported$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.is_supported$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_supported$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.is_supported$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_supported$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_supported$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.is_supported$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_supported is_supported (MemorySegment segment, MemorySession session) {
-        return is_supported.ofAddress(is_supported$get(segment), session);
+    public static is_supported is_supported(MemorySegment segment, SegmentScope scope) {
+        return is_supported.ofAddress(is_supported$get(segment), scope);
     }
     static final FunctionDescriptor get_connected_drives$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_connected_drives$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.get_connected_drives$FUNC
+    static final FunctionDescriptor get_connected_drives_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_connected_drives_UP$MH = RuntimeHelper.upcallHandle(get_connected_drives.class, "apply", _GVolumeMonitorClass.get_connected_drives_UP$FUNC);
+    static final FunctionDescriptor get_connected_drives_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_connected_drives_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.get_connected_drives_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_connected_drives)(GVolumeMonitor*);
+     * }
+     */
     public interface get_connected_drives {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_connected_drives fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_connected_drives.class, fi, _GVolumeMonitorClass.get_connected_drives$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_connected_drives fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.get_connected_drives_UP$MH, fi, _GVolumeMonitorClass.get_connected_drives$FUNC, scope);
         }
-        static get_connected_drives ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_connected_drives ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_connected_drives$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_connected_drives_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -567,38 +894,62 @@ public class _GVolumeMonitorClass {
     public static VarHandle get_connected_drives$VH() {
         return _GVolumeMonitorClass.get_connected_drives$VH;
     }
-    public static MemoryAddress get_connected_drives$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_connected_drives$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_connected_drives)(GVolumeMonitor*);
+     * }
+     */
+    public static MemorySegment get_connected_drives$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_connected_drives$VH.get(seg);
     }
-    public static void get_connected_drives$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_connected_drives)(GVolumeMonitor*);
+     * }
+     */
+    public static void get_connected_drives$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.get_connected_drives$VH.set(seg, x);
     }
-    public static MemoryAddress get_connected_drives$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_connected_drives$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_connected_drives$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_connected_drives$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_connected_drives$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_connected_drives$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.get_connected_drives$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_connected_drives get_connected_drives (MemorySegment segment, MemorySession session) {
-        return get_connected_drives.ofAddress(get_connected_drives$get(segment), session);
+    public static get_connected_drives get_connected_drives(MemorySegment segment, SegmentScope scope) {
+        return get_connected_drives.ofAddress(get_connected_drives$get(segment), scope);
     }
     static final FunctionDescriptor get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_volumes$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.get_volumes$FUNC
+    static final FunctionDescriptor get_volumes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_volumes_UP$MH = RuntimeHelper.upcallHandle(get_volumes.class, "apply", _GVolumeMonitorClass.get_volumes_UP$FUNC);
+    static final FunctionDescriptor get_volumes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_volumes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.get_volumes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_volumes)(GVolumeMonitor*);
+     * }
+     */
     public interface get_volumes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_volumes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_volumes.class, fi, _GVolumeMonitorClass.get_volumes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_volumes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.get_volumes_UP$MH, fi, _GVolumeMonitorClass.get_volumes$FUNC, scope);
         }
-        static get_volumes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_volumes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volumes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volumes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -610,38 +961,62 @@ public class _GVolumeMonitorClass {
     public static VarHandle get_volumes$VH() {
         return _GVolumeMonitorClass.get_volumes$VH;
     }
-    public static MemoryAddress get_volumes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volumes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_volumes)(GVolumeMonitor*);
+     * }
+     */
+    public static MemorySegment get_volumes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volumes$VH.get(seg);
     }
-    public static void get_volumes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_volumes)(GVolumeMonitor*);
+     * }
+     */
+    public static void get_volumes$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.get_volumes$VH.set(seg, x);
     }
-    public static MemoryAddress get_volumes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volumes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_volumes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volumes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_volumes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_volumes$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.get_volumes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_volumes get_volumes (MemorySegment segment, MemorySession session) {
-        return get_volumes.ofAddress(get_volumes$get(segment), session);
+    public static get_volumes get_volumes(MemorySegment segment, SegmentScope scope) {
+        return get_volumes.ofAddress(get_volumes$get(segment), scope);
     }
     static final FunctionDescriptor get_mounts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_mounts$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.get_mounts$FUNC
+    static final FunctionDescriptor get_mounts_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_mounts_UP$MH = RuntimeHelper.upcallHandle(get_mounts.class, "apply", _GVolumeMonitorClass.get_mounts_UP$FUNC);
+    static final FunctionDescriptor get_mounts_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_mounts_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.get_mounts_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_mounts)(GVolumeMonitor*);
+     * }
+     */
     public interface get_mounts {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_mounts fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_mounts.class, fi, _GVolumeMonitorClass.get_mounts$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_mounts fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.get_mounts_UP$MH, fi, _GVolumeMonitorClass.get_mounts$FUNC, scope);
         }
-        static get_mounts ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_mounts ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mounts$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mounts_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -653,39 +1028,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle get_mounts$VH() {
         return _GVolumeMonitorClass.get_mounts$VH;
     }
-    public static MemoryAddress get_mounts$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mounts$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_mounts)(GVolumeMonitor*);
+     * }
+     */
+    public static MemorySegment get_mounts$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mounts$VH.get(seg);
     }
-    public static void get_mounts$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_mounts)(GVolumeMonitor*);
+     * }
+     */
+    public static void get_mounts$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.get_mounts$VH.set(seg, x);
     }
-    public static MemoryAddress get_mounts$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mounts$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_mounts$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mounts$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_mounts$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_mounts$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.get_mounts$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_mounts get_mounts (MemorySegment segment, MemorySession session) {
-        return get_mounts.ofAddress(get_mounts$get(segment), session);
+    public static get_mounts get_mounts(MemorySegment segment, SegmentScope scope) {
+        return get_mounts.ofAddress(get_mounts$get(segment), scope);
     }
     static final FunctionDescriptor get_volume_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_volume_for_uuid$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.get_volume_for_uuid$FUNC
+    static final FunctionDescriptor get_volume_for_uuid_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_volume_for_uuid_UP$MH = RuntimeHelper.upcallHandle(get_volume_for_uuid.class, "apply", _GVolumeMonitorClass.get_volume_for_uuid_UP$FUNC);
+    static final FunctionDescriptor get_volume_for_uuid_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_volume_for_uuid_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.get_volume_for_uuid_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GVolume* (*get_volume_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
     public interface get_volume_for_uuid {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_volume_for_uuid fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_volume_for_uuid.class, fi, _GVolumeMonitorClass.get_volume_for_uuid$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_volume_for_uuid fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.get_volume_for_uuid_UP$MH, fi, _GVolumeMonitorClass.get_volume_for_uuid$FUNC, scope);
         }
-        static get_volume_for_uuid ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_volume_for_uuid ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volume_for_uuid$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volume_for_uuid_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -697,39 +1098,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle get_volume_for_uuid$VH() {
         return _GVolumeMonitorClass.get_volume_for_uuid$VH;
     }
-    public static MemoryAddress get_volume_for_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volume_for_uuid$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GVolume* (*get_volume_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
+    public static MemorySegment get_volume_for_uuid$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volume_for_uuid$VH.get(seg);
     }
-    public static void get_volume_for_uuid$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GVolume* (*get_volume_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
+    public static void get_volume_for_uuid$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.get_volume_for_uuid$VH.set(seg, x);
     }
-    public static MemoryAddress get_volume_for_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_volume_for_uuid$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_volume_for_uuid$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_volume_for_uuid$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_volume_for_uuid$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_volume_for_uuid$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.get_volume_for_uuid$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_volume_for_uuid get_volume_for_uuid (MemorySegment segment, MemorySession session) {
-        return get_volume_for_uuid.ofAddress(get_volume_for_uuid$get(segment), session);
+    public static get_volume_for_uuid get_volume_for_uuid(MemorySegment segment, SegmentScope scope) {
+        return get_volume_for_uuid.ofAddress(get_volume_for_uuid$get(segment), scope);
     }
     static final FunctionDescriptor get_mount_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_mount_for_uuid$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.get_mount_for_uuid$FUNC
+    static final FunctionDescriptor get_mount_for_uuid_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_mount_for_uuid_UP$MH = RuntimeHelper.upcallHandle(get_mount_for_uuid.class, "apply", _GVolumeMonitorClass.get_mount_for_uuid_UP$FUNC);
+    static final FunctionDescriptor get_mount_for_uuid_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_mount_for_uuid_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.get_mount_for_uuid_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GMount* (*get_mount_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
     public interface get_mount_for_uuid {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_mount_for_uuid fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_mount_for_uuid.class, fi, _GVolumeMonitorClass.get_mount_for_uuid$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_mount_for_uuid fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.get_mount_for_uuid_UP$MH, fi, _GVolumeMonitorClass.get_mount_for_uuid$FUNC, scope);
         }
-        static get_mount_for_uuid ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_mount_for_uuid ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mount_for_uuid$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mount_for_uuid_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -741,39 +1168,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle get_mount_for_uuid$VH() {
         return _GVolumeMonitorClass.get_mount_for_uuid$VH;
     }
-    public static MemoryAddress get_mount_for_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mount_for_uuid$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GMount* (*get_mount_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
+    public static MemorySegment get_mount_for_uuid$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mount_for_uuid$VH.get(seg);
     }
-    public static void get_mount_for_uuid$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GMount* (*get_mount_for_uuid)(GVolumeMonitor*,char*);
+     * }
+     */
+    public static void get_mount_for_uuid$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.get_mount_for_uuid$VH.set(seg, x);
     }
-    public static MemoryAddress get_mount_for_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.get_mount_for_uuid$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_mount_for_uuid$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.get_mount_for_uuid$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_mount_for_uuid$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_mount_for_uuid$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.get_mount_for_uuid$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_mount_for_uuid get_mount_for_uuid (MemorySegment segment, MemorySession session) {
-        return get_mount_for_uuid.ofAddress(get_mount_for_uuid$get(segment), session);
+    public static get_mount_for_uuid get_mount_for_uuid(MemorySegment segment, SegmentScope scope) {
+        return get_mount_for_uuid.ofAddress(get_mount_for_uuid$get(segment), scope);
     }
     static final FunctionDescriptor adopt_orphan_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle adopt_orphan_mount$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.adopt_orphan_mount$FUNC
+    static final FunctionDescriptor adopt_orphan_mount_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle adopt_orphan_mount_UP$MH = RuntimeHelper.upcallHandle(adopt_orphan_mount.class, "apply", _GVolumeMonitorClass.adopt_orphan_mount_UP$FUNC);
+    static final FunctionDescriptor adopt_orphan_mount_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle adopt_orphan_mount_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.adopt_orphan_mount_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GVolume* (*adopt_orphan_mount)(GMount*,GVolumeMonitor*);
+     * }
+     */
     public interface adopt_orphan_mount {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(adopt_orphan_mount fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(adopt_orphan_mount.class, fi, _GVolumeMonitorClass.adopt_orphan_mount$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(adopt_orphan_mount fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.adopt_orphan_mount_UP$MH, fi, _GVolumeMonitorClass.adopt_orphan_mount$FUNC, scope);
         }
-        static adopt_orphan_mount ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static adopt_orphan_mount ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.adopt_orphan_mount$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.adopt_orphan_mount_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -785,39 +1238,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle adopt_orphan_mount$VH() {
         return _GVolumeMonitorClass.adopt_orphan_mount$VH;
     }
-    public static MemoryAddress adopt_orphan_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.adopt_orphan_mount$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GVolume* (*adopt_orphan_mount)(GMount*,GVolumeMonitor*);
+     * }
+     */
+    public static MemorySegment adopt_orphan_mount$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.adopt_orphan_mount$VH.get(seg);
     }
-    public static void adopt_orphan_mount$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GVolume* (*adopt_orphan_mount)(GMount*,GVolumeMonitor*);
+     * }
+     */
+    public static void adopt_orphan_mount$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.adopt_orphan_mount$VH.set(seg, x);
     }
-    public static MemoryAddress adopt_orphan_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.adopt_orphan_mount$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment adopt_orphan_mount$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.adopt_orphan_mount$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void adopt_orphan_mount$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void adopt_orphan_mount$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.adopt_orphan_mount$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adopt_orphan_mount adopt_orphan_mount (MemorySegment segment, MemorySession session) {
-        return adopt_orphan_mount.ofAddress(adopt_orphan_mount$get(segment), session);
+    public static adopt_orphan_mount adopt_orphan_mount(MemorySegment segment, SegmentScope scope) {
+        return adopt_orphan_mount.ofAddress(adopt_orphan_mount$get(segment), scope);
     }
     static final FunctionDescriptor drive_eject_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drive_eject_button$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.drive_eject_button$FUNC
+    static final FunctionDescriptor drive_eject_button_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drive_eject_button_UP$MH = RuntimeHelper.upcallHandle(drive_eject_button.class, "apply", _GVolumeMonitorClass.drive_eject_button_UP$FUNC);
+    static final FunctionDescriptor drive_eject_button_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drive_eject_button_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.drive_eject_button_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*drive_eject_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
     public interface drive_eject_button {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drive_eject_button fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drive_eject_button.class, fi, _GVolumeMonitorClass.drive_eject_button$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(drive_eject_button fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.drive_eject_button_UP$MH, fi, _GVolumeMonitorClass.drive_eject_button$FUNC, scope);
         }
-        static drive_eject_button ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drive_eject_button ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.drive_eject_button$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.drive_eject_button_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -829,39 +1308,65 @@ public class _GVolumeMonitorClass {
     public static VarHandle drive_eject_button$VH() {
         return _GVolumeMonitorClass.drive_eject_button$VH;
     }
-    public static MemoryAddress drive_eject_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_eject_button$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*drive_eject_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static MemorySegment drive_eject_button$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_eject_button$VH.get(seg);
     }
-    public static void drive_eject_button$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*drive_eject_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static void drive_eject_button$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.drive_eject_button$VH.set(seg, x);
     }
-    public static MemoryAddress drive_eject_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_eject_button$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drive_eject_button$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_eject_button$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drive_eject_button$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drive_eject_button$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.drive_eject_button$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drive_eject_button drive_eject_button (MemorySegment segment, MemorySession session) {
-        return drive_eject_button.ofAddress(drive_eject_button$get(segment), session);
+    public static drive_eject_button drive_eject_button(MemorySegment segment, SegmentScope scope) {
+        return drive_eject_button.ofAddress(drive_eject_button$get(segment), scope);
     }
     static final FunctionDescriptor drive_stop_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drive_stop_button$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass.drive_stop_button$FUNC
+    static final FunctionDescriptor drive_stop_button_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drive_stop_button_UP$MH = RuntimeHelper.upcallHandle(drive_stop_button.class, "apply", _GVolumeMonitorClass.drive_stop_button_UP$FUNC);
+    static final FunctionDescriptor drive_stop_button_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drive_stop_button_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass.drive_stop_button_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*drive_stop_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
     public interface drive_stop_button {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drive_stop_button fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drive_stop_button.class, fi, _GVolumeMonitorClass.drive_stop_button$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(drive_stop_button fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass.drive_stop_button_UP$MH, fi, _GVolumeMonitorClass.drive_stop_button$FUNC, scope);
         }
-        static drive_stop_button ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drive_stop_button ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVolumeMonitorClass.drive_stop_button$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVolumeMonitorClass.drive_stop_button_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -873,36 +1378,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle drive_stop_button$VH() {
         return _GVolumeMonitorClass.drive_stop_button$VH;
     }
-    public static MemoryAddress drive_stop_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_stop_button$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*drive_stop_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static MemorySegment drive_stop_button$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_stop_button$VH.get(seg);
     }
-    public static void drive_stop_button$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*drive_stop_button)(GVolumeMonitor*,GDrive*);
+     * }
+     */
+    public static void drive_stop_button$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass.drive_stop_button$VH.set(seg, x);
     }
-    public static MemoryAddress drive_stop_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass.drive_stop_button$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drive_stop_button$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass.drive_stop_button$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drive_stop_button$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drive_stop_button$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass.drive_stop_button$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drive_stop_button drive_stop_button (MemorySegment segment, MemorySession session) {
-        return drive_stop_button.ofAddress(drive_stop_button$get(segment), session);
+    public static drive_stop_button drive_stop_button(MemorySegment segment, SegmentScope scope) {
+        return drive_stop_button.ofAddress(drive_stop_button$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved1$FUNC
+    static final FunctionDescriptor _g_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved1_UP$MH = RuntimeHelper.upcallHandle(_g_reserved1.class, "apply", _GVolumeMonitorClass._g_reserved1_UP$FUNC);
+    static final FunctionDescriptor _g_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved1)();
+     * }
+     */
     public interface _g_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved1.class, fi, _GVolumeMonitorClass._g_reserved1$FUNC, session);
+        static MemorySegment allocate(_g_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved1_UP$MH, fi, _GVolumeMonitorClass._g_reserved1$FUNC, scope);
         }
-        static _g_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -914,36 +1439,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved1$VH() {
         return _GVolumeMonitorClass._g_reserved1$VH;
     }
-    public static MemoryAddress _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved1)();
+     * }
+     */
+    public static MemorySegment _g_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved1$VH.get(seg);
     }
-    public static void _g_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved1)();
+     * }
+     */
+    public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved1 _g_reserved1 (MemorySegment segment, MemorySession session) {
-        return _g_reserved1.ofAddress(_g_reserved1$get(segment), session);
+    public static _g_reserved1 _g_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved2$FUNC
+    static final FunctionDescriptor _g_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved2_UP$MH = RuntimeHelper.upcallHandle(_g_reserved2.class, "apply", _GVolumeMonitorClass._g_reserved2_UP$FUNC);
+    static final FunctionDescriptor _g_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved2)();
+     * }
+     */
     public interface _g_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved2.class, fi, _GVolumeMonitorClass._g_reserved2$FUNC, session);
+        static MemorySegment allocate(_g_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved2_UP$MH, fi, _GVolumeMonitorClass._g_reserved2$FUNC, scope);
         }
-        static _g_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -955,36 +1500,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved2$VH() {
         return _GVolumeMonitorClass._g_reserved2$VH;
     }
-    public static MemoryAddress _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved2)();
+     * }
+     */
+    public static MemorySegment _g_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved2$VH.get(seg);
     }
-    public static void _g_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved2)();
+     * }
+     */
+    public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved2 _g_reserved2 (MemorySegment segment, MemorySession session) {
-        return _g_reserved2.ofAddress(_g_reserved2$get(segment), session);
+    public static _g_reserved2 _g_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved3$FUNC
+    static final FunctionDescriptor _g_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved3_UP$MH = RuntimeHelper.upcallHandle(_g_reserved3.class, "apply", _GVolumeMonitorClass._g_reserved3_UP$FUNC);
+    static final FunctionDescriptor _g_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved3)();
+     * }
+     */
     public interface _g_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved3.class, fi, _GVolumeMonitorClass._g_reserved3$FUNC, session);
+        static MemorySegment allocate(_g_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved3_UP$MH, fi, _GVolumeMonitorClass._g_reserved3$FUNC, scope);
         }
-        static _g_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -996,36 +1561,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved3$VH() {
         return _GVolumeMonitorClass._g_reserved3$VH;
     }
-    public static MemoryAddress _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved3)();
+     * }
+     */
+    public static MemorySegment _g_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved3$VH.get(seg);
     }
-    public static void _g_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved3)();
+     * }
+     */
+    public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved3 _g_reserved3 (MemorySegment segment, MemorySession session) {
-        return _g_reserved3.ofAddress(_g_reserved3$get(segment), session);
+    public static _g_reserved3 _g_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved4$FUNC
+    static final FunctionDescriptor _g_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_UP$MH = RuntimeHelper.upcallHandle(_g_reserved4.class, "apply", _GVolumeMonitorClass._g_reserved4_UP$FUNC);
+    static final FunctionDescriptor _g_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved4)();
+     * }
+     */
     public interface _g_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved4.class, fi, _GVolumeMonitorClass._g_reserved4$FUNC, session);
+        static MemorySegment allocate(_g_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved4_UP$MH, fi, _GVolumeMonitorClass._g_reserved4$FUNC, scope);
         }
-        static _g_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1037,36 +1622,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved4$VH() {
         return _GVolumeMonitorClass._g_reserved4$VH;
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static MemorySegment _g_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved4$VH.get(seg);
     }
-    public static void _g_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved4 _g_reserved4 (MemorySegment segment, MemorySession session) {
-        return _g_reserved4.ofAddress(_g_reserved4$get(segment), session);
+    public static _g_reserved4 _g_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved5$FUNC
+    static final FunctionDescriptor _g_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_UP$MH = RuntimeHelper.upcallHandle(_g_reserved5.class, "apply", _GVolumeMonitorClass._g_reserved5_UP$FUNC);
+    static final FunctionDescriptor _g_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved5)();
+     * }
+     */
     public interface _g_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved5.class, fi, _GVolumeMonitorClass._g_reserved5$FUNC, session);
+        static MemorySegment allocate(_g_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved5_UP$MH, fi, _GVolumeMonitorClass._g_reserved5$FUNC, scope);
         }
-        static _g_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1078,36 +1683,56 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved5$VH() {
         return _GVolumeMonitorClass._g_reserved5$VH;
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static MemorySegment _g_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved5$VH.get(seg);
     }
-    public static void _g_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved5 _g_reserved5 (MemorySegment segment, MemorySession session) {
-        return _g_reserved5.ofAddress(_g_reserved5$get(segment), session);
+    public static _g_reserved5 _g_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GVolumeMonitorClass._g_reserved6$FUNC
+    static final FunctionDescriptor _g_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_UP$MH = RuntimeHelper.upcallHandle(_g_reserved6.class, "apply", _GVolumeMonitorClass._g_reserved6_UP$FUNC);
+    static final FunctionDescriptor _g_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeMonitorClass._g_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved6)();
+     * }
+     */
     public interface _g_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved6.class, fi, _GVolumeMonitorClass._g_reserved6$FUNC, session);
+        static MemorySegment allocate(_g_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeMonitorClass._g_reserved6_UP$MH, fi, _GVolumeMonitorClass._g_reserved6$FUNC, scope);
         }
-        static _g_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVolumeMonitorClass._g_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GVolumeMonitorClass._g_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1119,27 +1744,39 @@ public class _GVolumeMonitorClass {
     public static VarHandle _g_reserved6$VH() {
         return _GVolumeMonitorClass._g_reserved6$VH;
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static MemorySegment _g_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved6$VH.get(seg);
     }
-    public static void _g_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeMonitorClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeMonitorClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeMonitorClass._g_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved6 _g_reserved6 (MemorySegment segment, MemorySession session) {
-        return _g_reserved6.ofAddress(_g_reserved6$get(segment), session);
+    public static _g_reserved6 _g_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

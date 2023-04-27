@@ -7,9 +7,35 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GIOChannel {
+ *     gint ref_count;
+ *     GIOFuncs* funcs;
+ *     gchar* encoding;
+ *     GIConv read_cd;
+ *     GIConv write_cd;
+ *     gchar* line_term;
+ *     guint line_term_len;
+ *     gsize buf_size;
+ *     GString* read_buf;
+ *     GString* encoded_read_buf;
+ *     GString* write_buf;
+ *     gchar partial_write_buf[6];
+ *      *     guint use_buffer;
+ *     guint do_encode;
+ *     guint close_on_unref;
+ *     guint is_readable;
+ *     guint is_writeable;
+ *     guint is_seekable;
+ *     gpointer reserved1;
+ *     gpointer reserved2;
+ * };
+ * }
+ */
 public class _GIOChannel {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("ref_count"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("funcs"),
@@ -24,15 +50,7 @@ public class _GIOChannel {
         Constants$root.C_POINTER$LAYOUT.withName("encoded_read_buf"),
         Constants$root.C_POINTER$LAYOUT.withName("write_buf"),
         MemoryLayout.sequenceLayout(6, Constants$root.C_CHAR$LAYOUT).withName("partial_write_buf"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("use_buffer"),
-            MemoryLayout.paddingLayout(1).withName("do_encode"),
-            MemoryLayout.paddingLayout(1).withName("close_on_unref"),
-            MemoryLayout.paddingLayout(1).withName("is_readable"),
-            MemoryLayout.paddingLayout(1).withName("is_writeable"),
-            MemoryLayout.paddingLayout(1).withName("is_seekable"),
-            MemoryLayout.paddingLayout(10)
-        ),
+        MemoryLayout.paddingLayout(16),
         Constants$root.C_POINTER$LAYOUT.withName("reserved1"),
         Constants$root.C_POINTER$LAYOUT.withName("reserved2")
     ).withName("_GIOChannel");
@@ -43,10 +61,22 @@ public class _GIOChannel {
     public static VarHandle ref_count$VH() {
         return _GIOChannel.ref_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint ref_count;
+     * }
+     */
     public static int ref_count$get(MemorySegment seg) {
         return (int)_GIOChannel.ref_count$VH.get(seg);
     }
-    public static void ref_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint ref_count;
+     * }
+     */
+    public static void ref_count$set(MemorySegment seg, int x) {
         _GIOChannel.ref_count$VH.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
@@ -59,90 +89,162 @@ public class _GIOChannel {
     public static VarHandle funcs$VH() {
         return _GIOChannel.funcs$VH;
     }
-    public static MemoryAddress funcs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.funcs$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIOFuncs* funcs;
+     * }
+     */
+    public static MemorySegment funcs$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.funcs$VH.get(seg);
     }
-    public static void funcs$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIOFuncs* funcs;
+     * }
+     */
+    public static void funcs$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.funcs$VH.set(seg, x);
     }
-    public static MemoryAddress funcs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.funcs$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment funcs$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.funcs$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void funcs$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void funcs$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.funcs$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle encoding$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("encoding"));
     public static VarHandle encoding$VH() {
         return _GIOChannel.encoding$VH;
     }
-    public static MemoryAddress encoding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.encoding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* encoding;
+     * }
+     */
+    public static MemorySegment encoding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.encoding$VH.get(seg);
     }
-    public static void encoding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* encoding;
+     * }
+     */
+    public static void encoding$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.encoding$VH.set(seg, x);
     }
-    public static MemoryAddress encoding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.encoding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment encoding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.encoding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void encoding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void encoding$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.encoding$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle read_cd$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("read_cd"));
     public static VarHandle read_cd$VH() {
         return _GIOChannel.read_cd$VH;
     }
-    public static MemoryAddress read_cd$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.read_cd$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIConv read_cd;
+     * }
+     */
+    public static MemorySegment read_cd$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.read_cd$VH.get(seg);
     }
-    public static void read_cd$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIConv read_cd;
+     * }
+     */
+    public static void read_cd$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.read_cd$VH.set(seg, x);
     }
-    public static MemoryAddress read_cd$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.read_cd$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment read_cd$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.read_cd$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void read_cd$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void read_cd$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.read_cd$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle write_cd$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("write_cd"));
     public static VarHandle write_cd$VH() {
         return _GIOChannel.write_cd$VH;
     }
-    public static MemoryAddress write_cd$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.write_cd$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIConv write_cd;
+     * }
+     */
+    public static MemorySegment write_cd$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.write_cd$VH.get(seg);
     }
-    public static void write_cd$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIConv write_cd;
+     * }
+     */
+    public static void write_cd$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.write_cd$VH.set(seg, x);
     }
-    public static MemoryAddress write_cd$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.write_cd$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_cd$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.write_cd$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_cd$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_cd$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.write_cd$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle line_term$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("line_term"));
     public static VarHandle line_term$VH() {
         return _GIOChannel.line_term$VH;
     }
-    public static MemoryAddress line_term$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.line_term$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* line_term;
+     * }
+     */
+    public static MemorySegment line_term$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.line_term$VH.get(seg);
     }
-    public static void line_term$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* line_term;
+     * }
+     */
+    public static void line_term$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.line_term$VH.set(seg, x);
     }
-    public static MemoryAddress line_term$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.line_term$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment line_term$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.line_term$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void line_term$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void line_term$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.line_term$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle line_term_len$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("line_term_len"));
     public static VarHandle line_term_len$VH() {
         return _GIOChannel.line_term_len$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint line_term_len;
+     * }
+     */
     public static int line_term_len$get(MemorySegment seg) {
         return (int)_GIOChannel.line_term_len$VH.get(seg);
     }
-    public static void line_term_len$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint line_term_len;
+     * }
+     */
+    public static void line_term_len$set(MemorySegment seg, int x) {
         _GIOChannel.line_term_len$VH.set(seg, x);
     }
     public static int line_term_len$get(MemorySegment seg, long index) {
@@ -155,10 +257,22 @@ public class _GIOChannel {
     public static VarHandle buf_size$VH() {
         return _GIOChannel.buf_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gsize buf_size;
+     * }
+     */
     public static long buf_size$get(MemorySegment seg) {
         return (long)_GIOChannel.buf_size$VH.get(seg);
     }
-    public static void buf_size$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gsize buf_size;
+     * }
+     */
+    public static void buf_size$set(MemorySegment seg, long x) {
         _GIOChannel.buf_size$VH.set(seg, x);
     }
     public static long buf_size$get(MemorySegment seg, long index) {
@@ -171,48 +285,84 @@ public class _GIOChannel {
     public static VarHandle read_buf$VH() {
         return _GIOChannel.read_buf$VH;
     }
-    public static MemoryAddress read_buf$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.read_buf$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GString* read_buf;
+     * }
+     */
+    public static MemorySegment read_buf$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.read_buf$VH.get(seg);
     }
-    public static void read_buf$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GString* read_buf;
+     * }
+     */
+    public static void read_buf$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.read_buf$VH.set(seg, x);
     }
-    public static MemoryAddress read_buf$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.read_buf$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment read_buf$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.read_buf$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void read_buf$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void read_buf$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.read_buf$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle encoded_read_buf$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("encoded_read_buf"));
     public static VarHandle encoded_read_buf$VH() {
         return _GIOChannel.encoded_read_buf$VH;
     }
-    public static MemoryAddress encoded_read_buf$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.encoded_read_buf$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GString* encoded_read_buf;
+     * }
+     */
+    public static MemorySegment encoded_read_buf$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.encoded_read_buf$VH.get(seg);
     }
-    public static void encoded_read_buf$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GString* encoded_read_buf;
+     * }
+     */
+    public static void encoded_read_buf$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.encoded_read_buf$VH.set(seg, x);
     }
-    public static MemoryAddress encoded_read_buf$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.encoded_read_buf$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment encoded_read_buf$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.encoded_read_buf$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void encoded_read_buf$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void encoded_read_buf$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.encoded_read_buf$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle write_buf$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("write_buf"));
     public static VarHandle write_buf$VH() {
         return _GIOChannel.write_buf$VH;
     }
-    public static MemoryAddress write_buf$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.write_buf$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GString* write_buf;
+     * }
+     */
+    public static MemorySegment write_buf$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.write_buf$VH.get(seg);
     }
-    public static void write_buf$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GString* write_buf;
+     * }
+     */
+    public static void write_buf$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.write_buf$VH.set(seg, x);
     }
-    public static MemoryAddress write_buf$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.write_buf$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_buf$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.write_buf$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_buf$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_buf$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.write_buf$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment partial_write_buf$slice(MemorySegment seg) {
@@ -222,40 +372,64 @@ public class _GIOChannel {
     public static VarHandle reserved1$VH() {
         return _GIOChannel.reserved1$VH;
     }
-    public static MemoryAddress reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer reserved1;
+     * }
+     */
+    public static MemorySegment reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.reserved1$VH.get(seg);
     }
-    public static void reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer reserved1;
+     * }
+     */
+    public static void reserved1$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
     public static VarHandle reserved2$VH() {
         return _GIOChannel.reserved2$VH;
     }
-    public static MemoryAddress reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer reserved2;
+     * }
+     */
+    public static MemorySegment reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.reserved2$VH.get(seg);
     }
-    public static void reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer reserved2;
+     * }
+     */
+    public static void reserved2$set(MemorySegment seg, MemorySegment x) {
         _GIOChannel.reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIOChannel.reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIOChannel.reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GIOChannel.reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

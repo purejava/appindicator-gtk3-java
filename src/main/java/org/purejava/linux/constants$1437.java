@@ -7,55 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1437 {
+final class constants$1437 {
 
-    static final FunctionDescriptor gtk_widget_set_state$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1437() {}
+    static final FunctionDescriptor gtk_list_store_swap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_state",
-        constants$1437.gtk_widget_set_state$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_state",
-        constants$1437.gtk_widget_get_state$FUNC
+    static final MethodHandle gtk_list_store_swap$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_swap",
+        constants$1437.gtk_list_store_swap$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_state_flags$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_store_move_after$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_move_after$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_move_after",
+        constants$1437.gtk_list_store_move_after$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_move_before$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_move_before$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_move_before",
+        constants$1437.gtk_list_store_move_before$FUNC
+    );
+    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeModelFilterVisibleFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeModelFilterVisibleFunc.class, "apply", constants$1437.GtkTreeModelFilterVisibleFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeModelFilterVisibleFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1437.GtkTreeModelFilterVisibleFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkTreeModelFilterModifyFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_state_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_state_flags",
-        constants$1437.gtk_widget_set_state_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_unset_state_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_unset_state_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_unset_state_flags",
-        constants$1437.gtk_widget_unset_state_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_state_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_state_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_state_flags",
-        constants$1437.gtk_widget_get_state_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_sensitive$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTreeModelFilterModifyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_sensitive",
-        constants$1437.gtk_widget_set_sensitive$FUNC
-    );
+    static final MethodHandle GtkTreeModelFilterModifyFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeModelFilterModifyFunc.class, "apply", constants$1437.GtkTreeModelFilterModifyFunc_UP$FUNC);
 }
 
 

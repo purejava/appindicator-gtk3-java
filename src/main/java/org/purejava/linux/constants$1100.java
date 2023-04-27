@@ -7,80 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1100 {
+final class constants$1100 {
 
-    static final FunctionDescriptor pango_glyph_string_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1100() {}
+    static final FunctionDescriptor gdk_window_set_opacity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_opacity$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_opacity",
+        constants$1100.gdk_window_set_opacity$FUNC
+    );
+    static final FunctionDescriptor gdk_window_register_dnd$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_get_logical_widths$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_get_logical_widths",
-        constants$1100.pango_glyph_string_get_logical_widths$FUNC
+    static final MethodHandle gdk_window_register_dnd$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_register_dnd",
+        constants$1100.gdk_window_register_dnd$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_index_to_x$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_index_to_x$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_index_to_x",
-        constants$1100.pango_glyph_string_index_to_x$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_x_to_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_drag_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_x_to_index$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_x_to_index",
-        constants$1100.pango_glyph_string_x_to_index$FUNC
+    static final MethodHandle gdk_window_get_drag_protocol$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_drag_protocol",
+        constants$1100.gdk_window_get_drag_protocol$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_index_to_x_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_begin_resize_drag$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_index_to_x_full$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_index_to_x_full",
-        constants$1100.pango_glyph_string_index_to_x_full$FUNC
-    );
-    static final FunctionDescriptor pango_shape$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_shape$MH = RuntimeHelper.downcallHandle(
-        "pango_shape",
-        constants$1100.pango_shape$FUNC
+    static final MethodHandle gdk_window_begin_resize_drag$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_resize_drag",
+        constants$1100.gdk_window_begin_resize_drag$FUNC
     );
-    static final FunctionDescriptor pango_shape_full$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_begin_resize_drag_for_device$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_shape_full$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_full",
-        constants$1100.pango_shape_full$FUNC
+    static final MethodHandle gdk_window_begin_resize_drag_for_device$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_resize_drag_for_device",
+        constants$1100.gdk_window_begin_resize_drag_for_device$FUNC
+    );
+    static final FunctionDescriptor gdk_window_begin_move_drag$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_begin_move_drag$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_move_drag",
+        constants$1100.gdk_window_begin_move_drag$FUNC
     );
 }
 

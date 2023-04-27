@@ -7,54 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1432 {
+final class constants$1432 {
 
-    static final FunctionDescriptor gtk_widget_can_activate_accel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1432() {}
+    static final FunctionDescriptor gtk_entry_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_can_activate_accel$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_can_activate_accel",
-        constants$1432.gtk_widget_can_activate_accel$FUNC
+    static final MethodHandle gtk_entry_buffer_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_new",
+        constants$1432.gtk_entry_buffer_new$FUNC
     );
-    static final FunctionDescriptor gtk_widget_mnemonic_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_buffer_get_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_buffer_get_bytes$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_get_bytes",
+        constants$1432.gtk_entry_buffer_get_bytes$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_buffer_get_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_get_length",
+        constants$1432.gtk_entry_buffer_get_length$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_buffer_get_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_get_text",
+        constants$1432.gtk_entry_buffer_get_text$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_set_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_mnemonic_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_mnemonic_activate",
-        constants$1432.gtk_widget_mnemonic_activate$FUNC
+    static final MethodHandle gtk_entry_buffer_set_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_set_text",
+        constants$1432.gtk_entry_buffer_set_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_buffer_set_max_length$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_event",
-        constants$1432.gtk_widget_event$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_send_expose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_send_expose$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_send_expose",
-        constants$1432.gtk_widget_send_expose$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_send_focus_change$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_send_focus_change$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_send_focus_change",
-        constants$1432.gtk_widget_send_focus_change$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_activate",
-        constants$1432.gtk_widget_activate$FUNC
+    static final MethodHandle gtk_entry_buffer_set_max_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_set_max_length",
+        constants$1432.gtk_entry_buffer_set_max_length$FUNC
     );
 }
 

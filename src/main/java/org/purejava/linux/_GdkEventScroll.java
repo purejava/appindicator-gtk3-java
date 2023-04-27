@@ -7,9 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkEventScroll {
+ *     GdkEventType type;
+ *     GdkWindow* window;
+ *     gint8 send_event;
+ *     guint32 time;
+ *     gdouble x;
+ *     gdouble y;
+ *     guint state;
+ *     GdkScrollDirection direction;
+ *     GdkDevice* device;
+ *     gdouble x_root;
+ *     gdouble y_root;
+ *     gdouble delta_x;
+ *     gdouble delta_y;
+ *      *     guint is_stop;
+ * };
+ * }
+ */
 public class _GdkEventScroll {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("window"),
@@ -25,10 +45,7 @@ public class _GdkEventScroll {
         Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
         Constants$root.C_DOUBLE$LAYOUT.withName("delta_x"),
         Constants$root.C_DOUBLE$LAYOUT.withName("delta_y"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("is_stop"),
-            MemoryLayout.paddingLayout(63)
-        )
+        MemoryLayout.paddingLayout(64)
     ).withName("_GdkEventScroll");
     public static MemoryLayout $LAYOUT() {
         return _GdkEventScroll.$struct$LAYOUT;
@@ -37,10 +54,22 @@ public class _GdkEventScroll {
     public static VarHandle type$VH() {
         return _GdkEventScroll.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEventScroll.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEventScroll.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -53,26 +82,50 @@ public class _GdkEventScroll {
     public static VarHandle window$VH() {
         return _GdkEventScroll.window$VH;
     }
-    public static MemoryAddress window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventScroll.window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static MemorySegment window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventScroll.window$VH.get(seg);
     }
-    public static void window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static void window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventScroll.window$VH.set(seg, x);
     }
-    public static MemoryAddress window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventScroll.window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventScroll.window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventScroll.window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
         return _GdkEventScroll.send_event$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
     public static byte send_event$get(MemorySegment seg) {
         return (byte)_GdkEventScroll.send_event$VH.get(seg);
     }
-    public static void send_event$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
+    public static void send_event$set(MemorySegment seg, byte x) {
         _GdkEventScroll.send_event$VH.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
@@ -85,10 +138,22 @@ public class _GdkEventScroll {
     public static VarHandle time$VH() {
         return _GdkEventScroll.time$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
     public static int time$get(MemorySegment seg) {
         return (int)_GdkEventScroll.time$VH.get(seg);
     }
-    public static void time$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
+    public static void time$set(MemorySegment seg, int x) {
         _GdkEventScroll.time$VH.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
@@ -101,10 +166,22 @@ public class _GdkEventScroll {
     public static VarHandle x$VH() {
         return _GdkEventScroll.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble x;
+     * }
+     */
     public static double x$get(MemorySegment seg) {
         return (double)_GdkEventScroll.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, double x) {
         _GdkEventScroll.x$VH.set(seg, x);
     }
     public static double x$get(MemorySegment seg, long index) {
@@ -117,10 +194,22 @@ public class _GdkEventScroll {
     public static VarHandle y$VH() {
         return _GdkEventScroll.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble y;
+     * }
+     */
     public static double y$get(MemorySegment seg) {
         return (double)_GdkEventScroll.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, double x) {
         _GdkEventScroll.y$VH.set(seg, x);
     }
     public static double y$get(MemorySegment seg, long index) {
@@ -133,10 +222,22 @@ public class _GdkEventScroll {
     public static VarHandle state$VH() {
         return _GdkEventScroll.state$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
     public static int state$get(MemorySegment seg) {
         return (int)_GdkEventScroll.state$VH.get(seg);
     }
-    public static void state$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
+    public static void state$set(MemorySegment seg, int x) {
         _GdkEventScroll.state$VH.set(seg, x);
     }
     public static int state$get(MemorySegment seg, long index) {
@@ -149,10 +250,22 @@ public class _GdkEventScroll {
     public static VarHandle direction$VH() {
         return _GdkEventScroll.direction$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkScrollDirection direction;
+     * }
+     */
     public static int direction$get(MemorySegment seg) {
         return (int)_GdkEventScroll.direction$VH.get(seg);
     }
-    public static void direction$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkScrollDirection direction;
+     * }
+     */
+    public static void direction$set(MemorySegment seg, int x) {
         _GdkEventScroll.direction$VH.set(seg, x);
     }
     public static int direction$get(MemorySegment seg, long index) {
@@ -165,26 +278,50 @@ public class _GdkEventScroll {
     public static VarHandle device$VH() {
         return _GdkEventScroll.device$VH;
     }
-    public static MemoryAddress device$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventScroll.device$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkDevice* device;
+     * }
+     */
+    public static MemorySegment device$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventScroll.device$VH.get(seg);
     }
-    public static void device$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkDevice* device;
+     * }
+     */
+    public static void device$set(MemorySegment seg, MemorySegment x) {
         _GdkEventScroll.device$VH.set(seg, x);
     }
-    public static MemoryAddress device$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventScroll.device$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment device$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventScroll.device$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void device$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void device$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventScroll.device$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle x_root$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
     public static VarHandle x_root$VH() {
         return _GdkEventScroll.x_root$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble x_root;
+     * }
+     */
     public static double x_root$get(MemorySegment seg) {
         return (double)_GdkEventScroll.x_root$VH.get(seg);
     }
-    public static void x_root$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble x_root;
+     * }
+     */
+    public static void x_root$set(MemorySegment seg, double x) {
         _GdkEventScroll.x_root$VH.set(seg, x);
     }
     public static double x_root$get(MemorySegment seg, long index) {
@@ -197,10 +334,22 @@ public class _GdkEventScroll {
     public static VarHandle y_root$VH() {
         return _GdkEventScroll.y_root$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble y_root;
+     * }
+     */
     public static double y_root$get(MemorySegment seg) {
         return (double)_GdkEventScroll.y_root$VH.get(seg);
     }
-    public static void y_root$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble y_root;
+     * }
+     */
+    public static void y_root$set(MemorySegment seg, double x) {
         _GdkEventScroll.y_root$VH.set(seg, x);
     }
     public static double y_root$get(MemorySegment seg, long index) {
@@ -213,10 +362,22 @@ public class _GdkEventScroll {
     public static VarHandle delta_x$VH() {
         return _GdkEventScroll.delta_x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble delta_x;
+     * }
+     */
     public static double delta_x$get(MemorySegment seg) {
         return (double)_GdkEventScroll.delta_x$VH.get(seg);
     }
-    public static void delta_x$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble delta_x;
+     * }
+     */
+    public static void delta_x$set(MemorySegment seg, double x) {
         _GdkEventScroll.delta_x$VH.set(seg, x);
     }
     public static double delta_x$get(MemorySegment seg, long index) {
@@ -229,10 +390,22 @@ public class _GdkEventScroll {
     public static VarHandle delta_y$VH() {
         return _GdkEventScroll.delta_y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble delta_y;
+     * }
+     */
     public static double delta_y$get(MemorySegment seg) {
         return (double)_GdkEventScroll.delta_y$VH.get(seg);
     }
-    public static void delta_y$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble delta_y;
+     * }
+     */
+    public static void delta_y$set(MemorySegment seg, double x) {
         _GdkEventScroll.delta_y$VH.set(seg, x);
     }
     public static double delta_y$get(MemorySegment seg, long index) {
@@ -243,10 +416,10 @@ public class _GdkEventScroll {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

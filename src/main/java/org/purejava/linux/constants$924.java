@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$924 {
+final class constants$924 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GIcon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$924() {}
+    static final FunctionDescriptor pango_attr_baseline_shift_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_attr_baseline_shift_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_baseline_shift_new",
+        constants$924.pango_attr_baseline_shift_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_font_scale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_attr_font_scale_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_font_scale_new",
+        constants$924.pango_attr_font_scale_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_scale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_attr_scale_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_scale_new",
+        constants$924.pango_attr_scale_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_fallback_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_attr_fallback_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_fallback_new",
+        constants$924.pango_attr_fallback_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_letter_spacing_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_attr_letter_spacing_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_letter_spacing_new",
+        constants$924.pango_attr_letter_spacing_new$FUNC
+    );
+    static final FunctionDescriptor pango_attr_shape_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GIcon",
-        constants$924.glib_autoptr_cleanup_GIcon$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GIcon",
-        constants$924.glib_listautoptr_cleanup_GIcon$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GIcon",
-        constants$924.glib_slistautoptr_cleanup_GIcon$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GIcon",
-        constants$924.glib_queueautoptr_cleanup_GIcon$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GInetAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GInetAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GInetAddress",
-        constants$924.glib_autoptr_clear_GInetAddress$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GInetAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GInetAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GInetAddress",
-        constants$924.glib_autoptr_cleanup_GInetAddress$FUNC
+    static final MethodHandle pango_attr_shape_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_shape_new",
+        constants$924.pango_attr_shape_new$FUNC
     );
 }
 

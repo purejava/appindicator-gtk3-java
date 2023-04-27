@@ -7,31 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1154 {
+final class constants$1154 {
 
-    static final FunctionDescriptor cairo_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle cairo_version$MH = RuntimeHelper.downcallHandle(
-        "cairo_version",
-        constants$1154.cairo_version$FUNC
-    );
-    static final FunctionDescriptor cairo_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_version_string$MH = RuntimeHelper.downcallHandle(
-        "cairo_version_string",
-        constants$1154.cairo_version_string$FUNC
-    );
-    static final FunctionDescriptor cairo_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1154() {}
+    static final FunctionDescriptor pango_cairo_glyph_string_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_destroy_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1154.cairo_destroy_func_t$FUNC
+    static final MethodHandle pango_cairo_glyph_string_path$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_glyph_string_path",
+        constants$1154.pango_cairo_glyph_string_path$FUNC
     );
-    static final FunctionDescriptor cairo_write_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pango_cairo_layout_line_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_write_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1154.cairo_write_func_t$FUNC
+    static final MethodHandle pango_cairo_layout_line_path$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_layout_line_path",
+        constants$1154.pango_cairo_layout_line_path$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_layout_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_layout_path$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_layout_path",
+        constants$1154.pango_cairo_layout_path$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_error_underline_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_cairo_error_underline_path$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_error_underline_path",
+        constants$1154.pango_cairo_error_underline_path$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_create$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_create",
+        constants$1154.gdk_cairo_create$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_get_clip_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_get_clip_rectangle$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_get_clip_rectangle",
+        constants$1154.gdk_cairo_get_clip_rectangle$FUNC
     );
 }
 

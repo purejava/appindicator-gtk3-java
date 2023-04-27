@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkLabelPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkLabelPrivate GtkLabelPrivate;
+ * }
+ */
+public final class GtkLabelPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkLabelPrivate() {}
 }
 
 

@@ -7,59 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$202 {
+final class constants$202 {
 
-    static final FunctionDescriptor g_io_add_watch_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$202() {}
+    static final FunctionDescriptor g_strdup_vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_add_watch_full$MH = RuntimeHelper.downcallHandle(
-        "g_io_add_watch_full",
-        constants$202.g_io_add_watch_full$FUNC
+    static final MethodHandle g_strdup_vprintf$MH = RuntimeHelper.downcallHandle(
+        "g_strdup_vprintf",
+        constants$202.g_strdup_vprintf$FUNC
     );
-    static final FunctionDescriptor g_io_create_watch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_create_watch$MH = RuntimeHelper.downcallHandle(
-        "g_io_create_watch",
-        constants$202.g_io_create_watch$FUNC
-    );
-    static final FunctionDescriptor g_io_add_watch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_add_watch$MH = RuntimeHelper.downcallHandle(
-        "g_io_add_watch",
-        constants$202.g_io_add_watch$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_set_buffer_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strndup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_io_channel_set_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_buffer_size",
-        constants$202.g_io_channel_set_buffer_size$FUNC
+    static final MethodHandle g_strndup$MH = RuntimeHelper.downcallHandle(
+        "g_strndup",
+        constants$202.g_strndup$FUNC
     );
-    static final FunctionDescriptor g_io_channel_get_buffer_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_strnfill$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_CHAR$LAYOUT
+    );
+    static final MethodHandle g_strnfill$MH = RuntimeHelper.downcallHandle(
+        "g_strnfill",
+        constants$202.g_strnfill$FUNC
+    );
+    static final FunctionDescriptor g_strconcat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_get_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_size",
-        constants$202.g_io_channel_get_buffer_size$FUNC
+    static final MethodHandle g_strconcat$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_strconcat",
+        constants$202.g_strconcat$FUNC
     );
-    static final FunctionDescriptor g_io_channel_get_buffer_condition$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_strjoin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_get_buffer_condition$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_condition",
-        constants$202.g_io_channel_get_buffer_condition$FUNC
+    static final MethodHandle g_strjoin$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_strjoin",
+        constants$202.g_strjoin$FUNC
+    );
+    static final FunctionDescriptor g_strcompress$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strcompress$MH = RuntimeHelper.downcallHandle(
+        "g_strcompress",
+        constants$202.g_strcompress$FUNC
     );
 }
 

@@ -7,67 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1662 {
+final class constants$1662 {
 
-    static final FunctionDescriptor gtk_tree_view_set_cursor_on_cell$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1662() {}
+    static final FunctionDescriptor gtk_im_context_simple_add_table$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_cursor_on_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_cursor_on_cell",
-        constants$1662.gtk_tree_view_set_cursor_on_cell$FUNC
+    static final MethodHandle gtk_im_context_simple_add_table$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_simple_add_table",
+        constants$1662.gtk_im_context_simple_add_table$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_im_context_simple_add_compose_file$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_cursor",
-        constants$1662.gtk_tree_view_get_cursor$FUNC
+    static final MethodHandle gtk_im_context_simple_add_compose_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_simple_add_compose_file",
+        constants$1662.gtk_im_context_simple_add_compose_file$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_bin_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_im_multicontext_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_im_multicontext_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_multicontext_get_type",
+        constants$1662.gtk_im_multicontext_get_type$FUNC
     );
-    static final MethodHandle gtk_tree_view_get_bin_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_bin_window",
-        constants$1662.gtk_tree_view_get_bin_window$FUNC
+    static final FunctionDescriptor gtk_im_multicontext_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_im_multicontext_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_multicontext_new",
+        constants$1662.gtk_im_multicontext_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_path_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_path_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_path_at_pos",
-        constants$1662.gtk_tree_view_get_path_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_cell_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_im_multicontext_append_menuitems$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_cell_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_cell_area",
-        constants$1662.gtk_tree_view_get_cell_area$FUNC
+    static final MethodHandle gtk_im_multicontext_append_menuitems$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_multicontext_append_menuitems",
+        constants$1662.gtk_im_multicontext_append_menuitems$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_background_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_im_multicontext_get_context_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_background_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_background_area",
-        constants$1662.gtk_tree_view_get_background_area$FUNC
+    static final MethodHandle gtk_im_multicontext_get_context_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_multicontext_get_context_id",
+        constants$1662.gtk_im_multicontext_get_context_id$FUNC
     );
 }
 

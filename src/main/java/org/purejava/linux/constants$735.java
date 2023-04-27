@@ -7,52 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$735 {
+final class constants$735 {
 
-    static final FunctionDescriptor g_io_extension_point_implement$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$735() {}
+    static final FunctionDescriptor g_resource_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resource_load$MH = RuntimeHelper.downcallHandle(
+        "g_resource_load",
+        constants$735.g_resource_load$FUNC
+    );
+    static final FunctionDescriptor g_resource_open_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_extension_point_implement$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_implement",
-        constants$735.g_io_extension_point_implement$FUNC
-    );
-    static final FunctionDescriptor g_io_extension_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_extension_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_type",
-        constants$735.g_io_extension_get_type$FUNC
+    static final MethodHandle g_resource_open_stream$MH = RuntimeHelper.downcallHandle(
+        "g_resource_open_stream",
+        constants$735.g_resource_open_stream$FUNC
     );
-    static final FunctionDescriptor g_io_extension_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_resource_lookup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_extension_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_name",
-        constants$735.g_io_extension_get_name$FUNC
+    static final MethodHandle g_resource_lookup_data$MH = RuntimeHelper.downcallHandle(
+        "g_resource_lookup_data",
+        constants$735.g_resource_lookup_data$FUNC
     );
-    static final FunctionDescriptor g_io_extension_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_resource_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_extension_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_priority",
-        constants$735.g_io_extension_get_priority$FUNC
+    static final MethodHandle g_resource_enumerate_children$MH = RuntimeHelper.downcallHandle(
+        "g_resource_enumerate_children",
+        constants$735.g_resource_enumerate_children$FUNC
     );
-    static final FunctionDescriptor g_io_extension_ref_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_resource_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_extension_ref_class$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_ref_class",
-        constants$735.g_io_extension_ref_class$FUNC
+    static final MethodHandle g_resource_get_info$MH = RuntimeHelper.downcallHandle(
+        "g_resource_get_info",
+        constants$735.g_resource_get_info$FUNC
     );
-    static final FunctionDescriptor g_io_module_load$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_resources_register$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_module_load$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_load",
-        constants$735.g_io_module_load$FUNC
+    static final MethodHandle g_resources_register$MH = RuntimeHelper.downcallHandle(
+        "g_resources_register",
+        constants$735.g_resources_register$FUNC
     );
 }
 

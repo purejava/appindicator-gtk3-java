@@ -7,48 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$59 {
+final class constants$59 {
 
-    static final FunctionDescriptor wcstombs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$59() {}
+    static final FunctionDescriptor lldiv$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
+        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
+    ),
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle lldiv$MH = RuntimeHelper.downcallHandle(
+        "lldiv",
+        constants$59.lldiv$FUNC
+    );
+    static final FunctionDescriptor ecvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ecvt$MH = RuntimeHelper.downcallHandle(
+        "ecvt",
+        constants$59.ecvt$FUNC
+    );
+    static final FunctionDescriptor fcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle fcvt$MH = RuntimeHelper.downcallHandle(
+        "fcvt",
+        constants$59.fcvt$FUNC
+    );
+    static final FunctionDescriptor gcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gcvt$MH = RuntimeHelper.downcallHandle(
+        "gcvt",
+        constants$59.gcvt$FUNC
+    );
+    static final FunctionDescriptor ecvt_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle wcstombs$MH = RuntimeHelper.downcallHandle(
-        "wcstombs",
-        constants$59.wcstombs$FUNC
+    static final MethodHandle ecvt_r$MH = RuntimeHelper.downcallHandle(
+        "ecvt_r",
+        constants$59.ecvt_r$FUNC
     );
-    static final FunctionDescriptor rpmatch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rpmatch$MH = RuntimeHelper.downcallHandle(
-        "rpmatch",
-        constants$59.rpmatch$FUNC
-    );
-    static final FunctionDescriptor getsubopt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor fcvt_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getsubopt$MH = RuntimeHelper.downcallHandle(
-        "getsubopt",
-        constants$59.getsubopt$FUNC
-    );
-    static final FunctionDescriptor getloadavg$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle getloadavg$MH = RuntimeHelper.downcallHandle(
-        "getloadavg",
-        constants$59.getloadavg$FUNC
-    );
-    static final FunctionDescriptor g_thread_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_thread_error_quark",
-        constants$59.g_thread_error_quark$FUNC
-    );
-    static final FunctionDescriptor GThreadFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle fcvt_r$MH = RuntimeHelper.downcallHandle(
+        "fcvt_r",
+        constants$59.fcvt_r$FUNC
     );
 }
 

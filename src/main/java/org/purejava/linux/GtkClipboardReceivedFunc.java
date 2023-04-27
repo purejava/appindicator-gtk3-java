@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardReceivedFunc)(struct _GtkClipboard* clipboard,struct _GtkSelectionData* selection_data,void* data);
+ * }
+ */
 public interface GtkClipboardReceivedFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress selection_data, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkClipboardReceivedFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardReceivedFunc.class, fi, constants$1728.GtkClipboardReceivedFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkClipboardReceivedFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1537.GtkClipboardReceivedFunc_UP$MH, fi, constants$1537.GtkClipboardReceivedFunc$FUNC, scope);
     }
-    static GtkClipboardReceivedFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _selection_data, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkClipboardReceivedFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1728.GtkClipboardReceivedFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_selection_data, (java.lang.foreign.Addressable)_data);
+                constants$1537.GtkClipboardReceivedFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

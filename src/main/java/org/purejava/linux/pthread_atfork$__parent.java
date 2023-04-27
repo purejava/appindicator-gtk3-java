@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*pthread_atfork$__parent)();
+ * }
+ */
 public interface pthread_atfork$__parent {
 
     void apply();
-    static MemorySegment allocate(pthread_atfork$__parent fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(pthread_atfork$__parent.class, fi, constants$369.pthread_atfork$__parent$FUNC, session);
+    static MemorySegment allocate(pthread_atfork$__parent fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$373.pthread_atfork$__parent_UP$MH, fi, constants$373.pthread_atfork$__parent$FUNC, scope);
     }
-    static pthread_atfork$__parent ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static pthread_atfork$__parent ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$369.pthread_atfork$__parent$MH.invokeExact((Addressable)symbol);
+                constants$373.pthread_atfork$__parent_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

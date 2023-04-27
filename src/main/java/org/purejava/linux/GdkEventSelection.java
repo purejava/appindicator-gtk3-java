@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventSelection extends _GdkEventSelection {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventSelection GdkEventSelection;
+ * }
+ */
+public final class GdkEventSelection extends _GdkEventSelection {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventSelection() {}
 }
 
 

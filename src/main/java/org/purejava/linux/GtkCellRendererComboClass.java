@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellRendererComboClass extends _GtkCellRendererComboClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellRendererComboClass GtkCellRendererComboClass;
+ * }
+ */
+public final class GtkCellRendererComboClass extends _GtkCellRendererComboClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellRendererComboClass() {}
 }
 
 

@@ -7,53 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$732 {
+final class constants$732 {
 
-    static final FunctionDescriptor g_module_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$732() {}
+    static final FunctionDescriptor g_resolver_lookup_by_name_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_lookup_by_name_with_flags$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_with_flags",
+        constants$732.g_resolver_lookup_by_name_with_flags$FUNC
+    );
+    static final FunctionDescriptor g_resolver_free_addresses$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_free_addresses$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_free_addresses",
+        constants$732.g_resolver_free_addresses$FUNC
+    );
+    static final FunctionDescriptor g_resolver_lookup_by_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_lookup_by_address$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address",
+        constants$732.g_resolver_lookup_by_address$FUNC
+    );
+    static final FunctionDescriptor g_resolver_lookup_by_address_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_module_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_module_symbol",
-        constants$732.g_module_symbol$FUNC
+    static final MethodHandle g_resolver_lookup_by_address_async$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address_async",
+        constants$732.g_resolver_lookup_by_address_async$FUNC
     );
-    static final FunctionDescriptor g_module_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_name$MH = RuntimeHelper.downcallHandle(
-        "g_module_name",
-        constants$732.g_module_name$FUNC
-    );
-    static final FunctionDescriptor g_module_build_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_resolver_lookup_by_address_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_module_build_path$MH = RuntimeHelper.downcallHandle(
-        "g_module_build_path",
-        constants$732.g_module_build_path$FUNC
+    static final MethodHandle g_resolver_lookup_by_address_finish$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address_finish",
+        constants$732.g_resolver_lookup_by_address_finish$FUNC
     );
-    static final FunctionDescriptor g_io_module_scope_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_module_scope_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_new",
-        constants$732.g_io_module_scope_new$FUNC
-    );
-    static final FunctionDescriptor g_io_module_scope_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_module_scope_free$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_free",
-        constants$732.g_io_module_scope_free$FUNC
-    );
-    static final FunctionDescriptor g_io_module_scope_block$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_resolver_lookup_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_module_scope_block$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_block",
-        constants$732.g_io_module_scope_block$FUNC
+    static final MethodHandle g_resolver_lookup_service$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service",
+        constants$732.g_resolver_lookup_service$FUNC
     );
 }
 

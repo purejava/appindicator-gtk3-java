@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1947 {
+final class constants$1947 {
 
-    static final FunctionDescriptor gtk_print_settings_set_finishings$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1947() {}
+    static final FunctionDescriptor _gtk_rc_free_widget_class_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle _gtk_rc_free_widget_class_path$MH = RuntimeHelper.downcallHandle(
+        "_gtk_rc_free_widget_class_path",
+        constants$1947._gtk_rc_free_widget_class_path$FUNC
+    );
+    static final FunctionDescriptor _gtk_rc_match_widget_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_finishings$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_finishings",
-        constants$1947.gtk_print_settings_set_finishings$FUNC
+    static final MethodHandle _gtk_rc_match_widget_class$MH = RuntimeHelper.downcallHandle(
+        "_gtk_rc_match_widget_class",
+        constants$1947._gtk_rc_match_widget_class$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_output_bin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_rc_add_default_file$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_output_bin$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_output_bin",
-        constants$1947.gtk_print_settings_get_output_bin$FUNC
+    static final MethodHandle gtk_rc_add_default_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_add_default_file",
+        constants$1947.gtk_rc_add_default_file$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_output_bin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_rc_set_default_files$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_output_bin$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_output_bin",
-        constants$1947.gtk_print_settings_set_output_bin$FUNC
+    static final MethodHandle gtk_rc_set_default_files$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_set_default_files",
+        constants$1947.gtk_rc_set_default_files$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_rc_get_default_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_rc_get_default_files$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_default_files",
+        constants$1947.gtk_rc_get_default_files$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_to_gvariant$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_to_gvariant",
-        constants$1947.gtk_print_settings_to_gvariant$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_new_from_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_new_from_gvariant$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new_from_gvariant",
-        constants$1947.gtk_print_settings_new_from_gvariant$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_preview_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_operation_preview_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_get_type",
-        constants$1947.gtk_print_operation_preview_get_type$FUNC
+    static final MethodHandle gtk_rc_get_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_style",
+        constants$1947.gtk_rc_get_style$FUNC
     );
 }
 

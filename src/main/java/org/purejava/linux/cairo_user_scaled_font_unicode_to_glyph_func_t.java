@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * enum _cairo_status (*cairo_user_scaled_font_unicode_to_glyph_func_t)(struct _cairo_scaled_font* scaled_font,unsigned long unicode,unsigned long* glyph_index);
+ * }
+ */
 public interface cairo_user_scaled_font_unicode_to_glyph_func_t {
 
-    int apply(java.lang.foreign.MemoryAddress scaled_font, long unicode, java.lang.foreign.MemoryAddress glyph_index);
-    static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(cairo_user_scaled_font_unicode_to_glyph_func_t.class, fi, constants$1179.cairo_user_scaled_font_unicode_to_glyph_func_t$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment scaled_font, long unicode, java.lang.foreign.MemorySegment glyph_index);
+    static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t_UP$MH, fi, constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t$FUNC, scope);
     }
-    static cairo_user_scaled_font_unicode_to_glyph_func_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _scaled_font, long _unicode, java.lang.foreign.MemoryAddress _glyph_index) -> {
+    static cairo_user_scaled_font_unicode_to_glyph_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _scaled_font, long _unicode, java.lang.foreign.MemorySegment _glyph_index) -> {
             try {
-                return (int)constants$1179.cairo_user_scaled_font_unicode_to_glyph_func_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_scaled_font, _unicode, (java.lang.foreign.Addressable)_glyph_index);
+                return (int)constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t_DOWN$MH.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

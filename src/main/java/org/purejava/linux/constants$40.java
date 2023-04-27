@@ -7,41 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$40 {
+final class constants$40 {
 
-    static final FunctionDescriptor GVoidFunc$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GVoidFunc$MH = RuntimeHelper.downcallHandle(
-        constants$40.GVoidFunc$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$40() {}
+    static final FunctionDescriptor g_reload_user_special_dirs_cache$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_reload_user_special_dirs_cache$MH = RuntimeHelper.downcallHandle(
+        "g_reload_user_special_dirs_cache",
+        constants$40.g_reload_user_special_dirs_cache$FUNC
     );
-    static final FunctionDescriptor g_atexit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_get_user_data_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_user_data_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_data_dir",
+        constants$40.g_get_user_data_dir$FUNC
     );
-    static final MethodHandle g_atexit$MH = RuntimeHelper.downcallHandle(
-        "g_atexit",
-        constants$40.g_atexit$FUNC
+    static final FunctionDescriptor g_get_user_config_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_user_config_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_config_dir",
+        constants$40.g_get_user_config_dir$FUNC
     );
-    static final FunctionDescriptor g_find_program_in_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_get_user_cache_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_user_cache_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_cache_dir",
+        constants$40.g_get_user_cache_dir$FUNC
     );
-    static final MethodHandle g_find_program_in_path$MH = RuntimeHelper.downcallHandle(
-        "g_find_program_in_path",
-        constants$40.g_find_program_in_path$FUNC
+    static final FunctionDescriptor g_get_user_state_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_user_state_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_state_dir",
+        constants$40.g_get_user_state_dir$FUNC
     );
-    static final FunctionDescriptor g_bit_nth_lsf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bit_nth_lsf$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_lsf",
-        constants$40.g_bit_nth_lsf$FUNC
-    );
-    static final FunctionDescriptor g_bit_nth_msf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bit_nth_msf$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_msf",
-        constants$40.g_bit_nth_msf$FUNC
+    static final FunctionDescriptor g_get_system_data_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_system_data_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_get_system_data_dirs",
+        constants$40.g_get_system_data_dirs$FUNC
     );
 }
 

@@ -7,38 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$121 {
+final class constants$121 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$121() {}
+    static final FunctionDescriptor rewinddir$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle rewinddir$MH = RuntimeHelper.downcallHandle(
+        "rewinddir",
+        constants$121.rewinddir$FUNC
+    );
+    static final FunctionDescriptor seekdir$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle seekdir$MH = RuntimeHelper.downcallHandle(
+        "seekdir",
+        constants$121.seekdir$FUNC
+    );
+    static final FunctionDescriptor telldir$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle telldir$MH = RuntimeHelper.downcallHandle(
+        "telldir",
+        constants$121.telldir$FUNC
+    );
+    static final FunctionDescriptor dirfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle dirfd$MH = RuntimeHelper.downcallHandle(
+        "dirfd",
+        constants$121.dirfd$FUNC
+    );
     static final FunctionDescriptor scandir$__selector$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle scandir$__selector$MH = RuntimeHelper.downcallHandle(
-        constants$121.scandir$__selector$FUNC
-    );
-    static final FunctionDescriptor scandir$__cmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor scandir$__selector_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle scandir$__cmp$MH = RuntimeHelper.downcallHandle(
-        constants$121.scandir$__cmp$FUNC
-    );
-    static final FunctionDescriptor scandir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle scandir$__selector_UP$MH = RuntimeHelper.upcallHandle(scandir$__selector.class, "apply", constants$121.scandir$__selector_UP$FUNC);
+    static final FunctionDescriptor scandir$__selector_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle scandir$MH = RuntimeHelper.downcallHandle(
-        "scandir",
-        constants$121.scandir$FUNC
-    );
-    static final FunctionDescriptor alphasort$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle alphasort$MH = RuntimeHelper.downcallHandle(
-        "alphasort",
-        constants$121.alphasort$FUNC
+    static final MethodHandle scandir$__selector_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$121.scandir$__selector_DOWN$FUNC
     );
 }
 

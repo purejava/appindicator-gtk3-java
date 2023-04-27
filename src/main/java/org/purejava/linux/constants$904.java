@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$904 {
+final class constants$904 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusNodeInfo$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$904() {}
+    static final FunctionDescriptor pango_language_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDBusNodeInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusNodeInfo",
-        constants$904.glib_autoptr_cleanup_GDBusNodeInfo$FUNC
+    static final MethodHandle pango_language_matches$MH = RuntimeHelper.downcallHandle(
+        "pango_language_matches",
+        constants$904.pango_language_matches$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusNodeInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_language_includes_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_language_includes_script$MH = RuntimeHelper.downcallHandle(
+        "pango_language_includes_script",
+        constants$904.pango_language_includes_script$FUNC
+    );
+    static final FunctionDescriptor pango_language_get_scripts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusNodeInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusNodeInfo",
-        constants$904.glib_listautoptr_cleanup_GDBusNodeInfo$FUNC
+    static final MethodHandle pango_language_get_scripts$MH = RuntimeHelper.downcallHandle(
+        "pango_language_get_scripts",
+        constants$904.pango_language_get_scripts$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusNodeInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_script_get_sample_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_script_get_sample_language$MH = RuntimeHelper.downcallHandle(
+        "pango_script_get_sample_language",
+        constants$904.pango_script_get_sample_language$FUNC
+    );
+    static final FunctionDescriptor pango_gravity_to_rotation$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_gravity_to_rotation$MH = RuntimeHelper.downcallHandle(
+        "pango_gravity_to_rotation",
+        constants$904.pango_gravity_to_rotation$FUNC
+    );
+    static final FunctionDescriptor pango_gravity_get_for_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusNodeInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusNodeInfo",
-        constants$904.glib_slistautoptr_cleanup_GDBusNodeInfo$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusNodeInfo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusNodeInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusNodeInfo",
-        constants$904.glib_queueautoptr_cleanup_GDBusNodeInfo$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusObject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GDBusObject$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusObject",
-        constants$904.glib_autoptr_clear_GDBusObject$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusObject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GDBusObject$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusObject",
-        constants$904.glib_autoptr_cleanup_GDBusObject$FUNC
+    static final MethodHandle pango_gravity_get_for_matrix$MH = RuntimeHelper.downcallHandle(
+        "pango_gravity_get_for_matrix",
+        constants$904.pango_gravity_get_for_matrix$FUNC
     );
 }
 

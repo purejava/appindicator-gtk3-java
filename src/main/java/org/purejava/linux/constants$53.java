@@ -7,43 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$53 {
+final class constants$53 {
 
-    static final FunctionDescriptor on_exit$__func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$53() {}
+    static final FunctionDescriptor valloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle on_exit$__func$MH = RuntimeHelper.downcallHandle(
-        constants$53.on_exit$__func$FUNC
+    static final MethodHandle valloc$MH = RuntimeHelper.downcallHandle(
+        "valloc",
+        constants$53.valloc$FUNC
     );
-    static final FunctionDescriptor on_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor posix_memalign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle on_exit$MH = RuntimeHelper.downcallHandle(
-        "on_exit",
-        constants$53.on_exit$FUNC
+    static final MethodHandle posix_memalign$MH = RuntimeHelper.downcallHandle(
+        "posix_memalign",
+        constants$53.posix_memalign$FUNC
     );
-    static final FunctionDescriptor exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle exit$MH = RuntimeHelper.downcallHandle(
-        "exit",
-        constants$53.exit$FUNC
+    static final MethodHandle aligned_alloc$MH = RuntimeHelper.downcallHandle(
+        "aligned_alloc",
+        constants$53.aligned_alloc$FUNC
     );
-    static final FunctionDescriptor quick_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor abort$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle abort$MH = RuntimeHelper.downcallHandle(
+        "abort",
+        constants$53.abort$FUNC
     );
-    static final MethodHandle quick_exit$MH = RuntimeHelper.downcallHandle(
-        "quick_exit",
-        constants$53.quick_exit$FUNC
-    );
-    static final FunctionDescriptor _Exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle _Exit$MH = RuntimeHelper.downcallHandle(
-        "_Exit",
-        constants$53._Exit$FUNC
+    static final FunctionDescriptor atexit$__func$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor atexit$__func_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle atexit$__func_UP$MH = RuntimeHelper.upcallHandle(atexit$__func.class, "apply", constants$53.atexit$__func_UP$FUNC);
+    static final FunctionDescriptor atexit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle atexit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$53.atexit$__func_DOWN$FUNC
     );
 }
 

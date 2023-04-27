@@ -7,53 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1888 {
+final class constants$1888 {
 
-    static final FunctionDescriptor gtk_popover_get_modal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1888() {}
+    static final FunctionDescriptor gtk_region_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_region_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_region_flags_get_type",
+        constants$1888.gtk_region_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_popover_get_modal$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_modal",
-        constants$1888.gtk_popover_get_modal$FUNC
+    static final FunctionDescriptor gtk_junction_sides_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_junction_sides_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_junction_sides_get_type",
+        constants$1888.gtk_junction_sides_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_popover_bind_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_border_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_border_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_border_style_get_type",
+        constants$1888.gtk_border_style_get_type$FUNC
     );
-    static final MethodHandle gtk_popover_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_bind_model",
-        constants$1888.gtk_popover_bind_model$FUNC
+    static final FunctionDescriptor gtk_level_bar_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_level_bar_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_mode_get_type",
+        constants$1888.gtk_level_bar_mode_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_popover_set_transitions_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_input_purpose_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_input_purpose_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_input_purpose_get_type",
+        constants$1888.gtk_input_purpose_get_type$FUNC
     );
-    static final MethodHandle gtk_popover_set_transitions_enabled$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_transitions_enabled",
-        constants$1888.gtk_popover_set_transitions_enabled$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_get_transitions_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_get_transitions_enabled$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_transitions_enabled",
-        constants$1888.gtk_popover_get_transitions_enabled$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_set_default_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_set_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_default_widget",
-        constants$1888.gtk_popover_set_default_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_get_default_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_get_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_default_widget",
-        constants$1888.gtk_popover_get_default_widget$FUNC
+    static final FunctionDescriptor gtk_input_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_input_hints_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_input_hints_get_type",
+        constants$1888.gtk_input_hints_get_type$FUNC
     );
 }
 

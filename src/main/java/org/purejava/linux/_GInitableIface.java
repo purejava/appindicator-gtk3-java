@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GInitableIface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*init)(GInitable*,GCancellable*,GError**);
+ * };
+ * }
+ */
 public class _GInitableIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -27,20 +35,36 @@ public class _GInitableIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle init$MH = RuntimeHelper.downcallHandle(
-        _GInitableIface.init$FUNC
+    static final FunctionDescriptor init_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle init_UP$MH = RuntimeHelper.upcallHandle(init.class, "apply", _GInitableIface.init_UP$FUNC);
+    static final FunctionDescriptor init_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle init_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GInitableIface.init_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*init)(GInitable*,GCancellable*,GError**);
+     * }
+     */
     public interface init {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(init fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(init.class, fi, _GInitableIface.init$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(init fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GInitableIface.init_UP$MH, fi, _GInitableIface.init$FUNC, scope);
         }
-        static init ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static init ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GInitableIface.init$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GInitableIface.init_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -52,27 +76,39 @@ public class _GInitableIface {
     public static VarHandle init$VH() {
         return _GInitableIface.init$VH;
     }
-    public static MemoryAddress init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInitableIface.init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*init)(GInitable*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInitableIface.init$VH.get(seg);
     }
-    public static void init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*init)(GInitable*,GCancellable*,GError**);
+     * }
+     */
+    public static void init$set(MemorySegment seg, MemorySegment x) {
         _GInitableIface.init$VH.set(seg, x);
     }
-    public static MemoryAddress init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInitableIface.init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInitableIface.init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void init$set(MemorySegment seg, long index, MemorySegment x) {
         _GInitableIface.init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static init init (MemorySegment segment, MemorySession session) {
-        return init.ofAddress(init$get(segment), session);
+    public static init init(MemorySegment segment, SegmentScope scope) {
+        return init.ofAddress(init$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1703 {
+final class constants$1703 {
 
-    static final FunctionDescriptor gtk_button_get_use_stock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_get_use_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_use_stock",
-        constants$1703.gtk_button_get_use_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_button_set_focus_on_click$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_set_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_focus_on_click",
-        constants$1703.gtk_button_set_focus_on_click$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_focus_on_click",
-        constants$1703.gtk_button_get_focus_on_click$FUNC
-    );
-    static final FunctionDescriptor gtk_button_set_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gtk_button_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_alignment",
-        constants$1703.gtk_button_set_alignment$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1703() {}
+    static final FunctionDescriptor gtk_tool_button_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_alignment",
-        constants$1703.gtk_button_get_alignment$FUNC
+    static final MethodHandle gtk_tool_button_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_set_icon_name",
+        constants$1703.gtk_tool_button_set_icon_name$FUNC
     );
-    static final FunctionDescriptor gtk_button_set_image$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_button_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_button_get_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_get_icon_name",
+        constants$1703.gtk_tool_button_get_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_button_set_icon_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_image",
-        constants$1703.gtk_button_set_image$FUNC
+    static final MethodHandle gtk_tool_button_set_icon_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_set_icon_widget",
+        constants$1703.gtk_tool_button_set_icon_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_button_get_icon_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_button_get_icon_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_get_icon_widget",
+        constants$1703.gtk_tool_button_get_icon_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_button_set_label_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_button_set_label_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_set_label_widget",
+        constants$1703.gtk_tool_button_set_label_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_button_get_label_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_button_get_label_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_get_label_widget",
+        constants$1703.gtk_tool_button_get_label_widget$FUNC
     );
 }
 

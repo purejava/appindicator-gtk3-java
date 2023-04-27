@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1768 {
+final class constants$1768 {
 
-    static final FunctionDescriptor gtk_file_chooser_get_preview_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1768() {}
+    static final FunctionDescriptor gtk_range_get_upper_stepper_sensitivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_preview_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_uri",
-        constants$1768.gtk_file_chooser_get_preview_uri$FUNC
+    static final MethodHandle gtk_range_get_upper_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_upper_stepper_sensitivity",
+        constants$1768.gtk_range_get_upper_stepper_sensitivity$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_preview_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_file",
-        constants$1768.gtk_file_chooser_get_preview_file$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_extra_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_increments$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_extra_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_extra_widget",
-        constants$1768.gtk_file_chooser_set_extra_widget$FUNC
+    static final MethodHandle gtk_range_set_increments$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_increments",
+        constants$1768.gtk_range_set_increments$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_extra_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_extra_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_extra_widget",
-        constants$1768.gtk_file_chooser_get_extra_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_add_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_filter",
-        constants$1768.gtk_file_chooser_add_filter$FUNC
+    static final MethodHandle gtk_range_set_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_range",
+        constants$1768.gtk_range_set_range$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_remove_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_value",
+        constants$1768.gtk_range_set_value$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_remove_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_filter",
-        constants$1768.gtk_file_chooser_remove_filter$FUNC
+    static final MethodHandle gtk_range_get_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_value",
+        constants$1768.gtk_range_get_value$FUNC
+    );
+    static final FunctionDescriptor gtk_range_set_show_fill_level$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_show_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_show_fill_level",
+        constants$1768.gtk_range_set_show_fill_level$FUNC
     );
 }
 

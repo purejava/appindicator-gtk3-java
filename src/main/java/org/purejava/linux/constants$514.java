@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$514 {
+final class constants$514 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GParamSpec$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$514() {}
+    static final FunctionDescriptor g_cancellable_connect$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GParamSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GParamSpec",
-        constants$514.glib_autoptr_cleanup_GParamSpec$FUNC
+    static final MethodHandle g_cancellable_connect$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_connect",
+        constants$514.g_cancellable_connect$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GParamSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_disconnect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_cancellable_disconnect$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_disconnect",
+        constants$514.g_cancellable_disconnect$FUNC
+    );
+    static final FunctionDescriptor g_cancellable_cancel$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GParamSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GParamSpec",
-        constants$514.glib_listautoptr_cleanup_GParamSpec$FUNC
+    static final MethodHandle g_cancellable_cancel$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_cancel",
+        constants$514.g_cancellable_cancel$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GParamSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_converter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_converter_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_converter_get_type",
+        constants$514.g_converter_get_type$FUNC
+    );
+    static final FunctionDescriptor g_converter_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GParamSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GParamSpec",
-        constants$514.glib_slistautoptr_cleanup_GParamSpec$FUNC
+    static final MethodHandle g_converter_convert$MH = RuntimeHelper.downcallHandle(
+        "g_converter_convert",
+        constants$514.g_converter_convert$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GParamSpec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_converter_reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GParamSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GParamSpec",
-        constants$514.glib_queueautoptr_cleanup_GParamSpec$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GTypeClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GTypeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTypeClass",
-        constants$514.glib_autoptr_clear_GTypeClass$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTypeClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GTypeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTypeClass",
-        constants$514.glib_autoptr_cleanup_GTypeClass$FUNC
+    static final MethodHandle g_converter_reset$MH = RuntimeHelper.downcallHandle(
+        "g_converter_reset",
+        constants$514.g_converter_reset$FUNC
     );
 }
 

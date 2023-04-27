@@ -7,45 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$313 {
+final class constants$313 {
 
-    static final FunctionDescriptor g_test_timer_start$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_timer_start$MH = RuntimeHelper.downcallHandle(
-        "g_test_timer_start",
-        constants$313.g_test_timer_start$FUNC
-    );
-    static final FunctionDescriptor g_test_timer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
-    static final MethodHandle g_test_timer_elapsed$MH = RuntimeHelper.downcallHandle(
-        "g_test_timer_elapsed",
-        constants$313.g_test_timer_elapsed$FUNC
-    );
-    static final FunctionDescriptor g_test_timer_last$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
-    static final MethodHandle g_test_timer_last$MH = RuntimeHelper.downcallHandle(
-        "g_test_timer_last",
-        constants$313.g_test_timer_last$FUNC
-    );
-    static final FunctionDescriptor g_test_queue_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$313() {}
+    static final FunctionDescriptor GTestDataFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_queue_free$MH = RuntimeHelper.downcallHandle(
-        "g_test_queue_free",
-        constants$313.g_test_queue_free$FUNC
+    static final MethodHandle GTestDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$313.GTestDataFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_test_queue_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GTestFixtureFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_queue_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_test_queue_destroy",
-        constants$313.g_test_queue_destroy$FUNC
+    static final FunctionDescriptor GTestFixtureFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_test_trap_fork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle GTestFixtureFunc_UP$MH = RuntimeHelper.upcallHandle(GTestFixtureFunc.class, "apply", constants$313.GTestFixtureFunc_UP$FUNC);
+    static final FunctionDescriptor GTestFixtureFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_trap_fork$MH = RuntimeHelper.downcallHandle(
-        "g_test_trap_fork",
-        constants$313.g_test_trap_fork$FUNC
+    static final MethodHandle GTestFixtureFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$313.GTestFixtureFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_strcmp0$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strcmp0$MH = RuntimeHelper.downcallHandle(
+        "g_strcmp0",
+        constants$313.g_strcmp0$FUNC
+    );
+    static final FunctionDescriptor g_test_minimized_result$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_minimized_result$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_test_minimized_result",
+        constants$313.g_test_minimized_result$FUNC
+    );
+    static final FunctionDescriptor g_test_maximized_result$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_maximized_result$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_test_maximized_result",
+        constants$313.g_test_maximized_result$FUNC
     );
 }
 

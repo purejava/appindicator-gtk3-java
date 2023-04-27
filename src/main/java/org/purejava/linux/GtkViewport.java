@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkViewport extends _GtkViewport {
+/**
+ * {@snippet :
+ * typedef struct _GtkViewport GtkViewport;
+ * }
+ */
+public final class GtkViewport extends _GtkViewport {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkViewport() {}
 }
 
 

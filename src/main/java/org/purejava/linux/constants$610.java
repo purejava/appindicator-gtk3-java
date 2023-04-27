@@ -7,53 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$610 {
+final class constants$610 {
 
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_connections$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$610() {}
+    static final FunctionDescriptor g_dtls_client_connection_get_server_identity$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_get_connections$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_connections",
-        constants$610.g_dbus_interface_skeleton_get_connections$FUNC
+    static final MethodHandle g_dtls_client_connection_get_server_identity$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_get_server_identity",
+        constants$610.g_dtls_client_connection_get_server_identity$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_has_connection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dtls_client_connection_set_server_identity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_has_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_has_connection",
-        constants$610.g_dbus_interface_skeleton_has_connection$FUNC
+    static final MethodHandle g_dtls_client_connection_set_server_identity$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_set_server_identity",
+        constants$610.g_dtls_client_connection_set_server_identity$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dtls_client_connection_get_accepted_cas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_skeleton_get_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_object_path",
-        constants$610.g_dbus_interface_skeleton_get_object_path$FUNC
+    static final MethodHandle g_dtls_client_connection_get_accepted_cas$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_client_connection_get_accepted_cas",
+        constants$610.g_dtls_client_connection_get_accepted_cas$FUNC
     );
-    static final FunctionDescriptor g_dbus_annotation_info_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dtls_server_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dtls_server_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_server_connection_get_type",
+        constants$610.g_dtls_server_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dtls_server_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_annotation_info_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_lookup",
-        constants$610.g_dbus_annotation_info_lookup$FUNC
+    static final MethodHandle g_dtls_server_connection_new$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_server_connection_new",
+        constants$610.g_dtls_server_connection_new$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_info_lookup_method$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_lookup_method$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_lookup_method",
-        constants$610.g_dbus_interface_info_lookup_method$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_info_lookup_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_lookup_signal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_lookup_signal",
-        constants$610.g_dbus_interface_info_lookup_signal$FUNC
+    static final FunctionDescriptor g_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_icon_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_icon_get_type",
+        constants$610.g_icon_get_type$FUNC
     );
 }
 

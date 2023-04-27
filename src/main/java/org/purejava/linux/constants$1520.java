@@ -7,53 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1520 {
+final class constants$1520 {
 
-    static final FunctionDescriptor gtk_menu_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1520() {}
+    static final FunctionDescriptor gtk_cell_area_context_push_preferred_height$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_set_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_accel_path",
-        constants$1520.gtk_menu_set_accel_path$FUNC
+    static final MethodHandle gtk_cell_area_context_push_preferred_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_push_preferred_height",
+        constants$1520.gtk_cell_area_context_push_preferred_height$FUNC
     );
-    static final FunctionDescriptor gtk_menu_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_accel_path",
-        constants$1520.gtk_menu_get_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_attach_to_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkCellLayoutDataFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_attach_to_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_attach_to_widget",
-        constants$1520.gtk_menu_attach_to_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_detach$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkCellLayoutDataFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_detach$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_detach",
-        constants$1520.gtk_menu_detach$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GtkCellLayoutDataFunc_UP$MH = RuntimeHelper.upcallHandle(GtkCellLayoutDataFunc.class, "apply", constants$1520.GtkCellLayoutDataFunc_UP$FUNC);
+    static final FunctionDescriptor GtkCellLayoutDataFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_get_attach_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_attach_widget",
-        constants$1520.gtk_menu_get_attach_widget$FUNC
+    static final MethodHandle GtkCellLayoutDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1520.GtkCellLayoutDataFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_menu_set_tearoff_state$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_layout_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_layout_get_type",
+        constants$1520.gtk_cell_layout_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_layout_pack_start$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_set_tearoff_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_tearoff_state",
-        constants$1520.gtk_menu_set_tearoff_state$FUNC
+    static final MethodHandle gtk_cell_layout_pack_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_layout_pack_start",
+        constants$1520.gtk_cell_layout_pack_start$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_layout_pack_end$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_layout_pack_end$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_layout_pack_end",
+        constants$1520.gtk_cell_layout_pack_end$FUNC
     );
 }
 

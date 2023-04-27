@@ -7,60 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1832 {
+final class constants$1832 {
 
-    static final FunctionDescriptor gtk_style_context_set_junction_sides$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1832() {}
+    static final FunctionDescriptor gtk_text_buffer_remove_tag$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_set_junction_sides$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_junction_sides",
-        constants$1832.gtk_style_context_set_junction_sides$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_get_junction_sides$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_junction_sides$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_junction_sides",
-        constants$1832.gtk_style_context_get_junction_sides$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_lookup_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_lookup_color",
-        constants$1832.gtk_style_context_lookup_color$FUNC
+    static final MethodHandle gtk_text_buffer_remove_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_tag",
+        constants$1832.gtk_text_buffer_remove_tag$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_notify_state_change$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_apply_tag_by_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_apply_tag_by_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_apply_tag_by_name",
+        constants$1832.gtk_text_buffer_apply_tag_by_name$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_remove_tag_by_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_remove_tag_by_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_tag_by_name",
+        constants$1832.gtk_text_buffer_remove_tag_by_name$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_remove_all_tags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_remove_all_tags$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_all_tags",
+        constants$1832.gtk_text_buffer_remove_all_tags$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_create_tag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_create_tag$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_text_buffer_create_tag",
+        constants$1832.gtk_text_buffer_create_tag$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_get_iter_at_line_offset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_notify_state_change$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_notify_state_change",
-        constants$1832.gtk_style_context_notify_state_change$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_cancel_animations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_cancel_animations$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_cancel_animations",
-        constants$1832.gtk_style_context_cancel_animations$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_scroll_animations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_scroll_animations$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_scroll_animations",
-        constants$1832.gtk_style_context_scroll_animations$FUNC
+    static final MethodHandle gtk_text_buffer_get_iter_at_line_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_iter_at_line_offset",
+        constants$1832.gtk_text_buffer_get_iter_at_line_offset$FUNC
     );
 }
 

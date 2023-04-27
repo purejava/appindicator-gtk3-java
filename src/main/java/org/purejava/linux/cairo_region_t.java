@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class cairo_region_t {
+/**
+ * {@snippet :
+ * typedef struct _cairo_region cairo_region_t;
+ * }
+ */
+public final class cairo_region_t {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private cairo_region_t() {}
 }
 
 

@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$696 {
+final class constants$696 {
 
-    static final FunctionDescriptor g_file_info_get_is_backup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$696() {}
+    static final FunctionDescriptor g_menu_model_iterate_item_links$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_menu_model_iterate_item_links$MH = RuntimeHelper.downcallHandle(
+        "g_menu_model_iterate_item_links",
+        constants$696.g_menu_model_iterate_item_links$FUNC
+    );
+    static final FunctionDescriptor g_menu_model_get_item_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_is_backup$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_is_backup",
-        constants$696.g_file_info_get_is_backup$FUNC
+    static final MethodHandle g_menu_model_get_item_link$MH = RuntimeHelper.downcallHandle(
+        "g_menu_model_get_item_link",
+        constants$696.g_menu_model_get_item_link$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_is_symlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_menu_model_items_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_menu_model_items_changed$MH = RuntimeHelper.downcallHandle(
+        "g_menu_model_items_changed",
+        constants$696.g_menu_model_items_changed$FUNC
+    );
+    static final FunctionDescriptor g_menu_attribute_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_menu_attribute_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_menu_attribute_iter_get_type",
+        constants$696.g_menu_attribute_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor g_menu_attribute_iter_get_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_is_symlink$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_is_symlink",
-        constants$696.g_file_info_get_is_symlink$FUNC
+    static final MethodHandle g_menu_attribute_iter_get_next$MH = RuntimeHelper.downcallHandle(
+        "g_menu_attribute_iter_get_next",
+        constants$696.g_menu_attribute_iter_get_next$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_attribute_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_name",
-        constants$696.g_file_info_get_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_display_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_display_name",
-        constants$696.g_file_info_get_display_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_edit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_edit_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_edit_name",
-        constants$696.g_file_info_get_edit_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_icon",
-        constants$696.g_file_info_get_icon$FUNC
+    static final MethodHandle g_menu_attribute_iter_next$MH = RuntimeHelper.downcallHandle(
+        "g_menu_attribute_iter_next",
+        constants$696.g_menu_attribute_iter_next$FUNC
     );
 }
 

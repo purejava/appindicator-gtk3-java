@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$230 {
+final class constants$230 {
 
-    static final FunctionDescriptor g_variant_new_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$230() {}
+    static final FunctionDescriptor g_markup_parse_context_get_element$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_markup_parse_context_get_element$MH = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_element",
+        constants$230.g_markup_parse_context_get_element$FUNC
+    );
+    static final FunctionDescriptor g_markup_parse_context_get_element_stack$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_markup_parse_context_get_element_stack$MH = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_element_stack",
+        constants$230.g_markup_parse_context_get_element_stack$FUNC
+    );
+    static final FunctionDescriptor g_markup_parse_context_get_position$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_markup_parse_context_get_position$MH = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_position",
+        constants$230.g_markup_parse_context_get_position$FUNC
+    );
+    static final FunctionDescriptor g_markup_parse_context_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_markup_parse_context_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_user_data",
+        constants$230.g_markup_parse_context_get_user_data$FUNC
+    );
+    static final FunctionDescriptor g_markup_escape_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_variant_new_bytestring_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_bytestring_array",
-        constants$230.g_variant_new_bytestring_array$FUNC
+    static final MethodHandle g_markup_escape_text$MH = RuntimeHelper.downcallHandle(
+        "g_markup_escape_text",
+        constants$230.g_markup_escape_text$FUNC
     );
-    static final FunctionDescriptor g_variant_new_fixed_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_new_fixed_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_fixed_array",
-        constants$230.g_variant_new_fixed_array$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_markup_printf_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_get_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_boolean",
-        constants$230.g_variant_get_boolean$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_byte$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_byte$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_byte",
-        constants$230.g_variant_get_byte$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_int16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_int16$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_int16",
-        constants$230.g_variant_get_int16$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_uint16",
-        constants$230.g_variant_get_uint16$FUNC
+    static final MethodHandle g_markup_printf_escaped$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_markup_printf_escaped",
+        constants$230.g_markup_printf_escaped$FUNC
     );
 }
 

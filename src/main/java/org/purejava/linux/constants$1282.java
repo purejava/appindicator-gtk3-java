@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1282 {
+final class constants$1282 {
 
-    static final FunctionDescriptor gdk_screen_get_setting$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1282() {}
+    static final FunctionDescriptor gtk_widget_trigger_tooltip_query$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_trigger_tooltip_query$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_trigger_tooltip_query",
+        constants$1282.gtk_widget_trigger_tooltip_query$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_tooltip_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_tooltip_text",
+        constants$1282.gtk_widget_set_tooltip_text$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_tooltip_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_tooltip_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_tooltip_text",
+        constants$1282.gtk_widget_get_tooltip_text$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_setting$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_setting",
-        constants$1282.gdk_screen_get_setting$FUNC
+    static final MethodHandle gtk_widget_set_tooltip_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_tooltip_markup",
+        constants$1282.gtk_widget_set_tooltip_markup$FUNC
     );
-    static final FunctionDescriptor gdk_screen_set_font_options$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_get_tooltip_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_tooltip_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_tooltip_markup",
+        constants$1282.gtk_widget_get_tooltip_markup$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_has_tooltip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_screen_set_font_options$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_set_font_options",
-        constants$1282.gdk_screen_set_font_options$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_font_options",
-        constants$1282.gdk_screen_get_font_options$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_set_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gdk_screen_set_resolution$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_set_resolution",
-        constants$1282.gdk_screen_set_resolution$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_resolution$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_resolution",
-        constants$1282.gdk_screen_get_resolution$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_active_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_active_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_active_window",
-        constants$1282.gdk_screen_get_active_window$FUNC
+    static final MethodHandle gtk_widget_set_has_tooltip$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_has_tooltip",
+        constants$1282.gtk_widget_set_has_tooltip$FUNC
     );
 }
 

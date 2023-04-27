@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkRegistry {
+ *     GObject parent;
+ *     GHashTable* factory_type_registry;
+ *     GHashTable* factory_singleton_cache;
+ * };
+ * }
+ */
 public class _AtkRegistry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -31,40 +40,64 @@ public class _AtkRegistry {
     public static VarHandle factory_type_registry$VH() {
         return _AtkRegistry.factory_type_registry$VH;
     }
-    public static MemoryAddress factory_type_registry$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkRegistry.factory_type_registry$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GHashTable* factory_type_registry;
+     * }
+     */
+    public static MemorySegment factory_type_registry$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkRegistry.factory_type_registry$VH.get(seg);
     }
-    public static void factory_type_registry$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GHashTable* factory_type_registry;
+     * }
+     */
+    public static void factory_type_registry$set(MemorySegment seg, MemorySegment x) {
         _AtkRegistry.factory_type_registry$VH.set(seg, x);
     }
-    public static MemoryAddress factory_type_registry$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkRegistry.factory_type_registry$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment factory_type_registry$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkRegistry.factory_type_registry$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void factory_type_registry$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void factory_type_registry$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkRegistry.factory_type_registry$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle factory_singleton_cache$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("factory_singleton_cache"));
     public static VarHandle factory_singleton_cache$VH() {
         return _AtkRegistry.factory_singleton_cache$VH;
     }
-    public static MemoryAddress factory_singleton_cache$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkRegistry.factory_singleton_cache$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GHashTable* factory_singleton_cache;
+     * }
+     */
+    public static MemorySegment factory_singleton_cache$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkRegistry.factory_singleton_cache$VH.get(seg);
     }
-    public static void factory_singleton_cache$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GHashTable* factory_singleton_cache;
+     * }
+     */
+    public static void factory_singleton_cache$set(MemorySegment seg, MemorySegment x) {
         _AtkRegistry.factory_singleton_cache$VH.set(seg, x);
     }
-    public static MemoryAddress factory_singleton_cache$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkRegistry.factory_singleton_cache$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment factory_singleton_cache$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkRegistry.factory_singleton_cache$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void factory_singleton_cache$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void factory_singleton_cache$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkRegistry.factory_singleton_cache$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

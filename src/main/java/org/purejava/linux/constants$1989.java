@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1989 {
+final class constants$1989 {
 
-    static final FunctionDescriptor gtk_scale_get_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_digits",
-        constants$1989.gtk_scale_get_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_draw_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_draw_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_draw_value",
-        constants$1989.gtk_scale_set_draw_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_draw_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_draw_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_draw_value",
-        constants$1989.gtk_scale_get_draw_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_has_origin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_has_origin$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_has_origin",
-        constants$1989.gtk_scale_set_has_origin$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_has_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_has_origin$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_has_origin",
-        constants$1989.gtk_scale_get_has_origin$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_value_pos$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_value_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_value_pos",
-        constants$1989.gtk_scale_set_value_pos$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1989() {}
+    static final MemorySegment G_OS_INFO_KEY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NAME");
+    static final MemorySegment G_OS_INFO_KEY_PRETTY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PRETTY_NAME");
+    static final MemorySegment G_OS_INFO_KEY_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION");
+    static final MemorySegment G_OS_INFO_KEY_VERSION_CODENAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION_CODENAME");
+    static final MemorySegment G_OS_INFO_KEY_VERSION_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION_ID");
+    static final MemorySegment G_OS_INFO_KEY_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("ID");
 }
 
 

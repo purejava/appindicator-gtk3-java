@@ -7,59 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$784 {
+final class constants$784 {
 
-    static final FunctionDescriptor g_proxy_resolver_is_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$784() {}
+    static final FunctionDescriptor g_subprocess_get_stdin_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_resolver_is_supported$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_resolver_is_supported",
-        constants$784.g_proxy_resolver_is_supported$FUNC
+    static final MethodHandle g_subprocess_get_stdin_pipe$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stdin_pipe",
+        constants$784.g_subprocess_get_stdin_pipe$FUNC
     );
-    static final FunctionDescriptor g_proxy_resolver_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_stdout_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_resolver_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_resolver_lookup",
-        constants$784.g_proxy_resolver_lookup$FUNC
+    static final MethodHandle g_subprocess_get_stdout_pipe$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stdout_pipe",
+        constants$784.g_subprocess_get_stdout_pipe$FUNC
     );
-    static final FunctionDescriptor g_proxy_resolver_lookup_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_stderr_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_resolver_lookup_async$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_resolver_lookup_async",
-        constants$784.g_proxy_resolver_lookup_async$FUNC
+    static final MethodHandle g_subprocess_get_stderr_pipe$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stderr_pipe",
+        constants$784.g_subprocess_get_stderr_pipe$FUNC
     );
-    static final FunctionDescriptor g_proxy_resolver_lookup_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_proxy_resolver_lookup_finish$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_resolver_lookup_finish",
-        constants$784.g_proxy_resolver_lookup_finish$FUNC
+    static final MethodHandle g_subprocess_get_identifier$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_identifier",
+        constants$784.g_subprocess_get_identifier$FUNC
     );
-    static final FunctionDescriptor g_remote_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_remote_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_remote_action_group_get_type",
-        constants$784.g_remote_action_group_get_type$FUNC
+    static final FunctionDescriptor g_subprocess_send_signal$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_remote_action_group_activate_action_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle g_subprocess_send_signal$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_send_signal",
+        constants$784.g_subprocess_send_signal$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_force_exit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_remote_action_group_activate_action_full$MH = RuntimeHelper.downcallHandle(
-        "g_remote_action_group_activate_action_full",
-        constants$784.g_remote_action_group_activate_action_full$FUNC
+    static final MethodHandle g_subprocess_force_exit$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_force_exit",
+        constants$784.g_subprocess_force_exit$FUNC
     );
 }
 

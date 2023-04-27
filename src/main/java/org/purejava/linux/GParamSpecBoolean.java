@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GParamSpecBoolean extends _GParamSpecBoolean {
+/**
+ * {@snippet :
+ * typedef struct _GParamSpecBoolean GParamSpecBoolean;
+ * }
+ */
+public final class GParamSpecBoolean extends _GParamSpecBoolean {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GParamSpecBoolean() {}
 }
 
 

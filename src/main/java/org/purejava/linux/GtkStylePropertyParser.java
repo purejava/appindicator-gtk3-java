@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkStylePropertyParser)(char* string,struct _GValue* value,struct _GError** error);
+ * }
+ */
 public interface GtkStylePropertyParser {
 
-    int apply(java.lang.foreign.MemoryAddress string, java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GtkStylePropertyParser fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkStylePropertyParser.class, fi, constants$1821.GtkStylePropertyParser$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkStylePropertyParser fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1626.GtkStylePropertyParser_UP$MH, fi, constants$1626.GtkStylePropertyParser$FUNC, scope);
     }
-    static GtkStylePropertyParser ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _string, java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _error) -> {
+    static GtkStylePropertyParser ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1821.GtkStylePropertyParser$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_string, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_error);
+                return (int)constants$1626.GtkStylePropertyParser_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

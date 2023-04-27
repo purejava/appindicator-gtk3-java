@@ -7,58 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1626 {
+final class constants$1626 {
 
-    static final FunctionDescriptor gtk_list_store_insert_with_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1626() {}
+    static final FunctionDescriptor gtk_icon_source_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_insert_with_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_with_valuesv",
-        constants$1626.gtk_list_store_insert_with_valuesv$FUNC
+    static final MethodHandle gtk_icon_source_get_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_state",
+        constants$1626.gtk_icon_source_get_state$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_prepend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_source_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_size",
+        constants$1626.gtk_icon_source_get_size$FUNC
+    );
+    static final FunctionDescriptor GtkStylePropertyParser$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_prepend",
-        constants$1626.gtk_list_store_prepend$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_append$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkStylePropertyParser_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_append",
-        constants$1626.gtk_list_store_append$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_clear",
-        constants$1626.gtk_list_store_clear$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GtkStylePropertyParser_UP$MH = RuntimeHelper.upcallHandle(GtkStylePropertyParser.class, "apply", constants$1626.GtkStylePropertyParser_UP$FUNC);
+    static final FunctionDescriptor GtkStylePropertyParser_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_iter_is_valid$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_iter_is_valid",
-        constants$1626.gtk_list_store_iter_is_valid$FUNC
+    static final MethodHandle GtkStylePropertyParser_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1626.GtkStylePropertyParser_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_reorder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_properties_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_style_properties_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_get_type",
+        constants$1626.gtk_style_properties_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_register_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_reorder$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_reorder",
-        constants$1626.gtk_list_store_reorder$FUNC
+    static final MethodHandle gtk_style_properties_register_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_register_property",
+        constants$1626.gtk_style_properties_register_property$FUNC
     );
 }
 

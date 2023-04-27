@@ -7,55 +7,96 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$859 {
+final class constants$859 {
 
-    static final FunctionDescriptor g_tls_certificate_new_from_pkcs11_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$859() {}
+    static final FunctionDescriptor hb_font_get_nominal_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_new_from_pkcs11_uris$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_pkcs11_uris",
-        constants$859.g_tls_certificate_new_from_pkcs11_uris$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_list_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_list_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_list_new_from_file",
-        constants$859.g_tls_certificate_list_new_from_file$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_get_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_get_issuer$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_issuer",
-        constants$859.g_tls_certificate_get_issuer$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_verify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_font_get_nominal_glyph_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_verify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_verify",
-        constants$859.g_tls_certificate_verify$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_is_same$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle hb_font_get_nominal_glyph_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_nominal_glyph_func_t.class, "apply", constants$859.hb_font_get_nominal_glyph_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_nominal_glyph_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_is_same$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_is_same",
-        constants$859.g_tls_certificate_is_same$FUNC
+    static final MethodHandle hb_font_get_nominal_glyph_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$859.hb_font_get_nominal_glyph_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor g_tls_certificate_get_not_valid_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_variation_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_get_not_valid_before$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_not_valid_before",
-        constants$859.g_tls_certificate_get_not_valid_before$FUNC
+    static final FunctionDescriptor hb_font_get_variation_glyph_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_variation_glyph_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_variation_glyph_func_t.class, "apply", constants$859.hb_font_get_variation_glyph_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_variation_glyph_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_variation_glyph_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$859.hb_font_get_variation_glyph_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_nominal_glyphs_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_font_get_nominal_glyphs_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_nominal_glyphs_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_nominal_glyphs_func_t.class, "apply", constants$859.hb_font_get_nominal_glyphs_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_nominal_glyphs_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_nominal_glyphs_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$859.hb_font_get_nominal_glyphs_func_t_DOWN$FUNC
     );
 }
 

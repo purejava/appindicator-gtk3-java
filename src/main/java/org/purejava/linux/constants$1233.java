@@ -7,45 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1233 {
+final class constants$1233 {
 
-    static final FunctionDescriptor gdk_drawing_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_drawing_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_type",
-        constants$1233.gdk_drawing_context_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_drawing_context_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1233() {}
+    static final FunctionDescriptor atk_relation_set_add_relation_by_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drawing_context_get_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_window",
-        constants$1233.gdk_drawing_context_get_window$FUNC
+    static final MethodHandle atk_relation_set_add_relation_by_type$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_add_relation_by_type",
+        constants$1233.atk_relation_set_add_relation_by_type$FUNC
     );
-    static final FunctionDescriptor gdk_drawing_context_get_clip$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_selection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_selection_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_get_type",
+        constants$1233.atk_selection_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_selection_add_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_selection_add_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_add_selection",
+        constants$1233.atk_selection_add_selection$FUNC
+    );
+    static final FunctionDescriptor atk_selection_clear_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drawing_context_get_clip$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_clip",
-        constants$1233.gdk_drawing_context_get_clip$FUNC
+    static final MethodHandle atk_selection_clear_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_clear_selection",
+        constants$1233.atk_selection_clear_selection$FUNC
     );
-    static final FunctionDescriptor gdk_drawing_context_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_selection_ref_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_selection_ref_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_ref_selection",
+        constants$1233.atk_selection_ref_selection$FUNC
+    );
+    static final FunctionDescriptor atk_selection_get_selection_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drawing_context_is_valid$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_is_valid",
-        constants$1233.gdk_drawing_context_is_valid$FUNC
-    );
-    static final FunctionDescriptor gdk_drawing_context_get_cairo_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drawing_context_get_cairo_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_cairo_context",
-        constants$1233.gdk_drawing_context_get_cairo_context$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_frame_timings_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_type",
-        constants$1233.gdk_frame_timings_get_type$FUNC
+    static final MethodHandle atk_selection_get_selection_count$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_get_selection_count",
+        constants$1233.atk_selection_get_selection_count$FUNC
     );
 }
 

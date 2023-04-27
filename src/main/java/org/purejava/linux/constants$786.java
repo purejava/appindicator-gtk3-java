@@ -7,65 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$786 {
+final class constants$786 {
 
-    static final FunctionDescriptor g_resolver_lookup_by_name_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$786() {}
+    static final FunctionDescriptor g_subprocess_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_finish",
-        constants$786.g_resolver_lookup_by_name_finish$FUNC
+    static final MethodHandle g_subprocess_get_status$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_status",
+        constants$786.g_subprocess_get_status$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_by_name_with_flags_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name_with_flags_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_with_flags_async",
-        constants$786.g_resolver_lookup_by_name_with_flags_async$FUNC
+    static final MethodHandle g_subprocess_get_successful$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_successful",
+        constants$786.g_subprocess_get_successful$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_by_name_with_flags_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_if_exited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name_with_flags_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_with_flags_finish",
-        constants$786.g_resolver_lookup_by_name_with_flags_finish$FUNC
+    static final MethodHandle g_subprocess_get_if_exited$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_if_exited",
+        constants$786.g_subprocess_get_if_exited$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_by_name_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name_with_flags$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_with_flags",
-        constants$786.g_resolver_lookup_by_name_with_flags$FUNC
+    static final MethodHandle g_subprocess_get_exit_status$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_exit_status",
+        constants$786.g_subprocess_get_exit_status$FUNC
     );
-    static final FunctionDescriptor g_resolver_free_addresses$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_subprocess_get_if_signaled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_free_addresses$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_free_addresses",
-        constants$786.g_resolver_free_addresses$FUNC
+    static final MethodHandle g_subprocess_get_if_signaled$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_if_signaled",
+        constants$786.g_subprocess_get_if_signaled$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_by_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_get_term_sig$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_address$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address",
-        constants$786.g_resolver_lookup_by_address$FUNC
+    static final MethodHandle g_subprocess_get_term_sig$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_term_sig",
+        constants$786.g_subprocess_get_term_sig$FUNC
     );
 }
 

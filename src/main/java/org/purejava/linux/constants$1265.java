@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1265 {
+final class constants$1265 {
 
-    static final FunctionDescriptor gdk_window_show_window_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1265() {}
+    static final FunctionDescriptor gtk_widget_get_allocation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_show_window_menu$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_show_window_menu",
-        constants$1265.gdk_window_show_window_menu$FUNC
+    static final MethodHandle gtk_widget_get_allocation$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_allocation",
+        constants$1265.gtk_widget_get_allocation$FUNC
     );
-    static final FunctionDescriptor gdk_window_create_gl_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_allocation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_create_gl_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_create_gl_context",
-        constants$1265.gdk_window_create_gl_context$FUNC
+    static final MethodHandle gtk_widget_set_allocation$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_allocation",
+        constants$1265.gtk_widget_set_allocation$FUNC
     );
-    static final FunctionDescriptor GdkSeatGrabPrepareFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_clip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkSeatGrabPrepareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1265.GdkSeatGrabPrepareFunc$FUNC
+    static final MethodHandle gtk_widget_set_clip$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_clip",
+        constants$1265.gtk_widget_set_clip$FUNC
     );
-    static final FunctionDescriptor gdk_seat_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_seat_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_type",
-        constants$1265.gdk_seat_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_seat_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_clip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_seat_grab$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_grab",
-        constants$1265.gdk_seat_grab$FUNC
+    static final MethodHandle gtk_widget_get_clip$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_clip",
+        constants$1265.gtk_widget_get_clip$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_requisition$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_requisition$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_requisition",
+        constants$1265.gtk_widget_get_requisition$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_child_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_child_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_child_focus",
+        constants$1265.gtk_widget_child_focus$FUNC
     );
 }
 

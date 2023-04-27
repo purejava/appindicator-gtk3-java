@@ -7,8 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$15 {
+final class constants$15 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$15() {}
+    static final FunctionDescriptor strerror_l$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strerror_l$MH = RuntimeHelper.downcallHandle(
+        "strerror_l",
+        constants$15.strerror_l$FUNC
+    );
+    static final FunctionDescriptor bcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle bcmp$MH = RuntimeHelper.downcallHandle(
+        "bcmp",
+        constants$15.bcmp$FUNC
+    );
     static final FunctionDescriptor bcopy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -41,20 +60,6 @@ class constants$15 {
     static final MethodHandle rindex$MH = RuntimeHelper.downcallHandle(
         "rindex",
         constants$15.rindex$FUNC
-    );
-    static final FunctionDescriptor ffs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle ffs$MH = RuntimeHelper.downcallHandle(
-        "ffs",
-        constants$15.ffs$FUNC
-    );
-    static final FunctionDescriptor ffsl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ffsl$MH = RuntimeHelper.downcallHandle(
-        "ffsl",
-        constants$15.ffsl$FUNC
     );
 }
 

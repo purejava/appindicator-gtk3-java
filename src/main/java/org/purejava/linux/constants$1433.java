@@ -7,54 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1433 {
+final class constants$1433 {
 
-    static final FunctionDescriptor gtk_widget_reparent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1433() {}
+    static final FunctionDescriptor gtk_entry_buffer_get_max_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_buffer_get_max_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_get_max_length",
+        constants$1433.gtk_entry_buffer_get_max_length$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_insert_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_reparent$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_reparent",
-        constants$1433.gtk_widget_reparent$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_buffer_insert_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_insert_text",
+        constants$1433.gtk_entry_buffer_insert_text$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_delete_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_intersect$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_intersect",
-        constants$1433.gtk_widget_intersect$FUNC
+    static final MethodHandle gtk_entry_buffer_delete_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_delete_text",
+        constants$1433.gtk_entry_buffer_delete_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_region_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_buffer_emit_inserted_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_region_intersect$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_region_intersect",
-        constants$1433.gtk_widget_region_intersect$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_freeze_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_freeze_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_freeze_child_notify",
-        constants$1433.gtk_widget_freeze_child_notify$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_child_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_notify",
-        constants$1433.gtk_widget_child_notify$FUNC
+    static final MethodHandle gtk_entry_buffer_emit_inserted_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_emit_inserted_text",
+        constants$1433.gtk_entry_buffer_emit_inserted_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_thaw_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_entry_buffer_emit_deleted_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_thaw_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_thaw_child_notify",
-        constants$1433.gtk_widget_thaw_child_notify$FUNC
+    static final MethodHandle gtk_entry_buffer_emit_deleted_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_emit_deleted_text",
+        constants$1433.gtk_entry_buffer_emit_deleted_text$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_list_store_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_get_type",
+        constants$1433.gtk_list_store_get_type$FUNC
     );
 }
 

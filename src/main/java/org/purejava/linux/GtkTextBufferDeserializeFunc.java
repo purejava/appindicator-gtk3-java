@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTextBufferDeserializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* iter,unsigned char* data,unsigned long length,int create_tags,void* user_data,struct _GError** error);
+ * }
+ */
 public interface GtkTextBufferDeserializeFunc {
 
-    int apply(java.lang.foreign.MemoryAddress register_buffer, java.lang.foreign.MemoryAddress content_buffer, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress data, long length, int create_tags, java.lang.foreign.MemoryAddress user_data, java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTextBufferDeserializeFunc.class, fi, constants$2034.GtkTextBufferDeserializeFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data, long length, int create_tags, java.lang.foreign.MemorySegment user_data, java.lang.foreign.MemorySegment error);
+    static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1837.GtkTextBufferDeserializeFunc_UP$MH, fi, constants$1837.GtkTextBufferDeserializeFunc$FUNC, scope);
     }
-    static GtkTextBufferDeserializeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _register_buffer, java.lang.foreign.MemoryAddress _content_buffer, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _data, long _length, int _create_tags, java.lang.foreign.MemoryAddress _user_data, java.lang.foreign.MemoryAddress _error) -> {
+    static GtkTextBufferDeserializeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data, long _length, int _create_tags, java.lang.foreign.MemorySegment _user_data, java.lang.foreign.MemorySegment _error) -> {
             try {
-                return (int)constants$2034.GtkTextBufferDeserializeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_register_buffer, (java.lang.foreign.Addressable)_content_buffer, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_data, _length, _create_tags, (java.lang.foreign.Addressable)_user_data, (java.lang.foreign.Addressable)_error);
+                return (int)constants$1837.GtkTextBufferDeserializeFunc_DOWN$MH.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

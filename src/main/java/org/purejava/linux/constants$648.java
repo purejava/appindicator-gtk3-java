@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$648 {
+final class constants$648 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDebugControllerDBusClass$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$648() {}
+    static final FunctionDescriptor g_file_info_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDebugControllerDBusClass$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDebugControllerDBusClass",
-        constants$648.glib_listautoptr_cleanup_GDebugControllerDBusClass$FUNC
+    static final MethodHandle g_file_info_get_icon$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_icon",
+        constants$648.g_file_info_get_icon$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDebugControllerDBusClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDebugControllerDBusClass$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDebugControllerDBusClass",
-        constants$648.glib_slistautoptr_cleanup_GDebugControllerDBusClass$FUNC
+    static final MethodHandle g_file_info_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_symbolic_icon",
+        constants$648.g_file_info_get_symbolic_icon$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDebugControllerDBusClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_get_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDebugControllerDBusClass$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDebugControllerDBusClass",
-        constants$648.glib_queueautoptr_cleanup_GDebugControllerDBusClass$FUNC
+    static final MethodHandle g_file_info_get_content_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_content_type",
+        constants$648.g_file_info_get_content_type$FUNC
     );
-    static final FunctionDescriptor G_DEBUG_CONTROLLER_DBUS$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_DEBUG_CONTROLLER_DBUS$MH = RuntimeHelper.downcallHandle(
-        "G_DEBUG_CONTROLLER_DBUS",
-        constants$648.G_DEBUG_CONTROLLER_DBUS$FUNC
+    static final MethodHandle g_file_info_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_size",
+        constants$648.g_file_info_get_size$FUNC
     );
-    static final FunctionDescriptor G_DEBUG_CONTROLLER_DBUS_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_modification_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_DEBUG_CONTROLLER_DBUS_CLASS$MH = RuntimeHelper.downcallHandle(
-        "G_DEBUG_CONTROLLER_DBUS_CLASS",
-        constants$648.G_DEBUG_CONTROLLER_DBUS_CLASS$FUNC
+    static final MethodHandle g_file_info_get_modification_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_modification_time",
+        constants$648.g_file_info_get_modification_time$FUNC
     );
-    static final FunctionDescriptor G_IS_DEBUG_CONTROLLER_DBUS$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_modification_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_IS_DEBUG_CONTROLLER_DBUS$MH = RuntimeHelper.downcallHandle(
-        "G_IS_DEBUG_CONTROLLER_DBUS",
-        constants$648.G_IS_DEBUG_CONTROLLER_DBUS$FUNC
+    static final MethodHandle g_file_info_get_modification_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_modification_date_time",
+        constants$648.g_file_info_get_modification_date_time$FUNC
     );
 }
 

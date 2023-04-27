@@ -7,8 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$89 {
+final class constants$89 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$89() {}
+    static final FunctionDescriptor g_date_time_get_day_of_week$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_get_day_of_week$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_get_day_of_week",
+        constants$89.g_date_time_get_day_of_week$FUNC
+    );
+    static final FunctionDescriptor g_date_time_get_day_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_get_day_of_year$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_get_day_of_year",
+        constants$89.g_date_time_get_day_of_year$FUNC
+    );
     static final FunctionDescriptor g_date_time_get_hour$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -36,20 +52,6 @@ class constants$89 {
     static final MethodHandle g_date_time_get_microsecond$MH = RuntimeHelper.downcallHandle(
         "g_date_time_get_microsecond",
         constants$89.g_date_time_get_microsecond$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_seconds$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_seconds$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_seconds",
-        constants$89.g_date_time_get_seconds$FUNC
-    );
-    static final FunctionDescriptor g_date_time_to_unix$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_to_unix$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_to_unix",
-        constants$89.g_date_time_to_unix$FUNC
     );
 }
 

@@ -7,59 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$34 {
+final class constants$34 {
 
-    static final FunctionDescriptor g_error_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$34() {}
+    static final FunctionDescriptor g_quark_from_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_error_free$MH = RuntimeHelper.downcallHandle(
-        "g_error_free",
-        constants$34.g_error_free$FUNC
+    static final MethodHandle g_quark_from_static_string$MH = RuntimeHelper.downcallHandle(
+        "g_quark_from_static_string",
+        constants$34.g_quark_from_static_string$FUNC
     );
-    static final FunctionDescriptor g_error_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_quark_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_error_copy$MH = RuntimeHelper.downcallHandle(
-        "g_error_copy",
-        constants$34.g_error_copy$FUNC
+    static final MethodHandle g_quark_from_string$MH = RuntimeHelper.downcallHandle(
+        "g_quark_from_string",
+        constants$34.g_quark_from_string$FUNC
     );
-    static final FunctionDescriptor g_error_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_quark_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_error_matches$MH = RuntimeHelper.downcallHandle(
-        "g_error_matches",
-        constants$34.g_error_matches$FUNC
+    static final MethodHandle g_quark_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_quark_to_string",
+        constants$34.g_quark_to_string$FUNC
     );
-    static final FunctionDescriptor g_set_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_intern_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_set_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_set_error",
-        constants$34.g_set_error$FUNC
+    static final MethodHandle g_intern_string$MH = RuntimeHelper.downcallHandle(
+        "g_intern_string",
+        constants$34.g_intern_string$FUNC
     );
-    static final FunctionDescriptor g_set_error_literal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_intern_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_set_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_set_error_literal",
-        constants$34.g_set_error_literal$FUNC
+    static final MethodHandle g_intern_static_string$MH = RuntimeHelper.downcallHandle(
+        "g_intern_static_string",
+        constants$34.g_intern_static_string$FUNC
     );
-    static final FunctionDescriptor g_propagate_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GErrorInitFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_propagate_error$MH = RuntimeHelper.downcallHandle(
-        "g_propagate_error",
-        constants$34.g_propagate_error$FUNC
+    static final FunctionDescriptor GErrorInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GErrorInitFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorInitFunc.class, "apply", constants$34.GErrorInitFunc_UP$FUNC);
 }
 
 

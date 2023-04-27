@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDBusSubtreeVTable {
+ *     GDBusSubtreeEnumerateFunc enumerate;
+ *     GDBusSubtreeIntrospectFunc introspect;
+ *     GDBusSubtreeDispatchFunc dispatch;
+ *     gpointer padding[8];
+ * };
+ * }
+ */
 public class _GDBusSubtreeVTable {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("enumerate"),
         Constants$root.C_POINTER$LAYOUT.withName("introspect"),
         Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
@@ -22,68 +32,104 @@ public class _GDBusSubtreeVTable {
     public static VarHandle enumerate$VH() {
         return _GDBusSubtreeVTable.enumerate$VH;
     }
-    public static MemoryAddress enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.enumerate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDBusSubtreeEnumerateFunc enumerate;
+     * }
+     */
+    public static MemorySegment enumerate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.enumerate$VH.get(seg);
     }
-    public static void enumerate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDBusSubtreeEnumerateFunc enumerate;
+     * }
+     */
+    public static void enumerate$set(MemorySegment seg, MemorySegment x) {
         _GDBusSubtreeVTable.enumerate$VH.set(seg, x);
     }
-    public static MemoryAddress enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.enumerate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment enumerate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.enumerate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void enumerate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void enumerate$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusSubtreeVTable.enumerate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusSubtreeEnumerateFunc enumerate (MemorySegment segment, MemorySession session) {
-        return GDBusSubtreeEnumerateFunc.ofAddress(enumerate$get(segment), session);
+    public static GDBusSubtreeEnumerateFunc enumerate(MemorySegment segment, SegmentScope scope) {
+        return GDBusSubtreeEnumerateFunc.ofAddress(enumerate$get(segment), scope);
     }
     static final VarHandle introspect$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("introspect"));
     public static VarHandle introspect$VH() {
         return _GDBusSubtreeVTable.introspect$VH;
     }
-    public static MemoryAddress introspect$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.introspect$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDBusSubtreeIntrospectFunc introspect;
+     * }
+     */
+    public static MemorySegment introspect$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.introspect$VH.get(seg);
     }
-    public static void introspect$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDBusSubtreeIntrospectFunc introspect;
+     * }
+     */
+    public static void introspect$set(MemorySegment seg, MemorySegment x) {
         _GDBusSubtreeVTable.introspect$VH.set(seg, x);
     }
-    public static MemoryAddress introspect$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.introspect$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment introspect$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.introspect$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void introspect$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void introspect$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusSubtreeVTable.introspect$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusSubtreeIntrospectFunc introspect (MemorySegment segment, MemorySession session) {
-        return GDBusSubtreeIntrospectFunc.ofAddress(introspect$get(segment), session);
+    public static GDBusSubtreeIntrospectFunc introspect(MemorySegment segment, SegmentScope scope) {
+        return GDBusSubtreeIntrospectFunc.ofAddress(introspect$get(segment), scope);
     }
     static final VarHandle dispatch$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dispatch"));
     public static VarHandle dispatch$VH() {
         return _GDBusSubtreeVTable.dispatch$VH;
     }
-    public static MemoryAddress dispatch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.dispatch$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDBusSubtreeDispatchFunc dispatch;
+     * }
+     */
+    public static MemorySegment dispatch$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.dispatch$VH.get(seg);
     }
-    public static void dispatch$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDBusSubtreeDispatchFunc dispatch;
+     * }
+     */
+    public static void dispatch$set(MemorySegment seg, MemorySegment x) {
         _GDBusSubtreeVTable.dispatch$VH.set(seg, x);
     }
-    public static MemoryAddress dispatch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusSubtreeVTable.dispatch$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dispatch$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusSubtreeVTable.dispatch$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dispatch$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dispatch$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusSubtreeVTable.dispatch$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusSubtreeDispatchFunc dispatch (MemorySegment segment, MemorySession session) {
-        return GDBusSubtreeDispatchFunc.ofAddress(dispatch$get(segment), session);
+    public static GDBusSubtreeDispatchFunc dispatch(MemorySegment segment, SegmentScope scope) {
+        return GDBusSubtreeDispatchFunc.ofAddress(dispatch$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(24, 64);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

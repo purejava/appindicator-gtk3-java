@@ -7,9 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkStatusIconClass {
+ *     GObjectClass parent_class;
+ *     void (*activate)(GtkStatusIcon*);
+ *     void (*popup_menu)(GtkStatusIcon*,guint,guint32);
+ *     gboolean (*size_changed)(GtkStatusIcon*,gint);
+ *     gboolean (*button_press_event)(GtkStatusIcon*,GdkEventButton*);
+ *     gboolean (*button_release_event)(GtkStatusIcon*,GdkEventButton*);
+ *     gboolean (*scroll_event)(GtkStatusIcon*,GdkEventScroll*);
+ *     gboolean (*query_tooltip)(GtkStatusIcon*,gint,gint,gboolean,GtkTooltip*);
+ *     void (*__gtk_reserved1)();
+ *     void (*__gtk_reserved2)();
+ *     void (*__gtk_reserved3)();
+ *     void (*__gtk_reserved4)();
+ * };
+ * }
+ */
 public class _GtkStatusIconClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +42,10 @@ public class _GtkStatusIconClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("activate"),
         Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
@@ -47,20 +68,32 @@ public class _GtkStatusIconClass {
     static final FunctionDescriptor activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.activate$FUNC
+    static final FunctionDescriptor activate_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_UP$MH = RuntimeHelper.upcallHandle(activate.class, "apply", _GtkStatusIconClass.activate_UP$FUNC);
+    static final FunctionDescriptor activate_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.activate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate)(GtkStatusIcon*);
+     * }
+     */
     public interface activate {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(activate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate.class, fi, _GtkStatusIconClass.activate$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(activate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.activate_UP$MH, fi, _GtkStatusIconClass.activate$FUNC, scope);
         }
-        static activate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static activate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkStatusIconClass.activate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkStatusIconClass.activate_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -72,40 +105,68 @@ public class _GtkStatusIconClass {
     public static VarHandle activate$VH() {
         return _GtkStatusIconClass.activate$VH;
     }
-    public static MemoryAddress activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.activate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate)(GtkStatusIcon*);
+     * }
+     */
+    public static MemorySegment activate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.activate$VH.get(seg);
     }
-    public static void activate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate)(GtkStatusIcon*);
+     * }
+     */
+    public static void activate$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.activate$VH.set(seg, x);
     }
-    public static MemoryAddress activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.activate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.activate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.activate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate activate (MemorySegment segment, MemorySession session) {
-        return activate.ofAddress(activate$get(segment), session);
+    public static activate activate(MemorySegment segment, SegmentScope scope) {
+        return activate.ofAddress(activate$get(segment), scope);
     }
     static final FunctionDescriptor popup_menu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle popup_menu$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.popup_menu$FUNC
+    static final FunctionDescriptor popup_menu_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle popup_menu_UP$MH = RuntimeHelper.upcallHandle(popup_menu.class, "apply", _GtkStatusIconClass.popup_menu_UP$FUNC);
+    static final FunctionDescriptor popup_menu_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle popup_menu_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.popup_menu_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*popup_menu)(GtkStatusIcon*,guint,guint32);
+     * }
+     */
     public interface popup_menu {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(popup_menu fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(popup_menu.class, fi, _GtkStatusIconClass.popup_menu$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(popup_menu fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.popup_menu_UP$MH, fi, _GtkStatusIconClass.popup_menu$FUNC, scope);
         }
-        static popup_menu ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static popup_menu ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkStatusIconClass.popup_menu$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkStatusIconClass.popup_menu_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -117,39 +178,65 @@ public class _GtkStatusIconClass {
     public static VarHandle popup_menu$VH() {
         return _GtkStatusIconClass.popup_menu$VH;
     }
-    public static MemoryAddress popup_menu$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.popup_menu$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*popup_menu)(GtkStatusIcon*,guint,guint32);
+     * }
+     */
+    public static MemorySegment popup_menu$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.popup_menu$VH.get(seg);
     }
-    public static void popup_menu$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*popup_menu)(GtkStatusIcon*,guint,guint32);
+     * }
+     */
+    public static void popup_menu$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.popup_menu$VH.set(seg, x);
     }
-    public static MemoryAddress popup_menu$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.popup_menu$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment popup_menu$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.popup_menu$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void popup_menu$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void popup_menu$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.popup_menu$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static popup_menu popup_menu (MemorySegment segment, MemorySession session) {
-        return popup_menu.ofAddress(popup_menu$get(segment), session);
+    public static popup_menu popup_menu(MemorySegment segment, SegmentScope scope) {
+        return popup_menu.ofAddress(popup_menu$get(segment), scope);
     }
     static final FunctionDescriptor size_changed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle size_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.size_changed$FUNC
+    static final FunctionDescriptor size_changed_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle size_changed_UP$MH = RuntimeHelper.upcallHandle(size_changed.class, "apply", _GtkStatusIconClass.size_changed_UP$FUNC);
+    static final FunctionDescriptor size_changed_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle size_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.size_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*size_changed)(GtkStatusIcon*,gint);
+     * }
+     */
     public interface size_changed {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(size_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(size_changed.class, fi, _GtkStatusIconClass.size_changed$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(size_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.size_changed_UP$MH, fi, _GtkStatusIconClass.size_changed$FUNC, scope);
         }
-        static size_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static size_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkStatusIconClass.size_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkStatusIconClass.size_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -161,39 +248,65 @@ public class _GtkStatusIconClass {
     public static VarHandle size_changed$VH() {
         return _GtkStatusIconClass.size_changed$VH;
     }
-    public static MemoryAddress size_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.size_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*size_changed)(GtkStatusIcon*,gint);
+     * }
+     */
+    public static MemorySegment size_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.size_changed$VH.get(seg);
     }
-    public static void size_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*size_changed)(GtkStatusIcon*,gint);
+     * }
+     */
+    public static void size_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.size_changed$VH.set(seg, x);
     }
-    public static MemoryAddress size_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.size_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment size_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.size_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void size_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void size_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.size_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static size_changed size_changed (MemorySegment segment, MemorySession session) {
-        return size_changed.ofAddress(size_changed$get(segment), session);
+    public static size_changed size_changed(MemorySegment segment, SegmentScope scope) {
+        return size_changed.ofAddress(size_changed$get(segment), scope);
     }
     static final FunctionDescriptor button_press_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle button_press_event$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.button_press_event$FUNC
+    static final FunctionDescriptor button_press_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle button_press_event_UP$MH = RuntimeHelper.upcallHandle(button_press_event.class, "apply", _GtkStatusIconClass.button_press_event_UP$FUNC);
+    static final FunctionDescriptor button_press_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle button_press_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.button_press_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*button_press_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
     public interface button_press_event {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(button_press_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(button_press_event.class, fi, _GtkStatusIconClass.button_press_event$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(button_press_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.button_press_event_UP$MH, fi, _GtkStatusIconClass.button_press_event$FUNC, scope);
         }
-        static button_press_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static button_press_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkStatusIconClass.button_press_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkStatusIconClass.button_press_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -205,39 +318,65 @@ public class _GtkStatusIconClass {
     public static VarHandle button_press_event$VH() {
         return _GtkStatusIconClass.button_press_event$VH;
     }
-    public static MemoryAddress button_press_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.button_press_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*button_press_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
+    public static MemorySegment button_press_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.button_press_event$VH.get(seg);
     }
-    public static void button_press_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*button_press_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
+    public static void button_press_event$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.button_press_event$VH.set(seg, x);
     }
-    public static MemoryAddress button_press_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.button_press_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment button_press_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.button_press_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void button_press_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void button_press_event$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.button_press_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static button_press_event button_press_event (MemorySegment segment, MemorySession session) {
-        return button_press_event.ofAddress(button_press_event$get(segment), session);
+    public static button_press_event button_press_event(MemorySegment segment, SegmentScope scope) {
+        return button_press_event.ofAddress(button_press_event$get(segment), scope);
     }
     static final FunctionDescriptor button_release_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle button_release_event$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.button_release_event$FUNC
+    static final FunctionDescriptor button_release_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle button_release_event_UP$MH = RuntimeHelper.upcallHandle(button_release_event.class, "apply", _GtkStatusIconClass.button_release_event_UP$FUNC);
+    static final FunctionDescriptor button_release_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle button_release_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.button_release_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*button_release_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
     public interface button_release_event {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(button_release_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(button_release_event.class, fi, _GtkStatusIconClass.button_release_event$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(button_release_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.button_release_event_UP$MH, fi, _GtkStatusIconClass.button_release_event$FUNC, scope);
         }
-        static button_release_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static button_release_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkStatusIconClass.button_release_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkStatusIconClass.button_release_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -249,39 +388,65 @@ public class _GtkStatusIconClass {
     public static VarHandle button_release_event$VH() {
         return _GtkStatusIconClass.button_release_event$VH;
     }
-    public static MemoryAddress button_release_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.button_release_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*button_release_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
+    public static MemorySegment button_release_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.button_release_event$VH.get(seg);
     }
-    public static void button_release_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*button_release_event)(GtkStatusIcon*,GdkEventButton*);
+     * }
+     */
+    public static void button_release_event$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.button_release_event$VH.set(seg, x);
     }
-    public static MemoryAddress button_release_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.button_release_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment button_release_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.button_release_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void button_release_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void button_release_event$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.button_release_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static button_release_event button_release_event (MemorySegment segment, MemorySession session) {
-        return button_release_event.ofAddress(button_release_event$get(segment), session);
+    public static button_release_event button_release_event(MemorySegment segment, SegmentScope scope) {
+        return button_release_event.ofAddress(button_release_event$get(segment), scope);
     }
     static final FunctionDescriptor scroll_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle scroll_event$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.scroll_event$FUNC
+    static final FunctionDescriptor scroll_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle scroll_event_UP$MH = RuntimeHelper.upcallHandle(scroll_event.class, "apply", _GtkStatusIconClass.scroll_event_UP$FUNC);
+    static final FunctionDescriptor scroll_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle scroll_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.scroll_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*scroll_event)(GtkStatusIcon*,GdkEventScroll*);
+     * }
+     */
     public interface scroll_event {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(scroll_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(scroll_event.class, fi, _GtkStatusIconClass.scroll_event$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(scroll_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.scroll_event_UP$MH, fi, _GtkStatusIconClass.scroll_event$FUNC, scope);
         }
-        static scroll_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static scroll_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkStatusIconClass.scroll_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkStatusIconClass.scroll_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -293,20 +458,32 @@ public class _GtkStatusIconClass {
     public static VarHandle scroll_event$VH() {
         return _GtkStatusIconClass.scroll_event$VH;
     }
-    public static MemoryAddress scroll_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.scroll_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*scroll_event)(GtkStatusIcon*,GdkEventScroll*);
+     * }
+     */
+    public static MemorySegment scroll_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.scroll_event$VH.get(seg);
     }
-    public static void scroll_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*scroll_event)(GtkStatusIcon*,GdkEventScroll*);
+     * }
+     */
+    public static void scroll_event$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.scroll_event$VH.set(seg, x);
     }
-    public static MemoryAddress scroll_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.scroll_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment scroll_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.scroll_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void scroll_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void scroll_event$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.scroll_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static scroll_event scroll_event (MemorySegment segment, MemorySession session) {
-        return scroll_event.ofAddress(scroll_event$get(segment), session);
+    public static scroll_event scroll_event(MemorySegment segment, SegmentScope scope) {
+        return scroll_event.ofAddress(scroll_event$get(segment), scope);
     }
     static final FunctionDescriptor query_tooltip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -315,20 +492,40 @@ public class _GtkStatusIconClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle query_tooltip$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.query_tooltip$FUNC
+    static final FunctionDescriptor query_tooltip_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle query_tooltip_UP$MH = RuntimeHelper.upcallHandle(query_tooltip.class, "apply", _GtkStatusIconClass.query_tooltip_UP$FUNC);
+    static final FunctionDescriptor query_tooltip_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle query_tooltip_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.query_tooltip_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*query_tooltip)(GtkStatusIcon*,gint,gint,gboolean,GtkTooltip*);
+     * }
+     */
     public interface query_tooltip {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(query_tooltip fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(query_tooltip.class, fi, _GtkStatusIconClass.query_tooltip$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(query_tooltip fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.query_tooltip_UP$MH, fi, _GtkStatusIconClass.query_tooltip$FUNC, scope);
         }
-        static query_tooltip ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static query_tooltip ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GtkStatusIconClass.query_tooltip$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3, (java.lang.foreign.Addressable)__x4);
+                    return (int)_GtkStatusIconClass.query_tooltip_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -340,36 +537,56 @@ public class _GtkStatusIconClass {
     public static VarHandle query_tooltip$VH() {
         return _GtkStatusIconClass.query_tooltip$VH;
     }
-    public static MemoryAddress query_tooltip$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.query_tooltip$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*query_tooltip)(GtkStatusIcon*,gint,gint,gboolean,GtkTooltip*);
+     * }
+     */
+    public static MemorySegment query_tooltip$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.query_tooltip$VH.get(seg);
     }
-    public static void query_tooltip$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*query_tooltip)(GtkStatusIcon*,gint,gint,gboolean,GtkTooltip*);
+     * }
+     */
+    public static void query_tooltip$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.query_tooltip$VH.set(seg, x);
     }
-    public static MemoryAddress query_tooltip$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.query_tooltip$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment query_tooltip$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.query_tooltip$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void query_tooltip$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void query_tooltip$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.query_tooltip$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_tooltip query_tooltip (MemorySegment segment, MemorySession session) {
-        return query_tooltip.ofAddress(query_tooltip$get(segment), session);
+    public static query_tooltip query_tooltip(MemorySegment segment, SegmentScope scope) {
+        return query_tooltip.ofAddress(query_tooltip$get(segment), scope);
     }
     static final FunctionDescriptor __gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle __gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.__gtk_reserved1$FUNC
+    static final FunctionDescriptor __gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(__gtk_reserved1.class, "apply", _GtkStatusIconClass.__gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor __gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.__gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*__gtk_reserved1)();
+     * }
+     */
     public interface __gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(__gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(__gtk_reserved1.class, fi, _GtkStatusIconClass.__gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(__gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.__gtk_reserved1_UP$MH, fi, _GtkStatusIconClass.__gtk_reserved1$FUNC, scope);
         }
-        static __gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static __gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStatusIconClass.__gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkStatusIconClass.__gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -381,36 +598,56 @@ public class _GtkStatusIconClass {
     public static VarHandle __gtk_reserved1$VH() {
         return _GtkStatusIconClass.__gtk_reserved1$VH;
     }
-    public static MemoryAddress __gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*__gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment __gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved1$VH.get(seg);
     }
-    public static void __gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*__gtk_reserved1)();
+     * }
+     */
+    public static void __gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress __gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static __gtk_reserved1 __gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return __gtk_reserved1.ofAddress(__gtk_reserved1$get(segment), session);
+    public static __gtk_reserved1 __gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return __gtk_reserved1.ofAddress(__gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor __gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle __gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.__gtk_reserved2$FUNC
+    static final FunctionDescriptor __gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(__gtk_reserved2.class, "apply", _GtkStatusIconClass.__gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor __gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.__gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*__gtk_reserved2)();
+     * }
+     */
     public interface __gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(__gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(__gtk_reserved2.class, fi, _GtkStatusIconClass.__gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(__gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.__gtk_reserved2_UP$MH, fi, _GtkStatusIconClass.__gtk_reserved2$FUNC, scope);
         }
-        static __gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static __gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStatusIconClass.__gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkStatusIconClass.__gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -422,36 +659,56 @@ public class _GtkStatusIconClass {
     public static VarHandle __gtk_reserved2$VH() {
         return _GtkStatusIconClass.__gtk_reserved2$VH;
     }
-    public static MemoryAddress __gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*__gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment __gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved2$VH.get(seg);
     }
-    public static void __gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*__gtk_reserved2)();
+     * }
+     */
+    public static void __gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress __gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static __gtk_reserved2 __gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return __gtk_reserved2.ofAddress(__gtk_reserved2$get(segment), session);
+    public static __gtk_reserved2 __gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return __gtk_reserved2.ofAddress(__gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor __gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle __gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.__gtk_reserved3$FUNC
+    static final FunctionDescriptor __gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(__gtk_reserved3.class, "apply", _GtkStatusIconClass.__gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor __gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.__gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*__gtk_reserved3)();
+     * }
+     */
     public interface __gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(__gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(__gtk_reserved3.class, fi, _GtkStatusIconClass.__gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(__gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.__gtk_reserved3_UP$MH, fi, _GtkStatusIconClass.__gtk_reserved3$FUNC, scope);
         }
-        static __gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static __gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStatusIconClass.__gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkStatusIconClass.__gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -463,36 +720,56 @@ public class _GtkStatusIconClass {
     public static VarHandle __gtk_reserved3$VH() {
         return _GtkStatusIconClass.__gtk_reserved3$VH;
     }
-    public static MemoryAddress __gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*__gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment __gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved3$VH.get(seg);
     }
-    public static void __gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*__gtk_reserved3)();
+     * }
+     */
+    public static void __gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress __gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static __gtk_reserved3 __gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return __gtk_reserved3.ofAddress(__gtk_reserved3$get(segment), session);
+    public static __gtk_reserved3 __gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return __gtk_reserved3.ofAddress(__gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor __gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle __gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkStatusIconClass.__gtk_reserved4$FUNC
+    static final FunctionDescriptor __gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(__gtk_reserved4.class, "apply", _GtkStatusIconClass.__gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor __gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle __gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStatusIconClass.__gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*__gtk_reserved4)();
+     * }
+     */
     public interface __gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(__gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(__gtk_reserved4.class, fi, _GtkStatusIconClass.__gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(__gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStatusIconClass.__gtk_reserved4_UP$MH, fi, _GtkStatusIconClass.__gtk_reserved4$FUNC, scope);
         }
-        static __gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static __gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStatusIconClass.__gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkStatusIconClass.__gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -504,27 +781,39 @@ public class _GtkStatusIconClass {
     public static VarHandle __gtk_reserved4$VH() {
         return _GtkStatusIconClass.__gtk_reserved4$VH;
     }
-    public static MemoryAddress __gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*__gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment __gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved4$VH.get(seg);
     }
-    public static void __gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*__gtk_reserved4)();
+     * }
+     */
+    public static void __gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress __gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStatusIconClass.__gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment __gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStatusIconClass.__gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void __gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void __gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStatusIconClass.__gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static __gtk_reserved4 __gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return __gtk_reserved4.ofAddress(__gtk_reserved4$get(segment), session);
+    public static __gtk_reserved4 __gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return __gtk_reserved4.ofAddress(__gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

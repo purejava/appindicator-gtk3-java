@@ -7,56 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$623 {
+final class constants$623 {
 
-    static final FunctionDescriptor g_dbus_message_set_signature$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$623() {}
+    static final FunctionDescriptor g_file_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_signature$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_signature",
-        constants$623.g_dbus_message_set_signature$FUNC
+    static final MethodHandle g_file_query_info_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_info_finish",
+        constants$623.g_file_query_info_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_num_unix_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_query_filesystem_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_num_unix_fds$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_num_unix_fds",
-        constants$623.g_dbus_message_get_num_unix_fds$FUNC
+    static final MethodHandle g_file_query_filesystem_info$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_filesystem_info",
+        constants$623.g_file_query_filesystem_info$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_set_num_unix_fds$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_query_filesystem_info_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_num_unix_fds$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_num_unix_fds",
-        constants$623.g_dbus_message_set_num_unix_fds$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_arg0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_arg0$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_arg0",
-        constants$623.g_dbus_message_get_arg0$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_new_from_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_from_blob$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_from_blob",
-        constants$623.g_dbus_message_new_from_blob$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_bytes_needed$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_bytes_needed$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_bytes_needed",
-        constants$623.g_dbus_message_bytes_needed$FUNC
+    static final MethodHandle g_file_query_filesystem_info_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_filesystem_info_async",
+        constants$623.g_file_query_filesystem_info_async$FUNC
+    );
+    static final FunctionDescriptor g_file_query_filesystem_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_filesystem_info_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_filesystem_info_finish",
+        constants$623.g_file_query_filesystem_info_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_find_enclosing_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_find_enclosing_mount$MH = RuntimeHelper.downcallHandle(
+        "g_file_find_enclosing_mount",
+        constants$623.g_file_find_enclosing_mount$FUNC
+    );
+    static final FunctionDescriptor g_file_find_enclosing_mount_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_find_enclosing_mount_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_find_enclosing_mount_async",
+        constants$623.g_file_find_enclosing_mount_async$FUNC
     );
 }
 

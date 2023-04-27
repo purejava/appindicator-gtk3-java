@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkToggleActionEntry {
+ *     const gchar* name;
+ *     const gchar* stock_id;
+ *     const gchar* label;
+ *     const gchar* accelerator;
+ *     const gchar* tooltip;
+ *     GCallback callback;
+ *     gboolean is_active;
+ * };
+ * }
+ */
 public class _GtkToggleActionEntry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("name"),
         Constants$root.C_POINTER$LAYOUT.withName("stock_id"),
         Constants$root.C_POINTER$LAYOUT.withName("label"),
@@ -26,109 +39,193 @@ public class _GtkToggleActionEntry {
     public static VarHandle name$VH() {
         return _GtkToggleActionEntry.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle stock_id$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("stock_id"));
     public static VarHandle stock_id$VH() {
         return _GtkToggleActionEntry.stock_id$VH;
     }
-    public static MemoryAddress stock_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.stock_id$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* stock_id;
+     * }
+     */
+    public static MemorySegment stock_id$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.stock_id$VH.get(seg);
     }
-    public static void stock_id$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* stock_id;
+     * }
+     */
+    public static void stock_id$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.stock_id$VH.set(seg, x);
     }
-    public static MemoryAddress stock_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.stock_id$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stock_id$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.stock_id$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stock_id$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stock_id$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.stock_id$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle label$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("label"));
     public static VarHandle label$VH() {
         return _GtkToggleActionEntry.label$VH;
     }
-    public static MemoryAddress label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.label$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* label;
+     * }
+     */
+    public static MemorySegment label$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.label$VH.get(seg);
     }
-    public static void label$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* label;
+     * }
+     */
+    public static void label$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.label$VH.set(seg, x);
     }
-    public static MemoryAddress label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.label$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment label$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.label$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void label$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void label$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.label$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle accelerator$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accelerator"));
     public static VarHandle accelerator$VH() {
         return _GtkToggleActionEntry.accelerator$VH;
     }
-    public static MemoryAddress accelerator$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.accelerator$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* accelerator;
+     * }
+     */
+    public static MemorySegment accelerator$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.accelerator$VH.get(seg);
     }
-    public static void accelerator$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* accelerator;
+     * }
+     */
+    public static void accelerator$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.accelerator$VH.set(seg, x);
     }
-    public static MemoryAddress accelerator$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.accelerator$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment accelerator$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.accelerator$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void accelerator$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void accelerator$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.accelerator$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle tooltip$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("tooltip"));
     public static VarHandle tooltip$VH() {
         return _GtkToggleActionEntry.tooltip$VH;
     }
-    public static MemoryAddress tooltip$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.tooltip$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* tooltip;
+     * }
+     */
+    public static MemorySegment tooltip$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.tooltip$VH.get(seg);
     }
-    public static void tooltip$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* tooltip;
+     * }
+     */
+    public static void tooltip$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.tooltip$VH.set(seg, x);
     }
-    public static MemoryAddress tooltip$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.tooltip$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment tooltip$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.tooltip$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void tooltip$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void tooltip$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.tooltip$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle callback$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("callback"));
     public static VarHandle callback$VH() {
         return _GtkToggleActionEntry.callback$VH;
     }
-    public static MemoryAddress callback$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.callback$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GCallback callback;
+     * }
+     */
+    public static MemorySegment callback$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.callback$VH.get(seg);
     }
-    public static void callback$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GCallback callback;
+     * }
+     */
+    public static void callback$set(MemorySegment seg, MemorySegment x) {
         _GtkToggleActionEntry.callback$VH.set(seg, x);
     }
-    public static MemoryAddress callback$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToggleActionEntry.callback$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment callback$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToggleActionEntry.callback$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void callback$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void callback$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToggleActionEntry.callback$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GCallback callback (MemorySegment segment, MemorySession session) {
-        return GCallback.ofAddress(callback$get(segment), session);
+    public static GCallback callback(MemorySegment segment, SegmentScope scope) {
+        return GCallback.ofAddress(callback$get(segment), scope);
     }
     static final VarHandle is_active$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("is_active"));
     public static VarHandle is_active$VH() {
         return _GtkToggleActionEntry.is_active$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean is_active;
+     * }
+     */
     public static int is_active$get(MemorySegment seg) {
         return (int)_GtkToggleActionEntry.is_active$VH.get(seg);
     }
-    public static void is_active$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean is_active;
+     * }
+     */
+    public static void is_active$set(MemorySegment seg, int x) {
         _GtkToggleActionEntry.is_active$VH.set(seg, x);
     }
     public static int is_active$get(MemorySegment seg, long index) {
@@ -139,10 +236,10 @@ public class _GtkToggleActionEntry {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

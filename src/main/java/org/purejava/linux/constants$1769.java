@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1769 {
+final class constants$1769 {
 
-    static final FunctionDescriptor gtk_file_chooser_list_filters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1769() {}
+    static final FunctionDescriptor gtk_range_get_show_fill_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_list_filters$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_filters",
-        constants$1769.gtk_file_chooser_list_filters$FUNC
+    static final MethodHandle gtk_range_get_show_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_show_fill_level",
+        constants$1769.gtk_range_get_show_fill_level$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_restrict_to_fill_level$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_restrict_to_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_restrict_to_fill_level",
+        constants$1769.gtk_range_set_restrict_to_fill_level$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_restrict_to_fill_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_filter",
-        constants$1769.gtk_file_chooser_set_filter$FUNC
+    static final MethodHandle gtk_range_get_restrict_to_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_restrict_to_fill_level",
+        constants$1769.gtk_range_get_restrict_to_fill_level$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_filter",
-        constants$1769.gtk_file_chooser_get_filter$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_add_shortcut_folder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_set_fill_level$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_fill_level",
+        constants$1769.gtk_range_set_fill_level$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_fill_level$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_add_shortcut_folder$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_shortcut_folder",
-        constants$1769.gtk_file_chooser_add_shortcut_folder$FUNC
+    static final MethodHandle gtk_range_get_fill_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_fill_level",
+        constants$1769.gtk_range_get_fill_level$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_remove_shortcut_folder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_set_round_digits$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_remove_shortcut_folder$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_shortcut_folder",
-        constants$1769.gtk_file_chooser_remove_shortcut_folder$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_list_shortcut_folders$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_list_shortcut_folders$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_shortcut_folders",
-        constants$1769.gtk_file_chooser_list_shortcut_folders$FUNC
+    static final MethodHandle gtk_range_set_round_digits$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_round_digits",
+        constants$1769.gtk_range_set_round_digits$FUNC
     );
 }
 

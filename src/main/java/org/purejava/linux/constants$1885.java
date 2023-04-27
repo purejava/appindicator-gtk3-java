@@ -7,49 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1885 {
+final class constants$1885 {
 
-    static final FunctionDescriptor gtk_menu_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new",
-        constants$1885.gtk_menu_bar_new$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1885() {}
+    static final FunctionDescriptor gtk_wrap_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_wrap_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_wrap_mode_get_type",
+        constants$1885.gtk_wrap_mode_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_menu_bar_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_sort_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_sort_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_sort_type_get_type",
+        constants$1885.gtk_sort_type_get_type$FUNC
     );
-    static final MethodHandle gtk_menu_bar_new_from_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new_from_model",
-        constants$1885.gtk_menu_bar_new_from_model$FUNC
+    static final FunctionDescriptor gtk_im_preedit_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_im_preedit_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_preedit_style_get_type",
+        constants$1885.gtk_im_preedit_style_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_menu_bar_get_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_im_status_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_im_status_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_status_style_get_type",
+        constants$1885.gtk_im_status_style_get_type$FUNC
     );
-    static final MethodHandle gtk_menu_bar_get_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_pack_direction",
-        constants$1885.gtk_menu_bar_get_pack_direction$FUNC
+    static final FunctionDescriptor gtk_pack_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_pack_direction_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_pack_direction_get_type",
+        constants$1885.gtk_pack_direction_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_menu_bar_set_pack_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_set_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_pack_direction",
-        constants$1885.gtk_menu_bar_set_pack_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_bar_get_child_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_get_child_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_child_pack_direction",
-        constants$1885.gtk_menu_bar_get_child_pack_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_bar_set_child_pack_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_set_child_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_child_pack_direction",
-        constants$1885.gtk_menu_bar_set_child_pack_direction$FUNC
+    static final FunctionDescriptor gtk_print_pages_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_pages_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_pages_get_type",
+        constants$1885.gtk_print_pages_get_type$FUNC
     );
 }
 

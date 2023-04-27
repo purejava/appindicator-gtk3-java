@@ -7,58 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$877 {
+final class constants$877 {
 
-    static final FunctionDescriptor g_volume_mount_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$877() {}
+    static final FunctionDescriptor hb_font_get_synthetic_slant$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_synthetic_slant$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_synthetic_slant",
+        constants$877.hb_font_get_synthetic_slant$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_variations$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_set_variations$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_variations",
+        constants$877.hb_font_set_variations$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_var_coords_design$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_set_var_coords_design$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_var_coords_design",
+        constants$877.hb_font_set_var_coords_design$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_var_coords_design$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_mount_finish$MH = RuntimeHelper.downcallHandle(
-        "g_volume_mount_finish",
-        constants$877.g_volume_mount_finish$FUNC
+    static final MethodHandle hb_font_get_var_coords_design$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_var_coords_design",
+        constants$877.hb_font_get_var_coords_design$FUNC
     );
-    static final FunctionDescriptor g_volume_eject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_font_set_var_coords_normalized$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_volume_eject$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject",
-        constants$877.g_volume_eject$FUNC
+    static final MethodHandle hb_font_set_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_var_coords_normalized",
+        constants$877.hb_font_set_var_coords_normalized$FUNC
     );
-    static final FunctionDescriptor g_volume_eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_var_coords_normalized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_eject_finish$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject_finish",
-        constants$877.g_volume_eject_finish$FUNC
-    );
-    static final FunctionDescriptor g_volume_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_identifier",
-        constants$877.g_volume_get_identifier$FUNC
-    );
-    static final FunctionDescriptor g_volume_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        "g_volume_enumerate_identifiers",
-        constants$877.g_volume_enumerate_identifiers$FUNC
-    );
-    static final FunctionDescriptor g_volume_get_activation_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_get_activation_root$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_activation_root",
-        constants$877.g_volume_get_activation_root$FUNC
+    static final MethodHandle hb_font_get_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_var_coords_normalized",
+        constants$877.hb_font_get_var_coords_normalized$FUNC
     );
 }
 

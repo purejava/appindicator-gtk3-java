@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkMonitor {
+/**
+ * {@snippet :
+ * typedef struct _GdkMonitor GdkMonitor;
+ * }
+ */
+public final class GdkMonitor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkMonitor() {}
 }
 
 

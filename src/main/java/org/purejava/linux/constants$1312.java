@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1312 {
+final class constants$1312 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkPixbufSimpleAnim$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1312() {}
+    static final FunctionDescriptor gtk_window_iconify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkPixbufSimpleAnim$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkPixbufSimpleAnim",
-        constants$1312.glib_slistautoptr_cleanup_GdkPixbufSimpleAnim$FUNC
+    static final MethodHandle gtk_window_iconify$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_iconify",
+        constants$1312.gtk_window_iconify$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkPixbufSimpleAnim$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_window_deiconify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkPixbufSimpleAnim$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkPixbufSimpleAnim",
-        constants$1312.glib_queueautoptr_cleanup_GdkPixbufSimpleAnim$FUNC
+    static final MethodHandle gtk_window_deiconify$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_deiconify",
+        constants$1312.gtk_window_deiconify$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_from_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_from_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_from_window",
-        constants$1312.gdk_pixbuf_get_from_window$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_from_surface",
-        constants$1312.gdk_pixbuf_get_from_surface$FUNC
-    );
-    static final FunctionDescriptor PangoCairoShapeRendererFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_window_stick$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle PangoCairoShapeRendererFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1312.PangoCairoShapeRendererFunc$FUNC
+    static final MethodHandle gtk_window_stick$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_stick",
+        constants$1312.gtk_window_stick$FUNC
+    );
+    static final FunctionDescriptor gtk_window_unstick$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_unstick$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_unstick",
+        constants$1312.gtk_window_unstick$FUNC
+    );
+    static final FunctionDescriptor gtk_window_maximize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_maximize$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_maximize",
+        constants$1312.gtk_window_maximize$FUNC
+    );
+    static final FunctionDescriptor gtk_window_unmaximize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_unmaximize$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_unmaximize",
+        constants$1312.gtk_window_unmaximize$FUNC
     );
 }
 

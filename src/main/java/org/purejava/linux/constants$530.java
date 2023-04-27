@@ -7,56 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$530 {
+final class constants$530 {
 
-    static final FunctionDescriptor g_app_info_get_fallback_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$530() {}
+    static final FunctionDescriptor isatty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle isatty$MH = RuntimeHelper.downcallHandle(
+        "isatty",
+        constants$530.isatty$FUNC
+    );
+    static final FunctionDescriptor ttyslot$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle ttyslot$MH = RuntimeHelper.downcallHandle(
+        "ttyslot",
+        constants$530.ttyslot$FUNC
+    );
+    static final FunctionDescriptor link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_info_get_fallback_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_fallback_for_type",
-        constants$530.g_app_info_get_fallback_for_type$FUNC
+    static final MethodHandle link$MH = RuntimeHelper.downcallHandle(
+        "link",
+        constants$530.link$FUNC
     );
-    static final FunctionDescriptor g_app_info_reset_type_associations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_reset_type_associations$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_reset_type_associations",
-        constants$530.g_app_info_reset_type_associations$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_default_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor linkat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_get_default_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_default_for_type",
-        constants$530.g_app_info_get_default_for_type$FUNC
+    static final MethodHandle linkat$MH = RuntimeHelper.downcallHandle(
+        "linkat",
+        constants$530.linkat$FUNC
     );
-    static final FunctionDescriptor g_app_info_get_default_for_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_default_for_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_default_for_uri_scheme",
-        constants$530.g_app_info_get_default_for_uri_scheme$FUNC
-    );
-    static final FunctionDescriptor g_app_info_launch_default_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor symlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_info_launch_default_for_uri$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_default_for_uri",
-        constants$530.g_app_info_launch_default_for_uri$FUNC
+    static final MethodHandle symlink$MH = RuntimeHelper.downcallHandle(
+        "symlink",
+        constants$530.symlink$FUNC
     );
-    static final FunctionDescriptor g_app_info_launch_default_for_uri_async$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor readlink$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_app_info_launch_default_for_uri_async$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_default_for_uri_async",
-        constants$530.g_app_info_launch_default_for_uri_async$FUNC
+    static final MethodHandle readlink$MH = RuntimeHelper.downcallHandle(
+        "readlink",
+        constants$530.readlink$FUNC
     );
 }
 

@@ -7,59 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1660 {
+final class constants$1660 {
 
-    static final FunctionDescriptor gtk_tree_view_scroll_to_cell$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1660() {}
+    static final FunctionDescriptor gtk_icon_view_get_drag_dest_item$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_drag_dest_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_drag_dest_item",
+        constants$1660.gtk_icon_view_get_drag_dest_item$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_dest_item_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_scroll_to_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_cell",
-        constants$1660.gtk_tree_view_scroll_to_cell$FUNC
+    static final MethodHandle gtk_icon_view_get_dest_item_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_dest_item_at_pos",
+        constants$1660.gtk_icon_view_get_dest_item_at_pos$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_row_activated$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_create_drag_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_create_drag_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_create_drag_icon",
+        constants$1660.gtk_icon_view_create_drag_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_convert_widget_to_bin_window_coords$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_convert_widget_to_bin_window_coords$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_convert_widget_to_bin_window_coords",
+        constants$1660.gtk_icon_view_convert_widget_to_bin_window_coords$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_cell_rect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_row_activated$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_row_activated",
-        constants$1660.gtk_tree_view_row_activated$FUNC
+    static final MethodHandle gtk_icon_view_get_cell_rect$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_cell_rect",
+        constants$1660.gtk_icon_view_get_cell_rect$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_expand_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_expand_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_all",
-        constants$1660.gtk_tree_view_expand_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_collapse_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_collapse_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_collapse_all",
-        constants$1660.gtk_tree_view_collapse_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_expand_to_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_set_tooltip_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_expand_to_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_to_path",
-        constants$1660.gtk_tree_view_expand_to_path$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_expand_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_expand_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_row",
-        constants$1660.gtk_tree_view_expand_row$FUNC
+    static final MethodHandle gtk_icon_view_set_tooltip_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_tooltip_item",
+        constants$1660.gtk_icon_view_set_tooltip_item$FUNC
     );
 }
 

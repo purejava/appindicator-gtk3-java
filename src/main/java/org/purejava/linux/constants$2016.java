@@ -7,49 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2016 {
+final class constants$2016 {
 
-    static final FunctionDescriptor gtk_spin_button_set_snap_to_ticks$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_snap_to_ticks",
-        constants$2016.gtk_spin_button_set_snap_to_ticks$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_snap_to_ticks$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_snap_to_ticks",
-        constants$2016.gtk_spin_button_get_snap_to_ticks$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_update$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_update",
-        constants$2016.gtk_spin_button_update$FUNC
-    );
-    static final FunctionDescriptor _gtk_spin_button_get_panels$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_spin_button_get_panels$MH = RuntimeHelper.downcallHandle(
-        "_gtk_spin_button_get_panels",
-        constants$2016._gtk_spin_button_get_panels$FUNC
-    );
-    static final FunctionDescriptor gtk_spinner_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_spinner_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_spinner_get_type",
-        constants$2016.gtk_spinner_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_spinner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_spinner_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_spinner_new",
-        constants$2016.gtk_spinner_new$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2016() {}
+    static final MemorySegment G_MENU_ATTRIBUTE_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("action");
+    static final MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("action-namespace");
+    static final MemorySegment G_MENU_ATTRIBUTE_TARGET$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("target");
+    static final MemorySegment G_MENU_ATTRIBUTE_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("label");
+    static final MemorySegment G_MENU_ATTRIBUTE_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("icon");
+    static final MemorySegment G_MENU_LINK_SUBMENU$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("submenu");
 }
 
 

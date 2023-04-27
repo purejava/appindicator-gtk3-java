@@ -7,45 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$854 {
+final class constants$854 {
 
-    static final FunctionDescriptor g_test_dbus_stop$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$854() {}
+    static final FunctionDescriptor hb_draw_close_path_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_stop$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_stop",
-        constants$854.g_test_dbus_stop$FUNC
+    static final MethodHandle hb_draw_close_path_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$854.hb_draw_close_path_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor g_test_dbus_down$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_draw_funcs_set_move_to_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_down$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_down",
-        constants$854.g_test_dbus_down$FUNC
+    static final MethodHandle hb_draw_funcs_set_move_to_func$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_move_to_func",
+        constants$854.hb_draw_funcs_set_move_to_func$FUNC
     );
-    static final FunctionDescriptor g_test_dbus_unset$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_dbus_unset$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_unset",
-        constants$854.g_test_dbus_unset$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_themed_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_get_type",
-        constants$854.g_themed_icon_get_type$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_draw_funcs_set_line_to_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_themed_icon_new$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new",
-        constants$854.g_themed_icon_new$FUNC
+    static final MethodHandle hb_draw_funcs_set_line_to_func$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_line_to_func",
+        constants$854.hb_draw_funcs_set_line_to_func$FUNC
     );
-    static final FunctionDescriptor g_themed_icon_new_with_default_fallbacks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_draw_funcs_set_quadratic_to_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_themed_icon_new_with_default_fallbacks$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_with_default_fallbacks",
-        constants$854.g_themed_icon_new_with_default_fallbacks$FUNC
+    static final MethodHandle hb_draw_funcs_set_quadratic_to_func$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_quadratic_to_func",
+        constants$854.hb_draw_funcs_set_quadratic_to_func$FUNC
+    );
+    static final FunctionDescriptor hb_draw_funcs_set_cubic_to_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_funcs_set_cubic_to_func$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_cubic_to_func",
+        constants$854.hb_draw_funcs_set_cubic_to_func$FUNC
+    );
+    static final FunctionDescriptor hb_draw_funcs_set_close_path_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_funcs_set_close_path_func$MH = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_close_path_func",
+        constants$854.hb_draw_funcs_set_close_path_func$FUNC
     );
 }
 

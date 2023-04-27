@@ -7,51 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$343 {
+final class constants$343 {
 
-    static final FunctionDescriptor g_cache_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$343() {}
+    static final FunctionDescriptor g_mem_chunk_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_mem_chunk_new$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_new",
+        constants$343.g_mem_chunk_new$FUNC
+    );
+    static final FunctionDescriptor g_mem_chunk_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cache_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_cache_destroy",
-        constants$343.g_cache_destroy$FUNC
+    static final MethodHandle g_mem_chunk_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_destroy",
+        constants$343.g_mem_chunk_destroy$FUNC
     );
-    static final FunctionDescriptor g_cache_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mem_chunk_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mem_chunk_alloc$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_alloc",
+        constants$343.g_mem_chunk_alloc$FUNC
+    );
+    static final FunctionDescriptor g_mem_chunk_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mem_chunk_alloc0$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_alloc0",
+        constants$343.g_mem_chunk_alloc0$FUNC
+    );
+    static final FunctionDescriptor g_mem_chunk_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cache_insert$MH = RuntimeHelper.downcallHandle(
-        "g_cache_insert",
-        constants$343.g_cache_insert$FUNC
+    static final MethodHandle g_mem_chunk_free$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_free",
+        constants$343.g_mem_chunk_free$FUNC
     );
-    static final FunctionDescriptor g_cache_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mem_chunk_clean$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cache_remove$MH = RuntimeHelper.downcallHandle(
-        "g_cache_remove",
-        constants$343.g_cache_remove$FUNC
-    );
-    static final FunctionDescriptor g_cache_key_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cache_key_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_cache_key_foreach",
-        constants$343.g_cache_key_foreach$FUNC
-    );
-    static final FunctionDescriptor g_cache_value_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cache_value_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_cache_value_foreach",
-        constants$343.g_cache_value_foreach$FUNC
-    );
-    static final FunctionDescriptor GCompletionFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_mem_chunk_clean$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_clean",
+        constants$343.g_mem_chunk_clean$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GUnixCredentialsMessage {
+/**
+ * {@snippet :
+ * typedef struct _GUnixCredentialsMessage GUnixCredentialsMessage;
+ * }
+ */
+public final class GUnixCredentialsMessage extends _GUnixCredentialsMessage {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GUnixCredentialsMessage() {}
 }
 
 

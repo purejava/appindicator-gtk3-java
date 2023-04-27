@@ -7,47 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1046 {
+final class constants$1046 {
 
-    static final FunctionDescriptor hb_shape_plan_get_shaper$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_get_shaper$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_get_shaper",
-        constants$1046.hb_shape_plan_get_shaper$FUNC
-    );
-    static final FunctionDescriptor hb_version$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1046() {}
+    static final FunctionDescriptor cairo_pattern_set_extend$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_version$MH = RuntimeHelper.downcallHandle(
-        "hb_version",
-        constants$1046.hb_version$FUNC
-    );
-    static final FunctionDescriptor hb_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_version_string$MH = RuntimeHelper.downcallHandle(
-        "hb_version_string",
-        constants$1046.hb_version_string$FUNC
-    );
-    static final FunctionDescriptor hb_version_atleast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_version_atleast$MH = RuntimeHelper.downcallHandle(
-        "hb_version_atleast",
-        constants$1046.hb_version_atleast$FUNC
+    static final MethodHandle cairo_pattern_set_extend$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_set_extend",
+        constants$1046.cairo_pattern_set_extend$FUNC
     );
-    static final FunctionDescriptor pango_coverage_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_coverage_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_get_type",
-        constants$1046.pango_coverage_get_type$FUNC
+    static final FunctionDescriptor cairo_pattern_get_extend$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_coverage_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_coverage_new$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_new",
-        constants$1046.pango_coverage_new$FUNC
+    static final MethodHandle cairo_pattern_get_extend$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_get_extend",
+        constants$1046.cairo_pattern_get_extend$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_set_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_set_filter$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_set_filter",
+        constants$1046.cairo_pattern_set_filter$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_get_filter$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_get_filter",
+        constants$1046.cairo_pattern_get_filter$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_get_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_get_rgba$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_get_rgba",
+        constants$1046.cairo_pattern_get_rgba$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_get_surface$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_get_surface",
+        constants$1046.cairo_pattern_get_surface$FUNC
     );
 }
 

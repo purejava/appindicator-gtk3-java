@@ -7,9 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDtlsConnectionInterface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*accept_certificate)(GDtlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+ *     gboolean (*handshake)(GDtlsConnection*,GCancellable*,GError**);
+ *     void (*handshake_async)(GDtlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*handshake_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+ *     gboolean (*shutdown)(GDtlsConnection*,gboolean,gboolean,GCancellable*,GError**);
+ *     void (*shutdown_async)(GDtlsConnection*,gboolean,gboolean,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*shutdown_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+ *     void (*set_advertised_protocols)(GDtlsConnection*,const gchar**);
+ *     const gchar* (*get_negotiated_protocol)(GDtlsConnection*);
+ *     gboolean (*get_binding_data)(GDtlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+ * };
+ * }
+ */
 public class _GDtlsConnectionInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -36,20 +53,36 @@ public class _GDtlsConnectionInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle accept_certificate$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.accept_certificate$FUNC
+    static final FunctionDescriptor accept_certificate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle accept_certificate_UP$MH = RuntimeHelper.upcallHandle(accept_certificate.class, "apply", _GDtlsConnectionInterface.accept_certificate_UP$FUNC);
+    static final FunctionDescriptor accept_certificate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle accept_certificate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.accept_certificate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*accept_certificate)(GDtlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+     * }
+     */
     public interface accept_certificate {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(accept_certificate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(accept_certificate.class, fi, _GDtlsConnectionInterface.accept_certificate$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(accept_certificate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.accept_certificate_UP$MH, fi, _GDtlsConnectionInterface.accept_certificate$FUNC, scope);
         }
-        static accept_certificate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static accept_certificate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.accept_certificate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    return (int)_GDtlsConnectionInterface.accept_certificate_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -61,40 +94,68 @@ public class _GDtlsConnectionInterface {
     public static VarHandle accept_certificate$VH() {
         return _GDtlsConnectionInterface.accept_certificate$VH;
     }
-    public static MemoryAddress accept_certificate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.accept_certificate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*accept_certificate)(GDtlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+     * }
+     */
+    public static MemorySegment accept_certificate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.accept_certificate$VH.get(seg);
     }
-    public static void accept_certificate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*accept_certificate)(GDtlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+     * }
+     */
+    public static void accept_certificate$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.accept_certificate$VH.set(seg, x);
     }
-    public static MemoryAddress accept_certificate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.accept_certificate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment accept_certificate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.accept_certificate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void accept_certificate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void accept_certificate$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.accept_certificate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static accept_certificate accept_certificate (MemorySegment segment, MemorySession session) {
-        return accept_certificate.ofAddress(accept_certificate$get(segment), session);
+    public static accept_certificate accept_certificate(MemorySegment segment, SegmentScope scope) {
+        return accept_certificate.ofAddress(accept_certificate$get(segment), scope);
     }
     static final FunctionDescriptor handshake$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle handshake$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.handshake$FUNC
+    static final FunctionDescriptor handshake_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle handshake_UP$MH = RuntimeHelper.upcallHandle(handshake.class, "apply", _GDtlsConnectionInterface.handshake_UP$FUNC);
+    static final FunctionDescriptor handshake_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle handshake_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.handshake_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*handshake)(GDtlsConnection*,GCancellable*,GError**);
+     * }
+     */
     public interface handshake {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(handshake fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(handshake.class, fi, _GDtlsConnectionInterface.handshake$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(handshake fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.handshake_UP$MH, fi, _GDtlsConnectionInterface.handshake$FUNC, scope);
         }
-        static handshake ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static handshake ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.handshake$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDtlsConnectionInterface.handshake_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -106,20 +167,32 @@ public class _GDtlsConnectionInterface {
     public static VarHandle handshake$VH() {
         return _GDtlsConnectionInterface.handshake$VH;
     }
-    public static MemoryAddress handshake$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*handshake)(GDtlsConnection*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment handshake$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake$VH.get(seg);
     }
-    public static void handshake$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*handshake)(GDtlsConnection*,GCancellable*,GError**);
+     * }
+     */
+    public static void handshake$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.handshake$VH.set(seg, x);
     }
-    public static MemoryAddress handshake$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment handshake$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void handshake$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void handshake$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.handshake$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake handshake (MemorySegment segment, MemorySession session) {
-        return handshake.ofAddress(handshake$get(segment), session);
+    public static handshake handshake(MemorySegment segment, SegmentScope scope) {
+        return handshake.ofAddress(handshake$get(segment), scope);
     }
     static final FunctionDescriptor handshake_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -128,20 +201,40 @@ public class _GDtlsConnectionInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle handshake_async$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.handshake_async$FUNC
+    static final FunctionDescriptor handshake_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle handshake_async_UP$MH = RuntimeHelper.upcallHandle(handshake_async.class, "apply", _GDtlsConnectionInterface.handshake_async_UP$FUNC);
+    static final FunctionDescriptor handshake_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle handshake_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.handshake_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*handshake_async)(GDtlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface handshake_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(handshake_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(handshake_async.class, fi, _GDtlsConnectionInterface.handshake_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(handshake_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.handshake_async_UP$MH, fi, _GDtlsConnectionInterface.handshake_async$FUNC, scope);
         }
-        static handshake_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static handshake_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GDtlsConnectionInterface.handshake_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GDtlsConnectionInterface.handshake_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -153,40 +246,68 @@ public class _GDtlsConnectionInterface {
     public static VarHandle handshake_async$VH() {
         return _GDtlsConnectionInterface.handshake_async$VH;
     }
-    public static MemoryAddress handshake_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*handshake_async)(GDtlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment handshake_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake_async$VH.get(seg);
     }
-    public static void handshake_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*handshake_async)(GDtlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void handshake_async$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.handshake_async$VH.set(seg, x);
     }
-    public static MemoryAddress handshake_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment handshake_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void handshake_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void handshake_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.handshake_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake_async handshake_async (MemorySegment segment, MemorySession session) {
-        return handshake_async.ofAddress(handshake_async$get(segment), session);
+    public static handshake_async handshake_async(MemorySegment segment, SegmentScope scope) {
+        return handshake_async.ofAddress(handshake_async$get(segment), scope);
     }
     static final FunctionDescriptor handshake_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle handshake_finish$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.handshake_finish$FUNC
+    static final FunctionDescriptor handshake_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle handshake_finish_UP$MH = RuntimeHelper.upcallHandle(handshake_finish.class, "apply", _GDtlsConnectionInterface.handshake_finish_UP$FUNC);
+    static final FunctionDescriptor handshake_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle handshake_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.handshake_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*handshake_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
     public interface handshake_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(handshake_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(handshake_finish.class, fi, _GDtlsConnectionInterface.handshake_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(handshake_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.handshake_finish_UP$MH, fi, _GDtlsConnectionInterface.handshake_finish$FUNC, scope);
         }
-        static handshake_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static handshake_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.handshake_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDtlsConnectionInterface.handshake_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -198,20 +319,32 @@ public class _GDtlsConnectionInterface {
     public static VarHandle handshake_finish$VH() {
         return _GDtlsConnectionInterface.handshake_finish$VH;
     }
-    public static MemoryAddress handshake_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*handshake_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment handshake_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake_finish$VH.get(seg);
     }
-    public static void handshake_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*handshake_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void handshake_finish$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.handshake_finish$VH.set(seg, x);
     }
-    public static MemoryAddress handshake_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.handshake_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment handshake_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.handshake_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void handshake_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void handshake_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.handshake_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake_finish handshake_finish (MemorySegment segment, MemorySession session) {
-        return handshake_finish.ofAddress(handshake_finish$get(segment), session);
+    public static handshake_finish handshake_finish(MemorySegment segment, SegmentScope scope) {
+        return handshake_finish.ofAddress(handshake_finish$get(segment), scope);
     }
     static final FunctionDescriptor shutdown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -220,20 +353,40 @@ public class _GDtlsConnectionInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle shutdown$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.shutdown$FUNC
+    static final FunctionDescriptor shutdown_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle shutdown_UP$MH = RuntimeHelper.upcallHandle(shutdown.class, "apply", _GDtlsConnectionInterface.shutdown_UP$FUNC);
+    static final FunctionDescriptor shutdown_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle shutdown_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.shutdown_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*shutdown)(GDtlsConnection*,gboolean,gboolean,GCancellable*,GError**);
+     * }
+     */
     public interface shutdown {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(shutdown fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(shutdown.class, fi, _GDtlsConnectionInterface.shutdown$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(shutdown fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.shutdown_UP$MH, fi, _GDtlsConnectionInterface.shutdown$FUNC, scope);
         }
-        static shutdown ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static shutdown ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.shutdown$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (int)_GDtlsConnectionInterface.shutdown_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -245,20 +398,32 @@ public class _GDtlsConnectionInterface {
     public static VarHandle shutdown$VH() {
         return _GDtlsConnectionInterface.shutdown$VH;
     }
-    public static MemoryAddress shutdown$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*shutdown)(GDtlsConnection*,gboolean,gboolean,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment shutdown$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown$VH.get(seg);
     }
-    public static void shutdown$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*shutdown)(GDtlsConnection*,gboolean,gboolean,GCancellable*,GError**);
+     * }
+     */
+    public static void shutdown$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown$VH.set(seg, x);
     }
-    public static MemoryAddress shutdown$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment shutdown$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void shutdown$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void shutdown$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static shutdown shutdown (MemorySegment segment, MemorySession session) {
-        return shutdown.ofAddress(shutdown$get(segment), session);
+    public static shutdown shutdown(MemorySegment segment, SegmentScope scope) {
+        return shutdown.ofAddress(shutdown$get(segment), scope);
     }
     static final FunctionDescriptor shutdown_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -269,20 +434,44 @@ public class _GDtlsConnectionInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle shutdown_async$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.shutdown_async$FUNC
+    static final FunctionDescriptor shutdown_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle shutdown_async_UP$MH = RuntimeHelper.upcallHandle(shutdown_async.class, "apply", _GDtlsConnectionInterface.shutdown_async_UP$FUNC);
+    static final FunctionDescriptor shutdown_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle shutdown_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.shutdown_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*shutdown_async)(GDtlsConnection*,gboolean,gboolean,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface shutdown_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(shutdown_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(shutdown_async.class, fi, _GDtlsConnectionInterface.shutdown_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(shutdown_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.shutdown_async_UP$MH, fi, _GDtlsConnectionInterface.shutdown_async$FUNC, scope);
         }
-        static shutdown_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static shutdown_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GDtlsConnectionInterface.shutdown_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GDtlsConnectionInterface.shutdown_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -294,40 +483,68 @@ public class _GDtlsConnectionInterface {
     public static VarHandle shutdown_async$VH() {
         return _GDtlsConnectionInterface.shutdown_async$VH;
     }
-    public static MemoryAddress shutdown_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*shutdown_async)(GDtlsConnection*,gboolean,gboolean,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment shutdown_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown_async$VH.get(seg);
     }
-    public static void shutdown_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*shutdown_async)(GDtlsConnection*,gboolean,gboolean,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void shutdown_async$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown_async$VH.set(seg, x);
     }
-    public static MemoryAddress shutdown_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment shutdown_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void shutdown_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void shutdown_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static shutdown_async shutdown_async (MemorySegment segment, MemorySession session) {
-        return shutdown_async.ofAddress(shutdown_async$get(segment), session);
+    public static shutdown_async shutdown_async(MemorySegment segment, SegmentScope scope) {
+        return shutdown_async.ofAddress(shutdown_async$get(segment), scope);
     }
     static final FunctionDescriptor shutdown_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle shutdown_finish$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.shutdown_finish$FUNC
+    static final FunctionDescriptor shutdown_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle shutdown_finish_UP$MH = RuntimeHelper.upcallHandle(shutdown_finish.class, "apply", _GDtlsConnectionInterface.shutdown_finish_UP$FUNC);
+    static final FunctionDescriptor shutdown_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle shutdown_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.shutdown_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*shutdown_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
     public interface shutdown_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(shutdown_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(shutdown_finish.class, fi, _GDtlsConnectionInterface.shutdown_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(shutdown_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.shutdown_finish_UP$MH, fi, _GDtlsConnectionInterface.shutdown_finish$FUNC, scope);
         }
-        static shutdown_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static shutdown_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.shutdown_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDtlsConnectionInterface.shutdown_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -339,39 +556,65 @@ public class _GDtlsConnectionInterface {
     public static VarHandle shutdown_finish$VH() {
         return _GDtlsConnectionInterface.shutdown_finish$VH;
     }
-    public static MemoryAddress shutdown_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*shutdown_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment shutdown_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown_finish$VH.get(seg);
     }
-    public static void shutdown_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*shutdown_finish)(GDtlsConnection*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void shutdown_finish$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown_finish$VH.set(seg, x);
     }
-    public static MemoryAddress shutdown_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.shutdown_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment shutdown_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.shutdown_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void shutdown_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void shutdown_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.shutdown_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static shutdown_finish shutdown_finish (MemorySegment segment, MemorySession session) {
-        return shutdown_finish.ofAddress(shutdown_finish$get(segment), session);
+    public static shutdown_finish shutdown_finish(MemorySegment segment, SegmentScope scope) {
+        return shutdown_finish.ofAddress(shutdown_finish$get(segment), scope);
     }
     static final FunctionDescriptor set_advertised_protocols$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_advertised_protocols$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.set_advertised_protocols$FUNC
+    static final FunctionDescriptor set_advertised_protocols_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_advertised_protocols_UP$MH = RuntimeHelper.upcallHandle(set_advertised_protocols.class, "apply", _GDtlsConnectionInterface.set_advertised_protocols_UP$FUNC);
+    static final FunctionDescriptor set_advertised_protocols_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_advertised_protocols_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.set_advertised_protocols_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_advertised_protocols)(GDtlsConnection*,const gchar**);
+     * }
+     */
     public interface set_advertised_protocols {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_advertised_protocols fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_advertised_protocols.class, fi, _GDtlsConnectionInterface.set_advertised_protocols$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_advertised_protocols fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.set_advertised_protocols_UP$MH, fi, _GDtlsConnectionInterface.set_advertised_protocols$FUNC, scope);
         }
-        static set_advertised_protocols ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_advertised_protocols ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GDtlsConnectionInterface.set_advertised_protocols$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GDtlsConnectionInterface.set_advertised_protocols_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -383,38 +626,62 @@ public class _GDtlsConnectionInterface {
     public static VarHandle set_advertised_protocols$VH() {
         return _GDtlsConnectionInterface.set_advertised_protocols$VH;
     }
-    public static MemoryAddress set_advertised_protocols$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.set_advertised_protocols$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_advertised_protocols)(GDtlsConnection*,const gchar**);
+     * }
+     */
+    public static MemorySegment set_advertised_protocols$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.set_advertised_protocols$VH.get(seg);
     }
-    public static void set_advertised_protocols$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_advertised_protocols)(GDtlsConnection*,const gchar**);
+     * }
+     */
+    public static void set_advertised_protocols$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.set_advertised_protocols$VH.set(seg, x);
     }
-    public static MemoryAddress set_advertised_protocols$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.set_advertised_protocols$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_advertised_protocols$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.set_advertised_protocols$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_advertised_protocols$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_advertised_protocols$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.set_advertised_protocols$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_advertised_protocols set_advertised_protocols (MemorySegment segment, MemorySession session) {
-        return set_advertised_protocols.ofAddress(set_advertised_protocols$get(segment), session);
+    public static set_advertised_protocols set_advertised_protocols(MemorySegment segment, SegmentScope scope) {
+        return set_advertised_protocols.ofAddress(set_advertised_protocols$get(segment), scope);
     }
     static final FunctionDescriptor get_negotiated_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_negotiated_protocol$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.get_negotiated_protocol$FUNC
+    static final FunctionDescriptor get_negotiated_protocol_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_negotiated_protocol_UP$MH = RuntimeHelper.upcallHandle(get_negotiated_protocol.class, "apply", _GDtlsConnectionInterface.get_negotiated_protocol_UP$FUNC);
+    static final FunctionDescriptor get_negotiated_protocol_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_negotiated_protocol_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.get_negotiated_protocol_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_negotiated_protocol)(GDtlsConnection*);
+     * }
+     */
     public interface get_negotiated_protocol {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_negotiated_protocol fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_negotiated_protocol.class, fi, _GDtlsConnectionInterface.get_negotiated_protocol$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_negotiated_protocol fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.get_negotiated_protocol_UP$MH, fi, _GDtlsConnectionInterface.get_negotiated_protocol$FUNC, scope);
         }
-        static get_negotiated_protocol ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_negotiated_protocol ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.get_negotiated_protocol$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.get_negotiated_protocol_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -426,20 +693,32 @@ public class _GDtlsConnectionInterface {
     public static VarHandle get_negotiated_protocol$VH() {
         return _GDtlsConnectionInterface.get_negotiated_protocol$VH;
     }
-    public static MemoryAddress get_negotiated_protocol$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.get_negotiated_protocol$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_negotiated_protocol)(GDtlsConnection*);
+     * }
+     */
+    public static MemorySegment get_negotiated_protocol$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.get_negotiated_protocol$VH.get(seg);
     }
-    public static void get_negotiated_protocol$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_negotiated_protocol)(GDtlsConnection*);
+     * }
+     */
+    public static void get_negotiated_protocol$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.get_negotiated_protocol$VH.set(seg, x);
     }
-    public static MemoryAddress get_negotiated_protocol$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.get_negotiated_protocol$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_negotiated_protocol$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.get_negotiated_protocol$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_negotiated_protocol$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_negotiated_protocol$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.get_negotiated_protocol$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_negotiated_protocol get_negotiated_protocol (MemorySegment segment, MemorySession session) {
-        return get_negotiated_protocol.ofAddress(get_negotiated_protocol$get(segment), session);
+    public static get_negotiated_protocol get_negotiated_protocol(MemorySegment segment, SegmentScope scope) {
+        return get_negotiated_protocol.ofAddress(get_negotiated_protocol$get(segment), scope);
     }
     static final FunctionDescriptor get_binding_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -447,20 +726,38 @@ public class _GDtlsConnectionInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_binding_data$MH = RuntimeHelper.downcallHandle(
-        _GDtlsConnectionInterface.get_binding_data$FUNC
+    static final FunctionDescriptor get_binding_data_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_binding_data_UP$MH = RuntimeHelper.upcallHandle(get_binding_data.class, "apply", _GDtlsConnectionInterface.get_binding_data_UP$FUNC);
+    static final FunctionDescriptor get_binding_data_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_binding_data_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDtlsConnectionInterface.get_binding_data_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*get_binding_data)(GDtlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+     * }
+     */
     public interface get_binding_data {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(get_binding_data fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_binding_data.class, fi, _GDtlsConnectionInterface.get_binding_data$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(get_binding_data fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDtlsConnectionInterface.get_binding_data_UP$MH, fi, _GDtlsConnectionInterface.get_binding_data$FUNC, scope);
         }
-        static get_binding_data ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static get_binding_data ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GDtlsConnectionInterface.get_binding_data$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GDtlsConnectionInterface.get_binding_data_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -472,27 +769,39 @@ public class _GDtlsConnectionInterface {
     public static VarHandle get_binding_data$VH() {
         return _GDtlsConnectionInterface.get_binding_data$VH;
     }
-    public static MemoryAddress get_binding_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.get_binding_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*get_binding_data)(GDtlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+     * }
+     */
+    public static MemorySegment get_binding_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.get_binding_data$VH.get(seg);
     }
-    public static void get_binding_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*get_binding_data)(GDtlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+     * }
+     */
+    public static void get_binding_data$set(MemorySegment seg, MemorySegment x) {
         _GDtlsConnectionInterface.get_binding_data$VH.set(seg, x);
     }
-    public static MemoryAddress get_binding_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDtlsConnectionInterface.get_binding_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_binding_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDtlsConnectionInterface.get_binding_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_binding_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_binding_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GDtlsConnectionInterface.get_binding_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_binding_data get_binding_data (MemorySegment segment, MemorySession session) {
-        return get_binding_data.ofAddress(get_binding_data$get(segment), session);
+    public static get_binding_data get_binding_data(MemorySegment segment, SegmentScope scope) {
+        return get_binding_data.ofAddress(get_binding_data$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

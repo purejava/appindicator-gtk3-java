@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$652 {
+final class constants$652 {
 
-    static final FunctionDescriptor g_drive_poll_for_media$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_poll_for_media$MH = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media",
-        constants$652.g_drive_poll_for_media$FUNC
-    );
-    static final FunctionDescriptor g_drive_poll_for_media_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$652() {}
+    static final FunctionDescriptor g_file_info_set_modification_date_time$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_poll_for_media_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media_finish",
-        constants$652.g_drive_poll_for_media_finish$FUNC
+    static final MethodHandle g_file_info_set_modification_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_modification_date_time",
+        constants$652.g_file_info_set_modification_date_time$FUNC
     );
-    static final FunctionDescriptor g_drive_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_set_access_date_time$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_identifier",
-        constants$652.g_drive_get_identifier$FUNC
+    static final MethodHandle g_file_info_set_access_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_access_date_time",
+        constants$652.g_file_info_set_access_date_time$FUNC
     );
-    static final FunctionDescriptor g_drive_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_set_creation_date_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        "g_drive_enumerate_identifiers",
-        constants$652.g_drive_enumerate_identifiers$FUNC
+    static final MethodHandle g_file_info_set_creation_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_creation_date_time",
+        constants$652.g_file_info_set_creation_date_time$FUNC
     );
-    static final FunctionDescriptor g_drive_get_start_stop_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_set_symlink_target$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_get_start_stop_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_start_stop_type",
-        constants$652.g_drive_get_start_stop_type$FUNC
+    static final MethodHandle g_file_info_set_symlink_target$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_symlink_target",
+        constants$652.g_file_info_set_symlink_target$FUNC
     );
-    static final FunctionDescriptor g_drive_can_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_info_set_sort_order$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_drive_can_start$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_start",
-        constants$652.g_drive_can_start$FUNC
+    static final MethodHandle g_file_info_set_sort_order$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_sort_order",
+        constants$652.g_file_info_set_sort_order$FUNC
+    );
+    static final FunctionDescriptor g_file_attribute_matcher_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_attribute_matcher_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_get_type",
+        constants$652.g_file_attribute_matcher_get_type$FUNC
     );
 }
 

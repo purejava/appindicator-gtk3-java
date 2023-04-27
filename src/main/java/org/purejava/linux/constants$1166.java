@@ -7,55 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1166 {
+final class constants$1166 {
 
-    static final FunctionDescriptor cairo_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1166() {}
+    static final FunctionDescriptor gdk_axis_use_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_axis_use_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_axis_use_get_type",
+        constants$1166.gdk_axis_use_get_type$FUNC
     );
-    static final MethodHandle cairo_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_clip",
-        constants$1166.cairo_clip$FUNC
+    static final FunctionDescriptor gdk_axis_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_axis_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_axis_flags_get_type",
+        constants$1166.gdk_axis_flags_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_clip_preserve$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_visual_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_visual_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_type_get_type",
+        constants$1166.gdk_visual_type_get_type$FUNC
     );
-    static final MethodHandle cairo_clip_preserve$MH = RuntimeHelper.downcallHandle(
-        "cairo_clip_preserve",
-        constants$1166.cairo_clip_preserve$FUNC
+    static final FunctionDescriptor gdk_window_window_class_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_window_class_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_window_class_get_type",
+        constants$1166.gdk_window_window_class_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_clip_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_window_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_type_get_type",
+        constants$1166.gdk_window_type_get_type$FUNC
     );
-    static final MethodHandle cairo_clip_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_clip_extents",
-        constants$1166.cairo_clip_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_clip_rectangle_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_clip_rectangle_list$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_clip_rectangle_list",
-        constants$1166.cairo_copy_clip_rectangle_list$FUNC
-    );
-    static final FunctionDescriptor cairo_rectangle_list_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_rectangle_list_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_rectangle_list_destroy",
-        constants$1166.cairo_rectangle_list_destroy$FUNC
-    );
-    static final FunctionDescriptor cairo_tag_begin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_tag_begin$MH = RuntimeHelper.downcallHandle(
-        "cairo_tag_begin",
-        constants$1166.cairo_tag_begin$FUNC
+    static final FunctionDescriptor gdk_window_attributes_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_attributes_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_attributes_type_get_type",
+        constants$1166.gdk_window_attributes_type_get_type$FUNC
     );
 }
 

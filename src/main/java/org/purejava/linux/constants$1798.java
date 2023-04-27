@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1798 {
+final class constants$1798 {
 
-    static final FunctionDescriptor gtk_gesture_ungroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_ungroup$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_ungroup",
-        constants$1798.gtk_gesture_ungroup$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_group",
-        constants$1798.gtk_gesture_get_group$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_is_grouped_with$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1798() {}
+    static final FunctionDescriptor gtk_scrolled_window_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_is_grouped_with$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_is_grouped_with",
-        constants$1798.gtk_gesture_is_grouped_with$FUNC
+    static final MethodHandle gtk_scrolled_window_set_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_vadjustment",
+        constants$1798.gtk_scrolled_window_set_vadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_single_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_type",
-        constants$1798.gtk_gesture_single_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_single_get_touch_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrolled_window_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_get_touch_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_touch_only",
-        constants$1798.gtk_gesture_single_get_touch_only$FUNC
+    static final MethodHandle gtk_scrolled_window_get_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_hadjustment",
+        constants$1798.gtk_scrolled_window_get_hadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_set_touch_only$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_scrolled_window_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_vadjustment",
+        constants$1798.gtk_scrolled_window_get_vadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_get_hscrollbar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_hscrollbar$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_hscrollbar",
+        constants$1798.gtk_scrolled_window_get_hscrollbar$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_get_vscrollbar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_vscrollbar$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_vscrollbar",
+        constants$1798.gtk_scrolled_window_get_vscrollbar$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_set_policy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_set_touch_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_set_touch_only",
-        constants$1798.gtk_gesture_single_set_touch_only$FUNC
+    static final MethodHandle gtk_scrolled_window_set_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_policy",
+        constants$1798.gtk_scrolled_window_set_policy$FUNC
     );
 }
 

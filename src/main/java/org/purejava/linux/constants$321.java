@@ -7,55 +7,78 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$321 {
+final class constants$321 {
 
-    static final FunctionDescriptor g_thread_pool_set_sort_function$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$321() {}
+    static final FunctionDescriptor g_assertion_message_expr$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_set_sort_function$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_sort_function",
-        constants$321.g_thread_pool_set_sort_function$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_move_to_front$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_move_to_front$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_move_to_front",
-        constants$321.g_thread_pool_move_to_front$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_set_max_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_pool_set_max_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_threads",
-        constants$321.g_thread_pool_set_max_threads$FUNC
+    static final MethodHandle g_assertion_message_expr$MH = RuntimeHelper.downcallHandle(
+        "g_assertion_message_expr",
+        constants$321.g_assertion_message_expr$FUNC
     );
-    static final FunctionDescriptor g_thread_pool_get_max_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_assertion_message_cmpstr$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_pool_get_max_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_threads",
-        constants$321.g_thread_pool_get_max_threads$FUNC
+    static final MethodHandle g_assertion_message_cmpstr$MH = RuntimeHelper.downcallHandle(
+        "g_assertion_message_cmpstr",
+        constants$321.g_assertion_message_cmpstr$FUNC
     );
-    static final FunctionDescriptor g_thread_pool_get_num_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_assertion_message_cmpstrv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_thread_pool_get_num_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_threads",
-        constants$321.g_thread_pool_get_num_threads$FUNC
+    static final MethodHandle g_assertion_message_cmpstrv$MH = RuntimeHelper.downcallHandle(
+        "g_assertion_message_cmpstrv",
+        constants$321.g_assertion_message_cmpstrv$FUNC
     );
-    static final FunctionDescriptor g_thread_pool_set_max_unused_threads$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_assertion_message_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_thread_pool_set_max_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_unused_threads",
-        constants$321.g_thread_pool_set_max_unused_threads$FUNC
+    static final MethodHandle g_assertion_message_error$MH = RuntimeHelper.downcallHandle(
+        "g_assertion_message_error",
+        constants$321.g_assertion_message_error$FUNC
     );
+    static final FunctionDescriptor g_test_add_vtable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_add_vtable$MH = RuntimeHelper.downcallHandle(
+        "g_test_add_vtable",
+        constants$321.g_test_add_vtable$FUNC
+    );
+    static final OfAddress g_test_config_vars$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    static final VarHandle g_test_config_vars$VH = constants$321.g_test_config_vars$LAYOUT.varHandle();
+    static final MemorySegment g_test_config_vars$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_test_config_vars", constants$321.g_test_config_vars$LAYOUT);
 }
 
 

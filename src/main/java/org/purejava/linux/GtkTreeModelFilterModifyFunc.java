@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkTreeModelFilterModifyFunc)(struct _GtkTreeModel* model,struct _GtkTreeIter* iter,struct _GValue* value,int column,void* data);
+ * }
+ */
 public interface GtkTreeModelFilterModifyFunc {
 
-    void apply(java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress value, int column, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTreeModelFilterModifyFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeModelFilterModifyFunc.class, fi, constants$1627.GtkTreeModelFilterModifyFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment value, int column, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkTreeModelFilterModifyFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1437.GtkTreeModelFilterModifyFunc_UP$MH, fi, constants$1437.GtkTreeModelFilterModifyFunc$FUNC, scope);
     }
-    static GtkTreeModelFilterModifyFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _value, int _column, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTreeModelFilterModifyFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _value, int _column, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1628.GtkTreeModelFilterModifyFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_value, _column, (java.lang.foreign.Addressable)_data);
+                constants$1438.GtkTreeModelFilterModifyFunc_DOWN$MH.invokeExact(symbol, _model, _iter, _value, _column, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

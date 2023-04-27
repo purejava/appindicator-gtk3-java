@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1678 {
+final class constants$1678 {
 
-    static final FunctionDescriptor gtk_combo_box_popdown$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1678() {}
+    static final FunctionDescriptor gtk_list_box_unselect_row$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_popdown$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_popdown",
-        constants$1678.gtk_combo_box_popdown$FUNC
+    static final MethodHandle gtk_list_box_unselect_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_unselect_row",
+        constants$1678.gtk_list_box_unselect_row$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_get_popup_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_select_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_get_popup_accessible$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_popup_accessible",
-        constants$1678.gtk_combo_box_get_popup_accessible$FUNC
+    static final MethodHandle gtk_list_box_select_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_select_all",
+        constants$1678.gtk_list_box_select_all$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_get_id_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_unselect_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_get_id_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_id_column",
-        constants$1678.gtk_combo_box_get_id_column$FUNC
+    static final MethodHandle gtk_list_box_unselect_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_unselect_all",
+        constants$1678.gtk_list_box_unselect_all$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_set_id_column$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_set_selection_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_set_id_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_id_column",
-        constants$1678.gtk_combo_box_set_id_column$FUNC
+    static final MethodHandle gtk_list_box_set_selection_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_set_selection_mode",
+        constants$1678.gtk_list_box_set_selection_mode$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_get_active_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_get_selection_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_get_active_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_active_id",
-        constants$1678.gtk_combo_box_get_active_id$FUNC
+    static final MethodHandle gtk_list_box_get_selection_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_get_selection_mode",
+        constants$1678.gtk_list_box_get_selection_mode$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_set_active_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_set_active_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_active_id",
-        constants$1678.gtk_combo_box_set_active_id$FUNC
+    static final MethodHandle gtk_list_box_set_filter_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_set_filter_func",
+        constants$1678.gtk_list_box_set_filter_func$FUNC
     );
 }
 

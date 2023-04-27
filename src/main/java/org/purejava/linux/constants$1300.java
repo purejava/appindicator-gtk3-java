@@ -7,48 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1300 {
+final class constants$1300 {
 
-    static final FunctionDescriptor gdk_pixbuf_animation_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1300() {}
+    static final FunctionDescriptor gtk_window_activate_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_animation_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_height",
-        constants$1300.gdk_pixbuf_animation_get_height$FUNC
+    static final MethodHandle gtk_window_activate_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_activate_focus",
+        constants$1300.gtk_window_activate_focus$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_animation_is_static_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_is_static_image$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_is_static_image",
-        constants$1300.gdk_pixbuf_animation_is_static_image$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_get_static_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_get_static_image$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_static_image",
-        constants$1300.gdk_pixbuf_animation_get_static_image$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_focus$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_animation_get_iter$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_iter",
-        constants$1300.gdk_pixbuf_animation_get_iter$FUNC
+    static final MethodHandle gtk_window_set_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_focus",
+        constants$1300.gtk_window_set_focus$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_animation_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_get_type",
-        constants$1300.gdk_pixbuf_animation_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_delay_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_window_get_focus$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_animation_iter_get_delay_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_get_delay_time",
-        constants$1300.gdk_pixbuf_animation_iter_get_delay_time$FUNC
+    static final MethodHandle gtk_window_get_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_focus",
+        constants$1300.gtk_window_get_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default",
+        constants$1300.gtk_window_set_default$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_default_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_default_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_default_widget",
+        constants$1300.gtk_window_get_default_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_window_activate_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_activate_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_activate_default",
+        constants$1300.gtk_window_activate_default$FUNC
     );
 }
 

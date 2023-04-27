@@ -7,54 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2009 {
+final class constants$2009 {
 
-    static final FunctionDescriptor gtk_stack_get_visible_child_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_visible_child_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_visible_child_name",
-        constants$2009.gtk_stack_get_visible_child_name$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_visible_child_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_visible_child_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child_full",
-        constants$2009.gtk_stack_set_visible_child_full$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_homogeneous",
-        constants$2009.gtk_stack_set_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_homogeneous",
-        constants$2009.gtk_stack_get_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_hhomogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_hhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_hhomogeneous",
-        constants$2009.gtk_stack_set_hhomogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_hhomogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_hhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_hhomogeneous",
-        constants$2009.gtk_stack_get_hhomogeneous$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2009() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_GID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::gid");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::rdev");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::block-size");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::blocks");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::is-mountpoint");
+    static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dos::is-archive");
 }
 
 

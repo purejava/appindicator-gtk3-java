@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardImageReceivedFunc)(struct _GtkClipboard* clipboard,struct _GdkPixbuf* pixbuf,void* data);
+ * }
+ */
 public interface GtkClipboardImageReceivedFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress pixbuf, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkClipboardImageReceivedFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardImageReceivedFunc.class, fi, constants$1729.GtkClipboardImageReceivedFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkClipboardImageReceivedFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1538.GtkClipboardImageReceivedFunc_UP$MH, fi, constants$1538.GtkClipboardImageReceivedFunc$FUNC, scope);
     }
-    static GtkClipboardImageReceivedFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _pixbuf, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkClipboardImageReceivedFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1729.GtkClipboardImageReceivedFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_pixbuf, (java.lang.foreign.Addressable)_data);
+                constants$1538.GtkClipboardImageReceivedFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

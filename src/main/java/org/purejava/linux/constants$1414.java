@@ -7,51 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1414 {
+final class constants$1414 {
 
-    static final FunctionDescriptor atk_state_set_remove_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1414() {}
+    static final FunctionDescriptor gtk_text_iter_set_visible_line_index$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_state_set_remove_state$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_remove_state",
-        constants$1414.atk_state_set_remove_state$FUNC
+    static final MethodHandle gtk_text_iter_set_visible_line_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_set_visible_line_index",
+        constants$1414.gtk_text_iter_set_visible_line_index$FUNC
     );
-    static final FunctionDescriptor atk_state_set_and_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_to_tag_toggle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_state_set_and_sets$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_and_sets",
-        constants$1414.atk_state_set_and_sets$FUNC
+    static final MethodHandle gtk_text_iter_forward_to_tag_toggle$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_to_tag_toggle",
+        constants$1414.gtk_text_iter_forward_to_tag_toggle$FUNC
     );
-    static final FunctionDescriptor atk_state_set_or_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_to_tag_toggle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_state_set_or_sets$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_or_sets",
-        constants$1414.atk_state_set_or_sets$FUNC
+    static final MethodHandle gtk_text_iter_backward_to_tag_toggle$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_to_tag_toggle",
+        constants$1414.gtk_text_iter_backward_to_tag_toggle$FUNC
     );
-    static final FunctionDescriptor atk_state_set_xor_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkTextCharPredicate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkTextCharPredicate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTextCharPredicate_UP$MH = RuntimeHelper.upcallHandle(GtkTextCharPredicate.class, "apply", constants$1414.GtkTextCharPredicate_UP$FUNC);
+    static final FunctionDescriptor GtkTextCharPredicate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTextCharPredicate_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1414.GtkTextCharPredicate_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_find_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_state_set_xor_sets$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_xor_sets",
-        constants$1414.atk_state_set_xor_sets$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_streamable_content_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_type",
-        constants$1414.atk_streamable_content_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_n_mime_types$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_streamable_content_get_n_mime_types$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_n_mime_types",
-        constants$1414.atk_streamable_content_get_n_mime_types$FUNC
+    static final MethodHandle gtk_text_iter_forward_find_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_find_char",
+        constants$1414.gtk_text_iter_forward_find_char$FUNC
     );
 }
 

@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1305 {
+final class constants$1305 {
 
-    static final FunctionDescriptor gdk_pixbuf_get_file_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1305() {}
+    static final FunctionDescriptor gtk_window_set_focus_visible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_focus_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_focus_visible",
+        constants$1305.gtk_window_set_focus_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_focus_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_file_info_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info_finish",
-        constants$1305.gdk_pixbuf_get_file_info_finish$FUNC
+    static final MethodHandle gtk_window_get_focus_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_focus_visible",
+        constants$1305.gtk_window_get_focus_visible$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_format_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_copy$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_copy",
-        constants$1305.gdk_pixbuf_format_copy$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_free$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_free",
-        constants$1305.gdk_pixbuf_format_free$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_loader_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_type",
-        constants$1305.gdk_pixbuf_loader_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_pixbuf_loader_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_new",
-        constants$1305.gdk_pixbuf_loader_new$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_new_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_resizable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_resizable$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_resizable",
+        constants$1305.gtk_window_set_resizable$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_loader_new_with_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_new_with_type",
-        constants$1305.gdk_pixbuf_loader_new_with_type$FUNC
+    static final MethodHandle gtk_window_get_resizable$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_resizable",
+        constants$1305.gtk_window_get_resizable$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_gravity$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_gravity$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_gravity",
+        constants$1305.gtk_window_set_gravity$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_gravity$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_gravity",
+        constants$1305.gtk_window_get_gravity$FUNC
     );
 }
 

@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GProxyResolverInterface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*is_supported)(GProxyResolver*);
+ *     gchar** (*lookup)(GProxyResolver*,const gchar*,GCancellable*,GError**);
+ *     void (*lookup_async)(GProxyResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gchar** (*lookup_finish)(GProxyResolver*,GAsyncResult*,GError**);
+ * };
+ * }
+ */
 public class _GProxyResolverInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -28,20 +39,32 @@ public class _GProxyResolverInterface {
     static final FunctionDescriptor is_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_supported$MH = RuntimeHelper.downcallHandle(
-        _GProxyResolverInterface.is_supported$FUNC
+    static final FunctionDescriptor is_supported_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_supported_UP$MH = RuntimeHelper.upcallHandle(is_supported.class, "apply", _GProxyResolverInterface.is_supported_UP$FUNC);
+    static final FunctionDescriptor is_supported_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_supported_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GProxyResolverInterface.is_supported_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_supported)(GProxyResolver*);
+     * }
+     */
     public interface is_supported {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_supported fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_supported.class, fi, _GProxyResolverInterface.is_supported$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_supported fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GProxyResolverInterface.is_supported_UP$MH, fi, _GProxyResolverInterface.is_supported$FUNC, scope);
         }
-        static is_supported ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_supported ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GProxyResolverInterface.is_supported$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GProxyResolverInterface.is_supported_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -53,20 +76,32 @@ public class _GProxyResolverInterface {
     public static VarHandle is_supported$VH() {
         return _GProxyResolverInterface.is_supported$VH;
     }
-    public static MemoryAddress is_supported$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.is_supported$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_supported)(GProxyResolver*);
+     * }
+     */
+    public static MemorySegment is_supported$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.is_supported$VH.get(seg);
     }
-    public static void is_supported$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_supported)(GProxyResolver*);
+     * }
+     */
+    public static void is_supported$set(MemorySegment seg, MemorySegment x) {
         _GProxyResolverInterface.is_supported$VH.set(seg, x);
     }
-    public static MemoryAddress is_supported$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.is_supported$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_supported$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.is_supported$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_supported$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_supported$set(MemorySegment seg, long index, MemorySegment x) {
         _GProxyResolverInterface.is_supported$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_supported is_supported (MemorySegment segment, MemorySession session) {
-        return is_supported.ofAddress(is_supported$get(segment), session);
+    public static is_supported is_supported(MemorySegment segment, SegmentScope scope) {
+        return is_supported.ofAddress(is_supported$get(segment), scope);
     }
     static final FunctionDescriptor lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -74,20 +109,38 @@ public class _GProxyResolverInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup$MH = RuntimeHelper.downcallHandle(
-        _GProxyResolverInterface.lookup$FUNC
+    static final FunctionDescriptor lookup_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_UP$MH = RuntimeHelper.upcallHandle(lookup.class, "apply", _GProxyResolverInterface.lookup_UP$FUNC);
+    static final FunctionDescriptor lookup_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GProxyResolverInterface.lookup_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar** (*lookup)(GProxyResolver*,const gchar*,GCancellable*,GError**);
+     * }
+     */
     public interface lookup {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(lookup fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup.class, fi, _GProxyResolverInterface.lookup$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
+        static MemorySegment allocate(lookup fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GProxyResolverInterface.lookup_UP$MH, fi, _GProxyResolverInterface.lookup$FUNC, scope);
         }
-        static lookup ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static lookup ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -99,20 +152,32 @@ public class _GProxyResolverInterface {
     public static VarHandle lookup$VH() {
         return _GProxyResolverInterface.lookup$VH;
     }
-    public static MemoryAddress lookup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar** (*lookup)(GProxyResolver*,const gchar*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment lookup$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup$VH.get(seg);
     }
-    public static void lookup$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar** (*lookup)(GProxyResolver*,const gchar*,GCancellable*,GError**);
+     * }
+     */
+    public static void lookup$set(MemorySegment seg, MemorySegment x) {
         _GProxyResolverInterface.lookup$VH.set(seg, x);
     }
-    public static MemoryAddress lookup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup$set(MemorySegment seg, long index, MemorySegment x) {
         _GProxyResolverInterface.lookup$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup lookup (MemorySegment segment, MemorySession session) {
-        return lookup.ofAddress(lookup$get(segment), session);
+    public static lookup lookup(MemorySegment segment, SegmentScope scope) {
+        return lookup.ofAddress(lookup$get(segment), scope);
     }
     static final FunctionDescriptor lookup_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -121,20 +186,40 @@ public class _GProxyResolverInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_async$MH = RuntimeHelper.downcallHandle(
-        _GProxyResolverInterface.lookup_async$FUNC
+    static final FunctionDescriptor lookup_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_async_UP$MH = RuntimeHelper.upcallHandle(lookup_async.class, "apply", _GProxyResolverInterface.lookup_async_UP$FUNC);
+    static final FunctionDescriptor lookup_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GProxyResolverInterface.lookup_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*lookup_async)(GProxyResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface lookup_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(lookup_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_async.class, fi, _GProxyResolverInterface.lookup_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(lookup_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GProxyResolverInterface.lookup_async_UP$MH, fi, _GProxyResolverInterface.lookup_async$FUNC, scope);
         }
-        static lookup_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static lookup_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GProxyResolverInterface.lookup_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GProxyResolverInterface.lookup_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -146,40 +231,68 @@ public class _GProxyResolverInterface {
     public static VarHandle lookup_async$VH() {
         return _GProxyResolverInterface.lookup_async$VH;
     }
-    public static MemoryAddress lookup_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*lookup_async)(GProxyResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment lookup_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_async$VH.get(seg);
     }
-    public static void lookup_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*lookup_async)(GProxyResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void lookup_async$set(MemorySegment seg, MemorySegment x) {
         _GProxyResolverInterface.lookup_async$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GProxyResolverInterface.lookup_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_async lookup_async (MemorySegment segment, MemorySession session) {
-        return lookup_async.ofAddress(lookup_async$get(segment), session);
+    public static lookup_async lookup_async(MemorySegment segment, SegmentScope scope) {
+        return lookup_async.ofAddress(lookup_async$get(segment), scope);
     }
     static final FunctionDescriptor lookup_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_finish$MH = RuntimeHelper.downcallHandle(
-        _GProxyResolverInterface.lookup_finish$FUNC
+    static final FunctionDescriptor lookup_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_finish.class, "apply", _GProxyResolverInterface.lookup_finish_UP$FUNC);
+    static final FunctionDescriptor lookup_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GProxyResolverInterface.lookup_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar** (*lookup_finish)(GProxyResolver*,GAsyncResult*,GError**);
+     * }
+     */
     public interface lookup_finish {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(lookup_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_finish.class, fi, _GProxyResolverInterface.lookup_finish$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(lookup_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GProxyResolverInterface.lookup_finish_UP$MH, fi, _GProxyResolverInterface.lookup_finish$FUNC, scope);
         }
-        static lookup_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static lookup_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -191,27 +304,39 @@ public class _GProxyResolverInterface {
     public static VarHandle lookup_finish$VH() {
         return _GProxyResolverInterface.lookup_finish$VH;
     }
-    public static MemoryAddress lookup_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar** (*lookup_finish)(GProxyResolver*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_finish$VH.get(seg);
     }
-    public static void lookup_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar** (*lookup_finish)(GProxyResolver*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void lookup_finish$set(MemorySegment seg, MemorySegment x) {
         _GProxyResolverInterface.lookup_finish$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GProxyResolverInterface.lookup_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GProxyResolverInterface.lookup_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GProxyResolverInterface.lookup_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_finish lookup_finish (MemorySegment segment, MemorySession session) {
-        return lookup_finish.ofAddress(lookup_finish$get(segment), session);
+    public static lookup_finish lookup_finish(MemorySegment segment, SegmentScope scope) {
+        return lookup_finish.ofAddress(lookup_finish$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

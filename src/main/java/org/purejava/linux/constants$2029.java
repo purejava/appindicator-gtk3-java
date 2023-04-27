@@ -7,66 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2029 {
+final class constants$2029 {
 
-    static final FunctionDescriptor gtk_text_buffer_remove_tag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_remove_tag$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_tag",
-        constants$2029.gtk_text_buffer_remove_tag$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_apply_tag_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_apply_tag_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_apply_tag_by_name",
-        constants$2029.gtk_text_buffer_apply_tag_by_name$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_remove_tag_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_remove_tag_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_tag_by_name",
-        constants$2029.gtk_text_buffer_remove_tag_by_name$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_remove_all_tags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_remove_all_tags$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_all_tags",
-        constants$2029.gtk_text_buffer_remove_all_tags$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_create_tag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_create_tag$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_create_tag",
-        constants$2029.gtk_text_buffer_create_tag$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_line_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_iter_at_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_line_offset",
-        constants$2029.gtk_text_buffer_get_iter_at_line_offset$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2029() {}
+    static final MemorySegment GTK_STYLE_CLASS_BUTTON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("button");
+    static final MemorySegment GTK_STYLE_CLASS_LIST$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("list");
+    static final MemorySegment GTK_STYLE_CLASS_LIST_ROW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("list-row");
+    static final MemorySegment GTK_STYLE_CLASS_CALENDAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("calendar");
+    static final MemorySegment GTK_STYLE_CLASS_SLIDER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("slider");
+    static final MemorySegment GTK_STYLE_CLASS_BACKGROUND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("background");
 }
 
 

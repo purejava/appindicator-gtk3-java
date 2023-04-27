@@ -7,49 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$531 {
+final class constants$531 {
 
-    static final FunctionDescriptor g_app_info_launch_default_for_uri_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$531() {}
+    static final FunctionDescriptor symlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_info_launch_default_for_uri_finish$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_default_for_uri_finish",
-        constants$531.g_app_info_launch_default_for_uri_finish$FUNC
+    static final MethodHandle symlinkat$MH = RuntimeHelper.downcallHandle(
+        "symlinkat",
+        constants$531.symlinkat$FUNC
     );
-    static final FunctionDescriptor g_app_launch_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_launch_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_type",
-        constants$531.g_app_launch_context_get_type$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_app_launch_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_new",
-        constants$531.g_app_launch_context_new$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_setenv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor readlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle readlinkat$MH = RuntimeHelper.downcallHandle(
+        "readlinkat",
+        constants$531.readlinkat$FUNC
+    );
+    static final FunctionDescriptor unlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_launch_context_setenv$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_setenv",
-        constants$531.g_app_launch_context_setenv$FUNC
+    static final MethodHandle unlink$MH = RuntimeHelper.downcallHandle(
+        "unlink",
+        constants$531.unlink$FUNC
     );
-    static final FunctionDescriptor g_app_launch_context_unsetenv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor unlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle unlinkat$MH = RuntimeHelper.downcallHandle(
+        "unlinkat",
+        constants$531.unlinkat$FUNC
+    );
+    static final FunctionDescriptor rmdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_launch_context_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_unsetenv",
-        constants$531.g_app_launch_context_unsetenv$FUNC
+    static final MethodHandle rmdir$MH = RuntimeHelper.downcallHandle(
+        "rmdir",
+        constants$531.rmdir$FUNC
     );
-    static final FunctionDescriptor g_app_launch_context_get_environment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor tcgetpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_launch_context_get_environment$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_environment",
-        constants$531.g_app_launch_context_get_environment$FUNC
+    static final MethodHandle tcgetpgrp$MH = RuntimeHelper.downcallHandle(
+        "tcgetpgrp",
+        constants$531.tcgetpgrp$FUNC
     );
 }
 

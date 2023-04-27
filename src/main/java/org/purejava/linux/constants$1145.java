@@ -7,60 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1145 {
+final class constants$1145 {
 
-    static final FunctionDescriptor fgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1145() {}
+    static final FunctionDescriptor gdk_pixbuf_format_is_disabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fgets$MH = RuntimeHelper.downcallHandle(
-        "fgets",
-        constants$1145.fgets$FUNC
+    static final MethodHandle gdk_pixbuf_format_is_disabled$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_disabled",
+        constants$1145.gdk_pixbuf_format_is_disabled$FUNC
     );
-    static final FunctionDescriptor __getdelim$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_format_set_disabled$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_format_set_disabled$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_set_disabled",
+        constants$1145.gdk_pixbuf_format_set_disabled$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_format_get_license$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __getdelim$MH = RuntimeHelper.downcallHandle(
-        "__getdelim",
-        constants$1145.__getdelim$FUNC
+    static final MethodHandle gdk_pixbuf_format_get_license$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_license",
+        constants$1145.gdk_pixbuf_format_get_license$FUNC
     );
-    static final FunctionDescriptor getdelim$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getdelim$MH = RuntimeHelper.downcallHandle(
-        "getdelim",
-        constants$1145.getdelim$FUNC
-    );
-    static final FunctionDescriptor getline$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle getline$MH = RuntimeHelper.downcallHandle(
-        "getline",
-        constants$1145.getline$FUNC
+    static final MethodHandle gdk_pixbuf_get_file_info$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info",
+        constants$1145.gdk_pixbuf_get_file_info$FUNC
     );
-    static final FunctionDescriptor fputs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_get_file_info_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fputs$MH = RuntimeHelper.downcallHandle(
-        "fputs",
-        constants$1145.fputs$FUNC
+    static final MethodHandle gdk_pixbuf_get_file_info_async$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info_async",
+        constants$1145.gdk_pixbuf_get_file_info_async$FUNC
     );
-    static final FunctionDescriptor puts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_get_file_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle puts$MH = RuntimeHelper.downcallHandle(
-        "puts",
-        constants$1145.puts$FUNC
+    static final MethodHandle gdk_pixbuf_get_file_info_finish$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info_finish",
+        constants$1145.gdk_pixbuf_get_file_info_finish$FUNC
     );
 }
 

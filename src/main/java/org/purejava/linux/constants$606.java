@@ -7,60 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$606 {
+final class constants$606 {
 
-    static final FunctionDescriptor g_dbus_error_strip_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$606() {}
+    static final FunctionDescriptor g_dtls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_error_strip_remote_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_strip_remote_error",
-        constants$606.g_dbus_error_strip_remote_error$FUNC
+    static final MethodHandle g_dtls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_peer_certificate_errors",
+        constants$606.g_dtls_connection_get_peer_certificate_errors$FUNC
     );
-    static final FunctionDescriptor g_dbus_error_register_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_error_register_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_register_error",
-        constants$606.g_dbus_error_register_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_unregister_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_error_unregister_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_unregister_error",
-        constants$606.g_dbus_error_unregister_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_register_error_domain$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dtls_connection_set_require_close_notify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_dbus_error_register_error_domain$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_register_error_domain",
-        constants$606.g_dbus_error_register_error_domain$FUNC
+    static final MethodHandle g_dtls_connection_set_require_close_notify$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_require_close_notify",
+        constants$606.g_dtls_connection_set_require_close_notify$FUNC
     );
-    static final FunctionDescriptor g_dbus_error_new_for_dbus_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dtls_connection_get_require_close_notify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dtls_connection_get_require_close_notify$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_require_close_notify",
+        constants$606.g_dtls_connection_get_require_close_notify$FUNC
+    );
+    static final FunctionDescriptor g_dtls_connection_set_rehandshake_mode$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_dtls_connection_set_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_rehandshake_mode",
+        constants$606.g_dtls_connection_set_rehandshake_mode$FUNC
+    );
+    static final FunctionDescriptor g_dtls_connection_get_rehandshake_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dtls_connection_get_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_rehandshake_mode",
+        constants$606.g_dtls_connection_get_rehandshake_mode$FUNC
+    );
+    static final FunctionDescriptor g_dtls_connection_handshake$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_error_new_for_dbus_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_new_for_dbus_error",
-        constants$606.g_dbus_error_new_for_dbus_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_set_dbus_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_error_set_dbus_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_error_set_dbus_error",
-        constants$606.g_dbus_error_set_dbus_error$FUNC
+    static final MethodHandle g_dtls_connection_handshake$MH = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_handshake",
+        constants$606.g_dtls_connection_handshake$FUNC
     );
 }
 

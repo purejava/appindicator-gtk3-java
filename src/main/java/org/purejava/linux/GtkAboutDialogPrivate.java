@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAboutDialogPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkAboutDialogPrivate GtkAboutDialogPrivate;
+ * }
+ */
+public final class GtkAboutDialogPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAboutDialogPrivate() {}
 }
 
 

@@ -7,45 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1535 {
+final class constants$1535 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkAccelLabel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GtkAccelLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkAccelLabel",
-        constants$1535.glib_autoptr_cleanup_GtkAccelLabel$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkAccelLabel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkAccelLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkAccelLabel",
-        constants$1535.glib_listautoptr_cleanup_GtkAccelLabel$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkAccelLabel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkAccelLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkAccelLabel",
-        constants$1535.glib_slistautoptr_cleanup_GtkAccelLabel$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkAccelLabel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkAccelLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkAccelLabel",
-        constants$1535.glib_queueautoptr_cleanup_GtkAccelLabel$FUNC
-    );
-    static final FunctionDescriptor GtkAccelMapForeach$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1535() {}
+    static final FunctionDescriptor gtk_menu_item_set_use_underline$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GtkAccelMapForeach$MH = RuntimeHelper.downcallHandle(
-        constants$1535.GtkAccelMapForeach$FUNC
+    static final MethodHandle gtk_menu_item_set_use_underline$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_use_underline",
+        constants$1535.gtk_menu_item_set_use_underline$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_get_use_underline$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_use_underline",
+        constants$1535.gtk_menu_item_get_use_underline$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_set_reserve_indicator$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_set_reserve_indicator$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_reserve_indicator",
+        constants$1535.gtk_menu_item_set_reserve_indicator$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_get_reserve_indicator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_get_reserve_indicator$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_reserve_indicator",
+        constants$1535.gtk_menu_item_get_reserve_indicator$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_check_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_type",
+        constants$1535.gtk_check_menu_item_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_check_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_new",
+        constants$1535.gtk_check_menu_item_new$FUNC
     );
 }
 

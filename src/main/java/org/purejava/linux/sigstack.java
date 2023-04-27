@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct sigstack {
+ *     void* ss_sp;
+ *     int ss_onstack;
+ * };
+ * }
+ */
 public class sigstack {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("ss_sp"),
         Constants$root.C_INT$LAYOUT.withName("ss_onstack"),
         MemoryLayout.paddingLayout(32)
@@ -21,26 +29,50 @@ public class sigstack {
     public static VarHandle ss_sp$VH() {
         return sigstack.ss_sp$VH;
     }
-    public static MemoryAddress ss_sp$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)sigstack.ss_sp$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void* ss_sp;
+     * }
+     */
+    public static MemorySegment ss_sp$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)sigstack.ss_sp$VH.get(seg);
     }
-    public static void ss_sp$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void* ss_sp;
+     * }
+     */
+    public static void ss_sp$set(MemorySegment seg, MemorySegment x) {
         sigstack.ss_sp$VH.set(seg, x);
     }
-    public static MemoryAddress ss_sp$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)sigstack.ss_sp$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment ss_sp$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)sigstack.ss_sp$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void ss_sp$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void ss_sp$set(MemorySegment seg, long index, MemorySegment x) {
         sigstack.ss_sp$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle ss_onstack$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ss_onstack"));
     public static VarHandle ss_onstack$VH() {
         return sigstack.ss_onstack$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int ss_onstack;
+     * }
+     */
     public static int ss_onstack$get(MemorySegment seg) {
         return (int)sigstack.ss_onstack$VH.get(seg);
     }
-    public static void ss_onstack$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int ss_onstack;
+     * }
+     */
+    public static void ss_onstack$set(MemorySegment seg, int x) {
         sigstack.ss_onstack$VH.set(seg, x);
     }
     public static int ss_onstack$get(MemorySegment seg, long index) {
@@ -51,10 +83,10 @@ public class sigstack {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

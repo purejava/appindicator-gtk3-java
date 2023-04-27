@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$279 {
+final class constants$279 {
 
-    static final FunctionDescriptor g_match_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_ref",
-        constants$279.g_match_info_ref$FUNC
-    );
-    static final FunctionDescriptor g_match_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_unref",
-        constants$279.g_match_info_unref$FUNC
-    );
-    static final FunctionDescriptor g_match_info_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_free$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_free",
-        constants$279.g_match_info_free$FUNC
-    );
-    static final FunctionDescriptor g_match_info_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$279() {}
+    static final FunctionDescriptor g_queue_push_tail_link$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_next$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_next",
-        constants$279.g_match_info_next$FUNC
+    static final MethodHandle g_queue_push_tail_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_tail_link",
+        constants$279.g_queue_push_tail_link$FUNC
     );
-    static final FunctionDescriptor g_match_info_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_push_nth_link$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_matches$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_matches",
-        constants$279.g_match_info_matches$FUNC
+    static final MethodHandle g_queue_push_nth_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_nth_link",
+        constants$279.g_queue_push_nth_link$FUNC
     );
-    static final FunctionDescriptor g_match_info_get_match_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_pop_head_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_get_match_count$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_get_match_count",
-        constants$279.g_match_info_get_match_count$FUNC
+    static final MethodHandle g_queue_pop_head_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_head_link",
+        constants$279.g_queue_pop_head_link$FUNC
+    );
+    static final FunctionDescriptor g_queue_pop_tail_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_pop_tail_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_tail_link",
+        constants$279.g_queue_pop_tail_link$FUNC
+    );
+    static final FunctionDescriptor g_queue_pop_nth_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_queue_pop_nth_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_nth_link",
+        constants$279.g_queue_pop_nth_link$FUNC
+    );
+    static final FunctionDescriptor g_queue_peek_head_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_peek_head_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_peek_head_link",
+        constants$279.g_queue_peek_head_link$FUNC
     );
 }
 

@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1651 {
+final class constants$1651 {
 
-    static final FunctionDescriptor gtk_entry_get_icon_area$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1651() {}
+    static final FunctionDescriptor gtk_icon_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_icon_view_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_new",
+        constants$1651.gtk_icon_view_new$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_new_with_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_new_with_area",
+        constants$1651.gtk_icon_view_new_with_area$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_new_with_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_new_with_model",
+        constants$1651.gtk_icon_view_new_with_model$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_set_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_icon_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_area",
-        constants$1651.gtk_entry_get_icon_area$FUNC
+    static final MethodHandle gtk_icon_view_set_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_model",
+        constants$1651.gtk_icon_view_set_model$FUNC
     );
-    static final FunctionDescriptor gtk_entry_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_icon_view_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_im_context_filter_keypress",
-        constants$1651.gtk_entry_im_context_filter_keypress$FUNC
+    static final MethodHandle gtk_icon_view_get_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_model",
+        constants$1651.gtk_icon_view_get_model$FUNC
     );
-    static final FunctionDescriptor gtk_entry_reset_im_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_reset_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_reset_im_context",
-        constants$1651.gtk_entry_reset_im_context$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_input_purpose$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_input_purpose$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_input_purpose",
-        constants$1651.gtk_entry_set_input_purpose$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_input_purpose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_input_purpose$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_input_purpose",
-        constants$1651.gtk_entry_get_input_purpose$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_input_hints$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_set_text_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_input_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_input_hints",
-        constants$1651.gtk_entry_set_input_hints$FUNC
+    static final MethodHandle gtk_icon_view_set_text_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_text_column",
+        constants$1651.gtk_icon_view_set_text_column$FUNC
     );
 }
 

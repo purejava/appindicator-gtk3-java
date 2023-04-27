@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1693 {
+final class constants$1693 {
 
-    static final FunctionDescriptor gtk_binding_entry_add_signall$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_binding_entry_add_signall$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_add_signall",
-        constants$1693.gtk_binding_entry_add_signall$FUNC
-    );
-    static final FunctionDescriptor gtk_binding_entry_add_signal_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1693() {}
+    static final FunctionDescriptor gtk_menu_button_set_popup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_binding_entry_add_signal_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_add_signal_from_string",
-        constants$1693.gtk_binding_entry_add_signal_from_string$FUNC
+    static final MethodHandle gtk_menu_button_set_popup$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_popup",
+        constants$1693.gtk_menu_button_set_popup$FUNC
     );
-    static final FunctionDescriptor gtk_binding_entry_remove$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_button_get_popup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_button_get_popup$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_popup",
+        constants$1693.gtk_menu_button_get_popup$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_button_set_popover$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_button_set_popover$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_popover",
+        constants$1693.gtk_menu_button_set_popover$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_button_get_popover$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_button_get_popover$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_popover",
+        constants$1693.gtk_menu_button_get_popover$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_button_set_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_binding_entry_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_remove",
-        constants$1693.gtk_binding_entry_remove$FUNC
+    static final MethodHandle gtk_menu_button_set_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_direction",
+        constants$1693.gtk_menu_button_set_direction$FUNC
     );
-    static final FunctionDescriptor gtk_builder_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_builder_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_error_quark",
-        constants$1693.gtk_builder_error_quark$FUNC
+    static final FunctionDescriptor gtk_menu_button_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_builder_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_builder_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_type",
-        constants$1693.gtk_builder_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_builder_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new",
-        constants$1693.gtk_builder_new$FUNC
+    static final MethodHandle gtk_menu_button_get_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_direction",
+        constants$1693.gtk_menu_button_get_direction$FUNC
     );
 }
 

@@ -7,37 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$465 {
+final class constants$465 {
 
-    static final FunctionDescriptor g_main_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_main_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_get_type",
-        constants$465.g_main_context_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$465() {}
+    static final FunctionDescriptor g_value_set_uint64$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor g_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_type",
-        constants$465.g_source_get_type$FUNC
+    static final MethodHandle g_value_set_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_uint64",
+        constants$465.g_value_set_uint64$FUNC
     );
-    static final FunctionDescriptor g_pollfd_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollfd_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollfd_get_type",
-        constants$465.g_pollfd_get_type$FUNC
+    static final FunctionDescriptor g_value_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_thread_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_thread_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_thread_get_type",
-        constants$465.g_thread_get_type$FUNC
+    static final MethodHandle g_value_get_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_uint64",
+        constants$465.g_value_get_uint64$FUNC
     );
-    static final FunctionDescriptor g_checksum_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_checksum_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_checksum_get_type",
-        constants$465.g_checksum_get_type$FUNC
+    static final FunctionDescriptor g_value_set_float$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
     );
-    static final FunctionDescriptor g_markup_parse_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_markup_parse_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_type",
-        constants$465.g_markup_parse_context_get_type$FUNC
+    static final MethodHandle g_value_set_float$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_float",
+        constants$465.g_value_set_float$FUNC
+    );
+    static final FunctionDescriptor g_value_get_float$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_float$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_float",
+        constants$465.g_value_get_float$FUNC
+    );
+    static final FunctionDescriptor g_value_set_double$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_value_set_double$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_double",
+        constants$465.g_value_set_double$FUNC
+    );
+    static final FunctionDescriptor g_value_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_double$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_double",
+        constants$465.g_value_get_double$FUNC
     );
 }
 

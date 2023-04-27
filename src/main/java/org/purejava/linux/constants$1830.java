@@ -7,59 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1830 {
+final class constants$1830 {
 
-    static final FunctionDescriptor gtk_style_context_get_style_property$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1830() {}
+    static final FunctionDescriptor gtk_text_buffer_add_mark$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_get_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_style_property",
-        constants$1830.gtk_style_context_get_style_property$FUNC
+    static final MethodHandle gtk_text_buffer_add_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_add_mark",
+        constants$1830.gtk_text_buffer_add_mark$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_get_style_valist$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_create_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_style_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_style_valist",
-        constants$1830.gtk_style_context_get_style_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_get_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_style$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_style_context_get_style",
-        constants$1830.gtk_style_context_get_style$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_lookup_icon_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_lookup_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_lookup_icon_set",
-        constants$1830.gtk_style_context_lookup_icon_set$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_set_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_render_icon_pixbuf",
-        constants$1830.gtk_icon_set_render_icon_pixbuf$FUNC
+    static final MethodHandle gtk_text_buffer_create_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_create_mark",
+        constants$1830.gtk_text_buffer_create_mark$FUNC
     );
-    static final FunctionDescriptor gtk_icon_set_render_icon_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_move_mark$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_set_render_icon_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_render_icon_surface",
-        constants$1830.gtk_icon_set_render_icon_surface$FUNC
+    static final MethodHandle gtk_text_buffer_move_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_move_mark",
+        constants$1830.gtk_text_buffer_move_mark$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_delete_mark$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_delete_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_delete_mark",
+        constants$1830.gtk_text_buffer_delete_mark$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_get_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_get_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_mark",
+        constants$1830.gtk_text_buffer_get_mark$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_move_mark_by_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_move_mark_by_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_move_mark_by_name",
+        constants$1830.gtk_text_buffer_move_mark_by_name$FUNC
     );
 }
 

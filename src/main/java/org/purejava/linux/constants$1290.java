@@ -7,58 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1290 {
+final class constants$1290 {
 
-    static final FunctionDescriptor gdk_pixbuf_get_pixels_with_length$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1290() {}
+    static final FunctionDescriptor gtk_application_get_active_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_application_get_active_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_active_window",
+        constants$1290.gtk_application_get_active_window$FUNC
+    );
+    static final FunctionDescriptor gtk_application_list_action_descriptions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_application_list_action_descriptions$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_list_action_descriptions",
+        constants$1290.gtk_application_list_action_descriptions$FUNC
+    );
+    static final FunctionDescriptor gtk_application_get_accels_for_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_pixels_with_length$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_pixels_with_length",
-        constants$1290.gdk_pixbuf_get_pixels_with_length$FUNC
+    static final MethodHandle gtk_application_get_accels_for_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_accels_for_action",
+        constants$1290.gtk_application_get_accels_for_action$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_read_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_application_get_actions_for_accel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_read_pixels$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_read_pixels",
-        constants$1290.gdk_pixbuf_read_pixels$FUNC
+    static final MethodHandle gtk_application_get_actions_for_accel$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_actions_for_accel",
+        constants$1290.gtk_application_get_actions_for_accel$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_read_pixel_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_application_set_accels_for_action$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_read_pixel_bytes$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_read_pixel_bytes",
-        constants$1290.gdk_pixbuf_read_pixel_bytes$FUNC
+    static final MethodHandle gtk_application_set_accels_for_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_set_accels_for_action",
+        constants$1290.gtk_application_set_accels_for_action$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new",
-        constants$1290.gdk_pixbuf_new$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_calculate_rowstride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_calculate_rowstride$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_calculate_rowstride",
-        constants$1290.gdk_pixbuf_calculate_rowstride$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_application_prefers_app_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_copy$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy",
-        constants$1290.gdk_pixbuf_copy$FUNC
+    static final MethodHandle gtk_application_prefers_app_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_prefers_app_menu",
+        constants$1290.gtk_application_prefers_app_menu$FUNC
     );
 }
 

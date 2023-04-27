@@ -7,51 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$373 {
+final class constants$373 {
 
-    static final FunctionDescriptor g_static_rw_lock_writer_unlock$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$373() {}
+    static final FunctionDescriptor pthread_setspecific$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_rw_lock_writer_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_writer_unlock",
-        constants$373.g_static_rw_lock_writer_unlock$FUNC
+    static final MethodHandle pthread_setspecific$MH = RuntimeHelper.downcallHandle(
+        "pthread_setspecific",
+        constants$373.pthread_setspecific$FUNC
     );
-    static final FunctionDescriptor g_static_rw_lock_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pthread_getcpuclockid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_rw_lock_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_free",
-        constants$373.g_static_rw_lock_free$FUNC
+    static final MethodHandle pthread_getcpuclockid$MH = RuntimeHelper.downcallHandle(
+        "pthread_getcpuclockid",
+        constants$373.pthread_getcpuclockid$FUNC
     );
-    static final FunctionDescriptor g_private_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pthread_atfork$__prepare$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor pthread_atfork$__prepare_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__prepare_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__prepare.class, "apply", constants$373.pthread_atfork$__prepare_UP$FUNC);
+    static final FunctionDescriptor pthread_atfork$__prepare_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__prepare_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$373.pthread_atfork$__prepare_DOWN$FUNC
     );
-    static final MethodHandle g_private_new$MH = RuntimeHelper.downcallHandle(
-        "g_private_new",
-        constants$373.g_private_new$FUNC
-    );
-    static final FunctionDescriptor g_static_private_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_private_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_init",
-        constants$373.g_static_private_init$FUNC
-    );
-    static final FunctionDescriptor g_static_private_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_private_get$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_get",
-        constants$373.g_static_private_get$FUNC
-    );
-    static final FunctionDescriptor g_static_private_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_private_set$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_set",
-        constants$373.g_static_private_set$FUNC
+    static final FunctionDescriptor pthread_atfork$__parent$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor pthread_atfork$__parent_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__parent_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__parent.class, "apply", constants$373.pthread_atfork$__parent_UP$FUNC);
+    static final FunctionDescriptor pthread_atfork$__parent_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle pthread_atfork$__parent_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$373.pthread_atfork$__parent_DOWN$FUNC
     );
 }
 

@@ -7,51 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$358 {
+final class constants$358 {
 
-    static final FunctionDescriptor pthread_mutex_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$358() {}
+    static final FunctionDescriptor pthread_attr_setschedpolicy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pthread_attr_setschedpolicy$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setschedpolicy",
+        constants$358.pthread_attr_setschedpolicy$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_getinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_init",
-        constants$358.pthread_mutex_init$FUNC
+    static final MethodHandle pthread_attr_getinheritsched$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getinheritsched",
+        constants$358.pthread_attr_getinheritsched$FUNC
     );
-    static final FunctionDescriptor pthread_mutex_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pthread_attr_setinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_mutex_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_destroy",
-        constants$358.pthread_mutex_destroy$FUNC
+    static final MethodHandle pthread_attr_setinheritsched$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setinheritsched",
+        constants$358.pthread_attr_setinheritsched$FUNC
     );
-    static final FunctionDescriptor pthread_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_trylock",
-        constants$358.pthread_mutex_trylock$FUNC
-    );
-    static final FunctionDescriptor pthread_mutex_lock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_lock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_lock",
-        constants$358.pthread_mutex_lock$FUNC
-    );
-    static final FunctionDescriptor pthread_mutex_timedlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_attr_getscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_mutex_timedlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_timedlock",
-        constants$358.pthread_mutex_timedlock$FUNC
+    static final MethodHandle pthread_attr_getscope$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getscope",
+        constants$358.pthread_attr_getscope$FUNC
     );
-    static final FunctionDescriptor pthread_mutex_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_attr_setscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pthread_attr_setscope$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_setscope",
+        constants$358.pthread_attr_setscope$FUNC
+    );
+    static final FunctionDescriptor pthread_attr_getstackaddr$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_unlock",
-        constants$358.pthread_mutex_unlock$FUNC
+    static final MethodHandle pthread_attr_getstackaddr$MH = RuntimeHelper.downcallHandle(
+        "pthread_attr_getstackaddr",
+        constants$358.pthread_attr_getstackaddr$FUNC
     );
 }
 

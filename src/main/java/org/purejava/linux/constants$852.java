@@ -7,48 +7,77 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$852 {
+final class constants$852 {
 
-    static final FunctionDescriptor g_tcp_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tcp_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_connection_get_type",
-        constants$852.g_tcp_connection_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$852() {}
+    static final FunctionDescriptor hb_face_builder_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_face_builder_create$MH = RuntimeHelper.downcallHandle(
+        "hb_face_builder_create",
+        constants$852.hb_face_builder_create$FUNC
     );
-    static final FunctionDescriptor g_tcp_connection_set_graceful_disconnect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_face_builder_add_table$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tcp_connection_set_graceful_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_connection_set_graceful_disconnect",
-        constants$852.g_tcp_connection_set_graceful_disconnect$FUNC
-    );
-    static final FunctionDescriptor g_tcp_connection_get_graceful_disconnect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tcp_connection_get_graceful_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_connection_get_graceful_disconnect",
-        constants$852.g_tcp_connection_get_graceful_disconnect$FUNC
+    static final MethodHandle hb_face_builder_add_table$MH = RuntimeHelper.downcallHandle(
+        "hb_face_builder_add_table",
+        constants$852.hb_face_builder_add_table$FUNC
     );
-    static final FunctionDescriptor g_tcp_wrapper_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tcp_wrapper_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_get_type",
-        constants$852.g_tcp_wrapper_connection_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tcp_wrapper_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_face_builder_sort_tables$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tcp_wrapper_connection_new$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_new",
-        constants$852.g_tcp_wrapper_connection_new$FUNC
+    static final MethodHandle hb_face_builder_sort_tables$MH = RuntimeHelper.downcallHandle(
+        "hb_face_builder_sort_tables",
+        constants$852.hb_face_builder_sort_tables$FUNC
     );
-    static final FunctionDescriptor g_tcp_wrapper_connection_get_base_io_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_draw_move_to_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tcp_wrapper_connection_get_base_io_stream$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_get_base_io_stream",
-        constants$852.g_tcp_wrapper_connection_get_base_io_stream$FUNC
+    static final FunctionDescriptor hb_draw_move_to_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle hb_draw_move_to_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_draw_move_to_func_t.class, "apply", constants$852.hb_draw_move_to_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_draw_move_to_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_move_to_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$852.hb_draw_move_to_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_draw_line_to_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_draw_line_to_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_line_to_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_draw_line_to_func_t.class, "apply", constants$852.hb_draw_line_to_func_t_UP$FUNC);
 }
 
 

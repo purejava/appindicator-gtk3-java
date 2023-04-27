@@ -7,65 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$485 {
+final class constants$485 {
 
-    static final FunctionDescriptor g_binding_get_target_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$485() {}
+    static final FunctionDescriptor g_app_info_launch_default_for_uri_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_binding_get_target_property$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_target_property",
-        constants$485.g_binding_get_target_property$FUNC
+    static final MethodHandle g_app_info_launch_default_for_uri_finish$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_launch_default_for_uri_finish",
+        constants$485.g_app_info_launch_default_for_uri_finish$FUNC
     );
-    static final FunctionDescriptor g_binding_unbind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_app_launch_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_app_launch_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_type",
+        constants$485.g_app_launch_context_get_type$FUNC
     );
-    static final MethodHandle g_binding_unbind$MH = RuntimeHelper.downcallHandle(
-        "g_binding_unbind",
-        constants$485.g_binding_unbind$FUNC
+    static final FunctionDescriptor g_app_launch_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_app_launch_context_new$MH = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_new",
+        constants$485.g_app_launch_context_new$FUNC
     );
-    static final FunctionDescriptor g_object_bind_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_object_bind_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property",
-        constants$485.g_object_bind_property$FUNC
-    );
-    static final FunctionDescriptor g_object_bind_property_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_launch_context_setenv$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_bind_property_full$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property_full",
-        constants$485.g_object_bind_property_full$FUNC
+    static final MethodHandle g_app_launch_context_setenv$MH = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_setenv",
+        constants$485.g_app_launch_context_setenv$FUNC
     );
-    static final FunctionDescriptor g_object_bind_property_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_app_launch_context_unsetenv$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_bind_property_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property_with_closures",
-        constants$485.g_object_bind_property_with_closures$FUNC
+    static final MethodHandle g_app_launch_context_unsetenv$MH = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_unsetenv",
+        constants$485.g_app_launch_context_unsetenv$FUNC
     );
-    static final FunctionDescriptor g_binding_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_binding_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_get_type",
-        constants$485.g_binding_group_get_type$FUNC
+    static final FunctionDescriptor g_app_launch_context_get_environment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_launch_context_get_environment$MH = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_environment",
+        constants$485.g_app_launch_context_get_environment$FUNC
     );
 }
 

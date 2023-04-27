@@ -7,56 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1829 {
+final class constants$1829 {
 
-    static final FunctionDescriptor gtk_style_context_remove_class$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1829() {}
+    static final FunctionDescriptor gtk_text_buffer_backspace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_remove_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_class",
-        constants$1829.gtk_style_context_remove_class$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_has_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_has_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_has_class",
-        constants$1829.gtk_style_context_has_class$FUNC
+    static final MethodHandle gtk_text_buffer_backspace$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_backspace",
+        constants$1829.gtk_text_buffer_backspace$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_list_regions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_list_regions$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_list_regions",
-        constants$1829.gtk_style_context_list_regions$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_add_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_add_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_add_region",
-        constants$1829.gtk_style_context_add_region$FUNC
+    static final MethodHandle gtk_text_buffer_get_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_text",
+        constants$1829.gtk_text_buffer_get_text$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_remove_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_get_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_get_slice$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_slice",
+        constants$1829.gtk_text_buffer_get_slice$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_insert_pixbuf$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_remove_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_region",
-        constants$1829.gtk_style_context_remove_region$FUNC
+    static final MethodHandle gtk_text_buffer_insert_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_pixbuf",
+        constants$1829.gtk_text_buffer_insert_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_has_region$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_insert_child_anchor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_has_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_has_region",
-        constants$1829.gtk_style_context_has_region$FUNC
+    static final MethodHandle gtk_text_buffer_insert_child_anchor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_child_anchor",
+        constants$1829.gtk_text_buffer_insert_child_anchor$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_create_child_anchor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_create_child_anchor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_create_child_anchor",
+        constants$1829.gtk_text_buffer_create_child_anchor$FUNC
     );
 }
 

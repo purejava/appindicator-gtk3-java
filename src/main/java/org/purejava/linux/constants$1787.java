@@ -7,39 +7,81 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1787 {
+final class constants$1787 {
 
-    static final FunctionDescriptor GtkFlowBoxFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1787() {}
+    static final FunctionDescriptor gtk_render_option$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_render_option$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_option",
+        constants$1787.gtk_render_option$FUNC
+    );
+    static final FunctionDescriptor gtk_render_arrow$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_render_arrow$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_arrow",
+        constants$1787.gtk_render_arrow$FUNC
+    );
+    static final FunctionDescriptor gtk_render_background$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_render_background$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_background",
+        constants$1787.gtk_render_background$FUNC
+    );
+    static final FunctionDescriptor gtk_render_background_get_clip$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkFlowBoxFilterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1787.GtkFlowBoxFilterFunc$FUNC
+    static final MethodHandle gtk_render_background_get_clip$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_background_get_clip",
+        constants$1787.gtk_render_background_get_clip$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_render_frame$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_set_filter_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_filter_func",
-        constants$1787.gtk_flow_box_set_filter_func$FUNC
+    static final MethodHandle gtk_render_frame$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_frame",
+        constants$1787.gtk_render_frame$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_invalidate_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_invalidate_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_invalidate_filter",
-        constants$1787.gtk_flow_box_invalidate_filter$FUNC
-    );
-    static final FunctionDescriptor GtkFlowBoxSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_render_expander$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle GtkFlowBoxSortFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1787.GtkFlowBoxSortFunc$FUNC
+    static final MethodHandle gtk_render_expander$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_expander",
+        constants$1787.gtk_render_expander$FUNC
     );
 }
 

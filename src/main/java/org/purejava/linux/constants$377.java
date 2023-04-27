@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$377 {
+final class constants$377 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GBookmarkFile$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$377() {}
+    static final FunctionDescriptor g_static_rw_lock_writer_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GBookmarkFile$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GBookmarkFile",
-        constants$377.glib_autoptr_clear_GBookmarkFile$FUNC
+    static final MethodHandle g_static_rw_lock_writer_trylock$MH = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_writer_trylock",
+        constants$377.g_static_rw_lock_writer_trylock$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GBookmarkFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_rw_lock_writer_unlock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GBookmarkFile$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GBookmarkFile",
-        constants$377.glib_autoptr_cleanup_GBookmarkFile$FUNC
+    static final MethodHandle g_static_rw_lock_writer_unlock$MH = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_writer_unlock",
+        constants$377.g_static_rw_lock_writer_unlock$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GBookmarkFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_rw_lock_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GBookmarkFile$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GBookmarkFile",
-        constants$377.glib_listautoptr_cleanup_GBookmarkFile$FUNC
+    static final MethodHandle g_static_rw_lock_free$MH = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_free",
+        constants$377.g_static_rw_lock_free$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GBookmarkFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_private_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GBookmarkFile$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GBookmarkFile",
-        constants$377.glib_slistautoptr_cleanup_GBookmarkFile$FUNC
+    static final MethodHandle g_private_new$MH = RuntimeHelper.downcallHandle(
+        "g_private_new",
+        constants$377.g_private_new$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GBookmarkFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_private_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GBookmarkFile$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GBookmarkFile",
-        constants$377.glib_queueautoptr_cleanup_GBookmarkFile$FUNC
+    static final MethodHandle g_static_private_init$MH = RuntimeHelper.downcallHandle(
+        "g_static_private_init",
+        constants$377.g_static_private_init$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GBytes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_private_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GBytes$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GBytes",
-        constants$377.glib_autoptr_clear_GBytes$FUNC
+    static final MethodHandle g_static_private_get$MH = RuntimeHelper.downcallHandle(
+        "g_static_private_get",
+        constants$377.g_static_private_get$FUNC
     );
 }
 

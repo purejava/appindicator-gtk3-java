@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * enum  (*GdkFilterFunc)(void* xevent,union _GdkEvent* event,void* data);
+ * }
+ */
 public interface GdkFilterFunc {
 
-    int apply(java.lang.foreign.MemoryAddress xevent, java.lang.foreign.MemoryAddress event, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GdkFilterFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GdkFilterFunc.class, fi, constants$1224.GdkFilterFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment xevent, java.lang.foreign.MemorySegment event, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GdkFilterFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1065.GdkFilterFunc_UP$MH, fi, constants$1065.GdkFilterFunc$FUNC, scope);
     }
-    static GdkFilterFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _xevent, java.lang.foreign.MemoryAddress _event, java.lang.foreign.MemoryAddress _data) -> {
+    static GdkFilterFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _xevent, java.lang.foreign.MemorySegment _event, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$1224.GdkFilterFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_xevent, (java.lang.foreign.Addressable)_event, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1065.GdkFilterFunc_DOWN$MH.invokeExact(symbol, _xevent, _event, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

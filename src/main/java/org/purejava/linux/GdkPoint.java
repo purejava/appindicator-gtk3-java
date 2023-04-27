@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkPoint extends _GdkPoint {
+/**
+ * {@snippet :
+ * typedef struct _GdkPoint GdkPoint;
+ * }
+ */
+public final class GdkPoint extends _GdkPoint {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkPoint() {}
 }
 
 

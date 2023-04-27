@@ -7,54 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$432 {
+final class constants$432 {
 
-    static final FunctionDescriptor g_type_check_instance_cast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$432() {}
+    static final FunctionDescriptor g_object_class_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_instance_cast$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_instance_cast",
-        constants$432.g_type_check_instance_cast$FUNC
+    static final MethodHandle g_object_class_list_properties$MH = RuntimeHelper.downcallHandle(
+        "g_object_class_list_properties",
+        constants$432.g_object_class_list_properties$FUNC
     );
-    static final FunctionDescriptor g_type_check_instance_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_class_override_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_instance_is_a$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_instance_is_a",
-        constants$432.g_type_check_instance_is_a$FUNC
+    static final MethodHandle g_object_class_override_property$MH = RuntimeHelper.downcallHandle(
+        "g_object_class_override_property",
+        constants$432.g_object_class_override_property$FUNC
     );
-    static final FunctionDescriptor g_type_check_instance_is_fundamentally_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_class_install_properties$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_instance_is_fundamentally_a$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_instance_is_fundamentally_a",
-        constants$432.g_type_check_instance_is_fundamentally_a$FUNC
+    static final MethodHandle g_object_class_install_properties$MH = RuntimeHelper.downcallHandle(
+        "g_object_class_install_properties",
+        constants$432.g_object_class_install_properties$FUNC
     );
-    static final FunctionDescriptor g_type_check_class_cast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_object_interface_install_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_class_cast$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_class_cast",
-        constants$432.g_type_check_class_cast$FUNC
+    static final MethodHandle g_object_interface_install_property$MH = RuntimeHelper.downcallHandle(
+        "g_object_interface_install_property",
+        constants$432.g_object_interface_install_property$FUNC
     );
-    static final FunctionDescriptor g_type_check_class_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_interface_find_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_class_is_a$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_class_is_a",
-        constants$432.g_type_check_class_is_a$FUNC
+    static final MethodHandle g_object_interface_find_property$MH = RuntimeHelper.downcallHandle(
+        "g_object_interface_find_property",
+        constants$432.g_object_interface_find_property$FUNC
     );
-    static final FunctionDescriptor g_type_check_is_value_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_object_interface_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_check_is_value_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_is_value_type",
-        constants$432.g_type_check_is_value_type$FUNC
+    static final MethodHandle g_object_interface_list_properties$MH = RuntimeHelper.downcallHandle(
+        "g_object_interface_list_properties",
+        constants$432.g_object_interface_list_properties$FUNC
     );
 }
 

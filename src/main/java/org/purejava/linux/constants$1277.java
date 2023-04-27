@@ -7,51 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1277 {
+final class constants$1277 {
 
-    static final FunctionDescriptor gdk_display_get_n_monitors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1277() {}
+    static final FunctionDescriptor gtk_widget_reset_style$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_n_monitors$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_n_monitors",
-        constants$1277.gdk_display_get_n_monitors$FUNC
+    static final MethodHandle gtk_widget_reset_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_reset_style",
+        constants$1277.gtk_widget_reset_style$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_monitor",
-        constants$1277.gdk_display_get_monitor$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_primary_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_create_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_primary_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_primary_monitor",
-        constants$1277.gdk_display_get_primary_monitor$FUNC
+    static final MethodHandle gtk_widget_create_pango_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_create_pango_context",
+        constants$1277.gtk_widget_create_pango_context$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_monitor_at_point$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_widget_get_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_monitor_at_point$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_monitor_at_point",
-        constants$1277.gdk_display_get_monitor_at_point$FUNC
+    static final MethodHandle gtk_widget_get_pango_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_pango_context",
+        constants$1277.gtk_widget_get_pango_context$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_monitor_at_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_font_options$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_get_monitor_at_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_monitor_at_window",
-        constants$1277.gdk_display_get_monitor_at_window$FUNC
+    static final MethodHandle gtk_widget_set_font_options$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_font_options",
+        constants$1277.gtk_widget_set_font_options$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_screen_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_type",
-        constants$1277.gdk_screen_get_type$FUNC
+    static final FunctionDescriptor gtk_widget_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_font_options$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_font_options",
+        constants$1277.gtk_widget_get_font_options$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_create_pango_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_create_pango_layout",
+        constants$1277.gtk_widget_create_pango_layout$FUNC
     );
 }
 

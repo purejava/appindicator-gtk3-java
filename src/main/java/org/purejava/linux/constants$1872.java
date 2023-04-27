@@ -7,46 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1872 {
+final class constants$1872 {
 
-    static final FunctionDescriptor gtk_list_box_select_row$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1872() {}
+    static final FunctionDescriptor gtk_tree_selection_unselect_iter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_select_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_select_row",
-        constants$1872.gtk_list_box_select_row$FUNC
+    static final MethodHandle gtk_tree_selection_unselect_iter$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_unselect_iter",
+        constants$1872.gtk_tree_selection_unselect_iter$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_set_placeholder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_selection_path_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_set_placeholder$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_placeholder",
-        constants$1872.gtk_list_box_set_placeholder$FUNC
+    static final MethodHandle gtk_tree_selection_path_is_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_path_is_selected",
+        constants$1872.gtk_tree_selection_path_is_selected$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_selection_iter_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_adjustment",
-        constants$1872.gtk_list_box_set_adjustment$FUNC
+    static final MethodHandle gtk_tree_selection_iter_is_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_iter_is_selected",
+        constants$1872.gtk_tree_selection_iter_is_selected$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_selection_select_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_adjustment",
-        constants$1872.gtk_list_box_get_adjustment$FUNC
+    static final MethodHandle gtk_tree_selection_select_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_select_all",
+        constants$1872.gtk_tree_selection_select_all$FUNC
     );
-    static final FunctionDescriptor GtkListBoxForeachFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_selection_unselect_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_selection_unselect_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_unselect_all",
+        constants$1872.gtk_tree_selection_unselect_all$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_selection_select_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkListBoxForeachFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1872.GtkListBoxForeachFunc$FUNC
+    static final MethodHandle gtk_tree_selection_select_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_select_range",
+        constants$1872.gtk_tree_selection_select_range$FUNC
     );
 }
 

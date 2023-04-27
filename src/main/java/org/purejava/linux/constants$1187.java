@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1187 {
+final class constants$1187 {
 
-    static final FunctionDescriptor cairo_surface_map_to_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_map_to_image$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_map_to_image",
-        constants$1187.cairo_surface_map_to_image$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_unmap_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_unmap_image$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_unmap_image",
-        constants$1187.cairo_surface_unmap_image$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_create_for_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_surface_create_for_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_for_rectangle",
-        constants$1187.cairo_surface_create_for_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_create_observer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1187() {}
+    static final FunctionDescriptor gdk_visual_get_best_with_both$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_create_observer$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_observer",
-        constants$1187.cairo_surface_create_observer$FUNC
+    static final MethodHandle gdk_visual_get_best_with_both$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_both",
+        constants$1187.gdk_visual_get_best_with_both$FUNC
     );
-    static final FunctionDescriptor cairo_surface_observer_callback_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_query_depths$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_observer_callback_t$MH = RuntimeHelper.downcallHandle(
-        constants$1187.cairo_surface_observer_callback_t$FUNC
+    static final MethodHandle gdk_query_depths$MH = RuntimeHelper.downcallHandle(
+        "gdk_query_depths",
+        constants$1187.gdk_query_depths$FUNC
+    );
+    static final FunctionDescriptor gdk_query_visual_types$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_query_visual_types$MH = RuntimeHelper.downcallHandle(
+        "gdk_query_visual_types",
+        constants$1187.gdk_query_visual_types$FUNC
+    );
+    static final FunctionDescriptor gdk_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_list_visuals$MH = RuntimeHelper.downcallHandle(
+        "gdk_list_visuals",
+        constants$1187.gdk_list_visuals$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_screen",
+        constants$1187.gdk_visual_get_screen$FUNC
+    );
+    static final FunctionDescriptor gdk_visual_get_visual_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_visual_get_visual_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_visual_type",
+        constants$1187.gdk_visual_get_visual_type$FUNC
     );
 }
 

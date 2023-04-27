@@ -7,54 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$257 {
+final class constants$257 {
 
-    static final FunctionDescriptor g_option_group_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_option_group_unref$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_unref",
-        constants$257.g_option_group_unref$FUNC
-    );
-    static final FunctionDescriptor g_option_group_add_entries$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$257() {}
+    static final FunctionDescriptor GLogFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_group_add_entries$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_add_entries",
-        constants$257.g_option_group_add_entries$FUNC
+    static final MethodHandle GLogFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$257.GLogFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_option_group_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_log_set_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_log_set_handler$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_handler",
+        constants$257.g_log_set_handler$FUNC
+    );
+    static final FunctionDescriptor g_log_set_handler_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_group_set_translate_func$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_translate_func",
-        constants$257.g_option_group_set_translate_func$FUNC
+    static final MethodHandle g_log_set_handler_full$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_handler_full",
+        constants$257.g_log_set_handler_full$FUNC
     );
-    static final FunctionDescriptor g_option_group_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_log_remove_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_log_remove_handler$MH = RuntimeHelper.downcallHandle(
+        "g_log_remove_handler",
+        constants$257.g_log_remove_handler$FUNC
+    );
+    static final FunctionDescriptor g_log_default_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_group_set_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_translation_domain",
-        constants$257.g_option_group_set_translation_domain$FUNC
+    static final MethodHandle g_log_default_handler$MH = RuntimeHelper.downcallHandle(
+        "g_log_default_handler",
+        constants$257.g_log_default_handler$FUNC
     );
-    static final FunctionDescriptor g_pattern_spec_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_log_set_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pattern_spec_new$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_new",
-        constants$257.g_pattern_spec_new$FUNC
-    );
-    static final FunctionDescriptor g_pattern_spec_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_free$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_free",
-        constants$257.g_pattern_spec_free$FUNC
+    static final MethodHandle g_log_set_default_handler$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_default_handler",
+        constants$257.g_log_set_default_handler$FUNC
     );
 }
 

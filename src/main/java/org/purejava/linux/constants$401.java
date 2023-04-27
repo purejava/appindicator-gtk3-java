@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$401 {
+final class constants$401 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMatchInfo$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$401() {}
+    static final FunctionDescriptor _g_param_type_register_static_constant$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle _g_param_type_register_static_constant$MH = RuntimeHelper.downcallHandle(
+        "_g_param_type_register_static_constant",
+        constants$401._g_param_type_register_static_constant$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_internal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_internal$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_internal",
+        constants$401.g_param_spec_internal$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_pool_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_param_spec_pool_new$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_new",
+        constants$401.g_param_spec_pool_new$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_pool_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_param_spec_pool_insert$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_insert",
+        constants$401.g_param_spec_pool_insert$FUNC
+    );
+    static final FunctionDescriptor g_param_spec_pool_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMatchInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMatchInfo",
-        constants$401.glib_slistautoptr_cleanup_GMatchInfo$FUNC
+    static final MethodHandle g_param_spec_pool_remove$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_remove",
+        constants$401.g_param_spec_pool_remove$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMatchInfo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_param_spec_pool_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMatchInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMatchInfo",
-        constants$401.glib_queueautoptr_cleanup_GMatchInfo$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GScanner$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GScanner$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GScanner",
-        constants$401.glib_autoptr_clear_GScanner$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GScanner$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GScanner$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GScanner",
-        constants$401.glib_autoptr_cleanup_GScanner$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GScanner$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GScanner$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GScanner",
-        constants$401.glib_listautoptr_cleanup_GScanner$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GScanner$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GScanner$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GScanner",
-        constants$401.glib_slistautoptr_cleanup_GScanner$FUNC
+    static final MethodHandle g_param_spec_pool_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_lookup",
+        constants$401.g_param_spec_pool_lookup$FUNC
     );
 }
 

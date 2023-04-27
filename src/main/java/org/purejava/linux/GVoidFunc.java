@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GVoidFunc)();
+ * }
+ */
 public interface GVoidFunc {
 
     void apply();
-    static MemorySegment allocate(GVoidFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GVoidFunc.class, fi, constants$40.GVoidFunc$FUNC, session);
+    static MemorySegment allocate(GVoidFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$42.GVoidFunc_UP$MH, fi, constants$42.GVoidFunc$FUNC, scope);
     }
-    static GVoidFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static GVoidFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$40.GVoidFunc$MH.invokeExact((Addressable)symbol);
+                constants$42.GVoidFunc_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

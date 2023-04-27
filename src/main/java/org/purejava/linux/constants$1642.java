@@ -7,52 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1642 {
+final class constants$1642 {
 
-    static final FunctionDescriptor gtk_entry_set_has_frame$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1642() {}
+    static final FunctionDescriptor gtk_icon_theme_set_custom_theme$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_theme_set_custom_theme$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_set_custom_theme",
+        constants$1642.gtk_icon_theme_set_custom_theme$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_theme_has_icon$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_theme_has_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_has_icon",
+        constants$1642.gtk_icon_theme_has_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_theme_get_icon_sizes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_theme_get_icon_sizes$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_get_icon_sizes",
+        constants$1642.gtk_icon_theme_get_icon_sizes$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_theme_lookup_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_has_frame$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_has_frame",
-        constants$1642.gtk_entry_set_has_frame$FUNC
+    static final MethodHandle gtk_icon_theme_lookup_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_lookup_icon",
+        constants$1642.gtk_icon_theme_lookup_icon$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_has_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_has_frame$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_has_frame",
-        constants$1642.gtk_entry_get_has_frame$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_inner_border$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_theme_lookup_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_inner_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_inner_border",
-        constants$1642.gtk_entry_set_inner_border$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_inner_border$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_inner_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_inner_border",
-        constants$1642.gtk_entry_get_inner_border$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_overwrite_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_overwrite_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_overwrite_mode",
-        constants$1642.gtk_entry_set_overwrite_mode$FUNC
+    static final MethodHandle gtk_icon_theme_lookup_icon_for_scale$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_lookup_icon_for_scale",
+        constants$1642.gtk_icon_theme_lookup_icon_for_scale$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_overwrite_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_icon_theme_choose_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_overwrite_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_overwrite_mode",
-        constants$1642.gtk_entry_get_overwrite_mode$FUNC
+    static final MethodHandle gtk_icon_theme_choose_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_theme_choose_icon",
+        constants$1642.gtk_icon_theme_choose_icon$FUNC
     );
 }
 

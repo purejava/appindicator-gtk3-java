@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*cairo_raster_source_release_func_t)(struct _cairo_pattern* pattern,void* callback_data,struct _cairo_surface* surface);
+ * }
+ */
 public interface cairo_raster_source_release_func_t {
 
-    void apply(java.lang.foreign.MemoryAddress pattern, java.lang.foreign.MemoryAddress callback_data, java.lang.foreign.MemoryAddress surface);
-    static MemorySegment allocate(cairo_raster_source_release_func_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(cairo_raster_source_release_func_t.class, fi, constants$1197.cairo_raster_source_release_func_t$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(cairo_raster_source_release_func_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1038.cairo_raster_source_release_func_t_UP$MH, fi, constants$1038.cairo_raster_source_release_func_t$FUNC, scope);
     }
-    static cairo_raster_source_release_func_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _pattern, java.lang.foreign.MemoryAddress _callback_data, java.lang.foreign.MemoryAddress _surface) -> {
+    static cairo_raster_source_release_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1198.cairo_raster_source_release_func_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_pattern, (java.lang.foreign.Addressable)_callback_data, (java.lang.foreign.Addressable)_surface);
+                constants$1038.cairo_raster_source_release_func_t_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

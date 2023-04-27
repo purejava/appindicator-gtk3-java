@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*scandir$__selector)(struct dirent*);
+ * }
+ */
 public interface scandir$__selector {
 
-    int apply(java.lang.foreign.MemoryAddress _x0);
-    static MemorySegment allocate(scandir$__selector fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(scandir$__selector.class, fi, constants$121.scandir$__selector$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(scandir$__selector fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$121.scandir$__selector_UP$MH, fi, constants$121.scandir$__selector$FUNC, scope);
     }
-    static scandir$__selector ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress __x0) -> {
+    static scandir$__selector ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$121.scandir$__selector$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                return (int)constants$121.scandir$__selector_DOWN$MH.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

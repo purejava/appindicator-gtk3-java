@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$310 {
+final class constants$310 {
 
-    static final FunctionDescriptor g_test_subprocess$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_subprocess$MH = RuntimeHelper.downcallHandle(
-        "g_test_subprocess",
-        constants$310.g_test_subprocess$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$310() {}
+    static final FunctionDescriptor g_spawn_close_pid$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_test_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_run$MH = RuntimeHelper.downcallHandle(
-        "g_test_run",
-        constants$310.g_test_run$FUNC
+    static final MethodHandle g_spawn_close_pid$MH = RuntimeHelper.downcallHandle(
+        "g_spawn_close_pid",
+        constants$310.g_spawn_close_pid$FUNC
     );
-    static final FunctionDescriptor g_test_add_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_string_chunk_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_chunk_new$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_new",
+        constants$310.g_string_chunk_new$FUNC
+    );
+    static final FunctionDescriptor g_string_chunk_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_string_chunk_free$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_free",
+        constants$310.g_string_chunk_free$FUNC
+    );
+    static final FunctionDescriptor g_string_chunk_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_string_chunk_clear$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_clear",
+        constants$310.g_string_chunk_clear$FUNC
+    );
+    static final FunctionDescriptor g_string_chunk_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_add_func$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_func",
-        constants$310.g_test_add_func$FUNC
+    static final MethodHandle g_string_chunk_insert$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_insert",
+        constants$310.g_string_chunk_insert$FUNC
     );
-    static final FunctionDescriptor g_test_add_data_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_string_chunk_insert_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_test_add_data_func$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_data_func",
-        constants$310.g_test_add_data_func$FUNC
-    );
-    static final FunctionDescriptor g_test_add_data_func_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_data_func_full$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_data_func_full",
-        constants$310.g_test_add_data_func_full$FUNC
-    );
-    static final FunctionDescriptor g_test_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_test_get_path$MH = RuntimeHelper.downcallHandle(
-        "g_test_get_path",
-        constants$310.g_test_get_path$FUNC
+    static final MethodHandle g_string_chunk_insert_len$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_insert_len",
+        constants$310.g_string_chunk_insert_len$FUNC
     );
 }
 

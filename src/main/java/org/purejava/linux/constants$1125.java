@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1125 {
+final class constants$1125 {
 
-    static final FunctionDescriptor pango_layout_line_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1125() {}
+    static final FunctionDescriptor gdk_app_launch_context_set_icon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_line_ref$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_ref",
-        constants$1125.pango_layout_line_ref$FUNC
+    static final MethodHandle gdk_app_launch_context_set_icon$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_icon",
+        constants$1125.gdk_app_launch_context_set_icon$FUNC
     );
-    static final FunctionDescriptor pango_layout_line_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_app_launch_context_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_line_unref$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_unref",
-        constants$1125.pango_layout_line_unref$FUNC
+    static final MethodHandle gdk_app_launch_context_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_icon_name",
+        constants$1125.gdk_app_launch_context_set_icon_name$FUNC
     );
-    static final FunctionDescriptor pango_layout_line_get_start_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_color_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_color_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_color_get_type",
+        constants$1125.gdk_color_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_color_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_line_get_start_index$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_get_start_index",
-        constants$1125.pango_layout_line_get_start_index$FUNC
+    static final MethodHandle gdk_color_copy$MH = RuntimeHelper.downcallHandle(
+        "gdk_color_copy",
+        constants$1125.gdk_color_copy$FUNC
     );
-    static final FunctionDescriptor pango_layout_line_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_color_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_line_get_length$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_get_length",
-        constants$1125.pango_layout_line_get_length$FUNC
+    static final MethodHandle gdk_color_free$MH = RuntimeHelper.downcallHandle(
+        "gdk_color_free",
+        constants$1125.gdk_color_free$FUNC
     );
-    static final FunctionDescriptor pango_layout_line_is_paragraph_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_color_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_line_is_paragraph_start$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_is_paragraph_start",
-        constants$1125.pango_layout_line_is_paragraph_start$FUNC
-    );
-    static final FunctionDescriptor pango_layout_line_get_resolved_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_line_get_resolved_direction$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_line_get_resolved_direction",
-        constants$1125.pango_layout_line_get_resolved_direction$FUNC
+    static final MethodHandle gdk_color_hash$MH = RuntimeHelper.downcallHandle(
+        "gdk_color_hash",
+        constants$1125.gdk_color_hash$FUNC
     );
 }
 

@@ -7,52 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1614 {
+final class constants$1614 {
 
-    static final FunctionDescriptor gtk_selection_data_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_free",
-        constants$1614.gtk_selection_data_free$FUNC
-    );
-    static final FunctionDescriptor gtk_target_entry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_target_entry_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_entry_get_type",
-        constants$1614.gtk_target_entry_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_target_entry_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1614() {}
+    static final FunctionDescriptor gtk_grid_remove_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_target_entry_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_entry_new",
-        constants$1614.gtk_target_entry_new$FUNC
+    static final MethodHandle gtk_grid_remove_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_remove_column",
+        constants$1614.gtk_grid_remove_column$FUNC
     );
-    static final FunctionDescriptor gtk_target_entry_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_entry_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_entry_copy",
-        constants$1614.gtk_target_entry_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_target_entry_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_entry_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_entry_free",
-        constants$1614.gtk_target_entry_free$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_get_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_grid_insert_next_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_drag_get_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_get_data",
-        constants$1614.gtk_drag_get_data$FUNC
+    static final MethodHandle gtk_grid_insert_next_to$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_insert_next_to",
+        constants$1614.gtk_grid_insert_next_to$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_set_row_homogeneous$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_grid_set_row_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_set_row_homogeneous",
+        constants$1614.gtk_grid_set_row_homogeneous$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_get_row_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_grid_get_row_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_row_homogeneous",
+        constants$1614.gtk_grid_get_row_homogeneous$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_set_row_spacing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_grid_set_row_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_set_row_spacing",
+        constants$1614.gtk_grid_set_row_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_grid_get_row_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_row_spacing",
+        constants$1614.gtk_grid_get_row_spacing$FUNC
     );
 }
 

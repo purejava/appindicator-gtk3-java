@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRcStyleClass {
+ *     GObjectClass parent_class;
+ *     GtkRcStyle* (*create_rc_style)(GtkRcStyle*);
+ *     guint (*parse)(GtkRcStyle*,GtkSettings*,GScanner*);
+ *     void (*merge)(GtkRcStyle*,GtkRcStyle*);
+ *     GtkStyle* (*create_style)(GtkRcStyle*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ * };
+ * }
+ */
 public class _GtkRcStyleClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +39,10 @@ public class _GtkRcStyleClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("create_rc_style"),
         Constants$root.C_POINTER$LAYOUT.withName("parse"),
@@ -44,20 +62,32 @@ public class _GtkRcStyleClass {
     static final FunctionDescriptor create_rc_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle create_rc_style$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass.create_rc_style$FUNC
+    static final FunctionDescriptor create_rc_style_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle create_rc_style_UP$MH = RuntimeHelper.upcallHandle(create_rc_style.class, "apply", _GtkRcStyleClass.create_rc_style_UP$FUNC);
+    static final FunctionDescriptor create_rc_style_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle create_rc_style_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass.create_rc_style_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkRcStyle* (*create_rc_style)(GtkRcStyle*);
+     * }
+     */
     public interface create_rc_style {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(create_rc_style fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_rc_style.class, fi, _GtkRcStyleClass.create_rc_style$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(create_rc_style fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass.create_rc_style_UP$MH, fi, _GtkRcStyleClass.create_rc_style$FUNC, scope);
         }
-        static create_rc_style ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static create_rc_style ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_rc_style$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_rc_style_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -69,40 +99,68 @@ public class _GtkRcStyleClass {
     public static VarHandle create_rc_style$VH() {
         return _GtkRcStyleClass.create_rc_style$VH;
     }
-    public static MemoryAddress create_rc_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_rc_style$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkRcStyle* (*create_rc_style)(GtkRcStyle*);
+     * }
+     */
+    public static MemorySegment create_rc_style$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_rc_style$VH.get(seg);
     }
-    public static void create_rc_style$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkRcStyle* (*create_rc_style)(GtkRcStyle*);
+     * }
+     */
+    public static void create_rc_style$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass.create_rc_style$VH.set(seg, x);
     }
-    public static MemoryAddress create_rc_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_rc_style$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_rc_style$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_rc_style$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_rc_style$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_rc_style$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass.create_rc_style$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_rc_style create_rc_style (MemorySegment segment, MemorySession session) {
-        return create_rc_style.ofAddress(create_rc_style$get(segment), session);
+    public static create_rc_style create_rc_style(MemorySegment segment, SegmentScope scope) {
+        return create_rc_style.ofAddress(create_rc_style$get(segment), scope);
     }
     static final FunctionDescriptor parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle parse$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass.parse$FUNC
+    static final FunctionDescriptor parse_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle parse_UP$MH = RuntimeHelper.upcallHandle(parse.class, "apply", _GtkRcStyleClass.parse_UP$FUNC);
+    static final FunctionDescriptor parse_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle parse_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass.parse_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*parse)(GtkRcStyle*,GtkSettings*,GScanner*);
+     * }
+     */
     public interface parse {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(parse fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(parse.class, fi, _GtkRcStyleClass.parse$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(parse fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass.parse_UP$MH, fi, _GtkRcStyleClass.parse$FUNC, scope);
         }
-        static parse ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static parse ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkRcStyleClass.parse$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkRcStyleClass.parse_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -114,39 +172,65 @@ public class _GtkRcStyleClass {
     public static VarHandle parse$VH() {
         return _GtkRcStyleClass.parse$VH;
     }
-    public static MemoryAddress parse$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.parse$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*parse)(GtkRcStyle*,GtkSettings*,GScanner*);
+     * }
+     */
+    public static MemorySegment parse$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.parse$VH.get(seg);
     }
-    public static void parse$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*parse)(GtkRcStyle*,GtkSettings*,GScanner*);
+     * }
+     */
+    public static void parse$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass.parse$VH.set(seg, x);
     }
-    public static MemoryAddress parse$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.parse$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment parse$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.parse$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void parse$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void parse$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass.parse$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static parse parse (MemorySegment segment, MemorySession session) {
-        return parse.ofAddress(parse$get(segment), session);
+    public static parse parse(MemorySegment segment, SegmentScope scope) {
+        return parse.ofAddress(parse$get(segment), scope);
     }
     static final FunctionDescriptor merge$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle merge$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass.merge$FUNC
+    static final FunctionDescriptor merge_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle merge_UP$MH = RuntimeHelper.upcallHandle(merge.class, "apply", _GtkRcStyleClass.merge_UP$FUNC);
+    static final FunctionDescriptor merge_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle merge_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass.merge_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*merge)(GtkRcStyle*,GtkRcStyle*);
+     * }
+     */
     public interface merge {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(merge fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(merge.class, fi, _GtkRcStyleClass.merge$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(merge fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass.merge_UP$MH, fi, _GtkRcStyleClass.merge$FUNC, scope);
         }
-        static merge ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static merge ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkRcStyleClass.merge$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkRcStyleClass.merge_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -158,38 +242,62 @@ public class _GtkRcStyleClass {
     public static VarHandle merge$VH() {
         return _GtkRcStyleClass.merge$VH;
     }
-    public static MemoryAddress merge$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.merge$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*merge)(GtkRcStyle*,GtkRcStyle*);
+     * }
+     */
+    public static MemorySegment merge$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.merge$VH.get(seg);
     }
-    public static void merge$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*merge)(GtkRcStyle*,GtkRcStyle*);
+     * }
+     */
+    public static void merge$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass.merge$VH.set(seg, x);
     }
-    public static MemoryAddress merge$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.merge$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment merge$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.merge$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void merge$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void merge$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass.merge$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static merge merge (MemorySegment segment, MemorySession session) {
-        return merge.ofAddress(merge$get(segment), session);
+    public static merge merge(MemorySegment segment, SegmentScope scope) {
+        return merge.ofAddress(merge$get(segment), scope);
     }
     static final FunctionDescriptor create_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle create_style$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass.create_style$FUNC
+    static final FunctionDescriptor create_style_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle create_style_UP$MH = RuntimeHelper.upcallHandle(create_style.class, "apply", _GtkRcStyleClass.create_style_UP$FUNC);
+    static final FunctionDescriptor create_style_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle create_style_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass.create_style_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkStyle* (*create_style)(GtkRcStyle*);
+     * }
+     */
     public interface create_style {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(create_style fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_style.class, fi, _GtkRcStyleClass.create_style$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(create_style fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass.create_style_UP$MH, fi, _GtkRcStyleClass.create_style$FUNC, scope);
         }
-        static create_style ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static create_style ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_style$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_style_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -201,36 +309,56 @@ public class _GtkRcStyleClass {
     public static VarHandle create_style$VH() {
         return _GtkRcStyleClass.create_style$VH;
     }
-    public static MemoryAddress create_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_style$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkStyle* (*create_style)(GtkRcStyle*);
+     * }
+     */
+    public static MemorySegment create_style$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_style$VH.get(seg);
     }
-    public static void create_style$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkStyle* (*create_style)(GtkRcStyle*);
+     * }
+     */
+    public static void create_style$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass.create_style$VH.set(seg, x);
     }
-    public static MemoryAddress create_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass.create_style$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_style$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass.create_style$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_style$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_style$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass.create_style$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_style create_style (MemorySegment segment, MemorySession session) {
-        return create_style.ofAddress(create_style$get(segment), session);
+    public static create_style create_style(MemorySegment segment, SegmentScope scope) {
+        return create_style.ofAddress(create_style$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkRcStyleClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkRcStyleClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass._gtk_reserved1_UP$MH, fi, _GtkRcStyleClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRcStyleClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkRcStyleClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -242,36 +370,56 @@ public class _GtkRcStyleClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkRcStyleClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkRcStyleClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkRcStyleClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass._gtk_reserved2_UP$MH, fi, _GtkRcStyleClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRcStyleClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkRcStyleClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,36 +431,56 @@ public class _GtkRcStyleClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkRcStyleClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkRcStyleClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkRcStyleClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass._gtk_reserved3_UP$MH, fi, _GtkRcStyleClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRcStyleClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkRcStyleClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -324,36 +492,56 @@ public class _GtkRcStyleClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkRcStyleClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkRcStyleClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkRcStyleClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRcStyleClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkRcStyleClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRcStyleClass._gtk_reserved4_UP$MH, fi, _GtkRcStyleClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkRcStyleClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkRcStyleClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -365,27 +553,39 @@ public class _GtkRcStyleClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkRcStyleClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyleClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyleClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyleClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

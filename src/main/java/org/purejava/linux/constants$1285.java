@@ -7,49 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1285 {
+final class constants$1285 {
 
-    static final FunctionDescriptor gdk_color_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1285() {}
+    static final FunctionDescriptor gtk_widget_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_color_hash$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_hash",
-        constants$1285.gdk_color_hash$FUNC
+    static final MethodHandle gtk_widget_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_modifier_mask",
+        constants$1285.gtk_widget_get_modifier_mask$FUNC
     );
-    static final FunctionDescriptor gdk_color_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_insert_action_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_color_equal$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_equal",
-        constants$1285.gdk_color_equal$FUNC
+    static final MethodHandle gtk_widget_insert_action_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_insert_action_group",
+        constants$1285.gtk_widget_insert_action_group$FUNC
     );
-    static final FunctionDescriptor gdk_color_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_add_tick_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_color_parse$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_parse",
-        constants$1285.gdk_color_parse$FUNC
+    static final MethodHandle gtk_widget_add_tick_callback$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_add_tick_callback",
+        constants$1285.gtk_widget_add_tick_callback$FUNC
     );
-    static final FunctionDescriptor gdk_color_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_remove_tick_callback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_remove_tick_callback$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_remove_tick_callback",
+        constants$1285.gtk_widget_remove_tick_callback$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_init_template$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_color_to_string$MH = RuntimeHelper.downcallHandle(
-        "gdk_color_to_string",
-        constants$1285.gdk_color_to_string$FUNC
+    static final MethodHandle gtk_widget_init_template$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_init_template",
+        constants$1285.gtk_widget_init_template$FUNC
     );
-    static final FunctionDescriptor gdk_rgba_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_rgba_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_get_type",
-        constants$1285.gdk_rgba_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_rgba_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_template_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_rgba_copy$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_copy",
-        constants$1285.gdk_rgba_copy$FUNC
+    static final MethodHandle gtk_widget_get_template_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_template_child",
+        constants$1285.gtk_widget_get_template_child$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkRelationSetClass {
+ *     GObjectClass parent;
+ *     AtkFunction pad1;
+ *     AtkFunction pad2;
+ * };
+ * }
+ */
 public class _AtkRelationSetClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +33,10 @@ public class _AtkRelationSetClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent"),
         Constants$root.C_POINTER$LAYOUT.withName("pad1"),
         Constants$root.C_POINTER$LAYOUT.withName("pad2")
@@ -39,46 +51,70 @@ public class _AtkRelationSetClass {
     public static VarHandle pad1$VH() {
         return _AtkRelationSetClass.pad1$VH;
     }
-    public static MemoryAddress pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelationSetClass.pad1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkFunction pad1;
+     * }
+     */
+    public static MemorySegment pad1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad1$VH.get(seg);
     }
-    public static void pad1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkFunction pad1;
+     * }
+     */
+    public static void pad1$set(MemorySegment seg, MemorySegment x) {
         _AtkRelationSetClass.pad1$VH.set(seg, x);
     }
-    public static MemoryAddress pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelationSetClass.pad1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment pad1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void pad1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkRelationSetClass.pad1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad1 (MemorySegment segment, MemorySession session) {
-        return AtkFunction.ofAddress(pad1$get(segment), session);
+    public static AtkFunction pad1(MemorySegment segment, SegmentScope scope) {
+        return AtkFunction.ofAddress(pad1$get(segment), scope);
     }
     static final VarHandle pad2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
     public static VarHandle pad2$VH() {
         return _AtkRelationSetClass.pad2$VH;
     }
-    public static MemoryAddress pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelationSetClass.pad2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkFunction pad2;
+     * }
+     */
+    public static MemorySegment pad2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad2$VH.get(seg);
     }
-    public static void pad2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkFunction pad2;
+     * }
+     */
+    public static void pad2$set(MemorySegment seg, MemorySegment x) {
         _AtkRelationSetClass.pad2$VH.set(seg, x);
     }
-    public static MemoryAddress pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelationSetClass.pad2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment pad2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void pad2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkRelationSetClass.pad2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad2 (MemorySegment segment, MemorySession session) {
-        return AtkFunction.ofAddress(pad2$get(segment), session);
+    public static AtkFunction pad2(MemorySegment segment, SegmentScope scope) {
+        return AtkFunction.ofAddress(pad2$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

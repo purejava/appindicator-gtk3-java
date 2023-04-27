@@ -7,40 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2020 {
+final class constants$2020 {
 
-    static final FunctionDescriptor gtk_switch_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_switch_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_set_state",
-        constants$2020.gtk_switch_set_state$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_switch_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_state",
-        constants$2020.gtk_switch_get_state$FUNC
-    );
-    static final FunctionDescriptor GtkTextTagTableForeach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTextTagTableForeach$MH = RuntimeHelper.downcallHandle(
-        constants$2020.GtkTextTagTableForeach$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_tag_table_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_get_type",
-        constants$2020.gtk_text_tag_table_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_text_tag_table_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_new",
-        constants$2020.gtk_text_tag_table_new$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2020() {}
+    static final MemorySegment HB_LANGUAGE_INVALID$ADDR = MemorySegment.ofAddress(0L);
+    static final MemorySegment HB_VERSION_STRING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("6.0.0");
+    static final MemorySegment PANGO_RENDER_TYPE_NONE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoRenderNone");
+    static final MemorySegment PANGO_ENGINE_TYPE_LANG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoEngineLang");
+    static final MemorySegment PANGO_ENGINE_TYPE_SHAPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoEngineShape");
+    static final MemorySegment P_tmpdir$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("/tmp");
 }
 
 

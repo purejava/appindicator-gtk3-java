@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void* (*GCacheNewFunc)(void* key);
+ * }
+ */
 public interface GCacheNewFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress key);
-    static MemorySegment allocate(GCacheNewFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GCacheNewFunc.class, fi, constants$341.GCacheNewFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GCacheNewFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$346.GCacheNewFunc_UP$MH, fi, constants$346.GCacheNewFunc$FUNC, scope);
     }
-    static GCacheNewFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _key) -> {
+    static GCacheNewFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$342.GCacheNewFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_key);
+                return (java.lang.foreign.MemorySegment)constants$346.GCacheNewFunc_DOWN$MH.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

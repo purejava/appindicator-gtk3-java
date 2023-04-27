@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1876 {
+final class constants$1876 {
 
-    static final FunctionDescriptor gtk_list_box_bind_model$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1876() {}
+    static final FunctionDescriptor gtk_tree_store_iter_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_iter_depth$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_iter_depth",
+        constants$1876.gtk_tree_store_iter_depth$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_store_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_clear$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_clear",
+        constants$1876.gtk_tree_store_clear$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_store_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_iter_is_valid$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_iter_is_valid",
+        constants$1876.gtk_tree_store_iter_is_valid$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_store_reorder$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_reorder$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_reorder",
+        constants$1876.gtk_tree_store_reorder$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_store_swap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_bind_model",
-        constants$1876.gtk_list_box_bind_model$FUNC
+    static final MethodHandle gtk_tree_store_swap$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_swap",
+        constants$1876.gtk_tree_store_swap$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkListBox$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_store_move_before$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkListBox$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkListBox",
-        constants$1876.glib_autoptr_clear_GtkListBox$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkListBox$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GtkListBox$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkListBox",
-        constants$1876.glib_autoptr_cleanup_GtkListBox$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkListBox$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkListBox$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkListBox",
-        constants$1876.glib_listautoptr_cleanup_GtkListBox$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkListBox$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkListBox$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkListBox",
-        constants$1876.glib_slistautoptr_cleanup_GtkListBox$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkListBox$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkListBox$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkListBox",
-        constants$1876.glib_queueautoptr_cleanup_GtkListBox$FUNC
+    static final MethodHandle gtk_tree_store_move_before$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_move_before",
+        constants$1876.gtk_tree_store_move_before$FUNC
     );
 }
 

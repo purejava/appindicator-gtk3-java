@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$951 {
+final class constants$951 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GRemoteActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$951() {}
+    static final FunctionDescriptor pango_glyph_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_glyph_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_get_type",
+        constants$951.pango_glyph_item_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_item_split$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_glyph_item_split$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_split",
+        constants$951.pango_glyph_item_split$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_item_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GRemoteActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GRemoteActionGroup",
-        constants$951.glib_slistautoptr_cleanup_GRemoteActionGroup$FUNC
+    static final MethodHandle pango_glyph_item_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_copy",
+        constants$951.pango_glyph_item_copy$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GRemoteActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GRemoteActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GRemoteActionGroup",
-        constants$951.glib_queueautoptr_cleanup_GRemoteActionGroup$FUNC
+    static final MethodHandle pango_glyph_item_free$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_free",
+        constants$951.pango_glyph_item_free$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GResolver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_apply_attrs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GResolver",
-        constants$951.glib_autoptr_clear_GResolver$FUNC
+    static final MethodHandle pango_glyph_item_apply_attrs$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_apply_attrs",
+        constants$951.pango_glyph_item_apply_attrs$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GResolver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_glyph_item_letter_space$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GResolver",
-        constants$951.glib_autoptr_cleanup_GResolver$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GResolver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GResolver",
-        constants$951.glib_listautoptr_cleanup_GResolver$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GResolver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GResolver",
-        constants$951.glib_slistautoptr_cleanup_GResolver$FUNC
+    static final MethodHandle pango_glyph_item_letter_space$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_letter_space",
+        constants$951.pango_glyph_item_letter_space$FUNC
     );
 }
 

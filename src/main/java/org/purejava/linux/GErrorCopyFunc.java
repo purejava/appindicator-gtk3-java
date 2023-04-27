@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GErrorCopyFunc)(struct _GError* src_error,struct _GError* dest_error);
+ * }
+ */
 public interface GErrorCopyFunc {
 
-    void apply(java.lang.foreign.MemoryAddress src_error, java.lang.foreign.MemoryAddress dest_error);
-    static MemorySegment allocate(GErrorCopyFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GErrorCopyFunc.class, fi, constants$32.GErrorCopyFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GErrorCopyFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$35.GErrorCopyFunc_UP$MH, fi, constants$35.GErrorCopyFunc$FUNC, scope);
     }
-    static GErrorCopyFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _src_error, java.lang.foreign.MemoryAddress _dest_error) -> {
+    static GErrorCopyFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$32.GErrorCopyFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_src_error, (java.lang.foreign.Addressable)_dest_error);
+                constants$35.GErrorCopyFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

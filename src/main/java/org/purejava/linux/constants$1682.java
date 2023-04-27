@@ -7,51 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1682 {
+final class constants$1682 {
 
-    static final FunctionDescriptor gtk_application_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1682() {}
+    static final FunctionDescriptor gtk_get_minor_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_minor_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_minor_version",
+        constants$1682.gtk_get_minor_version$FUNC
     );
-    static final MethodHandle gtk_application_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_new",
-        constants$1682.gtk_application_window_new$FUNC
+    static final FunctionDescriptor gtk_get_micro_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_micro_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_micro_version",
+        constants$1682.gtk_get_micro_version$FUNC
     );
-    static final FunctionDescriptor gtk_application_window_set_show_menubar$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_get_binary_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_binary_age$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_binary_age",
+        constants$1682.gtk_get_binary_age$FUNC
+    );
+    static final FunctionDescriptor gtk_get_interface_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_interface_age$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_interface_age",
+        constants$1682.gtk_get_interface_age$FUNC
+    );
+    static final FunctionDescriptor gtk_check_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_application_window_set_show_menubar$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_set_show_menubar",
-        constants$1682.gtk_application_window_set_show_menubar$FUNC
+    static final MethodHandle gtk_check_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_version",
+        constants$1682.gtk_check_version$FUNC
     );
-    static final FunctionDescriptor gtk_application_window_get_show_menubar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_window_get_show_menubar$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_get_show_menubar",
-        constants$1682.gtk_application_window_get_show_menubar$FUNC
-    );
-    static final FunctionDescriptor gtk_application_window_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_window_get_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_get_id",
-        constants$1682.gtk_application_window_get_id$FUNC
-    );
-    static final FunctionDescriptor gtk_application_window_set_help_overlay$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_parse_args$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_application_window_set_help_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_set_help_overlay",
-        constants$1682.gtk_application_window_set_help_overlay$FUNC
-    );
-    static final FunctionDescriptor gtk_application_window_get_help_overlay$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_window_get_help_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_window_get_help_overlay",
-        constants$1682.gtk_application_window_get_help_overlay$FUNC
+    static final MethodHandle gtk_parse_args$MH = RuntimeHelper.downcallHandle(
+        "gtk_parse_args",
+        constants$1682.gtk_parse_args$FUNC
     );
 }
 

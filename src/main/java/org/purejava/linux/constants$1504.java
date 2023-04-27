@@ -7,53 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1504 {
+final class constants$1504 {
 
-    static final FunctionDescriptor gtk_alternative_dialog_button_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_alternative_dialog_button_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_alternative_dialog_button_order",
-        constants$1504.gtk_alternative_dialog_button_order$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_set_alternative_button_order$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1504() {}
+    static final FunctionDescriptor gtk_builder_add_objects_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_set_alternative_button_order$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_set_alternative_button_order",
-        constants$1504.gtk_dialog_set_alternative_button_order$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_set_alternative_button_order_from_array$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_set_alternative_button_order_from_array$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_alternative_button_order_from_array",
-        constants$1504.gtk_dialog_set_alternative_button_order_from_array$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_response$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_response",
-        constants$1504.gtk_dialog_response$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_dialog_run$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_run",
-        constants$1504.gtk_dialog_run$FUNC
+    static final MethodHandle gtk_builder_add_objects_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_add_objects_from_string",
+        constants$1504.gtk_builder_add_objects_from_string$FUNC
     );
-    static final FunctionDescriptor gtk_dialog_get_action_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_builder_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_dialog_get_action_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_action_area",
-        constants$1504.gtk_dialog_get_action_area$FUNC
+    static final MethodHandle gtk_builder_get_object$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_object",
+        constants$1504.gtk_builder_get_object$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_get_objects$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_get_objects$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_objects",
+        constants$1504.gtk_builder_get_objects$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_expose_object$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_expose_object$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_expose_object",
+        constants$1504.gtk_builder_expose_object$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_connect_signals$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_connect_signals$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_connect_signals",
+        constants$1504.gtk_builder_connect_signals$FUNC
+    );
+    static final FunctionDescriptor gtk_builder_connect_signals_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_connect_signals_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_connect_signals_full",
+        constants$1504.gtk_builder_connect_signals_full$FUNC
     );
 }
 

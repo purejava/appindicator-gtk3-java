@@ -7,58 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1027 {
+final class constants$1027 {
 
-    static final FunctionDescriptor hb_font_set_ppem$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1027() {}
+    static final FunctionDescriptor cairo_device_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_get_reference_count$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_get_reference_count",
+        constants$1027.cairo_device_get_reference_count$FUNC
+    );
+    static final FunctionDescriptor cairo_device_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_get_user_data",
+        constants$1027.cairo_device_get_user_data$FUNC
+    );
+    static final FunctionDescriptor cairo_device_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_set_user_data",
+        constants$1027.cairo_device_set_user_data$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_create_similar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_font_set_ppem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_ppem",
-        constants$1027.hb_font_set_ppem$FUNC
+    static final MethodHandle cairo_surface_create_similar$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_create_similar",
+        constants$1027.cairo_surface_create_similar$FUNC
     );
-    static final FunctionDescriptor hb_font_get_ppem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_create_similar_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_surface_create_similar_image$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_create_similar_image",
+        constants$1027.cairo_surface_create_similar_image$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_map_to_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_ppem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_ppem",
-        constants$1027.hb_font_get_ppem$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_ptem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_ptem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_ptem",
-        constants$1027.hb_font_set_ptem$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_ptem$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_ptem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_ptem",
-        constants$1027.hb_font_get_ptem$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_variations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_variations$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_variations",
-        constants$1027.hb_font_set_variations$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_var_coords_design$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_var_coords_design$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_var_coords_design",
-        constants$1027.hb_font_set_var_coords_design$FUNC
+    static final MethodHandle cairo_surface_map_to_image$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_map_to_image",
+        constants$1027.cairo_surface_map_to_image$FUNC
     );
 }
 

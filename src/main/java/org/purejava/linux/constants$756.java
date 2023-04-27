@@ -7,57 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$756 {
+final class constants$756 {
 
-    static final FunctionDescriptor g_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$756() {}
+    static final FunctionDescriptor g_simple_async_result_get_op_res_gboolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_simple_async_result_get_op_res_gboolean$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_get_op_res_gboolean",
+        constants$756.g_simple_async_result_get_op_res_gboolean$FUNC
+    );
+    static final FunctionDescriptor g_simple_async_result_set_check_cancellable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_label",
-        constants$756.g_menu_item_set_label$FUNC
+    static final MethodHandle g_simple_async_result_set_check_cancellable$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_check_cancellable",
+        constants$756.g_simple_async_result_set_check_cancellable$FUNC
     );
-    static final FunctionDescriptor g_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_async_result_get_source_tag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_submenu",
-        constants$756.g_menu_item_set_submenu$FUNC
+    static final MethodHandle g_simple_async_result_get_source_tag$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_get_source_tag",
+        constants$756.g_simple_async_result_get_source_tag$FUNC
     );
-    static final FunctionDescriptor g_menu_item_set_section$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_simple_async_result_set_handle_cancellation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_simple_async_result_set_handle_cancellation$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_handle_cancellation",
+        constants$756.g_simple_async_result_set_handle_cancellation$FUNC
+    );
+    static final FunctionDescriptor g_simple_async_result_complete$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_item_set_section$MH = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_section",
-        constants$756.g_menu_item_set_section$FUNC
+    static final MethodHandle g_simple_async_result_complete$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_complete",
+        constants$756.g_simple_async_result_complete$FUNC
     );
-    static final FunctionDescriptor g_menu_item_set_action_and_target_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_async_result_complete_in_idle$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_item_set_action_and_target_value$MH = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_action_and_target_value",
-        constants$756.g_menu_item_set_action_and_target_value$FUNC
-    );
-    static final FunctionDescriptor g_menu_item_set_action_and_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_item_set_action_and_target$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_menu_item_set_action_and_target",
-        constants$756.g_menu_item_set_action_and_target$FUNC
-    );
-    static final FunctionDescriptor g_menu_item_set_detailed_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_item_set_detailed_action$MH = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_detailed_action",
-        constants$756.g_menu_item_set_detailed_action$FUNC
+    static final MethodHandle g_simple_async_result_complete_in_idle$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_complete_in_idle",
+        constants$756.g_simple_async_result_complete_in_idle$FUNC
     );
 }
 

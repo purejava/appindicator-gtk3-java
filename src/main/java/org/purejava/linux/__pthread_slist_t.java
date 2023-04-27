@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class __pthread_slist_t extends __pthread_internal_slist {
+/**
+ * {@snippet :
+ * typedef struct __pthread_internal_slist __pthread_slist_t;
+ * }
+ */
+public final class __pthread_slist_t extends __pthread_internal_slist {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private __pthread_slist_t() {}
 }
 
 

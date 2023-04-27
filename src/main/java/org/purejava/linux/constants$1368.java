@@ -7,59 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1368 {
+final class constants$1368 {
 
-    static final FunctionDescriptor gtk_accel_group_disconnect_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1368() {}
+    static final FunctionDescriptor gtk_tree_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_model_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_type",
+        constants$1368.gtk_tree_model_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_get_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_flags",
+        constants$1368.gtk_tree_model_get_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_get_n_columns$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_n_columns",
+        constants$1368.gtk_tree_model_get_n_columns$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_model_get_column_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_accel_group_disconnect_key$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect_key",
-        constants$1368.gtk_accel_group_disconnect_key$FUNC
+    static final MethodHandle gtk_tree_model_get_column_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_column_type",
+        constants$1368.gtk_tree_model_get_column_type$FUNC
     );
-    static final FunctionDescriptor gtk_accel_group_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_model_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_activate",
-        constants$1368.gtk_accel_group_activate$FUNC
-    );
-    static final FunctionDescriptor _gtk_accel_group_attach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_accel_group_attach$MH = RuntimeHelper.downcallHandle(
-        "_gtk_accel_group_attach",
-        constants$1368._gtk_accel_group_attach$FUNC
+    static final MethodHandle gtk_tree_model_get_iter$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_iter",
+        constants$1368.gtk_tree_model_get_iter$FUNC
     );
-    static final FunctionDescriptor _gtk_accel_group_detach$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_get_iter_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_accel_group_detach$MH = RuntimeHelper.downcallHandle(
-        "_gtk_accel_group_detach",
-        constants$1368._gtk_accel_group_detach$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_groups_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_groups_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_groups_activate",
-        constants$1368.gtk_accel_groups_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_groups_from_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_groups_from_object$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_groups_from_object",
-        constants$1368.gtk_accel_groups_from_object$FUNC
+    static final MethodHandle gtk_tree_model_get_iter_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_iter_from_string",
+        constants$1368.gtk_tree_model_get_iter_from_string$FUNC
     );
 }
 

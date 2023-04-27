@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkHyperlinkImpl {
+/**
+ * {@snippet :
+ * typedef struct _AtkHyperlinkImpl AtkHyperlinkImpl;
+ * }
+ */
+public final class AtkHyperlinkImpl {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkHyperlinkImpl() {}
 }
 
 

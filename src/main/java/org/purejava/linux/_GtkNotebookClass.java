@@ -7,9 +7,35 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkNotebookClass {
+ *     GtkContainerClass parent_class;
+ *     void (*switch_page)(GtkNotebook*,GtkWidget*,guint);
+ *     gboolean (*select_page)(GtkNotebook*,gboolean);
+ *     gboolean (*focus_tab)(GtkNotebook*,GtkNotebookTab);
+ *     gboolean (*change_current_page)(GtkNotebook*,gint);
+ *     void (*move_focus_out)(GtkNotebook*,GtkDirectionType);
+ *     gboolean (*reorder_tab)(GtkNotebook*,GtkDirectionType,gboolean);
+ *     gint (*insert_page)(GtkNotebook*,GtkWidget*,GtkWidget*,GtkWidget*,gint);
+ *     GtkNotebook* (*create_window)(GtkNotebook*,GtkWidget*,gint,gint);
+ *     void (*page_reordered)(GtkNotebook*,GtkWidget*,guint);
+ *     void (*page_removed)(GtkNotebook*,GtkWidget*,guint);
+ *     void (*page_added)(GtkNotebook*,GtkWidget*,guint);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ *     void (*_gtk_reserved5)();
+ *     void (*_gtk_reserved6)();
+ *     void (*_gtk_reserved7)();
+ *     void (*_gtk_reserved8)();
+ * };
+ * }
+ */
 public class _GtkNotebookClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -26,7 +52,10 @@ public class _GtkNotebookClass {
                     Constants$root.C_POINTER$LAYOUT.withName("notify"),
                     Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                     Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                 ).withName("parent_class"),
                 Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                 MemoryLayout.paddingLayout(32),
@@ -126,10 +155,7 @@ public class _GtkNotebookClass {
             Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                MemoryLayout.paddingLayout(63)
-            ),
+            MemoryLayout.paddingLayout(64),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -170,20 +196,36 @@ public class _GtkNotebookClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle switch_page$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.switch_page$FUNC
+    static final FunctionDescriptor switch_page_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle switch_page_UP$MH = RuntimeHelper.upcallHandle(switch_page.class, "apply", _GtkNotebookClass.switch_page_UP$FUNC);
+    static final FunctionDescriptor switch_page_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle switch_page_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.switch_page_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*switch_page)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
     public interface switch_page {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(switch_page fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(switch_page.class, fi, _GtkNotebookClass.switch_page$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(switch_page fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.switch_page_UP$MH, fi, _GtkNotebookClass.switch_page$FUNC, scope);
         }
-        static switch_page ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static switch_page ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkNotebookClass.switch_page$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkNotebookClass.switch_page_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -195,39 +237,65 @@ public class _GtkNotebookClass {
     public static VarHandle switch_page$VH() {
         return _GtkNotebookClass.switch_page$VH;
     }
-    public static MemoryAddress switch_page$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.switch_page$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*switch_page)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static MemorySegment switch_page$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.switch_page$VH.get(seg);
     }
-    public static void switch_page$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*switch_page)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static void switch_page$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.switch_page$VH.set(seg, x);
     }
-    public static MemoryAddress switch_page$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.switch_page$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment switch_page$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.switch_page$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void switch_page$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void switch_page$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.switch_page$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static switch_page switch_page (MemorySegment segment, MemorySession session) {
-        return switch_page.ofAddress(switch_page$get(segment), session);
+    public static switch_page switch_page(MemorySegment segment, SegmentScope scope) {
+        return switch_page.ofAddress(switch_page$get(segment), scope);
     }
     static final FunctionDescriptor select_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle select_page$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.select_page$FUNC
+    static final FunctionDescriptor select_page_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle select_page_UP$MH = RuntimeHelper.upcallHandle(select_page.class, "apply", _GtkNotebookClass.select_page_UP$FUNC);
+    static final FunctionDescriptor select_page_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle select_page_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.select_page_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*select_page)(GtkNotebook*,gboolean);
+     * }
+     */
     public interface select_page {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(select_page fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_page.class, fi, _GtkNotebookClass.select_page$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(select_page fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.select_page_UP$MH, fi, _GtkNotebookClass.select_page$FUNC, scope);
         }
-        static select_page ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static select_page ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkNotebookClass.select_page$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkNotebookClass.select_page_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -239,39 +307,65 @@ public class _GtkNotebookClass {
     public static VarHandle select_page$VH() {
         return _GtkNotebookClass.select_page$VH;
     }
-    public static MemoryAddress select_page$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.select_page$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*select_page)(GtkNotebook*,gboolean);
+     * }
+     */
+    public static MemorySegment select_page$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.select_page$VH.get(seg);
     }
-    public static void select_page$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*select_page)(GtkNotebook*,gboolean);
+     * }
+     */
+    public static void select_page$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.select_page$VH.set(seg, x);
     }
-    public static MemoryAddress select_page$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.select_page$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_page$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.select_page$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_page$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_page$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.select_page$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_page select_page (MemorySegment segment, MemorySession session) {
-        return select_page.ofAddress(select_page$get(segment), session);
+    public static select_page select_page(MemorySegment segment, SegmentScope scope) {
+        return select_page.ofAddress(select_page$get(segment), scope);
     }
     static final FunctionDescriptor focus_tab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle focus_tab$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.focus_tab$FUNC
+    static final FunctionDescriptor focus_tab_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle focus_tab_UP$MH = RuntimeHelper.upcallHandle(focus_tab.class, "apply", _GtkNotebookClass.focus_tab_UP$FUNC);
+    static final FunctionDescriptor focus_tab_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle focus_tab_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.focus_tab_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*focus_tab)(GtkNotebook*,GtkNotebookTab);
+     * }
+     */
     public interface focus_tab {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(focus_tab fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(focus_tab.class, fi, _GtkNotebookClass.focus_tab$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(focus_tab fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.focus_tab_UP$MH, fi, _GtkNotebookClass.focus_tab$FUNC, scope);
         }
-        static focus_tab ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static focus_tab ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkNotebookClass.focus_tab$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkNotebookClass.focus_tab_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,39 +377,65 @@ public class _GtkNotebookClass {
     public static VarHandle focus_tab$VH() {
         return _GtkNotebookClass.focus_tab$VH;
     }
-    public static MemoryAddress focus_tab$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.focus_tab$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*focus_tab)(GtkNotebook*,GtkNotebookTab);
+     * }
+     */
+    public static MemorySegment focus_tab$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.focus_tab$VH.get(seg);
     }
-    public static void focus_tab$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*focus_tab)(GtkNotebook*,GtkNotebookTab);
+     * }
+     */
+    public static void focus_tab$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.focus_tab$VH.set(seg, x);
     }
-    public static MemoryAddress focus_tab$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.focus_tab$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment focus_tab$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.focus_tab$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void focus_tab$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void focus_tab$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.focus_tab$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_tab focus_tab (MemorySegment segment, MemorySession session) {
-        return focus_tab.ofAddress(focus_tab$get(segment), session);
+    public static focus_tab focus_tab(MemorySegment segment, SegmentScope scope) {
+        return focus_tab.ofAddress(focus_tab$get(segment), scope);
     }
     static final FunctionDescriptor change_current_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle change_current_page$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.change_current_page$FUNC
+    static final FunctionDescriptor change_current_page_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle change_current_page_UP$MH = RuntimeHelper.upcallHandle(change_current_page.class, "apply", _GtkNotebookClass.change_current_page_UP$FUNC);
+    static final FunctionDescriptor change_current_page_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle change_current_page_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.change_current_page_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*change_current_page)(GtkNotebook*,gint);
+     * }
+     */
     public interface change_current_page {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(change_current_page fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(change_current_page.class, fi, _GtkNotebookClass.change_current_page$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(change_current_page fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.change_current_page_UP$MH, fi, _GtkNotebookClass.change_current_page$FUNC, scope);
         }
-        static change_current_page ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static change_current_page ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkNotebookClass.change_current_page$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkNotebookClass.change_current_page_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -327,39 +447,65 @@ public class _GtkNotebookClass {
     public static VarHandle change_current_page$VH() {
         return _GtkNotebookClass.change_current_page$VH;
     }
-    public static MemoryAddress change_current_page$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.change_current_page$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*change_current_page)(GtkNotebook*,gint);
+     * }
+     */
+    public static MemorySegment change_current_page$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.change_current_page$VH.get(seg);
     }
-    public static void change_current_page$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*change_current_page)(GtkNotebook*,gint);
+     * }
+     */
+    public static void change_current_page$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.change_current_page$VH.set(seg, x);
     }
-    public static MemoryAddress change_current_page$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.change_current_page$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment change_current_page$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.change_current_page$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void change_current_page$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void change_current_page$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.change_current_page$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_current_page change_current_page (MemorySegment segment, MemorySession session) {
-        return change_current_page.ofAddress(change_current_page$get(segment), session);
+    public static change_current_page change_current_page(MemorySegment segment, SegmentScope scope) {
+        return change_current_page.ofAddress(change_current_page$get(segment), scope);
     }
     static final FunctionDescriptor move_focus_out$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle move_focus_out$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.move_focus_out$FUNC
+    static final FunctionDescriptor move_focus_out_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle move_focus_out_UP$MH = RuntimeHelper.upcallHandle(move_focus_out.class, "apply", _GtkNotebookClass.move_focus_out_UP$FUNC);
+    static final FunctionDescriptor move_focus_out_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle move_focus_out_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.move_focus_out_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*move_focus_out)(GtkNotebook*,GtkDirectionType);
+     * }
+     */
     public interface move_focus_out {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(move_focus_out fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(move_focus_out.class, fi, _GtkNotebookClass.move_focus_out$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(move_focus_out fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.move_focus_out_UP$MH, fi, _GtkNotebookClass.move_focus_out$FUNC, scope);
         }
-        static move_focus_out ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static move_focus_out ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkNotebookClass.move_focus_out$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkNotebookClass.move_focus_out_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -371,40 +517,68 @@ public class _GtkNotebookClass {
     public static VarHandle move_focus_out$VH() {
         return _GtkNotebookClass.move_focus_out$VH;
     }
-    public static MemoryAddress move_focus_out$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.move_focus_out$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*move_focus_out)(GtkNotebook*,GtkDirectionType);
+     * }
+     */
+    public static MemorySegment move_focus_out$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.move_focus_out$VH.get(seg);
     }
-    public static void move_focus_out$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*move_focus_out)(GtkNotebook*,GtkDirectionType);
+     * }
+     */
+    public static void move_focus_out$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.move_focus_out$VH.set(seg, x);
     }
-    public static MemoryAddress move_focus_out$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.move_focus_out$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment move_focus_out$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.move_focus_out$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void move_focus_out$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void move_focus_out$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.move_focus_out$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_focus_out move_focus_out (MemorySegment segment, MemorySession session) {
-        return move_focus_out.ofAddress(move_focus_out$get(segment), session);
+    public static move_focus_out move_focus_out(MemorySegment segment, SegmentScope scope) {
+        return move_focus_out.ofAddress(move_focus_out$get(segment), scope);
     }
     static final FunctionDescriptor reorder_tab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle reorder_tab$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.reorder_tab$FUNC
+    static final FunctionDescriptor reorder_tab_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle reorder_tab_UP$MH = RuntimeHelper.upcallHandle(reorder_tab.class, "apply", _GtkNotebookClass.reorder_tab_UP$FUNC);
+    static final FunctionDescriptor reorder_tab_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle reorder_tab_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.reorder_tab_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*reorder_tab)(GtkNotebook*,GtkDirectionType,gboolean);
+     * }
+     */
     public interface reorder_tab {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(reorder_tab fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reorder_tab.class, fi, _GtkNotebookClass.reorder_tab$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(reorder_tab fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.reorder_tab_UP$MH, fi, _GtkNotebookClass.reorder_tab$FUNC, scope);
         }
-        static reorder_tab ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static reorder_tab ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (int)_GtkNotebookClass.reorder_tab$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (int)_GtkNotebookClass.reorder_tab_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -416,20 +590,32 @@ public class _GtkNotebookClass {
     public static VarHandle reorder_tab$VH() {
         return _GtkNotebookClass.reorder_tab$VH;
     }
-    public static MemoryAddress reorder_tab$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.reorder_tab$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*reorder_tab)(GtkNotebook*,GtkDirectionType,gboolean);
+     * }
+     */
+    public static MemorySegment reorder_tab$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.reorder_tab$VH.get(seg);
     }
-    public static void reorder_tab$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*reorder_tab)(GtkNotebook*,GtkDirectionType,gboolean);
+     * }
+     */
+    public static void reorder_tab$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.reorder_tab$VH.set(seg, x);
     }
-    public static MemoryAddress reorder_tab$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.reorder_tab$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reorder_tab$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.reorder_tab$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reorder_tab$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reorder_tab$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.reorder_tab$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reorder_tab reorder_tab (MemorySegment segment, MemorySession session) {
-        return reorder_tab.ofAddress(reorder_tab$get(segment), session);
+    public static reorder_tab reorder_tab(MemorySegment segment, SegmentScope scope) {
+        return reorder_tab.ofAddress(reorder_tab$get(segment), scope);
     }
     static final FunctionDescriptor insert_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -438,20 +624,40 @@ public class _GtkNotebookClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle insert_page$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.insert_page$FUNC
+    static final FunctionDescriptor insert_page_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle insert_page_UP$MH = RuntimeHelper.upcallHandle(insert_page.class, "apply", _GtkNotebookClass.insert_page_UP$FUNC);
+    static final FunctionDescriptor insert_page_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle insert_page_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.insert_page_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*insert_page)(GtkNotebook*,GtkWidget*,GtkWidget*,GtkWidget*,gint);
+     * }
+     */
     public interface insert_page {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, int _x4);
-        static MemorySegment allocate(insert_page fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(insert_page.class, fi, _GtkNotebookClass.insert_page$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, int _x4);
+        static MemorySegment allocate(insert_page fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.insert_page_UP$MH, fi, _GtkNotebookClass.insert_page$FUNC, scope);
         }
-        static insert_page ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, int __x4) -> {
+        static insert_page ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, int __x4) -> {
                 try {
-                    return (int)_GtkNotebookClass.insert_page$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, __x4);
+                    return (int)_GtkNotebookClass.insert_page_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -463,20 +669,32 @@ public class _GtkNotebookClass {
     public static VarHandle insert_page$VH() {
         return _GtkNotebookClass.insert_page$VH;
     }
-    public static MemoryAddress insert_page$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.insert_page$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*insert_page)(GtkNotebook*,GtkWidget*,GtkWidget*,GtkWidget*,gint);
+     * }
+     */
+    public static MemorySegment insert_page$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.insert_page$VH.get(seg);
     }
-    public static void insert_page$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*insert_page)(GtkNotebook*,GtkWidget*,GtkWidget*,GtkWidget*,gint);
+     * }
+     */
+    public static void insert_page$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.insert_page$VH.set(seg, x);
     }
-    public static MemoryAddress insert_page$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.insert_page$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment insert_page$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.insert_page$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void insert_page$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void insert_page$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.insert_page$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static insert_page insert_page (MemorySegment segment, MemorySession session) {
-        return insert_page.ofAddress(insert_page$get(segment), session);
+    public static insert_page insert_page(MemorySegment segment, SegmentScope scope) {
+        return insert_page.ofAddress(insert_page$get(segment), scope);
     }
     static final FunctionDescriptor create_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -484,20 +702,38 @@ public class _GtkNotebookClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle create_window$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.create_window$FUNC
+    static final FunctionDescriptor create_window_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle create_window_UP$MH = RuntimeHelper.upcallHandle(create_window.class, "apply", _GtkNotebookClass.create_window_UP$FUNC);
+    static final FunctionDescriptor create_window_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle create_window_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.create_window_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkNotebook* (*create_window)(GtkNotebook*,GtkWidget*,gint,gint);
+     * }
+     */
     public interface create_window {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3);
-        static MemorySegment allocate(create_window fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_window.class, fi, _GtkNotebookClass.create_window$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
+        static MemorySegment allocate(create_window fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.create_window_UP$MH, fi, _GtkNotebookClass.create_window$FUNC, scope);
         }
-        static create_window ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3) -> {
+        static create_window ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkNotebookClass.create_window$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3);
+                    return (java.lang.foreign.MemorySegment)_GtkNotebookClass.create_window_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -509,40 +745,68 @@ public class _GtkNotebookClass {
     public static VarHandle create_window$VH() {
         return _GtkNotebookClass.create_window$VH;
     }
-    public static MemoryAddress create_window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.create_window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkNotebook* (*create_window)(GtkNotebook*,GtkWidget*,gint,gint);
+     * }
+     */
+    public static MemorySegment create_window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.create_window$VH.get(seg);
     }
-    public static void create_window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkNotebook* (*create_window)(GtkNotebook*,GtkWidget*,gint,gint);
+     * }
+     */
+    public static void create_window$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.create_window$VH.set(seg, x);
     }
-    public static MemoryAddress create_window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.create_window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.create_window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_window$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.create_window$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_window create_window (MemorySegment segment, MemorySession session) {
-        return create_window.ofAddress(create_window$get(segment), session);
+    public static create_window create_window(MemorySegment segment, SegmentScope scope) {
+        return create_window.ofAddress(create_window$get(segment), scope);
     }
     static final FunctionDescriptor page_reordered$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle page_reordered$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.page_reordered$FUNC
+    static final FunctionDescriptor page_reordered_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle page_reordered_UP$MH = RuntimeHelper.upcallHandle(page_reordered.class, "apply", _GtkNotebookClass.page_reordered_UP$FUNC);
+    static final FunctionDescriptor page_reordered_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle page_reordered_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.page_reordered_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*page_reordered)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
     public interface page_reordered {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(page_reordered fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(page_reordered.class, fi, _GtkNotebookClass.page_reordered$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(page_reordered fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.page_reordered_UP$MH, fi, _GtkNotebookClass.page_reordered$FUNC, scope);
         }
-        static page_reordered ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static page_reordered ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkNotebookClass.page_reordered$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkNotebookClass.page_reordered_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -554,40 +818,68 @@ public class _GtkNotebookClass {
     public static VarHandle page_reordered$VH() {
         return _GtkNotebookClass.page_reordered$VH;
     }
-    public static MemoryAddress page_reordered$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_reordered$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*page_reordered)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static MemorySegment page_reordered$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_reordered$VH.get(seg);
     }
-    public static void page_reordered$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*page_reordered)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static void page_reordered$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.page_reordered$VH.set(seg, x);
     }
-    public static MemoryAddress page_reordered$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_reordered$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment page_reordered$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_reordered$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void page_reordered$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void page_reordered$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.page_reordered$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static page_reordered page_reordered (MemorySegment segment, MemorySession session) {
-        return page_reordered.ofAddress(page_reordered$get(segment), session);
+    public static page_reordered page_reordered(MemorySegment segment, SegmentScope scope) {
+        return page_reordered.ofAddress(page_reordered$get(segment), scope);
     }
     static final FunctionDescriptor page_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle page_removed$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.page_removed$FUNC
+    static final FunctionDescriptor page_removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle page_removed_UP$MH = RuntimeHelper.upcallHandle(page_removed.class, "apply", _GtkNotebookClass.page_removed_UP$FUNC);
+    static final FunctionDescriptor page_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle page_removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.page_removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*page_removed)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
     public interface page_removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(page_removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(page_removed.class, fi, _GtkNotebookClass.page_removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(page_removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.page_removed_UP$MH, fi, _GtkNotebookClass.page_removed$FUNC, scope);
         }
-        static page_removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static page_removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkNotebookClass.page_removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkNotebookClass.page_removed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -599,40 +891,68 @@ public class _GtkNotebookClass {
     public static VarHandle page_removed$VH() {
         return _GtkNotebookClass.page_removed$VH;
     }
-    public static MemoryAddress page_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*page_removed)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static MemorySegment page_removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_removed$VH.get(seg);
     }
-    public static void page_removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*page_removed)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static void page_removed$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.page_removed$VH.set(seg, x);
     }
-    public static MemoryAddress page_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment page_removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void page_removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void page_removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.page_removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static page_removed page_removed (MemorySegment segment, MemorySession session) {
-        return page_removed.ofAddress(page_removed$get(segment), session);
+    public static page_removed page_removed(MemorySegment segment, SegmentScope scope) {
+        return page_removed.ofAddress(page_removed$get(segment), scope);
     }
     static final FunctionDescriptor page_added$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle page_added$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass.page_added$FUNC
+    static final FunctionDescriptor page_added_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle page_added_UP$MH = RuntimeHelper.upcallHandle(page_added.class, "apply", _GtkNotebookClass.page_added_UP$FUNC);
+    static final FunctionDescriptor page_added_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle page_added_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass.page_added_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*page_added)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
     public interface page_added {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(page_added fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(page_added.class, fi, _GtkNotebookClass.page_added$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(page_added fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass.page_added_UP$MH, fi, _GtkNotebookClass.page_added$FUNC, scope);
         }
-        static page_added ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static page_added ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkNotebookClass.page_added$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkNotebookClass.page_added_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -644,36 +964,56 @@ public class _GtkNotebookClass {
     public static VarHandle page_added$VH() {
         return _GtkNotebookClass.page_added$VH;
     }
-    public static MemoryAddress page_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_added$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*page_added)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static MemorySegment page_added$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_added$VH.get(seg);
     }
-    public static void page_added$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*page_added)(GtkNotebook*,GtkWidget*,guint);
+     * }
+     */
+    public static void page_added$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass.page_added$VH.set(seg, x);
     }
-    public static MemoryAddress page_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass.page_added$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment page_added$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass.page_added$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void page_added$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void page_added$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass.page_added$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static page_added page_added (MemorySegment segment, MemorySession session) {
-        return page_added.ofAddress(page_added$get(segment), session);
+    public static page_added page_added(MemorySegment segment, SegmentScope scope) {
+        return page_added.ofAddress(page_added$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkNotebookClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkNotebookClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved1_UP$MH, fi, _GtkNotebookClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -685,36 +1025,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkNotebookClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkNotebookClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkNotebookClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved2_UP$MH, fi, _GtkNotebookClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -726,36 +1086,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkNotebookClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkNotebookClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkNotebookClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved3_UP$MH, fi, _GtkNotebookClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -767,36 +1147,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkNotebookClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkNotebookClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkNotebookClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved4_UP$MH, fi, _GtkNotebookClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -808,36 +1208,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkNotebookClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved5$FUNC
+    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkNotebookClass._gtk_reserved5_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved5)();
+     * }
+     */
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved5.class, fi, _GtkNotebookClass._gtk_reserved5$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved5_UP$MH, fi, _GtkNotebookClass._gtk_reserved5$FUNC, scope);
         }
-        static _gtk_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -849,36 +1269,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved5$VH() {
         return _GtkNotebookClass._gtk_reserved5$VH;
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved5$VH.get(seg);
     }
-    public static void _gtk_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), session);
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved6$FUNC
+    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkNotebookClass._gtk_reserved6_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved6)();
+     * }
+     */
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved6.class, fi, _GtkNotebookClass._gtk_reserved6$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved6_UP$MH, fi, _GtkNotebookClass._gtk_reserved6$FUNC, scope);
         }
-        static _gtk_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -890,36 +1330,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved6$VH() {
         return _GtkNotebookClass._gtk_reserved6$VH;
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved6$VH.get(seg);
     }
-    public static void _gtk_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), session);
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved7$FUNC
+    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkNotebookClass._gtk_reserved7_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved7)();
+     * }
+     */
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved7.class, fi, _GtkNotebookClass._gtk_reserved7$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved7_UP$MH, fi, _GtkNotebookClass._gtk_reserved7$FUNC, scope);
         }
-        static _gtk_reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved7$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -931,36 +1391,56 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved7$VH() {
         return _GtkNotebookClass._gtk_reserved7$VH;
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved7$VH.get(seg);
     }
-    public static void _gtk_reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), session);
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8$MH = RuntimeHelper.downcallHandle(
-        _GtkNotebookClass._gtk_reserved8$FUNC
+    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkNotebookClass._gtk_reserved8_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkNotebookClass._gtk_reserved8_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved8)();
+     * }
+     */
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved8.class, fi, _GtkNotebookClass._gtk_reserved8$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkNotebookClass._gtk_reserved8_UP$MH, fi, _GtkNotebookClass._gtk_reserved8$FUNC, scope);
         }
-        static _gtk_reserved8 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkNotebookClass._gtk_reserved8$MH.invokeExact((Addressable)symbol);
+                    _GtkNotebookClass._gtk_reserved8_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -972,27 +1452,39 @@ public class _GtkNotebookClass {
     public static VarHandle _gtk_reserved8$VH() {
         return _GtkNotebookClass._gtk_reserved8$VH;
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved8$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved8$VH.get(seg);
     }
-    public static void _gtk_reserved8$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved8$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkNotebookClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkNotebookClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkNotebookClass._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), session);
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

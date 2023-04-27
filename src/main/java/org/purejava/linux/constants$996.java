@@ -7,38 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$996 {
+final class constants$996 {
 
-    static final FunctionDescriptor hb_unicode_general_category_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$996() {}
+    static final FunctionDescriptor cairo_read_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_read_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$996.cairo_read_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor cairo_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_general_category_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$996.hb_unicode_general_category_func_t$FUNC
+    static final MethodHandle cairo_create$MH = RuntimeHelper.downcallHandle(
+        "cairo_create",
+        constants$996.cairo_create$FUNC
     );
-    static final FunctionDescriptor hb_unicode_mirroring_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_mirroring_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$996.hb_unicode_mirroring_func_t$FUNC
+    static final MethodHandle cairo_reference$MH = RuntimeHelper.downcallHandle(
+        "cairo_reference",
+        constants$996.cairo_reference$FUNC
     );
-    static final FunctionDescriptor hb_unicode_script_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_script_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$996.hb_unicode_script_func_t$FUNC
+    static final MethodHandle cairo_destroy$MH = RuntimeHelper.downcallHandle(
+        "cairo_destroy",
+        constants$996.cairo_destroy$FUNC
     );
-    static final FunctionDescriptor hb_unicode_compose_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_get_reference_count$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_reference_count",
+        constants$996.cairo_get_reference_count$FUNC
+    );
+    static final FunctionDescriptor cairo_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_user_data",
+        constants$996.cairo_get_user_data$FUNC
     );
 }
 

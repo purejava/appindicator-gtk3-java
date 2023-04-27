@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$537 {
+final class constants$537 {
 
-    static final FunctionDescriptor g_application_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_activate$MH = RuntimeHelper.downcallHandle(
-        "g_application_activate",
-        constants$537.g_application_activate$FUNC
-    );
-    static final FunctionDescriptor g_application_open$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$537() {}
+    static final FunctionDescriptor ftruncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle ftruncate$MH = RuntimeHelper.downcallHandle(
+        "ftruncate",
+        constants$537.ftruncate$FUNC
+    );
+    static final FunctionDescriptor brk$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_open$MH = RuntimeHelper.downcallHandle(
-        "g_application_open",
-        constants$537.g_application_open$FUNC
+    static final MethodHandle brk$MH = RuntimeHelper.downcallHandle(
+        "brk",
+        constants$537.brk$FUNC
     );
-    static final FunctionDescriptor g_application_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor sbrk$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle sbrk$MH = RuntimeHelper.downcallHandle(
+        "sbrk",
+        constants$537.sbrk$FUNC
+    );
+    static final FunctionDescriptor syscall$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle syscall$MH = RuntimeHelper.downcallHandleVariadic(
+        "syscall",
+        constants$537.syscall$FUNC
+    );
+    static final FunctionDescriptor lockf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_application_run$MH = RuntimeHelper.downcallHandle(
-        "g_application_run",
-        constants$537.g_application_run$FUNC
+    static final MethodHandle lockf$MH = RuntimeHelper.downcallHandle(
+        "lockf",
+        constants$537.lockf$FUNC
     );
-    static final FunctionDescriptor g_application_quit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor fdatasync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_application_quit$MH = RuntimeHelper.downcallHandle(
-        "g_application_quit",
-        constants$537.g_application_quit$FUNC
-    );
-    static final FunctionDescriptor g_application_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_application_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_default",
-        constants$537.g_application_get_default$FUNC
-    );
-    static final FunctionDescriptor g_application_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_default$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_default",
-        constants$537.g_application_set_default$FUNC
+    static final MethodHandle fdatasync$MH = RuntimeHelper.downcallHandle(
+        "fdatasync",
+        constants$537.fdatasync$FUNC
     );
 }
 

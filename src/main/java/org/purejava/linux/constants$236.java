@@ -7,54 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$236 {
+final class constants$236 {
 
-    static final FunctionDescriptor g_variant_get_data_as_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_data_as_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_data_as_bytes",
-        constants$236.g_variant_get_data_as_bytes$FUNC
-    );
-    static final FunctionDescriptor g_variant_store$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$236() {}
+    static final FunctionDescriptor g_variant_type_new_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_store$MH = RuntimeHelper.downcallHandle(
-        "g_variant_store",
-        constants$236.g_variant_store$FUNC
+    static final MethodHandle g_variant_type_new_dict_entry$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_new_dict_entry",
+        constants$236.g_variant_type_new_dict_entry$FUNC
     );
-    static final FunctionDescriptor g_variant_print$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_print$MH = RuntimeHelper.downcallHandle(
-        "g_variant_print",
-        constants$236.g_variant_print$FUNC
-    );
-    static final FunctionDescriptor g_variant_print_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_print_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_print_string",
-        constants$236.g_variant_print_string$FUNC
-    );
-    static final FunctionDescriptor g_variant_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_variant_type_checked_$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_hash$MH = RuntimeHelper.downcallHandle(
-        "g_variant_hash",
-        constants$236.g_variant_hash$FUNC
+    static final MethodHandle g_variant_type_checked_$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_checked_",
+        constants$236.g_variant_type_checked_$FUNC
     );
-    static final FunctionDescriptor g_variant_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_string_get_depth_$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_equal$MH = RuntimeHelper.downcallHandle(
-        "g_variant_equal",
-        constants$236.g_variant_equal$FUNC
+    static final MethodHandle g_variant_type_string_get_depth_$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_string_get_depth_",
+        constants$236.g_variant_type_string_get_depth_$FUNC
+    );
+    static final FunctionDescriptor g_variant_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_unref$MH = RuntimeHelper.downcallHandle(
+        "g_variant_unref",
+        constants$236.g_variant_unref$FUNC
+    );
+    static final FunctionDescriptor g_variant_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_ref$MH = RuntimeHelper.downcallHandle(
+        "g_variant_ref",
+        constants$236.g_variant_ref$FUNC
+    );
+    static final FunctionDescriptor g_variant_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_ref_sink$MH = RuntimeHelper.downcallHandle(
+        "g_variant_ref_sink",
+        constants$236.g_variant_ref_sink$FUNC
     );
 }
 

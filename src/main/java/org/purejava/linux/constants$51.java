@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$51 {
+final class constants$51 {
 
-    static final FunctionDescriptor reallocarray$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$51() {}
+    static final FunctionDescriptor srand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle srand48_r$MH = RuntimeHelper.downcallHandle(
+        "srand48_r",
+        constants$51.srand48_r$FUNC
+    );
+    static final FunctionDescriptor seed48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle reallocarray$MH = RuntimeHelper.downcallHandle(
-        "reallocarray",
-        constants$51.reallocarray$FUNC
+    static final MethodHandle seed48_r$MH = RuntimeHelper.downcallHandle(
+        "seed48_r",
+        constants$51.seed48_r$FUNC
     );
-    static final FunctionDescriptor alloca$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle alloca$MH = RuntimeHelper.downcallHandle(
-        "alloca",
-        constants$51.alloca$FUNC
-    );
-    static final FunctionDescriptor valloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle valloc$MH = RuntimeHelper.downcallHandle(
-        "valloc",
-        constants$51.valloc$FUNC
-    );
-    static final FunctionDescriptor posix_memalign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor lcong48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lcong48_r$MH = RuntimeHelper.downcallHandle(
+        "lcong48_r",
+        constants$51.lcong48_r$FUNC
+    );
+    static final FunctionDescriptor arc4random$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle arc4random$MH = RuntimeHelper.downcallHandle(
+        "arc4random",
+        constants$51.arc4random$FUNC
+    );
+    static final FunctionDescriptor arc4random_buf$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle posix_memalign$MH = RuntimeHelper.downcallHandle(
-        "posix_memalign",
-        constants$51.posix_memalign$FUNC
+    static final MethodHandle arc4random_buf$MH = RuntimeHelper.downcallHandle(
+        "arc4random_buf",
+        constants$51.arc4random_buf$FUNC
     );
-    static final FunctionDescriptor aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor arc4random_uniform$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle aligned_alloc$MH = RuntimeHelper.downcallHandle(
-        "aligned_alloc",
-        constants$51.aligned_alloc$FUNC
-    );
-    static final FunctionDescriptor abort$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle abort$MH = RuntimeHelper.downcallHandle(
-        "abort",
-        constants$51.abort$FUNC
+    static final MethodHandle arc4random_uniform$MH = RuntimeHelper.downcallHandle(
+        "arc4random_uniform",
+        constants$51.arc4random_uniform$FUNC
     );
 }
 

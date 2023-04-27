@@ -7,57 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$593 {
+final class constants$593 {
 
-    static final FunctionDescriptor g_dbus_action_group_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$593() {}
+    static final FunctionDescriptor g_dbus_proxy_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_object_path",
+        constants$593.g_dbus_proxy_get_object_path$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_get_interface_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_interface_name$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_interface_name",
+        constants$593.g_dbus_proxy_get_interface_name$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_get_default_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_default_timeout$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_default_timeout",
+        constants$593.g_dbus_proxy_get_default_timeout$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_set_default_timeout$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_set_default_timeout$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_default_timeout",
+        constants$593.g_dbus_proxy_set_default_timeout$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_get_interface_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_interface_info$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_interface_info",
+        constants$593.g_dbus_proxy_get_interface_info$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_set_interface_info$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_action_group_get$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_action_group_get",
-        constants$593.g_dbus_action_group_get$FUNC
-    );
-    static final FunctionDescriptor g_dbus_address_escape_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_address_escape_value$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_escape_value",
-        constants$593.g_dbus_address_escape_value$FUNC
-    );
-    static final FunctionDescriptor g_dbus_is_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_is_address$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_address",
-        constants$593.g_dbus_is_address$FUNC
-    );
-    static final FunctionDescriptor g_dbus_is_supported_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_is_supported_address$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_supported_address",
-        constants$593.g_dbus_is_supported_address$FUNC
-    );
-    static final FunctionDescriptor g_dbus_address_get_stream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_address_get_stream$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream",
-        constants$593.g_dbus_address_get_stream$FUNC
-    );
-    static final FunctionDescriptor g_dbus_address_get_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_address_get_stream_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream_finish",
-        constants$593.g_dbus_address_get_stream_finish$FUNC
+    static final MethodHandle g_dbus_proxy_set_interface_info$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_interface_info",
+        constants$593.g_dbus_proxy_set_interface_info$FUNC
     );
 }
 

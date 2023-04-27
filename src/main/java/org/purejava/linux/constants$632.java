@@ -7,68 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$632 {
+final class constants$632 {
 
-    static final FunctionDescriptor g_dbus_object_manager_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_object",
-        constants$632.g_dbus_object_manager_get_object$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_interface",
-        constants$632.g_dbus_object_manager_get_interface$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_manager_client_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_type",
-        constants$632.g_dbus_object_manager_client_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$632() {}
+    static final FunctionDescriptor g_file_eject_mountable_with_operation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_eject_mountable_with_operation$MH = RuntimeHelper.downcallHandle(
+        "g_file_eject_mountable_with_operation",
+        constants$632.g_file_eject_mountable_with_operation$FUNC
+    );
+    static final FunctionDescriptor g_file_eject_mountable_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new",
-        constants$632.g_dbus_object_manager_client_new$FUNC
+    static final MethodHandle g_file_eject_mountable_with_operation_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_eject_mountable_with_operation_finish",
+        constants$632.g_file_eject_mountable_with_operation_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_finish",
-        constants$632.g_dbus_object_manager_client_new_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_build_attribute_list_for_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_build_attribute_list_for_copy$MH = RuntimeHelper.downcallHandle(
+        "g_file_build_attribute_list_for_copy",
+        constants$632.g_file_build_attribute_list_for_copy$FUNC
+    );
+    static final FunctionDescriptor g_file_copy_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_manager_client_new_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_sync",
-        constants$632.g_dbus_object_manager_client_new_sync$FUNC
+    static final MethodHandle g_file_copy_attributes$MH = RuntimeHelper.downcallHandle(
+        "g_file_copy_attributes",
+        constants$632.g_file_copy_attributes$FUNC
+    );
+    static final FunctionDescriptor g_file_monitor_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_monitor_directory$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_directory",
+        constants$632.g_file_monitor_directory$FUNC
+    );
+    static final FunctionDescriptor g_file_monitor_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_monitor_file$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_file",
+        constants$632.g_file_monitor_file$FUNC
     );
 }
 

@@ -7,49 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2001 {
+final class constants$2001 {
 
-    static final FunctionDescriptor gtk_search_bar_get_show_close_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_get_show_close_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_get_show_close_button",
-        constants$2001.gtk_search_bar_get_show_close_button$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_set_show_close_button$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_set_show_close_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_set_show_close_button",
-        constants$2001.gtk_search_bar_set_show_close_button$FUNC
-    );
-    static final FunctionDescriptor gtk_search_bar_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_search_bar_handle_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_bar_handle_event",
-        constants$2001.gtk_search_bar_handle_event$FUNC
-    );
-    static final FunctionDescriptor gtk_search_entry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_search_entry_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_entry_get_type",
-        constants$2001.gtk_search_entry_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_search_entry_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_search_entry_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_entry_new",
-        constants$2001.gtk_search_entry_new$FUNC
-    );
-    static final FunctionDescriptor gtk_search_entry_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_search_entry_handle_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_search_entry_handle_event",
-        constants$2001.gtk_search_entry_handle_event$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2001() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::description");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::icon");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::symbolic-icon");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::content-type");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::fast-content-type");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::size");
 }
 
 

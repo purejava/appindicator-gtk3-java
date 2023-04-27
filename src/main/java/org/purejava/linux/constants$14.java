@@ -7,8 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$14 {
+final class constants$14 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$14() {}
+    static final FunctionDescriptor __strtok_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle __strtok_r$MH = RuntimeHelper.downcallHandle(
+        "__strtok_r",
+        constants$14.__strtok_r$FUNC
+    );
+    static final FunctionDescriptor strtok_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strtok_r$MH = RuntimeHelper.downcallHandle(
+        "strtok_r",
+        constants$14.strtok_r$FUNC
+    );
     static final FunctionDescriptor strlen$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -39,23 +59,6 @@ class constants$14 {
     static final MethodHandle strerror_r$MH = RuntimeHelper.downcallHandle(
         "strerror_r",
         constants$14.strerror_r$FUNC
-    );
-    static final FunctionDescriptor strerror_l$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strerror_l$MH = RuntimeHelper.downcallHandle(
-        "strerror_l",
-        constants$14.strerror_l$FUNC
-    );
-    static final FunctionDescriptor bcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle bcmp$MH = RuntimeHelper.downcallHandle(
-        "bcmp",
-        constants$14.bcmp$FUNC
     );
 }
 

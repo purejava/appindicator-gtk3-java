@@ -7,47 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$559 {
+final class constants$559 {
 
-    static final FunctionDescriptor g_cancellable_release_fd$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$559() {}
+    static final FunctionDescriptor GDBusMessageFilterFunction_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_release_fd$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_release_fd",
-        constants$559.g_cancellable_release_fd$FUNC
+    static final MethodHandle GDBusMessageFilterFunction_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$559.GDBusMessageFilterFunction_DOWN$FUNC
     );
-    static final FunctionDescriptor g_cancellable_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_connection_add_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_source_new$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_source_new",
-        constants$559.g_cancellable_source_new$FUNC
+    static final MethodHandle g_dbus_connection_add_filter$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_add_filter",
+        constants$559.g_dbus_connection_add_filter$FUNC
     );
-    static final FunctionDescriptor g_cancellable_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_cancellable_get_current$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_current",
-        constants$559.g_cancellable_get_current$FUNC
+    static final FunctionDescriptor g_dbus_connection_remove_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_cancellable_push_current$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle g_dbus_connection_remove_filter$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_remove_filter",
+        constants$559.g_dbus_connection_remove_filter$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_dbus_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_quark",
+        constants$559.g_dbus_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_is_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_push_current$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_push_current",
-        constants$559.g_cancellable_push_current$FUNC
+    static final MethodHandle g_dbus_error_is_remote_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_is_remote_error",
+        constants$559.g_dbus_error_is_remote_error$FUNC
     );
-    static final FunctionDescriptor g_cancellable_pop_current$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_dbus_error_get_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_pop_current$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_pop_current",
-        constants$559.g_cancellable_pop_current$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_reset$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_reset",
-        constants$559.g_cancellable_reset$FUNC
+    static final MethodHandle g_dbus_error_get_remote_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_get_remote_error",
+        constants$559.g_dbus_error_get_remote_error$FUNC
     );
 }
 

@@ -7,9 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkPrintOperationPreviewIface {
+ *     GTypeInterface g_iface;
+ *     void (*ready)(GtkPrintOperationPreview*,GtkPrintContext*);
+ *     void (*got_page_size)(GtkPrintOperationPreview*,GtkPrintContext*,GtkPageSetup*);
+ *     void (*render_page)(GtkPrintOperationPreview*,gint);
+ *     gboolean (*is_selected)(GtkPrintOperationPreview*,gint);
+ *     void (*end_preview)(GtkPrintOperationPreview*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ *     void (*_gtk_reserved5)();
+ *     void (*_gtk_reserved6)();
+ *     void (*_gtk_reserved7)();
+ *     void (*_gtk_reserved8)();
+ * };
+ * }
+ */
 public class _GtkPrintOperationPreviewIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -38,20 +58,34 @@ public class _GtkPrintOperationPreviewIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ready$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface.ready$FUNC
+    static final FunctionDescriptor ready_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle ready_UP$MH = RuntimeHelper.upcallHandle(ready.class, "apply", _GtkPrintOperationPreviewIface.ready_UP$FUNC);
+    static final FunctionDescriptor ready_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ready_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface.ready_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*ready)(GtkPrintOperationPreview*,GtkPrintContext*);
+     * }
+     */
     public interface ready {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(ready fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(ready.class, fi, _GtkPrintOperationPreviewIface.ready$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(ready fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface.ready_UP$MH, fi, _GtkPrintOperationPreviewIface.ready$FUNC, scope);
         }
-        static ready ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static ready ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkPrintOperationPreviewIface.ready$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkPrintOperationPreviewIface.ready_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -63,40 +97,68 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle ready$VH() {
         return _GtkPrintOperationPreviewIface.ready$VH;
     }
-    public static MemoryAddress ready$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.ready$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*ready)(GtkPrintOperationPreview*,GtkPrintContext*);
+     * }
+     */
+    public static MemorySegment ready$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.ready$VH.get(seg);
     }
-    public static void ready$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*ready)(GtkPrintOperationPreview*,GtkPrintContext*);
+     * }
+     */
+    public static void ready$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface.ready$VH.set(seg, x);
     }
-    public static MemoryAddress ready$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.ready$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment ready$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.ready$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void ready$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void ready$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface.ready$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ready ready (MemorySegment segment, MemorySession session) {
-        return ready.ofAddress(ready$get(segment), session);
+    public static ready ready(MemorySegment segment, SegmentScope scope) {
+        return ready.ofAddress(ready$get(segment), scope);
     }
     static final FunctionDescriptor got_page_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle got_page_size$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface.got_page_size$FUNC
+    static final FunctionDescriptor got_page_size_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle got_page_size_UP$MH = RuntimeHelper.upcallHandle(got_page_size.class, "apply", _GtkPrintOperationPreviewIface.got_page_size_UP$FUNC);
+    static final FunctionDescriptor got_page_size_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle got_page_size_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface.got_page_size_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*got_page_size)(GtkPrintOperationPreview*,GtkPrintContext*,GtkPageSetup*);
+     * }
+     */
     public interface got_page_size {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(got_page_size fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(got_page_size.class, fi, _GtkPrintOperationPreviewIface.got_page_size$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(got_page_size fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface.got_page_size_UP$MH, fi, _GtkPrintOperationPreviewIface.got_page_size$FUNC, scope);
         }
-        static got_page_size ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static got_page_size ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkPrintOperationPreviewIface.got_page_size$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GtkPrintOperationPreviewIface.got_page_size_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -108,39 +170,65 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle got_page_size$VH() {
         return _GtkPrintOperationPreviewIface.got_page_size$VH;
     }
-    public static MemoryAddress got_page_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.got_page_size$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*got_page_size)(GtkPrintOperationPreview*,GtkPrintContext*,GtkPageSetup*);
+     * }
+     */
+    public static MemorySegment got_page_size$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.got_page_size$VH.get(seg);
     }
-    public static void got_page_size$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*got_page_size)(GtkPrintOperationPreview*,GtkPrintContext*,GtkPageSetup*);
+     * }
+     */
+    public static void got_page_size$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface.got_page_size$VH.set(seg, x);
     }
-    public static MemoryAddress got_page_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.got_page_size$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment got_page_size$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.got_page_size$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void got_page_size$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void got_page_size$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface.got_page_size$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static got_page_size got_page_size (MemorySegment segment, MemorySession session) {
-        return got_page_size.ofAddress(got_page_size$get(segment), session);
+    public static got_page_size got_page_size(MemorySegment segment, SegmentScope scope) {
+        return got_page_size.ofAddress(got_page_size$get(segment), scope);
     }
     static final FunctionDescriptor render_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle render_page$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface.render_page$FUNC
+    static final FunctionDescriptor render_page_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle render_page_UP$MH = RuntimeHelper.upcallHandle(render_page.class, "apply", _GtkPrintOperationPreviewIface.render_page_UP$FUNC);
+    static final FunctionDescriptor render_page_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle render_page_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface.render_page_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*render_page)(GtkPrintOperationPreview*,gint);
+     * }
+     */
     public interface render_page {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(render_page fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(render_page.class, fi, _GtkPrintOperationPreviewIface.render_page$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(render_page fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface.render_page_UP$MH, fi, _GtkPrintOperationPreviewIface.render_page$FUNC, scope);
         }
-        static render_page ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static render_page ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkPrintOperationPreviewIface.render_page$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkPrintOperationPreviewIface.render_page_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -152,39 +240,65 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle render_page$VH() {
         return _GtkPrintOperationPreviewIface.render_page$VH;
     }
-    public static MemoryAddress render_page$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.render_page$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*render_page)(GtkPrintOperationPreview*,gint);
+     * }
+     */
+    public static MemorySegment render_page$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.render_page$VH.get(seg);
     }
-    public static void render_page$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*render_page)(GtkPrintOperationPreview*,gint);
+     * }
+     */
+    public static void render_page$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface.render_page$VH.set(seg, x);
     }
-    public static MemoryAddress render_page$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.render_page$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment render_page$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.render_page$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void render_page$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void render_page$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface.render_page$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static render_page render_page (MemorySegment segment, MemorySession session) {
-        return render_page.ofAddress(render_page$get(segment), session);
+    public static render_page render_page(MemorySegment segment, SegmentScope scope) {
+        return render_page.ofAddress(render_page$get(segment), scope);
     }
     static final FunctionDescriptor is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle is_selected$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface.is_selected$FUNC
+    static final FunctionDescriptor is_selected_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle is_selected_UP$MH = RuntimeHelper.upcallHandle(is_selected.class, "apply", _GtkPrintOperationPreviewIface.is_selected_UP$FUNC);
+    static final FunctionDescriptor is_selected_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle is_selected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface.is_selected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_selected)(GtkPrintOperationPreview*,gint);
+     * }
+     */
     public interface is_selected {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(is_selected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_selected.class, fi, _GtkPrintOperationPreviewIface.is_selected$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(is_selected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface.is_selected_UP$MH, fi, _GtkPrintOperationPreviewIface.is_selected$FUNC, scope);
         }
-        static is_selected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static is_selected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkPrintOperationPreviewIface.is_selected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkPrintOperationPreviewIface.is_selected_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -196,38 +310,62 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle is_selected$VH() {
         return _GtkPrintOperationPreviewIface.is_selected$VH;
     }
-    public static MemoryAddress is_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.is_selected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_selected)(GtkPrintOperationPreview*,gint);
+     * }
+     */
+    public static MemorySegment is_selected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.is_selected$VH.get(seg);
     }
-    public static void is_selected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_selected)(GtkPrintOperationPreview*,gint);
+     * }
+     */
+    public static void is_selected$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface.is_selected$VH.set(seg, x);
     }
-    public static MemoryAddress is_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.is_selected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_selected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.is_selected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_selected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_selected$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface.is_selected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_selected is_selected (MemorySegment segment, MemorySession session) {
-        return is_selected.ofAddress(is_selected$get(segment), session);
+    public static is_selected is_selected(MemorySegment segment, SegmentScope scope) {
+        return is_selected.ofAddress(is_selected$get(segment), scope);
     }
     static final FunctionDescriptor end_preview$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle end_preview$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface.end_preview$FUNC
+    static final FunctionDescriptor end_preview_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle end_preview_UP$MH = RuntimeHelper.upcallHandle(end_preview.class, "apply", _GtkPrintOperationPreviewIface.end_preview_UP$FUNC);
+    static final FunctionDescriptor end_preview_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle end_preview_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface.end_preview_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*end_preview)(GtkPrintOperationPreview*);
+     * }
+     */
     public interface end_preview {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(end_preview fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(end_preview.class, fi, _GtkPrintOperationPreviewIface.end_preview$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(end_preview fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface.end_preview_UP$MH, fi, _GtkPrintOperationPreviewIface.end_preview$FUNC, scope);
         }
-        static end_preview ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static end_preview ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkPrintOperationPreviewIface.end_preview$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkPrintOperationPreviewIface.end_preview_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -239,36 +377,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle end_preview$VH() {
         return _GtkPrintOperationPreviewIface.end_preview$VH;
     }
-    public static MemoryAddress end_preview$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.end_preview$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*end_preview)(GtkPrintOperationPreview*);
+     * }
+     */
+    public static MemorySegment end_preview$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.end_preview$VH.get(seg);
     }
-    public static void end_preview$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*end_preview)(GtkPrintOperationPreview*);
+     * }
+     */
+    public static void end_preview$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface.end_preview$VH.set(seg, x);
     }
-    public static MemoryAddress end_preview$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface.end_preview$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment end_preview$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface.end_preview$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void end_preview$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void end_preview$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface.end_preview$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static end_preview end_preview (MemorySegment segment, MemorySession session) {
-        return end_preview.ofAddress(end_preview$get(segment), session);
+    public static end_preview end_preview(MemorySegment segment, SegmentScope scope) {
+        return end_preview.ofAddress(end_preview$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved1_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -280,36 +438,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved2_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -321,36 +499,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved3_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -362,36 +560,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved4_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -403,36 +621,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved5$FUNC
+    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved5_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved5)();
+     * }
+     */
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved5.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved5$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved5_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved5$FUNC, scope);
         }
-        static _gtk_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -444,36 +682,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved5$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved5$VH;
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved5$VH.get(seg);
     }
-    public static void _gtk_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), session);
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved6$FUNC
+    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved6_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved6)();
+     * }
+     */
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved6.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved6$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved6_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved6$FUNC, scope);
         }
-        static _gtk_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -485,36 +743,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved6$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved6$VH;
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved6$VH.get(seg);
     }
-    public static void _gtk_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), session);
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved7$FUNC
+    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved7_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved7)();
+     * }
+     */
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved7.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved7$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved7_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved7$FUNC, scope);
         }
-        static _gtk_reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved7$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -526,36 +804,56 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved7$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved7$VH;
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved7$VH.get(seg);
     }
-    public static void _gtk_reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), session);
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8$MH = RuntimeHelper.downcallHandle(
-        _GtkPrintOperationPreviewIface._gtk_reserved8$FUNC
+    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkPrintOperationPreviewIface._gtk_reserved8_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPrintOperationPreviewIface._gtk_reserved8_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved8)();
+     * }
+     */
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved8.class, fi, _GtkPrintOperationPreviewIface._gtk_reserved8$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPrintOperationPreviewIface._gtk_reserved8_UP$MH, fi, _GtkPrintOperationPreviewIface._gtk_reserved8$FUNC, scope);
         }
-        static _gtk_reserved8 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkPrintOperationPreviewIface._gtk_reserved8$MH.invokeExact((Addressable)symbol);
+                    _GtkPrintOperationPreviewIface._gtk_reserved8_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -567,27 +865,39 @@ public class _GtkPrintOperationPreviewIface {
     public static VarHandle _gtk_reserved8$VH() {
         return _GtkPrintOperationPreviewIface._gtk_reserved8$VH;
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved8$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved8$VH.get(seg);
     }
-    public static void _gtk_reserved8$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved8$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPrintOperationPreviewIface._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPrintOperationPreviewIface._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPrintOperationPreviewIface._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), session);
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

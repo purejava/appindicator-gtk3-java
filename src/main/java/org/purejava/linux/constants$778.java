@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$778 {
+final class constants$778 {
 
-    static final FunctionDescriptor g_pollable_stream_write_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$778() {}
+    static final FunctionDescriptor g_socket_control_message_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_control_message_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_get_size",
+        constants$778.g_socket_control_message_get_size$FUNC
+    );
+    static final FunctionDescriptor g_socket_control_message_get_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_control_message_get_level$MH = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_get_level",
+        constants$778.g_socket_control_message_get_level$FUNC
+    );
+    static final FunctionDescriptor g_socket_control_message_get_msg_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_control_message_get_msg_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_get_msg_type",
+        constants$778.g_socket_control_message_get_msg_type$FUNC
+    );
+    static final FunctionDescriptor g_socket_control_message_serialize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_control_message_serialize$MH = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_serialize",
+        constants$778.g_socket_control_message_serialize$FUNC
+    );
+    static final FunctionDescriptor g_socket_control_message_deserialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_stream_write_all$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_stream_write_all",
-        constants$778.g_pollable_stream_write_all$FUNC
+    static final MethodHandle g_socket_control_message_deserialize$MH = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_deserialize",
+        constants$778.g_socket_control_message_deserialize$FUNC
     );
-    static final FunctionDescriptor g_power_profile_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_power_profile_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_power_profile_monitor_get_type",
-        constants$778.g_power_profile_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GPowerProfileMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GPowerProfileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GPowerProfileMonitor",
-        constants$778.glib_autoptr_clear_GPowerProfileMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GPowerProfileMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GPowerProfileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GPowerProfileMonitor",
-        constants$778.glib_autoptr_cleanup_GPowerProfileMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GPowerProfileMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GPowerProfileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GPowerProfileMonitor",
-        constants$778.glib_listautoptr_cleanup_GPowerProfileMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GPowerProfileMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GPowerProfileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GPowerProfileMonitor",
-        constants$778.glib_slistautoptr_cleanup_GPowerProfileMonitor$FUNC
+    static final FunctionDescriptor g_socket_listener_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_listener_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_listener_get_type",
+        constants$778.g_socket_listener_get_type$FUNC
     );
 }
 

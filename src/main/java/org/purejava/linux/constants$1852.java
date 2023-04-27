@@ -7,54 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1852 {
+final class constants$1852 {
 
-    static final FunctionDescriptor gtk_icon_view_get_selection_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1852() {}
+    static final FunctionDescriptor gtk_toolbar_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_selection_mode",
-        constants$1852.gtk_icon_view_get_selection_mode$FUNC
+    static final MethodHandle gtk_toolbar_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_insert",
+        constants$1852.gtk_toolbar_insert$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_select_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_toolbar_get_item_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_select_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_select_path",
-        constants$1852.gtk_icon_view_select_path$FUNC
+    static final MethodHandle gtk_toolbar_get_item_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_item_index",
+        constants$1852.gtk_toolbar_get_item_index$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_unselect_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_toolbar_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_unselect_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unselect_path",
-        constants$1852.gtk_icon_view_unselect_path$FUNC
+    static final MethodHandle gtk_toolbar_get_n_items$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_n_items",
+        constants$1852.gtk_toolbar_get_n_items$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_path_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_toolbar_get_nth_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_toolbar_get_nth_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_nth_item",
+        constants$1852.gtk_toolbar_get_nth_item$FUNC
+    );
+    static final FunctionDescriptor gtk_toolbar_get_show_arrow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_path_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_path_is_selected",
-        constants$1852.gtk_icon_view_path_is_selected$FUNC
+    static final MethodHandle gtk_toolbar_get_show_arrow$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_show_arrow",
+        constants$1852.gtk_toolbar_get_show_arrow$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_item_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_toolbar_set_show_arrow$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_item_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_row",
-        constants$1852.gtk_icon_view_get_item_row$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_column",
-        constants$1852.gtk_icon_view_get_item_column$FUNC
+    static final MethodHandle gtk_toolbar_set_show_arrow$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_set_show_arrow",
+        constants$1852.gtk_toolbar_set_show_arrow$FUNC
     );
 }
 

@@ -7,51 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1120 {
+final class constants$1120 {
 
-    static final FunctionDescriptor pango_layout_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_ellipsize",
-        constants$1120.pango_layout_set_ellipsize$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1120() {}
+    static final FunctionDescriptor gdk_screen_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_ellipsize",
-        constants$1120.pango_layout_get_ellipsize$FUNC
+    static final MethodHandle gdk_screen_get_height$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_height",
+        constants$1120.gdk_screen_get_height$FUNC
     );
-    static final FunctionDescriptor pango_layout_is_ellipsized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_screen_get_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_is_ellipsized$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_is_ellipsized",
-        constants$1120.pango_layout_is_ellipsized$FUNC
+    static final MethodHandle gdk_screen_get_width_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_width_mm",
+        constants$1120.gdk_screen_get_width_mm$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_unknown_glyphs_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_screen_get_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_unknown_glyphs_count$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_unknown_glyphs_count",
-        constants$1120.pango_layout_get_unknown_glyphs_count$FUNC
+    static final MethodHandle gdk_screen_get_height_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_height_mm",
+        constants$1120.gdk_screen_get_height_mm$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_direction$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_direction",
-        constants$1120.pango_layout_get_direction$FUNC
-    );
-    static final FunctionDescriptor pango_layout_context_changed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_screen_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_context_changed$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_context_changed",
-        constants$1120.pango_layout_context_changed$FUNC
+    static final MethodHandle gdk_screen_list_visuals$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_list_visuals",
+        constants$1120.gdk_screen_list_visuals$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_toplevel_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_toplevel_windows$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_toplevel_windows",
+        constants$1120.gdk_screen_get_toplevel_windows$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_make_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_screen_make_display_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_make_display_name",
+        constants$1120.gdk_screen_make_display_name$FUNC
     );
 }
 

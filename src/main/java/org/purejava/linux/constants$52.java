@@ -7,29 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$52 {
+final class constants$52 {
 
-    static final FunctionDescriptor atexit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle atexit$__func$MH = RuntimeHelper.downcallHandle(
-        constants$52.atexit$__func$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$52() {}
+    static final FunctionDescriptor malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor atexit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle malloc$MH = RuntimeHelper.downcallHandle(
+        "malloc",
+        constants$52.malloc$FUNC
+    );
+    static final FunctionDescriptor calloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle calloc$MH = RuntimeHelper.downcallHandle(
+        "calloc",
+        constants$52.calloc$FUNC
+    );
+    static final FunctionDescriptor realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle realloc$MH = RuntimeHelper.downcallHandle(
+        "realloc",
+        constants$52.realloc$FUNC
+    );
+    static final FunctionDescriptor free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atexit$MH = RuntimeHelper.downcallHandle(
-        "atexit",
-        constants$52.atexit$FUNC
+    static final MethodHandle free$MH = RuntimeHelper.downcallHandle(
+        "free",
+        constants$52.free$FUNC
     );
-    static final FunctionDescriptor at_quick_exit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle at_quick_exit$__func$MH = RuntimeHelper.downcallHandle(
-        constants$52.at_quick_exit$__func$FUNC
+    static final FunctionDescriptor reallocarray$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor at_quick_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle reallocarray$MH = RuntimeHelper.downcallHandle(
+        "reallocarray",
+        constants$52.reallocarray$FUNC
     );
-    static final MethodHandle at_quick_exit$MH = RuntimeHelper.downcallHandle(
-        "at_quick_exit",
-        constants$52.at_quick_exit$FUNC
+    static final FunctionDescriptor alloca$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle alloca$MH = RuntimeHelper.downcallHandle(
+        "alloca",
+        constants$52.alloca$FUNC
     );
 }
 

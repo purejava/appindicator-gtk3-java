@@ -7,75 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1037 {
+final class constants$1037 {
 
-    static final FunctionDescriptor hb_buffer_serialize_format_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1037() {}
+    static final FunctionDescriptor cairo_image_surface_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_serialize_format_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_format_to_string",
-        constants$1037.hb_buffer_serialize_format_to_string$FUNC
+    static final MethodHandle cairo_image_surface_get_width$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_get_width",
+        constants$1037.cairo_image_surface_get_width$FUNC
     );
-    static final FunctionDescriptor hb_buffer_serialize_list_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_buffer_serialize_list_formats$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_list_formats",
-        constants$1037.hb_buffer_serialize_list_formats$FUNC
+    static final FunctionDescriptor cairo_image_surface_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor hb_buffer_serialize_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle cairo_image_surface_get_height$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_get_height",
+        constants$1037.cairo_image_surface_get_height$FUNC
     );
-    static final MethodHandle hb_buffer_serialize_glyphs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_glyphs",
-        constants$1037.hb_buffer_serialize_glyphs$FUNC
+    static final FunctionDescriptor cairo_image_surface_get_stride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor hb_buffer_serialize_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle cairo_image_surface_get_stride$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_get_stride",
+        constants$1037.cairo_image_surface_get_stride$FUNC
     );
-    static final MethodHandle hb_buffer_serialize_unicode$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_unicode",
-        constants$1037.hb_buffer_serialize_unicode$FUNC
+    static final FunctionDescriptor cairo_image_surface_create_from_png$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor hb_buffer_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle cairo_image_surface_create_from_png$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_create_from_png",
+        constants$1037.cairo_image_surface_create_from_png$FUNC
     );
-    static final MethodHandle hb_buffer_serialize$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize",
-        constants$1037.hb_buffer_serialize$FUNC
+    static final FunctionDescriptor cairo_image_surface_create_from_png_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor hb_buffer_deserialize_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle cairo_image_surface_create_from_png_stream$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_create_from_png_stream",
+        constants$1037.cairo_image_surface_create_from_png_stream$FUNC
+    );
+    static final FunctionDescriptor cairo_recording_surface_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_deserialize_glyphs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_deserialize_glyphs",
-        constants$1037.hb_buffer_deserialize_glyphs$FUNC
+    static final MethodHandle cairo_recording_surface_create$MH = RuntimeHelper.downcallHandle(
+        "cairo_recording_surface_create",
+        constants$1037.cairo_recording_surface_create$FUNC
     );
 }
 

@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1411 {
+final class constants$1411 {
 
-    static final FunctionDescriptor atk_selection_clear_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1411() {}
+    static final FunctionDescriptor gtk_text_iter_backward_sentence_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_selection_clear_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_clear_selection",
-        constants$1411.atk_selection_clear_selection$FUNC
+    static final MethodHandle gtk_text_iter_backward_sentence_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_sentence_start",
+        constants$1411.gtk_text_iter_backward_sentence_start$FUNC
     );
-    static final FunctionDescriptor atk_selection_ref_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_sentence_ends$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_selection_ref_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_ref_selection",
-        constants$1411.atk_selection_ref_selection$FUNC
+    static final MethodHandle gtk_text_iter_forward_sentence_ends$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_sentence_ends",
+        constants$1411.gtk_text_iter_forward_sentence_ends$FUNC
     );
-    static final FunctionDescriptor atk_selection_get_selection_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_selection_get_selection_count$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_get_selection_count",
-        constants$1411.atk_selection_get_selection_count$FUNC
-    );
-    static final FunctionDescriptor atk_selection_is_child_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_sentence_starts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_selection_is_child_selected$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_is_child_selected",
-        constants$1411.atk_selection_is_child_selected$FUNC
+    static final MethodHandle gtk_text_iter_backward_sentence_starts$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_sentence_starts",
+        constants$1411.gtk_text_iter_backward_sentence_starts$FUNC
     );
-    static final FunctionDescriptor atk_selection_remove_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_forward_cursor_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_cursor_position",
+        constants$1411.gtk_text_iter_forward_cursor_position$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_backward_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_cursor_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_cursor_position",
+        constants$1411.gtk_text_iter_backward_cursor_position$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_selection_remove_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_remove_selection",
-        constants$1411.atk_selection_remove_selection$FUNC
-    );
-    static final FunctionDescriptor atk_selection_select_all_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_selection_select_all_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_select_all_selection",
-        constants$1411.atk_selection_select_all_selection$FUNC
+    static final MethodHandle gtk_text_iter_forward_cursor_positions$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_cursor_positions",
+        constants$1411.gtk_text_iter_forward_cursor_positions$FUNC
     );
 }
 

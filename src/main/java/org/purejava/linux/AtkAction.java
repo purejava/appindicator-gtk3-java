@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkAction {
+/**
+ * {@snippet :
+ * typedef struct _AtkAction AtkAction;
+ * }
+ */
+public final class AtkAction {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkAction() {}
 }
 
 

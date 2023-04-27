@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct __pthread_cond_s {
+ *     __atomic_wide_counter __wseq;
+ *     __atomic_wide_counter __g1_start;
+ *     unsigned int __g_refs[2];
+ *     unsigned int __g_size[2];
+ *     unsigned int __g1_orig_size;
+ *     unsigned int __wrefs;
+ *     unsigned int __g_signals[2];
+ * };
+ * }
+ */
 public class __pthread_cond_s {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.unionLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("__value64"),
             MemoryLayout.structLayout(
@@ -49,10 +62,22 @@ public class __pthread_cond_s {
     public static VarHandle __g1_orig_size$VH() {
         return __pthread_cond_s.__g1_orig_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned int __g1_orig_size;
+     * }
+     */
     public static int __g1_orig_size$get(MemorySegment seg) {
         return (int)__pthread_cond_s.__g1_orig_size$VH.get(seg);
     }
-    public static void __g1_orig_size$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned int __g1_orig_size;
+     * }
+     */
+    public static void __g1_orig_size$set(MemorySegment seg, int x) {
         __pthread_cond_s.__g1_orig_size$VH.set(seg, x);
     }
     public static int __g1_orig_size$get(MemorySegment seg, long index) {
@@ -65,10 +90,22 @@ public class __pthread_cond_s {
     public static VarHandle __wrefs$VH() {
         return __pthread_cond_s.__wrefs$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned int __wrefs;
+     * }
+     */
     public static int __wrefs$get(MemorySegment seg) {
         return (int)__pthread_cond_s.__wrefs$VH.get(seg);
     }
-    public static void __wrefs$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned int __wrefs;
+     * }
+     */
+    public static void __wrefs$set(MemorySegment seg, int x) {
         __pthread_cond_s.__wrefs$VH.set(seg, x);
     }
     public static int __wrefs$get(MemorySegment seg, long index) {
@@ -82,10 +119,10 @@ public class __pthread_cond_s {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

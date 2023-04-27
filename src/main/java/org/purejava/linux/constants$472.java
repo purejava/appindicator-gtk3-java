@@ -7,55 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$472 {
+final class constants$472 {
 
-    static final FunctionDescriptor g_object_interface_find_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$472() {}
+    static final FunctionDescriptor GPollableSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_interface_find_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_find_property",
-        constants$472.g_object_interface_find_property$FUNC
-    );
-    static final FunctionDescriptor g_object_interface_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GPollableSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_interface_list_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_list_properties",
-        constants$472.g_object_interface_list_properties$FUNC
-    );
-    static final FunctionDescriptor g_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_type",
-        constants$472.g_object_get_type$FUNC
-    );
-    static final FunctionDescriptor g_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_object_new",
-        constants$472.g_object_new$FUNC
-    );
-    static final FunctionDescriptor g_object_new_with_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GPollableSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GPollableSourceFunc.class, "apply", constants$472.GPollableSourceFunc_UP$FUNC);
+    static final FunctionDescriptor GPollableSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_new_with_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_new_with_properties",
-        constants$472.g_object_new_with_properties$FUNC
+    static final MethodHandle GPollableSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$472.GPollableSourceFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_object_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GDBusProxyTypeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_newv$MH = RuntimeHelper.downcallHandle(
-        "g_object_newv",
-        constants$472.g_object_newv$FUNC
+    static final FunctionDescriptor GDBusProxyTypeFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDBusProxyTypeFunc_UP$MH = RuntimeHelper.upcallHandle(GDBusProxyTypeFunc.class, "apply", constants$472.GDBusProxyTypeFunc_UP$FUNC);
+    static final FunctionDescriptor GDBusProxyTypeFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDBusProxyTypeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$472.GDBusProxyTypeFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_action_get_type",
+        constants$472.g_action_get_type$FUNC
+    );
+    static final FunctionDescriptor g_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_action_get_name",
+        constants$472.g_action_get_name$FUNC
     );
 }
 

@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * union _hb_var_int_t {
+ *     uint32_t u32;
+ *     int32_t i32;
+ *     uint16_t u16[2];
+ *     int16_t i16[2];
+ *     uint8_t u8[4];
+ *     int8_t i8[4];
+ * };
+ * }
+ */
 public class _hb_var_int_t {
 
-    static final  GroupLayout $union$LAYOUT = MemoryLayout.unionLayout(
+    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
         Constants$root.C_INT$LAYOUT.withName("u32"),
         Constants$root.C_INT$LAYOUT.withName("i32"),
         MemoryLayout.sequenceLayout(2, Constants$root.C_SHORT$LAYOUT).withName("u16"),
@@ -24,10 +36,22 @@ public class _hb_var_int_t {
     public static VarHandle u32$VH() {
         return _hb_var_int_t.u32$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * uint32_t u32;
+     * }
+     */
     public static int u32$get(MemorySegment seg) {
         return (int)_hb_var_int_t.u32$VH.get(seg);
     }
-    public static void u32$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * uint32_t u32;
+     * }
+     */
+    public static void u32$set(MemorySegment seg, int x) {
         _hb_var_int_t.u32$VH.set(seg, x);
     }
     public static int u32$get(MemorySegment seg, long index) {
@@ -40,10 +64,22 @@ public class _hb_var_int_t {
     public static VarHandle i32$VH() {
         return _hb_var_int_t.i32$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int32_t i32;
+     * }
+     */
     public static int i32$get(MemorySegment seg) {
         return (int)_hb_var_int_t.i32$VH.get(seg);
     }
-    public static void i32$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int32_t i32;
+     * }
+     */
+    public static void i32$set(MemorySegment seg, int x) {
         _hb_var_int_t.i32$VH.set(seg, x);
     }
     public static int i32$get(MemorySegment seg, long index) {
@@ -66,10 +102,10 @@ public class _hb_var_int_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

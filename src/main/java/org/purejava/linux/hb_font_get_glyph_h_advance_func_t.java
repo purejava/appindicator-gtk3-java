@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*hb_font_get_glyph_h_advance_func_t)(struct hb_font_t*,void*,unsigned int,void*);
+ * }
+ */
 public interface hb_font_get_glyph_h_advance_func_t {
 
-    int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-    static MemorySegment allocate(hb_font_get_glyph_h_advance_func_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(hb_font_get_glyph_h_advance_func_t.class, fi, constants$1012.hb_font_get_glyph_h_advance_func_t$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(hb_font_get_glyph_h_advance_func_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$860.hb_font_get_glyph_h_advance_func_t_UP$MH, fi, constants$860.hb_font_get_glyph_h_advance_func_t$FUNC, scope);
     }
-    static hb_font_get_glyph_h_advance_func_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+    static hb_font_get_glyph_h_advance_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1012.hb_font_get_glyph_h_advance_func_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                return (int)constants$860.hb_font_get_glyph_h_advance_func_t_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

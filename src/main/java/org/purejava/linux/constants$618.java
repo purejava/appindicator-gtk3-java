@@ -7,52 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$618 {
+final class constants$618 {
 
-    static final FunctionDescriptor g_dbus_message_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$618() {}
+    static final FunctionDescriptor g_file_get_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_byte_order",
-        constants$618.g_dbus_message_get_byte_order$FUNC
+    static final MethodHandle g_file_get_relative_path$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_relative_path",
+        constants$618.g_file_get_relative_path$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_resolve_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_byte_order",
-        constants$618.g_dbus_message_set_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_message_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_message_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_message_type",
-        constants$618.g_dbus_message_get_message_type$FUNC
+    static final MethodHandle g_file_resolve_relative_path$MH = RuntimeHelper.downcallHandle(
+        "g_file_resolve_relative_path",
+        constants$618.g_file_resolve_relative_path$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_set_message_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_message_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_message_type",
-        constants$618.g_dbus_message_set_message_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_is_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_flags",
-        constants$618.g_dbus_message_get_flags$FUNC
+    static final MethodHandle g_file_is_native$MH = RuntimeHelper.downcallHandle(
+        "g_file_is_native",
+        constants$618.g_file_is_native$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_set_flags$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_has_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_flags",
-        constants$618.g_dbus_message_set_flags$FUNC
+    static final MethodHandle g_file_has_uri_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_file_has_uri_scheme",
+        constants$618.g_file_has_uri_scheme$FUNC
+    );
+    static final FunctionDescriptor g_file_get_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_uri_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_uri_scheme",
+        constants$618.g_file_get_uri_scheme$FUNC
+    );
+    static final FunctionDescriptor g_file_read$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_read$MH = RuntimeHelper.downcallHandle(
+        "g_file_read",
+        constants$618.g_file_read$FUNC
     );
 }
 

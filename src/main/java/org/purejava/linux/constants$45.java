@@ -7,58 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$45 {
+final class constants$45 {
 
-    static final FunctionDescriptor __uint64_identity$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle __uint64_identity$MH = RuntimeHelper.downcallHandle(
-        "__uint64_identity",
-        constants$45.__uint64_identity$FUNC
-    );
-    static final FunctionDescriptor select$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$45() {}
+    static final FunctionDescriptor strtol$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle select$MH = RuntimeHelper.downcallHandle(
-        "select",
-        constants$45.select$FUNC
-    );
-    static final FunctionDescriptor pselect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pselect$MH = RuntimeHelper.downcallHandle(
-        "pselect",
-        constants$45.pselect$FUNC
-    );
-    static final FunctionDescriptor random$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle random$MH = RuntimeHelper.downcallHandle(
-        "random",
-        constants$45.random$FUNC
-    );
-    static final FunctionDescriptor srandom$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle srandom$MH = RuntimeHelper.downcallHandle(
-        "srandom",
-        constants$45.srandom$FUNC
+    static final MethodHandle strtol$MH = RuntimeHelper.downcallHandle(
+        "strtol",
+        constants$45.strtol$FUNC
     );
-    static final FunctionDescriptor initstate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor strtoul$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle initstate$MH = RuntimeHelper.downcallHandle(
-        "initstate",
-        constants$45.initstate$FUNC
+    static final MethodHandle strtoul$MH = RuntimeHelper.downcallHandle(
+        "strtoul",
+        constants$45.strtoul$FUNC
+    );
+    static final FunctionDescriptor strtoq$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle strtoq$MH = RuntimeHelper.downcallHandle(
+        "strtoq",
+        constants$45.strtoq$FUNC
+    );
+    static final FunctionDescriptor strtouq$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle strtouq$MH = RuntimeHelper.downcallHandle(
+        "strtouq",
+        constants$45.strtouq$FUNC
+    );
+    static final FunctionDescriptor strtoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle strtoll$MH = RuntimeHelper.downcallHandle(
+        "strtoll",
+        constants$45.strtoll$FUNC
+    );
+    static final FunctionDescriptor strtoull$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle strtoull$MH = RuntimeHelper.downcallHandle(
+        "strtoull",
+        constants$45.strtoull$FUNC
     );
 }
 

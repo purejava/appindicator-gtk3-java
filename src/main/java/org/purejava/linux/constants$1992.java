@@ -7,49 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1992 {
+final class constants$1992 {
 
-    static final FunctionDescriptor gtk_scale_button_get_plus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_plus_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_plus_button",
-        constants$1992.gtk_scale_button_get_plus_button$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_minus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_minus_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_minus_button",
-        constants$1992.gtk_scale_button_get_minus_button$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_popup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_popup",
-        constants$1992.gtk_scale_button_get_popup$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scrollable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_type",
-        constants$1992.gtk_scrollable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_hadjustment",
-        constants$1992.gtk_scrollable_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_hadjustment",
-        constants$1992.gtk_scrollable_set_hadjustment$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1992() {}
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Name");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("GenericName");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NoDisplay");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_COMMENT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Comment");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Icon");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_HIDDEN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Hidden");
 }
 
 

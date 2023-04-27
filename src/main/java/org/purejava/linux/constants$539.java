@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$539 {
+final class constants$539 {
 
-    static final FunctionDescriptor g_application_unbind_busy_property$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$539() {}
+    static final FunctionDescriptor g_credentials_set_native$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_credentials_set_native$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_set_native",
+        constants$539.g_credentials_set_native$FUNC
+    );
+    static final FunctionDescriptor g_credentials_is_same_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_unbind_busy_property$MH = RuntimeHelper.downcallHandle(
-        "g_application_unbind_busy_property",
-        constants$539.g_application_unbind_busy_property$FUNC
+    static final MethodHandle g_credentials_is_same_user$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_is_same_user",
+        constants$539.g_credentials_is_same_user$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_application_command_line_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_type",
-        constants$539.g_application_command_line_get_type$FUNC
-    );
-    static final FunctionDescriptor g_application_command_line_get_arguments$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_credentials_get_unix_pid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_get_arguments$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_arguments",
-        constants$539.g_application_command_line_get_arguments$FUNC
+    static final MethodHandle g_credentials_get_unix_pid$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_get_unix_pid",
+        constants$539.g_credentials_get_unix_pid$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_options_dict$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_credentials_get_unix_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_get_options_dict$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_options_dict",
-        constants$539.g_application_command_line_get_options_dict$FUNC
+    static final MethodHandle g_credentials_get_unix_user$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_get_unix_user",
+        constants$539.g_credentials_get_unix_user$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_stdin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_credentials_set_unix_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_command_line_get_stdin$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_stdin",
-        constants$539.g_application_command_line_get_stdin$FUNC
+    static final MethodHandle g_credentials_set_unix_user$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_set_unix_user",
+        constants$539.g_credentials_set_unix_user$FUNC
     );
-    static final FunctionDescriptor g_application_command_line_get_environ$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_command_line_get_environ$MH = RuntimeHelper.downcallHandle(
-        "g_application_command_line_get_environ",
-        constants$539.g_application_command_line_get_environ$FUNC
+    static final FunctionDescriptor g_datagram_based_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_datagram_based_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_datagram_based_get_type",
+        constants$539.g_datagram_based_get_type$FUNC
     );
 }
 

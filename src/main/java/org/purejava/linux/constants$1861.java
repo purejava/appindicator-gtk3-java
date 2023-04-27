@@ -7,47 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1861 {
+final class constants$1861 {
 
-    static final FunctionDescriptor gtk_info_bar_set_revealed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1861() {}
+    static final FunctionDescriptor gtk_tool_palette_get_drag_target_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tool_palette_get_drag_target_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_drag_target_item",
+        constants$1861.gtk_tool_palette_get_drag_target_item$FUNC
     );
-    static final MethodHandle gtk_info_bar_set_revealed$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_revealed",
-        constants$1861.gtk_info_bar_set_revealed$FUNC
+    static final FunctionDescriptor gtk_tool_palette_get_drag_target_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tool_palette_get_drag_target_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_drag_target_group",
+        constants$1861.gtk_tool_palette_get_drag_target_group$FUNC
     );
-    static final FunctionDescriptor gtk_info_bar_get_revealed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tool_shell_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_shell_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_type",
+        constants$1861.gtk_tool_shell_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_shell_get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_get_revealed$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_revealed",
-        constants$1861.gtk_info_bar_get_revealed$FUNC
+    static final MethodHandle gtk_tool_shell_get_icon_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_icon_size",
+        constants$1861.gtk_tool_shell_get_icon_size$FUNC
     );
-    static final FunctionDescriptor gtk_invisible_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_invisible_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_invisible_get_type",
-        constants$1861.gtk_invisible_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_invisible_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_invisible_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_invisible_new",
-        constants$1861.gtk_invisible_new$FUNC
-    );
-    static final FunctionDescriptor gtk_invisible_new_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_shell_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_invisible_new_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_invisible_new_for_screen",
-        constants$1861.gtk_invisible_new_for_screen$FUNC
+    static final MethodHandle gtk_tool_shell_get_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_orientation",
+        constants$1861.gtk_tool_shell_get_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_invisible_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_shell_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_invisible_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_invisible_set_screen",
-        constants$1861.gtk_invisible_set_screen$FUNC
+    static final MethodHandle gtk_tool_shell_get_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_style",
+        constants$1861.gtk_tool_shell_get_style$FUNC
     );
 }
 

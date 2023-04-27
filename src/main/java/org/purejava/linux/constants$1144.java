@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1144 {
+final class constants$1144 {
 
-    static final FunctionDescriptor putchar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle putchar$MH = RuntimeHelper.downcallHandle(
-        "putchar",
-        constants$1144.putchar$FUNC
-    );
-    static final FunctionDescriptor fputc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1144() {}
+    static final FunctionDescriptor gdk_pixbuf_format_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fputc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fputc_unlocked",
-        constants$1144.fputc_unlocked$FUNC
+    static final MethodHandle gdk_pixbuf_format_get_description$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_description",
+        constants$1144.gdk_pixbuf_format_get_description$FUNC
     );
-    static final FunctionDescriptor putc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_format_get_mime_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle putc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "putc_unlocked",
-        constants$1144.putc_unlocked$FUNC
+    static final MethodHandle gdk_pixbuf_format_get_mime_types$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_mime_types",
+        constants$1144.gdk_pixbuf_format_get_mime_types$FUNC
     );
-    static final FunctionDescriptor putchar_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle putchar_unlocked$MH = RuntimeHelper.downcallHandle(
-        "putchar_unlocked",
-        constants$1144.putchar_unlocked$FUNC
-    );
-    static final FunctionDescriptor getw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_format_get_extensions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle getw$MH = RuntimeHelper.downcallHandle(
-        "getw",
-        constants$1144.getw$FUNC
+    static final MethodHandle gdk_pixbuf_format_get_extensions$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_extensions",
+        constants$1144.gdk_pixbuf_format_get_extensions$FUNC
     );
-    static final FunctionDescriptor putw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_format_is_save_option_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle putw$MH = RuntimeHelper.downcallHandle(
-        "putw",
-        constants$1144.putw$FUNC
+    static final MethodHandle gdk_pixbuf_format_is_save_option_supported$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_save_option_supported",
+        constants$1144.gdk_pixbuf_format_is_save_option_supported$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_format_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_format_is_writable$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_writable",
+        constants$1144.gdk_pixbuf_format_is_writable$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_format_is_scalable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_format_is_scalable$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_scalable",
+        constants$1144.gdk_pixbuf_format_is_scalable$FUNC
     );
 }
 

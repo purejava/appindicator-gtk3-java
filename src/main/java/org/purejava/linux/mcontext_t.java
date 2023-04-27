@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     gregset_t gregs;
+ *     fpregset_t fpregs;
+ *     unsigned long long __reserved1[8];
+ * };
+ * }
+ */
 public class mcontext_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.sequenceLayout(23, Constants$root.C_LONG_LONG$LAYOUT).withName("gregs"),
         Constants$root.C_POINTER$LAYOUT.withName("fpregs"),
         MemoryLayout.sequenceLayout(8, Constants$root.C_LONG_LONG$LAYOUT).withName("__reserved1")
@@ -24,16 +33,28 @@ public class mcontext_t {
     public static VarHandle fpregs$VH() {
         return mcontext_t.fpregs$VH;
     }
-    public static MemoryAddress fpregs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)mcontext_t.fpregs$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * fpregset_t fpregs;
+     * }
+     */
+    public static MemorySegment fpregs$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)mcontext_t.fpregs$VH.get(seg);
     }
-    public static void fpregs$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * fpregset_t fpregs;
+     * }
+     */
+    public static void fpregs$set(MemorySegment seg, MemorySegment x) {
         mcontext_t.fpregs$VH.set(seg, x);
     }
-    public static MemoryAddress fpregs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)mcontext_t.fpregs$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment fpregs$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)mcontext_t.fpregs$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void fpregs$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void fpregs$set(MemorySegment seg, long index, MemorySegment x) {
         mcontext_t.fpregs$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __reserved1$slice(MemorySegment seg) {
@@ -41,10 +62,10 @@ public class mcontext_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

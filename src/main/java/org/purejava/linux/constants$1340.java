@@ -7,39 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1340 {
+final class constants$1340 {
 
-    static final FunctionDescriptor gdk_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
-        "gdk_notify_startup_complete",
-        constants$1340.gdk_notify_startup_complete$FUNC
-    );
-    static final FunctionDescriptor gdk_notify_startup_complete_with_id$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1340() {}
+    static final FunctionDescriptor gtk_label_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_notify_startup_complete_with_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_notify_startup_complete_with_id",
-        constants$1340.gdk_notify_startup_complete_with_id$FUNC
+    static final MethodHandle gtk_label_get_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_ellipsize",
+        constants$1340.gtk_label_get_ellipsize$FUNC
     );
-    static final FunctionDescriptor gdk_error_trap_push$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_error_trap_push$MH = RuntimeHelper.downcallHandle(
-        "gdk_error_trap_push",
-        constants$1340.gdk_error_trap_push$FUNC
+    static final FunctionDescriptor gtk_label_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_error_trap_pop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_error_trap_pop$MH = RuntimeHelper.downcallHandle(
-        "gdk_error_trap_pop",
-        constants$1340.gdk_error_trap_pop$FUNC
+    static final MethodHandle gtk_label_set_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_width_chars",
+        constants$1340.gtk_label_set_width_chars$FUNC
     );
-    static final FunctionDescriptor gdk_error_trap_pop_ignored$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_error_trap_pop_ignored$MH = RuntimeHelper.downcallHandle(
-        "gdk_error_trap_pop_ignored",
-        constants$1340.gdk_error_trap_pop_ignored$FUNC
+    static final FunctionDescriptor gtk_label_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_get_display_arg_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_display_arg_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_display_arg_name",
-        constants$1340.gdk_get_display_arg_name$FUNC
+    static final MethodHandle gtk_label_get_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_width_chars",
+        constants$1340.gtk_label_get_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_max_width_chars$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_max_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_max_width_chars",
+        constants$1340.gtk_label_set_max_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_max_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_max_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_max_width_chars",
+        constants$1340.gtk_label_get_max_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_lines$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_lines$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_lines",
+        constants$1340.gtk_label_set_lines$FUNC
     );
 }
 

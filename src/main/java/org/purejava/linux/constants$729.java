@@ -7,37 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$729 {
+final class constants$729 {
 
-    static final FunctionDescriptor g_subprocess_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_subprocess_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_flags_get_type",
-        constants$729.g_subprocess_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$729() {}
+    static final FunctionDescriptor g_proxy_address_enumerator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_proxy_address_enumerator_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_address_enumerator_get_type",
+        constants$729.g_proxy_address_enumerator_get_type$FUNC
     );
-    static final FunctionDescriptor g_notification_priority_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_notification_priority_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_notification_priority_get_type",
-        constants$729.g_notification_priority_get_type$FUNC
+    static final FunctionDescriptor g_proxy_resolver_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_proxy_resolver_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_get_type",
+        constants$729.g_proxy_resolver_get_type$FUNC
     );
-    static final FunctionDescriptor g_network_connectivity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_network_connectivity_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_network_connectivity_get_type",
-        constants$729.g_network_connectivity_get_type$FUNC
+    static final FunctionDescriptor g_proxy_resolver_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_proxy_resolver_get_default$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_get_default",
+        constants$729.g_proxy_resolver_get_default$FUNC
     );
-    static final FunctionDescriptor g_pollable_return_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollable_return_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_return_get_type",
-        constants$729.g_pollable_return_get_type$FUNC
+    static final FunctionDescriptor g_proxy_resolver_is_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_memory_monitor_warning_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_monitor_warning_level_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_warning_level_get_type",
-        constants$729.g_memory_monitor_warning_level_get_type$FUNC
+    static final MethodHandle g_proxy_resolver_is_supported$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_is_supported",
+        constants$729.g_proxy_resolver_is_supported$FUNC
     );
-    static final FunctionDescriptor g_resolver_name_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resolver_name_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_name_lookup_flags_get_type",
-        constants$729.g_resolver_name_lookup_flags_get_type$FUNC
+    static final FunctionDescriptor g_proxy_resolver_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_proxy_resolver_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_lookup",
+        constants$729.g_proxy_resolver_lookup$FUNC
+    );
+    static final FunctionDescriptor g_proxy_resolver_lookup_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_proxy_resolver_lookup_async$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_lookup_async",
+        constants$729.g_proxy_resolver_lookup_async$FUNC
     );
 }
 

@@ -7,47 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1071 {
+final class constants$1071 {
 
-    static final FunctionDescriptor glib_autoptr_clear_PangoFontDescription$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1071() {}
+    static final FunctionDescriptor gdk_event_handler_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_PangoFontDescription$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoFontDescription",
-        constants$1071.glib_autoptr_clear_PangoFontDescription$FUNC
+    static final MethodHandle gdk_event_handler_set$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_handler_set",
+        constants$1071.gdk_event_handler_set$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoFontDescription$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_event_set_screen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_PangoFontDescription$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoFontDescription",
-        constants$1071.glib_autoptr_cleanup_PangoFontDescription$FUNC
+    static final MethodHandle gdk_event_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_set_screen",
+        constants$1071.gdk_event_set_screen$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoFontDescription$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_event_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoFontDescription$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoFontDescription",
-        constants$1071.glib_listautoptr_cleanup_PangoFontDescription$FUNC
+    static final MethodHandle gdk_event_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_screen",
+        constants$1071.gdk_event_get_screen$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoFontDescription$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_event_get_event_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoFontDescription$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoFontDescription",
-        constants$1071.glib_slistautoptr_cleanup_PangoFontDescription$FUNC
+    static final MethodHandle gdk_event_get_event_sequence$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_event_sequence",
+        constants$1071.gdk_event_get_event_sequence$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoFontDescription$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_event_get_event_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoFontDescription$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoFontDescription",
-        constants$1071.glib_queueautoptr_cleanup_PangoFontDescription$FUNC
+    static final MethodHandle gdk_event_get_event_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_event_type",
+        constants$1071.gdk_event_get_event_type$FUNC
     );
-    static final FunctionDescriptor pango_color_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_color_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_color_get_type",
-        constants$1071.pango_color_get_type$FUNC
+    static final FunctionDescriptor gdk_event_get_seat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_get_seat$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_seat",
+        constants$1071.gdk_event_get_seat$FUNC
     );
 }
 

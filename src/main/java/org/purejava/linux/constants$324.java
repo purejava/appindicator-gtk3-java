@@ -7,52 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$324 {
+final class constants$324 {
 
-    static final FunctionDescriptor g_timer_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$324() {}
+    static final FunctionDescriptor g_test_get_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_test_get_dir$MH = RuntimeHelper.downcallHandle(
+        "g_test_get_dir",
+        constants$324.g_test_get_dir$FUNC
+    );
+    static final FunctionDescriptor g_test_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_timer_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_timer_is_active",
-        constants$324.g_timer_is_active$FUNC
+    static final MethodHandle g_test_get_filename$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_test_get_filename",
+        constants$324.g_test_get_filename$FUNC
     );
-    static final FunctionDescriptor g_usleep$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_usleep$MH = RuntimeHelper.downcallHandle(
-        "g_usleep",
-        constants$324.g_usleep$FUNC
-    );
-    static final FunctionDescriptor g_time_val_add$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_pool_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_time_val_add$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_add",
-        constants$324.g_time_val_add$FUNC
+    static final MethodHandle g_thread_pool_new$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_new",
+        constants$324.g_thread_pool_new$FUNC
     );
-    static final FunctionDescriptor g_time_val_from_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_thread_pool_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_thread_pool_new_full$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_new_full",
+        constants$324.g_thread_pool_new_full$FUNC
+    );
+    static final FunctionDescriptor g_thread_pool_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_thread_pool_free$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_free",
+        constants$324.g_thread_pool_free$FUNC
+    );
+    static final FunctionDescriptor g_thread_pool_push$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_time_val_from_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_from_iso8601",
-        constants$324.g_time_val_from_iso8601$FUNC
-    );
-    static final FunctionDescriptor g_time_val_to_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_val_to_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_to_iso8601",
-        constants$324.g_time_val_to_iso8601$FUNC
-    );
-    static final FunctionDescriptor g_trash_stack_push$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_trash_stack_push$MH = RuntimeHelper.downcallHandle(
-        "g_trash_stack_push",
-        constants$324.g_trash_stack_push$FUNC
+    static final MethodHandle g_thread_pool_push$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_push",
+        constants$324.g_thread_pool_push$FUNC
     );
 }
 

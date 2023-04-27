@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDBusMessage* (*GDBusMessageFilterFunction)(struct _GDBusConnection* connection,struct _GDBusMessage* message,int incoming,void* user_data);
+ * }
+ */
 public interface GDBusMessageFilterFunction {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress connection, java.lang.foreign.MemoryAddress message, int incoming, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GDBusMessageFilterFunction fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDBusMessageFilterFunction.class, fi, constants$604.GDBusMessageFilterFunction$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment message, int incoming, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GDBusMessageFilterFunction fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$558.GDBusMessageFilterFunction_UP$MH, fi, constants$558.GDBusMessageFilterFunction$FUNC, scope);
     }
-    static GDBusMessageFilterFunction ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _connection, java.lang.foreign.MemoryAddress _message, int _incoming, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GDBusMessageFilterFunction ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _message, int _incoming, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$605.GDBusMessageFilterFunction$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_connection, (java.lang.foreign.Addressable)_message, _incoming, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$559.GDBusMessageFilterFunction_DOWN$MH.invokeExact(symbol, _connection, _message, _incoming, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

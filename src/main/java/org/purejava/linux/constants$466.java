@@ -7,37 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$466 {
+final class constants$466 {
 
-    static final FunctionDescriptor g_mapped_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mapped_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_type",
-        constants$466.g_mapped_file_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$466() {}
+    static final FunctionDescriptor g_value_set_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_option_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_option_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_get_type",
-        constants$466.g_option_group_get_type$FUNC
+    static final MethodHandle g_value_set_string$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_string",
+        constants$466.g_value_set_string$FUNC
     );
-    static final FunctionDescriptor g_uri_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_uri_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_type",
-        constants$466.g_uri_get_type$FUNC
+    static final FunctionDescriptor g_value_set_static_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_tree_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tree_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tree_get_type",
-        constants$466.g_tree_get_type$FUNC
+    static final MethodHandle g_value_set_static_string$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_static_string",
+        constants$466.g_value_set_static_string$FUNC
     );
-    static final FunctionDescriptor g_pattern_spec_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pattern_spec_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_get_type",
-        constants$466.g_pattern_spec_get_type$FUNC
+    static final FunctionDescriptor g_value_set_interned_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_variant_get_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_get_gtype$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_gtype",
-        constants$466.g_variant_get_gtype$FUNC
+    static final MethodHandle g_value_set_interned_string$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_interned_string",
+        constants$466.g_value_set_interned_string$FUNC
+    );
+    static final FunctionDescriptor g_value_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_string$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_string",
+        constants$466.g_value_get_string$FUNC
+    );
+    static final FunctionDescriptor g_value_dup_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_dup_string$MH = RuntimeHelper.downcallHandle(
+        "g_value_dup_string",
+        constants$466.g_value_dup_string$FUNC
+    );
+    static final FunctionDescriptor g_value_set_pointer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_set_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_pointer",
+        constants$466.g_value_set_pointer$FUNC
     );
 }
 

@@ -7,75 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1838 {
+final class constants$1838 {
 
-    static final FunctionDescriptor gtk_icon_theme_lookup_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1838() {}
+    static final FunctionDescriptor gtk_text_buffer_unregister_serialize_format$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_lookup_icon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_lookup_icon_for_scale",
-        constants$1838.gtk_icon_theme_lookup_icon_for_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_choose_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_choose_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_choose_icon",
-        constants$1838.gtk_icon_theme_choose_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_choose_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_choose_icon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_choose_icon_for_scale",
-        constants$1838.gtk_icon_theme_choose_icon_for_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_load_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_theme_load_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_icon",
-        constants$1838.gtk_icon_theme_load_icon$FUNC
+    static final MethodHandle gtk_text_buffer_unregister_serialize_format$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_unregister_serialize_format",
+        constants$1838.gtk_text_buffer_unregister_serialize_format$FUNC
     );
-    static final FunctionDescriptor gtk_icon_theme_load_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_unregister_deserialize_format$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_theme_load_icon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_icon_for_scale",
-        constants$1838.gtk_icon_theme_load_icon_for_scale$FUNC
+    static final MethodHandle gtk_text_buffer_unregister_deserialize_format$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_unregister_deserialize_format",
+        constants$1838.gtk_text_buffer_unregister_deserialize_format$FUNC
     );
-    static final FunctionDescriptor gtk_icon_theme_load_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_deserialize_set_can_create_tags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_deserialize_set_can_create_tags$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_deserialize_set_can_create_tags",
+        constants$1838.gtk_text_buffer_deserialize_set_can_create_tags$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_deserialize_get_can_create_tags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_theme_load_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_surface",
-        constants$1838.gtk_icon_theme_load_surface$FUNC
+    static final MethodHandle gtk_text_buffer_deserialize_get_can_create_tags$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_deserialize_get_can_create_tags",
+        constants$1838.gtk_text_buffer_deserialize_get_can_create_tags$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_get_serialize_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_get_serialize_formats$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_serialize_formats",
+        constants$1838.gtk_text_buffer_get_serialize_formats$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_get_deserialize_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_get_deserialize_formats$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_deserialize_formats",
+        constants$1838.gtk_text_buffer_get_deserialize_formats$FUNC
     );
 }
 

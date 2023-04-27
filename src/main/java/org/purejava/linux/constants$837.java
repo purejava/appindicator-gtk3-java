@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$837 {
+final class constants$837 {
 
-    static final FunctionDescriptor g_srv_target_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$837() {}
+    static final FunctionDescriptor hb_unicode_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_srv_target_free$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_free",
-        constants$837.g_srv_target_free$FUNC
+    static final MethodHandle hb_unicode_funcs_create$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_create",
+        constants$837.hb_unicode_funcs_create$FUNC
     );
-    static final FunctionDescriptor g_srv_target_get_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_funcs_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_unicode_funcs_get_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_get_empty",
+        constants$837.hb_unicode_funcs_get_empty$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_srv_target_get_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_hostname",
-        constants$837.g_srv_target_get_hostname$FUNC
+    static final MethodHandle hb_unicode_funcs_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_reference",
+        constants$837.hb_unicode_funcs_reference$FUNC
     );
-    static final FunctionDescriptor g_srv_target_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor hb_unicode_funcs_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_srv_target_get_port$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_port",
-        constants$837.g_srv_target_get_port$FUNC
+    static final MethodHandle hb_unicode_funcs_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_destroy",
+        constants$837.hb_unicode_funcs_destroy$FUNC
     );
-    static final FunctionDescriptor g_srv_target_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor hb_unicode_funcs_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_unicode_funcs_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_user_data",
+        constants$837.hb_unicode_funcs_set_user_data$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_funcs_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_srv_target_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_priority",
-        constants$837.g_srv_target_get_priority$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_get_weight$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_get_weight$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_weight",
-        constants$837.g_srv_target_get_weight$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_list_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_list_sort$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_list_sort",
-        constants$837.g_srv_target_list_sort$FUNC
+    static final MethodHandle hb_unicode_funcs_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_get_user_data",
+        constants$837.hb_unicode_funcs_get_user_data$FUNC
     );
 }
 

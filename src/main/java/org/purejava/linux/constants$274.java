@@ -7,44 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$274 {
+final class constants$274 {
 
-    static final FunctionDescriptor g_regex_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_regex_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_regex_error_quark",
-        constants$274.g_regex_error_quark$FUNC
-    );
-    static final FunctionDescriptor GRegexEvalCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$274() {}
+    static final FunctionDescriptor g_queue_free_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GRegexEvalCallback$MH = RuntimeHelper.downcallHandle(
-        constants$274.GRegexEvalCallback$FUNC
+    static final MethodHandle g_queue_free_full$MH = RuntimeHelper.downcallHandle(
+        "g_queue_free_full",
+        constants$274.g_queue_free_full$FUNC
     );
-    static final FunctionDescriptor g_regex_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_init$MH = RuntimeHelper.downcallHandle(
+        "g_queue_init",
+        constants$274.g_queue_init$FUNC
+    );
+    static final FunctionDescriptor g_queue_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_clear$MH = RuntimeHelper.downcallHandle(
+        "g_queue_clear",
+        constants$274.g_queue_clear$FUNC
+    );
+    static final FunctionDescriptor g_queue_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_is_empty$MH = RuntimeHelper.downcallHandle(
+        "g_queue_is_empty",
+        constants$274.g_queue_is_empty$FUNC
+    );
+    static final FunctionDescriptor g_queue_clear_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_new$MH = RuntimeHelper.downcallHandle(
-        "g_regex_new",
-        constants$274.g_regex_new$FUNC
+    static final MethodHandle g_queue_clear_full$MH = RuntimeHelper.downcallHandle(
+        "g_queue_clear_full",
+        constants$274.g_queue_clear_full$FUNC
     );
-    static final FunctionDescriptor g_regex_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_ref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_ref",
-        constants$274.g_regex_ref$FUNC
-    );
-    static final FunctionDescriptor g_regex_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_unref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_unref",
-        constants$274.g_regex_unref$FUNC
+    static final MethodHandle g_queue_get_length$MH = RuntimeHelper.downcallHandle(
+        "g_queue_get_length",
+        constants$274.g_queue_get_length$FUNC
     );
 }
 

@@ -7,62 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1496 {
+final class constants$1496 {
 
-    static final FunctionDescriptor gtk_window_close$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1496() {}
+    static final FunctionDescriptor gtk_assistant_prepend_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_close$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_close",
-        constants$1496.gtk_window_close$FUNC
+    static final MethodHandle gtk_assistant_prepend_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_prepend_page",
+        constants$1496.gtk_assistant_prepend_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_keep_above$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_append_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_assistant_append_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_append_page",
+        constants$1496.gtk_assistant_append_page$FUNC
+    );
+    static final FunctionDescriptor gtk_assistant_insert_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_keep_above$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_keep_above",
-        constants$1496.gtk_window_set_keep_above$FUNC
+    static final MethodHandle gtk_assistant_insert_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_insert_page",
+        constants$1496.gtk_assistant_insert_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_keep_below$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_remove_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_keep_below$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_keep_below",
-        constants$1496.gtk_window_set_keep_below$FUNC
+    static final MethodHandle gtk_assistant_remove_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_remove_page",
+        constants$1496.gtk_assistant_remove_page$FUNC
     );
-    static final FunctionDescriptor gtk_window_begin_resize_drag$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_set_forward_page_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_assistant_set_forward_page_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_forward_page_func",
+        constants$1496.gtk_assistant_set_forward_page_func$FUNC
+    );
+    static final FunctionDescriptor gtk_assistant_set_page_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_begin_resize_drag$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_begin_resize_drag",
-        constants$1496.gtk_window_begin_resize_drag$FUNC
-    );
-    static final FunctionDescriptor gtk_window_begin_move_drag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_begin_move_drag$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_begin_move_drag",
-        constants$1496.gtk_window_begin_move_drag$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_default_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_default_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_size",
-        constants$1496.gtk_window_set_default_size$FUNC
+    static final MethodHandle gtk_assistant_set_page_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_page_type",
+        constants$1496.gtk_assistant_set_page_type$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkActionableInterface extends _GtkActionableInterface {
+/**
+ * {@snippet :
+ * typedef struct _GtkActionableInterface GtkActionableInterface;
+ * }
+ */
+public final class GtkActionableInterface extends _GtkActionableInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkActionableInterface() {}
 }
 
 

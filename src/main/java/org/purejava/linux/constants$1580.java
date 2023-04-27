@@ -7,57 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1580 {
+final class constants$1580 {
 
-    static final FunctionDescriptor gtk_tree_view_column_set_attributes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_column_set_attributes",
-        constants$1580.gtk_tree_view_column_set_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_cell_data_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1580() {}
+    static final FunctionDescriptor gtk_file_chooser_set_choice$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_cell_data_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_cell_data_func",
-        constants$1580.gtk_tree_view_column_set_cell_data_func$FUNC
+    static final MethodHandle gtk_file_chooser_set_choice$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_choice",
+        constants$1580.gtk_file_chooser_set_choice$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_clear_attributes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_chooser_get_choice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_clear_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_clear_attributes",
-        constants$1580.gtk_tree_view_column_clear_attributes$FUNC
+    static final MethodHandle gtk_file_chooser_get_choice$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_choice",
+        constants$1580.gtk_file_chooser_get_choice$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_spacing$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_chooser_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_button_get_type",
+        constants$1580.gtk_file_chooser_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_spacing",
-        constants$1580.gtk_tree_view_column_set_spacing$FUNC
+    static final MethodHandle gtk_file_chooser_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_button_new",
+        constants$1580.gtk_file_chooser_button_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_get_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_button_new_with_dialog$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_spacing",
-        constants$1580.gtk_tree_view_column_get_spacing$FUNC
+    static final MethodHandle gtk_file_chooser_button_new_with_dialog$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_button_new_with_dialog",
+        constants$1580.gtk_file_chooser_button_new_with_dialog$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_file_chooser_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_visible",
-        constants$1580.gtk_tree_view_column_set_visible$FUNC
+    static final MethodHandle gtk_file_chooser_button_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_button_get_title",
+        constants$1580.gtk_file_chooser_button_get_title$FUNC
     );
 }
 

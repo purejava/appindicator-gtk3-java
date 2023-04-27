@@ -7,57 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1034 {
+final class constants$1034 {
 
-    static final FunctionDescriptor hb_buffer_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1034() {}
+    static final FunctionDescriptor cairo_surface_get_font_options$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_allocation_successful$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_allocation_successful",
-        constants$1034.hb_buffer_allocation_successful$FUNC
+    static final MethodHandle cairo_surface_get_font_options$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_font_options",
+        constants$1034.cairo_surface_get_font_options$FUNC
     );
-    static final FunctionDescriptor hb_buffer_reverse$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_flush$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_reverse$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse",
-        constants$1034.hb_buffer_reverse$FUNC
+    static final MethodHandle cairo_surface_flush$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_flush",
+        constants$1034.cairo_surface_flush$FUNC
     );
-    static final FunctionDescriptor hb_buffer_reverse_range$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_mark_dirty$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_mark_dirty$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_mark_dirty",
+        constants$1034.cairo_surface_mark_dirty$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_mark_dirty_rectangle$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reverse_range$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_range",
-        constants$1034.hb_buffer_reverse_range$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reverse_clusters$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reverse_clusters$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_clusters",
-        constants$1034.hb_buffer_reverse_clusters$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add",
-        constants$1034.hb_buffer_add$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_utf8$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_buffer_add_utf8$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf8",
-        constants$1034.hb_buffer_add_utf8$FUNC
+    static final MethodHandle cairo_surface_mark_dirty_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_mark_dirty_rectangle",
+        constants$1034.cairo_surface_mark_dirty_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_set_device_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_surface_set_device_scale$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_device_scale",
+        constants$1034.cairo_surface_set_device_scale$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_device_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_get_device_scale$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_device_scale",
+        constants$1034.cairo_surface_get_device_scale$FUNC
     );
 }
 

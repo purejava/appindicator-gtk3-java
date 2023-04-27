@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$391 {
+final class constants$391 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMainContextPusher$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$391() {}
+    static final FunctionDescriptor g_type_free_instance$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMainContextPusher$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMainContextPusher",
-        constants$391.glib_queueautoptr_cleanup_GMainContextPusher$FUNC
+    static final MethodHandle g_type_free_instance$MH = RuntimeHelper.downcallHandle(
+        "g_type_free_instance",
+        constants$391.g_type_free_instance$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GMainLoop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_add_class_cache_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMainLoop$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMainLoop",
-        constants$391.glib_autoptr_clear_GMainLoop$FUNC
+    static final MethodHandle g_type_add_class_cache_func$MH = RuntimeHelper.downcallHandle(
+        "g_type_add_class_cache_func",
+        constants$391.g_type_add_class_cache_func$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMainLoop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_remove_class_cache_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMainLoop$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMainLoop",
-        constants$391.glib_autoptr_cleanup_GMainLoop$FUNC
+    static final MethodHandle g_type_remove_class_cache_func$MH = RuntimeHelper.downcallHandle(
+        "g_type_remove_class_cache_func",
+        constants$391.g_type_remove_class_cache_func$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMainLoop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_class_unref_uncached$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMainLoop$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMainLoop",
-        constants$391.glib_listautoptr_cleanup_GMainLoop$FUNC
+    static final MethodHandle g_type_class_unref_uncached$MH = RuntimeHelper.downcallHandle(
+        "g_type_class_unref_uncached",
+        constants$391.g_type_class_unref_uncached$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMainLoop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_add_interface_check$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMainLoop$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMainLoop",
-        constants$391.glib_slistautoptr_cleanup_GMainLoop$FUNC
+    static final MethodHandle g_type_add_interface_check$MH = RuntimeHelper.downcallHandle(
+        "g_type_add_interface_check",
+        constants$391.g_type_add_interface_check$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMainLoop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_remove_interface_check$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMainLoop$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMainLoop",
-        constants$391.glib_queueautoptr_cleanup_GMainLoop$FUNC
+    static final MethodHandle g_type_remove_interface_check$MH = RuntimeHelper.downcallHandle(
+        "g_type_remove_interface_check",
+        constants$391.g_type_remove_interface_check$FUNC
     );
 }
 

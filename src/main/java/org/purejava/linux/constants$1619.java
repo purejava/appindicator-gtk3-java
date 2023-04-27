@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1619 {
+final class constants$1619 {
 
-    static final FunctionDescriptor gtk_editable_delete_selection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1619() {}
+    static final FunctionDescriptor gtk_icon_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_icon_factory_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_get_type",
+        constants$1619.gtk_icon_factory_get_type$FUNC
     );
-    static final MethodHandle gtk_editable_delete_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_delete_selection",
-        constants$1619.gtk_editable_delete_selection$FUNC
+    static final FunctionDescriptor gtk_icon_factory_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_icon_factory_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_new",
+        constants$1619.gtk_icon_factory_new$FUNC
     );
-    static final FunctionDescriptor gtk_editable_set_position$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_factory_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_editable_set_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_set_position",
-        constants$1619.gtk_editable_set_position$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_editable_get_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_get_position",
-        constants$1619.gtk_editable_get_position$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_set_editable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_editable_set_editable$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_set_editable",
-        constants$1619.gtk_editable_set_editable$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_get_editable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_editable_get_editable$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_get_editable",
-        constants$1619.gtk_editable_get_editable$FUNC
+    static final MethodHandle gtk_icon_factory_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_add",
+        constants$1619.gtk_icon_factory_add$FUNC
     );
-    static final FunctionDescriptor gtk_im_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_get_type",
-        constants$1619.gtk_im_context_get_type$FUNC
+    static final FunctionDescriptor gtk_icon_factory_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_factory_lookup$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_lookup",
+        constants$1619.gtk_icon_factory_lookup$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_factory_add_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_factory_add_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_add_default",
+        constants$1619.gtk_icon_factory_add_default$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_factory_remove_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_factory_remove_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_factory_remove_default",
+        constants$1619.gtk_icon_factory_remove_default$FUNC
     );
 }
 

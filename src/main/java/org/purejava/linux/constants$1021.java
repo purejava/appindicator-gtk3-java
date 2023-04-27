@@ -7,66 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1021 {
+final class constants$1021 {
 
-    static final FunctionDescriptor hb_font_get_glyph_h_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_h_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_h_origin",
-        constants$1021.hb_font_get_glyph_h_origin$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_v_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1021() {}
+    static final FunctionDescriptor cairo_user_font_face_set_text_to_glyphs_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_v_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_v_origin",
-        constants$1021.hb_font_get_glyph_v_origin$FUNC
+    static final MethodHandle cairo_user_font_face_set_text_to_glyphs_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_set_text_to_glyphs_func",
+        constants$1021.cairo_user_font_face_set_text_to_glyphs_func$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_h_kerning$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_h_kerning$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_h_kerning",
-        constants$1021.hb_font_get_glyph_h_kerning$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_extents$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_extents",
-        constants$1021.hb_font_get_glyph_extents$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_contour_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_user_font_face_set_unicode_to_glyph_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_contour_point$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_contour_point",
-        constants$1021.hb_font_get_glyph_contour_point$FUNC
+    static final MethodHandle cairo_user_font_face_set_unicode_to_glyph_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_set_unicode_to_glyph_func",
+        constants$1021.cairo_user_font_face_set_unicode_to_glyph_func$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_user_font_face_get_init_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_name$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_name",
-        constants$1021.hb_font_get_glyph_name$FUNC
+    static final MethodHandle cairo_user_font_face_get_init_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_init_func",
+        constants$1021.cairo_user_font_face_get_init_func$FUNC
+    );
+    static final FunctionDescriptor cairo_user_font_face_get_render_glyph_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_user_font_face_get_render_glyph_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_render_glyph_func",
+        constants$1021.cairo_user_font_face_get_render_glyph_func$FUNC
+    );
+    static final FunctionDescriptor cairo_user_font_face_get_text_to_glyphs_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_user_font_face_get_text_to_glyphs_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_text_to_glyphs_func",
+        constants$1021.cairo_user_font_face_get_text_to_glyphs_func$FUNC
+    );
+    static final FunctionDescriptor cairo_user_font_face_get_unicode_to_glyph_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_user_font_face_get_unicode_to_glyph_func$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_unicode_to_glyph_func",
+        constants$1021.cairo_user_font_face_get_unicode_to_glyph_func$FUNC
     );
 }
 

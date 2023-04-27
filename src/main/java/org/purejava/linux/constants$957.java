@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$957 {
+final class constants$957 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSettingsSchemaSource$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$957() {}
+    static final FunctionDescriptor pango_layout_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSettingsSchemaSource$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSettingsSchemaSource",
-        constants$957.glib_queueautoptr_cleanup_GSettingsSchemaSource$FUNC
+    static final MethodHandle pango_layout_get_attributes$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_attributes",
+        constants$957.pango_layout_get_attributes$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSettings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_text$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_text",
+        constants$957.pango_layout_set_text$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSettings$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSettings",
-        constants$957.glib_autoptr_clear_GSettings$FUNC
+    static final MethodHandle pango_layout_get_text$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_text",
+        constants$957.pango_layout_get_text$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSettings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_get_character_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSettings$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSettings",
-        constants$957.glib_autoptr_cleanup_GSettings$FUNC
+    static final MethodHandle pango_layout_get_character_count$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_character_count",
+        constants$957.pango_layout_get_character_count$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSettings$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_markup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_markup$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_markup",
+        constants$957.pango_layout_set_markup$FUNC
+    );
+    static final FunctionDescriptor pango_layout_set_markup_with_accel$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSettings$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSettings",
-        constants$957.glib_listautoptr_cleanup_GSettings$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSettings$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GSettings$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSettings",
-        constants$957.glib_slistautoptr_cleanup_GSettings$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSettings$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GSettings$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSettings",
-        constants$957.glib_queueautoptr_cleanup_GSettings$FUNC
+    static final MethodHandle pango_layout_set_markup_with_accel$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_markup_with_accel",
+        constants$957.pango_layout_set_markup_with_accel$FUNC
     );
 }
 

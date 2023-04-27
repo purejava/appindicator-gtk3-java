@@ -7,37 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1105 {
+final class constants$1105 {
 
-    static final FunctionDescriptor pango_shape_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_shape_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_flags_get_type",
-        constants$1105.pango_shape_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1105() {}
+    static final FunctionDescriptor gdk_window_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_gravity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_gravity_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_type",
-        constants$1105.pango_gravity_get_type$FUNC
+    static final MethodHandle gdk_window_get_frame_clock$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_frame_clock",
+        constants$1105.gdk_window_get_frame_clock$FUNC
     );
-    static final FunctionDescriptor pango_gravity_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_gravity_hint_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_hint_get_type",
-        constants$1105.pango_gravity_hint_get_type$FUNC
+    static final FunctionDescriptor gdk_window_set_opaque_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_alignment_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_alignment_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_alignment_get_type",
-        constants$1105.pango_alignment_get_type$FUNC
+    static final MethodHandle gdk_window_set_opaque_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_opaque_region",
+        constants$1105.gdk_window_set_opaque_region$FUNC
     );
-    static final FunctionDescriptor pango_wrap_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_wrap_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_wrap_mode_get_type",
-        constants$1105.pango_wrap_mode_get_type$FUNC
+    static final FunctionDescriptor gdk_window_set_event_compression$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_ellipsize_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_ellipsize_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_ellipsize_mode_get_type",
-        constants$1105.pango_ellipsize_mode_get_type$FUNC
+    static final MethodHandle gdk_window_set_event_compression$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_event_compression",
+        constants$1105.gdk_window_set_event_compression$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_event_compression$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_event_compression$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_event_compression",
+        constants$1105.gdk_window_get_event_compression$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_shadow_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_shadow_width$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_shadow_width",
+        constants$1105.gdk_window_set_shadow_width$FUNC
+    );
+    static final FunctionDescriptor gdk_window_show_window_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_show_window_menu$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_show_window_menu",
+        constants$1105.gdk_window_show_window_menu$FUNC
     );
 }
 

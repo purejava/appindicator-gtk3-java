@@ -7,37 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$719 {
+final class constants$719 {
 
-    static final FunctionDescriptor g_file_copy_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_copy_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_copy_flags_get_type",
-        constants$719.g_file_copy_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$719() {}
+    static final FunctionDescriptor g_notification_set_urgent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_file_monitor_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_monitor_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_flags_get_type",
-        constants$719.g_file_monitor_flags_get_type$FUNC
+    static final MethodHandle g_notification_set_urgent$MH = RuntimeHelper.downcallHandle(
+        "g_notification_set_urgent",
+        constants$719.g_notification_set_urgent$FUNC
     );
-    static final FunctionDescriptor g_file_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_type_get_type",
-        constants$719.g_file_type_get_type$FUNC
+    static final FunctionDescriptor g_notification_set_priority$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_filesystem_preview_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_filesystem_preview_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_filesystem_preview_type_get_type",
-        constants$719.g_filesystem_preview_type_get_type$FUNC
+    static final MethodHandle g_notification_set_priority$MH = RuntimeHelper.downcallHandle(
+        "g_notification_set_priority",
+        constants$719.g_notification_set_priority$FUNC
     );
-    static final FunctionDescriptor g_file_monitor_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_monitor_event_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_event_get_type",
-        constants$719.g_file_monitor_event_get_type$FUNC
+    static final FunctionDescriptor g_notification_set_category$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_io_error_enum_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_error_enum_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_error_enum_get_type",
-        constants$719.g_io_error_enum_get_type$FUNC
+    static final MethodHandle g_notification_set_category$MH = RuntimeHelper.downcallHandle(
+        "g_notification_set_category",
+        constants$719.g_notification_set_category$FUNC
+    );
+    static final FunctionDescriptor g_notification_add_button$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_notification_add_button$MH = RuntimeHelper.downcallHandle(
+        "g_notification_add_button",
+        constants$719.g_notification_add_button$FUNC
+    );
+    static final FunctionDescriptor g_notification_add_button_with_target$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_notification_add_button_with_target$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_notification_add_button_with_target",
+        constants$719.g_notification_add_button_with_target$FUNC
+    );
+    static final FunctionDescriptor g_notification_add_button_with_target_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_notification_add_button_with_target_value$MH = RuntimeHelper.downcallHandle(
+        "g_notification_add_button_with_target_value",
+        constants$719.g_notification_add_button_with_target_value$FUNC
     );
 }
 

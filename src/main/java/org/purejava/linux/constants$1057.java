@@ -7,53 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1057 {
+final class constants$1057 {
 
-    static final FunctionDescriptor pango_font_description_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1057() {}
+    static final FunctionDescriptor gdk_device_get_history$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_free$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_free",
-        constants$1057.pango_font_description_free$FUNC
+    static final MethodHandle gdk_device_get_history$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_history",
+        constants$1057.gdk_device_get_history$FUNC
     );
-    static final FunctionDescriptor pango_font_descriptions_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_device_free_history$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_font_descriptions_free$MH = RuntimeHelper.downcallHandle(
-        "pango_font_descriptions_free",
-        constants$1057.pango_font_descriptions_free$FUNC
+    static final MethodHandle gdk_device_free_history$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_free_history",
+        constants$1057.gdk_device_free_history$FUNC
     );
-    static final FunctionDescriptor pango_font_description_set_family$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_device_get_n_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_n_axes$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_n_axes",
+        constants$1057.gdk_device_get_n_axes$FUNC
+    );
+    static final FunctionDescriptor gdk_device_list_axes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_list_axes$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_list_axes",
+        constants$1057.gdk_device_list_axes$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_axis_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_set_family$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_family",
-        constants$1057.pango_font_description_set_family$FUNC
+    static final MethodHandle gdk_device_get_axis_value$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axis_value",
+        constants$1057.gdk_device_get_axis_value$FUNC
     );
-    static final FunctionDescriptor pango_font_description_set_family_static$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_device_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_set_family_static$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_family_static",
-        constants$1057.pango_font_description_set_family_static$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_get_family$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_family",
-        constants$1057.pango_font_description_get_family$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_set_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_style$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_style",
-        constants$1057.pango_font_description_set_style$FUNC
+    static final MethodHandle gdk_device_get_axis$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axis",
+        constants$1057.gdk_device_get_axis$FUNC
     );
 }
 

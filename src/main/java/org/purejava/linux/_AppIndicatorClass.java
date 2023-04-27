@@ -7,9 +7,32 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AppIndicatorClass {
+ *     GObjectClass parent_class;
+ *     void (*new_icon)(AppIndicator*,gpointer);
+ *     void (*new_attention_icon)(AppIndicator*,gpointer);
+ *     void (*new_status)(AppIndicator*,const gchar*,gpointer);
+ *     void (*new_icon_theme_path)(AppIndicator*,const gchar*,gpointer);
+ *     void (*new_label)(AppIndicator*,const gchar*,const gchar*,gpointer);
+ *     void (*connection_changed)(AppIndicator*,gboolean,gpointer);
+ *     void (*scroll_event)(AppIndicator*,gint,GdkScrollDirection,gpointer);
+ *     void (*app_indicator_reserved_ats)();
+ *     GtkStatusIcon* (*fallback)(AppIndicator*);
+ *     void (*unfallback)(AppIndicator*,GtkStatusIcon*);
+ *     void (*app_indicator_reserved_1)();
+ *     void (*app_indicator_reserved_2)();
+ *     void (*app_indicator_reserved_3)();
+ *     void (*app_indicator_reserved_4)();
+ *     void (*app_indicator_reserved_5)();
+ *     void (*app_indicator_reserved_6)();
+ * };
+ * }
+ */
 public class _AppIndicatorClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +47,10 @@ public class _AppIndicatorClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("new_icon"),
         Constants$root.C_POINTER$LAYOUT.withName("new_attention_icon"),
@@ -53,20 +79,34 @@ public class _AppIndicatorClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle new_icon$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.new_icon$FUNC
+    static final FunctionDescriptor new_icon_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle new_icon_UP$MH = RuntimeHelper.upcallHandle(new_icon.class, "apply", _AppIndicatorClass.new_icon_UP$FUNC);
+    static final FunctionDescriptor new_icon_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle new_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.new_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*new_icon)(AppIndicator*,gpointer);
+     * }
+     */
     public interface new_icon {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(new_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(new_icon.class, fi, _AppIndicatorClass.new_icon$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(new_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.new_icon_UP$MH, fi, _AppIndicatorClass.new_icon$FUNC, scope);
         }
-        static new_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static new_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    _AppIndicatorClass.new_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AppIndicatorClass.new_icon_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -78,39 +118,65 @@ public class _AppIndicatorClass {
     public static VarHandle new_icon$VH() {
         return _AppIndicatorClass.new_icon$VH;
     }
-    public static MemoryAddress new_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*new_icon)(AppIndicator*,gpointer);
+     * }
+     */
+    public static MemorySegment new_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_icon$VH.get(seg);
     }
-    public static void new_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*new_icon)(AppIndicator*,gpointer);
+     * }
+     */
+    public static void new_icon$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.new_icon$VH.set(seg, x);
     }
-    public static MemoryAddress new_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment new_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void new_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void new_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.new_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static new_icon new_icon (MemorySegment segment, MemorySession session) {
-        return new_icon.ofAddress(new_icon$get(segment), session);
+    public static new_icon new_icon(MemorySegment segment, SegmentScope scope) {
+        return new_icon.ofAddress(new_icon$get(segment), scope);
     }
     static final FunctionDescriptor new_attention_icon$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle new_attention_icon$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.new_attention_icon$FUNC
+    static final FunctionDescriptor new_attention_icon_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle new_attention_icon_UP$MH = RuntimeHelper.upcallHandle(new_attention_icon.class, "apply", _AppIndicatorClass.new_attention_icon_UP$FUNC);
+    static final FunctionDescriptor new_attention_icon_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle new_attention_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.new_attention_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*new_attention_icon)(AppIndicator*,gpointer);
+     * }
+     */
     public interface new_attention_icon {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(new_attention_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(new_attention_icon.class, fi, _AppIndicatorClass.new_attention_icon$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(new_attention_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.new_attention_icon_UP$MH, fi, _AppIndicatorClass.new_attention_icon$FUNC, scope);
         }
-        static new_attention_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static new_attention_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    _AppIndicatorClass.new_attention_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AppIndicatorClass.new_attention_icon_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -122,40 +188,68 @@ public class _AppIndicatorClass {
     public static VarHandle new_attention_icon$VH() {
         return _AppIndicatorClass.new_attention_icon$VH;
     }
-    public static MemoryAddress new_attention_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_attention_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*new_attention_icon)(AppIndicator*,gpointer);
+     * }
+     */
+    public static MemorySegment new_attention_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_attention_icon$VH.get(seg);
     }
-    public static void new_attention_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*new_attention_icon)(AppIndicator*,gpointer);
+     * }
+     */
+    public static void new_attention_icon$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.new_attention_icon$VH.set(seg, x);
     }
-    public static MemoryAddress new_attention_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_attention_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment new_attention_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_attention_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void new_attention_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void new_attention_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.new_attention_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static new_attention_icon new_attention_icon (MemorySegment segment, MemorySession session) {
-        return new_attention_icon.ofAddress(new_attention_icon$get(segment), session);
+    public static new_attention_icon new_attention_icon(MemorySegment segment, SegmentScope scope) {
+        return new_attention_icon.ofAddress(new_attention_icon$get(segment), scope);
     }
     static final FunctionDescriptor new_status$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle new_status$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.new_status$FUNC
+    static final FunctionDescriptor new_status_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle new_status_UP$MH = RuntimeHelper.upcallHandle(new_status.class, "apply", _AppIndicatorClass.new_status_UP$FUNC);
+    static final FunctionDescriptor new_status_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle new_status_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.new_status_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*new_status)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
     public interface new_status {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(new_status fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(new_status.class, fi, _AppIndicatorClass.new_status$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(new_status fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.new_status_UP$MH, fi, _AppIndicatorClass.new_status$FUNC, scope);
         }
-        static new_status ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static new_status ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _AppIndicatorClass.new_status$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _AppIndicatorClass.new_status_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -167,40 +261,68 @@ public class _AppIndicatorClass {
     public static VarHandle new_status$VH() {
         return _AppIndicatorClass.new_status$VH;
     }
-    public static MemoryAddress new_status$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_status$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*new_status)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
+    public static MemorySegment new_status$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_status$VH.get(seg);
     }
-    public static void new_status$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*new_status)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
+    public static void new_status$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.new_status$VH.set(seg, x);
     }
-    public static MemoryAddress new_status$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_status$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment new_status$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_status$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void new_status$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void new_status$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.new_status$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static new_status new_status (MemorySegment segment, MemorySession session) {
-        return new_status.ofAddress(new_status$get(segment), session);
+    public static new_status new_status(MemorySegment segment, SegmentScope scope) {
+        return new_status.ofAddress(new_status$get(segment), scope);
     }
     static final FunctionDescriptor new_icon_theme_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle new_icon_theme_path$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.new_icon_theme_path$FUNC
+    static final FunctionDescriptor new_icon_theme_path_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle new_icon_theme_path_UP$MH = RuntimeHelper.upcallHandle(new_icon_theme_path.class, "apply", _AppIndicatorClass.new_icon_theme_path_UP$FUNC);
+    static final FunctionDescriptor new_icon_theme_path_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle new_icon_theme_path_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.new_icon_theme_path_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*new_icon_theme_path)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
     public interface new_icon_theme_path {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(new_icon_theme_path fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(new_icon_theme_path.class, fi, _AppIndicatorClass.new_icon_theme_path$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(new_icon_theme_path fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.new_icon_theme_path_UP$MH, fi, _AppIndicatorClass.new_icon_theme_path$FUNC, scope);
         }
-        static new_icon_theme_path ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static new_icon_theme_path ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _AppIndicatorClass.new_icon_theme_path$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _AppIndicatorClass.new_icon_theme_path_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -212,20 +334,32 @@ public class _AppIndicatorClass {
     public static VarHandle new_icon_theme_path$VH() {
         return _AppIndicatorClass.new_icon_theme_path$VH;
     }
-    public static MemoryAddress new_icon_theme_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_icon_theme_path$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*new_icon_theme_path)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
+    public static MemorySegment new_icon_theme_path$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_icon_theme_path$VH.get(seg);
     }
-    public static void new_icon_theme_path$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*new_icon_theme_path)(AppIndicator*,const gchar*,gpointer);
+     * }
+     */
+    public static void new_icon_theme_path$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.new_icon_theme_path$VH.set(seg, x);
     }
-    public static MemoryAddress new_icon_theme_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_icon_theme_path$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment new_icon_theme_path$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_icon_theme_path$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void new_icon_theme_path$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void new_icon_theme_path$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.new_icon_theme_path$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static new_icon_theme_path new_icon_theme_path (MemorySegment segment, MemorySession session) {
-        return new_icon_theme_path.ofAddress(new_icon_theme_path$get(segment), session);
+    public static new_icon_theme_path new_icon_theme_path(MemorySegment segment, SegmentScope scope) {
+        return new_icon_theme_path.ofAddress(new_icon_theme_path$get(segment), scope);
     }
     static final FunctionDescriptor new_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -233,20 +367,38 @@ public class _AppIndicatorClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle new_label$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.new_label$FUNC
+    static final FunctionDescriptor new_label_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle new_label_UP$MH = RuntimeHelper.upcallHandle(new_label.class, "apply", _AppIndicatorClass.new_label_UP$FUNC);
+    static final FunctionDescriptor new_label_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle new_label_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.new_label_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*new_label)(AppIndicator*,const gchar*,const gchar*,gpointer);
+     * }
+     */
     public interface new_label {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(new_label fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(new_label.class, fi, _AppIndicatorClass.new_label$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(new_label fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.new_label_UP$MH, fi, _AppIndicatorClass.new_label$FUNC, scope);
         }
-        static new_label ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static new_label ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _AppIndicatorClass.new_label$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _AppIndicatorClass.new_label_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -258,40 +410,68 @@ public class _AppIndicatorClass {
     public static VarHandle new_label$VH() {
         return _AppIndicatorClass.new_label$VH;
     }
-    public static MemoryAddress new_label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_label$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*new_label)(AppIndicator*,const gchar*,const gchar*,gpointer);
+     * }
+     */
+    public static MemorySegment new_label$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_label$VH.get(seg);
     }
-    public static void new_label$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*new_label)(AppIndicator*,const gchar*,const gchar*,gpointer);
+     * }
+     */
+    public static void new_label$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.new_label$VH.set(seg, x);
     }
-    public static MemoryAddress new_label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.new_label$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment new_label$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.new_label$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void new_label$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void new_label$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.new_label$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static new_label new_label (MemorySegment segment, MemorySession session) {
-        return new_label.ofAddress(new_label$get(segment), session);
+    public static new_label new_label(MemorySegment segment, SegmentScope scope) {
+        return new_label.ofAddress(new_label$get(segment), scope);
     }
     static final FunctionDescriptor connection_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle connection_changed$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.connection_changed$FUNC
+    static final FunctionDescriptor connection_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle connection_changed_UP$MH = RuntimeHelper.upcallHandle(connection_changed.class, "apply", _AppIndicatorClass.connection_changed_UP$FUNC);
+    static final FunctionDescriptor connection_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle connection_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.connection_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*connection_changed)(AppIndicator*,gboolean,gpointer);
+     * }
+     */
     public interface connection_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(connection_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(connection_changed.class, fi, _AppIndicatorClass.connection_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(connection_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.connection_changed_UP$MH, fi, _AppIndicatorClass.connection_changed$FUNC, scope);
         }
-        static connection_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static connection_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _AppIndicatorClass.connection_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2);
+                    _AppIndicatorClass.connection_changed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -303,20 +483,32 @@ public class _AppIndicatorClass {
     public static VarHandle connection_changed$VH() {
         return _AppIndicatorClass.connection_changed$VH;
     }
-    public static MemoryAddress connection_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.connection_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*connection_changed)(AppIndicator*,gboolean,gpointer);
+     * }
+     */
+    public static MemorySegment connection_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.connection_changed$VH.get(seg);
     }
-    public static void connection_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*connection_changed)(AppIndicator*,gboolean,gpointer);
+     * }
+     */
+    public static void connection_changed$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.connection_changed$VH.set(seg, x);
     }
-    public static MemoryAddress connection_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.connection_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment connection_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.connection_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void connection_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void connection_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.connection_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static connection_changed connection_changed (MemorySegment segment, MemorySession session) {
-        return connection_changed.ofAddress(connection_changed$get(segment), session);
+    public static connection_changed connection_changed(MemorySegment segment, SegmentScope scope) {
+        return connection_changed.ofAddress(connection_changed$get(segment), scope);
     }
     static final FunctionDescriptor scroll_event$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -324,20 +516,38 @@ public class _AppIndicatorClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle scroll_event$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.scroll_event$FUNC
+    static final FunctionDescriptor scroll_event_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle scroll_event_UP$MH = RuntimeHelper.upcallHandle(scroll_event.class, "apply", _AppIndicatorClass.scroll_event_UP$FUNC);
+    static final FunctionDescriptor scroll_event_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle scroll_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.scroll_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*scroll_event)(AppIndicator*,gint,GdkScrollDirection,gpointer);
+     * }
+     */
     public interface scroll_event {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(scroll_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(scroll_event.class, fi, _AppIndicatorClass.scroll_event$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(scroll_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.scroll_event_UP$MH, fi, _AppIndicatorClass.scroll_event$FUNC, scope);
         }
-        static scroll_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static scroll_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _AppIndicatorClass.scroll_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    _AppIndicatorClass.scroll_event_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -349,36 +559,56 @@ public class _AppIndicatorClass {
     public static VarHandle scroll_event$VH() {
         return _AppIndicatorClass.scroll_event$VH;
     }
-    public static MemoryAddress scroll_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.scroll_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*scroll_event)(AppIndicator*,gint,GdkScrollDirection,gpointer);
+     * }
+     */
+    public static MemorySegment scroll_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.scroll_event$VH.get(seg);
     }
-    public static void scroll_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*scroll_event)(AppIndicator*,gint,GdkScrollDirection,gpointer);
+     * }
+     */
+    public static void scroll_event$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.scroll_event$VH.set(seg, x);
     }
-    public static MemoryAddress scroll_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.scroll_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment scroll_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.scroll_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void scroll_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void scroll_event$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.scroll_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static scroll_event scroll_event (MemorySegment segment, MemorySession session) {
-        return scroll_event.ofAddress(scroll_event$get(segment), session);
+    public static scroll_event scroll_event(MemorySegment segment, SegmentScope scope) {
+        return scroll_event.ofAddress(scroll_event$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_ats$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_ats$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_ats$FUNC
+    static final FunctionDescriptor app_indicator_reserved_ats_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_ats_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_ats.class, "apply", _AppIndicatorClass.app_indicator_reserved_ats_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_ats_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_ats_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_ats_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_ats)();
+     * }
+     */
     public interface app_indicator_reserved_ats {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_ats fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_ats.class, fi, _AppIndicatorClass.app_indicator_reserved_ats$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_ats fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_ats_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_ats$FUNC, scope);
         }
-        static app_indicator_reserved_ats ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_ats ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_ats$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_ats_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -390,38 +620,62 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_ats$VH() {
         return _AppIndicatorClass.app_indicator_reserved_ats$VH;
     }
-    public static MemoryAddress app_indicator_reserved_ats$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_ats$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_ats)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_ats$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_ats$VH.get(seg);
     }
-    public static void app_indicator_reserved_ats$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_ats)();
+     * }
+     */
+    public static void app_indicator_reserved_ats$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_ats$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_ats$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_ats$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_ats$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_ats$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_ats$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_ats$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_ats$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_ats app_indicator_reserved_ats (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_ats.ofAddress(app_indicator_reserved_ats$get(segment), session);
+    public static app_indicator_reserved_ats app_indicator_reserved_ats(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_ats.ofAddress(app_indicator_reserved_ats$get(segment), scope);
     }
     static final FunctionDescriptor fallback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fallback$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.fallback$FUNC
+    static final FunctionDescriptor fallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle fallback_UP$MH = RuntimeHelper.upcallHandle(fallback.class, "apply", _AppIndicatorClass.fallback_UP$FUNC);
+    static final FunctionDescriptor fallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle fallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.fallback_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkStatusIcon* (*fallback)(AppIndicator*);
+     * }
+     */
     public interface fallback {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(fallback fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(fallback.class, fi, _AppIndicatorClass.fallback$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(fallback fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.fallback_UP$MH, fi, _AppIndicatorClass.fallback$FUNC, scope);
         }
-        static fallback ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static fallback ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AppIndicatorClass.fallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AppIndicatorClass.fallback_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -433,39 +687,65 @@ public class _AppIndicatorClass {
     public static VarHandle fallback$VH() {
         return _AppIndicatorClass.fallback$VH;
     }
-    public static MemoryAddress fallback$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.fallback$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkStatusIcon* (*fallback)(AppIndicator*);
+     * }
+     */
+    public static MemorySegment fallback$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.fallback$VH.get(seg);
     }
-    public static void fallback$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkStatusIcon* (*fallback)(AppIndicator*);
+     * }
+     */
+    public static void fallback$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.fallback$VH.set(seg, x);
     }
-    public static MemoryAddress fallback$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.fallback$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment fallback$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.fallback$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void fallback$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void fallback$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.fallback$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static fallback fallback (MemorySegment segment, MemorySession session) {
-        return fallback.ofAddress(fallback$get(segment), session);
+    public static fallback fallback(MemorySegment segment, SegmentScope scope) {
+        return fallback.ofAddress(fallback$get(segment), scope);
     }
     static final FunctionDescriptor unfallback$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unfallback$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.unfallback$FUNC
+    static final FunctionDescriptor unfallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unfallback_UP$MH = RuntimeHelper.upcallHandle(unfallback.class, "apply", _AppIndicatorClass.unfallback_UP$FUNC);
+    static final FunctionDescriptor unfallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unfallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.unfallback_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*unfallback)(AppIndicator*,GtkStatusIcon*);
+     * }
+     */
     public interface unfallback {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(unfallback fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unfallback.class, fi, _AppIndicatorClass.unfallback$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(unfallback fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.unfallback_UP$MH, fi, _AppIndicatorClass.unfallback$FUNC, scope);
         }
-        static unfallback ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static unfallback ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AppIndicatorClass.unfallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AppIndicatorClass.unfallback_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -477,36 +757,56 @@ public class _AppIndicatorClass {
     public static VarHandle unfallback$VH() {
         return _AppIndicatorClass.unfallback$VH;
     }
-    public static MemoryAddress unfallback$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.unfallback$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*unfallback)(AppIndicator*,GtkStatusIcon*);
+     * }
+     */
+    public static MemorySegment unfallback$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.unfallback$VH.get(seg);
     }
-    public static void unfallback$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*unfallback)(AppIndicator*,GtkStatusIcon*);
+     * }
+     */
+    public static void unfallback$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.unfallback$VH.set(seg, x);
     }
-    public static MemoryAddress unfallback$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.unfallback$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unfallback$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.unfallback$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unfallback$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unfallback$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.unfallback$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unfallback unfallback (MemorySegment segment, MemorySession session) {
-        return unfallback.ofAddress(unfallback$get(segment), session);
+    public static unfallback unfallback(MemorySegment segment, SegmentScope scope) {
+        return unfallback.ofAddress(unfallback$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_1$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_1$FUNC
+    static final FunctionDescriptor app_indicator_reserved_1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_1_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_1.class, "apply", _AppIndicatorClass.app_indicator_reserved_1_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_1)();
+     * }
+     */
     public interface app_indicator_reserved_1 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_1.class, fi, _AppIndicatorClass.app_indicator_reserved_1$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_1_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_1$FUNC, scope);
         }
-        static app_indicator_reserved_1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_1$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -518,36 +818,56 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_1$VH() {
         return _AppIndicatorClass.app_indicator_reserved_1$VH;
     }
-    public static MemoryAddress app_indicator_reserved_1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_1)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_1$VH.get(seg);
     }
-    public static void app_indicator_reserved_1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_1)();
+     * }
+     */
+    public static void app_indicator_reserved_1$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_1$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_1$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_1 app_indicator_reserved_1 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_1.ofAddress(app_indicator_reserved_1$get(segment), session);
+    public static app_indicator_reserved_1 app_indicator_reserved_1(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_1.ofAddress(app_indicator_reserved_1$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_2$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_2$FUNC
+    static final FunctionDescriptor app_indicator_reserved_2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_2_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_2.class, "apply", _AppIndicatorClass.app_indicator_reserved_2_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_2)();
+     * }
+     */
     public interface app_indicator_reserved_2 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_2.class, fi, _AppIndicatorClass.app_indicator_reserved_2$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_2_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_2$FUNC, scope);
         }
-        static app_indicator_reserved_2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_2$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -559,36 +879,56 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_2$VH() {
         return _AppIndicatorClass.app_indicator_reserved_2$VH;
     }
-    public static MemoryAddress app_indicator_reserved_2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_2)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_2$VH.get(seg);
     }
-    public static void app_indicator_reserved_2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_2)();
+     * }
+     */
+    public static void app_indicator_reserved_2$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_2$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_2$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_2 app_indicator_reserved_2 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_2.ofAddress(app_indicator_reserved_2$get(segment), session);
+    public static app_indicator_reserved_2 app_indicator_reserved_2(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_2.ofAddress(app_indicator_reserved_2$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_3$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_3$FUNC
+    static final FunctionDescriptor app_indicator_reserved_3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_3_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_3.class, "apply", _AppIndicatorClass.app_indicator_reserved_3_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_3)();
+     * }
+     */
     public interface app_indicator_reserved_3 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_3.class, fi, _AppIndicatorClass.app_indicator_reserved_3$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_3_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_3$FUNC, scope);
         }
-        static app_indicator_reserved_3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_3$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -600,36 +940,56 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_3$VH() {
         return _AppIndicatorClass.app_indicator_reserved_3$VH;
     }
-    public static MemoryAddress app_indicator_reserved_3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_3)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_3$VH.get(seg);
     }
-    public static void app_indicator_reserved_3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_3)();
+     * }
+     */
+    public static void app_indicator_reserved_3$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_3$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_3$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_3 app_indicator_reserved_3 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_3.ofAddress(app_indicator_reserved_3$get(segment), session);
+    public static app_indicator_reserved_3 app_indicator_reserved_3(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_3.ofAddress(app_indicator_reserved_3$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_4$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_4$FUNC
+    static final FunctionDescriptor app_indicator_reserved_4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_4_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_4.class, "apply", _AppIndicatorClass.app_indicator_reserved_4_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_4)();
+     * }
+     */
     public interface app_indicator_reserved_4 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_4.class, fi, _AppIndicatorClass.app_indicator_reserved_4$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_4_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_4$FUNC, scope);
         }
-        static app_indicator_reserved_4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_4$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -641,36 +1001,56 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_4$VH() {
         return _AppIndicatorClass.app_indicator_reserved_4$VH;
     }
-    public static MemoryAddress app_indicator_reserved_4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_4)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_4$VH.get(seg);
     }
-    public static void app_indicator_reserved_4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_4)();
+     * }
+     */
+    public static void app_indicator_reserved_4$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_4$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_4$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_4 app_indicator_reserved_4 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_4.ofAddress(app_indicator_reserved_4$get(segment), session);
+    public static app_indicator_reserved_4 app_indicator_reserved_4(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_4.ofAddress(app_indicator_reserved_4$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_5$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_5$FUNC
+    static final FunctionDescriptor app_indicator_reserved_5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_5_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_5.class, "apply", _AppIndicatorClass.app_indicator_reserved_5_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_5)();
+     * }
+     */
     public interface app_indicator_reserved_5 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_5.class, fi, _AppIndicatorClass.app_indicator_reserved_5$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_5_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_5$FUNC, scope);
         }
-        static app_indicator_reserved_5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_5$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -682,36 +1062,56 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_5$VH() {
         return _AppIndicatorClass.app_indicator_reserved_5$VH;
     }
-    public static MemoryAddress app_indicator_reserved_5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_5)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_5$VH.get(seg);
     }
-    public static void app_indicator_reserved_5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_5)();
+     * }
+     */
+    public static void app_indicator_reserved_5$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_5$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_5$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_5 app_indicator_reserved_5 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_5.ofAddress(app_indicator_reserved_5$get(segment), session);
+    public static app_indicator_reserved_5 app_indicator_reserved_5(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_5.ofAddress(app_indicator_reserved_5$get(segment), scope);
     }
     static final FunctionDescriptor app_indicator_reserved_6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle app_indicator_reserved_6$MH = RuntimeHelper.downcallHandle(
-        _AppIndicatorClass.app_indicator_reserved_6$FUNC
+    static final FunctionDescriptor app_indicator_reserved_6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_6_UP$MH = RuntimeHelper.upcallHandle(app_indicator_reserved_6.class, "apply", _AppIndicatorClass.app_indicator_reserved_6_UP$FUNC);
+    static final FunctionDescriptor app_indicator_reserved_6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle app_indicator_reserved_6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AppIndicatorClass.app_indicator_reserved_6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*app_indicator_reserved_6)();
+     * }
+     */
     public interface app_indicator_reserved_6 {
 
         void apply();
-        static MemorySegment allocate(app_indicator_reserved_6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(app_indicator_reserved_6.class, fi, _AppIndicatorClass.app_indicator_reserved_6$FUNC, session);
+        static MemorySegment allocate(app_indicator_reserved_6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AppIndicatorClass.app_indicator_reserved_6_UP$MH, fi, _AppIndicatorClass.app_indicator_reserved_6$FUNC, scope);
         }
-        static app_indicator_reserved_6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static app_indicator_reserved_6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _AppIndicatorClass.app_indicator_reserved_6$MH.invokeExact((Addressable)symbol);
+                    _AppIndicatorClass.app_indicator_reserved_6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -723,27 +1123,39 @@ public class _AppIndicatorClass {
     public static VarHandle app_indicator_reserved_6$VH() {
         return _AppIndicatorClass.app_indicator_reserved_6$VH;
     }
-    public static MemoryAddress app_indicator_reserved_6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_6)();
+     * }
+     */
+    public static MemorySegment app_indicator_reserved_6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_6$VH.get(seg);
     }
-    public static void app_indicator_reserved_6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*app_indicator_reserved_6)();
+     * }
+     */
+    public static void app_indicator_reserved_6$set(MemorySegment seg, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_6$VH.set(seg, x);
     }
-    public static MemoryAddress app_indicator_reserved_6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicatorClass.app_indicator_reserved_6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment app_indicator_reserved_6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AppIndicatorClass.app_indicator_reserved_6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void app_indicator_reserved_6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void app_indicator_reserved_6$set(MemorySegment seg, long index, MemorySegment x) {
         _AppIndicatorClass.app_indicator_reserved_6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static app_indicator_reserved_6 app_indicator_reserved_6 (MemorySegment segment, MemorySession session) {
-        return app_indicator_reserved_6.ofAddress(app_indicator_reserved_6$get(segment), session);
+    public static app_indicator_reserved_6 app_indicator_reserved_6(MemorySegment segment, SegmentScope scope) {
+        return app_indicator_reserved_6.ofAddress(app_indicator_reserved_6$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,56 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2014 {
+final class constants$2014 {
 
-    static final FunctionDescriptor gtk_spin_button_set_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_range",
-        constants$2014.gtk_spin_button_set_range$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_range",
-        constants$2014.gtk_spin_button_get_range$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_value",
-        constants$2014.gtk_spin_button_get_value$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_value_as_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_value_as_int$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_value_as_int",
-        constants$2014.gtk_spin_button_get_value_as_int$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_value",
-        constants$2014.gtk_spin_button_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_update_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_update_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_update_policy",
-        constants$2014.gtk_spin_button_set_update_policy$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2014() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::used");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::type");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::readonly");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::use-preview");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::remote");
+    static final MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gvfs::backend");
 }
 
 

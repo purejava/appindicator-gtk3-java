@@ -7,75 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$213 {
+final class constants$213 {
 
-    static final FunctionDescriptor g_key_file_get_string_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$213() {}
+    static final FunctionDescriptor g_io_channel_write$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_write$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_write",
+        constants$213.g_io_channel_write$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_channel_seek$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_seek",
+        constants$213.g_io_channel_seek$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_close$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_close$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_close",
+        constants$213.g_io_channel_close$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_shutdown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_shutdown$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_shutdown",
+        constants$213.g_io_channel_shutdown$FUNC
+    );
+    static final FunctionDescriptor g_io_add_watch_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_string_list",
-        constants$213.g_key_file_get_string_list$FUNC
+    static final MethodHandle g_io_add_watch_full$MH = RuntimeHelper.downcallHandle(
+        "g_io_add_watch_full",
+        constants$213.g_io_add_watch_full$FUNC
     );
-    static final FunctionDescriptor g_key_file_set_string_list$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_io_create_watch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_key_file_set_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_string_list",
-        constants$213.g_key_file_set_string_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_locale_string_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_locale_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_locale_string_list",
-        constants$213.g_key_file_get_locale_string_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_locale_string_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_locale_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_locale_string_list",
-        constants$213.g_key_file_set_locale_string_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_boolean_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_boolean_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_boolean_list",
-        constants$213.g_key_file_get_boolean_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_boolean_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_boolean_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_boolean_list",
-        constants$213.g_key_file_set_boolean_list$FUNC
+    static final MethodHandle g_io_create_watch$MH = RuntimeHelper.downcallHandle(
+        "g_io_create_watch",
+        constants$213.g_io_create_watch$FUNC
     );
 }
 

@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1263 {
+final class constants$1263 {
 
-    static final FunctionDescriptor gdk_get_default_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_default_root_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_default_root_window",
-        constants$1263.gdk_get_default_root_window$FUNC
-    );
-    static final FunctionDescriptor gdk_offscreen_window_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_offscreen_window_get_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_surface",
-        constants$1263.gdk_offscreen_window_get_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_offscreen_window_set_embedder$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1263() {}
+    static final FunctionDescriptor gtk_widget_set_parent_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_offscreen_window_set_embedder$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_set_embedder",
-        constants$1263.gdk_offscreen_window_set_embedder$FUNC
+    static final MethodHandle gtk_widget_set_parent_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_parent_window",
+        constants$1263.gtk_widget_set_parent_window$FUNC
     );
-    static final FunctionDescriptor gdk_offscreen_window_get_embedder$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_parent_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_offscreen_window_get_embedder$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_embedder",
-        constants$1263.gdk_offscreen_window_get_embedder$FUNC
+    static final MethodHandle gtk_widget_get_parent_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_parent_window",
+        constants$1263.gtk_widget_get_parent_window$FUNC
     );
-    static final FunctionDescriptor gdk_window_geometry_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_geometry_changed$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_geometry_changed",
-        constants$1263.gdk_window_geometry_changed$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_support_multidevice$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_set_child_visible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_support_multidevice",
-        constants$1263.gdk_window_set_support_multidevice$FUNC
+    static final MethodHandle gtk_widget_set_child_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_child_visible",
+        constants$1263.gtk_widget_set_child_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_child_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_child_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_child_visible",
+        constants$1263.gtk_widget_get_child_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_window$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_window",
+        constants$1263.gtk_widget_set_window$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_window",
+        constants$1263.gtk_widget_get_window$FUNC
     );
 }
 

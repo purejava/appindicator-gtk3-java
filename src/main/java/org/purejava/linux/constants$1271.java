@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1271 {
+final class constants$1271 {
 
-    static final FunctionDescriptor gdk_display_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_pointer_is_grabbed",
-        constants$1271.gdk_display_pointer_is_grabbed$FUNC
-    );
-    static final FunctionDescriptor gdk_display_device_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1271() {}
+    static final FunctionDescriptor gtk_widget_set_vexpand_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_vexpand_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_vexpand_set",
+        constants$1271.gtk_widget_set_vexpand_set$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_queue_compute_expand$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_device_is_grabbed$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_device_is_grabbed",
-        constants$1271.gdk_display_device_is_grabbed$FUNC
+    static final MethodHandle gtk_widget_queue_compute_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_compute_expand",
+        constants$1271.gtk_widget_queue_compute_expand$FUNC
     );
-    static final FunctionDescriptor gdk_display_beep$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_compute_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_compute_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_compute_expand",
+        constants$1271.gtk_widget_compute_expand$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_support_multidevice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_beep$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_beep",
-        constants$1271.gdk_display_beep$FUNC
+    static final MethodHandle gtk_widget_get_support_multidevice$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_support_multidevice",
+        constants$1271.gtk_widget_get_support_multidevice$FUNC
     );
-    static final FunctionDescriptor gdk_display_sync$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_widget_set_support_multidevice$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_display_sync$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_sync",
-        constants$1271.gdk_display_sync$FUNC
+    static final MethodHandle gtk_widget_set_support_multidevice$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_support_multidevice",
+        constants$1271.gtk_widget_set_support_multidevice$FUNC
     );
-    static final FunctionDescriptor gdk_display_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_widget_class_set_accessible_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle gdk_display_flush$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_flush",
-        constants$1271.gdk_display_flush$FUNC
-    );
-    static final FunctionDescriptor gdk_display_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_close$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_close",
-        constants$1271.gdk_display_close$FUNC
+    static final MethodHandle gtk_widget_class_set_accessible_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_accessible_type",
+        constants$1271.gtk_widget_class_set_accessible_type$FUNC
     );
 }
 

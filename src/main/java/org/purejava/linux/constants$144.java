@@ -7,56 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$144 {
+final class constants$144 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$144() {}
+    static final FunctionDescriptor g_list_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_sort$MH = RuntimeHelper.downcallHandle(
+        "g_list_sort",
+        constants$144.g_list_sort$FUNC
+    );
+    static final FunctionDescriptor g_list_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_list_sort_with_data",
+        constants$144.g_list_sort_with_data$FUNC
+    );
+    static final FunctionDescriptor g_list_nth_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_list_nth_data$MH = RuntimeHelper.downcallHandle(
+        "g_list_nth_data",
+        constants$144.g_list_nth_data$FUNC
+    );
+    static final FunctionDescriptor g_clear_list$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_clear_list$MH = RuntimeHelper.downcallHandle(
+        "g_clear_list",
+        constants$144.g_clear_list$FUNC
+    );
     static final FunctionDescriptor GHRFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHRFunc$MH = RuntimeHelper.downcallHandle(
-        constants$144.GHRFunc$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_new$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new",
-        constants$144.g_hash_table_new$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GHRFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hash_table_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new_full",
-        constants$144.g_hash_table_new_full$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_new_similar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_new_similar$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new_similar",
-        constants$144.g_hash_table_new_similar$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_destroy",
-        constants$144.g_hash_table_destroy$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_insert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GHRFunc_UP$MH = RuntimeHelper.upcallHandle(GHRFunc.class, "apply", constants$144.GHRFunc_UP$FUNC);
+    static final FunctionDescriptor GHRFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hash_table_insert$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_insert",
-        constants$144.g_hash_table_insert$FUNC
+    static final MethodHandle GHRFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$144.GHRFunc_DOWN$FUNC
     );
 }
 

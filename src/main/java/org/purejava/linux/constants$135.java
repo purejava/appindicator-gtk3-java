@@ -7,8 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$135 {
+final class constants$135 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$135() {}
+    static final FunctionDescriptor g_node_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_node_destroy",
+        constants$135.g_node_destroy$FUNC
+    );
+    static final FunctionDescriptor g_node_unlink$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_unlink$MH = RuntimeHelper.downcallHandle(
+        "g_node_unlink",
+        constants$135.g_node_unlink$FUNC
+    );
+    static final FunctionDescriptor g_node_copy_deep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_copy_deep$MH = RuntimeHelper.downcallHandle(
+        "g_node_copy_deep",
+        constants$135.g_node_copy_deep$FUNC
+    );
+    static final FunctionDescriptor g_node_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_copy$MH = RuntimeHelper.downcallHandle(
+        "g_node_copy",
+        constants$135.g_node_copy$FUNC
+    );
+    static final FunctionDescriptor g_node_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_insert$MH = RuntimeHelper.downcallHandle(
+        "g_node_insert",
+        constants$135.g_node_insert$FUNC
+    );
     static final FunctionDescriptor g_node_insert_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -17,46 +58,6 @@ class constants$135 {
     static final MethodHandle g_node_insert_before$MH = RuntimeHelper.downcallHandle(
         "g_node_insert_before",
         constants$135.g_node_insert_before$FUNC
-    );
-    static final FunctionDescriptor g_node_insert_after$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_insert_after$MH = RuntimeHelper.downcallHandle(
-        "g_node_insert_after",
-        constants$135.g_node_insert_after$FUNC
-    );
-    static final FunctionDescriptor g_node_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_node_prepend",
-        constants$135.g_node_prepend$FUNC
-    );
-    static final FunctionDescriptor g_node_n_nodes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_node_n_nodes$MH = RuntimeHelper.downcallHandle(
-        "g_node_n_nodes",
-        constants$135.g_node_n_nodes$FUNC
-    );
-    static final FunctionDescriptor g_node_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_get_root$MH = RuntimeHelper.downcallHandle(
-        "g_node_get_root",
-        constants$135.g_node_get_root$FUNC
-    );
-    static final FunctionDescriptor g_node_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "g_node_is_ancestor",
-        constants$135.g_node_is_ancestor$FUNC
     );
 }
 

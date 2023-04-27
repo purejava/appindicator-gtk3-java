@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkFlowBoxSortFunc)(struct _GtkFlowBoxChild* child1,struct _GtkFlowBoxChild* child2,void* user_data);
+ * }
+ */
 public interface GtkFlowBoxSortFunc {
 
-    int apply(java.lang.foreign.MemoryAddress child1, java.lang.foreign.MemoryAddress child2, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkFlowBoxSortFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkFlowBoxSortFunc.class, fi, constants$1787.GtkFlowBoxSortFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkFlowBoxSortFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1592.GtkFlowBoxSortFunc_UP$MH, fi, constants$1592.GtkFlowBoxSortFunc$FUNC, scope);
     }
-    static GtkFlowBoxSortFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _child1, java.lang.foreign.MemoryAddress _child2, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkFlowBoxSortFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1787.GtkFlowBoxSortFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_child1, (java.lang.foreign.Addressable)_child2, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1592.GtkFlowBoxSortFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

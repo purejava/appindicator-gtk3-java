@@ -7,52 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1593 {
+final class constants$1593 {
 
-    static final FunctionDescriptor gtk_text_iter_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1593() {}
+    static final FunctionDescriptor gtk_font_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_font_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_get_type",
+        constants$1593.gtk_font_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_font_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_font_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_new",
+        constants$1593.gtk_font_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_font_button_new_with_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_pixbuf",
-        constants$1593.gtk_text_iter_get_pixbuf$FUNC
+    static final MethodHandle gtk_font_button_new_with_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_new_with_font",
+        constants$1593.gtk_font_button_new_with_font$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_get_marks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_font_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_marks$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_marks",
-        constants$1593.gtk_text_iter_get_marks$FUNC
+    static final MethodHandle gtk_font_button_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_get_title",
+        constants$1593.gtk_font_button_get_title$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_get_child_anchor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_child_anchor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_child_anchor",
-        constants$1593.gtk_text_iter_get_child_anchor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_toggled_tags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_toggled_tags$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_toggled_tags",
-        constants$1593.gtk_text_iter_get_toggled_tags$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_starts_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_button_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_starts_tag$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_tag",
-        constants$1593.gtk_text_iter_starts_tag$FUNC
+    static final MethodHandle gtk_font_button_set_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_set_title",
+        constants$1593.gtk_font_button_set_title$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_begins_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_font_button_get_use_font$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_begins_tag$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_begins_tag",
-        constants$1593.gtk_text_iter_begins_tag$FUNC
+    static final MethodHandle gtk_font_button_get_use_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_button_get_use_font",
+        constants$1593.gtk_font_button_get_use_font$FUNC
     );
 }
 

@@ -7,47 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1014 {
+final class constants$1014 {
 
-    static final FunctionDescriptor hb_font_get_glyph_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_origin_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1014.hb_font_get_glyph_origin_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_h_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1014() {}
+    static final FunctionDescriptor cairo_text_extents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_h_origin_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1014.hb_font_get_glyph_h_origin_func_t$FUNC
+    static final MethodHandle cairo_text_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_text_extents",
+        constants$1014.cairo_text_extents$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_v_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_glyph_extents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_glyph_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_glyph_extents",
+        constants$1014.cairo_glyph_extents$FUNC
+    );
+    static final FunctionDescriptor cairo_font_extents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_v_origin_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1014.hb_font_get_glyph_v_origin_func_t$FUNC
+    static final MethodHandle cairo_font_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_extents",
+        constants$1014.cairo_font_extents$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_kerning_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_font_face_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_font_face_reference$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_face_reference",
+        constants$1014.cairo_font_face_reference$FUNC
+    );
+    static final FunctionDescriptor cairo_font_face_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_font_face_destroy$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_face_destroy",
+        constants$1014.cairo_font_face_destroy$FUNC
+    );
+    static final FunctionDescriptor cairo_font_face_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_font_face_get_reference_count$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_face_get_reference_count",
+        constants$1014.cairo_font_face_get_reference_count$FUNC
     );
 }
 

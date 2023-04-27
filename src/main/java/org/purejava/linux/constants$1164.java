@@ -7,49 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1164 {
+final class constants$1164 {
 
-    static final FunctionDescriptor cairo_stroke$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1164() {}
+    static final FunctionDescriptor gdk_subpixel_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_subpixel_layout_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_subpixel_layout_get_type",
+        constants$1164.gdk_subpixel_layout_get_type$FUNC
     );
-    static final MethodHandle cairo_stroke$MH = RuntimeHelper.downcallHandle(
-        "cairo_stroke",
-        constants$1164.cairo_stroke$FUNC
+    static final FunctionDescriptor gdk_prop_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_prop_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_prop_mode_get_type",
+        constants$1164.gdk_prop_mode_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_stroke_preserve$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_seat_capabilities_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_seat_capabilities_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_capabilities_get_type",
+        constants$1164.gdk_seat_capabilities_get_type$FUNC
     );
-    static final MethodHandle cairo_stroke_preserve$MH = RuntimeHelper.downcallHandle(
-        "cairo_stroke_preserve",
-        constants$1164.cairo_stroke_preserve$FUNC
+    static final FunctionDescriptor gdk_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_byte_order_get_type",
+        constants$1164.gdk_byte_order_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_fill$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_modifier_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_modifier_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_modifier_type_get_type",
+        constants$1164.gdk_modifier_type_get_type$FUNC
     );
-    static final MethodHandle cairo_fill$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill",
-        constants$1164.cairo_fill$FUNC
-    );
-    static final FunctionDescriptor cairo_fill_preserve$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_fill_preserve$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill_preserve",
-        constants$1164.cairo_fill_preserve$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_page",
-        constants$1164.cairo_copy_page$FUNC
-    );
-    static final FunctionDescriptor cairo_show_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_show_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_show_page",
-        constants$1164.cairo_show_page$FUNC
+    static final FunctionDescriptor gdk_modifier_intent_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_modifier_intent_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_modifier_intent_get_type",
+        constants$1164.gdk_modifier_intent_get_type$FUNC
     );
 }
 

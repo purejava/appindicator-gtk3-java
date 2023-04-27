@@ -7,51 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1080 {
+final class constants$1080 {
 
-    static final FunctionDescriptor pango_attr_overline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1080() {}
+    static final FunctionDescriptor gdk_window_move$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_overline_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_overline_new",
-        constants$1080.pango_attr_overline_new$FUNC
+    static final MethodHandle gdk_window_move$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_move",
+        constants$1080.gdk_window_move$FUNC
     );
-    static final FunctionDescriptor pango_attr_overline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_attr_overline_color_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_overline_color_new",
-        constants$1080.pango_attr_overline_color_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_show_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_show_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_show_new",
-        constants$1080.pango_attr_show_new$FUNC
+    static final MethodHandle gdk_window_resize$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_resize",
+        constants$1080.gdk_window_resize$FUNC
     );
-    static final FunctionDescriptor pango_attr_line_height_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_attr_line_height_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_line_height_new",
-        constants$1080.pango_attr_line_height_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_line_height_new_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_move_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_line_height_new_absolute$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_line_height_new_absolute",
-        constants$1080.pango_attr_line_height_new_absolute$FUNC
+    static final MethodHandle gdk_window_move_resize$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_move_resize",
+        constants$1080.gdk_window_move_resize$FUNC
     );
-    static final FunctionDescriptor pango_attr_text_transform_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_move_to_rect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_text_transform_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_text_transform_new",
-        constants$1080.pango_attr_text_transform_new$FUNC
+    static final MethodHandle gdk_window_move_to_rect$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_move_to_rect",
+        constants$1080.gdk_window_move_to_rect$FUNC
+    );
+    static final FunctionDescriptor gdk_window_reparent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_reparent$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_reparent",
+        constants$1080.gdk_window_reparent$FUNC
+    );
+    static final FunctionDescriptor gdk_window_raise$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_raise$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_raise",
+        constants$1080.gdk_window_raise$FUNC
     );
 }
 

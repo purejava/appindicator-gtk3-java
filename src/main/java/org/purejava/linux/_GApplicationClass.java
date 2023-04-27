@@ -7,9 +7,32 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GApplicationClass {
+ *     GObjectClass parent_class;
+ *     void (*startup)(GApplication*);
+ *     void (*activate)(GApplication*);
+ *     void (*open)(GApplication*,GFile**,gint,const gchar*);
+ *     int (*command_line)(GApplication*,GApplicationCommandLine*);
+ *     gboolean (*local_command_line)(GApplication*,gchar***,int*);
+ *     void (*before_emit)(GApplication*,GVariant*);
+ *     void (*after_emit)(GApplication*,GVariant*);
+ *     void (*add_platform_data)(GApplication*,GVariantBuilder*);
+ *     void (*quit_mainloop)(GApplication*);
+ *     void (*run_mainloop)(GApplication*);
+ *     void (*shutdown)(GApplication*);
+ *     gboolean (*dbus_register)(GApplication*,GDBusConnection*,const gchar*,GError**);
+ *     void (*dbus_unregister)(GApplication*,GDBusConnection*,const gchar*);
+ *     gint (*handle_local_options)(GApplication*,GVariantDict*);
+ *     gboolean (*name_lost)(GApplication*);
+ *     gpointer padding[7];
+ * };
+ * }
+ */
 public class _GApplicationClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +47,10 @@ public class _GApplicationClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("startup"),
         Constants$root.C_POINTER$LAYOUT.withName("activate"),
@@ -52,20 +78,32 @@ public class _GApplicationClass {
     static final FunctionDescriptor startup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle startup$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.startup$FUNC
+    static final FunctionDescriptor startup_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle startup_UP$MH = RuntimeHelper.upcallHandle(startup.class, "apply", _GApplicationClass.startup_UP$FUNC);
+    static final FunctionDescriptor startup_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle startup_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.startup_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*startup)(GApplication*);
+     * }
+     */
     public interface startup {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(startup fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(startup.class, fi, _GApplicationClass.startup$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(startup fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.startup_UP$MH, fi, _GApplicationClass.startup$FUNC, scope);
         }
-        static startup ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static startup ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GApplicationClass.startup$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GApplicationClass.startup_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -77,38 +115,62 @@ public class _GApplicationClass {
     public static VarHandle startup$VH() {
         return _GApplicationClass.startup$VH;
     }
-    public static MemoryAddress startup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.startup$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*startup)(GApplication*);
+     * }
+     */
+    public static MemorySegment startup$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.startup$VH.get(seg);
     }
-    public static void startup$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*startup)(GApplication*);
+     * }
+     */
+    public static void startup$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.startup$VH.set(seg, x);
     }
-    public static MemoryAddress startup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.startup$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment startup$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.startup$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void startup$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void startup$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.startup$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static startup startup (MemorySegment segment, MemorySession session) {
-        return startup.ofAddress(startup$get(segment), session);
+    public static startup startup(MemorySegment segment, SegmentScope scope) {
+        return startup.ofAddress(startup$get(segment), scope);
     }
     static final FunctionDescriptor activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.activate$FUNC
+    static final FunctionDescriptor activate_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_UP$MH = RuntimeHelper.upcallHandle(activate.class, "apply", _GApplicationClass.activate_UP$FUNC);
+    static final FunctionDescriptor activate_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.activate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate)(GApplication*);
+     * }
+     */
     public interface activate {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(activate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate.class, fi, _GApplicationClass.activate$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(activate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.activate_UP$MH, fi, _GApplicationClass.activate$FUNC, scope);
         }
-        static activate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static activate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GApplicationClass.activate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GApplicationClass.activate_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -120,20 +182,32 @@ public class _GApplicationClass {
     public static VarHandle activate$VH() {
         return _GApplicationClass.activate$VH;
     }
-    public static MemoryAddress activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.activate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate)(GApplication*);
+     * }
+     */
+    public static MemorySegment activate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.activate$VH.get(seg);
     }
-    public static void activate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate)(GApplication*);
+     * }
+     */
+    public static void activate$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.activate$VH.set(seg, x);
     }
-    public static MemoryAddress activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.activate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.activate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.activate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate activate (MemorySegment segment, MemorySession session) {
-        return activate.ofAddress(activate$get(segment), session);
+    public static activate activate(MemorySegment segment, SegmentScope scope) {
+        return activate.ofAddress(activate$get(segment), scope);
     }
     static final FunctionDescriptor open$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -141,20 +215,38 @@ public class _GApplicationClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle open$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.open$FUNC
+    static final FunctionDescriptor open_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle open_UP$MH = RuntimeHelper.upcallHandle(open.class, "apply", _GApplicationClass.open_UP$FUNC);
+    static final FunctionDescriptor open_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle open_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.open_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*open)(GApplication*,GFile**,gint,const gchar*);
+     * }
+     */
     public interface open {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(open fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(open.class, fi, _GApplicationClass.open$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(open fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.open_UP$MH, fi, _GApplicationClass.open$FUNC, scope);
         }
-        static open ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static open ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GApplicationClass.open$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    _GApplicationClass.open_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -166,39 +258,65 @@ public class _GApplicationClass {
     public static VarHandle open$VH() {
         return _GApplicationClass.open$VH;
     }
-    public static MemoryAddress open$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.open$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*open)(GApplication*,GFile**,gint,const gchar*);
+     * }
+     */
+    public static MemorySegment open$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.open$VH.get(seg);
     }
-    public static void open$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*open)(GApplication*,GFile**,gint,const gchar*);
+     * }
+     */
+    public static void open$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.open$VH.set(seg, x);
     }
-    public static MemoryAddress open$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.open$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment open$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.open$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void open$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void open$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.open$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static open open (MemorySegment segment, MemorySession session) {
-        return open.ofAddress(open$get(segment), session);
+    public static open open(MemorySegment segment, SegmentScope scope) {
+        return open.ofAddress(open$get(segment), scope);
     }
     static final FunctionDescriptor command_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle command_line$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.command_line$FUNC
+    static final FunctionDescriptor command_line_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle command_line_UP$MH = RuntimeHelper.upcallHandle(command_line.class, "apply", _GApplicationClass.command_line_UP$FUNC);
+    static final FunctionDescriptor command_line_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle command_line_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.command_line_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * int (*command_line)(GApplication*,GApplicationCommandLine*);
+     * }
+     */
     public interface command_line {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(command_line fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(command_line.class, fi, _GApplicationClass.command_line$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(command_line fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.command_line_UP$MH, fi, _GApplicationClass.command_line$FUNC, scope);
         }
-        static command_line ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static command_line ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GApplicationClass.command_line$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GApplicationClass.command_line_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -210,40 +328,68 @@ public class _GApplicationClass {
     public static VarHandle command_line$VH() {
         return _GApplicationClass.command_line$VH;
     }
-    public static MemoryAddress command_line$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.command_line$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int (*command_line)(GApplication*,GApplicationCommandLine*);
+     * }
+     */
+    public static MemorySegment command_line$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.command_line$VH.get(seg);
     }
-    public static void command_line$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int (*command_line)(GApplication*,GApplicationCommandLine*);
+     * }
+     */
+    public static void command_line$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.command_line$VH.set(seg, x);
     }
-    public static MemoryAddress command_line$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.command_line$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment command_line$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.command_line$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void command_line$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void command_line$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.command_line$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static command_line command_line (MemorySegment segment, MemorySession session) {
-        return command_line.ofAddress(command_line$get(segment), session);
+    public static command_line command_line(MemorySegment segment, SegmentScope scope) {
+        return command_line.ofAddress(command_line$get(segment), scope);
     }
     static final FunctionDescriptor local_command_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle local_command_line$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.local_command_line$FUNC
+    static final FunctionDescriptor local_command_line_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle local_command_line_UP$MH = RuntimeHelper.upcallHandle(local_command_line.class, "apply", _GApplicationClass.local_command_line_UP$FUNC);
+    static final FunctionDescriptor local_command_line_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle local_command_line_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.local_command_line_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*local_command_line)(GApplication*,gchar***,int*);
+     * }
+     */
     public interface local_command_line {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(local_command_line fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(local_command_line.class, fi, _GApplicationClass.local_command_line$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(local_command_line fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.local_command_line_UP$MH, fi, _GApplicationClass.local_command_line$FUNC, scope);
         }
-        static local_command_line ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static local_command_line ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GApplicationClass.local_command_line$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GApplicationClass.local_command_line_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -255,39 +401,65 @@ public class _GApplicationClass {
     public static VarHandle local_command_line$VH() {
         return _GApplicationClass.local_command_line$VH;
     }
-    public static MemoryAddress local_command_line$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.local_command_line$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*local_command_line)(GApplication*,gchar***,int*);
+     * }
+     */
+    public static MemorySegment local_command_line$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.local_command_line$VH.get(seg);
     }
-    public static void local_command_line$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*local_command_line)(GApplication*,gchar***,int*);
+     * }
+     */
+    public static void local_command_line$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.local_command_line$VH.set(seg, x);
     }
-    public static MemoryAddress local_command_line$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.local_command_line$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment local_command_line$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.local_command_line$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void local_command_line$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void local_command_line$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.local_command_line$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static local_command_line local_command_line (MemorySegment segment, MemorySession session) {
-        return local_command_line.ofAddress(local_command_line$get(segment), session);
+    public static local_command_line local_command_line(MemorySegment segment, SegmentScope scope) {
+        return local_command_line.ofAddress(local_command_line$get(segment), scope);
     }
     static final FunctionDescriptor before_emit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle before_emit$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.before_emit$FUNC
+    static final FunctionDescriptor before_emit_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle before_emit_UP$MH = RuntimeHelper.upcallHandle(before_emit.class, "apply", _GApplicationClass.before_emit_UP$FUNC);
+    static final FunctionDescriptor before_emit_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle before_emit_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.before_emit_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*before_emit)(GApplication*,GVariant*);
+     * }
+     */
     public interface before_emit {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(before_emit fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(before_emit.class, fi, _GApplicationClass.before_emit$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(before_emit fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.before_emit_UP$MH, fi, _GApplicationClass.before_emit$FUNC, scope);
         }
-        static before_emit ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static before_emit ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GApplicationClass.before_emit$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GApplicationClass.before_emit_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -299,39 +471,65 @@ public class _GApplicationClass {
     public static VarHandle before_emit$VH() {
         return _GApplicationClass.before_emit$VH;
     }
-    public static MemoryAddress before_emit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.before_emit$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*before_emit)(GApplication*,GVariant*);
+     * }
+     */
+    public static MemorySegment before_emit$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.before_emit$VH.get(seg);
     }
-    public static void before_emit$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*before_emit)(GApplication*,GVariant*);
+     * }
+     */
+    public static void before_emit$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.before_emit$VH.set(seg, x);
     }
-    public static MemoryAddress before_emit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.before_emit$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment before_emit$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.before_emit$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void before_emit$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void before_emit$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.before_emit$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static before_emit before_emit (MemorySegment segment, MemorySession session) {
-        return before_emit.ofAddress(before_emit$get(segment), session);
+    public static before_emit before_emit(MemorySegment segment, SegmentScope scope) {
+        return before_emit.ofAddress(before_emit$get(segment), scope);
     }
     static final FunctionDescriptor after_emit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle after_emit$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.after_emit$FUNC
+    static final FunctionDescriptor after_emit_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle after_emit_UP$MH = RuntimeHelper.upcallHandle(after_emit.class, "apply", _GApplicationClass.after_emit_UP$FUNC);
+    static final FunctionDescriptor after_emit_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle after_emit_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.after_emit_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*after_emit)(GApplication*,GVariant*);
+     * }
+     */
     public interface after_emit {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(after_emit fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(after_emit.class, fi, _GApplicationClass.after_emit$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(after_emit fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.after_emit_UP$MH, fi, _GApplicationClass.after_emit$FUNC, scope);
         }
-        static after_emit ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static after_emit ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GApplicationClass.after_emit$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GApplicationClass.after_emit_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -343,39 +541,65 @@ public class _GApplicationClass {
     public static VarHandle after_emit$VH() {
         return _GApplicationClass.after_emit$VH;
     }
-    public static MemoryAddress after_emit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.after_emit$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*after_emit)(GApplication*,GVariant*);
+     * }
+     */
+    public static MemorySegment after_emit$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.after_emit$VH.get(seg);
     }
-    public static void after_emit$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*after_emit)(GApplication*,GVariant*);
+     * }
+     */
+    public static void after_emit$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.after_emit$VH.set(seg, x);
     }
-    public static MemoryAddress after_emit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.after_emit$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment after_emit$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.after_emit$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void after_emit$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void after_emit$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.after_emit$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static after_emit after_emit (MemorySegment segment, MemorySession session) {
-        return after_emit.ofAddress(after_emit$get(segment), session);
+    public static after_emit after_emit(MemorySegment segment, SegmentScope scope) {
+        return after_emit.ofAddress(after_emit$get(segment), scope);
     }
     static final FunctionDescriptor add_platform_data$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_platform_data$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.add_platform_data$FUNC
+    static final FunctionDescriptor add_platform_data_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_platform_data_UP$MH = RuntimeHelper.upcallHandle(add_platform_data.class, "apply", _GApplicationClass.add_platform_data_UP$FUNC);
+    static final FunctionDescriptor add_platform_data_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_platform_data_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.add_platform_data_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*add_platform_data)(GApplication*,GVariantBuilder*);
+     * }
+     */
     public interface add_platform_data {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_platform_data fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_platform_data.class, fi, _GApplicationClass.add_platform_data$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(add_platform_data fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.add_platform_data_UP$MH, fi, _GApplicationClass.add_platform_data$FUNC, scope);
         }
-        static add_platform_data ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_platform_data ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GApplicationClass.add_platform_data$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GApplicationClass.add_platform_data_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -387,38 +611,62 @@ public class _GApplicationClass {
     public static VarHandle add_platform_data$VH() {
         return _GApplicationClass.add_platform_data$VH;
     }
-    public static MemoryAddress add_platform_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.add_platform_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*add_platform_data)(GApplication*,GVariantBuilder*);
+     * }
+     */
+    public static MemorySegment add_platform_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.add_platform_data$VH.get(seg);
     }
-    public static void add_platform_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*add_platform_data)(GApplication*,GVariantBuilder*);
+     * }
+     */
+    public static void add_platform_data$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.add_platform_data$VH.set(seg, x);
     }
-    public static MemoryAddress add_platform_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.add_platform_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_platform_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.add_platform_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_platform_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_platform_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.add_platform_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_platform_data add_platform_data (MemorySegment segment, MemorySession session) {
-        return add_platform_data.ofAddress(add_platform_data$get(segment), session);
+    public static add_platform_data add_platform_data(MemorySegment segment, SegmentScope scope) {
+        return add_platform_data.ofAddress(add_platform_data$get(segment), scope);
     }
     static final FunctionDescriptor quit_mainloop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle quit_mainloop$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.quit_mainloop$FUNC
+    static final FunctionDescriptor quit_mainloop_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle quit_mainloop_UP$MH = RuntimeHelper.upcallHandle(quit_mainloop.class, "apply", _GApplicationClass.quit_mainloop_UP$FUNC);
+    static final FunctionDescriptor quit_mainloop_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle quit_mainloop_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.quit_mainloop_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*quit_mainloop)(GApplication*);
+     * }
+     */
     public interface quit_mainloop {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(quit_mainloop fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(quit_mainloop.class, fi, _GApplicationClass.quit_mainloop$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(quit_mainloop fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.quit_mainloop_UP$MH, fi, _GApplicationClass.quit_mainloop$FUNC, scope);
         }
-        static quit_mainloop ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static quit_mainloop ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GApplicationClass.quit_mainloop$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GApplicationClass.quit_mainloop_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -430,38 +678,62 @@ public class _GApplicationClass {
     public static VarHandle quit_mainloop$VH() {
         return _GApplicationClass.quit_mainloop$VH;
     }
-    public static MemoryAddress quit_mainloop$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.quit_mainloop$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*quit_mainloop)(GApplication*);
+     * }
+     */
+    public static MemorySegment quit_mainloop$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.quit_mainloop$VH.get(seg);
     }
-    public static void quit_mainloop$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*quit_mainloop)(GApplication*);
+     * }
+     */
+    public static void quit_mainloop$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.quit_mainloop$VH.set(seg, x);
     }
-    public static MemoryAddress quit_mainloop$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.quit_mainloop$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment quit_mainloop$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.quit_mainloop$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void quit_mainloop$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void quit_mainloop$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.quit_mainloop$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static quit_mainloop quit_mainloop (MemorySegment segment, MemorySession session) {
-        return quit_mainloop.ofAddress(quit_mainloop$get(segment), session);
+    public static quit_mainloop quit_mainloop(MemorySegment segment, SegmentScope scope) {
+        return quit_mainloop.ofAddress(quit_mainloop$get(segment), scope);
     }
     static final FunctionDescriptor run_mainloop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle run_mainloop$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.run_mainloop$FUNC
+    static final FunctionDescriptor run_mainloop_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle run_mainloop_UP$MH = RuntimeHelper.upcallHandle(run_mainloop.class, "apply", _GApplicationClass.run_mainloop_UP$FUNC);
+    static final FunctionDescriptor run_mainloop_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle run_mainloop_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.run_mainloop_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*run_mainloop)(GApplication*);
+     * }
+     */
     public interface run_mainloop {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(run_mainloop fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(run_mainloop.class, fi, _GApplicationClass.run_mainloop$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(run_mainloop fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.run_mainloop_UP$MH, fi, _GApplicationClass.run_mainloop$FUNC, scope);
         }
-        static run_mainloop ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static run_mainloop ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GApplicationClass.run_mainloop$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GApplicationClass.run_mainloop_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -473,38 +745,62 @@ public class _GApplicationClass {
     public static VarHandle run_mainloop$VH() {
         return _GApplicationClass.run_mainloop$VH;
     }
-    public static MemoryAddress run_mainloop$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.run_mainloop$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*run_mainloop)(GApplication*);
+     * }
+     */
+    public static MemorySegment run_mainloop$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.run_mainloop$VH.get(seg);
     }
-    public static void run_mainloop$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*run_mainloop)(GApplication*);
+     * }
+     */
+    public static void run_mainloop$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.run_mainloop$VH.set(seg, x);
     }
-    public static MemoryAddress run_mainloop$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.run_mainloop$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment run_mainloop$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.run_mainloop$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void run_mainloop$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void run_mainloop$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.run_mainloop$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static run_mainloop run_mainloop (MemorySegment segment, MemorySession session) {
-        return run_mainloop.ofAddress(run_mainloop$get(segment), session);
+    public static run_mainloop run_mainloop(MemorySegment segment, SegmentScope scope) {
+        return run_mainloop.ofAddress(run_mainloop$get(segment), scope);
     }
     static final FunctionDescriptor shutdown$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle shutdown$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.shutdown$FUNC
+    static final FunctionDescriptor shutdown_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle shutdown_UP$MH = RuntimeHelper.upcallHandle(shutdown.class, "apply", _GApplicationClass.shutdown_UP$FUNC);
+    static final FunctionDescriptor shutdown_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle shutdown_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.shutdown_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*shutdown)(GApplication*);
+     * }
+     */
     public interface shutdown {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(shutdown fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(shutdown.class, fi, _GApplicationClass.shutdown$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(shutdown fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.shutdown_UP$MH, fi, _GApplicationClass.shutdown$FUNC, scope);
         }
-        static shutdown ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static shutdown ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GApplicationClass.shutdown$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GApplicationClass.shutdown_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -516,20 +812,32 @@ public class _GApplicationClass {
     public static VarHandle shutdown$VH() {
         return _GApplicationClass.shutdown$VH;
     }
-    public static MemoryAddress shutdown$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.shutdown$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*shutdown)(GApplication*);
+     * }
+     */
+    public static MemorySegment shutdown$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.shutdown$VH.get(seg);
     }
-    public static void shutdown$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*shutdown)(GApplication*);
+     * }
+     */
+    public static void shutdown$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.shutdown$VH.set(seg, x);
     }
-    public static MemoryAddress shutdown$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.shutdown$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment shutdown$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.shutdown$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void shutdown$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void shutdown$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.shutdown$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static shutdown shutdown (MemorySegment segment, MemorySession session) {
-        return shutdown.ofAddress(shutdown$get(segment), session);
+    public static shutdown shutdown(MemorySegment segment, SegmentScope scope) {
+        return shutdown.ofAddress(shutdown$get(segment), scope);
     }
     static final FunctionDescriptor dbus_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -537,20 +845,38 @@ public class _GApplicationClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle dbus_register$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.dbus_register$FUNC
+    static final FunctionDescriptor dbus_register_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle dbus_register_UP$MH = RuntimeHelper.upcallHandle(dbus_register.class, "apply", _GApplicationClass.dbus_register_UP$FUNC);
+    static final FunctionDescriptor dbus_register_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle dbus_register_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.dbus_register_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*dbus_register)(GApplication*,GDBusConnection*,const gchar*,GError**);
+     * }
+     */
     public interface dbus_register {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(dbus_register fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(dbus_register.class, fi, _GApplicationClass.dbus_register$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(dbus_register fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.dbus_register_UP$MH, fi, _GApplicationClass.dbus_register$FUNC, scope);
         }
-        static dbus_register ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static dbus_register ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GApplicationClass.dbus_register$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GApplicationClass.dbus_register_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -562,40 +888,68 @@ public class _GApplicationClass {
     public static VarHandle dbus_register$VH() {
         return _GApplicationClass.dbus_register$VH;
     }
-    public static MemoryAddress dbus_register$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.dbus_register$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*dbus_register)(GApplication*,GDBusConnection*,const gchar*,GError**);
+     * }
+     */
+    public static MemorySegment dbus_register$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.dbus_register$VH.get(seg);
     }
-    public static void dbus_register$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*dbus_register)(GApplication*,GDBusConnection*,const gchar*,GError**);
+     * }
+     */
+    public static void dbus_register$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.dbus_register$VH.set(seg, x);
     }
-    public static MemoryAddress dbus_register$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.dbus_register$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dbus_register$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.dbus_register$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dbus_register$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dbus_register$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.dbus_register$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dbus_register dbus_register (MemorySegment segment, MemorySession session) {
-        return dbus_register.ofAddress(dbus_register$get(segment), session);
+    public static dbus_register dbus_register(MemorySegment segment, SegmentScope scope) {
+        return dbus_register.ofAddress(dbus_register$get(segment), scope);
     }
     static final FunctionDescriptor dbus_unregister$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle dbus_unregister$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.dbus_unregister$FUNC
+    static final FunctionDescriptor dbus_unregister_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle dbus_unregister_UP$MH = RuntimeHelper.upcallHandle(dbus_unregister.class, "apply", _GApplicationClass.dbus_unregister_UP$FUNC);
+    static final FunctionDescriptor dbus_unregister_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle dbus_unregister_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.dbus_unregister_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*dbus_unregister)(GApplication*,GDBusConnection*,const gchar*);
+     * }
+     */
     public interface dbus_unregister {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(dbus_unregister fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(dbus_unregister.class, fi, _GApplicationClass.dbus_unregister$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(dbus_unregister fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.dbus_unregister_UP$MH, fi, _GApplicationClass.dbus_unregister$FUNC, scope);
         }
-        static dbus_unregister ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static dbus_unregister ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GApplicationClass.dbus_unregister$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GApplicationClass.dbus_unregister_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -607,39 +961,65 @@ public class _GApplicationClass {
     public static VarHandle dbus_unregister$VH() {
         return _GApplicationClass.dbus_unregister$VH;
     }
-    public static MemoryAddress dbus_unregister$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.dbus_unregister$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*dbus_unregister)(GApplication*,GDBusConnection*,const gchar*);
+     * }
+     */
+    public static MemorySegment dbus_unregister$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.dbus_unregister$VH.get(seg);
     }
-    public static void dbus_unregister$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*dbus_unregister)(GApplication*,GDBusConnection*,const gchar*);
+     * }
+     */
+    public static void dbus_unregister$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.dbus_unregister$VH.set(seg, x);
     }
-    public static MemoryAddress dbus_unregister$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.dbus_unregister$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dbus_unregister$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.dbus_unregister$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dbus_unregister$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dbus_unregister$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.dbus_unregister$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dbus_unregister dbus_unregister (MemorySegment segment, MemorySession session) {
-        return dbus_unregister.ofAddress(dbus_unregister$get(segment), session);
+    public static dbus_unregister dbus_unregister(MemorySegment segment, SegmentScope scope) {
+        return dbus_unregister.ofAddress(dbus_unregister$get(segment), scope);
     }
     static final FunctionDescriptor handle_local_options$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle handle_local_options$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.handle_local_options$FUNC
+    static final FunctionDescriptor handle_local_options_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle handle_local_options_UP$MH = RuntimeHelper.upcallHandle(handle_local_options.class, "apply", _GApplicationClass.handle_local_options_UP$FUNC);
+    static final FunctionDescriptor handle_local_options_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle handle_local_options_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.handle_local_options_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*handle_local_options)(GApplication*,GVariantDict*);
+     * }
+     */
     public interface handle_local_options {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(handle_local_options fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(handle_local_options.class, fi, _GApplicationClass.handle_local_options$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(handle_local_options fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.handle_local_options_UP$MH, fi, _GApplicationClass.handle_local_options$FUNC, scope);
         }
-        static handle_local_options ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static handle_local_options ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GApplicationClass.handle_local_options$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GApplicationClass.handle_local_options_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -651,38 +1031,62 @@ public class _GApplicationClass {
     public static VarHandle handle_local_options$VH() {
         return _GApplicationClass.handle_local_options$VH;
     }
-    public static MemoryAddress handle_local_options$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.handle_local_options$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*handle_local_options)(GApplication*,GVariantDict*);
+     * }
+     */
+    public static MemorySegment handle_local_options$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.handle_local_options$VH.get(seg);
     }
-    public static void handle_local_options$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*handle_local_options)(GApplication*,GVariantDict*);
+     * }
+     */
+    public static void handle_local_options$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.handle_local_options$VH.set(seg, x);
     }
-    public static MemoryAddress handle_local_options$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.handle_local_options$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment handle_local_options$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.handle_local_options$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void handle_local_options$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void handle_local_options$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.handle_local_options$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handle_local_options handle_local_options (MemorySegment segment, MemorySession session) {
-        return handle_local_options.ofAddress(handle_local_options$get(segment), session);
+    public static handle_local_options handle_local_options(MemorySegment segment, SegmentScope scope) {
+        return handle_local_options.ofAddress(handle_local_options$get(segment), scope);
     }
     static final FunctionDescriptor name_lost$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle name_lost$MH = RuntimeHelper.downcallHandle(
-        _GApplicationClass.name_lost$FUNC
+    static final FunctionDescriptor name_lost_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle name_lost_UP$MH = RuntimeHelper.upcallHandle(name_lost.class, "apply", _GApplicationClass.name_lost_UP$FUNC);
+    static final FunctionDescriptor name_lost_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle name_lost_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GApplicationClass.name_lost_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*name_lost)(GApplication*);
+     * }
+     */
     public interface name_lost {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(name_lost fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(name_lost.class, fi, _GApplicationClass.name_lost$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(name_lost fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GApplicationClass.name_lost_UP$MH, fi, _GApplicationClass.name_lost$FUNC, scope);
         }
-        static name_lost ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static name_lost ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GApplicationClass.name_lost$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GApplicationClass.name_lost_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -694,30 +1098,42 @@ public class _GApplicationClass {
     public static VarHandle name_lost$VH() {
         return _GApplicationClass.name_lost$VH;
     }
-    public static MemoryAddress name_lost$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.name_lost$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*name_lost)(GApplication*);
+     * }
+     */
+    public static MemorySegment name_lost$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.name_lost$VH.get(seg);
     }
-    public static void name_lost$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*name_lost)(GApplication*);
+     * }
+     */
+    public static void name_lost$set(MemorySegment seg, MemorySegment x) {
         _GApplicationClass.name_lost$VH.set(seg, x);
     }
-    public static MemoryAddress name_lost$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GApplicationClass.name_lost$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name_lost$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GApplicationClass.name_lost$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name_lost$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name_lost$set(MemorySegment seg, long index, MemorySegment x) {
         _GApplicationClass.name_lost$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static name_lost name_lost (MemorySegment segment, MemorySession session) {
-        return name_lost.ofAddress(name_lost$get(segment), session);
+    public static name_lost name_lost(MemorySegment segment, SegmentScope scope) {
+        return name_lost.ofAddress(name_lost$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(256, 56);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

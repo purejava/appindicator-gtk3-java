@@ -7,48 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2023 {
+final class constants$2023 {
 
-    static final FunctionDescriptor gtk_text_mark_get_left_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_get_left_gravity$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_left_gravity",
-        constants$2023.gtk_text_mark_get_left_gravity$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_buffer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_type",
-        constants$2023.gtk_text_buffer_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_new",
-        constants$2023.gtk_text_buffer_new$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_line_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_line_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_line_count",
-        constants$2023.gtk_text_buffer_get_line_count$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_char_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_char_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_char_count",
-        constants$2023.gtk_text_buffer_get_char_count$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_tag_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_tag_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_tag_table",
-        constants$2023.gtk_text_buffer_get_tag_table$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2023() {}
+    static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.ccitt.params");
+    static final MemorySegment CAIRO_MIME_TYPE_EPS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/postscript");
+    static final MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.eps.params");
+    static final MemorySegment GDK_NONE$ADDR = MemorySegment.ofAddress(0L);
+    static final MemorySegment GDK_PIXBUF_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("2.42.10");
+    static final MemorySegment GDK_SELECTION_PRIMARY$ADDR = MemorySegment.ofAddress(1L);
 }
 
 

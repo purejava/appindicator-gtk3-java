@@ -7,52 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2050 {
+final class constants$2050 {
 
-    static final FunctionDescriptor gtk_toolbar_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_style",
-        constants$2050.gtk_toolbar_get_style$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_set_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_set_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_set_style",
-        constants$2050.gtk_toolbar_set_style$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_unset_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_unset_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_unset_style",
-        constants$2050.gtk_toolbar_unset_style$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_icon_size",
-        constants$2050.gtk_toolbar_get_icon_size$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_set_icon_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_set_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_set_icon_size",
-        constants$2050.gtk_toolbar_set_icon_size$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_unset_icon_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_unset_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_unset_icon_size",
-        constants$2050.gtk_toolbar_unset_icon_size$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2050() {}
+    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-attention-icon");
+    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-status");
+    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-label");
+    static final MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("connection-changed");
+    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-icon-theme-path");
+    static final MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scroll-event");
 }
 
 

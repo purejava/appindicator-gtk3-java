@@ -7,51 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1799 {
+final class constants$1799 {
 
-    static final FunctionDescriptor gtk_gesture_single_get_exclusive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1799() {}
+    static final FunctionDescriptor gtk_scrolled_window_get_policy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_get_exclusive$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_exclusive",
-        constants$1799.gtk_gesture_single_get_exclusive$FUNC
+    static final MethodHandle gtk_scrolled_window_get_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_policy",
+        constants$1799.gtk_scrolled_window_get_policy$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_set_exclusive$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_scrolled_window_set_placement$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_set_exclusive$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_set_exclusive",
-        constants$1799.gtk_gesture_single_set_exclusive$FUNC
+    static final MethodHandle gtk_scrolled_window_set_placement$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_placement",
+        constants$1799.gtk_scrolled_window_set_placement$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrolled_window_unset_placement$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_get_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_button",
-        constants$1799.gtk_gesture_single_get_button$FUNC
+    static final MethodHandle gtk_scrolled_window_unset_placement$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_unset_placement",
+        constants$1799.gtk_scrolled_window_unset_placement$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_set_button$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_scrolled_window_get_placement$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_placement$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_placement",
+        constants$1799.gtk_scrolled_window_get_placement$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_set_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_set_button",
-        constants$1799.gtk_gesture_single_set_button$FUNC
+    static final MethodHandle gtk_scrolled_window_set_shadow_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_shadow_type",
+        constants$1799.gtk_scrolled_window_set_shadow_type$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_single_get_current_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrolled_window_get_shadow_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_single_get_current_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_current_button",
-        constants$1799.gtk_gesture_single_get_current_button$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_single_get_current_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_single_get_current_sequence$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_current_sequence",
-        constants$1799.gtk_gesture_single_get_current_sequence$FUNC
+    static final MethodHandle gtk_scrolled_window_get_shadow_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_shadow_type",
+        constants$1799.gtk_scrolled_window_get_shadow_type$FUNC
     );
 }
 

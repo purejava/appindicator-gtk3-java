@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1416 {
+final class constants$1416 {
 
-    static final FunctionDescriptor atk_table_get_column_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1416() {}
+    static final FunctionDescriptor gtk_text_iter_order$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_order$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_order",
+        constants$1416.gtk_text_iter_order$FUNC
+    );
+    static final FunctionDescriptor gtk_target_list_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_target_list_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_list_get_type",
+        constants$1416.gtk_target_list_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_target_list_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_table_get_column_at_index$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_at_index",
-        constants$1416.atk_table_get_column_at_index$FUNC
+    static final MethodHandle gtk_target_list_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_list_new",
+        constants$1416.gtk_target_list_new$FUNC
     );
-    static final FunctionDescriptor atk_table_get_row_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_target_list_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_target_list_ref$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_list_ref",
+        constants$1416.gtk_target_list_ref$FUNC
+    );
+    static final FunctionDescriptor gtk_target_list_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_target_list_unref$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_list_unref",
+        constants$1416.gtk_target_list_unref$FUNC
+    );
+    static final FunctionDescriptor gtk_target_list_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_row_at_index$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_at_index",
-        constants$1416.atk_table_get_row_at_index$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_get_n_columns$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_columns",
-        constants$1416.atk_table_get_n_columns$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_n_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_get_n_rows$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_rows",
-        constants$1416.atk_table_get_n_rows$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_column_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_table_get_column_extent_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_extent_at",
-        constants$1416.atk_table_get_column_extent_at$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_row_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_row_extent_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_extent_at",
-        constants$1416.atk_table_get_row_extent_at$FUNC
+    static final MethodHandle gtk_target_list_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_list_add",
+        constants$1416.gtk_target_list_add$FUNC
     );
 }
 

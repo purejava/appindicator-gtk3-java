@@ -7,59 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$197 {
+final class constants$197 {
 
-    static final FunctionDescriptor g_string_prepend_c$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$197() {}
+    static final FunctionDescriptor g_strcanon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_CHAR$LAYOUT
     );
-    static final MethodHandle g_string_prepend_c$MH = RuntimeHelper.downcallHandle(
-        "g_string_prepend_c",
-        constants$197.g_string_prepend_c$FUNC
+    static final MethodHandle g_strcanon$MH = RuntimeHelper.downcallHandle(
+        "g_strcanon",
+        constants$197.g_strcanon$FUNC
     );
-    static final FunctionDescriptor g_string_prepend_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_strerror$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_string_prepend_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_string_prepend_unichar",
-        constants$197.g_string_prepend_unichar$FUNC
+    static final MethodHandle g_strerror$MH = RuntimeHelper.downcallHandle(
+        "g_strerror",
+        constants$197.g_strerror$FUNC
     );
-    static final FunctionDescriptor g_string_prepend_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_strsignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_strsignal$MH = RuntimeHelper.downcallHandle(
+        "g_strsignal",
+        constants$197.g_strsignal$FUNC
+    );
+    static final FunctionDescriptor g_strreverse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strreverse$MH = RuntimeHelper.downcallHandle(
+        "g_strreverse",
+        constants$197.g_strreverse$FUNC
+    );
+    static final FunctionDescriptor g_strlcpy$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_prepend_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_prepend_len",
-        constants$197.g_string_prepend_len$FUNC
+    static final MethodHandle g_strlcpy$MH = RuntimeHelper.downcallHandle(
+        "g_strlcpy",
+        constants$197.g_strlcpy$FUNC
     );
-    static final FunctionDescriptor g_string_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_strlcat$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_insert$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert",
-        constants$197.g_string_insert$FUNC
-    );
-    static final FunctionDescriptor g_string_insert_c$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_insert_c$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert_c",
-        constants$197.g_string_insert_c$FUNC
-    );
-    static final FunctionDescriptor g_string_insert_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_string_insert_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert_unichar",
-        constants$197.g_string_insert_unichar$FUNC
+    static final MethodHandle g_strlcat$MH = RuntimeHelper.downcallHandle(
+        "g_strlcat",
+        constants$197.g_strlcat$FUNC
     );
 }
 

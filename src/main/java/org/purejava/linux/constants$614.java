@@ -7,43 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$614 {
+final class constants$614 {
 
-    static final FunctionDescriptor g_dbus_property_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$614() {}
+    static final FunctionDescriptor g_file_new_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_property_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_property_info_unref",
-        constants$614.g_dbus_property_info_unref$FUNC
+    static final MethodHandle g_file_new_for_path$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_for_path",
+        constants$614.g_file_new_for_path$FUNC
     );
-    static final FunctionDescriptor g_dbus_arg_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_new_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_arg_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_arg_info_unref",
-        constants$614.g_dbus_arg_info_unref$FUNC
+    static final MethodHandle g_file_new_for_uri$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_for_uri",
+        constants$614.g_file_new_for_uri$FUNC
     );
-    static final FunctionDescriptor g_dbus_annotation_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_new_for_commandline_arg$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_annotation_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_unref",
-        constants$614.g_dbus_annotation_info_unref$FUNC
+    static final MethodHandle g_file_new_for_commandline_arg$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_for_commandline_arg",
+        constants$614.g_file_new_for_commandline_arg$FUNC
     );
-    static final FunctionDescriptor g_dbus_node_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_node_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_get_type",
-        constants$614.g_dbus_node_info_get_type$FUNC
+    static final FunctionDescriptor g_file_new_for_commandline_arg_and_cwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_interface_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_interface_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_get_type",
-        constants$614.g_dbus_interface_info_get_type$FUNC
+    static final MethodHandle g_file_new_for_commandline_arg_and_cwd$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_for_commandline_arg_and_cwd",
+        constants$614.g_file_new_for_commandline_arg_and_cwd$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_method_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_get_type",
-        constants$614.g_dbus_method_info_get_type$FUNC
+    static final FunctionDescriptor g_file_new_tmp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_new_tmp$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_tmp",
+        constants$614.g_file_new_tmp$FUNC
+    );
+    static final FunctionDescriptor g_file_new_tmp_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_new_tmp_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_tmp_async",
+        constants$614.g_file_new_tmp_async$FUNC
     );
 }
 

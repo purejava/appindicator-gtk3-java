@@ -7,59 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$256 {
+final class constants$256 {
 
-    static final FunctionDescriptor g_option_context_get_help$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$256() {}
+    static final FunctionDescriptor g_variant_dict_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_dict_clear$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dict_clear",
+        constants$256.g_variant_dict_clear$FUNC
+    );
+    static final FunctionDescriptor g_variant_dict_end$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_dict_end$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dict_end",
+        constants$256.g_variant_dict_end$FUNC
+    );
+    static final FunctionDescriptor g_variant_dict_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_dict_ref$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dict_ref",
+        constants$256.g_variant_dict_ref$FUNC
+    );
+    static final FunctionDescriptor g_variant_dict_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_dict_unref$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dict_unref",
+        constants$256.g_variant_dict_unref$FUNC
+    );
+    static final FunctionDescriptor g_printf_string_upper_bound$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_printf_string_upper_bound$MH = RuntimeHelper.downcallHandle(
+        "g_printf_string_upper_bound",
+        constants$256.g_printf_string_upper_bound$FUNC
+    );
+    static final FunctionDescriptor GLogFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_option_context_get_help$MH = RuntimeHelper.downcallHandle(
-        "g_option_context_get_help",
-        constants$256.g_option_context_get_help$FUNC
-    );
-    static final FunctionDescriptor g_option_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_group_new$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_new",
-        constants$256.g_option_group_new$FUNC
-    );
-    static final FunctionDescriptor g_option_group_set_parse_hooks$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GLogFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_option_group_set_parse_hooks$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_parse_hooks",
-        constants$256.g_option_group_set_parse_hooks$FUNC
-    );
-    static final FunctionDescriptor g_option_group_set_error_hook$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_option_group_set_error_hook$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_error_hook",
-        constants$256.g_option_group_set_error_hook$FUNC
-    );
-    static final FunctionDescriptor g_option_group_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_option_group_free$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_free",
-        constants$256.g_option_group_free$FUNC
-    );
-    static final FunctionDescriptor g_option_group_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_option_group_ref$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_ref",
-        constants$256.g_option_group_ref$FUNC
-    );
+    static final MethodHandle GLogFunc_UP$MH = RuntimeHelper.upcallHandle(GLogFunc.class, "apply", constants$256.GLogFunc_UP$FUNC);
 }
 
 

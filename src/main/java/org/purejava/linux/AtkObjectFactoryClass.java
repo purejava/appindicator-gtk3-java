@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkObjectFactoryClass extends _AtkObjectFactoryClass {
+/**
+ * {@snippet :
+ * typedef struct _AtkObjectFactoryClass AtkObjectFactoryClass;
+ * }
+ */
+public final class AtkObjectFactoryClass extends _AtkObjectFactoryClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkObjectFactoryClass() {}
 }
 
 

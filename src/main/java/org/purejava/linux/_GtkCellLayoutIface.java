@@ -7,9 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkCellLayoutIface {
+ *     GTypeInterface g_iface;
+ *     void (*pack_start)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+ *     void (*pack_end)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+ *     void (*clear)(GtkCellLayout*);
+ *     void (*add_attribute)(GtkCellLayout*,GtkCellRenderer*,const gchar*,gint);
+ *     void (*set_cell_data_func)(GtkCellLayout*,GtkCellRenderer*,GtkCellLayoutDataFunc,gpointer,GDestroyNotify);
+ *     void (*clear_attributes)(GtkCellLayout*,GtkCellRenderer*);
+ *     void (*reorder)(GtkCellLayout*,GtkCellRenderer*,gint);
+ *     GList* (*get_cells)(GtkCellLayout*);
+ *     GtkCellArea* (*get_area)(GtkCellLayout*);
+ * };
+ * }
+ */
 public class _GtkCellLayoutIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -35,20 +51,36 @@ public class _GtkCellLayoutIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pack_start$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.pack_start$FUNC
+    static final FunctionDescriptor pack_start_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle pack_start_UP$MH = RuntimeHelper.upcallHandle(pack_start.class, "apply", _GtkCellLayoutIface.pack_start_UP$FUNC);
+    static final FunctionDescriptor pack_start_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pack_start_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.pack_start_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*pack_start)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
     public interface pack_start {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(pack_start fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(pack_start.class, fi, _GtkCellLayoutIface.pack_start$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(pack_start fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.pack_start_UP$MH, fi, _GtkCellLayoutIface.pack_start$FUNC, scope);
         }
-        static pack_start ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static pack_start ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkCellLayoutIface.pack_start$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkCellLayoutIface.pack_start_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -60,40 +92,68 @@ public class _GtkCellLayoutIface {
     public static VarHandle pack_start$VH() {
         return _GtkCellLayoutIface.pack_start$VH;
     }
-    public static MemoryAddress pack_start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.pack_start$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*pack_start)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
+    public static MemorySegment pack_start$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.pack_start$VH.get(seg);
     }
-    public static void pack_start$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*pack_start)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
+    public static void pack_start$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.pack_start$VH.set(seg, x);
     }
-    public static MemoryAddress pack_start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.pack_start$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment pack_start$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.pack_start$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void pack_start$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void pack_start$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.pack_start$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static pack_start pack_start (MemorySegment segment, MemorySession session) {
-        return pack_start.ofAddress(pack_start$get(segment), session);
+    public static pack_start pack_start(MemorySegment segment, SegmentScope scope) {
+        return pack_start.ofAddress(pack_start$get(segment), scope);
     }
     static final FunctionDescriptor pack_end$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pack_end$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.pack_end$FUNC
+    static final FunctionDescriptor pack_end_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle pack_end_UP$MH = RuntimeHelper.upcallHandle(pack_end.class, "apply", _GtkCellLayoutIface.pack_end_UP$FUNC);
+    static final FunctionDescriptor pack_end_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pack_end_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.pack_end_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*pack_end)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
     public interface pack_end {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(pack_end fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(pack_end.class, fi, _GtkCellLayoutIface.pack_end$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(pack_end fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.pack_end_UP$MH, fi, _GtkCellLayoutIface.pack_end$FUNC, scope);
         }
-        static pack_end ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static pack_end ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkCellLayoutIface.pack_end$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkCellLayoutIface.pack_end_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -105,38 +165,62 @@ public class _GtkCellLayoutIface {
     public static VarHandle pack_end$VH() {
         return _GtkCellLayoutIface.pack_end$VH;
     }
-    public static MemoryAddress pack_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.pack_end$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*pack_end)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
+    public static MemorySegment pack_end$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.pack_end$VH.get(seg);
     }
-    public static void pack_end$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*pack_end)(GtkCellLayout*,GtkCellRenderer*,gboolean);
+     * }
+     */
+    public static void pack_end$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.pack_end$VH.set(seg, x);
     }
-    public static MemoryAddress pack_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.pack_end$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment pack_end$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.pack_end$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void pack_end$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void pack_end$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.pack_end$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static pack_end pack_end (MemorySegment segment, MemorySession session) {
-        return pack_end.ofAddress(pack_end$get(segment), session);
+    public static pack_end pack_end(MemorySegment segment, SegmentScope scope) {
+        return pack_end.ofAddress(pack_end$get(segment), scope);
     }
     static final FunctionDescriptor clear$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle clear$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.clear$FUNC
+    static final FunctionDescriptor clear_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle clear_UP$MH = RuntimeHelper.upcallHandle(clear.class, "apply", _GtkCellLayoutIface.clear_UP$FUNC);
+    static final FunctionDescriptor clear_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle clear_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.clear_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*clear)(GtkCellLayout*);
+     * }
+     */
     public interface clear {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(clear fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(clear.class, fi, _GtkCellLayoutIface.clear$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(clear fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.clear_UP$MH, fi, _GtkCellLayoutIface.clear$FUNC, scope);
         }
-        static clear ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static clear ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkCellLayoutIface.clear$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkCellLayoutIface.clear_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -148,20 +232,32 @@ public class _GtkCellLayoutIface {
     public static VarHandle clear$VH() {
         return _GtkCellLayoutIface.clear$VH;
     }
-    public static MemoryAddress clear$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.clear$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*clear)(GtkCellLayout*);
+     * }
+     */
+    public static MemorySegment clear$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.clear$VH.get(seg);
     }
-    public static void clear$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*clear)(GtkCellLayout*);
+     * }
+     */
+    public static void clear$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.clear$VH.set(seg, x);
     }
-    public static MemoryAddress clear$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.clear$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment clear$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.clear$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void clear$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void clear$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.clear$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static clear clear (MemorySegment segment, MemorySession session) {
-        return clear.ofAddress(clear$get(segment), session);
+    public static clear clear(MemorySegment segment, SegmentScope scope) {
+        return clear.ofAddress(clear$get(segment), scope);
     }
     static final FunctionDescriptor add_attribute$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -169,20 +265,38 @@ public class _GtkCellLayoutIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle add_attribute$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.add_attribute$FUNC
+    static final FunctionDescriptor add_attribute_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle add_attribute_UP$MH = RuntimeHelper.upcallHandle(add_attribute.class, "apply", _GtkCellLayoutIface.add_attribute_UP$FUNC);
+    static final FunctionDescriptor add_attribute_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle add_attribute_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.add_attribute_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*add_attribute)(GtkCellLayout*,GtkCellRenderer*,const gchar*,gint);
+     * }
+     */
     public interface add_attribute {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3);
-        static MemorySegment allocate(add_attribute fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_attribute.class, fi, _GtkCellLayoutIface.add_attribute$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        static MemorySegment allocate(add_attribute fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.add_attribute_UP$MH, fi, _GtkCellLayoutIface.add_attribute$FUNC, scope);
         }
-        static add_attribute ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3) -> {
+        static add_attribute ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    _GtkCellLayoutIface.add_attribute$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3);
+                    _GtkCellLayoutIface.add_attribute_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -194,20 +308,32 @@ public class _GtkCellLayoutIface {
     public static VarHandle add_attribute$VH() {
         return _GtkCellLayoutIface.add_attribute$VH;
     }
-    public static MemoryAddress add_attribute$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.add_attribute$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*add_attribute)(GtkCellLayout*,GtkCellRenderer*,const gchar*,gint);
+     * }
+     */
+    public static MemorySegment add_attribute$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.add_attribute$VH.get(seg);
     }
-    public static void add_attribute$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*add_attribute)(GtkCellLayout*,GtkCellRenderer*,const gchar*,gint);
+     * }
+     */
+    public static void add_attribute$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.add_attribute$VH.set(seg, x);
     }
-    public static MemoryAddress add_attribute$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.add_attribute$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_attribute$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.add_attribute$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_attribute$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_attribute$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.add_attribute$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_attribute add_attribute (MemorySegment segment, MemorySession session) {
-        return add_attribute.ofAddress(add_attribute$get(segment), session);
+    public static add_attribute add_attribute(MemorySegment segment, SegmentScope scope) {
+        return add_attribute.ofAddress(add_attribute$get(segment), scope);
     }
     static final FunctionDescriptor set_cell_data_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -216,20 +342,40 @@ public class _GtkCellLayoutIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_cell_data_func$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.set_cell_data_func$FUNC
+    static final FunctionDescriptor set_cell_data_func_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_cell_data_func_UP$MH = RuntimeHelper.upcallHandle(set_cell_data_func.class, "apply", _GtkCellLayoutIface.set_cell_data_func_UP$FUNC);
+    static final FunctionDescriptor set_cell_data_func_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_cell_data_func_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.set_cell_data_func_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_cell_data_func)(GtkCellLayout*,GtkCellRenderer*,GtkCellLayoutDataFunc,gpointer,GDestroyNotify);
+     * }
+     */
     public interface set_cell_data_func {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(set_cell_data_func fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_cell_data_func.class, fi, _GtkCellLayoutIface.set_cell_data_func$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(set_cell_data_func fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.set_cell_data_func_UP$MH, fi, _GtkCellLayoutIface.set_cell_data_func$FUNC, scope);
         }
-        static set_cell_data_func ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static set_cell_data_func ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GtkCellLayoutIface.set_cell_data_func$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GtkCellLayoutIface.set_cell_data_func_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -241,39 +387,65 @@ public class _GtkCellLayoutIface {
     public static VarHandle set_cell_data_func$VH() {
         return _GtkCellLayoutIface.set_cell_data_func$VH;
     }
-    public static MemoryAddress set_cell_data_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.set_cell_data_func$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_cell_data_func)(GtkCellLayout*,GtkCellRenderer*,GtkCellLayoutDataFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static MemorySegment set_cell_data_func$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.set_cell_data_func$VH.get(seg);
     }
-    public static void set_cell_data_func$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_cell_data_func)(GtkCellLayout*,GtkCellRenderer*,GtkCellLayoutDataFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static void set_cell_data_func$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.set_cell_data_func$VH.set(seg, x);
     }
-    public static MemoryAddress set_cell_data_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.set_cell_data_func$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_cell_data_func$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.set_cell_data_func$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_cell_data_func$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_cell_data_func$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.set_cell_data_func$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_cell_data_func set_cell_data_func (MemorySegment segment, MemorySession session) {
-        return set_cell_data_func.ofAddress(set_cell_data_func$get(segment), session);
+    public static set_cell_data_func set_cell_data_func(MemorySegment segment, SegmentScope scope) {
+        return set_cell_data_func.ofAddress(set_cell_data_func$get(segment), scope);
     }
     static final FunctionDescriptor clear_attributes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle clear_attributes$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.clear_attributes$FUNC
+    static final FunctionDescriptor clear_attributes_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle clear_attributes_UP$MH = RuntimeHelper.upcallHandle(clear_attributes.class, "apply", _GtkCellLayoutIface.clear_attributes_UP$FUNC);
+    static final FunctionDescriptor clear_attributes_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle clear_attributes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.clear_attributes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*clear_attributes)(GtkCellLayout*,GtkCellRenderer*);
+     * }
+     */
     public interface clear_attributes {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(clear_attributes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(clear_attributes.class, fi, _GtkCellLayoutIface.clear_attributes$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(clear_attributes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.clear_attributes_UP$MH, fi, _GtkCellLayoutIface.clear_attributes$FUNC, scope);
         }
-        static clear_attributes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static clear_attributes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkCellLayoutIface.clear_attributes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkCellLayoutIface.clear_attributes_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -285,40 +457,68 @@ public class _GtkCellLayoutIface {
     public static VarHandle clear_attributes$VH() {
         return _GtkCellLayoutIface.clear_attributes$VH;
     }
-    public static MemoryAddress clear_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.clear_attributes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*clear_attributes)(GtkCellLayout*,GtkCellRenderer*);
+     * }
+     */
+    public static MemorySegment clear_attributes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.clear_attributes$VH.get(seg);
     }
-    public static void clear_attributes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*clear_attributes)(GtkCellLayout*,GtkCellRenderer*);
+     * }
+     */
+    public static void clear_attributes$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.clear_attributes$VH.set(seg, x);
     }
-    public static MemoryAddress clear_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.clear_attributes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment clear_attributes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.clear_attributes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void clear_attributes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void clear_attributes$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.clear_attributes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static clear_attributes clear_attributes (MemorySegment segment, MemorySession session) {
-        return clear_attributes.ofAddress(clear_attributes$get(segment), session);
+    public static clear_attributes clear_attributes(MemorySegment segment, SegmentScope scope) {
+        return clear_attributes.ofAddress(clear_attributes$get(segment), scope);
     }
     static final FunctionDescriptor reorder$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle reorder$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.reorder$FUNC
+    static final FunctionDescriptor reorder_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle reorder_UP$MH = RuntimeHelper.upcallHandle(reorder.class, "apply", _GtkCellLayoutIface.reorder_UP$FUNC);
+    static final FunctionDescriptor reorder_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle reorder_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.reorder_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*reorder)(GtkCellLayout*,GtkCellRenderer*,gint);
+     * }
+     */
     public interface reorder {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(reorder fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reorder.class, fi, _GtkCellLayoutIface.reorder$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(reorder fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.reorder_UP$MH, fi, _GtkCellLayoutIface.reorder$FUNC, scope);
         }
-        static reorder ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static reorder ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkCellLayoutIface.reorder$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkCellLayoutIface.reorder_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -330,38 +530,62 @@ public class _GtkCellLayoutIface {
     public static VarHandle reorder$VH() {
         return _GtkCellLayoutIface.reorder$VH;
     }
-    public static MemoryAddress reorder$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.reorder$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reorder)(GtkCellLayout*,GtkCellRenderer*,gint);
+     * }
+     */
+    public static MemorySegment reorder$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.reorder$VH.get(seg);
     }
-    public static void reorder$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reorder)(GtkCellLayout*,GtkCellRenderer*,gint);
+     * }
+     */
+    public static void reorder$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.reorder$VH.set(seg, x);
     }
-    public static MemoryAddress reorder$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.reorder$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reorder$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.reorder$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reorder$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reorder$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.reorder$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reorder reorder (MemorySegment segment, MemorySession session) {
-        return reorder.ofAddress(reorder$get(segment), session);
+    public static reorder reorder(MemorySegment segment, SegmentScope scope) {
+        return reorder.ofAddress(reorder$get(segment), scope);
     }
     static final FunctionDescriptor get_cells$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_cells$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.get_cells$FUNC
+    static final FunctionDescriptor get_cells_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_cells_UP$MH = RuntimeHelper.upcallHandle(get_cells.class, "apply", _GtkCellLayoutIface.get_cells_UP$FUNC);
+    static final FunctionDescriptor get_cells_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_cells_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.get_cells_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_cells)(GtkCellLayout*);
+     * }
+     */
     public interface get_cells {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_cells fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_cells.class, fi, _GtkCellLayoutIface.get_cells$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_cells fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.get_cells_UP$MH, fi, _GtkCellLayoutIface.get_cells$FUNC, scope);
         }
-        static get_cells ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_cells ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_cells$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_cells_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -373,38 +597,62 @@ public class _GtkCellLayoutIface {
     public static VarHandle get_cells$VH() {
         return _GtkCellLayoutIface.get_cells$VH;
     }
-    public static MemoryAddress get_cells$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_cells$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_cells)(GtkCellLayout*);
+     * }
+     */
+    public static MemorySegment get_cells$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_cells$VH.get(seg);
     }
-    public static void get_cells$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_cells)(GtkCellLayout*);
+     * }
+     */
+    public static void get_cells$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.get_cells$VH.set(seg, x);
     }
-    public static MemoryAddress get_cells$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_cells$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_cells$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_cells$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_cells$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_cells$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.get_cells$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_cells get_cells (MemorySegment segment, MemorySession session) {
-        return get_cells.ofAddress(get_cells$get(segment), session);
+    public static get_cells get_cells(MemorySegment segment, SegmentScope scope) {
+        return get_cells.ofAddress(get_cells$get(segment), scope);
     }
     static final FunctionDescriptor get_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_area$MH = RuntimeHelper.downcallHandle(
-        _GtkCellLayoutIface.get_area$FUNC
+    static final FunctionDescriptor get_area_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_area_UP$MH = RuntimeHelper.upcallHandle(get_area.class, "apply", _GtkCellLayoutIface.get_area_UP$FUNC);
+    static final FunctionDescriptor get_area_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_area_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellLayoutIface.get_area_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkCellArea* (*get_area)(GtkCellLayout*);
+     * }
+     */
     public interface get_area {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_area fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_area.class, fi, _GtkCellLayoutIface.get_area$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_area fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellLayoutIface.get_area_UP$MH, fi, _GtkCellLayoutIface.get_area$FUNC, scope);
         }
-        static get_area ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_area ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_area$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_area_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -416,27 +664,39 @@ public class _GtkCellLayoutIface {
     public static VarHandle get_area$VH() {
         return _GtkCellLayoutIface.get_area$VH;
     }
-    public static MemoryAddress get_area$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_area$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkCellArea* (*get_area)(GtkCellLayout*);
+     * }
+     */
+    public static MemorySegment get_area$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_area$VH.get(seg);
     }
-    public static void get_area$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkCellArea* (*get_area)(GtkCellLayout*);
+     * }
+     */
+    public static void get_area$set(MemorySegment seg, MemorySegment x) {
         _GtkCellLayoutIface.get_area$VH.set(seg, x);
     }
-    public static MemoryAddress get_area$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellLayoutIface.get_area$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_area$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellLayoutIface.get_area$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_area$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_area$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellLayoutIface.get_area$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_area get_area (MemorySegment segment, MemorySession session) {
-        return get_area.ofAddress(get_area$get(segment), session);
+    public static get_area get_area(MemorySegment segment, SegmentScope scope) {
+        return get_area.ofAddress(get_area$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

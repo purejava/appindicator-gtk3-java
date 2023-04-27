@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1180 {
+final class constants$1180 {
 
-    static final FunctionDescriptor cairo_user_font_face_set_render_glyph_func$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1180() {}
+    static final FunctionDescriptor gdk_set_allowed_backends$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_set_allowed_backends$MH = RuntimeHelper.downcallHandle(
+        "gdk_set_allowed_backends",
+        constants$1180.gdk_set_allowed_backends$FUNC
+    );
+    static final FunctionDescriptor gdk_pango_context_get_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pango_context_get_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get_for_screen",
+        constants$1180.gdk_pango_context_get_for_screen$FUNC
+    );
+    static final FunctionDescriptor gdk_pango_context_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pango_context_get_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get_for_display",
+        constants$1180.gdk_pango_context_get_for_display$FUNC
+    );
+    static final FunctionDescriptor gdk_pango_context_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_pango_context_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get",
+        constants$1180.gdk_pango_context_get$FUNC
+    );
+    static final FunctionDescriptor gdk_pango_layout_line_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_font_face_set_render_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_set_render_glyph_func",
-        constants$1180.cairo_user_font_face_set_render_glyph_func$FUNC
-    );
-    static final FunctionDescriptor cairo_user_font_face_set_text_to_glyphs_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_user_font_face_set_text_to_glyphs_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_set_text_to_glyphs_func",
-        constants$1180.cairo_user_font_face_set_text_to_glyphs_func$FUNC
+    static final MethodHandle gdk_pango_layout_line_get_clip_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_pango_layout_line_get_clip_region",
+        constants$1180.gdk_pango_layout_line_get_clip_region$FUNC
     );
-    static final FunctionDescriptor cairo_user_font_face_set_unicode_to_glyph_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_pango_layout_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_user_font_face_set_unicode_to_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_set_unicode_to_glyph_func",
-        constants$1180.cairo_user_font_face_set_unicode_to_glyph_func$FUNC
-    );
-    static final FunctionDescriptor cairo_user_font_face_get_init_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_font_face_get_init_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_get_init_func",
-        constants$1180.cairo_user_font_face_get_init_func$FUNC
-    );
-    static final FunctionDescriptor cairo_user_font_face_get_render_glyph_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_font_face_get_render_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_get_render_glyph_func",
-        constants$1180.cairo_user_font_face_get_render_glyph_func$FUNC
-    );
-    static final FunctionDescriptor cairo_user_font_face_get_text_to_glyphs_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_font_face_get_text_to_glyphs_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_get_text_to_glyphs_func",
-        constants$1180.cairo_user_font_face_get_text_to_glyphs_func$FUNC
+    static final MethodHandle gdk_pango_layout_get_clip_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_pango_layout_get_clip_region",
+        constants$1180.gdk_pango_layout_get_clip_region$FUNC
     );
 }
 

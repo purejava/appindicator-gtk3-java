@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GIconIface {
+ *     GTypeInterface g_iface;
+ *     guint (*hash)(GIcon*);
+ *     gboolean (*equal)(GIcon*,GIcon*);
+ *     gboolean (*to_tokens)(GIcon*,GPtrArray*,gint*);
+ *     GIcon* (*from_tokens)(gchar**,gint,gint,GError**);
+ *     GVariant* (*serialize)(GIcon*);
+ * };
+ * }
+ */
 public class _GIconIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -29,20 +41,32 @@ public class _GIconIface {
     static final FunctionDescriptor hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hash$MH = RuntimeHelper.downcallHandle(
-        _GIconIface.hash$FUNC
+    static final FunctionDescriptor hash_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle hash_UP$MH = RuntimeHelper.upcallHandle(hash.class, "apply", _GIconIface.hash_UP$FUNC);
+    static final FunctionDescriptor hash_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hash_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIconIface.hash_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*hash)(GIcon*);
+     * }
+     */
     public interface hash {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(hash fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(hash.class, fi, _GIconIface.hash$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(hash fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIconIface.hash_UP$MH, fi, _GIconIface.hash$FUNC, scope);
         }
-        static hash ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static hash ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GIconIface.hash$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GIconIface.hash_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,39 +78,65 @@ public class _GIconIface {
     public static VarHandle hash$VH() {
         return _GIconIface.hash$VH;
     }
-    public static MemoryAddress hash$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.hash$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*hash)(GIcon*);
+     * }
+     */
+    public static MemorySegment hash$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.hash$VH.get(seg);
     }
-    public static void hash$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*hash)(GIcon*);
+     * }
+     */
+    public static void hash$set(MemorySegment seg, MemorySegment x) {
         _GIconIface.hash$VH.set(seg, x);
     }
-    public static MemoryAddress hash$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.hash$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment hash$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.hash$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void hash$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void hash$set(MemorySegment seg, long index, MemorySegment x) {
         _GIconIface.hash$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static hash hash (MemorySegment segment, MemorySession session) {
-        return hash.ofAddress(hash$get(segment), session);
+    public static hash hash(MemorySegment segment, SegmentScope scope) {
+        return hash.ofAddress(hash$get(segment), scope);
     }
     static final FunctionDescriptor equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle equal$MH = RuntimeHelper.downcallHandle(
-        _GIconIface.equal$FUNC
+    static final FunctionDescriptor equal_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle equal_UP$MH = RuntimeHelper.upcallHandle(equal.class, "apply", _GIconIface.equal_UP$FUNC);
+    static final FunctionDescriptor equal_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle equal_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIconIface.equal_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*equal)(GIcon*,GIcon*);
+     * }
+     */
     public interface equal {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(equal fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(equal.class, fi, _GIconIface.equal$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(equal fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIconIface.equal_UP$MH, fi, _GIconIface.equal$FUNC, scope);
         }
-        static equal ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static equal ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GIconIface.equal$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GIconIface.equal_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -98,40 +148,68 @@ public class _GIconIface {
     public static VarHandle equal$VH() {
         return _GIconIface.equal$VH;
     }
-    public static MemoryAddress equal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.equal$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*equal)(GIcon*,GIcon*);
+     * }
+     */
+    public static MemorySegment equal$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.equal$VH.get(seg);
     }
-    public static void equal$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*equal)(GIcon*,GIcon*);
+     * }
+     */
+    public static void equal$set(MemorySegment seg, MemorySegment x) {
         _GIconIface.equal$VH.set(seg, x);
     }
-    public static MemoryAddress equal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.equal$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment equal$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.equal$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void equal$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void equal$set(MemorySegment seg, long index, MemorySegment x) {
         _GIconIface.equal$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static equal equal (MemorySegment segment, MemorySession session) {
-        return equal.ofAddress(equal$get(segment), session);
+    public static equal equal(MemorySegment segment, SegmentScope scope) {
+        return equal.ofAddress(equal$get(segment), scope);
     }
     static final FunctionDescriptor to_tokens$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle to_tokens$MH = RuntimeHelper.downcallHandle(
-        _GIconIface.to_tokens$FUNC
+    static final FunctionDescriptor to_tokens_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle to_tokens_UP$MH = RuntimeHelper.upcallHandle(to_tokens.class, "apply", _GIconIface.to_tokens_UP$FUNC);
+    static final FunctionDescriptor to_tokens_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle to_tokens_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIconIface.to_tokens_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*to_tokens)(GIcon*,GPtrArray*,gint*);
+     * }
+     */
     public interface to_tokens {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(to_tokens fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(to_tokens.class, fi, _GIconIface.to_tokens$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(to_tokens fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIconIface.to_tokens_UP$MH, fi, _GIconIface.to_tokens$FUNC, scope);
         }
-        static to_tokens ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static to_tokens ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GIconIface.to_tokens$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GIconIface.to_tokens_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -143,20 +221,32 @@ public class _GIconIface {
     public static VarHandle to_tokens$VH() {
         return _GIconIface.to_tokens$VH;
     }
-    public static MemoryAddress to_tokens$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.to_tokens$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*to_tokens)(GIcon*,GPtrArray*,gint*);
+     * }
+     */
+    public static MemorySegment to_tokens$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.to_tokens$VH.get(seg);
     }
-    public static void to_tokens$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*to_tokens)(GIcon*,GPtrArray*,gint*);
+     * }
+     */
+    public static void to_tokens$set(MemorySegment seg, MemorySegment x) {
         _GIconIface.to_tokens$VH.set(seg, x);
     }
-    public static MemoryAddress to_tokens$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.to_tokens$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment to_tokens$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.to_tokens$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void to_tokens$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void to_tokens$set(MemorySegment seg, long index, MemorySegment x) {
         _GIconIface.to_tokens$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_tokens to_tokens (MemorySegment segment, MemorySession session) {
-        return to_tokens.ofAddress(to_tokens$get(segment), session);
+    public static to_tokens to_tokens(MemorySegment segment, SegmentScope scope) {
+        return to_tokens.ofAddress(to_tokens$get(segment), scope);
     }
     static final FunctionDescriptor from_tokens$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -164,20 +254,38 @@ public class _GIconIface {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle from_tokens$MH = RuntimeHelper.downcallHandle(
-        _GIconIface.from_tokens$FUNC
+    static final FunctionDescriptor from_tokens_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle from_tokens_UP$MH = RuntimeHelper.upcallHandle(from_tokens.class, "apply", _GIconIface.from_tokens_UP$FUNC);
+    static final FunctionDescriptor from_tokens_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle from_tokens_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIconIface.from_tokens_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*from_tokens)(gchar**,gint,gint,GError**);
+     * }
+     */
     public interface from_tokens {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(from_tokens fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(from_tokens.class, fi, _GIconIface.from_tokens$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(from_tokens fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIconIface.from_tokens_UP$MH, fi, _GIconIface.from_tokens$FUNC, scope);
         }
-        static from_tokens ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static from_tokens ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GIconIface.from_tokens$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    return (java.lang.foreign.MemorySegment)_GIconIface.from_tokens_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -189,38 +297,62 @@ public class _GIconIface {
     public static VarHandle from_tokens$VH() {
         return _GIconIface.from_tokens$VH;
     }
-    public static MemoryAddress from_tokens$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.from_tokens$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*from_tokens)(gchar**,gint,gint,GError**);
+     * }
+     */
+    public static MemorySegment from_tokens$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.from_tokens$VH.get(seg);
     }
-    public static void from_tokens$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*from_tokens)(gchar**,gint,gint,GError**);
+     * }
+     */
+    public static void from_tokens$set(MemorySegment seg, MemorySegment x) {
         _GIconIface.from_tokens$VH.set(seg, x);
     }
-    public static MemoryAddress from_tokens$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.from_tokens$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment from_tokens$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.from_tokens$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void from_tokens$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void from_tokens$set(MemorySegment seg, long index, MemorySegment x) {
         _GIconIface.from_tokens$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static from_tokens from_tokens (MemorySegment segment, MemorySession session) {
-        return from_tokens.ofAddress(from_tokens$get(segment), session);
+    public static from_tokens from_tokens(MemorySegment segment, SegmentScope scope) {
+        return from_tokens.ofAddress(from_tokens$get(segment), scope);
     }
     static final FunctionDescriptor serialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle serialize$MH = RuntimeHelper.downcallHandle(
-        _GIconIface.serialize$FUNC
+    static final FunctionDescriptor serialize_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle serialize_UP$MH = RuntimeHelper.upcallHandle(serialize.class, "apply", _GIconIface.serialize_UP$FUNC);
+    static final FunctionDescriptor serialize_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle serialize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GIconIface.serialize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GVariant* (*serialize)(GIcon*);
+     * }
+     */
     public interface serialize {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(serialize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(serialize.class, fi, _GIconIface.serialize$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(serialize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GIconIface.serialize_UP$MH, fi, _GIconIface.serialize$FUNC, scope);
         }
-        static serialize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static serialize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GIconIface.serialize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GIconIface.serialize_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -232,27 +364,39 @@ public class _GIconIface {
     public static VarHandle serialize$VH() {
         return _GIconIface.serialize$VH;
     }
-    public static MemoryAddress serialize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.serialize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GVariant* (*serialize)(GIcon*);
+     * }
+     */
+    public static MemorySegment serialize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.serialize$VH.get(seg);
     }
-    public static void serialize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GVariant* (*serialize)(GIcon*);
+     * }
+     */
+    public static void serialize$set(MemorySegment seg, MemorySegment x) {
         _GIconIface.serialize$VH.set(seg, x);
     }
-    public static MemoryAddress serialize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GIconIface.serialize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment serialize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GIconIface.serialize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void serialize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void serialize$set(MemorySegment seg, long index, MemorySegment x) {
         _GIconIface.serialize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static serialize serialize (MemorySegment segment, MemorySession session) {
-        return serialize.ofAddress(serialize$get(segment), session);
+    public static serialize serialize(MemorySegment segment, SegmentScope scope) {
+        return serialize.ofAddress(serialize$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

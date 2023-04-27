@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1359 {
+final class constants$1359 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkFrameClock$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1359() {}
+    static final FunctionDescriptor gtk_box_set_child_packing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_box_set_child_packing$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_set_child_packing",
+        constants$1359.gtk_box_set_child_packing$FUNC
+    );
+    static final FunctionDescriptor gtk_box_set_center_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkFrameClock$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkFrameClock",
-        constants$1359.glib_queueautoptr_cleanup_GdkFrameClock$FUNC
+    static final MethodHandle gtk_box_set_center_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_set_center_widget",
+        constants$1359.gtk_box_set_center_widget$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GdkGLContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_box_get_center_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GdkGLContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkGLContext",
-        constants$1359.glib_autoptr_clear_GdkGLContext$FUNC
+    static final MethodHandle gtk_box_get_center_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_get_center_widget",
+        constants$1359.gtk_box_get_center_widget$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkGLContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_app_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_widget_get_type",
+        constants$1359.gtk_app_chooser_widget_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_app_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GdkGLContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkGLContext",
-        constants$1359.glib_autoptr_cleanup_GdkGLContext$FUNC
+    static final MethodHandle gtk_app_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_widget_new",
+        constants$1359.gtk_app_chooser_widget_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkGLContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_app_chooser_widget_set_show_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkGLContext$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkGLContext",
-        constants$1359.glib_listautoptr_cleanup_GdkGLContext$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkGLContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkGLContext$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkGLContext",
-        constants$1359.glib_slistautoptr_cleanup_GdkGLContext$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkGLContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkGLContext$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkGLContext",
-        constants$1359.glib_queueautoptr_cleanup_GdkGLContext$FUNC
+    static final MethodHandle gtk_app_chooser_widget_set_show_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_widget_set_show_default",
+        constants$1359.gtk_app_chooser_widget_set_show_default$FUNC
     );
 }
 

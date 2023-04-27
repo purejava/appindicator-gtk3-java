@@ -7,56 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$990 {
+final class constants$990 {
 
-    static final FunctionDescriptor hb_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$990() {}
+    static final FunctionDescriptor fileno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_destroy_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$990.hb_destroy_func_t$FUNC
+    static final MethodHandle fileno$MH = RuntimeHelper.downcallHandle(
+        "fileno",
+        constants$990.fileno$FUNC
     );
-    static final FunctionDescriptor hb_feature_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor fileno_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_feature_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_feature_from_string",
-        constants$990.hb_feature_from_string$FUNC
+    static final MethodHandle fileno_unlocked$MH = RuntimeHelper.downcallHandle(
+        "fileno_unlocked",
+        constants$990.fileno_unlocked$FUNC
     );
-    static final FunctionDescriptor hb_feature_to_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_feature_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_feature_to_string",
-        constants$990.hb_feature_to_string$FUNC
-    );
-    static final FunctionDescriptor hb_variation_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pclose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_variation_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_variation_from_string",
-        constants$990.hb_variation_from_string$FUNC
+    static final MethodHandle pclose$MH = RuntimeHelper.downcallHandle(
+        "pclose",
+        constants$990.pclose$FUNC
     );
-    static final FunctionDescriptor hb_variation_to_string$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor popen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_variation_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_variation_to_string",
-        constants$990.hb_variation_to_string$FUNC
+    static final MethodHandle popen$MH = RuntimeHelper.downcallHandle(
+        "popen",
+        constants$990.popen$FUNC
     );
-    static final FunctionDescriptor hb_color_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor ctermid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_color_get_alpha$MH = RuntimeHelper.downcallHandle(
-        "hb_color_get_alpha",
-        constants$990.hb_color_get_alpha$FUNC
+    static final MethodHandle ctermid$MH = RuntimeHelper.downcallHandle(
+        "ctermid",
+        constants$990.ctermid$FUNC
+    );
+    static final FunctionDescriptor flockfile$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle flockfile$MH = RuntimeHelper.downcallHandle(
+        "flockfile",
+        constants$990.flockfile$FUNC
     );
 }
 

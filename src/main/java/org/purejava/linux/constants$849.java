@@ -7,56 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$849 {
+final class constants$849 {
 
-    static final FunctionDescriptor g_task_run_in_thread$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$849() {}
+    static final FunctionDescriptor hb_face_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_run_in_thread$MH = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread",
-        constants$849.g_task_run_in_thread$FUNC
+    static final MethodHandle hb_face_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_face_reference",
+        constants$849.hb_face_reference$FUNC
     );
-    static final FunctionDescriptor g_task_run_in_thread_sync$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_face_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_run_in_thread_sync$MH = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread_sync",
-        constants$849.g_task_run_in_thread_sync$FUNC
+    static final MethodHandle hb_face_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_face_destroy",
+        constants$849.hb_face_destroy$FUNC
     );
-    static final FunctionDescriptor g_task_set_return_on_cancel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_face_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_task_set_return_on_cancel$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_return_on_cancel",
-        constants$849.g_task_set_return_on_cancel$FUNC
+    static final MethodHandle hb_face_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_face_set_user_data",
+        constants$849.hb_face_set_user_data$FUNC
     );
-    static final FunctionDescriptor g_task_get_return_on_cancel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_get_return_on_cancel$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_return_on_cancel",
-        constants$849.g_task_get_return_on_cancel$FUNC
-    );
-    static final FunctionDescriptor g_task_attach_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_face_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_attach_source$MH = RuntimeHelper.downcallHandle(
-        "g_task_attach_source",
-        constants$849.g_task_attach_source$FUNC
+    static final MethodHandle hb_face_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_face_get_user_data",
+        constants$849.hb_face_get_user_data$FUNC
     );
-    static final FunctionDescriptor g_task_return_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_face_make_immutable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_return_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_task_return_pointer",
-        constants$849.g_task_return_pointer$FUNC
+    static final MethodHandle hb_face_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_face_make_immutable",
+        constants$849.hb_face_make_immutable$FUNC
+    );
+    static final FunctionDescriptor hb_face_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_face_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_face_is_immutable",
+        constants$849.hb_face_is_immutable$FUNC
     );
 }
 

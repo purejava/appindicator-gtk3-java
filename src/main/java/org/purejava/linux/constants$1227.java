@@ -7,57 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1227 {
+final class constants$1227 {
 
-    static final FunctionDescriptor gdk_event_get_coords$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1227() {}
+    static final FunctionDescriptor atk_no_op_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_no_op_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_factory_get_type",
+        constants$1227.atk_no_op_object_factory_get_type$FUNC
     );
-    static final MethodHandle gdk_event_get_coords$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_coords",
-        constants$1227.gdk_event_get_coords$FUNC
+    static final FunctionDescriptor atk_no_op_object_factory_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_no_op_object_factory_new$MH = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_factory_new",
+        constants$1227.atk_no_op_object_factory_new$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_root_coords$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_plug_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_plug_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_plug_get_type",
+        constants$1227.atk_plug_get_type$FUNC
     );
-    static final MethodHandle gdk_event_get_root_coords$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_root_coords",
-        constants$1227.gdk_event_get_root_coords$FUNC
+    static final FunctionDescriptor atk_plug_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_plug_new$MH = RuntimeHelper.downcallHandle(
+        "atk_plug_new",
+        constants$1227.atk_plug_new$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_button$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_button",
-        constants$1227.gdk_event_get_button$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_click_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_plug_set_child$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_click_count$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_click_count",
-        constants$1227.gdk_event_get_click_count$FUNC
+    static final MethodHandle atk_plug_set_child$MH = RuntimeHelper.downcallHandle(
+        "atk_plug_set_child",
+        constants$1227.atk_plug_set_child$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_plug_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_keyval$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keyval",
-        constants$1227.gdk_event_get_keyval$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_keycode$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keycode",
-        constants$1227.gdk_event_get_keycode$FUNC
+    static final MethodHandle atk_plug_get_id$MH = RuntimeHelper.downcallHandle(
+        "atk_plug_get_id",
+        constants$1227.atk_plug_get_id$FUNC
     );
 }
 

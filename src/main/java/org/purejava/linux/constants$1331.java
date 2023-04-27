@@ -7,39 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1331 {
+final class constants$1331 {
 
-    static final FunctionDescriptor gdk_anchor_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_anchor_hints_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_anchor_hints_get_type",
-        constants$1331.gdk_anchor_hints_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1331() {}
+    static final FunctionDescriptor gtk_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_menu_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_type",
+        constants$1331.gtk_menu_get_type$FUNC
     );
-    static final FunctionDescriptor gdk_window_edge_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_edge_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_edge_get_type",
-        constants$1331.gdk_window_edge_get_type$FUNC
+    static final FunctionDescriptor gtk_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_new",
+        constants$1331.gtk_menu_new$FUNC
     );
-    static final FunctionDescriptor gdk_fullscreen_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_fullscreen_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_fullscreen_mode_get_type",
-        constants$1331.gdk_fullscreen_mode_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_gl_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_error_quark",
-        constants$1331.gdk_gl_error_quark$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_gl_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_type",
-        constants$1331.gdk_gl_context_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_display",
-        constants$1331.gdk_gl_context_get_display$FUNC
+    static final MethodHandle gtk_menu_new_from_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_new_from_model",
+        constants$1331.gtk_menu_new_from_model$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_popup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_popup$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_popup",
+        constants$1331.gtk_menu_popup$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_popup_for_device$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_popup_for_device$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_popup_for_device",
+        constants$1331.gtk_menu_popup_for_device$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_popup_at_rect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_popup_at_rect$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_popup_at_rect",
+        constants$1331.gtk_menu_popup_at_rect$FUNC
     );
 }
 

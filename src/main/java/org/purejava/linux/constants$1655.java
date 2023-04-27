@@ -7,51 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1655 {
+final class constants$1655 {
 
-    static final FunctionDescriptor gtk_tree_view_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1655() {}
+    static final FunctionDescriptor gtk_icon_view_get_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_new_with_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_new_with_model",
-        constants$1655.gtk_tree_view_new_with_model$FUNC
+    static final MethodHandle gtk_icon_view_get_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_margin",
+        constants$1655.gtk_icon_view_get_margin$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_icon_view_set_item_padding$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_item_padding$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_item_padding",
+        constants$1655.gtk_icon_view_set_item_padding$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_item_padding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_model",
-        constants$1655.gtk_tree_view_get_model$FUNC
+    static final MethodHandle gtk_icon_view_get_item_padding$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_item_padding",
+        constants$1655.gtk_icon_view_get_item_padding$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_model$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_get_path_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_path_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_path_at_pos",
+        constants$1655.gtk_icon_view_get_path_at_pos$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_item_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_model",
-        constants$1655.gtk_tree_view_set_model$FUNC
+    static final MethodHandle gtk_icon_view_get_item_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_item_at_pos",
+        constants$1655.gtk_icon_view_get_item_at_pos$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_selection",
-        constants$1655.gtk_tree_view_get_selection$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_hadjustment",
-        constants$1655.gtk_tree_view_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_get_visible_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_hadjustment",
-        constants$1655.gtk_tree_view_set_hadjustment$FUNC
+    static final MethodHandle gtk_icon_view_get_visible_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_visible_range",
+        constants$1655.gtk_icon_view_get_visible_range$FUNC
     );
 }
 

@@ -7,54 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$824 {
+final class constants$824 {
 
-    static final FunctionDescriptor g_socket_get_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$824() {}
+    static final FunctionDescriptor GVfsFileLookupFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_option$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_option",
-        constants$824.g_socket_get_option$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GVfsFileLookupFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_set_option$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_option",
-        constants$824.g_socket_set_option$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_client_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_type",
-        constants$824.g_socket_client_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_socket_client_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_new",
-        constants$824.g_socket_client_new$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GVfsFileLookupFunc_UP$MH = RuntimeHelper.upcallHandle(GVfsFileLookupFunc.class, "apply", constants$824.GVfsFileLookupFunc_UP$FUNC);
+    static final FunctionDescriptor GVfsFileLookupFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_family",
-        constants$824.g_socket_client_get_family$FUNC
+    static final MethodHandle GVfsFileLookupFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$824.GVfsFileLookupFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_socket_client_set_family$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_vfs_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_vfs_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_type",
+        constants$824.g_vfs_get_type$FUNC
+    );
+    static final FunctionDescriptor g_vfs_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_vfs_is_active$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_is_active",
+        constants$824.g_vfs_is_active$FUNC
+    );
+    static final FunctionDescriptor g_vfs_get_file_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_set_family$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_family",
-        constants$824.g_socket_client_set_family$FUNC
+    static final MethodHandle g_vfs_get_file_for_path$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_file_for_path",
+        constants$824.g_vfs_get_file_for_path$FUNC
+    );
+    static final FunctionDescriptor g_vfs_get_file_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_vfs_get_file_for_uri$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_file_for_uri",
+        constants$824.g_vfs_get_file_for_uri$FUNC
     );
 }
 

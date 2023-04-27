@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPrintContext {
+/**
+ * {@snippet :
+ * typedef struct _GtkPrintContext GtkPrintContext;
+ * }
+ */
+public final class GtkPrintContext {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPrintContext() {}
 }
 
 

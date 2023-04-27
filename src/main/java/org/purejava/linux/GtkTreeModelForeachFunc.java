@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeModelForeachFunc)(struct _GtkTreeModel* model,struct _GtkTreePath* path,struct _GtkTreeIter* iter,void* data);
+ * }
+ */
 public interface GtkTreeModelForeachFunc {
 
-    int apply(java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress path, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTreeModelForeachFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeModelForeachFunc.class, fi, constants$1551.GtkTreeModelForeachFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTreeModelForeachFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1361.GtkTreeModelForeachFunc_UP$MH, fi, constants$1361.GtkTreeModelForeachFunc$FUNC, scope);
     }
-    static GtkTreeModelForeachFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _path, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTreeModelForeachFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1552.GtkTreeModelForeachFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_path, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1362.GtkTreeModelForeachFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

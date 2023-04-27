@@ -7,58 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$749 {
+final class constants$749 {
 
-    static final FunctionDescriptor g_menu_model_get_item_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$749() {}
+    static final FunctionDescriptor g_settings_set_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_get_item_attribute$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_menu_model_get_item_attribute",
-        constants$749.g_menu_model_get_item_attribute$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_iterate_item_links$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_menu_model_iterate_item_links$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_iterate_item_links",
-        constants$749.g_menu_model_iterate_item_links$FUNC
+    static final MethodHandle g_settings_set_flags$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_flags",
+        constants$749.g_settings_set_flags$FUNC
     );
-    static final FunctionDescriptor g_menu_model_get_item_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_get_item_link$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_get_item_link",
-        constants$749.g_menu_model_get_item_link$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_items_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_menu_model_items_changed$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_items_changed",
-        constants$749.g_menu_model_items_changed$FUNC
-    );
-    static final FunctionDescriptor g_menu_attribute_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_menu_attribute_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_menu_attribute_iter_get_type",
-        constants$749.g_menu_attribute_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor g_menu_attribute_iter_get_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_settings_get_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_attribute_iter_get_next$MH = RuntimeHelper.downcallHandle(
-        "g_menu_attribute_iter_get_next",
-        constants$749.g_menu_attribute_iter_get_next$FUNC
+    static final MethodHandle g_settings_get_child$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_child",
+        constants$749.g_settings_get_child$FUNC
+    );
+    static final FunctionDescriptor g_settings_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_is_writable$MH = RuntimeHelper.downcallHandle(
+        "g_settings_is_writable",
+        constants$749.g_settings_is_writable$FUNC
+    );
+    static final FunctionDescriptor g_settings_delay$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_delay$MH = RuntimeHelper.downcallHandle(
+        "g_settings_delay",
+        constants$749.g_settings_delay$FUNC
+    );
+    static final FunctionDescriptor g_settings_apply$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_apply$MH = RuntimeHelper.downcallHandle(
+        "g_settings_apply",
+        constants$749.g_settings_apply$FUNC
+    );
+    static final FunctionDescriptor g_settings_revert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_revert$MH = RuntimeHelper.downcallHandle(
+        "g_settings_revert",
+        constants$749.g_settings_revert$FUNC
     );
 }
 

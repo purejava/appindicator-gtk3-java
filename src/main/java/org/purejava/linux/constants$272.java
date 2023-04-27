@@ -7,51 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$272 {
+final class constants$272 {
 
-    static final FunctionDescriptor g_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$272() {}
+    static final FunctionDescriptor g_pattern_spec_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_count_dec$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_dec",
-        constants$272.g_ref_count_dec$FUNC
+    static final MethodHandle g_pattern_spec_free$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_free",
+        constants$272.g_pattern_spec_free$FUNC
     );
-    static final FunctionDescriptor g_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_pattern_spec_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pattern_spec_copy$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_copy",
+        constants$272.g_pattern_spec_copy$FUNC
+    );
+    static final FunctionDescriptor g_pattern_spec_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_ref_count_compare$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_compare",
-        constants$272.g_ref_count_compare$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_ref_count_init$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_init",
-        constants$272.g_atomic_ref_count_init$FUNC
+    static final MethodHandle g_pattern_spec_equal$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_equal",
+        constants$272.g_pattern_spec_equal$FUNC
     );
-    static final FunctionDescriptor g_atomic_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_ref_count_inc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_inc",
-        constants$272.g_atomic_ref_count_inc$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_ref_count_dec$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_dec",
-        constants$272.g_atomic_ref_count_dec$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_pattern_spec_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_ref_count_compare$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_compare",
-        constants$272.g_atomic_ref_count_compare$FUNC
+    static final MethodHandle g_pattern_spec_match$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_match",
+        constants$272.g_pattern_spec_match$FUNC
+    );
+    static final FunctionDescriptor g_pattern_spec_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pattern_spec_match_string$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_match_string",
+        constants$272.g_pattern_spec_match_string$FUNC
+    );
+    static final FunctionDescriptor g_pattern_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pattern_match$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_match",
+        constants$272.g_pattern_match$FUNC
     );
 }
 

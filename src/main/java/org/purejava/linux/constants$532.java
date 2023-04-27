@@ -7,49 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$532 {
+final class constants$532 {
 
-    static final FunctionDescriptor g_app_launch_context_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$532() {}
+    static final FunctionDescriptor tcsetpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle tcsetpgrp$MH = RuntimeHelper.downcallHandle(
+        "tcsetpgrp",
+        constants$532.tcsetpgrp$FUNC
+    );
+    static final FunctionDescriptor getlogin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle getlogin$MH = RuntimeHelper.downcallHandle(
+        "getlogin",
+        constants$532.getlogin$FUNC
+    );
+    static final FunctionDescriptor getlogin_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle getlogin_r$MH = RuntimeHelper.downcallHandle(
+        "getlogin_r",
+        constants$532.getlogin_r$FUNC
+    );
+    static final FunctionDescriptor setlogin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_launch_context_get_display$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_display",
-        constants$532.g_app_launch_context_get_display$FUNC
+    static final MethodHandle setlogin$MH = RuntimeHelper.downcallHandle(
+        "setlogin",
+        constants$532.setlogin$FUNC
     );
-    static final FunctionDescriptor g_app_launch_context_get_startup_notify_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_get_startup_notify_id$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_startup_notify_id",
-        constants$532.g_app_launch_context_get_startup_notify_id$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_launch_failed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_launch_failed$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_launch_failed",
-        constants$532.g_app_launch_context_launch_failed$FUNC
-    );
-    static final FunctionDescriptor g_app_info_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_info_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_monitor_get_type",
-        constants$532.g_app_info_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_monitor_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_app_info_monitor_get$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_monitor_get",
-        constants$532.g_app_info_monitor_get$FUNC
-    );
-    static final FunctionDescriptor g_application_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_application_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_type",
-        constants$532.g_application_get_type$FUNC
-    );
+    static final OfAddress optarg$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    static final VarHandle optarg$VH = constants$532.optarg$LAYOUT.varHandle();
+    static final MemorySegment optarg$SEGMENT = RuntimeHelper.lookupGlobalVariable("optarg", constants$532.optarg$LAYOUT);
+    static final OfInt optind$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle optind$VH = constants$532.optind$LAYOUT.varHandle();
+    static final MemorySegment optind$SEGMENT = RuntimeHelper.lookupGlobalVariable("optind", constants$532.optind$LAYOUT);
 }
 
 

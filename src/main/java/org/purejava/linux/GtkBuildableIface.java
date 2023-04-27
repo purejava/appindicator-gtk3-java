@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkBuildableIface extends _GtkBuildableIface {
+/**
+ * {@snippet :
+ * typedef struct _GtkBuildableIface GtkBuildableIface;
+ * }
+ */
+public final class GtkBuildableIface extends _GtkBuildableIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkBuildableIface() {}
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GNetworkMonitorInterface extends _GNetworkMonitorInterface {
+/**
+ * {@snippet :
+ * typedef struct _GNetworkMonitorInterface GNetworkMonitorInterface;
+ * }
+ */
+public final class GNetworkMonitorInterface extends _GNetworkMonitorInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GNetworkMonitorInterface() {}
 }
 
 

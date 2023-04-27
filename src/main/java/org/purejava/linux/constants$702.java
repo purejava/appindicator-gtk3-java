@@ -7,53 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$702 {
+final class constants$702 {
 
-    static final FunctionDescriptor g_file_attribute_matcher_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_attribute_matcher_ref$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_ref",
-        constants$702.g_file_attribute_matcher_ref$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_matcher_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_attribute_matcher_unref$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_unref",
-        constants$702.g_file_attribute_matcher_unref$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_matcher_subtract$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$702() {}
+    static final FunctionDescriptor g_menu_item_get_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_attribute_matcher_subtract$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_subtract",
-        constants$702.g_file_attribute_matcher_subtract$FUNC
+    static final MethodHandle g_menu_item_get_attribute$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_item_get_attribute",
+        constants$702.g_menu_item_get_attribute$FUNC
     );
-    static final FunctionDescriptor g_file_attribute_matcher_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_menu_item_get_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_attribute_matcher_matches$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_matches",
-        constants$702.g_file_attribute_matcher_matches$FUNC
+    static final MethodHandle g_menu_item_get_link$MH = RuntimeHelper.downcallHandle(
+        "g_menu_item_get_link",
+        constants$702.g_menu_item_get_link$FUNC
     );
-    static final FunctionDescriptor g_file_attribute_matcher_matches_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_menu_item_set_attribute_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_attribute_matcher_matches_only$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_matches_only",
-        constants$702.g_file_attribute_matcher_matches_only$FUNC
+    static final MethodHandle g_menu_item_set_attribute_value$MH = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_attribute_value",
+        constants$702.g_menu_item_set_attribute_value$FUNC
     );
-    static final FunctionDescriptor g_file_attribute_matcher_enumerate_namespace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_menu_item_set_attribute$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_attribute_matcher_enumerate_namespace$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_enumerate_namespace",
-        constants$702.g_file_attribute_matcher_enumerate_namespace$FUNC
+    static final MethodHandle g_menu_item_set_attribute$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_item_set_attribute",
+        constants$702.g_menu_item_set_attribute$FUNC
+    );
+    static final FunctionDescriptor g_menu_item_set_link$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_menu_item_set_link$MH = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_link",
+        constants$702.g_menu_item_set_link$FUNC
+    );
+    static final FunctionDescriptor g_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_label",
+        constants$702.g_menu_item_set_label$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTreeModelSort extends _GtkTreeModelSort {
+/**
+ * {@snippet :
+ * typedef struct _GtkTreeModelSort GtkTreeModelSort;
+ * }
+ */
+public final class GtkTreeModelSort extends _GtkTreeModelSort {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTreeModelSort() {}
 }
 
 

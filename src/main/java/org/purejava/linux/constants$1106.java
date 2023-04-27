@@ -7,37 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1106 {
+final class constants$1106 {
 
-    static final FunctionDescriptor pango_layout_serialize_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_serialize_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_serialize_flags_get_type",
-        constants$1106.pango_layout_serialize_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1106() {}
+    static final FunctionDescriptor gdk_window_create_gl_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_layout_deserialize_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_deserialize_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize_error_get_type",
-        constants$1106.pango_layout_deserialize_error_get_type$FUNC
+    static final MethodHandle gdk_window_create_gl_context$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_create_gl_context",
+        constants$1106.gdk_window_create_gl_context$FUNC
     );
-    static final FunctionDescriptor pango_layout_deserialize_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_deserialize_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize_flags_get_type",
-        constants$1106.pango_layout_deserialize_flags_get_type$FUNC
+    static final FunctionDescriptor GdkSeatGrabPrepareFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_render_part_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_render_part_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_render_part_get_type",
-        constants$1106.pango_render_part_get_type$FUNC
+    static final FunctionDescriptor GdkSeatGrabPrepareFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_script_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_script_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_script_get_type",
-        constants$1106.pango_script_get_type$FUNC
+    static final MethodHandle GdkSeatGrabPrepareFunc_UP$MH = RuntimeHelper.upcallHandle(GdkSeatGrabPrepareFunc.class, "apply", constants$1106.GdkSeatGrabPrepareFunc_UP$FUNC);
+    static final FunctionDescriptor GdkSeatGrabPrepareFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_tab_align_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_tab_align_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_align_get_type",
-        constants$1106.pango_tab_align_get_type$FUNC
+    static final MethodHandle GdkSeatGrabPrepareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1106.GdkSeatGrabPrepareFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gdk_seat_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_seat_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_type",
+        constants$1106.gdk_seat_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_seat_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_seat_grab$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_grab",
+        constants$1106.gdk_seat_grab$FUNC
+    );
+    static final FunctionDescriptor gdk_seat_ungrab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_seat_ungrab$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_ungrab",
+        constants$1106.gdk_seat_ungrab$FUNC
     );
 }
 

@@ -7,58 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1907 {
+final class constants$1907 {
 
-    static final FunctionDescriptor gtk_notebook_insert_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1907() {}
+    static final FunctionDescriptor gtk_arrow_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_arrow_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_arrow_get_type",
+        constants$1907.gtk_arrow_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_arrow_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_notebook_insert_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_insert_page",
-        constants$1907.gtk_notebook_insert_page$FUNC
+    static final MethodHandle gtk_arrow_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_arrow_new",
+        constants$1907.gtk_arrow_new$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_insert_page_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_arrow_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_notebook_insert_page_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_insert_page_menu",
-        constants$1907.gtk_notebook_insert_page_menu$FUNC
+    static final MethodHandle gtk_arrow_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_arrow_set",
+        constants$1907.gtk_arrow_set$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_remove_page$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_type",
+        constants$1907.gtk_action_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_remove_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_remove_page",
-        constants$1907.gtk_notebook_remove_page$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_set_group_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_set_group_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_group_name",
-        constants$1907.gtk_notebook_set_group_name$FUNC
+    static final MethodHandle gtk_action_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_new",
+        constants$1907.gtk_action_new$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_group_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_group_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_group_name",
-        constants$1907.gtk_notebook_get_group_name$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_get_current_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_get_current_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_current_page",
-        constants$1907.gtk_notebook_get_current_page$FUNC
+    static final MethodHandle gtk_action_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_name",
+        constants$1907.gtk_action_get_name$FUNC
     );
 }
 

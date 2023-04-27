@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GApplicationCommandLine extends _GApplicationCommandLine {
+/**
+ * {@snippet :
+ * typedef struct _GApplicationCommandLine GApplicationCommandLine;
+ * }
+ */
+public final class GApplicationCommandLine extends _GApplicationCommandLine {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GApplicationCommandLine() {}
 }
 
 

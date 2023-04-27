@@ -7,55 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$692 {
+final class constants$692 {
 
-    static final FunctionDescriptor g_file_info_get_attribute_as_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$692() {}
+    static final FunctionDescriptor g_memory_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_memory_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_get_type",
+        constants$692.g_memory_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_memory_input_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_memory_input_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new",
+        constants$692.g_memory_input_stream_new$FUNC
+    );
+    static final FunctionDescriptor g_memory_input_stream_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_memory_input_stream_new_from_data$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new_from_data",
+        constants$692.g_memory_input_stream_new_from_data$FUNC
+    );
+    static final FunctionDescriptor g_memory_input_stream_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_memory_input_stream_new_from_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new_from_bytes",
+        constants$692.g_memory_input_stream_new_from_bytes$FUNC
+    );
+    static final FunctionDescriptor g_memory_input_stream_add_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_memory_input_stream_add_data$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_add_data",
+        constants$692.g_memory_input_stream_add_data$FUNC
+    );
+    static final FunctionDescriptor g_memory_input_stream_add_bytes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_attribute_as_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_as_string",
-        constants$692.g_file_info_get_attribute_as_string$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_string",
-        constants$692.g_file_info_get_attribute_string$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_byte_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_byte_string",
-        constants$692.g_file_info_get_attribute_byte_string$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_boolean",
-        constants$692.g_file_info_get_attribute_boolean$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_uint32",
-        constants$692.g_file_info_get_attribute_uint32$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_int32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_int32",
-        constants$692.g_file_info_get_attribute_int32$FUNC
+    static final MethodHandle g_memory_input_stream_add_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_add_bytes",
+        constants$692.g_memory_input_stream_add_bytes$FUNC
     );
 }
 

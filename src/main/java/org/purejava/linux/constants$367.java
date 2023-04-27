@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$367 {
+final class constants$367 {
 
-    static final FunctionDescriptor pthread_barrier_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$367() {}
+    static final FunctionDescriptor pthread_rwlock_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_barrier_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_destroy",
-        constants$367.pthread_barrier_destroy$FUNC
+    static final MethodHandle pthread_rwlock_unlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_unlock",
+        constants$367.pthread_rwlock_unlock$FUNC
     );
-    static final FunctionDescriptor pthread_barrier_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlockattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_barrier_wait$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_wait",
-        constants$367.pthread_barrier_wait$FUNC
+    static final MethodHandle pthread_rwlockattr_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_init",
+        constants$367.pthread_rwlockattr_init$FUNC
     );
-    static final FunctionDescriptor pthread_barrierattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlockattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_barrierattr_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_init",
-        constants$367.pthread_barrierattr_init$FUNC
+    static final MethodHandle pthread_rwlockattr_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_destroy",
+        constants$367.pthread_rwlockattr_destroy$FUNC
     );
-    static final FunctionDescriptor pthread_barrierattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_barrierattr_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_destroy",
-        constants$367.pthread_barrierattr_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_barrierattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlockattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_barrierattr_getpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_getpshared",
-        constants$367.pthread_barrierattr_getpshared$FUNC
+    static final MethodHandle pthread_rwlockattr_getpshared$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_getpshared",
+        constants$367.pthread_rwlockattr_getpshared$FUNC
     );
-    static final FunctionDescriptor pthread_barrierattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlockattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_barrierattr_setpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_setpshared",
-        constants$367.pthread_barrierattr_setpshared$FUNC
+    static final MethodHandle pthread_rwlockattr_setpshared$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_setpshared",
+        constants$367.pthread_rwlockattr_setpshared$FUNC
+    );
+    static final FunctionDescriptor pthread_rwlockattr_getkind_np$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_rwlockattr_getkind_np$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_getkind_np",
+        constants$367.pthread_rwlockattr_getkind_np$FUNC
     );
 }
 

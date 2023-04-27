@@ -7,9 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _libc_fpstate {
+ *     __uint16_t cwd;
+ *     __uint16_t swd;
+ *     __uint16_t ftw;
+ *     __uint16_t fop;
+ *     __uint64_t rip;
+ *     __uint64_t rdp;
+ *     __uint32_t mxcsr;
+ *     __uint32_t mxcr_mask;
+ *     struct _libc_fpxreg _st[8];
+ *     struct _libc_xmmreg _xmm[16];
+ *     __uint32_t __glibc_reserved1[24];
+ * };
+ * }
+ */
 public class _libc_fpstate {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_SHORT$LAYOUT.withName("cwd"),
         Constants$root.C_SHORT$LAYOUT.withName("swd"),
         Constants$root.C_SHORT$LAYOUT.withName("ftw"),
@@ -35,10 +52,22 @@ public class _libc_fpstate {
     public static VarHandle cwd$VH() {
         return _libc_fpstate.cwd$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint16_t cwd;
+     * }
+     */
     public static short cwd$get(MemorySegment seg) {
         return (short)_libc_fpstate.cwd$VH.get(seg);
     }
-    public static void cwd$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint16_t cwd;
+     * }
+     */
+    public static void cwd$set(MemorySegment seg, short x) {
         _libc_fpstate.cwd$VH.set(seg, x);
     }
     public static short cwd$get(MemorySegment seg, long index) {
@@ -51,10 +80,22 @@ public class _libc_fpstate {
     public static VarHandle swd$VH() {
         return _libc_fpstate.swd$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint16_t swd;
+     * }
+     */
     public static short swd$get(MemorySegment seg) {
         return (short)_libc_fpstate.swd$VH.get(seg);
     }
-    public static void swd$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint16_t swd;
+     * }
+     */
+    public static void swd$set(MemorySegment seg, short x) {
         _libc_fpstate.swd$VH.set(seg, x);
     }
     public static short swd$get(MemorySegment seg, long index) {
@@ -67,10 +108,22 @@ public class _libc_fpstate {
     public static VarHandle ftw$VH() {
         return _libc_fpstate.ftw$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint16_t ftw;
+     * }
+     */
     public static short ftw$get(MemorySegment seg) {
         return (short)_libc_fpstate.ftw$VH.get(seg);
     }
-    public static void ftw$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint16_t ftw;
+     * }
+     */
+    public static void ftw$set(MemorySegment seg, short x) {
         _libc_fpstate.ftw$VH.set(seg, x);
     }
     public static short ftw$get(MemorySegment seg, long index) {
@@ -83,10 +136,22 @@ public class _libc_fpstate {
     public static VarHandle fop$VH() {
         return _libc_fpstate.fop$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint16_t fop;
+     * }
+     */
     public static short fop$get(MemorySegment seg) {
         return (short)_libc_fpstate.fop$VH.get(seg);
     }
-    public static void fop$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint16_t fop;
+     * }
+     */
+    public static void fop$set(MemorySegment seg, short x) {
         _libc_fpstate.fop$VH.set(seg, x);
     }
     public static short fop$get(MemorySegment seg, long index) {
@@ -99,10 +164,22 @@ public class _libc_fpstate {
     public static VarHandle rip$VH() {
         return _libc_fpstate.rip$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint64_t rip;
+     * }
+     */
     public static long rip$get(MemorySegment seg) {
         return (long)_libc_fpstate.rip$VH.get(seg);
     }
-    public static void rip$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint64_t rip;
+     * }
+     */
+    public static void rip$set(MemorySegment seg, long x) {
         _libc_fpstate.rip$VH.set(seg, x);
     }
     public static long rip$get(MemorySegment seg, long index) {
@@ -115,10 +192,22 @@ public class _libc_fpstate {
     public static VarHandle rdp$VH() {
         return _libc_fpstate.rdp$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint64_t rdp;
+     * }
+     */
     public static long rdp$get(MemorySegment seg) {
         return (long)_libc_fpstate.rdp$VH.get(seg);
     }
-    public static void rdp$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint64_t rdp;
+     * }
+     */
+    public static void rdp$set(MemorySegment seg, long x) {
         _libc_fpstate.rdp$VH.set(seg, x);
     }
     public static long rdp$get(MemorySegment seg, long index) {
@@ -131,10 +220,22 @@ public class _libc_fpstate {
     public static VarHandle mxcsr$VH() {
         return _libc_fpstate.mxcsr$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint32_t mxcsr;
+     * }
+     */
     public static int mxcsr$get(MemorySegment seg) {
         return (int)_libc_fpstate.mxcsr$VH.get(seg);
     }
-    public static void mxcsr$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint32_t mxcsr;
+     * }
+     */
+    public static void mxcsr$set(MemorySegment seg, int x) {
         _libc_fpstate.mxcsr$VH.set(seg, x);
     }
     public static int mxcsr$get(MemorySegment seg, long index) {
@@ -147,10 +248,22 @@ public class _libc_fpstate {
     public static VarHandle mxcr_mask$VH() {
         return _libc_fpstate.mxcr_mask$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint32_t mxcr_mask;
+     * }
+     */
     public static int mxcr_mask$get(MemorySegment seg) {
         return (int)_libc_fpstate.mxcr_mask$VH.get(seg);
     }
-    public static void mxcr_mask$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint32_t mxcr_mask;
+     * }
+     */
+    public static void mxcr_mask$set(MemorySegment seg, int x) {
         _libc_fpstate.mxcr_mask$VH.set(seg, x);
     }
     public static int mxcr_mask$get(MemorySegment seg, long index) {
@@ -170,10 +283,10 @@ public class _libc_fpstate {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

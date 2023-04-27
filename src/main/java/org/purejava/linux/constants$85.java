@@ -7,8 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$85 {
+final class constants$85 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$85() {}
+    static final FunctionDescriptor g_date_time_new_from_timeval_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_new_from_timeval_utc$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_new_from_timeval_utc",
+        constants$85.g_date_time_new_from_timeval_utc$FUNC
+    );
+    static final FunctionDescriptor g_date_time_new_from_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_new_from_iso8601$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_new_from_iso8601",
+        constants$85.g_date_time_new_from_iso8601$FUNC
+    );
     static final FunctionDescriptor g_date_time_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
@@ -53,22 +70,6 @@ class constants$85 {
     static final MethodHandle g_date_time_add$MH = RuntimeHelper.downcallHandle(
         "g_date_time_add",
         constants$85.g_date_time_add$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add_years$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_time_add_years$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_years",
-        constants$85.g_date_time_add_years$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add_months$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_time_add_months$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_months",
-        constants$85.g_date_time_add_months$FUNC
     );
 }
 

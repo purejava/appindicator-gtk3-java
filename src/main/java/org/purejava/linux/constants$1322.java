@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1322 {
+final class constants$1322 {
 
-    static final FunctionDescriptor gdk_device_pad_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_pad_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_type",
-        constants$1322.gdk_device_pad_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_device_pad_get_n_groups$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1322() {}
+    static final FunctionDescriptor gtk_about_dialog_get_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_pad_get_n_groups$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_n_groups",
-        constants$1322.gdk_device_pad_get_n_groups$FUNC
+    static final MethodHandle gtk_about_dialog_get_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_version",
+        constants$1322.gtk_about_dialog_get_version$FUNC
     );
-    static final FunctionDescriptor gdk_device_pad_get_group_n_modes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_about_dialog_set_version$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_pad_get_group_n_modes$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_group_n_modes",
-        constants$1322.gdk_device_pad_get_group_n_modes$FUNC
+    static final MethodHandle gtk_about_dialog_set_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_version",
+        constants$1322.gtk_about_dialog_set_version$FUNC
     );
-    static final FunctionDescriptor gdk_device_pad_get_n_features$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_about_dialog_get_copyright$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_get_copyright$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_copyright",
+        constants$1322.gtk_about_dialog_get_copyright$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_copyright$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_pad_get_n_features$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_n_features",
-        constants$1322.gdk_device_pad_get_n_features$FUNC
+    static final MethodHandle gtk_about_dialog_set_copyright$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_copyright",
+        constants$1322.gtk_about_dialog_set_copyright$FUNC
     );
-    static final FunctionDescriptor gdk_device_pad_get_feature_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_about_dialog_get_comments$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_get_comments$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_comments",
+        constants$1322.gtk_about_dialog_get_comments$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_comments$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_pad_get_feature_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_feature_group",
-        constants$1322.gdk_device_pad_get_feature_group$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_display_manager_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_type",
-        constants$1322.gdk_display_manager_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_set_comments$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_comments",
+        constants$1322.gtk_about_dialog_set_comments$FUNC
     );
 }
 

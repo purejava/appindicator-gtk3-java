@@ -7,46 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1723 {
+final class constants$1723 {
 
-    static final FunctionDescriptor gtk_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_type",
-        constants$1723.gtk_menu_item_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1723() {}
+    static final FunctionDescriptor gtk_paper_size_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_paper_size_get_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_default",
+        constants$1723.gtk_paper_size_get_default$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new",
-        constants$1723.gtk_menu_item_new$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new_with_label",
-        constants$1723.gtk_menu_item_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new_with_mnemonic",
-        constants$1723.gtk_menu_item_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_paper_size_new_from_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_submenu",
-        constants$1723.gtk_menu_item_set_submenu$FUNC
+    static final MethodHandle gtk_paper_size_new_from_key_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_new_from_key_file",
+        constants$1723.gtk_paper_size_new_from_key_file$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_get_submenu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_paper_size_to_key_file$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_get_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_submenu",
-        constants$1723.gtk_menu_item_get_submenu$FUNC
+    static final MethodHandle gtk_paper_size_to_key_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_to_key_file",
+        constants$1723.gtk_paper_size_to_key_file$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_new_from_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_new_from_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_new_from_gvariant",
+        constants$1723.gtk_paper_size_new_from_gvariant$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_to_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_to_gvariant",
+        constants$1723.gtk_paper_size_to_gvariant$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_page_setup_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_type",
+        constants$1723.gtk_page_setup_get_type$FUNC
     );
 }
 

@@ -7,51 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$533 {
+final class constants$533 {
 
-    static final FunctionDescriptor g_application_id_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_id_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_application_id_is_valid",
-        constants$533.g_application_id_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_application_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_application_new$MH = RuntimeHelper.downcallHandle(
-        "g_application_new",
-        constants$533.g_application_new$FUNC
-    );
-    static final FunctionDescriptor g_application_get_application_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_application_id$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_application_id",
-        constants$533.g_application_get_application_id$FUNC
-    );
-    static final FunctionDescriptor g_application_set_application_id$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$533() {}
+    static final OfInt opterr$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle opterr$VH = constants$533.opterr$LAYOUT.varHandle();
+    static final MemorySegment opterr$SEGMENT = RuntimeHelper.lookupGlobalVariable("opterr", constants$533.opterr$LAYOUT);
+    static final OfInt optopt$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle optopt$VH = constants$533.optopt$LAYOUT.varHandle();
+    static final MemorySegment optopt$SEGMENT = RuntimeHelper.lookupGlobalVariable("optopt", constants$533.optopt$LAYOUT);
+    static final FunctionDescriptor getopt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_set_application_id$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_application_id",
-        constants$533.g_application_set_application_id$FUNC
+    static final MethodHandle getopt$MH = RuntimeHelper.downcallHandle(
+        "getopt",
+        constants$533.getopt$FUNC
     );
-    static final FunctionDescriptor g_application_get_dbus_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gethostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_application_get_dbus_connection$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_dbus_connection",
-        constants$533.g_application_get_dbus_connection$FUNC
+    static final MethodHandle gethostname$MH = RuntimeHelper.downcallHandle(
+        "gethostname",
+        constants$533.gethostname$FUNC
     );
-    static final FunctionDescriptor g_application_get_dbus_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor sethostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_application_get_dbus_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_dbus_object_path",
-        constants$533.g_application_get_dbus_object_path$FUNC
+    static final MethodHandle sethostname$MH = RuntimeHelper.downcallHandle(
+        "sethostname",
+        constants$533.sethostname$FUNC
+    );
+    static final FunctionDescriptor sethostid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle sethostid$MH = RuntimeHelper.downcallHandle(
+        "sethostid",
+        constants$533.sethostid$FUNC
     );
 }
 

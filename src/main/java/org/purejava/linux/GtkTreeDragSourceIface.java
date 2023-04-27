@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTreeDragSourceIface extends _GtkTreeDragSourceIface {
+/**
+ * {@snippet :
+ * typedef struct _GtkTreeDragSourceIface GtkTreeDragSourceIface;
+ * }
+ */
+public final class GtkTreeDragSourceIface extends _GtkTreeDragSourceIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTreeDragSourceIface() {}
 }
 
 

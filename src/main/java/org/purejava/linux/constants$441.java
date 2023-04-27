@@ -7,53 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$441 {
+final class constants$441 {
 
-    static final FunctionDescriptor g_param_spec_pool_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_param_spec_pool_insert$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_insert",
-        constants$441.g_param_spec_pool_insert$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_pool_remove$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$441() {}
+    static final FunctionDescriptor g_value_set_object$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_pool_remove$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_remove",
-        constants$441.g_param_spec_pool_remove$FUNC
+    static final MethodHandle g_value_set_object$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_object",
+        constants$441.g_value_set_object$FUNC
     );
-    static final FunctionDescriptor g_param_spec_pool_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_value_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_object$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_object",
+        constants$441.g_value_get_object$FUNC
+    );
+    static final FunctionDescriptor g_value_dup_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_dup_object$MH = RuntimeHelper.downcallHandle(
+        "g_value_dup_object",
+        constants$441.g_value_dup_object$FUNC
+    );
+    static final FunctionDescriptor g_signal_connect_object$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_param_spec_pool_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_lookup",
-        constants$441.g_param_spec_pool_lookup$FUNC
+    static final MethodHandle g_signal_connect_object$MH = RuntimeHelper.downcallHandle(
+        "g_signal_connect_object",
+        constants$441.g_signal_connect_object$FUNC
     );
-    static final FunctionDescriptor g_param_spec_pool_list_owned$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_param_spec_pool_list_owned$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list_owned",
-        constants$441.g_param_spec_pool_list_owned$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_pool_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_object_force_floating$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_pool_list$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list",
-        constants$441.g_param_spec_pool_list$FUNC
+    static final MethodHandle g_object_force_floating$MH = RuntimeHelper.downcallHandle(
+        "g_object_force_floating",
+        constants$441.g_object_force_floating$FUNC
     );
-    static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor g_object_run_dispose$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_run_dispose$MH = RuntimeHelper.downcallHandle(
+        "g_object_run_dispose",
+        constants$441.g_object_run_dispose$FUNC
+    );
 }
 
 

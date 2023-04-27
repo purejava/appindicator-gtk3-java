@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*hb_buffer_message_func_t)(struct hb_buffer_t* buffer,struct hb_font_t* font,char* message,void* user_data);
+ * }
+ */
 public interface hb_buffer_message_func_t {
 
-    int apply(java.lang.foreign.MemoryAddress buffer, java.lang.foreign.MemoryAddress font, java.lang.foreign.MemoryAddress message, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(hb_buffer_message_func_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(hb_buffer_message_func_t.class, fi, constants$1038.hb_buffer_message_func_t$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(hb_buffer_message_func_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$888.hb_buffer_message_func_t_UP$MH, fi, constants$888.hb_buffer_message_func_t$FUNC, scope);
     }
-    static hb_buffer_message_func_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _buffer, java.lang.foreign.MemoryAddress _font, java.lang.foreign.MemoryAddress _message, java.lang.foreign.MemoryAddress _user_data) -> {
+    static hb_buffer_message_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1038.hb_buffer_message_func_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_buffer, (java.lang.foreign.Addressable)_font, (java.lang.foreign.Addressable)_message, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$888.hb_buffer_message_func_t_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

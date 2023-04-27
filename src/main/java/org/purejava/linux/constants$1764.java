@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1764 {
+final class constants$1764 {
 
-    static final FunctionDescriptor gtk_file_chooser_get_filenames$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1764() {}
+    static final FunctionDescriptor gtk_toggle_tool_button_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_filenames$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_filenames",
-        constants$1764.gtk_file_chooser_get_filenames$FUNC
+    static final MethodHandle gtk_toggle_tool_button_get_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_tool_button_get_active",
+        constants$1764.gtk_toggle_tool_button_get_active$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_current_folder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_radio_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_radio_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_get_type",
+        constants$1764.gtk_radio_tool_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_radio_tool_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_new",
+        constants$1764.gtk_radio_tool_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_current_folder$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_folder",
-        constants$1764.gtk_file_chooser_set_current_folder$FUNC
+    static final MethodHandle gtk_radio_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_new_from_stock",
+        constants$1764.gtk_radio_tool_button_new_from_stock$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_current_folder$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_radio_tool_button_new_from_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_current_folder$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_folder",
-        constants$1764.gtk_file_chooser_get_current_folder$FUNC
+    static final MethodHandle gtk_radio_tool_button_new_from_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_new_from_widget",
+        constants$1764.gtk_radio_tool_button_new_from_widget$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_uri",
-        constants$1764.gtk_file_chooser_get_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_radio_tool_button_new_with_stock_from_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_uri",
-        constants$1764.gtk_file_chooser_set_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_select_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_select_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_uri",
-        constants$1764.gtk_file_chooser_select_uri$FUNC
+    static final MethodHandle gtk_radio_tool_button_new_with_stock_from_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_new_with_stock_from_widget",
+        constants$1764.gtk_radio_tool_button_new_with_stock_from_widget$FUNC
     );
 }
 

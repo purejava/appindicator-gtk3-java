@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1453 {
+final class constants$1453 {
 
-    static final FunctionDescriptor gtk_widget_set_margin_top$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1453() {}
+    static final FunctionDescriptor gtk_entry_set_max_length$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_margin_top$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_top",
-        constants$1453.gtk_widget_set_margin_top$FUNC
+    static final MethodHandle gtk_entry_set_max_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_max_length",
+        constants$1453.gtk_entry_set_max_length$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_margin_bottom$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_max_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_margin_bottom$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_bottom",
-        constants$1453.gtk_widget_get_margin_bottom$FUNC
+    static final MethodHandle gtk_entry_get_max_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_max_length",
+        constants$1453.gtk_entry_get_max_length$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_margin_bottom$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_get_text_length$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_text_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_text_length",
+        constants$1453.gtk_entry_get_text_length$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_activates_default$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_margin_bottom$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_bottom",
-        constants$1453.gtk_widget_set_margin_bottom$FUNC
+    static final MethodHandle gtk_entry_set_activates_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_activates_default",
+        constants$1453.gtk_entry_set_activates_default$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_activates_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_events",
-        constants$1453.gtk_widget_get_events$FUNC
+    static final MethodHandle gtk_entry_get_activates_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_activates_default",
+        constants$1453.gtk_entry_get_activates_default$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_device_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_device_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_device_events",
-        constants$1453.gtk_widget_get_device_events$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_pointer$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_pointer",
-        constants$1453.gtk_widget_get_pointer$FUNC
+    static final MethodHandle gtk_entry_set_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_width_chars",
+        constants$1453.gtk_entry_set_width_chars$FUNC
     );
 }
 

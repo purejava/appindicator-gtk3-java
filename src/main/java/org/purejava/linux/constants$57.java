@@ -7,69 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$57 {
+final class constants$57 {
 
-    static final FunctionDescriptor div$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("quot"),
-        Constants$root.C_INT$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$57() {}
+    static final FunctionDescriptor mkdtemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle div$MH = RuntimeHelper.downcallHandle(
-        "div",
-        constants$57.div$FUNC
+    static final MethodHandle mkdtemp$MH = RuntimeHelper.downcallHandle(
+        "mkdtemp",
+        constants$57.mkdtemp$FUNC
     );
-    static final FunctionDescriptor ldiv$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor system$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ldiv$MH = RuntimeHelper.downcallHandle(
-        "ldiv",
-        constants$57.ldiv$FUNC
+    static final MethodHandle system$MH = RuntimeHelper.downcallHandle(
+        "system",
+        constants$57.system$FUNC
     );
-    static final FunctionDescriptor lldiv$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle lldiv$MH = RuntimeHelper.downcallHandle(
-        "lldiv",
-        constants$57.lldiv$FUNC
-    );
-    static final FunctionDescriptor ecvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor realpath$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ecvt$MH = RuntimeHelper.downcallHandle(
-        "ecvt",
-        constants$57.ecvt$FUNC
+    static final MethodHandle realpath$MH = RuntimeHelper.downcallHandle(
+        "realpath",
+        constants$57.realpath$FUNC
     );
-    static final FunctionDescriptor fcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor __compar_fn_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fcvt$MH = RuntimeHelper.downcallHandle(
-        "fcvt",
-        constants$57.fcvt$FUNC
-    );
-    static final FunctionDescriptor gcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor __compar_fn_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gcvt$MH = RuntimeHelper.downcallHandle(
-        "gcvt",
-        constants$57.gcvt$FUNC
+    static final MethodHandle __compar_fn_t_UP$MH = RuntimeHelper.upcallHandle(__compar_fn_t.class, "apply", constants$57.__compar_fn_t_UP$FUNC);
+    static final FunctionDescriptor __compar_fn_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle __compar_fn_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$57.__compar_fn_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor bsearch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle bsearch$MH = RuntimeHelper.downcallHandle(
+        "bsearch",
+        constants$57.bsearch$FUNC
     );
 }
 

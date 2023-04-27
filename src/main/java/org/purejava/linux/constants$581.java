@@ -7,45 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$581 {
+final class constants$581 {
 
-    static final FunctionDescriptor getusershell$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle getusershell$MH = RuntimeHelper.downcallHandle(
-        "getusershell",
-        constants$581.getusershell$FUNC
-    );
-    static final FunctionDescriptor endusershell$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle endusershell$MH = RuntimeHelper.downcallHandle(
-        "endusershell",
-        constants$581.endusershell$FUNC
-    );
-    static final FunctionDescriptor setusershell$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle setusershell$MH = RuntimeHelper.downcallHandle(
-        "setusershell",
-        constants$581.setusershell$FUNC
-    );
-    static final FunctionDescriptor daemon$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle daemon$MH = RuntimeHelper.downcallHandle(
-        "daemon",
-        constants$581.daemon$FUNC
-    );
-    static final FunctionDescriptor chroot$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$581() {}
+    static final FunctionDescriptor g_dbus_method_invocation_return_gerror$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle chroot$MH = RuntimeHelper.downcallHandle(
-        "chroot",
-        constants$581.chroot$FUNC
+    static final MethodHandle g_dbus_method_invocation_return_gerror$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_gerror",
+        constants$581.g_dbus_method_invocation_return_gerror$FUNC
     );
-    static final FunctionDescriptor getpass$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_method_invocation_take_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle getpass$MH = RuntimeHelper.downcallHandle(
-        "getpass",
-        constants$581.getpass$FUNC
+    static final MethodHandle g_dbus_method_invocation_take_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_take_error",
+        constants$581.g_dbus_method_invocation_take_error$FUNC
     );
+    static final FunctionDescriptor g_dbus_method_invocation_return_dbus_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_return_dbus_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_dbus_error",
+        constants$581.g_dbus_method_invocation_return_dbus_error$FUNC
+    );
+    static final FunctionDescriptor GBusAcquiredCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GBusAcquiredCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusAcquiredCallback_UP$MH = RuntimeHelper.upcallHandle(GBusAcquiredCallback.class, "apply", constants$581.GBusAcquiredCallback_UP$FUNC);
+    static final FunctionDescriptor GBusAcquiredCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusAcquiredCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$581.GBusAcquiredCallback_DOWN$FUNC
+    );
+    static final FunctionDescriptor GBusNameAcquiredCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GBusNameAcquiredCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusNameAcquiredCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameAcquiredCallback.class, "apply", constants$581.GBusNameAcquiredCallback_UP$FUNC);
 }
 
 

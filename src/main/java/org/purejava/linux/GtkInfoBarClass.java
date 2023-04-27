@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkInfoBarClass extends _GtkInfoBarClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkInfoBarClass GtkInfoBarClass;
+ * }
+ */
+public final class GtkInfoBarClass extends _GtkInfoBarClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkInfoBarClass() {}
 }
 
 

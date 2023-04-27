@@ -7,49 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1063 {
+final class constants$1063 {
 
-    static final FunctionDescriptor pango_font_metrics_get_approximate_char_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1063() {}
+    static final FunctionDescriptor gdk_drag_find_window_for_screen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_get_approximate_char_width$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_approximate_char_width",
-        constants$1063.pango_font_metrics_get_approximate_char_width$FUNC
+    static final MethodHandle gdk_drag_find_window_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_find_window_for_screen",
+        constants$1063.gdk_drag_find_window_for_screen$FUNC
     );
-    static final FunctionDescriptor pango_font_metrics_get_approximate_digit_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_drag_motion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drag_motion$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_motion",
+        constants$1063.gdk_drag_motion$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_drop$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drag_drop$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop",
+        constants$1063.gdk_drag_drop$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_abort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_drag_abort$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_abort",
+        constants$1063.gdk_drag_abort$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_drop_succeeded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_get_approximate_digit_width$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_approximate_digit_width",
-        constants$1063.pango_font_metrics_get_approximate_digit_width$FUNC
+    static final MethodHandle gdk_drag_drop_succeeded$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop_succeeded",
+        constants$1063.gdk_drag_drop_succeeded$FUNC
     );
-    static final FunctionDescriptor pango_font_metrics_get_underline_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_drag_drop_done$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_font_metrics_get_underline_position$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_underline_position",
-        constants$1063.pango_font_metrics_get_underline_position$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_underline_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_underline_thickness$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_underline_thickness",
-        constants$1063.pango_font_metrics_get_underline_thickness$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_strikethrough_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_strikethrough_position$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_strikethrough_position",
-        constants$1063.pango_font_metrics_get_strikethrough_position$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_strikethrough_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_strikethrough_thickness$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_strikethrough_thickness",
-        constants$1063.pango_font_metrics_get_strikethrough_thickness$FUNC
+    static final MethodHandle gdk_drag_drop_done$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop_done",
+        constants$1063.gdk_drag_drop_done$FUNC
     );
 }
 

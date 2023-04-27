@@ -7,51 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1972 {
+final class constants$1972 {
 
-    static final FunctionDescriptor gtk_recent_info_has_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1972() {}
+    static final FunctionDescriptor gtk_theming_engine_has_region$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_info_has_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_has_group",
-        constants$1972.gtk_recent_info_has_group$FUNC
+    static final MethodHandle gtk_theming_engine_has_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_has_region",
+        constants$1972.gtk_theming_engine_has_region$FUNC
     );
-    static final FunctionDescriptor gtk_recent_info_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_theming_engine_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_theming_engine_get_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_state",
+        constants$1972.gtk_theming_engine_get_state$FUNC
+    );
+    static final FunctionDescriptor gtk_theming_engine_state_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_get_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_icon",
-        constants$1972.gtk_recent_info_get_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_get_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_info_get_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_gicon",
-        constants$1972.gtk_recent_info_get_gicon$FUNC
+    static final MethodHandle gtk_theming_engine_state_is_running$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_state_is_running",
+        constants$1972.gtk_theming_engine_state_is_running$FUNC
     );
-    static final FunctionDescriptor gtk_recent_info_get_short_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_theming_engine_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_info_get_short_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_short_name",
-        constants$1972.gtk_recent_info_get_short_name$FUNC
+    static final MethodHandle gtk_theming_engine_get_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_direction",
+        constants$1972.gtk_theming_engine_get_direction$FUNC
     );
-    static final FunctionDescriptor gtk_recent_info_get_uri_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_theming_engine_get_junction_sides$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_info_get_uri_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_uri_display",
-        constants$1972.gtk_recent_info_get_uri_display$FUNC
+    static final MethodHandle gtk_theming_engine_get_junction_sides$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_junction_sides",
+        constants$1972.gtk_theming_engine_get_junction_sides$FUNC
     );
-    static final FunctionDescriptor gtk_recent_info_get_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_theming_engine_get_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_info_get_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_age",
-        constants$1972.gtk_recent_info_get_age$FUNC
+    static final MethodHandle gtk_theming_engine_get_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_color",
+        constants$1972.gtk_theming_engine_get_color$FUNC
     );
 }
 

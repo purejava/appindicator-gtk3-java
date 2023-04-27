@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkModuleInitFunc)(int* argc,char*** argv);
+ * }
+ */
 public interface GtkModuleInitFunc {
 
-    void apply(java.lang.foreign.MemoryAddress argc, java.lang.foreign.MemoryAddress argv);
-    static MemorySegment allocate(GtkModuleInitFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkModuleInitFunc.class, fi, constants$1904.GtkModuleInitFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkModuleInitFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1707.GtkModuleInitFunc_UP$MH, fi, constants$1707.GtkModuleInitFunc$FUNC, scope);
     }
-    static GtkModuleInitFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _argc, java.lang.foreign.MemoryAddress _argv) -> {
+    static GtkModuleInitFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1904.GtkModuleInitFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_argc, (java.lang.foreign.Addressable)_argv);
+                constants$1707.GtkModuleInitFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

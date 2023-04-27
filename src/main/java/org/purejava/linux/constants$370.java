@@ -7,48 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$370 {
+final class constants$370 {
 
-    static final FunctionDescriptor pthread_atfork$__child$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__child$MH = RuntimeHelper.downcallHandle(
-        constants$370.pthread_atfork$__child$FUNC
-    );
-    static final FunctionDescriptor pthread_atfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$370() {}
+    static final FunctionDescriptor pthread_condattr_setclock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pthread_condattr_setclock$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_setclock",
+        constants$370.pthread_condattr_setclock$FUNC
+    );
+    static final FunctionDescriptor pthread_spin_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pthread_spin_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_spin_init",
+        constants$370.pthread_spin_init$FUNC
+    );
+    static final FunctionDescriptor pthread_spin_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_atfork$MH = RuntimeHelper.downcallHandle(
-        "pthread_atfork",
-        constants$370.pthread_atfork$FUNC
+    static final MethodHandle pthread_spin_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_spin_destroy",
+        constants$370.pthread_spin_destroy$FUNC
     );
-    static final FunctionDescriptor g_static_mutex_init$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pthread_spin_lock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_init",
-        constants$370.g_static_mutex_init$FUNC
+    static final MethodHandle pthread_spin_lock$MH = RuntimeHelper.downcallHandle(
+        "pthread_spin_lock",
+        constants$370.pthread_spin_lock$FUNC
     );
-    static final FunctionDescriptor g_static_mutex_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pthread_spin_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_mutex_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_free",
-        constants$370.g_static_mutex_free$FUNC
+    static final MethodHandle pthread_spin_trylock$MH = RuntimeHelper.downcallHandle(
+        "pthread_spin_trylock",
+        constants$370.pthread_spin_trylock$FUNC
     );
-    static final FunctionDescriptor g_static_mutex_get_mutex_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pthread_spin_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_mutex_get_mutex_impl$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_get_mutex_impl",
-        constants$370.g_static_mutex_get_mutex_impl$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_init",
-        constants$370.g_static_rec_mutex_init$FUNC
+    static final MethodHandle pthread_spin_unlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_spin_unlock",
+        constants$370.pthread_spin_unlock$FUNC
     );
 }
 

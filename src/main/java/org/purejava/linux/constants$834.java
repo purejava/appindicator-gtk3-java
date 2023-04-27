@@ -7,69 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$834 {
+final class constants$834 {
 
-    static final FunctionDescriptor g_socket_listener_add_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$834() {}
+    static final FunctionDescriptor hb_color_get_blue$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_color_get_blue$MH = RuntimeHelper.downcallHandle(
+        "hb_color_get_blue",
+        constants$834.hb_color_get_blue$FUNC
+    );
+    static final FunctionDescriptor hb_blob_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_blob_create$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_create",
+        constants$834.hb_blob_create$FUNC
+    );
+    static final FunctionDescriptor hb_blob_create_or_fail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_listener_add_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_address",
-        constants$834.g_socket_listener_add_address$FUNC
+    static final MethodHandle hb_blob_create_or_fail$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_create_or_fail",
+        constants$834.hb_blob_create_or_fail$FUNC
     );
-    static final FunctionDescriptor g_socket_listener_add_inet_port$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_blob_create_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_listener_add_inet_port$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_inet_port",
-        constants$834.g_socket_listener_add_inet_port$FUNC
+    static final MethodHandle hb_blob_create_from_file$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_create_from_file",
+        constants$834.hb_blob_create_from_file$FUNC
     );
-    static final FunctionDescriptor g_socket_listener_add_any_inet_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_blob_create_from_file_or_fail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_listener_add_any_inet_port$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_any_inet_port",
-        constants$834.g_socket_listener_add_any_inet_port$FUNC
+    static final MethodHandle hb_blob_create_from_file_or_fail$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_create_from_file_or_fail",
+        constants$834.hb_blob_create_from_file_or_fail$FUNC
     );
-    static final FunctionDescriptor g_socket_listener_accept_socket$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_blob_create_sub_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_socket_listener_accept_socket$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept_socket",
-        constants$834.g_socket_listener_accept_socket$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_accept_socket_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_accept_socket_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept_socket_async",
-        constants$834.g_socket_listener_accept_socket_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_accept_socket_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_accept_socket_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_accept_socket_finish",
-        constants$834.g_socket_listener_accept_socket_finish$FUNC
+    static final MethodHandle hb_blob_create_sub_blob$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_create_sub_blob",
+        constants$834.hb_blob_create_sub_blob$FUNC
     );
 }
 

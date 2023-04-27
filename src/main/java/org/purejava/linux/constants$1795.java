@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1795 {
+final class constants$1795 {
 
-    static final FunctionDescriptor gtk_font_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_font_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_widget_new",
-        constants$1795.gtk_font_chooser_widget_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_type",
-        constants$1795.gtk_gesture_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1795() {}
+    static final FunctionDescriptor gtk_scale_button_get_plus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_device$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_device",
-        constants$1795.gtk_gesture_get_device$FUNC
+    static final MethodHandle gtk_scale_button_get_plus_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_button_get_plus_button",
+        constants$1795.gtk_scale_button_get_plus_button$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_set_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_scale_button_get_minus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_set_state",
-        constants$1795.gtk_gesture_set_state$FUNC
+    static final MethodHandle gtk_scale_button_get_minus_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_button_get_minus_button",
+        constants$1795.gtk_scale_button_get_minus_button$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_get_sequence_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scale_button_get_popup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scale_button_get_popup$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_button_get_popup",
+        constants$1795.gtk_scale_button_get_popup$FUNC
+    );
+    static final FunctionDescriptor gtk_scrollable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_scrollable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_get_type",
+        constants$1795.gtk_scrollable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_scrollable_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrollable_get_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_get_hadjustment",
+        constants$1795.gtk_scrollable_get_hadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_scrollable_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_sequence_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_sequence_state",
-        constants$1795.gtk_gesture_get_sequence_state$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_set_sequence_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_set_sequence_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_set_sequence_state",
-        constants$1795.gtk_gesture_set_sequence_state$FUNC
+    static final MethodHandle gtk_scrollable_set_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_set_hadjustment",
+        constants$1795.gtk_scrollable_set_hadjustment$FUNC
     );
 }
 

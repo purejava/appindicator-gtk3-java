@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1478 {
+final class constants$1478 {
 
-    static final FunctionDescriptor gtk_container_forall$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1478() {}
+    static final FunctionDescriptor gtk_tree_view_set_fixed_height_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_fixed_height_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_fixed_height_mode",
+        constants$1478.gtk_tree_view_set_fixed_height_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_fixed_height_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_get_fixed_height_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_fixed_height_mode",
+        constants$1478.gtk_tree_view_get_fixed_height_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_set_hover_selection$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_hover_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_hover_selection",
+        constants$1478.gtk_tree_view_set_hover_selection$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_hover_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_container_forall$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_forall",
-        constants$1478.gtk_container_forall$FUNC
+    static final MethodHandle gtk_tree_view_get_hover_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_hover_selection",
+        constants$1478.gtk_tree_view_get_hover_selection$FUNC
     );
-    static final FunctionDescriptor gtk_container_class_handle_border_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_class_handle_border_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_class_handle_border_width",
-        constants$1478.gtk_container_class_handle_border_width$FUNC
-    );
-    static final FunctionDescriptor gtk_container_get_path_for_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_set_hover_expand$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_hover_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_hover_expand",
+        constants$1478.gtk_tree_view_set_hover_expand$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_hover_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_container_get_path_for_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_path_for_child",
-        constants$1478.gtk_container_get_path_for_child$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GtkContainer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GtkContainer$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkContainer",
-        constants$1478.glib_autoptr_clear_GtkContainer$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkContainer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GtkContainer$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkContainer",
-        constants$1478.glib_autoptr_cleanup_GtkContainer$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkContainer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkContainer$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkContainer",
-        constants$1478.glib_listautoptr_cleanup_GtkContainer$FUNC
+    static final MethodHandle gtk_tree_view_get_hover_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_hover_expand",
+        constants$1478.gtk_tree_view_get_hover_expand$FUNC
     );
 }
 

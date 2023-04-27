@@ -7,56 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$570 {
+final class constants$570 {
 
-    static final FunctionDescriptor fexecve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$570() {}
+    static final FunctionDescriptor g_dbus_message_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_message_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_type",
+        constants$570.g_dbus_message_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_dbus_message_new$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new",
+        constants$570.g_dbus_message_new$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_new_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fexecve$MH = RuntimeHelper.downcallHandle(
-        "fexecve",
-        constants$570.fexecve$FUNC
+    static final MethodHandle g_dbus_message_new_signal$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_signal",
+        constants$570.g_dbus_message_new_signal$FUNC
     );
-    static final FunctionDescriptor execv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_new_method_call$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle execv$MH = RuntimeHelper.downcallHandle(
-        "execv",
-        constants$570.execv$FUNC
+    static final MethodHandle g_dbus_message_new_method_call$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_call",
+        constants$570.g_dbus_message_new_method_call$FUNC
     );
-    static final FunctionDescriptor execle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_new_method_reply$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_new_method_reply$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_reply",
+        constants$570.g_dbus_message_new_method_reply$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_new_method_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle execle$MH = RuntimeHelper.downcallHandleVariadic(
-        "execle",
-        constants$570.execle$FUNC
-    );
-    static final FunctionDescriptor execl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execl$MH = RuntimeHelper.downcallHandleVariadic(
-        "execl",
-        constants$570.execl$FUNC
-    );
-    static final FunctionDescriptor execvp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execvp$MH = RuntimeHelper.downcallHandle(
-        "execvp",
-        constants$570.execvp$FUNC
-    );
-    static final FunctionDescriptor execlp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execlp$MH = RuntimeHelper.downcallHandleVariadic(
-        "execlp",
-        constants$570.execlp$FUNC
+    static final MethodHandle g_dbus_message_new_method_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_message_new_method_error",
+        constants$570.g_dbus_message_new_method_error$FUNC
     );
 }
 

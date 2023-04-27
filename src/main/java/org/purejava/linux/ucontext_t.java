@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct ucontext_t {
+ *     unsigned long uc_flags;
+ *     struct ucontext_t* uc_link;
+ *     stack_t uc_stack;
+ *     mcontext_t uc_mcontext;
+ *     sigset_t uc_sigmask;
+ *     struct _libc_fpstate __fpregs_mem;
+ *     unsigned long long __ssp[4];
+ * };
+ * }
+ */
 public class ucontext_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("uc_flags"),
         Constants$root.C_POINTER$LAYOUT.withName("uc_link"),
         MemoryLayout.structLayout(
@@ -54,10 +67,22 @@ public class ucontext_t {
     public static VarHandle uc_flags$VH() {
         return ucontext_t.uc_flags$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long uc_flags;
+     * }
+     */
     public static long uc_flags$get(MemorySegment seg) {
         return (long)ucontext_t.uc_flags$VH.get(seg);
     }
-    public static void uc_flags$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long uc_flags;
+     * }
+     */
+    public static void uc_flags$set(MemorySegment seg, long x) {
         ucontext_t.uc_flags$VH.set(seg, x);
     }
     public static long uc_flags$get(MemorySegment seg, long index) {
@@ -70,16 +95,28 @@ public class ucontext_t {
     public static VarHandle uc_link$VH() {
         return ucontext_t.uc_link$VH;
     }
-    public static MemoryAddress uc_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)ucontext_t.uc_link$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * struct ucontext_t* uc_link;
+     * }
+     */
+    public static MemorySegment uc_link$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)ucontext_t.uc_link$VH.get(seg);
     }
-    public static void uc_link$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * struct ucontext_t* uc_link;
+     * }
+     */
+    public static void uc_link$set(MemorySegment seg, MemorySegment x) {
         ucontext_t.uc_link$VH.set(seg, x);
     }
-    public static MemoryAddress uc_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)ucontext_t.uc_link$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment uc_link$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)ucontext_t.uc_link$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void uc_link$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void uc_link$set(MemorySegment seg, long index, MemorySegment x) {
         ucontext_t.uc_link$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment uc_stack$slice(MemorySegment seg) {
@@ -99,10 +136,10 @@ public class ucontext_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

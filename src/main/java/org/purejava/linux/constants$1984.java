@@ -7,80 +7,36 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1984 {
+final class constants$1984 {
 
-    static final FunctionDescriptor gtk_render_option$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_option$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_option",
-        constants$1984.gtk_render_option$FUNC
-    );
-    static final FunctionDescriptor gtk_render_arrow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_arrow",
-        constants$1984.gtk_render_arrow$FUNC
-    );
-    static final FunctionDescriptor gtk_render_background$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_background$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_background",
-        constants$1984.gtk_render_background$FUNC
-    );
-    static final FunctionDescriptor gtk_render_background_get_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1984() {}
+    static final FunctionDescriptor app_indicator_get_ordering_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_render_background_get_clip$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_background_get_clip",
-        constants$1984.gtk_render_background_get_clip$FUNC
+    static final MethodHandle app_indicator_get_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_ordering_index",
+        constants$1984.app_indicator_get_ordering_index$FUNC
     );
-    static final FunctionDescriptor gtk_render_frame$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_get_secondary_activate_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_secondary_activate_target",
+        constants$1984.app_indicator_get_secondary_activate_target$FUNC
+    );
+    static final FunctionDescriptor app_indicator_build_menu_from_desktop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_render_frame$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_frame",
-        constants$1984.gtk_render_frame$FUNC
+    static final MethodHandle app_indicator_build_menu_from_desktop$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_build_menu_from_desktop",
+        constants$1984.app_indicator_build_menu_from_desktop$FUNC
     );
-    static final FunctionDescriptor gtk_render_expander$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_expander$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_expander",
-        constants$1984.gtk_render_expander$FUNC
-    );
+    static final MemorySegment NULL$ADDR = MemorySegment.ofAddress(0L);
+    static final MemorySegment G_GNUC_FUNCTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
+    static final MemorySegment G_GNUC_PRETTY_FUNCTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
 }
 
 

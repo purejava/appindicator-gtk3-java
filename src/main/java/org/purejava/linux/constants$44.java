@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$44 {
+final class constants$44 {
 
-    static final FunctionDescriptor a64l$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$44() {}
+    static final FunctionDescriptor atof$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle a64l$MH = RuntimeHelper.downcallHandle(
-        "a64l",
-        constants$44.a64l$FUNC
+    static final MethodHandle atof$MH = RuntimeHelper.downcallHandle(
+        "atof",
+        constants$44.atof$FUNC
     );
-    static final FunctionDescriptor __bswap_16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final FunctionDescriptor atoi$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __bswap_16$MH = RuntimeHelper.downcallHandle(
-        "__bswap_16",
-        constants$44.__bswap_16$FUNC
+    static final MethodHandle atoi$MH = RuntimeHelper.downcallHandle(
+        "atoi",
+        constants$44.atoi$FUNC
     );
-    static final FunctionDescriptor __bswap_32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor atol$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __bswap_32$MH = RuntimeHelper.downcallHandle(
-        "__bswap_32",
-        constants$44.__bswap_32$FUNC
+    static final MethodHandle atol$MH = RuntimeHelper.downcallHandle(
+        "atol",
+        constants$44.atol$FUNC
     );
-    static final FunctionDescriptor __bswap_64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor atoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __bswap_64$MH = RuntimeHelper.downcallHandle(
-        "__bswap_64",
-        constants$44.__bswap_64$FUNC
+    static final MethodHandle atoll$MH = RuntimeHelper.downcallHandle(
+        "atoll",
+        constants$44.atoll$FUNC
     );
-    static final FunctionDescriptor __uint16_identity$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final FunctionDescriptor strtod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __uint16_identity$MH = RuntimeHelper.downcallHandle(
-        "__uint16_identity",
-        constants$44.__uint16_identity$FUNC
+    static final MethodHandle strtod$MH = RuntimeHelper.downcallHandle(
+        "strtod",
+        constants$44.strtod$FUNC
     );
-    static final FunctionDescriptor __uint32_identity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor strtof$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle __uint32_identity$MH = RuntimeHelper.downcallHandle(
-        "__uint32_identity",
-        constants$44.__uint32_identity$FUNC
+    static final MethodHandle strtof$MH = RuntimeHelper.downcallHandle(
+        "strtof",
+        constants$44.strtof$FUNC
     );
 }
 

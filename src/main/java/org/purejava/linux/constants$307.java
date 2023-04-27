@@ -7,50 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$307 {
+final class constants$307 {
 
-    static final FunctionDescriptor g_strv_builder_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_strv_builder_new$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_new",
-        constants$307.g_strv_builder_new$FUNC
-    );
-    static final FunctionDescriptor g_strv_builder_unref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$307() {}
+    static final FunctionDescriptor g_slice_free1$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strv_builder_unref$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_unref",
-        constants$307.g_strv_builder_unref$FUNC
+    static final MethodHandle g_slice_free1$MH = RuntimeHelper.downcallHandle(
+        "g_slice_free1",
+        constants$307.g_slice_free1$FUNC
     );
-    static final FunctionDescriptor g_strv_builder_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_builder_ref$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_ref",
-        constants$307.g_strv_builder_ref$FUNC
-    );
-    static final FunctionDescriptor g_strv_builder_add$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_slice_free_chain_with_offset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_slice_free_chain_with_offset$MH = RuntimeHelper.downcallHandle(
+        "g_slice_free_chain_with_offset",
+        constants$307.g_slice_free_chain_with_offset$FUNC
+    );
+    static final FunctionDescriptor g_slice_set_config$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_slice_set_config$MH = RuntimeHelper.downcallHandle(
+        "g_slice_set_config",
+        constants$307.g_slice_set_config$FUNC
+    );
+    static final FunctionDescriptor g_slice_get_config$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_slice_get_config$MH = RuntimeHelper.downcallHandle(
+        "g_slice_get_config",
+        constants$307.g_slice_get_config$FUNC
+    );
+    static final FunctionDescriptor g_slice_get_config_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strv_builder_add$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_add",
-        constants$307.g_strv_builder_add$FUNC
+    static final MethodHandle g_slice_get_config_state$MH = RuntimeHelper.downcallHandle(
+        "g_slice_get_config_state",
+        constants$307.g_slice_get_config_state$FUNC
     );
-    static final FunctionDescriptor g_strv_builder_addv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GSpawnChildSetupFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strv_builder_addv$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_addv",
-        constants$307.g_strv_builder_addv$FUNC
-    );
-    static final FunctionDescriptor g_strv_builder_add_many$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSpawnChildSetupFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strv_builder_add_many$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_strv_builder_add_many",
-        constants$307.g_strv_builder_add_many$FUNC
-    );
+    static final MethodHandle GSpawnChildSetupFunc_UP$MH = RuntimeHelper.upcallHandle(GSpawnChildSetupFunc.class, "apply", constants$307.GSpawnChildSetupFunc_UP$FUNC);
 }
 
 

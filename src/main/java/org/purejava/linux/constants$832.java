@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$832 {
+final class constants$832 {
 
-    static final FunctionDescriptor g_socket_connection_factory_lookup_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$832() {}
+    static final FunctionDescriptor hb_script_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_socket_connection_factory_lookup_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_lookup_type",
-        constants$832.g_socket_connection_factory_lookup_type$FUNC
+    static final MethodHandle hb_script_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_script_from_string",
+        constants$832.hb_script_from_string$FUNC
     );
-    static final FunctionDescriptor g_socket_connection_factory_create_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_script_to_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_script_to_iso15924_tag$MH = RuntimeHelper.downcallHandle(
+        "hb_script_to_iso15924_tag",
+        constants$832.hb_script_to_iso15924_tag$FUNC
+    );
+    static final FunctionDescriptor hb_script_get_horizontal_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_script_get_horizontal_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_script_get_horizontal_direction",
+        constants$832.hb_script_get_horizontal_direction$FUNC
+    );
+    static final FunctionDescriptor hb_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_connection_factory_create_connection$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_create_connection",
-        constants$832.g_socket_connection_factory_create_connection$FUNC
-    );
-    static final FunctionDescriptor g_socket_control_message_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_control_message_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_get_type",
-        constants$832.g_socket_control_message_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_control_message_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_destroy_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_control_message_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_get_size",
-        constants$832.g_socket_control_message_get_size$FUNC
-    );
-    static final FunctionDescriptor g_socket_control_message_get_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle hb_destroy_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_destroy_func_t.class, "apply", constants$832.hb_destroy_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_destroy_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_control_message_get_level$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_get_level",
-        constants$832.g_socket_control_message_get_level$FUNC
+    static final MethodHandle hb_destroy_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$832.hb_destroy_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor g_socket_control_message_get_msg_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_feature_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_control_message_get_msg_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_get_msg_type",
-        constants$832.g_socket_control_message_get_msg_type$FUNC
+    static final MethodHandle hb_feature_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_feature_from_string",
+        constants$832.hb_feature_from_string$FUNC
     );
 }
 

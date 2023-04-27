@@ -7,8 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$132 {
+final class constants$132 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$132() {}
+    static final FunctionDescriptor g_realloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_realloc_n$MH = RuntimeHelper.downcallHandle(
+        "g_realloc_n",
+        constants$132.g_realloc_n$FUNC
+    );
+    static final FunctionDescriptor g_try_malloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_try_malloc_n$MH = RuntimeHelper.downcallHandle(
+        "g_try_malloc_n",
+        constants$132.g_try_malloc_n$FUNC
+    );
+    static final FunctionDescriptor g_try_malloc0_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_try_malloc0_n$MH = RuntimeHelper.downcallHandle(
+        "g_try_malloc0_n",
+        constants$132.g_try_malloc0_n$FUNC
+    );
+    static final FunctionDescriptor g_try_realloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_try_realloc_n$MH = RuntimeHelper.downcallHandle(
+        "g_try_realloc_n",
+        constants$132.g_try_realloc_n$FUNC
+    );
+    static final FunctionDescriptor g_aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_aligned_alloc$MH = RuntimeHelper.downcallHandle(
+        "g_aligned_alloc",
+        constants$132.g_aligned_alloc$FUNC
+    );
     static final FunctionDescriptor g_aligned_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
@@ -18,35 +63,6 @@ class constants$132 {
         "g_aligned_alloc0",
         constants$132.g_aligned_alloc0$FUNC
     );
-    static final FunctionDescriptor g_aligned_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_aligned_free$MH = RuntimeHelper.downcallHandle(
-        "g_aligned_free",
-        constants$132.g_aligned_free$FUNC
-    );
-    static final FunctionDescriptor g_steal_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_steal_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_steal_pointer",
-        constants$132.g_steal_pointer$FUNC
-    );
-    static final FunctionDescriptor g_mem_set_vtable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mem_set_vtable$MH = RuntimeHelper.downcallHandle(
-        "g_mem_set_vtable",
-        constants$132.g_mem_set_vtable$FUNC
-    );
-    static final FunctionDescriptor g_mem_is_system_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_mem_is_system_malloc$MH = RuntimeHelper.downcallHandle(
-        "g_mem_is_system_malloc",
-        constants$132.g_mem_is_system_malloc$FUNC
-    );
-    static final  OfInt g_mem_gc_friendly$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle g_mem_gc_friendly$VH = constants$132.g_mem_gc_friendly$LAYOUT.varHandle();
-    static final MemorySegment g_mem_gc_friendly$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_mem_gc_friendly", constants$132.g_mem_gc_friendly$LAYOUT);
 }
 
 

@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1403 {
+final class constants$1403 {
 
-    static final FunctionDescriptor atk_image_set_image_description$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1403() {}
+    static final FunctionDescriptor gtk_text_iter_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_image_set_image_description$MH = RuntimeHelper.downcallHandle(
-        "atk_image_set_image_description",
-        constants$1403.atk_image_set_image_description$FUNC
+    static final MethodHandle gtk_text_iter_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_pixbuf",
+        constants$1403.gtk_text_iter_get_pixbuf$FUNC
     );
-    static final FunctionDescriptor atk_image_get_image_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_get_marks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_get_marks$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_marks",
+        constants$1403.gtk_text_iter_get_marks$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_get_child_anchor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_get_child_anchor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_child_anchor",
+        constants$1403.gtk_text_iter_get_child_anchor$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_get_toggled_tags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_image_get_image_position$MH = RuntimeHelper.downcallHandle(
-        "atk_image_get_image_position",
-        constants$1403.atk_image_get_image_position$FUNC
+    static final MethodHandle gtk_text_iter_get_toggled_tags$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_toggled_tags",
+        constants$1403.gtk_text_iter_get_toggled_tags$FUNC
     );
-    static final FunctionDescriptor atk_image_get_image_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_starts_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_image_get_image_locale$MH = RuntimeHelper.downcallHandle(
-        "atk_image_get_image_locale",
-        constants$1403.atk_image_get_image_locale$FUNC
+    static final MethodHandle gtk_text_iter_starts_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_starts_tag",
+        constants$1403.gtk_text_iter_starts_tag$FUNC
     );
-    static final FunctionDescriptor atk_no_op_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_no_op_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_get_type",
-        constants$1403.atk_no_op_object_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_no_op_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_begins_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_no_op_object_new$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_new",
-        constants$1403.atk_no_op_object_new$FUNC
-    );
-    static final FunctionDescriptor atk_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_get_type",
-        constants$1403.atk_object_factory_get_type$FUNC
+    static final MethodHandle gtk_text_iter_begins_tag$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_begins_tag",
+        constants$1403.gtk_text_iter_begins_tag$FUNC
     );
 }
 

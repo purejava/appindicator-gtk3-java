@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GErrorInitFunc)(struct _GError* error);
+ * }
+ */
 public interface GErrorInitFunc {
 
-    void apply(java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GErrorInitFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GErrorInitFunc.class, fi, constants$32.GErrorInitFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GErrorInitFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$34.GErrorInitFunc_UP$MH, fi, constants$34.GErrorInitFunc$FUNC, scope);
     }
-    static GErrorInitFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _error) -> {
+    static GErrorInitFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$32.GErrorInitFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_error);
+                constants$35.GErrorInitFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

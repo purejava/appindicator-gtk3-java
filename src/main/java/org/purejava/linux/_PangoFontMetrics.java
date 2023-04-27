@@ -7,9 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoFontMetrics {
+ *     guint ref_count;
+ *     int ascent;
+ *     int descent;
+ *     int height;
+ *     int approximate_char_width;
+ *     int approximate_digit_width;
+ *     int underline_position;
+ *     int underline_thickness;
+ *     int strikethrough_position;
+ *     int strikethrough_thickness;
+ * };
+ * }
+ */
 public class _PangoFontMetrics {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("ref_count"),
         Constants$root.C_INT$LAYOUT.withName("ascent"),
         Constants$root.C_INT$LAYOUT.withName("descent"),
@@ -28,10 +44,22 @@ public class _PangoFontMetrics {
     public static VarHandle ref_count$VH() {
         return _PangoFontMetrics.ref_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint ref_count;
+     * }
+     */
     public static int ref_count$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.ref_count$VH.get(seg);
     }
-    public static void ref_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint ref_count;
+     * }
+     */
+    public static void ref_count$set(MemorySegment seg, int x) {
         _PangoFontMetrics.ref_count$VH.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
@@ -44,10 +72,22 @@ public class _PangoFontMetrics {
     public static VarHandle ascent$VH() {
         return _PangoFontMetrics.ascent$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int ascent;
+     * }
+     */
     public static int ascent$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.ascent$VH.get(seg);
     }
-    public static void ascent$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int ascent;
+     * }
+     */
+    public static void ascent$set(MemorySegment seg, int x) {
         _PangoFontMetrics.ascent$VH.set(seg, x);
     }
     public static int ascent$get(MemorySegment seg, long index) {
@@ -60,10 +100,22 @@ public class _PangoFontMetrics {
     public static VarHandle descent$VH() {
         return _PangoFontMetrics.descent$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int descent;
+     * }
+     */
     public static int descent$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.descent$VH.get(seg);
     }
-    public static void descent$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int descent;
+     * }
+     */
+    public static void descent$set(MemorySegment seg, int x) {
         _PangoFontMetrics.descent$VH.set(seg, x);
     }
     public static int descent$get(MemorySegment seg, long index) {
@@ -76,10 +128,22 @@ public class _PangoFontMetrics {
     public static VarHandle height$VH() {
         return _PangoFontMetrics.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int height;
+     * }
+     */
     public static int height$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, int x) {
         _PangoFontMetrics.height$VH.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
@@ -92,10 +156,22 @@ public class _PangoFontMetrics {
     public static VarHandle approximate_char_width$VH() {
         return _PangoFontMetrics.approximate_char_width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int approximate_char_width;
+     * }
+     */
     public static int approximate_char_width$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.approximate_char_width$VH.get(seg);
     }
-    public static void approximate_char_width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int approximate_char_width;
+     * }
+     */
+    public static void approximate_char_width$set(MemorySegment seg, int x) {
         _PangoFontMetrics.approximate_char_width$VH.set(seg, x);
     }
     public static int approximate_char_width$get(MemorySegment seg, long index) {
@@ -108,10 +184,22 @@ public class _PangoFontMetrics {
     public static VarHandle approximate_digit_width$VH() {
         return _PangoFontMetrics.approximate_digit_width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int approximate_digit_width;
+     * }
+     */
     public static int approximate_digit_width$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.approximate_digit_width$VH.get(seg);
     }
-    public static void approximate_digit_width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int approximate_digit_width;
+     * }
+     */
+    public static void approximate_digit_width$set(MemorySegment seg, int x) {
         _PangoFontMetrics.approximate_digit_width$VH.set(seg, x);
     }
     public static int approximate_digit_width$get(MemorySegment seg, long index) {
@@ -124,10 +212,22 @@ public class _PangoFontMetrics {
     public static VarHandle underline_position$VH() {
         return _PangoFontMetrics.underline_position$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int underline_position;
+     * }
+     */
     public static int underline_position$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.underline_position$VH.get(seg);
     }
-    public static void underline_position$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int underline_position;
+     * }
+     */
+    public static void underline_position$set(MemorySegment seg, int x) {
         _PangoFontMetrics.underline_position$VH.set(seg, x);
     }
     public static int underline_position$get(MemorySegment seg, long index) {
@@ -140,10 +240,22 @@ public class _PangoFontMetrics {
     public static VarHandle underline_thickness$VH() {
         return _PangoFontMetrics.underline_thickness$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int underline_thickness;
+     * }
+     */
     public static int underline_thickness$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.underline_thickness$VH.get(seg);
     }
-    public static void underline_thickness$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int underline_thickness;
+     * }
+     */
+    public static void underline_thickness$set(MemorySegment seg, int x) {
         _PangoFontMetrics.underline_thickness$VH.set(seg, x);
     }
     public static int underline_thickness$get(MemorySegment seg, long index) {
@@ -156,10 +268,22 @@ public class _PangoFontMetrics {
     public static VarHandle strikethrough_position$VH() {
         return _PangoFontMetrics.strikethrough_position$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int strikethrough_position;
+     * }
+     */
     public static int strikethrough_position$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.strikethrough_position$VH.get(seg);
     }
-    public static void strikethrough_position$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int strikethrough_position;
+     * }
+     */
+    public static void strikethrough_position$set(MemorySegment seg, int x) {
         _PangoFontMetrics.strikethrough_position$VH.set(seg, x);
     }
     public static int strikethrough_position$get(MemorySegment seg, long index) {
@@ -172,10 +296,22 @@ public class _PangoFontMetrics {
     public static VarHandle strikethrough_thickness$VH() {
         return _PangoFontMetrics.strikethrough_thickness$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int strikethrough_thickness;
+     * }
+     */
     public static int strikethrough_thickness$get(MemorySegment seg) {
         return (int)_PangoFontMetrics.strikethrough_thickness$VH.get(seg);
     }
-    public static void strikethrough_thickness$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int strikethrough_thickness;
+     * }
+     */
+    public static void strikethrough_thickness$set(MemorySegment seg, int x) {
         _PangoFontMetrics.strikethrough_thickness$VH.set(seg, x);
     }
     public static int strikethrough_thickness$get(MemorySegment seg, long index) {
@@ -186,10 +322,10 @@ public class _PangoFontMetrics {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GIOSchedulerJobFunc)(struct _GIOSchedulerJob* job,struct _GCancellable* cancellable,void* data);
+ * }
+ */
 public interface GIOSchedulerJobFunc {
 
-    int apply(java.lang.foreign.MemoryAddress job, java.lang.foreign.MemoryAddress cancellable, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GIOSchedulerJobFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GIOSchedulerJobFunc.class, fi, constants$517.GIOSchedulerJobFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GIOSchedulerJobFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$470.GIOSchedulerJobFunc_UP$MH, fi, constants$470.GIOSchedulerJobFunc$FUNC, scope);
     }
-    static GIOSchedulerJobFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _job, java.lang.foreign.MemoryAddress _cancellable, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GIOSchedulerJobFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$517.GIOSchedulerJobFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_job, (java.lang.foreign.Addressable)_cancellable, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$470.GIOSchedulerJobFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,49 +7,86 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$403 {
+final class constants$403 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GSList$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$403() {}
+    static final FunctionDescriptor GClosureMarshal$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSList$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSList",
-        constants$403.glib_autoptr_clear_GSList$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSList$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GClosureMarshal_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSList$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSList",
-        constants$403.glib_autoptr_cleanup_GSList$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSList$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GClosureMarshal_UP$MH = RuntimeHelper.upcallHandle(GClosureMarshal.class, "apply", constants$403.GClosureMarshal_UP$FUNC);
+    static final FunctionDescriptor GClosureMarshal_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSList$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSList",
-        constants$403.glib_listautoptr_cleanup_GSList$FUNC
+    static final MethodHandle GClosureMarshal_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$403.GClosureMarshal_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSList$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GVaClosureMarshal$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSList$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSList",
-        constants$403.glib_slistautoptr_cleanup_GSList$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSList$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GVaClosureMarshal_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSList$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSList",
-        constants$403.glib_queueautoptr_cleanup_GSList$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GString$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GVaClosureMarshal_UP$MH = RuntimeHelper.upcallHandle(GVaClosureMarshal.class, "apply", constants$403.GVaClosureMarshal_UP$FUNC);
+    static final FunctionDescriptor GVaClosureMarshal_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GString$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GString",
-        constants$403.glib_autoptr_clear_GString$FUNC
+    static final MethodHandle GVaClosureMarshal_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$403.GVaClosureMarshal_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_cclosure_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cclosure_new$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_new",
+        constants$403.g_cclosure_new$FUNC
+    );
+    static final FunctionDescriptor g_cclosure_new_swap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cclosure_new_swap$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_new_swap",
+        constants$403.g_cclosure_new_swap$FUNC
     );
 }
 

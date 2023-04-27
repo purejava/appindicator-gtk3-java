@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GProxyAddressEnumerator extends _GProxyAddressEnumerator {
+/**
+ * {@snippet :
+ * typedef struct _GProxyAddressEnumerator GProxyAddressEnumerator;
+ * }
+ */
+public final class GProxyAddressEnumerator extends _GProxyAddressEnumerator {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GProxyAddressEnumerator() {}
 }
 
 

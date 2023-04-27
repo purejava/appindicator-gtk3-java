@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$894 {
+final class constants$894 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GCredentials$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$894() {}
+    static final FunctionDescriptor hb_map_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_map_get$MH = RuntimeHelper.downcallHandle(
+        "hb_map_get",
+        constants$894.hb_map_get$FUNC
+    );
+    static final FunctionDescriptor hb_map_del$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_map_del$MH = RuntimeHelper.downcallHandle(
+        "hb_map_del",
+        constants$894.hb_map_del$FUNC
+    );
+    static final FunctionDescriptor hb_map_has$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_map_has$MH = RuntimeHelper.downcallHandle(
+        "hb_map_has",
+        constants$894.hb_map_has$FUNC
+    );
+    static final FunctionDescriptor hb_shape$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_shape$MH = RuntimeHelper.downcallHandle(
+        "hb_shape",
+        constants$894.hb_shape$FUNC
+    );
+    static final FunctionDescriptor hb_shape_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GCredentials$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GCredentials",
-        constants$894.glib_autoptr_cleanup_GCredentials$FUNC
+    static final MethodHandle hb_shape_full$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_full",
+        constants$894.hb_shape_full$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GCredentials$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GCredentials$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GCredentials",
-        constants$894.glib_listautoptr_cleanup_GCredentials$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GCredentials$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GCredentials$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GCredentials",
-        constants$894.glib_slistautoptr_cleanup_GCredentials$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GCredentials$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GCredentials$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GCredentials",
-        constants$894.glib_queueautoptr_cleanup_GCredentials$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GDatagramBased$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GDatagramBased$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDatagramBased",
-        constants$894.glib_autoptr_clear_GDatagramBased$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDatagramBased$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GDatagramBased$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDatagramBased",
-        constants$894.glib_autoptr_cleanup_GDatagramBased$FUNC
+    static final FunctionDescriptor hb_shape_list_shapers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_shape_list_shapers$MH = RuntimeHelper.downcallHandle(
+        "hb_shape_list_shapers",
+        constants$894.hb_shape_list_shapers$FUNC
     );
 }
 

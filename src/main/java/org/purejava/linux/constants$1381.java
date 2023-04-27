@@ -7,49 +7,80 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1381 {
+final class constants$1381 {
 
-    static final FunctionDescriptor atk_object_get_object_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_object_locale$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_object_locale",
-        constants$1381.atk_object_get_object_locale$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_accessible_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_accessible_id$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_accessible_id",
-        constants$1381.atk_object_get_accessible_id$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_accessible_id$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1381() {}
+    static final FunctionDescriptor gtk_cell_area_foreach_alloc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_set_accessible_id$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_accessible_id",
-        constants$1381.atk_object_set_accessible_id$FUNC
+    static final MethodHandle gtk_cell_area_foreach_alloc$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_foreach_alloc",
+        constants$1381.gtk_cell_area_foreach_alloc$FUNC
     );
-    static final FunctionDescriptor atk_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_type",
-        constants$1381.atk_action_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_action_do_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_area_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_action_do_action$MH = RuntimeHelper.downcallHandle(
-        "atk_action_do_action",
-        constants$1381.atk_action_do_action$FUNC
+    static final MethodHandle gtk_cell_area_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_event",
+        constants$1381.gtk_cell_area_event$FUNC
     );
-    static final FunctionDescriptor atk_action_get_n_actions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_area_render$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_render$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_render",
+        constants$1381.gtk_cell_area_render$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_get_cell_allocation$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_action_get_n_actions$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_n_actions",
-        constants$1381.atk_action_get_n_actions$FUNC
+    static final MethodHandle gtk_cell_area_get_cell_allocation$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_cell_allocation",
+        constants$1381.gtk_cell_area_get_cell_allocation$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_get_cell_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_get_cell_at_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_cell_at_position",
+        constants$1381.gtk_cell_area_get_cell_at_position$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_create_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_create_context",
+        constants$1381.gtk_cell_area_create_context$FUNC
     );
 }
 

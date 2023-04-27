@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$31 {
+final class constants$31 {
 
-    static final FunctionDescriptor g_atomic_int_exchange_and_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$31() {}
+    static final FunctionDescriptor g_atomic_int_compare_and_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_compare_and_exchange$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_compare_and_exchange",
+        constants$31.g_atomic_int_compare_and_exchange$FUNC
+    );
+    static final FunctionDescriptor g_atomic_int_compare_and_exchange_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_compare_and_exchange_full$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_compare_and_exchange_full",
+        constants$31.g_atomic_int_compare_and_exchange_full$FUNC
+    );
+    static final FunctionDescriptor g_atomic_int_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_atomic_int_exchange_and_add$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_exchange_and_add",
-        constants$31.g_atomic_int_exchange_and_add$FUNC
+    static final MethodHandle g_atomic_int_exchange$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_exchange",
+        constants$31.g_atomic_int_exchange$FUNC
     );
-    static final FunctionDescriptor g_quark_try_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_quark_try_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_try_string",
-        constants$31.g_quark_try_string$FUNC
-    );
-    static final FunctionDescriptor g_quark_from_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_quark_from_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_from_static_string",
-        constants$31.g_quark_from_static_string$FUNC
-    );
-    static final FunctionDescriptor g_quark_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_quark_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_from_string",
-        constants$31.g_quark_from_string$FUNC
-    );
-    static final FunctionDescriptor g_quark_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_atomic_int_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_quark_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_to_string",
-        constants$31.g_quark_to_string$FUNC
+    static final MethodHandle g_atomic_int_add$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_add",
+        constants$31.g_atomic_int_add$FUNC
     );
-    static final FunctionDescriptor g_intern_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_atomic_int_and$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_intern_string$MH = RuntimeHelper.downcallHandle(
-        "g_intern_string",
-        constants$31.g_intern_string$FUNC
+    static final MethodHandle g_atomic_int_and$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_and",
+        constants$31.g_atomic_int_and$FUNC
+    );
+    static final FunctionDescriptor g_atomic_int_or$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_or$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_or",
+        constants$31.g_atomic_int_or$FUNC
     );
 }
 

@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoEngineLangClass {
+ *     PangoEngineClass parent_class;
+ *     void (*script_break)(PangoEngineLang*,char*,int,PangoAnalysis*,PangoLogAttr*,int);
+ * };
+ * }
+ */
 public class _PangoEngineLangClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +33,10 @@ public class _PangoEngineLangClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent_class")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("script_break")
@@ -44,20 +55,42 @@ public class _PangoEngineLangClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle script_break$MH = RuntimeHelper.downcallHandle(
-        _PangoEngineLangClass.script_break$FUNC
+    static final FunctionDescriptor script_break_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle script_break_UP$MH = RuntimeHelper.upcallHandle(script_break.class, "apply", _PangoEngineLangClass.script_break_UP$FUNC);
+    static final FunctionDescriptor script_break_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle script_break_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoEngineLangClass.script_break_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*script_break)(PangoEngineLang*,char*,int,PangoAnalysis*,PangoLogAttr*,int);
+     * }
+     */
     public interface script_break {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5);
-        static MemorySegment allocate(script_break fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(script_break.class, fi, _PangoEngineLangClass.script_break$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5);
+        static MemorySegment allocate(script_break fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoEngineLangClass.script_break_UP$MH, fi, _PangoEngineLangClass.script_break$FUNC, scope);
         }
-        static script_break ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5) -> {
+        static script_break ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5) -> {
                 try {
-                    _PangoEngineLangClass.script_break$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5);
+                    _PangoEngineLangClass.script_break_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -69,27 +102,39 @@ public class _PangoEngineLangClass {
     public static VarHandle script_break$VH() {
         return _PangoEngineLangClass.script_break$VH;
     }
-    public static MemoryAddress script_break$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoEngineLangClass.script_break$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*script_break)(PangoEngineLang*,char*,int,PangoAnalysis*,PangoLogAttr*,int);
+     * }
+     */
+    public static MemorySegment script_break$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoEngineLangClass.script_break$VH.get(seg);
     }
-    public static void script_break$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*script_break)(PangoEngineLang*,char*,int,PangoAnalysis*,PangoLogAttr*,int);
+     * }
+     */
+    public static void script_break$set(MemorySegment seg, MemorySegment x) {
         _PangoEngineLangClass.script_break$VH.set(seg, x);
     }
-    public static MemoryAddress script_break$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoEngineLangClass.script_break$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment script_break$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoEngineLangClass.script_break$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void script_break$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void script_break$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoEngineLangClass.script_break$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static script_break script_break (MemorySegment segment, MemorySession session) {
-        return script_break.ofAddress(script_break$get(segment), session);
+    public static script_break script_break(MemorySegment segment, SegmentScope scope) {
+        return script_break.ofAddress(script_break$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GVfs extends _GVfs {
+/**
+ * {@snippet :
+ * typedef struct _GVfs GVfs;
+ * }
+ */
+public final class GVfs extends _GVfs {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GVfs() {}
 }
 
 

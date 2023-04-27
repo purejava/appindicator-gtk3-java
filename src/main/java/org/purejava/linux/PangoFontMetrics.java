@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoFontMetrics extends _PangoFontMetrics {
+/**
+ * {@snippet :
+ * typedef struct _PangoFontMetrics PangoFontMetrics;
+ * }
+ */
+public final class PangoFontMetrics extends _PangoFontMetrics {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoFontMetrics() {}
 }
 
 

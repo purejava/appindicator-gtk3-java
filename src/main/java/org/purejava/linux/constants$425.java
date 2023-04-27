@@ -7,32 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$425 {
+final class constants$425 {
 
-    static final FunctionDescriptor GClassFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$425() {}
+    static final FunctionDescriptor g_variant_dict_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_variant_dict_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dict_get_type",
+        constants$425.g_variant_dict_get_type$FUNC
     );
-    static final MethodHandle GClassFinalizeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$425.GClassFinalizeFunc$FUNC
+    static final FunctionDescriptor g_key_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_key_file_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_type",
+        constants$425.g_key_file_get_type$FUNC
     );
-    static final FunctionDescriptor GInstanceInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_main_loop_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_main_loop_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_get_type",
+        constants$425.g_main_loop_get_type$FUNC
     );
-    static final MethodHandle GInstanceInitFunc$MH = RuntimeHelper.downcallHandle(
-        constants$425.GInstanceInitFunc$FUNC
+    static final FunctionDescriptor g_main_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_main_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_get_type",
+        constants$425.g_main_context_get_type$FUNC
     );
-    static final FunctionDescriptor GInterfaceInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_source_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_type",
+        constants$425.g_source_get_type$FUNC
     );
-    static final MethodHandle GInterfaceInitFunc$MH = RuntimeHelper.downcallHandle(
-        constants$425.GInterfaceInitFunc$FUNC
-    );
-    static final FunctionDescriptor GInterfaceFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_pollfd_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_pollfd_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_pollfd_get_type",
+        constants$425.g_pollfd_get_type$FUNC
     );
 }
 

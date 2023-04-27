@@ -7,54 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1275 {
+final class constants$1275 {
 
-    static final FunctionDescriptor gdk_display_supports_selection_notification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_supports_selection_notification$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_selection_notification",
-        constants$1275.gdk_display_supports_selection_notification$FUNC
-    );
-    static final FunctionDescriptor gdk_display_request_selection_notification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_request_selection_notification$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_request_selection_notification",
-        constants$1275.gdk_display_request_selection_notification$FUNC
-    );
-    static final FunctionDescriptor gdk_display_supports_clipboard_persistence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_supports_clipboard_persistence$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_clipboard_persistence",
-        constants$1275.gdk_display_supports_clipboard_persistence$FUNC
-    );
-    static final FunctionDescriptor gdk_display_store_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1275() {}
+    static final FunctionDescriptor gtk_widget_set_margin_bottom$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_display_store_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_store_clipboard",
-        constants$1275.gdk_display_store_clipboard$FUNC
+    static final MethodHandle gtk_widget_set_margin_bottom$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_margin_bottom",
+        constants$1275.gtk_widget_set_margin_bottom$FUNC
     );
-    static final FunctionDescriptor gdk_display_supports_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_supports_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_shapes",
-        constants$1275.gdk_display_supports_shapes$FUNC
+    static final MethodHandle gtk_widget_get_events$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_events",
+        constants$1275.gtk_widget_get_events$FUNC
     );
-    static final FunctionDescriptor gdk_display_supports_input_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_device_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_supports_input_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_input_shapes",
-        constants$1275.gdk_display_supports_input_shapes$FUNC
+    static final MethodHandle gtk_widget_get_device_events$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_device_events",
+        constants$1275.gtk_widget_get_device_events$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_pointer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_pointer$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_pointer",
+        constants$1275.gtk_widget_get_pointer$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_is_ancestor$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_is_ancestor",
+        constants$1275.gtk_widget_is_ancestor$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_translate_coordinates$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_translate_coordinates$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_translate_coordinates",
+        constants$1275.gtk_widget_translate_coordinates$FUNC
     );
 }
 

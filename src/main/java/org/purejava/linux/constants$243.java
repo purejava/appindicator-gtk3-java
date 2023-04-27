@@ -7,57 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$243 {
+final class constants$243 {
 
-    static final FunctionDescriptor g_variant_dict_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$243() {}
+    static final FunctionDescriptor g_variant_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_new$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_new",
-        constants$243.g_variant_dict_new$FUNC
+    static final MethodHandle g_variant_get_int64$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_int64",
+        constants$243.g_variant_get_int64$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_init$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_init",
-        constants$243.g_variant_dict_init$FUNC
+    static final MethodHandle g_variant_get_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_uint64",
+        constants$243.g_variant_get_uint64$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_handle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_lookup$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_dict_lookup",
-        constants$243.g_variant_dict_lookup$FUNC
+    static final MethodHandle g_variant_get_handle$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_handle",
+        constants$243.g_variant_get_handle$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_lookup_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_lookup_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_lookup_value",
-        constants$243.g_variant_dict_lookup_value$FUNC
+    static final MethodHandle g_variant_get_double$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_double",
+        constants$243.g_variant_get_double$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_variant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_contains$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_contains",
-        constants$243.g_variant_dict_contains$FUNC
+    static final MethodHandle g_variant_get_variant$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_variant",
+        constants$243.g_variant_get_variant$FUNC
     );
-    static final FunctionDescriptor g_variant_dict_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dict_insert$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_dict_insert",
-        constants$243.g_variant_dict_insert$FUNC
+    static final MethodHandle g_variant_get_string$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_string",
+        constants$243.g_variant_get_string$FUNC
     );
 }
 

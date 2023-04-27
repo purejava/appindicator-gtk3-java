@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1603 {
+final class constants$1603 {
 
-    static final FunctionDescriptor gtk_text_iter_set_line$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1603() {}
+    static final FunctionDescriptor gtk_gesture_is_grouped_with$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_set_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line",
-        constants$1603.gtk_text_iter_set_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_set_line_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_set_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_offset",
-        constants$1603.gtk_text_iter_set_line_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_set_line_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_set_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_index",
-        constants$1603.gtk_text_iter_set_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_to_end$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_to_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_end",
-        constants$1603.gtk_text_iter_forward_to_end$FUNC
+    static final MethodHandle gtk_gesture_is_grouped_with$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_is_grouped_with",
+        constants$1603.gtk_gesture_is_grouped_with$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_to_line_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_single_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gesture_single_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_get_type",
+        constants$1603.gtk_gesture_single_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_single_get_touch_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_to_line_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_line_end",
-        constants$1603.gtk_text_iter_forward_to_line_end$FUNC
+    static final MethodHandle gtk_gesture_single_get_touch_only$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_get_touch_only",
+        constants$1603.gtk_gesture_single_get_touch_only$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_set_visible_line_offset$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_gesture_single_set_touch_only$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_set_visible_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_visible_line_offset",
-        constants$1603.gtk_text_iter_set_visible_line_offset$FUNC
+    static final MethodHandle gtk_gesture_single_set_touch_only$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_set_touch_only",
+        constants$1603.gtk_gesture_single_set_touch_only$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_single_get_exclusive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_single_get_exclusive$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_get_exclusive",
+        constants$1603.gtk_gesture_single_get_exclusive$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_single_set_exclusive$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_single_set_exclusive$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_set_exclusive",
+        constants$1603.gtk_gesture_single_set_exclusive$FUNC
     );
 }
 

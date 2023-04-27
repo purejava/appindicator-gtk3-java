@@ -7,53 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1459 {
+final class constants$1459 {
 
-    static final FunctionDescriptor gtk_widget_is_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_is_composited$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_composited",
-        constants$1459.gtk_widget_is_composited$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1459() {}
+    static final FunctionDescriptor gtk_entry_get_icon_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_shape_combine_region",
-        constants$1459.gtk_widget_shape_combine_region$FUNC
+    static final MethodHandle gtk_entry_get_icon_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_gicon",
+        constants$1459.gtk_entry_get_icon_gicon$FUNC
     );
-    static final FunctionDescriptor gtk_widget_input_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_icon_activatable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_input_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_input_shape_combine_region",
-        constants$1459.gtk_widget_input_shape_combine_region$FUNC
+    static final MethodHandle gtk_entry_set_icon_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_activatable",
+        constants$1459.gtk_entry_set_icon_activatable$FUNC
     );
-    static final FunctionDescriptor gtk_widget_list_mnemonic_labels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_list_mnemonic_labels$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_list_mnemonic_labels",
-        constants$1459.gtk_widget_list_mnemonic_labels$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_add_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_get_icon_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_add_mnemonic_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_mnemonic_label",
-        constants$1459.gtk_widget_add_mnemonic_label$FUNC
+    static final MethodHandle gtk_entry_get_icon_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_activatable",
+        constants$1459.gtk_entry_get_icon_activatable$FUNC
     );
-    static final FunctionDescriptor gtk_widget_remove_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_icon_sensitive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_remove_mnemonic_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_mnemonic_label",
-        constants$1459.gtk_widget_remove_mnemonic_label$FUNC
+    static final MethodHandle gtk_entry_set_icon_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_sensitive",
+        constants$1459.gtk_entry_set_icon_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_icon_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_icon_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_sensitive",
+        constants$1459.gtk_entry_get_icon_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_icon_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_icon_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_at_pos",
+        constants$1459.gtk_entry_get_icon_at_pos$FUNC
     );
 }
 

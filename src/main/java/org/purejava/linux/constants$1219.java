@@ -7,48 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1219 {
+final class constants$1219 {
 
-    static final FunctionDescriptor gdk_device_get_seat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1219() {}
+    static final FunctionDescriptor atk_text_attribute_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_text_attribute_get_name$MH = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_name",
+        constants$1219.atk_text_attribute_get_name$FUNC
+    );
+    static final FunctionDescriptor atk_text_attribute_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_seat$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_seat",
-        constants$1219.gdk_device_get_seat$FUNC
+    static final MethodHandle atk_text_attribute_for_name$MH = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_for_name",
+        constants$1219.atk_text_attribute_for_name$FUNC
     );
-    static final FunctionDescriptor gdk_device_get_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_text_attribute_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_device_get_axes$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_axes",
-        constants$1219.gdk_device_get_axes$FUNC
+    static final MethodHandle atk_text_attribute_get_value$MH = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_value",
+        constants$1219.atk_text_attribute_get_value$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_drag_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_type",
-        constants$1219.gdk_drag_context_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_set_device$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_text_scroll_substring_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_set_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_set_device",
-        constants$1219.gdk_drag_context_set_device$FUNC
+    static final MethodHandle atk_text_scroll_substring_to$MH = RuntimeHelper.downcallHandle(
+        "atk_text_scroll_substring_to",
+        constants$1219.atk_text_scroll_substring_to$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_text_scroll_substring_to_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_device",
-        constants$1219.gdk_drag_context_get_device$FUNC
+    static final MethodHandle atk_text_scroll_substring_to_point$MH = RuntimeHelper.downcallHandle(
+        "atk_text_scroll_substring_to_point",
+        constants$1219.atk_text_scroll_substring_to_point$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_list_targets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_context_list_targets$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_list_targets",
-        constants$1219.gdk_drag_context_list_targets$FUNC
+    static final FunctionDescriptor atk_editable_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_editable_text_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_get_type",
+        constants$1219.atk_editable_text_get_type$FUNC
     );
 }
 

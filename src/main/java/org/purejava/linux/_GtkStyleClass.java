@@ -7,9 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkStyleClass {
+ *     GObjectClass parent_class;
+ *     void (*realize)(GtkStyle*);
+ *     void (*unrealize)(GtkStyle*);
+ *     void (*copy)(GtkStyle*,GtkStyle*);
+ *     GtkStyle* (*clone)(GtkStyle*);
+ *     void (*init_from_rc)(GtkStyle*,GtkRcStyle*);
+ *     void (*set_background)(GtkStyle*,GdkWindow*,GtkStateType);
+ *     GdkPixbuf* (*render_icon)(GtkStyle*,const GtkIconSource*,GtkTextDirection,GtkStateType,GtkIconSize,GtkWidget*,const gchar*);
+ *     void (*draw_hline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+ *     void (*draw_vline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+ *     void (*draw_shadow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_arrow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,GtkArrowType,gboolean,gint,gint,gint,gint);
+ *     void (*draw_diamond)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_flat_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_check)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_option)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_tab)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_shadow_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+ *     void (*draw_box_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+ *     void (*draw_extension)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType);
+ *     void (*draw_focus)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+ *     void (*draw_slider)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+ *     void (*draw_handle)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+ *     void (*draw_expander)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,GtkExpanderStyle);
+ *     void (*draw_layout)(GtkStyle*,cairo_t*,GtkStateType,gboolean,GtkWidget*,const gchar*,gint,gint,PangoLayout*);
+ *     void (*draw_resize_grip)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,GdkWindowEdge,gint,gint,gint,gint);
+ *     void (*draw_spinner)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,guint,gint,gint,gint,gint);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ *     void (*_gtk_reserved5)();
+ *     void (*_gtk_reserved6)();
+ *     void (*_gtk_reserved7)();
+ *     void (*_gtk_reserved8)();
+ *     void (*_gtk_reserved9)();
+ *     void (*_gtk_reserved10)();
+ *     void (*_gtk_reserved11)();
+ * };
+ * }
+ */
 public class _GtkStyleClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +69,10 @@ public class _GtkStyleClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("realize"),
         Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
@@ -74,20 +122,32 @@ public class _GtkStyleClass {
     static final FunctionDescriptor realize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle realize$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.realize$FUNC
+    static final FunctionDescriptor realize_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle realize_UP$MH = RuntimeHelper.upcallHandle(realize.class, "apply", _GtkStyleClass.realize_UP$FUNC);
+    static final FunctionDescriptor realize_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle realize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.realize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*realize)(GtkStyle*);
+     * }
+     */
     public interface realize {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(realize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(realize.class, fi, _GtkStyleClass.realize$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(realize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.realize_UP$MH, fi, _GtkStyleClass.realize$FUNC, scope);
         }
-        static realize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static realize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkStyleClass.realize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkStyleClass.realize_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -99,38 +159,62 @@ public class _GtkStyleClass {
     public static VarHandle realize$VH() {
         return _GtkStyleClass.realize$VH;
     }
-    public static MemoryAddress realize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.realize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*realize)(GtkStyle*);
+     * }
+     */
+    public static MemorySegment realize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.realize$VH.get(seg);
     }
-    public static void realize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*realize)(GtkStyle*);
+     * }
+     */
+    public static void realize$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.realize$VH.set(seg, x);
     }
-    public static MemoryAddress realize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.realize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment realize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.realize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void realize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void realize$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.realize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static realize realize (MemorySegment segment, MemorySession session) {
-        return realize.ofAddress(realize$get(segment), session);
+    public static realize realize(MemorySegment segment, SegmentScope scope) {
+        return realize.ofAddress(realize$get(segment), scope);
     }
     static final FunctionDescriptor unrealize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unrealize$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.unrealize$FUNC
+    static final FunctionDescriptor unrealize_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unrealize_UP$MH = RuntimeHelper.upcallHandle(unrealize.class, "apply", _GtkStyleClass.unrealize_UP$FUNC);
+    static final FunctionDescriptor unrealize_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unrealize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.unrealize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*unrealize)(GtkStyle*);
+     * }
+     */
     public interface unrealize {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(unrealize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unrealize.class, fi, _GtkStyleClass.unrealize$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(unrealize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.unrealize_UP$MH, fi, _GtkStyleClass.unrealize$FUNC, scope);
         }
-        static unrealize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static unrealize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkStyleClass.unrealize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkStyleClass.unrealize_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -142,39 +226,65 @@ public class _GtkStyleClass {
     public static VarHandle unrealize$VH() {
         return _GtkStyleClass.unrealize$VH;
     }
-    public static MemoryAddress unrealize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.unrealize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*unrealize)(GtkStyle*);
+     * }
+     */
+    public static MemorySegment unrealize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.unrealize$VH.get(seg);
     }
-    public static void unrealize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*unrealize)(GtkStyle*);
+     * }
+     */
+    public static void unrealize$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.unrealize$VH.set(seg, x);
     }
-    public static MemoryAddress unrealize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.unrealize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unrealize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.unrealize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unrealize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unrealize$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.unrealize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unrealize unrealize (MemorySegment segment, MemorySession session) {
-        return unrealize.ofAddress(unrealize$get(segment), session);
+    public static unrealize unrealize(MemorySegment segment, SegmentScope scope) {
+        return unrealize.ofAddress(unrealize$get(segment), scope);
     }
     static final FunctionDescriptor copy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle copy$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.copy$FUNC
+    static final FunctionDescriptor copy_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle copy_UP$MH = RuntimeHelper.upcallHandle(copy.class, "apply", _GtkStyleClass.copy_UP$FUNC);
+    static final FunctionDescriptor copy_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle copy_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.copy_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*copy)(GtkStyle*,GtkStyle*);
+     * }
+     */
     public interface copy {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(copy fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(copy.class, fi, _GtkStyleClass.copy$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(copy fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.copy_UP$MH, fi, _GtkStyleClass.copy$FUNC, scope);
         }
-        static copy ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static copy ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkStyleClass.copy$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkStyleClass.copy_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -186,38 +296,62 @@ public class _GtkStyleClass {
     public static VarHandle copy$VH() {
         return _GtkStyleClass.copy$VH;
     }
-    public static MemoryAddress copy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.copy$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*copy)(GtkStyle*,GtkStyle*);
+     * }
+     */
+    public static MemorySegment copy$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.copy$VH.get(seg);
     }
-    public static void copy$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*copy)(GtkStyle*,GtkStyle*);
+     * }
+     */
+    public static void copy$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.copy$VH.set(seg, x);
     }
-    public static MemoryAddress copy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.copy$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment copy$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.copy$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void copy$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void copy$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.copy$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static copy copy (MemorySegment segment, MemorySession session) {
-        return copy.ofAddress(copy$get(segment), session);
+    public static copy copy(MemorySegment segment, SegmentScope scope) {
+        return copy.ofAddress(copy$get(segment), scope);
     }
     static final FunctionDescriptor clone$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle clone$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.clone$FUNC
+    static final FunctionDescriptor clone_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle clone_UP$MH = RuntimeHelper.upcallHandle(clone.class, "apply", _GtkStyleClass.clone_UP$FUNC);
+    static final FunctionDescriptor clone_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle clone_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.clone_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkStyle* (*clone)(GtkStyle*);
+     * }
+     */
     public interface clone {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(clone fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(clone.class, fi, _GtkStyleClass.clone$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(clone fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.clone_UP$MH, fi, _GtkStyleClass.clone$FUNC, scope);
         }
-        static clone ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static clone ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkStyleClass.clone$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkStyleClass.clone_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -229,39 +363,65 @@ public class _GtkStyleClass {
     public static VarHandle clone$VH() {
         return _GtkStyleClass.clone$VH;
     }
-    public static MemoryAddress clone$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.clone$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkStyle* (*clone)(GtkStyle*);
+     * }
+     */
+    public static MemorySegment clone$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.clone$VH.get(seg);
     }
-    public static void clone$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkStyle* (*clone)(GtkStyle*);
+     * }
+     */
+    public static void clone$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.clone$VH.set(seg, x);
     }
-    public static MemoryAddress clone$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.clone$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment clone$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.clone$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void clone$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void clone$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.clone$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static clone clone (MemorySegment segment, MemorySession session) {
-        return clone.ofAddress(clone$get(segment), session);
+    public static clone clone(MemorySegment segment, SegmentScope scope) {
+        return clone.ofAddress(clone$get(segment), scope);
     }
     static final FunctionDescriptor init_from_rc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle init_from_rc$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.init_from_rc$FUNC
+    static final FunctionDescriptor init_from_rc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle init_from_rc_UP$MH = RuntimeHelper.upcallHandle(init_from_rc.class, "apply", _GtkStyleClass.init_from_rc_UP$FUNC);
+    static final FunctionDescriptor init_from_rc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle init_from_rc_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.init_from_rc_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*init_from_rc)(GtkStyle*,GtkRcStyle*);
+     * }
+     */
     public interface init_from_rc {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(init_from_rc fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(init_from_rc.class, fi, _GtkStyleClass.init_from_rc$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(init_from_rc fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.init_from_rc_UP$MH, fi, _GtkStyleClass.init_from_rc$FUNC, scope);
         }
-        static init_from_rc ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static init_from_rc ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkStyleClass.init_from_rc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkStyleClass.init_from_rc_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -273,40 +433,68 @@ public class _GtkStyleClass {
     public static VarHandle init_from_rc$VH() {
         return _GtkStyleClass.init_from_rc$VH;
     }
-    public static MemoryAddress init_from_rc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.init_from_rc$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*init_from_rc)(GtkStyle*,GtkRcStyle*);
+     * }
+     */
+    public static MemorySegment init_from_rc$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.init_from_rc$VH.get(seg);
     }
-    public static void init_from_rc$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*init_from_rc)(GtkStyle*,GtkRcStyle*);
+     * }
+     */
+    public static void init_from_rc$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.init_from_rc$VH.set(seg, x);
     }
-    public static MemoryAddress init_from_rc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.init_from_rc$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment init_from_rc$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.init_from_rc$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void init_from_rc$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void init_from_rc$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.init_from_rc$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static init_from_rc init_from_rc (MemorySegment segment, MemorySession session) {
-        return init_from_rc.ofAddress(init_from_rc$get(segment), session);
+    public static init_from_rc init_from_rc(MemorySegment segment, SegmentScope scope) {
+        return init_from_rc.ofAddress(init_from_rc$get(segment), scope);
     }
     static final FunctionDescriptor set_background$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_background$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.set_background$FUNC
+    static final FunctionDescriptor set_background_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_background_UP$MH = RuntimeHelper.upcallHandle(set_background.class, "apply", _GtkStyleClass.set_background_UP$FUNC);
+    static final FunctionDescriptor set_background_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_background_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.set_background_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_background)(GtkStyle*,GdkWindow*,GtkStateType);
+     * }
+     */
     public interface set_background {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(set_background fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_background.class, fi, _GtkStyleClass.set_background$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(set_background fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.set_background_UP$MH, fi, _GtkStyleClass.set_background$FUNC, scope);
         }
-        static set_background ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static set_background ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkStyleClass.set_background$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GtkStyleClass.set_background_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,20 +506,32 @@ public class _GtkStyleClass {
     public static VarHandle set_background$VH() {
         return _GtkStyleClass.set_background$VH;
     }
-    public static MemoryAddress set_background$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.set_background$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_background)(GtkStyle*,GdkWindow*,GtkStateType);
+     * }
+     */
+    public static MemorySegment set_background$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.set_background$VH.get(seg);
     }
-    public static void set_background$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_background)(GtkStyle*,GdkWindow*,GtkStateType);
+     * }
+     */
+    public static void set_background$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.set_background$VH.set(seg, x);
     }
-    public static MemoryAddress set_background$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.set_background$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_background$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.set_background$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_background$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_background$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.set_background$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_background set_background (MemorySegment segment, MemorySession session) {
-        return set_background.ofAddress(set_background$get(segment), session);
+    public static set_background set_background(MemorySegment segment, SegmentScope scope) {
+        return set_background.ofAddress(set_background$get(segment), scope);
     }
     static final FunctionDescriptor render_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -342,20 +542,44 @@ public class _GtkStyleClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle render_icon$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.render_icon$FUNC
+    static final FunctionDescriptor render_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle render_icon_UP$MH = RuntimeHelper.upcallHandle(render_icon.class, "apply", _GtkStyleClass.render_icon_UP$FUNC);
+    static final FunctionDescriptor render_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle render_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.render_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GdkPixbuf* (*render_icon)(GtkStyle*,const GtkIconSource*,GtkTextDirection,GtkStateType,GtkIconSize,GtkWidget*,const gchar*);
+     * }
+     */
     public interface render_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, int _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(render_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(render_icon.class, fi, _GtkStyleClass.render_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, int _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(render_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.render_icon_UP$MH, fi, _GtkStyleClass.render_icon$FUNC, scope);
         }
-        static render_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, int __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static render_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, int __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkStyleClass.render_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, __x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    return (java.lang.foreign.MemorySegment)_GtkStyleClass.render_icon_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -367,20 +591,32 @@ public class _GtkStyleClass {
     public static VarHandle render_icon$VH() {
         return _GtkStyleClass.render_icon$VH;
     }
-    public static MemoryAddress render_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.render_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkPixbuf* (*render_icon)(GtkStyle*,const GtkIconSource*,GtkTextDirection,GtkStateType,GtkIconSize,GtkWidget*,const gchar*);
+     * }
+     */
+    public static MemorySegment render_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.render_icon$VH.get(seg);
     }
-    public static void render_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkPixbuf* (*render_icon)(GtkStyle*,const GtkIconSource*,GtkTextDirection,GtkStateType,GtkIconSize,GtkWidget*,const gchar*);
+     * }
+     */
+    public static void render_icon$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.render_icon$VH.set(seg, x);
     }
-    public static MemoryAddress render_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.render_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment render_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.render_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void render_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void render_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.render_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static render_icon render_icon (MemorySegment segment, MemorySession session) {
-        return render_icon.ofAddress(render_icon$get(segment), session);
+    public static render_icon render_icon(MemorySegment segment, SegmentScope scope) {
+        return render_icon.ofAddress(render_icon$get(segment), scope);
     }
     static final FunctionDescriptor draw_hline$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -392,20 +628,46 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_hline$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_hline$FUNC
+    static final FunctionDescriptor draw_hline_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_hline_UP$MH = RuntimeHelper.upcallHandle(draw_hline.class, "apply", _GtkStyleClass.draw_hline_UP$FUNC);
+    static final FunctionDescriptor draw_hline_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_hline_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_hline_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_hline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
     public interface draw_hline {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7);
-        static MemorySegment allocate(draw_hline fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_hline.class, fi, _GtkStyleClass.draw_hline$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7);
+        static MemorySegment allocate(draw_hline fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_hline_UP$MH, fi, _GtkStyleClass.draw_hline$FUNC, scope);
         }
-        static draw_hline ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7) -> {
+        static draw_hline ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7) -> {
                 try {
-                    _GtkStyleClass.draw_hline$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7);
+                    _GtkStyleClass.draw_hline_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -417,20 +679,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_hline$VH() {
         return _GtkStyleClass.draw_hline$VH;
     }
-    public static MemoryAddress draw_hline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_hline$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_hline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_hline$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_hline$VH.get(seg);
     }
-    public static void draw_hline$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_hline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
+    public static void draw_hline$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_hline$VH.set(seg, x);
     }
-    public static MemoryAddress draw_hline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_hline$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_hline$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_hline$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_hline$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_hline$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_hline$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_hline draw_hline (MemorySegment segment, MemorySession session) {
-        return draw_hline.ofAddress(draw_hline$get(segment), session);
+    public static draw_hline draw_hline(MemorySegment segment, SegmentScope scope) {
+        return draw_hline.ofAddress(draw_hline$get(segment), scope);
     }
     static final FunctionDescriptor draw_vline$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -442,20 +716,46 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_vline$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_vline$FUNC
+    static final FunctionDescriptor draw_vline_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_vline_UP$MH = RuntimeHelper.upcallHandle(draw_vline.class, "apply", _GtkStyleClass.draw_vline_UP$FUNC);
+    static final FunctionDescriptor draw_vline_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_vline_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_vline_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_vline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
     public interface draw_vline {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7);
-        static MemorySegment allocate(draw_vline fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_vline.class, fi, _GtkStyleClass.draw_vline$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7);
+        static MemorySegment allocate(draw_vline fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_vline_UP$MH, fi, _GtkStyleClass.draw_vline$FUNC, scope);
         }
-        static draw_vline ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7) -> {
+        static draw_vline ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7) -> {
                 try {
-                    _GtkStyleClass.draw_vline$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7);
+                    _GtkStyleClass.draw_vline_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -467,20 +767,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_vline$VH() {
         return _GtkStyleClass.draw_vline$VH;
     }
-    public static MemoryAddress draw_vline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_vline$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_vline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_vline$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_vline$VH.get(seg);
     }
-    public static void draw_vline$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_vline)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint);
+     * }
+     */
+    public static void draw_vline$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_vline$VH.set(seg, x);
     }
-    public static MemoryAddress draw_vline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_vline$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_vline$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_vline$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_vline$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_vline$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_vline$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_vline draw_vline (MemorySegment segment, MemorySession session) {
-        return draw_vline.ofAddress(draw_vline$get(segment), session);
+    public static draw_vline draw_vline(MemorySegment segment, SegmentScope scope) {
+        return draw_vline.ofAddress(draw_vline$get(segment), scope);
     }
     static final FunctionDescriptor draw_shadow$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -494,20 +806,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_shadow$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_shadow$FUNC
+    static final FunctionDescriptor draw_shadow_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_shadow_UP$MH = RuntimeHelper.upcallHandle(draw_shadow.class, "apply", _GtkStyleClass.draw_shadow_UP$FUNC);
+    static final FunctionDescriptor draw_shadow_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_shadow_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_shadow_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_shadow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_shadow {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_shadow fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_shadow.class, fi, _GtkStyleClass.draw_shadow$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_shadow fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_shadow_UP$MH, fi, _GtkStyleClass.draw_shadow$FUNC, scope);
         }
-        static draw_shadow ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_shadow ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_shadow$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_shadow_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -519,20 +861,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_shadow$VH() {
         return _GtkStyleClass.draw_shadow$VH;
     }
-    public static MemoryAddress draw_shadow$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_shadow$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_shadow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_shadow$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_shadow$VH.get(seg);
     }
-    public static void draw_shadow$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_shadow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_shadow$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_shadow$VH.set(seg, x);
     }
-    public static MemoryAddress draw_shadow$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_shadow$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_shadow$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_shadow$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_shadow$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_shadow$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_shadow$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_shadow draw_shadow (MemorySegment segment, MemorySession session) {
-        return draw_shadow.ofAddress(draw_shadow$get(segment), session);
+    public static draw_shadow draw_shadow(MemorySegment segment, SegmentScope scope) {
+        return draw_shadow.ofAddress(draw_shadow$get(segment), scope);
     }
     static final FunctionDescriptor draw_arrow$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -548,20 +902,54 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_arrow$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_arrow$FUNC
+    static final FunctionDescriptor draw_arrow_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_arrow_UP$MH = RuntimeHelper.upcallHandle(draw_arrow.class, "apply", _GtkStyleClass.draw_arrow_UP$FUNC);
+    static final FunctionDescriptor draw_arrow_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_arrow_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_arrow_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_arrow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,GtkArrowType,gboolean,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_arrow {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11);
-        static MemorySegment allocate(draw_arrow fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_arrow.class, fi, _GtkStyleClass.draw_arrow$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11);
+        static MemorySegment allocate(draw_arrow fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_arrow_UP$MH, fi, _GtkStyleClass.draw_arrow$FUNC, scope);
         }
-        static draw_arrow ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11) -> {
+        static draw_arrow ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11) -> {
                 try {
-                    _GtkStyleClass.draw_arrow$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10, __x11);
+                    _GtkStyleClass.draw_arrow_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10, __x11);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -573,20 +961,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_arrow$VH() {
         return _GtkStyleClass.draw_arrow$VH;
     }
-    public static MemoryAddress draw_arrow$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_arrow$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_arrow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,GtkArrowType,gboolean,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_arrow$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_arrow$VH.get(seg);
     }
-    public static void draw_arrow$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_arrow)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,GtkArrowType,gboolean,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_arrow$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_arrow$VH.set(seg, x);
     }
-    public static MemoryAddress draw_arrow$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_arrow$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_arrow$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_arrow$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_arrow$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_arrow$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_arrow$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_arrow draw_arrow (MemorySegment segment, MemorySession session) {
-        return draw_arrow.ofAddress(draw_arrow$get(segment), session);
+    public static draw_arrow draw_arrow(MemorySegment segment, SegmentScope scope) {
+        return draw_arrow.ofAddress(draw_arrow$get(segment), scope);
     }
     static final FunctionDescriptor draw_diamond$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -600,20 +1000,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_diamond$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_diamond$FUNC
+    static final FunctionDescriptor draw_diamond_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_diamond_UP$MH = RuntimeHelper.upcallHandle(draw_diamond.class, "apply", _GtkStyleClass.draw_diamond_UP$FUNC);
+    static final FunctionDescriptor draw_diamond_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_diamond_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_diamond_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_diamond)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_diamond {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_diamond fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_diamond.class, fi, _GtkStyleClass.draw_diamond$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_diamond fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_diamond_UP$MH, fi, _GtkStyleClass.draw_diamond$FUNC, scope);
         }
-        static draw_diamond ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_diamond ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_diamond$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_diamond_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -625,20 +1055,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_diamond$VH() {
         return _GtkStyleClass.draw_diamond$VH;
     }
-    public static MemoryAddress draw_diamond$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_diamond$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_diamond)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_diamond$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_diamond$VH.get(seg);
     }
-    public static void draw_diamond$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_diamond)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_diamond$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_diamond$VH.set(seg, x);
     }
-    public static MemoryAddress draw_diamond$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_diamond$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_diamond$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_diamond$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_diamond$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_diamond$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_diamond$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_diamond draw_diamond (MemorySegment segment, MemorySession session) {
-        return draw_diamond.ofAddress(draw_diamond$get(segment), session);
+    public static draw_diamond draw_diamond(MemorySegment segment, SegmentScope scope) {
+        return draw_diamond.ofAddress(draw_diamond$get(segment), scope);
     }
     static final FunctionDescriptor draw_box$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -652,20 +1094,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_box$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_box$FUNC
+    static final FunctionDescriptor draw_box_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_box_UP$MH = RuntimeHelper.upcallHandle(draw_box.class, "apply", _GtkStyleClass.draw_box_UP$FUNC);
+    static final FunctionDescriptor draw_box_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_box_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_box_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_box {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_box fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_box.class, fi, _GtkStyleClass.draw_box$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_box fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_box_UP$MH, fi, _GtkStyleClass.draw_box$FUNC, scope);
         }
-        static draw_box ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_box ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_box$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_box_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -677,20 +1149,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_box$VH() {
         return _GtkStyleClass.draw_box$VH;
     }
-    public static MemoryAddress draw_box$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_box$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_box$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_box$VH.get(seg);
     }
-    public static void draw_box$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_box$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_box$VH.set(seg, x);
     }
-    public static MemoryAddress draw_box$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_box$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_box$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_box$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_box$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_box$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_box$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_box draw_box (MemorySegment segment, MemorySession session) {
-        return draw_box.ofAddress(draw_box$get(segment), session);
+    public static draw_box draw_box(MemorySegment segment, SegmentScope scope) {
+        return draw_box.ofAddress(draw_box$get(segment), scope);
     }
     static final FunctionDescriptor draw_flat_box$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -704,20 +1188,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_flat_box$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_flat_box$FUNC
+    static final FunctionDescriptor draw_flat_box_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_flat_box_UP$MH = RuntimeHelper.upcallHandle(draw_flat_box.class, "apply", _GtkStyleClass.draw_flat_box_UP$FUNC);
+    static final FunctionDescriptor draw_flat_box_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_flat_box_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_flat_box_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_flat_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_flat_box {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_flat_box fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_flat_box.class, fi, _GtkStyleClass.draw_flat_box$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_flat_box fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_flat_box_UP$MH, fi, _GtkStyleClass.draw_flat_box$FUNC, scope);
         }
-        static draw_flat_box ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_flat_box ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_flat_box$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_flat_box_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -729,20 +1243,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_flat_box$VH() {
         return _GtkStyleClass.draw_flat_box$VH;
     }
-    public static MemoryAddress draw_flat_box$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_flat_box$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_flat_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_flat_box$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_flat_box$VH.get(seg);
     }
-    public static void draw_flat_box$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_flat_box)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_flat_box$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_flat_box$VH.set(seg, x);
     }
-    public static MemoryAddress draw_flat_box$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_flat_box$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_flat_box$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_flat_box$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_flat_box$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_flat_box$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_flat_box$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_flat_box draw_flat_box (MemorySegment segment, MemorySession session) {
-        return draw_flat_box.ofAddress(draw_flat_box$get(segment), session);
+    public static draw_flat_box draw_flat_box(MemorySegment segment, SegmentScope scope) {
+        return draw_flat_box.ofAddress(draw_flat_box$get(segment), scope);
     }
     static final FunctionDescriptor draw_check$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -756,20 +1282,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_check$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_check$FUNC
+    static final FunctionDescriptor draw_check_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_check_UP$MH = RuntimeHelper.upcallHandle(draw_check.class, "apply", _GtkStyleClass.draw_check_UP$FUNC);
+    static final FunctionDescriptor draw_check_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_check_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_check_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_check)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_check {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_check fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_check.class, fi, _GtkStyleClass.draw_check$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_check fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_check_UP$MH, fi, _GtkStyleClass.draw_check$FUNC, scope);
         }
-        static draw_check ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_check ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_check$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_check_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -781,20 +1337,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_check$VH() {
         return _GtkStyleClass.draw_check$VH;
     }
-    public static MemoryAddress draw_check$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_check$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_check)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_check$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_check$VH.get(seg);
     }
-    public static void draw_check$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_check)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_check$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_check$VH.set(seg, x);
     }
-    public static MemoryAddress draw_check$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_check$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_check$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_check$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_check$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_check$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_check$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_check draw_check (MemorySegment segment, MemorySession session) {
-        return draw_check.ofAddress(draw_check$get(segment), session);
+    public static draw_check draw_check(MemorySegment segment, SegmentScope scope) {
+        return draw_check.ofAddress(draw_check$get(segment), scope);
     }
     static final FunctionDescriptor draw_option$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -808,20 +1376,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_option$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_option$FUNC
+    static final FunctionDescriptor draw_option_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_option_UP$MH = RuntimeHelper.upcallHandle(draw_option.class, "apply", _GtkStyleClass.draw_option_UP$FUNC);
+    static final FunctionDescriptor draw_option_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_option_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_option_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_option)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_option {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_option fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_option.class, fi, _GtkStyleClass.draw_option$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_option fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_option_UP$MH, fi, _GtkStyleClass.draw_option$FUNC, scope);
         }
-        static draw_option ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_option ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_option$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_option_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -833,20 +1431,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_option$VH() {
         return _GtkStyleClass.draw_option$VH;
     }
-    public static MemoryAddress draw_option$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_option$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_option)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_option$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_option$VH.get(seg);
     }
-    public static void draw_option$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_option)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_option$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_option$VH.set(seg, x);
     }
-    public static MemoryAddress draw_option$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_option$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_option$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_option$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_option$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_option$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_option$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_option draw_option (MemorySegment segment, MemorySession session) {
-        return draw_option.ofAddress(draw_option$get(segment), session);
+    public static draw_option draw_option(MemorySegment segment, SegmentScope scope) {
+        return draw_option.ofAddress(draw_option$get(segment), scope);
     }
     static final FunctionDescriptor draw_tab$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -860,20 +1470,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_tab$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_tab$FUNC
+    static final FunctionDescriptor draw_tab_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_tab_UP$MH = RuntimeHelper.upcallHandle(draw_tab.class, "apply", _GtkStyleClass.draw_tab_UP$FUNC);
+    static final FunctionDescriptor draw_tab_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_tab_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_tab_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_tab)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_tab {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_tab fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_tab.class, fi, _GtkStyleClass.draw_tab$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_tab fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_tab_UP$MH, fi, _GtkStyleClass.draw_tab$FUNC, scope);
         }
-        static draw_tab ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_tab ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_tab$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_tab_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -885,20 +1525,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_tab$VH() {
         return _GtkStyleClass.draw_tab$VH;
     }
-    public static MemoryAddress draw_tab$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_tab$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_tab)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_tab$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_tab$VH.get(seg);
     }
-    public static void draw_tab$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_tab)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_tab$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_tab$VH.set(seg, x);
     }
-    public static MemoryAddress draw_tab$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_tab$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_tab$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_tab$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_tab$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_tab$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_tab$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_tab draw_tab (MemorySegment segment, MemorySession session) {
-        return draw_tab.ofAddress(draw_tab$get(segment), session);
+    public static draw_tab draw_tab(MemorySegment segment, SegmentScope scope) {
+        return draw_tab.ofAddress(draw_tab$get(segment), scope);
     }
     static final FunctionDescriptor draw_shadow_gap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -915,20 +1567,56 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_shadow_gap$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_shadow_gap$FUNC
+    static final FunctionDescriptor draw_shadow_gap_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_shadow_gap_UP$MH = RuntimeHelper.upcallHandle(draw_shadow_gap.class, "apply", _GtkStyleClass.draw_shadow_gap_UP$FUNC);
+    static final FunctionDescriptor draw_shadow_gap_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_shadow_gap_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_shadow_gap_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_shadow_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
     public interface draw_shadow_gap {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12);
-        static MemorySegment allocate(draw_shadow_gap fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_shadow_gap.class, fi, _GtkStyleClass.draw_shadow_gap$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12);
+        static MemorySegment allocate(draw_shadow_gap fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_shadow_gap_UP$MH, fi, _GtkStyleClass.draw_shadow_gap$FUNC, scope);
         }
-        static draw_shadow_gap ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11, int __x12) -> {
+        static draw_shadow_gap ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11, int __x12) -> {
                 try {
-                    _GtkStyleClass.draw_shadow_gap$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10, __x11, __x12);
+                    _GtkStyleClass.draw_shadow_gap_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10, __x11, __x12);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -940,20 +1628,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_shadow_gap$VH() {
         return _GtkStyleClass.draw_shadow_gap$VH;
     }
-    public static MemoryAddress draw_shadow_gap$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_shadow_gap$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_shadow_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_shadow_gap$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_shadow_gap$VH.get(seg);
     }
-    public static void draw_shadow_gap$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_shadow_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
+    public static void draw_shadow_gap$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_shadow_gap$VH.set(seg, x);
     }
-    public static MemoryAddress draw_shadow_gap$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_shadow_gap$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_shadow_gap$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_shadow_gap$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_shadow_gap$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_shadow_gap$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_shadow_gap$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_shadow_gap draw_shadow_gap (MemorySegment segment, MemorySession session) {
-        return draw_shadow_gap.ofAddress(draw_shadow_gap$get(segment), session);
+    public static draw_shadow_gap draw_shadow_gap(MemorySegment segment, SegmentScope scope) {
+        return draw_shadow_gap.ofAddress(draw_shadow_gap$get(segment), scope);
     }
     static final FunctionDescriptor draw_box_gap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -970,20 +1670,56 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_box_gap$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_box_gap$FUNC
+    static final FunctionDescriptor draw_box_gap_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_box_gap_UP$MH = RuntimeHelper.upcallHandle(draw_box_gap.class, "apply", _GtkStyleClass.draw_box_gap_UP$FUNC);
+    static final FunctionDescriptor draw_box_gap_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_box_gap_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_box_gap_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_box_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
     public interface draw_box_gap {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12);
-        static MemorySegment allocate(draw_box_gap fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_box_gap.class, fi, _GtkStyleClass.draw_box_gap$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12);
+        static MemorySegment allocate(draw_box_gap fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_box_gap_UP$MH, fi, _GtkStyleClass.draw_box_gap$FUNC, scope);
         }
-        static draw_box_gap ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11, int __x12) -> {
+        static draw_box_gap ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10, int __x11, int __x12) -> {
                 try {
-                    _GtkStyleClass.draw_box_gap$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10, __x11, __x12);
+                    _GtkStyleClass.draw_box_gap_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10, __x11, __x12);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -995,20 +1731,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_box_gap$VH() {
         return _GtkStyleClass.draw_box_gap$VH;
     }
-    public static MemoryAddress draw_box_gap$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_box_gap$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_box_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_box_gap$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_box_gap$VH.get(seg);
     }
-    public static void draw_box_gap$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_box_gap)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType,gint,gint);
+     * }
+     */
+    public static void draw_box_gap$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_box_gap$VH.set(seg, x);
     }
-    public static MemoryAddress draw_box_gap$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_box_gap$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_box_gap$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_box_gap$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_box_gap$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_box_gap$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_box_gap$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_box_gap draw_box_gap (MemorySegment segment, MemorySession session) {
-        return draw_box_gap.ofAddress(draw_box_gap$get(segment), session);
+    public static draw_box_gap draw_box_gap(MemorySegment segment, SegmentScope scope) {
+        return draw_box_gap.ofAddress(draw_box_gap$get(segment), scope);
     }
     static final FunctionDescriptor draw_extension$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1023,20 +1771,52 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_extension$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_extension$FUNC
+    static final FunctionDescriptor draw_extension_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_extension_UP$MH = RuntimeHelper.upcallHandle(draw_extension.class, "apply", _GtkStyleClass.draw_extension_UP$FUNC);
+    static final FunctionDescriptor draw_extension_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_extension_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_extension_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_extension)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType);
+     * }
+     */
     public interface draw_extension {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
-        static MemorySegment allocate(draw_extension fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_extension.class, fi, _GtkStyleClass.draw_extension$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
+        static MemorySegment allocate(draw_extension fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_extension_UP$MH, fi, _GtkStyleClass.draw_extension$FUNC, scope);
         }
-        static draw_extension ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
+        static draw_extension ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
                 try {
-                    _GtkStyleClass.draw_extension$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10);
+                    _GtkStyleClass.draw_extension_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1048,20 +1828,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_extension$VH() {
         return _GtkStyleClass.draw_extension$VH;
     }
-    public static MemoryAddress draw_extension$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_extension$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_extension)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType);
+     * }
+     */
+    public static MemorySegment draw_extension$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_extension$VH.get(seg);
     }
-    public static void draw_extension$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_extension)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkPositionType);
+     * }
+     */
+    public static void draw_extension$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_extension$VH.set(seg, x);
     }
-    public static MemoryAddress draw_extension$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_extension$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_extension$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_extension$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_extension$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_extension$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_extension$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_extension draw_extension (MemorySegment segment, MemorySession session) {
-        return draw_extension.ofAddress(draw_extension$get(segment), session);
+    public static draw_extension draw_extension(MemorySegment segment, SegmentScope scope) {
+        return draw_extension.ofAddress(draw_extension$get(segment), scope);
     }
     static final FunctionDescriptor draw_focus$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1074,20 +1866,48 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_focus$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_focus$FUNC
+    static final FunctionDescriptor draw_focus_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_focus_UP$MH = RuntimeHelper.upcallHandle(draw_focus.class, "apply", _GtkStyleClass.draw_focus_UP$FUNC);
+    static final FunctionDescriptor draw_focus_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_focus_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_focus_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_focus)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_focus {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7, int _x8);
-        static MemorySegment allocate(draw_focus fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_focus.class, fi, _GtkStyleClass.draw_focus$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7, int _x8);
+        static MemorySegment allocate(draw_focus fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_focus_UP$MH, fi, _GtkStyleClass.draw_focus$FUNC, scope);
         }
-        static draw_focus ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7, int __x8) -> {
+        static draw_focus ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7, int __x8) -> {
                 try {
-                    _GtkStyleClass.draw_focus$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7, __x8);
+                    _GtkStyleClass.draw_focus_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1099,20 +1919,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_focus$VH() {
         return _GtkStyleClass.draw_focus$VH;
     }
-    public static MemoryAddress draw_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_focus$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_focus)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_focus$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_focus$VH.get(seg);
     }
-    public static void draw_focus$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_focus)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_focus$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_focus$VH.set(seg, x);
     }
-    public static MemoryAddress draw_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_focus$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_focus$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_focus$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_focus$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_focus$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_focus$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_focus draw_focus (MemorySegment segment, MemorySession session) {
-        return draw_focus.ofAddress(draw_focus$get(segment), session);
+    public static draw_focus draw_focus(MemorySegment segment, SegmentScope scope) {
+        return draw_focus.ofAddress(draw_focus$get(segment), scope);
     }
     static final FunctionDescriptor draw_slider$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1127,20 +1959,52 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_slider$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_slider$FUNC
+    static final FunctionDescriptor draw_slider_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_slider_UP$MH = RuntimeHelper.upcallHandle(draw_slider.class, "apply", _GtkStyleClass.draw_slider_UP$FUNC);
+    static final FunctionDescriptor draw_slider_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_slider_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_slider_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_slider)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
     public interface draw_slider {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
-        static MemorySegment allocate(draw_slider fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_slider.class, fi, _GtkStyleClass.draw_slider$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
+        static MemorySegment allocate(draw_slider fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_slider_UP$MH, fi, _GtkStyleClass.draw_slider$FUNC, scope);
         }
-        static draw_slider ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
+        static draw_slider ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
                 try {
-                    _GtkStyleClass.draw_slider$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10);
+                    _GtkStyleClass.draw_slider_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1152,20 +2016,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_slider$VH() {
         return _GtkStyleClass.draw_slider$VH;
     }
-    public static MemoryAddress draw_slider$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_slider$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_slider)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
+    public static MemorySegment draw_slider$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_slider$VH.get(seg);
     }
-    public static void draw_slider$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_slider)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
+    public static void draw_slider$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_slider$VH.set(seg, x);
     }
-    public static MemoryAddress draw_slider$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_slider$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_slider$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_slider$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_slider$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_slider$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_slider$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_slider draw_slider (MemorySegment segment, MemorySession session) {
-        return draw_slider.ofAddress(draw_slider$get(segment), session);
+    public static draw_slider draw_slider(MemorySegment segment, SegmentScope scope) {
+        return draw_slider.ofAddress(draw_slider$get(segment), scope);
     }
     static final FunctionDescriptor draw_handle$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1180,20 +2056,52 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_handle$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_handle$FUNC
+    static final FunctionDescriptor draw_handle_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_handle_UP$MH = RuntimeHelper.upcallHandle(draw_handle.class, "apply", _GtkStyleClass.draw_handle_UP$FUNC);
+    static final FunctionDescriptor draw_handle_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_handle_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_handle_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_handle)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
     public interface draw_handle {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
-        static MemorySegment allocate(draw_handle fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_handle.class, fi, _GtkStyleClass.draw_handle$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10);
+        static MemorySegment allocate(draw_handle fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_handle_UP$MH, fi, _GtkStyleClass.draw_handle$FUNC, scope);
         }
-        static draw_handle ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
+        static draw_handle ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, int __x8, int __x9, int __x10) -> {
                 try {
-                    _GtkStyleClass.draw_handle$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, __x8, __x9, __x10);
+                    _GtkStyleClass.draw_handle_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9, __x10);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1205,20 +2113,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_handle$VH() {
         return _GtkStyleClass.draw_handle$VH;
     }
-    public static MemoryAddress draw_handle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_handle$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_handle)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
+    public static MemorySegment draw_handle$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_handle$VH.get(seg);
     }
-    public static void draw_handle$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_handle)(GtkStyle*,cairo_t*,GtkStateType,GtkShadowType,GtkWidget*,const gchar*,gint,gint,gint,gint,GtkOrientation);
+     * }
+     */
+    public static void draw_handle$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_handle$VH.set(seg, x);
     }
-    public static MemoryAddress draw_handle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_handle$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_handle$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_handle$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_handle$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_handle$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_handle$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_handle draw_handle (MemorySegment segment, MemorySession session) {
-        return draw_handle.ofAddress(draw_handle$get(segment), session);
+    public static draw_handle draw_handle(MemorySegment segment, SegmentScope scope) {
+        return draw_handle.ofAddress(draw_handle$get(segment), scope);
     }
     static final FunctionDescriptor draw_expander$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1230,20 +2150,46 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_expander$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_expander$FUNC
+    static final FunctionDescriptor draw_expander_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_expander_UP$MH = RuntimeHelper.upcallHandle(draw_expander.class, "apply", _GtkStyleClass.draw_expander_UP$FUNC);
+    static final FunctionDescriptor draw_expander_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_expander_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_expander_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_expander)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,GtkExpanderStyle);
+     * }
+     */
     public interface draw_expander {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7);
-        static MemorySegment allocate(draw_expander fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_expander.class, fi, _GtkStyleClass.draw_expander$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7);
+        static MemorySegment allocate(draw_expander fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_expander_UP$MH, fi, _GtkStyleClass.draw_expander$FUNC, scope);
         }
-        static draw_expander ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7) -> {
+        static draw_expander ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7) -> {
                 try {
-                    _GtkStyleClass.draw_expander$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7);
+                    _GtkStyleClass.draw_expander_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1255,20 +2201,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_expander$VH() {
         return _GtkStyleClass.draw_expander$VH;
     }
-    public static MemoryAddress draw_expander$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_expander$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_expander)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,GtkExpanderStyle);
+     * }
+     */
+    public static MemorySegment draw_expander$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_expander$VH.get(seg);
     }
-    public static void draw_expander$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_expander)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,gint,gint,GtkExpanderStyle);
+     * }
+     */
+    public static void draw_expander$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_expander$VH.set(seg, x);
     }
-    public static MemoryAddress draw_expander$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_expander$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_expander$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_expander$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_expander$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_expander$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_expander$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_expander draw_expander (MemorySegment segment, MemorySession session) {
-        return draw_expander.ofAddress(draw_expander$get(segment), session);
+    public static draw_expander draw_expander(MemorySegment segment, SegmentScope scope) {
+        return draw_expander.ofAddress(draw_expander$get(segment), scope);
     }
     static final FunctionDescriptor draw_layout$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1281,20 +2239,48 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle draw_layout$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_layout$FUNC
+    static final FunctionDescriptor draw_layout_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle draw_layout_UP$MH = RuntimeHelper.upcallHandle(draw_layout.class, "apply", _GtkStyleClass.draw_layout_UP$FUNC);
+    static final FunctionDescriptor draw_layout_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle draw_layout_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_layout_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_layout)(GtkStyle*,cairo_t*,GtkStateType,gboolean,GtkWidget*,const gchar*,gint,gint,PangoLayout*);
+     * }
+     */
     public interface draw_layout {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, int _x6, int _x7, java.lang.foreign.MemoryAddress _x8);
-        static MemorySegment allocate(draw_layout fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_layout.class, fi, _GtkStyleClass.draw_layout$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, int _x6, int _x7, java.lang.foreign.MemorySegment _x8);
+        static MemorySegment allocate(draw_layout fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_layout_UP$MH, fi, _GtkStyleClass.draw_layout$FUNC, scope);
         }
-        static draw_layout ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, int __x6, int __x7, java.lang.foreign.MemoryAddress __x8) -> {
+        static draw_layout ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, int __x6, int __x7, java.lang.foreign.MemorySegment __x8) -> {
                 try {
-                    _GtkStyleClass.draw_layout$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, __x6, __x7, (java.lang.foreign.Addressable)__x8);
+                    _GtkStyleClass.draw_layout_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1306,20 +2292,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_layout$VH() {
         return _GtkStyleClass.draw_layout$VH;
     }
-    public static MemoryAddress draw_layout$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_layout$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_layout)(GtkStyle*,cairo_t*,GtkStateType,gboolean,GtkWidget*,const gchar*,gint,gint,PangoLayout*);
+     * }
+     */
+    public static MemorySegment draw_layout$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_layout$VH.get(seg);
     }
-    public static void draw_layout$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_layout)(GtkStyle*,cairo_t*,GtkStateType,gboolean,GtkWidget*,const gchar*,gint,gint,PangoLayout*);
+     * }
+     */
+    public static void draw_layout$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_layout$VH.set(seg, x);
     }
-    public static MemoryAddress draw_layout$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_layout$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_layout$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_layout$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_layout$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_layout$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_layout$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_layout draw_layout (MemorySegment segment, MemorySession session) {
-        return draw_layout.ofAddress(draw_layout$get(segment), session);
+    public static draw_layout draw_layout(MemorySegment segment, SegmentScope scope) {
+        return draw_layout.ofAddress(draw_layout$get(segment), scope);
     }
     static final FunctionDescriptor draw_resize_grip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1333,20 +2331,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_resize_grip$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_resize_grip$FUNC
+    static final FunctionDescriptor draw_resize_grip_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_resize_grip_UP$MH = RuntimeHelper.upcallHandle(draw_resize_grip.class, "apply", _GtkStyleClass.draw_resize_grip_UP$FUNC);
+    static final FunctionDescriptor draw_resize_grip_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_resize_grip_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_resize_grip_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_resize_grip)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,GdkWindowEdge,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_resize_grip {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_resize_grip fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_resize_grip.class, fi, _GtkStyleClass.draw_resize_grip$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_resize_grip fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_resize_grip_UP$MH, fi, _GtkStyleClass.draw_resize_grip$FUNC, scope);
         }
-        static draw_resize_grip ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_resize_grip ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_resize_grip$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_resize_grip_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1358,20 +2386,32 @@ public class _GtkStyleClass {
     public static VarHandle draw_resize_grip$VH() {
         return _GtkStyleClass.draw_resize_grip$VH;
     }
-    public static MemoryAddress draw_resize_grip$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_resize_grip$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_resize_grip)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,GdkWindowEdge,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_resize_grip$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_resize_grip$VH.get(seg);
     }
-    public static void draw_resize_grip$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_resize_grip)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,GdkWindowEdge,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_resize_grip$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_resize_grip$VH.set(seg, x);
     }
-    public static MemoryAddress draw_resize_grip$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_resize_grip$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_resize_grip$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_resize_grip$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_resize_grip$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_resize_grip$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_resize_grip$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_resize_grip draw_resize_grip (MemorySegment segment, MemorySession session) {
-        return draw_resize_grip.ofAddress(draw_resize_grip$get(segment), session);
+    public static draw_resize_grip draw_resize_grip(MemorySegment segment, SegmentScope scope) {
+        return draw_resize_grip.ofAddress(draw_resize_grip$get(segment), scope);
     }
     static final FunctionDescriptor draw_spinner$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1385,20 +2425,50 @@ public class _GtkStyleClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle draw_spinner$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass.draw_spinner$FUNC
+    static final FunctionDescriptor draw_spinner_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle draw_spinner_UP$MH = RuntimeHelper.upcallHandle(draw_spinner.class, "apply", _GtkStyleClass.draw_spinner_UP$FUNC);
+    static final FunctionDescriptor draw_spinner_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle draw_spinner_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass.draw_spinner_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*draw_spinner)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,guint,gint,gint,gint,gint);
+     * }
+     */
     public interface draw_spinner {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, int _x6, int _x7, int _x8, int _x9);
-        static MemorySegment allocate(draw_spinner fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(draw_spinner.class, fi, _GtkStyleClass.draw_spinner$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9);
+        static MemorySegment allocate(draw_spinner fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass.draw_spinner_UP$MH, fi, _GtkStyleClass.draw_spinner$FUNC, scope);
         }
-        static draw_spinner ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, int __x6, int __x7, int __x8, int __x9) -> {
+        static draw_spinner ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6, int __x7, int __x8, int __x9) -> {
                 try {
-                    _GtkStyleClass.draw_spinner$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, __x6, __x7, __x8, __x9);
+                    _GtkStyleClass.draw_spinner_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8, __x9);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1410,36 +2480,56 @@ public class _GtkStyleClass {
     public static VarHandle draw_spinner$VH() {
         return _GtkStyleClass.draw_spinner$VH;
     }
-    public static MemoryAddress draw_spinner$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_spinner$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*draw_spinner)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,guint,gint,gint,gint,gint);
+     * }
+     */
+    public static MemorySegment draw_spinner$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_spinner$VH.get(seg);
     }
-    public static void draw_spinner$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*draw_spinner)(GtkStyle*,cairo_t*,GtkStateType,GtkWidget*,const gchar*,guint,gint,gint,gint,gint);
+     * }
+     */
+    public static void draw_spinner$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass.draw_spinner$VH.set(seg, x);
     }
-    public static MemoryAddress draw_spinner$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass.draw_spinner$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment draw_spinner$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass.draw_spinner$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void draw_spinner$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void draw_spinner$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass.draw_spinner$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_spinner draw_spinner (MemorySegment segment, MemorySession session) {
-        return draw_spinner.ofAddress(draw_spinner$get(segment), session);
+    public static draw_spinner draw_spinner(MemorySegment segment, SegmentScope scope) {
+        return draw_spinner.ofAddress(draw_spinner$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkStyleClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkStyleClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved1_UP$MH, fi, _GtkStyleClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1451,36 +2541,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkStyleClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkStyleClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkStyleClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved2_UP$MH, fi, _GtkStyleClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1492,36 +2602,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkStyleClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkStyleClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkStyleClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved3_UP$MH, fi, _GtkStyleClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1533,36 +2663,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkStyleClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkStyleClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkStyleClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved4_UP$MH, fi, _GtkStyleClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1574,36 +2724,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkStyleClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved5$FUNC
+    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkStyleClass._gtk_reserved5_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved5)();
+     * }
+     */
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved5.class, fi, _GtkStyleClass._gtk_reserved5$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved5_UP$MH, fi, _GtkStyleClass._gtk_reserved5$FUNC, scope);
         }
-        static _gtk_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1615,36 +2785,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved5$VH() {
         return _GtkStyleClass._gtk_reserved5$VH;
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved5$VH.get(seg);
     }
-    public static void _gtk_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), session);
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved6$FUNC
+    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkStyleClass._gtk_reserved6_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved6)();
+     * }
+     */
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved6.class, fi, _GtkStyleClass._gtk_reserved6$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved6_UP$MH, fi, _GtkStyleClass._gtk_reserved6$FUNC, scope);
         }
-        static _gtk_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1656,36 +2846,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved6$VH() {
         return _GtkStyleClass._gtk_reserved6$VH;
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved6$VH.get(seg);
     }
-    public static void _gtk_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), session);
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved7$FUNC
+    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkStyleClass._gtk_reserved7_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved7)();
+     * }
+     */
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved7.class, fi, _GtkStyleClass._gtk_reserved7$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved7_UP$MH, fi, _GtkStyleClass._gtk_reserved7$FUNC, scope);
         }
-        static _gtk_reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved7$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1697,36 +2907,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved7$VH() {
         return _GtkStyleClass._gtk_reserved7$VH;
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved7$VH.get(seg);
     }
-    public static void _gtk_reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), session);
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved8$FUNC
+    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkStyleClass._gtk_reserved8_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved8_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved8)();
+     * }
+     */
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved8.class, fi, _GtkStyleClass._gtk_reserved8$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved8_UP$MH, fi, _GtkStyleClass._gtk_reserved8$FUNC, scope);
         }
-        static _gtk_reserved8 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved8$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved8_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1738,36 +2968,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved8$VH() {
         return _GtkStyleClass._gtk_reserved8$VH;
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved8$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved8$VH.get(seg);
     }
-    public static void _gtk_reserved8$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved8$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), session);
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved9$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved9$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved9$FUNC
+    static final FunctionDescriptor _gtk_reserved9_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved9_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved9.class, "apply", _GtkStyleClass._gtk_reserved9_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved9_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved9_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved9_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved9)();
+     * }
+     */
     public interface _gtk_reserved9 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved9 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved9.class, fi, _GtkStyleClass._gtk_reserved9$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved9 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved9_UP$MH, fi, _GtkStyleClass._gtk_reserved9$FUNC, scope);
         }
-        static _gtk_reserved9 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved9 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved9$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved9_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1779,36 +3029,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved9$VH() {
         return _GtkStyleClass._gtk_reserved9$VH;
     }
-    public static MemoryAddress _gtk_reserved9$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved9$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved9)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved9$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved9$VH.get(seg);
     }
-    public static void _gtk_reserved9$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved9)();
+     * }
+     */
+    public static void _gtk_reserved9$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved9$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved9$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved9$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved9$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved9$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved9$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved9$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved9$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved9 _gtk_reserved9 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved9.ofAddress(_gtk_reserved9$get(segment), session);
+    public static _gtk_reserved9 _gtk_reserved9(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved9.ofAddress(_gtk_reserved9$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved10$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved10$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved10$FUNC
+    static final FunctionDescriptor _gtk_reserved10_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved10_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved10.class, "apply", _GtkStyleClass._gtk_reserved10_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved10_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved10_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved10_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved10)();
+     * }
+     */
     public interface _gtk_reserved10 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved10 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved10.class, fi, _GtkStyleClass._gtk_reserved10$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved10 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved10_UP$MH, fi, _GtkStyleClass._gtk_reserved10$FUNC, scope);
         }
-        static _gtk_reserved10 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved10 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved10$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved10_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1820,36 +3090,56 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved10$VH() {
         return _GtkStyleClass._gtk_reserved10$VH;
     }
-    public static MemoryAddress _gtk_reserved10$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved10$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved10)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved10$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved10$VH.get(seg);
     }
-    public static void _gtk_reserved10$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved10)();
+     * }
+     */
+    public static void _gtk_reserved10$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved10$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved10$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved10$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved10$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved10$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved10$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved10$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved10$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved10 _gtk_reserved10 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved10.ofAddress(_gtk_reserved10$get(segment), session);
+    public static _gtk_reserved10 _gtk_reserved10(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved10.ofAddress(_gtk_reserved10$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved11$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved11$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleClass._gtk_reserved11$FUNC
+    static final FunctionDescriptor _gtk_reserved11_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved11_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved11.class, "apply", _GtkStyleClass._gtk_reserved11_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved11_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved11_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkStyleClass._gtk_reserved11_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved11)();
+     * }
+     */
     public interface _gtk_reserved11 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved11 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved11.class, fi, _GtkStyleClass._gtk_reserved11$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved11 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkStyleClass._gtk_reserved11_UP$MH, fi, _GtkStyleClass._gtk_reserved11$FUNC, scope);
         }
-        static _gtk_reserved11 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved11 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkStyleClass._gtk_reserved11$MH.invokeExact((Addressable)symbol);
+                    _GtkStyleClass._gtk_reserved11_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1861,27 +3151,39 @@ public class _GtkStyleClass {
     public static VarHandle _gtk_reserved11$VH() {
         return _GtkStyleClass._gtk_reserved11$VH;
     }
-    public static MemoryAddress _gtk_reserved11$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved11$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved11)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved11$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved11$VH.get(seg);
     }
-    public static void _gtk_reserved11$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved11)();
+     * }
+     */
+    public static void _gtk_reserved11$set(MemorySegment seg, MemorySegment x) {
         _GtkStyleClass._gtk_reserved11$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved11$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkStyleClass._gtk_reserved11$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved11$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkStyleClass._gtk_reserved11$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved11$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved11$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkStyleClass._gtk_reserved11$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved11 _gtk_reserved11 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved11.ofAddress(_gtk_reserved11$get(segment), session);
+    public static _gtk_reserved11 _gtk_reserved11(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved11.ofAddress(_gtk_reserved11$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

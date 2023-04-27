@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$913 {
+final class constants$913 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GEmblem$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$913() {}
+    static final FunctionDescriptor pango_font_metrics_get_approximate_char_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GEmblem$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GEmblem",
-        constants$913.glib_autoptr_clear_GEmblem$FUNC
+    static final MethodHandle pango_font_metrics_get_approximate_char_width$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_approximate_char_width",
+        constants$913.pango_font_metrics_get_approximate_char_width$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GEmblem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_metrics_get_approximate_digit_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GEmblem$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GEmblem",
-        constants$913.glib_autoptr_cleanup_GEmblem$FUNC
+    static final MethodHandle pango_font_metrics_get_approximate_digit_width$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_approximate_digit_width",
+        constants$913.pango_font_metrics_get_approximate_digit_width$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GEmblem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_metrics_get_underline_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GEmblem$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GEmblem",
-        constants$913.glib_listautoptr_cleanup_GEmblem$FUNC
+    static final MethodHandle pango_font_metrics_get_underline_position$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_underline_position",
+        constants$913.pango_font_metrics_get_underline_position$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GEmblem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_metrics_get_underline_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GEmblem$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GEmblem",
-        constants$913.glib_slistautoptr_cleanup_GEmblem$FUNC
+    static final MethodHandle pango_font_metrics_get_underline_thickness$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_underline_thickness",
+        constants$913.pango_font_metrics_get_underline_thickness$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GEmblem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_metrics_get_strikethrough_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GEmblem$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GEmblem",
-        constants$913.glib_queueautoptr_cleanup_GEmblem$FUNC
+    static final MethodHandle pango_font_metrics_get_strikethrough_position$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_strikethrough_position",
+        constants$913.pango_font_metrics_get_strikethrough_position$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GFileEnumerator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_metrics_get_strikethrough_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GFileEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GFileEnumerator",
-        constants$913.glib_autoptr_clear_GFileEnumerator$FUNC
+    static final MethodHandle pango_font_metrics_get_strikethrough_thickness$MH = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_strikethrough_thickness",
+        constants$913.pango_font_metrics_get_strikethrough_thickness$FUNC
     );
 }
 

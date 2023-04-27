@@ -7,55 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$354 {
+final class constants$354 {
 
-    static final FunctionDescriptor pthread_attr_getinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$354() {}
+    static final FunctionDescriptor sched_getparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_attr_getinheritsched$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getinheritsched",
-        constants$354.pthread_attr_getinheritsched$FUNC
+    static final MethodHandle sched_getparam$MH = RuntimeHelper.downcallHandle(
+        "sched_getparam",
+        constants$354.sched_getparam$FUNC
     );
-    static final FunctionDescriptor pthread_attr_setinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor sched_setscheduler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle sched_setscheduler$MH = RuntimeHelper.downcallHandle(
+        "sched_setscheduler",
+        constants$354.sched_setscheduler$FUNC
+    );
+    static final FunctionDescriptor sched_getscheduler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_attr_setinheritsched$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setinheritsched",
-        constants$354.pthread_attr_setinheritsched$FUNC
+    static final MethodHandle sched_getscheduler$MH = RuntimeHelper.downcallHandle(
+        "sched_getscheduler",
+        constants$354.sched_getscheduler$FUNC
     );
-    static final FunctionDescriptor pthread_attr_getscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor sched_yield$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle sched_yield$MH = RuntimeHelper.downcallHandle(
+        "sched_yield",
+        constants$354.sched_yield$FUNC
     );
-    static final MethodHandle pthread_attr_getscope$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getscope",
-        constants$354.pthread_attr_getscope$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor sched_get_priority_max$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_attr_setscope$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setscope",
-        constants$354.pthread_attr_setscope$FUNC
+    static final MethodHandle sched_get_priority_max$MH = RuntimeHelper.downcallHandle(
+        "sched_get_priority_max",
+        constants$354.sched_get_priority_max$FUNC
     );
-    static final FunctionDescriptor pthread_attr_getstackaddr$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor sched_get_priority_min$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_attr_getstackaddr$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstackaddr",
-        constants$354.pthread_attr_getstackaddr$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setstackaddr$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setstackaddr$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstackaddr",
-        constants$354.pthread_attr_setstackaddr$FUNC
+    static final MethodHandle sched_get_priority_min$MH = RuntimeHelper.downcallHandle(
+        "sched_get_priority_min",
+        constants$354.sched_get_priority_min$FUNC
     );
 }
 

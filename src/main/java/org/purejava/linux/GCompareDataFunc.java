@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GCompareDataFunc)(void* a,void* b,void* user_data);
+ * }
+ */
 public interface GCompareDataFunc {
 
-    int apply(java.lang.foreign.MemoryAddress a, java.lang.foreign.MemoryAddress b, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GCompareDataFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GCompareDataFunc.class, fi, constants$6.GCompareDataFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GCompareDataFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$6.GCompareDataFunc_UP$MH, fi, constants$6.GCompareDataFunc$FUNC, scope);
     }
-    static GCompareDataFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _a, java.lang.foreign.MemoryAddress _b, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GCompareDataFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$6.GCompareDataFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_a, (java.lang.foreign.Addressable)_b, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$6.GCompareDataFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

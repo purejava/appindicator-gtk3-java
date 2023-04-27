@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1981 {
+final class constants$1981 {
 
-    static final FunctionDescriptor gtk_recent_chooser_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1981() {}
+    static final FunctionDescriptor app_indicator_set_icon_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_get_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_uris",
-        constants$1981.gtk_recent_chooser_get_uris$FUNC
+    static final MethodHandle app_indicator_set_icon_full$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon_full",
+        constants$1981.app_indicator_set_icon_full$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_add_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_add_filter",
-        constants$1981.gtk_recent_chooser_add_filter$FUNC
+    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_label",
+        constants$1981.app_indicator_set_label$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_remove_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_set_icon_theme_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_remove_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_remove_filter",
-        constants$1981.gtk_recent_chooser_remove_filter$FUNC
+    static final MethodHandle app_indicator_set_icon_theme_path$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon_theme_path",
+        constants$1981.app_indicator_set_icon_theme_path$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_list_filters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_list_filters$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_list_filters",
-        constants$1981.gtk_recent_chooser_list_filters$FUNC
+    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_ordering_index",
+        constants$1981.app_indicator_set_ordering_index$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_set_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_set_secondary_activate_target$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_set_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_filter",
-        constants$1981.gtk_recent_chooser_set_filter$FUNC
+    static final MethodHandle app_indicator_set_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_secondary_activate_target",
+        constants$1981.app_indicator_set_secondary_activate_target$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_title$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_get_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_filter",
-        constants$1981.gtk_recent_chooser_get_filter$FUNC
+    static final MethodHandle app_indicator_set_title$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_title",
+        constants$1981.app_indicator_set_title$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class cairo_rectangle_list_t extends _cairo_rectangle_list {
+/**
+ * {@snippet :
+ * typedef struct _cairo_rectangle_list cairo_rectangle_list_t;
+ * }
+ */
+public final class cairo_rectangle_list_t extends _cairo_rectangle_list {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private cairo_rectangle_list_t() {}
 }
 
 

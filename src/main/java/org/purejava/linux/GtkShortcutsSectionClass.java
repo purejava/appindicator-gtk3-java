@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkShortcutsSectionClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkShortcutsSectionClass GtkShortcutsSectionClass;
+ * }
+ */
+public final class GtkShortcutsSectionClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkShortcutsSectionClass() {}
 }
 
 

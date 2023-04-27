@@ -7,50 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$477 {
+final class constants$477 {
 
-    static final FunctionDescriptor GToggleNotify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$477() {}
+    static final FunctionDescriptor g_action_group_query_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_group_query_action$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_query_action",
+        constants$477.g_action_group_query_action$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_export_action_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_connection_export_action_group$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_export_action_group",
+        constants$477.g_dbus_connection_export_action_group$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_unexport_action_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GToggleNotify$MH = RuntimeHelper.downcallHandle(
-        constants$477.GToggleNotify$FUNC
+    static final MethodHandle g_dbus_connection_unexport_action_group$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unexport_action_group",
+        constants$477.g_dbus_connection_unexport_action_group$FUNC
     );
-    static final FunctionDescriptor g_object_add_toggle_ref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_action_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_action_map_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_action_map_get_type",
+        constants$477.g_action_map_get_type$FUNC
     );
-    static final MethodHandle g_object_add_toggle_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_add_toggle_ref",
-        constants$477.g_object_add_toggle_ref$FUNC
-    );
-    static final FunctionDescriptor g_object_remove_toggle_ref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_action_map_lookup_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_remove_toggle_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_remove_toggle_ref",
-        constants$477.g_object_remove_toggle_ref$FUNC
+    static final MethodHandle g_action_map_lookup_action$MH = RuntimeHelper.downcallHandle(
+        "g_action_map_lookup_action",
+        constants$477.g_action_map_lookup_action$FUNC
     );
-    static final FunctionDescriptor g_object_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_action_map_add_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_object_get_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_qdata",
-        constants$477.g_object_get_qdata$FUNC
-    );
-    static final FunctionDescriptor g_object_set_qdata$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_set_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_qdata",
-        constants$477.g_object_set_qdata$FUNC
+    static final MethodHandle g_action_map_add_action$MH = RuntimeHelper.downcallHandle(
+        "g_action_map_add_action",
+        constants$477.g_action_map_add_action$FUNC
     );
 }
 

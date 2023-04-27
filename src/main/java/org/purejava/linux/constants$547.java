@@ -7,48 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$547 {
+final class constants$547 {
 
-    static final FunctionDescriptor g_input_stream_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_is_closed",
-        constants$547.g_input_stream_is_closed$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_has_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_has_pending",
-        constants$547.g_input_stream_has_pending$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_set_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$547() {}
+    static final FunctionDescriptor g_dbus_action_group_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_input_stream_set_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_set_pending",
-        constants$547.g_input_stream_set_pending$FUNC
+    static final MethodHandle g_dbus_action_group_get$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_action_group_get",
+        constants$547.g_dbus_action_group_get$FUNC
     );
-    static final FunctionDescriptor g_input_stream_clear_pending$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_dbus_address_escape_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_input_stream_clear_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_clear_pending",
-        constants$547.g_input_stream_clear_pending$FUNC
+    static final MethodHandle g_dbus_address_escape_value$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_address_escape_value",
+        constants$547.g_dbus_address_escape_value$FUNC
     );
-    static final FunctionDescriptor g_filter_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_filter_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_filter_input_stream_get_type",
-        constants$547.g_filter_input_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_filter_input_stream_get_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_is_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_filter_input_stream_get_base_stream$MH = RuntimeHelper.downcallHandle(
-        "g_filter_input_stream_get_base_stream",
-        constants$547.g_filter_input_stream_get_base_stream$FUNC
+    static final MethodHandle g_dbus_is_address$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_is_address",
+        constants$547.g_dbus_is_address$FUNC
+    );
+    static final FunctionDescriptor g_dbus_is_supported_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_is_supported_address$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_is_supported_address",
+        constants$547.g_dbus_is_supported_address$FUNC
+    );
+    static final FunctionDescriptor g_dbus_address_get_stream$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_address_get_stream$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_address_get_stream",
+        constants$547.g_dbus_address_get_stream$FUNC
+    );
+    static final FunctionDescriptor g_dbus_address_get_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_address_get_stream_finish$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_address_get_stream_finish",
+        constants$547.g_dbus_address_get_stream_finish$FUNC
     );
 }
 

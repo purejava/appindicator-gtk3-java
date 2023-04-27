@@ -7,55 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1101 {
+final class constants$1101 {
 
-    static final FunctionDescriptor pango_shape_with_flags$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1101() {}
+    static final FunctionDescriptor gdk_window_begin_move_drag_for_device$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_begin_move_drag_for_device$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_move_drag_for_device",
+        constants$1101.gdk_window_begin_move_drag_for_device$FUNC
+    );
+    static final FunctionDescriptor gdk_window_invalidate_rect$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_shape_with_flags$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_with_flags",
-        constants$1101.pango_shape_with_flags$FUNC
+    static final MethodHandle gdk_window_invalidate_rect$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_rect",
+        constants$1101.gdk_window_invalidate_rect$FUNC
     );
-    static final FunctionDescriptor pango_shape_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_window_invalidate_region$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_shape_item$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_item",
-        constants$1101.pango_shape_item$FUNC
+    static final MethodHandle gdk_window_invalidate_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_region",
+        constants$1101.gdk_window_invalidate_region$FUNC
     );
-    static final FunctionDescriptor pango_engine_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_engine_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_engine_get_type",
-        constants$1101.pango_engine_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_engine_lang_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_engine_lang_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_engine_lang_get_type",
-        constants$1101.pango_engine_lang_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_engine_shape_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_engine_shape_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_engine_shape_get_type",
-        constants$1101.pango_engine_shape_get_type$FUNC
-    );
-    static final FunctionDescriptor script_engine_list$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GdkWindowChildFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle script_engine_list$MH = RuntimeHelper.downcallHandle(
-        "script_engine_list",
-        constants$1101.script_engine_list$FUNC
+    static final FunctionDescriptor GdkWindowChildFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GdkWindowChildFunc_UP$MH = RuntimeHelper.upcallHandle(GdkWindowChildFunc.class, "apply", constants$1101.GdkWindowChildFunc_UP$FUNC);
+    static final FunctionDescriptor GdkWindowChildFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GdkWindowChildFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1101.GdkWindowChildFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gdk_window_invalidate_maybe_recurse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_invalidate_maybe_recurse$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_maybe_recurse",
+        constants$1101.gdk_window_invalidate_maybe_recurse$FUNC
     );
 }
 

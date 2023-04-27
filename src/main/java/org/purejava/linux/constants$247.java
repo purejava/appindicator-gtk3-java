@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$247 {
+final class constants$247 {
 
-    static final FunctionDescriptor GLogWriterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$247() {}
+    static final FunctionDescriptor g_variant_lookup_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GLogWriterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$247.GLogWriterFunc$FUNC
+    static final MethodHandle g_variant_lookup_value$MH = RuntimeHelper.downcallHandle(
+        "g_variant_lookup_value",
+        constants$247.g_variant_lookup_value$FUNC
     );
-    static final FunctionDescriptor g_log_structured$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_get_fixed_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_structured$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_log_structured",
-        constants$247.g_log_structured$FUNC
-    );
-    static final FunctionDescriptor g_log_structured_array$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_log_structured_array$MH = RuntimeHelper.downcallHandle(
-        "g_log_structured_array",
-        constants$247.g_log_structured_array$FUNC
+    static final MethodHandle g_variant_get_fixed_array$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_fixed_array",
+        constants$247.g_variant_get_fixed_array$FUNC
     );
-    static final FunctionDescriptor g_log_variant$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_variant_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_variant$MH = RuntimeHelper.downcallHandle(
-        "g_log_variant",
-        constants$247.g_log_variant$FUNC
+    static final MethodHandle g_variant_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_size",
+        constants$247.g_variant_get_size$FUNC
     );
-    static final FunctionDescriptor g_log_set_writer_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_get_data$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_data",
+        constants$247.g_variant_get_data$FUNC
+    );
+    static final FunctionDescriptor g_variant_get_data_as_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_get_data_as_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_data_as_bytes",
+        constants$247.g_variant_get_data_as_bytes$FUNC
+    );
+    static final FunctionDescriptor g_variant_store$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_set_writer_func$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_writer_func",
-        constants$247.g_log_set_writer_func$FUNC
+    static final MethodHandle g_variant_store$MH = RuntimeHelper.downcallHandle(
+        "g_variant_store",
+        constants$247.g_variant_store$FUNC
     );
 }
 

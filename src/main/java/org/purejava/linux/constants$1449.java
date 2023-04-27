@@ -7,52 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1449 {
+final class constants$1449 {
 
-    static final FunctionDescriptor gtk_widget_set_vexpand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_vexpand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_vexpand",
-        constants$1449.gtk_widget_set_vexpand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_vexpand_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1449() {}
+    static final FunctionDescriptor gtk_image_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_vexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_vexpand_set",
-        constants$1449.gtk_widget_get_vexpand_set$FUNC
+    static final MethodHandle gtk_image_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_pixbuf",
+        constants$1449.gtk_image_get_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_vexpand_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_image_get_stock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_vexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_vexpand_set",
-        constants$1449.gtk_widget_set_vexpand_set$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_compute_expand$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_queue_compute_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_compute_expand",
-        constants$1449.gtk_widget_queue_compute_expand$FUNC
+    static final MethodHandle gtk_image_get_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_stock",
+        constants$1449.gtk_image_get_stock$FUNC
     );
-    static final FunctionDescriptor gtk_widget_compute_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_image_get_icon_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_compute_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_compute_expand",
-        constants$1449.gtk_widget_compute_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_support_multidevice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_support_multidevice",
-        constants$1449.gtk_widget_get_support_multidevice$FUNC
+    static final MethodHandle gtk_image_get_icon_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_icon_set",
+        constants$1449.gtk_image_get_icon_set$FUNC
+    );
+    static final FunctionDescriptor gtk_image_get_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_get_animation$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_animation",
+        constants$1449.gtk_image_get_animation$FUNC
+    );
+    static final FunctionDescriptor gtk_image_get_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_get_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_icon_name",
+        constants$1449.gtk_image_get_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_image_get_gicon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_get_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_gicon",
+        constants$1449.gtk_image_get_gicon$FUNC
     );
 }
 

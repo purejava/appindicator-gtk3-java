@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkNumerableIcon extends _GtkNumerableIcon {
+/**
+ * {@snippet :
+ * typedef struct _GtkNumerableIcon GtkNumerableIcon;
+ * }
+ */
+public final class GtkNumerableIcon extends _GtkNumerableIcon {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkNumerableIcon() {}
 }
 
 

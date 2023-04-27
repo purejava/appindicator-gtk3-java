@@ -7,37 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$726 {
+final class constants$726 {
 
-    static final FunctionDescriptor g_tls_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_error_get_type",
-        constants$726.g_tls_error_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$726() {}
+    static final FunctionDescriptor g_proxy_get_default_for_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_tls_certificate_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_certificate_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_flags_get_type",
-        constants$726.g_tls_certificate_flags_get_type$FUNC
+    static final MethodHandle g_proxy_get_default_for_protocol$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_get_default_for_protocol",
+        constants$726.g_proxy_get_default_for_protocol$FUNC
     );
-    static final FunctionDescriptor g_tls_authentication_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_authentication_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_authentication_mode_get_type",
-        constants$726.g_tls_authentication_mode_get_type$FUNC
+    static final FunctionDescriptor g_proxy_connect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_tls_channel_binding_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_channel_binding_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_type_get_type",
-        constants$726.g_tls_channel_binding_type_get_type$FUNC
+    static final MethodHandle g_proxy_connect$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_connect",
+        constants$726.g_proxy_connect$FUNC
     );
-    static final FunctionDescriptor g_tls_channel_binding_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_channel_binding_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_error_get_type",
-        constants$726.g_tls_channel_binding_error_get_type$FUNC
+    static final FunctionDescriptor g_proxy_connect_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_tls_rehandshake_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_rehandshake_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_rehandshake_mode_get_type",
-        constants$726.g_tls_rehandshake_mode_get_type$FUNC
+    static final MethodHandle g_proxy_connect_async$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_connect_async",
+        constants$726.g_proxy_connect_async$FUNC
+    );
+    static final FunctionDescriptor g_proxy_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_proxy_connect_finish$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_connect_finish",
+        constants$726.g_proxy_connect_finish$FUNC
+    );
+    static final FunctionDescriptor g_proxy_supports_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_proxy_supports_hostname$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_supports_hostname",
+        constants$726.g_proxy_supports_hostname$FUNC
+    );
+    static final FunctionDescriptor g_proxy_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_proxy_address_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_type",
+        constants$726.g_proxy_address_get_type$FUNC
     );
 }
 

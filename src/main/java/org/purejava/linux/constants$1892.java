@@ -7,49 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1892 {
+final class constants$1892 {
 
-    static final FunctionDescriptor gtk_size_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_size_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_type",
-        constants$1892.gtk_size_group_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1892() {}
+    static final FunctionDescriptor gtk_pad_action_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_pad_action_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_pad_action_type_get_type",
+        constants$1892.gtk_pad_action_type_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_size_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_places_open_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_places_open_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_open_flags_get_type",
+        constants$1892.gtk_places_open_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_size_group_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_new",
-        constants$1892.gtk_size_group_new$FUNC
+    static final FunctionDescriptor gtk_print_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_status_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_status_get_type",
+        constants$1892.gtk_print_status_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_size_group_set_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_print_operation_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_operation_result_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_result_get_type",
+        constants$1892.gtk_print_operation_result_get_type$FUNC
     );
-    static final MethodHandle gtk_size_group_set_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_set_mode",
-        constants$1892.gtk_size_group_set_mode$FUNC
+    static final FunctionDescriptor gtk_print_operation_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_operation_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_action_get_type",
+        constants$1892.gtk_print_operation_action_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_size_group_get_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_get_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_mode",
-        constants$1892.gtk_size_group_get_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_set_ignore_hidden$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_set_ignore_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_set_ignore_hidden",
-        constants$1892.gtk_size_group_set_ignore_hidden$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_get_ignore_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_get_ignore_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_ignore_hidden",
-        constants$1892.gtk_size_group_get_ignore_hidden$FUNC
+    static final FunctionDescriptor gtk_print_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_error_get_type",
+        constants$1892.gtk_print_error_get_type$FUNC
     );
 }
 

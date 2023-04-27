@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$175 {
+final class constants$175 {
 
-    static final FunctionDescriptor g_source_set_funcs$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$175() {}
+    static final FunctionDescriptor g_source_attach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_funcs$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_funcs",
-        constants$175.g_source_set_funcs$FUNC
+    static final MethodHandle g_source_attach$MH = RuntimeHelper.downcallHandle(
+        "g_source_attach",
+        constants$175.g_source_attach$FUNC
     );
-    static final FunctionDescriptor g_source_is_destroyed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_source_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_is_destroyed$MH = RuntimeHelper.downcallHandle(
-        "g_source_is_destroyed",
-        constants$175.g_source_is_destroyed$FUNC
+    static final MethodHandle g_source_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_source_destroy",
+        constants$175.g_source_destroy$FUNC
     );
-    static final FunctionDescriptor g_source_set_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_source_set_priority$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_source_set_priority$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_priority",
+        constants$175.g_source_set_priority$FUNC
+    );
+    static final FunctionDescriptor g_source_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_name",
-        constants$175.g_source_set_name$FUNC
+    static final MethodHandle g_source_get_priority$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_priority",
+        constants$175.g_source_get_priority$FUNC
     );
-    static final FunctionDescriptor g_source_set_static_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_source_set_can_recurse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_source_set_can_recurse$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_can_recurse",
+        constants$175.g_source_set_can_recurse$FUNC
+    );
+    static final FunctionDescriptor g_source_get_can_recurse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_static_name$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_static_name",
-        constants$175.g_source_set_static_name$FUNC
-    );
-    static final FunctionDescriptor g_source_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_name",
-        constants$175.g_source_get_name$FUNC
-    );
-    static final FunctionDescriptor g_source_set_name_by_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_set_name_by_id$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_name_by_id",
-        constants$175.g_source_set_name_by_id$FUNC
+    static final MethodHandle g_source_get_can_recurse$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_can_recurse",
+        constants$175.g_source_get_can_recurse$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTlsClientConnection {
+/**
+ * {@snippet :
+ * typedef struct _GTlsClientConnection GTlsClientConnection;
+ * }
+ */
+public final class GTlsClientConnection {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTlsClientConnection() {}
 }
 
 

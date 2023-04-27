@@ -7,53 +7,76 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$506 {
+final class constants$506 {
 
-    static final FunctionDescriptor g_value_set_float$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$506() {}
+    static final FunctionDescriptor g_output_stream_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle g_value_set_float$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_float",
-        constants$506.g_value_set_float$FUNC
-    );
-    static final FunctionDescriptor g_value_get_float$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_float$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_float",
-        constants$506.g_value_get_float$FUNC
-    );
-    static final FunctionDescriptor g_value_set_double$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_value_set_double$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_double",
-        constants$506.g_value_set_double$FUNC
-    );
-    static final FunctionDescriptor g_value_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_double$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_double",
-        constants$506.g_value_get_double$FUNC
-    );
-    static final FunctionDescriptor g_value_set_string$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_set_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_string",
-        constants$506.g_value_set_string$FUNC
+    static final MethodHandle g_output_stream_close$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_close",
+        constants$506.g_output_stream_close$FUNC
     );
-    static final FunctionDescriptor g_value_set_static_string$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_output_stream_write_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_set_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_static_string",
-        constants$506.g_value_set_static_string$FUNC
+    static final MethodHandle g_output_stream_write_async$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_async",
+        constants$506.g_output_stream_write_async$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_write_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_write_finish$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_finish",
+        constants$506.g_output_stream_write_finish$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_write_all_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_write_all_async$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_all_async",
+        constants$506.g_output_stream_write_all_async$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_write_all_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_write_all_finish$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_all_finish",
+        constants$506.g_output_stream_write_all_finish$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_writev_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_writev_async$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_async",
+        constants$506.g_output_stream_writev_async$FUNC
     );
 }
 

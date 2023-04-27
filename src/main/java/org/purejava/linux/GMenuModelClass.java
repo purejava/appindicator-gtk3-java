@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMenuModelClass extends _GMenuModelClass {
+/**
+ * {@snippet :
+ * typedef struct _GMenuModelClass GMenuModelClass;
+ * }
+ */
+public final class GMenuModelClass extends _GMenuModelClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMenuModelClass() {}
 }
 
 

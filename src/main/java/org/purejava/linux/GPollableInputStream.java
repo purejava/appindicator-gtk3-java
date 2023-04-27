@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GPollableInputStream {
+/**
+ * {@snippet :
+ * typedef struct _GPollableInputStream GPollableInputStream;
+ * }
+ */
+public final class GPollableInputStream {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GPollableInputStream() {}
 }
 
 

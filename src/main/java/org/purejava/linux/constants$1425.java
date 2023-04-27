@@ -7,35 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1425 {
+final class constants$1425 {
 
-    static final FunctionDescriptor GtkCallback$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1425() {}
+    static final FunctionDescriptor gtk_drag_finish$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_drag_finish$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_finish",
+        constants$1425.gtk_drag_finish$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_get_source_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkCallback$MH = RuntimeHelper.downcallHandle(
-        constants$1425.GtkCallback$FUNC
+    static final MethodHandle gtk_drag_get_source_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_get_source_widget",
+        constants$1425.gtk_drag_get_source_widget$FUNC
     );
-    static final FunctionDescriptor GtkTickCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_drag_highlight$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTickCallback$MH = RuntimeHelper.downcallHandle(
-        constants$1425.GtkTickCallback$FUNC
+    static final MethodHandle gtk_drag_highlight$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_highlight",
+        constants$1425.gtk_drag_highlight$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_widget_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_type",
-        constants$1425.gtk_widget_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_drag_unhighlight$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_widget_new",
-        constants$1425.gtk_widget_new$FUNC
+    static final MethodHandle gtk_drag_unhighlight$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_unhighlight",
+        constants$1425.gtk_drag_unhighlight$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_begin_with_coordinates$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_drag_begin_with_coordinates$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_begin_with_coordinates",
+        constants$1425.gtk_drag_begin_with_coordinates$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_begin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_drag_begin$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_begin",
+        constants$1425.gtk_drag_begin$FUNC
     );
 }
 

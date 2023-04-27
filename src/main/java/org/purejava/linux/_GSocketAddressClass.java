@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSocketAddressClass {
+ *     GObjectClass parent_class;
+ *     GSocketFamily (*get_family)(GSocketAddress*);
+ *     gssize (*get_native_size)(GSocketAddress*);
+ *     gboolean (*to_native)(GSocketAddress*,gpointer,gsize,GError**);
+ * };
+ * }
+ */
 public class _GSocketAddressClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +34,10 @@ public class _GSocketAddressClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("get_family"),
         Constants$root.C_POINTER$LAYOUT.withName("get_native_size"),
@@ -39,20 +52,32 @@ public class _GSocketAddressClass {
     static final FunctionDescriptor get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_family$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressClass.get_family$FUNC
+    static final FunctionDescriptor get_family_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_family_UP$MH = RuntimeHelper.upcallHandle(get_family.class, "apply", _GSocketAddressClass.get_family_UP$FUNC);
+    static final FunctionDescriptor get_family_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_family_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressClass.get_family_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSocketFamily (*get_family)(GSocketAddress*);
+     * }
+     */
     public interface get_family {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_family fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_family.class, fi, _GSocketAddressClass.get_family$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_family fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressClass.get_family_UP$MH, fi, _GSocketAddressClass.get_family$FUNC, scope);
         }
-        static get_family ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_family ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GSocketAddressClass.get_family$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GSocketAddressClass.get_family_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -64,38 +89,62 @@ public class _GSocketAddressClass {
     public static VarHandle get_family$VH() {
         return _GSocketAddressClass.get_family$VH;
     }
-    public static MemoryAddress get_family$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.get_family$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSocketFamily (*get_family)(GSocketAddress*);
+     * }
+     */
+    public static MemorySegment get_family$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.get_family$VH.get(seg);
     }
-    public static void get_family$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSocketFamily (*get_family)(GSocketAddress*);
+     * }
+     */
+    public static void get_family$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressClass.get_family$VH.set(seg, x);
     }
-    public static MemoryAddress get_family$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.get_family$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_family$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.get_family$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_family$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_family$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressClass.get_family$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_family get_family (MemorySegment segment, MemorySession session) {
-        return get_family.ofAddress(get_family$get(segment), session);
+    public static get_family get_family(MemorySegment segment, SegmentScope scope) {
+        return get_family.ofAddress(get_family$get(segment), scope);
     }
     static final FunctionDescriptor get_native_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_native_size$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressClass.get_native_size$FUNC
+    static final FunctionDescriptor get_native_size_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_native_size_UP$MH = RuntimeHelper.upcallHandle(get_native_size.class, "apply", _GSocketAddressClass.get_native_size_UP$FUNC);
+    static final FunctionDescriptor get_native_size_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_native_size_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressClass.get_native_size_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*get_native_size)(GSocketAddress*);
+     * }
+     */
     public interface get_native_size {
 
-        long apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_native_size fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_native_size.class, fi, _GSocketAddressClass.get_native_size$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_native_size fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressClass.get_native_size_UP$MH, fi, _GSocketAddressClass.get_native_size$FUNC, scope);
         }
-        static get_native_size ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_native_size ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (long)_GSocketAddressClass.get_native_size$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (long)_GSocketAddressClass.get_native_size_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -107,20 +156,32 @@ public class _GSocketAddressClass {
     public static VarHandle get_native_size$VH() {
         return _GSocketAddressClass.get_native_size$VH;
     }
-    public static MemoryAddress get_native_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.get_native_size$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*get_native_size)(GSocketAddress*);
+     * }
+     */
+    public static MemorySegment get_native_size$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.get_native_size$VH.get(seg);
     }
-    public static void get_native_size$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*get_native_size)(GSocketAddress*);
+     * }
+     */
+    public static void get_native_size$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressClass.get_native_size$VH.set(seg, x);
     }
-    public static MemoryAddress get_native_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.get_native_size$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_native_size$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.get_native_size$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_native_size$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_native_size$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressClass.get_native_size$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_native_size get_native_size (MemorySegment segment, MemorySession session) {
-        return get_native_size.ofAddress(get_native_size$get(segment), session);
+    public static get_native_size get_native_size(MemorySegment segment, SegmentScope scope) {
+        return get_native_size.ofAddress(get_native_size$get(segment), scope);
     }
     static final FunctionDescriptor to_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -128,20 +189,38 @@ public class _GSocketAddressClass {
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle to_native$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressClass.to_native$FUNC
+    static final FunctionDescriptor to_native_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle to_native_UP$MH = RuntimeHelper.upcallHandle(to_native.class, "apply", _GSocketAddressClass.to_native_UP$FUNC);
+    static final FunctionDescriptor to_native_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle to_native_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressClass.to_native_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*to_native)(GSocketAddress*,gpointer,gsize,GError**);
+     * }
+     */
     public interface to_native {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(to_native fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(to_native.class, fi, _GSocketAddressClass.to_native$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(to_native fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressClass.to_native_UP$MH, fi, _GSocketAddressClass.to_native$FUNC, scope);
         }
-        static to_native ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static to_native ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GSocketAddressClass.to_native$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GSocketAddressClass.to_native_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -153,27 +232,39 @@ public class _GSocketAddressClass {
     public static VarHandle to_native$VH() {
         return _GSocketAddressClass.to_native$VH;
     }
-    public static MemoryAddress to_native$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.to_native$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*to_native)(GSocketAddress*,gpointer,gsize,GError**);
+     * }
+     */
+    public static MemorySegment to_native$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.to_native$VH.get(seg);
     }
-    public static void to_native$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*to_native)(GSocketAddress*,gpointer,gsize,GError**);
+     * }
+     */
+    public static void to_native$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressClass.to_native$VH.set(seg, x);
     }
-    public static MemoryAddress to_native$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressClass.to_native$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment to_native$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressClass.to_native$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void to_native$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void to_native$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressClass.to_native$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_native to_native (MemorySegment segment, MemorySession session) {
-        return to_native.ofAddress(to_native$get(segment), session);
+    public static to_native to_native(MemorySegment segment, SegmentScope scope) {
+        return to_native.ofAddress(to_native$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

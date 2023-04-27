@@ -7,52 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$622 {
+final class constants$622 {
 
-    static final FunctionDescriptor g_dbus_message_set_sender$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$622() {}
+    static final FunctionDescriptor g_file_replace_readwrite_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_sender$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_sender",
-        constants$622.g_dbus_message_set_sender$FUNC
+    static final MethodHandle g_file_replace_readwrite_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_readwrite_async",
+        constants$622.g_file_replace_readwrite_async$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_destination$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_destination$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_destination",
-        constants$622.g_dbus_message_get_destination$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_destination$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_replace_readwrite_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_destination$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_destination",
-        constants$622.g_dbus_message_set_destination$FUNC
+    static final MethodHandle g_file_replace_readwrite_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_readwrite_finish",
+        constants$622.g_file_replace_readwrite_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_error_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_error_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_error_name",
-        constants$622.g_dbus_message_get_error_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_error_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_query_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_error_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_error_name",
-        constants$622.g_dbus_message_set_error_name$FUNC
+    static final MethodHandle g_file_query_exists$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_exists",
+        constants$622.g_file_query_exists$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_signature$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_query_file_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_signature$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_signature",
-        constants$622.g_dbus_message_get_signature$FUNC
+    static final MethodHandle g_file_query_file_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_file_type",
+        constants$622.g_file_query_file_type$FUNC
+    );
+    static final FunctionDescriptor g_file_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_info$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_info",
+        constants$622.g_file_query_info$FUNC
+    );
+    static final FunctionDescriptor g_file_query_info_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_info_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_info_async",
+        constants$622.g_file_query_info_async$FUNC
     );
 }
 

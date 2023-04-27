@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkSocketClass {
+ *     AtkObjectClass parent_class;
+ *     void (*embed)(AtkSocket*,const gchar*);
+ * };
+ * }
+ */
 public class _AtkSocketClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +33,10 @@ public class _AtkSocketClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent"),
             Constants$root.C_POINTER$LAYOUT.withName("get_name"),
             Constants$root.C_POINTER$LAYOUT.withName("get_description"),
@@ -67,20 +78,34 @@ public class _AtkSocketClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle embed$MH = RuntimeHelper.downcallHandle(
-        _AtkSocketClass.embed$FUNC
+    static final FunctionDescriptor embed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle embed_UP$MH = RuntimeHelper.upcallHandle(embed.class, "apply", _AtkSocketClass.embed_UP$FUNC);
+    static final FunctionDescriptor embed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle embed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkSocketClass.embed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*embed)(AtkSocket*,const gchar*);
+     * }
+     */
     public interface embed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(embed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(embed.class, fi, _AtkSocketClass.embed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(embed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkSocketClass.embed_UP$MH, fi, _AtkSocketClass.embed$FUNC, scope);
         }
-        static embed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static embed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkSocketClass.embed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkSocketClass.embed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -92,27 +117,39 @@ public class _AtkSocketClass {
     public static VarHandle embed$VH() {
         return _AtkSocketClass.embed$VH;
     }
-    public static MemoryAddress embed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkSocketClass.embed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*embed)(AtkSocket*,const gchar*);
+     * }
+     */
+    public static MemorySegment embed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkSocketClass.embed$VH.get(seg);
     }
-    public static void embed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*embed)(AtkSocket*,const gchar*);
+     * }
+     */
+    public static void embed$set(MemorySegment seg, MemorySegment x) {
         _AtkSocketClass.embed$VH.set(seg, x);
     }
-    public static MemoryAddress embed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkSocketClass.embed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment embed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkSocketClass.embed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void embed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void embed$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkSocketClass.embed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static embed embed (MemorySegment segment, MemorySession session) {
-        return embed.ofAddress(embed$get(segment), session);
+    public static embed embed(MemorySegment segment, SegmentScope scope) {
+        return embed.ofAddress(embed$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

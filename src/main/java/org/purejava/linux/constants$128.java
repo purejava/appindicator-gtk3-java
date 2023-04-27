@@ -7,8 +7,36 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$128 {
+final class constants$128 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$128() {}
+    static final FunctionDescriptor g_path_is_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_is_absolute$MH = RuntimeHelper.downcallHandle(
+        "g_path_is_absolute",
+        constants$128.g_path_is_absolute$FUNC
+    );
+    static final FunctionDescriptor g_path_skip_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_skip_root$MH = RuntimeHelper.downcallHandle(
+        "g_path_skip_root",
+        constants$128.g_path_skip_root$FUNC
+    );
+    static final FunctionDescriptor g_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_basename$MH = RuntimeHelper.downcallHandle(
+        "g_basename",
+        constants$128.g_basename$FUNC
+    );
+    static final FunctionDescriptor g_get_current_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_current_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_current_dir",
+        constants$128.g_get_current_dir$FUNC
+    );
     static final FunctionDescriptor g_path_get_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -22,39 +50,6 @@ class constants$128 {
     static final MethodHandle g_path_get_dirname$MH = RuntimeHelper.downcallHandle(
         "g_path_get_dirname",
         constants$128.g_path_get_dirname$FUNC
-    );
-    static final FunctionDescriptor g_canonicalize_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_canonicalize_filename$MH = RuntimeHelper.downcallHandle(
-        "g_canonicalize_filename",
-        constants$128.g_canonicalize_filename$FUNC
-    );
-    static final FunctionDescriptor g_strip_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strip_context$MH = RuntimeHelper.downcallHandle(
-        "g_strip_context",
-        constants$128.g_strip_context$FUNC
-    );
-    static final FunctionDescriptor g_dgettext$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dgettext$MH = RuntimeHelper.downcallHandle(
-        "g_dgettext",
-        constants$128.g_dgettext$FUNC
-    );
-    static final FunctionDescriptor g_dcgettext$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dcgettext$MH = RuntimeHelper.downcallHandle(
-        "g_dcgettext",
-        constants$128.g_dcgettext$FUNC
     );
 }
 

@@ -7,56 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1826 {
+final class constants$1826 {
 
-    static final FunctionDescriptor gtk_style_context_remove_provider$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1826() {}
+    static final FunctionDescriptor gtk_text_mark_get_left_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_remove_provider$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_provider",
-        constants$1826.gtk_style_context_remove_provider$FUNC
+    static final MethodHandle gtk_text_mark_get_left_gravity$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_mark_get_left_gravity",
+        constants$1826.gtk_text_mark_get_left_gravity$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_save$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_buffer_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_type",
+        constants$1826.gtk_text_buffer_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_save$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_save",
-        constants$1826.gtk_style_context_save$FUNC
+    static final MethodHandle gtk_text_buffer_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_new",
+        constants$1826.gtk_text_buffer_new$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_restore$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_get_line_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_restore$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_restore",
-        constants$1826.gtk_style_context_restore$FUNC
+    static final MethodHandle gtk_text_buffer_get_line_count$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_line_count",
+        constants$1826.gtk_text_buffer_get_line_count$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_get_section$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_get_char_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_get_section$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_section",
-        constants$1826.gtk_style_context_get_section$FUNC
+    static final MethodHandle gtk_text_buffer_get_char_count$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_char_count",
+        constants$1826.gtk_text_buffer_get_char_count$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_get_tag_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_property",
-        constants$1826.gtk_style_context_get_property$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_valist",
-        constants$1826.gtk_style_context_get_valist$FUNC
+    static final MethodHandle gtk_text_buffer_get_tag_table$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_tag_table",
+        constants$1826.gtk_text_buffer_get_tag_table$FUNC
     );
 }
 

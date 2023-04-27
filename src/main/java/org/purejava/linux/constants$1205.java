@@ -7,56 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1205 {
+final class constants$1205 {
 
-    static final FunctionDescriptor cairo_pattern_get_matrix$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1205() {}
+    static final FunctionDescriptor atk_object_get_accessible_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_get_accessible_id$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_accessible_id",
+        constants$1205.atk_object_get_accessible_id$FUNC
+    );
+    static final FunctionDescriptor atk_object_set_accessible_id$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_matrix",
-        constants$1205.cairo_pattern_get_matrix$FUNC
+    static final MethodHandle atk_object_set_accessible_id$MH = RuntimeHelper.downcallHandle(
+        "atk_object_set_accessible_id",
+        constants$1205.atk_object_set_accessible_id$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_set_extend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_action_get_type",
+        constants$1205.atk_action_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_action_do_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_pattern_set_extend$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_extend",
-        constants$1205.cairo_pattern_set_extend$FUNC
+    static final MethodHandle atk_action_do_action$MH = RuntimeHelper.downcallHandle(
+        "atk_action_do_action",
+        constants$1205.atk_action_do_action$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_get_extend$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_action_get_n_actions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_get_extend$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_extend",
-        constants$1205.cairo_pattern_get_extend$FUNC
+    static final MethodHandle atk_action_get_n_actions$MH = RuntimeHelper.downcallHandle(
+        "atk_action_get_n_actions",
+        constants$1205.atk_action_get_n_actions$FUNC
     );
-    static final FunctionDescriptor cairo_pattern_set_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_action_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_pattern_set_filter$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_filter",
-        constants$1205.cairo_pattern_set_filter$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_filter$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_filter",
-        constants$1205.cairo_pattern_get_filter$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_rgba",
-        constants$1205.cairo_pattern_get_rgba$FUNC
+    static final MethodHandle atk_action_get_description$MH = RuntimeHelper.downcallHandle(
+        "atk_action_get_description",
+        constants$1205.atk_action_get_description$FUNC
     );
 }
 

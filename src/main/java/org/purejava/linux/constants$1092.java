@@ -7,54 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1092 {
+final class constants$1092 {
 
-    static final FunctionDescriptor pango_fontset_get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1092() {}
+    static final FunctionDescriptor gdk_window_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_fontset_get_metrics$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_get_metrics",
-        constants$1092.pango_fontset_get_metrics$FUNC
+    static final MethodHandle gdk_window_get_height$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_height",
+        constants$1092.gdk_window_get_height$FUNC
     );
-    static final FunctionDescriptor pango_fontset_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_fontset_foreach$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_foreach",
-        constants$1092.pango_fontset_foreach$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_get_type",
-        constants$1092.pango_font_map_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_create_context$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_create_context",
-        constants$1092.pango_font_map_create_context$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_load_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_map_load_font$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_load_font",
-        constants$1092.pango_font_map_load_font$FUNC
+    static final MethodHandle gdk_window_get_position$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_position",
+        constants$1092.gdk_window_get_position$FUNC
     );
-    static final FunctionDescriptor pango_font_map_load_fontset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_map_load_fontset$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_load_fontset",
-        constants$1092.pango_font_map_load_fontset$FUNC
+    static final MethodHandle gdk_window_get_origin$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_origin",
+        constants$1092.gdk_window_get_origin$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_root_coords$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_root_coords$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_root_coords",
+        constants$1092.gdk_window_get_root_coords$FUNC
+    );
+    static final FunctionDescriptor gdk_window_coords_to_parent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_coords_to_parent$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_coords_to_parent",
+        constants$1092.gdk_window_coords_to_parent$FUNC
+    );
+    static final FunctionDescriptor gdk_window_coords_from_parent$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_coords_from_parent$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_coords_from_parent",
+        constants$1092.gdk_window_coords_from_parent$FUNC
     );
 }
 

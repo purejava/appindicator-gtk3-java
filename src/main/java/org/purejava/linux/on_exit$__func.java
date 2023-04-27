@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*on_exit$__func)(int,void*);
+ * }
+ */
 public interface on_exit$__func {
 
-    void apply(int _x0, java.lang.foreign.MemoryAddress _x1);
-    static MemorySegment allocate(on_exit$__func fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(on_exit$__func.class, fi, constants$53.on_exit$__func$FUNC, session);
+    void apply(int _x0, java.lang.foreign.MemorySegment _x1);
+    static MemorySegment allocate(on_exit$__func fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$54.on_exit$__func_UP$MH, fi, constants$54.on_exit$__func$FUNC, scope);
     }
-    static on_exit$__func ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int __x0, java.lang.foreign.MemoryAddress __x1) -> {
+    static on_exit$__func ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int __x0, java.lang.foreign.MemorySegment __x1) -> {
             try {
-                constants$53.on_exit$__func$MH.invokeExact((Addressable)symbol, __x0, (java.lang.foreign.Addressable)__x1);
+                constants$54.on_exit$__func_DOWN$MH.invokeExact(symbol, __x0, __x1);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

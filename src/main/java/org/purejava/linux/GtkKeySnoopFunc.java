@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkKeySnoopFunc)(struct _GtkWidget* grab_widget,struct _GdkEventKey* event,void* func_data);
+ * }
+ */
 public interface GtkKeySnoopFunc {
 
-    int apply(java.lang.foreign.MemoryAddress grab_widget, java.lang.foreign.MemoryAddress event, java.lang.foreign.MemoryAddress func_data);
-    static MemorySegment allocate(GtkKeySnoopFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkKeySnoopFunc.class, fi, constants$1878.GtkKeySnoopFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkKeySnoopFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1681.GtkKeySnoopFunc_UP$MH, fi, constants$1681.GtkKeySnoopFunc$FUNC, scope);
     }
-    static GtkKeySnoopFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _grab_widget, java.lang.foreign.MemoryAddress _event, java.lang.foreign.MemoryAddress _func_data) -> {
+    static GtkKeySnoopFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1878.GtkKeySnoopFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_grab_widget, (java.lang.foreign.Addressable)_event, (java.lang.foreign.Addressable)_func_data);
+                return (int)constants$1681.GtkKeySnoopFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

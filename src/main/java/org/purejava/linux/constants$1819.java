@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1819 {
+final class constants$1819 {
 
-    static final FunctionDescriptor gtk_icon_source_set_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_set_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_pixbuf",
-        constants$1819.gtk_icon_source_set_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_filename",
-        constants$1819.gtk_icon_source_get_filename$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_icon_name",
-        constants$1819.gtk_icon_source_get_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_pixbuf",
-        constants$1819.gtk_icon_source_get_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_set_direction_wildcarded$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1819() {}
+    static final FunctionDescriptor gtk_spin_button_set_snap_to_ticks$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_direction_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_direction_wildcarded",
-        constants$1819.gtk_icon_source_set_direction_wildcarded$FUNC
+    static final MethodHandle gtk_spin_button_set_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_snap_to_ticks",
+        constants$1819.gtk_spin_button_set_snap_to_ticks$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_set_state_wildcarded$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_spin_button_get_snap_to_ticks$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_get_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_snap_to_ticks",
+        constants$1819.gtk_spin_button_get_snap_to_ticks$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_update$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_update$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_update",
+        constants$1819.gtk_spin_button_update$FUNC
+    );
+    static final FunctionDescriptor _gtk_spin_button_get_panels$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_state_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_state_wildcarded",
-        constants$1819.gtk_icon_source_set_state_wildcarded$FUNC
+    static final MethodHandle _gtk_spin_button_get_panels$MH = RuntimeHelper.downcallHandle(
+        "_gtk_spin_button_get_panels",
+        constants$1819._gtk_spin_button_get_panels$FUNC
+    );
+    static final FunctionDescriptor gtk_spinner_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_spinner_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_spinner_get_type",
+        constants$1819.gtk_spinner_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_spinner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_spinner_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_spinner_new",
+        constants$1819.gtk_spinner_new$FUNC
     );
 }
 

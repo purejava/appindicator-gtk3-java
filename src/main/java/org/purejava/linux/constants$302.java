@@ -7,52 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$302 {
+final class constants$302 {
 
-    static final FunctionDescriptor g_strdup_vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$302() {}
+    static final FunctionDescriptor g_sequence_swap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strdup_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_strdup_vprintf",
-        constants$302.g_strdup_vprintf$FUNC
+    static final MethodHandle g_sequence_swap$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_swap",
+        constants$302.g_sequence_swap$FUNC
     );
-    static final FunctionDescriptor g_strndup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_insert_sorted$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_strndup$MH = RuntimeHelper.downcallHandle(
-        "g_strndup",
-        constants$302.g_strndup$FUNC
-    );
-    static final FunctionDescriptor g_strnfill$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_strnfill$MH = RuntimeHelper.downcallHandle(
-        "g_strnfill",
-        constants$302.g_strnfill$FUNC
-    );
-    static final FunctionDescriptor g_strconcat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strconcat$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_strconcat",
-        constants$302.g_strconcat$FUNC
+    static final MethodHandle g_sequence_insert_sorted$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_insert_sorted",
+        constants$302.g_sequence_insert_sorted$FUNC
     );
-    static final FunctionDescriptor g_strjoin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_insert_sorted_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strjoin$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_strjoin",
-        constants$302.g_strjoin$FUNC
+    static final MethodHandle g_sequence_insert_sorted_iter$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_insert_sorted_iter",
+        constants$302.g_sequence_insert_sorted_iter$FUNC
     );
-    static final FunctionDescriptor g_strcompress$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_sequence_sort_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strcompress$MH = RuntimeHelper.downcallHandle(
-        "g_strcompress",
-        constants$302.g_strcompress$FUNC
+    static final MethodHandle g_sequence_sort_changed$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_sort_changed",
+        constants$302.g_sequence_sort_changed$FUNC
+    );
+    static final FunctionDescriptor g_sequence_sort_changed_iter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_sequence_sort_changed_iter$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_sort_changed_iter",
+        constants$302.g_sequence_sort_changed_iter$FUNC
+    );
+    static final FunctionDescriptor g_sequence_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_sequence_remove$MH = RuntimeHelper.downcallHandle(
+        "g_sequence_remove",
+        constants$302.g_sequence_remove$FUNC
     );
 }
 

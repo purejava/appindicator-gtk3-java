@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoRenderer {
+ *     GObject parent_instance;
+ *     PangoUnderline underline;
+ *     gboolean strikethrough;
+ *     int active_count;
+ *     PangoMatrix* matrix;
+ *     PangoRendererPrivate* priv;
+ * };
+ * }
+ */
 public class _PangoRenderer {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -35,10 +47,22 @@ public class _PangoRenderer {
     public static VarHandle underline$VH() {
         return _PangoRenderer.underline$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoUnderline underline;
+     * }
+     */
     public static int underline$get(MemorySegment seg) {
         return (int)_PangoRenderer.underline$VH.get(seg);
     }
-    public static void underline$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoUnderline underline;
+     * }
+     */
+    public static void underline$set(MemorySegment seg, int x) {
         _PangoRenderer.underline$VH.set(seg, x);
     }
     public static int underline$get(MemorySegment seg, long index) {
@@ -51,10 +75,22 @@ public class _PangoRenderer {
     public static VarHandle strikethrough$VH() {
         return _PangoRenderer.strikethrough$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean strikethrough;
+     * }
+     */
     public static int strikethrough$get(MemorySegment seg) {
         return (int)_PangoRenderer.strikethrough$VH.get(seg);
     }
-    public static void strikethrough$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean strikethrough;
+     * }
+     */
+    public static void strikethrough$set(MemorySegment seg, int x) {
         _PangoRenderer.strikethrough$VH.set(seg, x);
     }
     public static int strikethrough$get(MemorySegment seg, long index) {
@@ -67,10 +103,22 @@ public class _PangoRenderer {
     public static VarHandle active_count$VH() {
         return _PangoRenderer.active_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int active_count;
+     * }
+     */
     public static int active_count$get(MemorySegment seg) {
         return (int)_PangoRenderer.active_count$VH.get(seg);
     }
-    public static void active_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int active_count;
+     * }
+     */
+    public static void active_count$set(MemorySegment seg, int x) {
         _PangoRenderer.active_count$VH.set(seg, x);
     }
     public static int active_count$get(MemorySegment seg, long index) {
@@ -83,40 +131,64 @@ public class _PangoRenderer {
     public static VarHandle matrix$VH() {
         return _PangoRenderer.matrix$VH;
     }
-    public static MemoryAddress matrix$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRenderer.matrix$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoMatrix* matrix;
+     * }
+     */
+    public static MemorySegment matrix$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRenderer.matrix$VH.get(seg);
     }
-    public static void matrix$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoMatrix* matrix;
+     * }
+     */
+    public static void matrix$set(MemorySegment seg, MemorySegment x) {
         _PangoRenderer.matrix$VH.set(seg, x);
     }
-    public static MemoryAddress matrix$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRenderer.matrix$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment matrix$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRenderer.matrix$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void matrix$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void matrix$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRenderer.matrix$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle priv$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     public static VarHandle priv$VH() {
         return _PangoRenderer.priv$VH;
     }
-    public static MemoryAddress priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoRenderer.priv$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoRendererPrivate* priv;
+     * }
+     */
+    public static MemorySegment priv$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoRenderer.priv$VH.get(seg);
     }
-    public static void priv$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoRendererPrivate* priv;
+     * }
+     */
+    public static void priv$set(MemorySegment seg, MemorySegment x) {
         _PangoRenderer.priv$VH.set(seg, x);
     }
-    public static MemoryAddress priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoRenderer.priv$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment priv$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoRenderer.priv$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void priv$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoRenderer.priv$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

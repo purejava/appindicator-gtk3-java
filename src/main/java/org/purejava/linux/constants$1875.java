@@ -7,52 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1875 {
+final class constants$1875 {
 
-    static final FunctionDescriptor gtk_list_box_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1875() {}
+    static final FunctionDescriptor gtk_tree_store_insert_after$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_set_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_sort_func",
-        constants$1875.gtk_list_box_set_sort_func$FUNC
+    static final MethodHandle gtk_tree_store_insert_after$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_insert_after",
+        constants$1875.gtk_tree_store_insert_after$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_store_insert_with_values$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_list_box_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_activate_on_single_click",
-        constants$1875.gtk_list_box_set_activate_on_single_click$FUNC
+    static final MethodHandle gtk_tree_store_insert_with_values$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_store_insert_with_values",
+        constants$1875.gtk_tree_store_insert_with_values$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tree_store_insert_with_valuesv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_list_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_activate_on_single_click",
-        constants$1875.gtk_list_box_get_activate_on_single_click$FUNC
+    static final MethodHandle gtk_tree_store_insert_with_valuesv$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_insert_with_valuesv",
+        constants$1875.gtk_tree_store_insert_with_valuesv$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_drag_unhighlight_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_drag_unhighlight_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_drag_unhighlight_row",
-        constants$1875.gtk_list_box_drag_unhighlight_row$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_drag_highlight_row$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_store_prepend$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_drag_highlight_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_drag_highlight_row",
-        constants$1875.gtk_list_box_drag_highlight_row$FUNC
+    static final MethodHandle gtk_tree_store_prepend$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_prepend",
+        constants$1875.gtk_tree_store_prepend$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_list_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_new",
-        constants$1875.gtk_list_box_new$FUNC
+    static final FunctionDescriptor gtk_tree_store_append$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_append$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_append",
+        constants$1875.gtk_tree_store_append$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_store_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_store_is_ancestor$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_is_ancestor",
+        constants$1875.gtk_tree_store_is_ancestor$FUNC
     );
 }
 

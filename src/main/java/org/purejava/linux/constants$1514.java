@@ -7,55 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1514 {
+final class constants$1514 {
 
-    static final FunctionDescriptor gtk_menu_shell_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1514() {}
+    static final FunctionDescriptor gtk_button_get_event_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_prepend",
-        constants$1514.gtk_menu_shell_prepend$FUNC
+    static final MethodHandle gtk_button_get_event_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_get_event_window",
+        constants$1514.gtk_button_get_event_window$FUNC
     );
-    static final FunctionDescriptor gtk_menu_shell_insert$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkCalendarDetailFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkCalendarDetailFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkCalendarDetailFunc_UP$MH = RuntimeHelper.upcallHandle(GtkCalendarDetailFunc.class, "apply", constants$1514.GtkCalendarDetailFunc_UP$FUNC);
+    static final FunctionDescriptor GtkCalendarDetailFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkCalendarDetailFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1514.GtkCalendarDetailFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_calendar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_get_type",
+        constants$1514.gtk_calendar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_calendar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_new",
+        constants$1514.gtk_calendar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_select_month$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_insert",
-        constants$1514.gtk_menu_shell_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_deactivate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_deactivate$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_deactivate",
-        constants$1514.gtk_menu_shell_deactivate$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_select_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_select_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_select_item",
-        constants$1514.gtk_menu_shell_select_item$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_deselect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_deselect$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_deselect",
-        constants$1514.gtk_menu_shell_deselect$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_activate_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_activate_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_activate_item",
-        constants$1514.gtk_menu_shell_activate_item$FUNC
+    static final MethodHandle gtk_calendar_select_month$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_select_month",
+        constants$1514.gtk_calendar_select_month$FUNC
     );
 }
 

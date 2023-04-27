@@ -7,50 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1987 {
+final class constants$1987 {
 
-    static final FunctionDescriptor gtk_revealer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_revealer_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_new",
-        constants$1987.gtk_revealer_new$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_reveal_child$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_get_reveal_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_reveal_child",
-        constants$1987.gtk_revealer_get_reveal_child$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_set_reveal_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_set_reveal_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_reveal_child",
-        constants$1987.gtk_revealer_set_reveal_child$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_child_revealed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_get_child_revealed$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_child_revealed",
-        constants$1987.gtk_revealer_get_child_revealed$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_transition_duration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_get_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_transition_duration",
-        constants$1987.gtk_revealer_get_transition_duration$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_set_transition_duration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_set_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_transition_duration",
-        constants$1987.gtk_revealer_set_transition_duration$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1987() {}
+    static final MemorySegment G_GSIZE_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("lu");
+    static final MemorySegment G_GSSIZE_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("li");
+    static final MemorySegment G_GOFFSET_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
+    static final MemorySegment G_GOFFSET_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("li");
+    static final MemorySegment G_POLLFD_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("%d");
+    static final MemorySegment G_GINTPTR_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
 }
 
 

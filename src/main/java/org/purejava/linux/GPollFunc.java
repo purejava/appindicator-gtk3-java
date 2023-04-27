@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GPollFunc)(struct _GPollFD* ufds,unsigned int nfsd,int timeout_);
+ * }
+ */
 public interface GPollFunc {
 
-    int apply(java.lang.foreign.MemoryAddress ufds, int nfsd, int timeout_);
-    static MemorySegment allocate(GPollFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GPollFunc.class, fi, constants$159.GPollFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment ufds, int nfsd, int timeout_);
+    static MemorySegment allocate(GPollFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$161.GPollFunc_UP$MH, fi, constants$161.GPollFunc$FUNC, scope);
     }
-    static GPollFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _ufds, int _nfsd, int _timeout_) -> {
+    static GPollFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _ufds, int _nfsd, int _timeout_) -> {
             try {
-                return (int)constants$159.GPollFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_ufds, _nfsd, _timeout_);
+                return (int)constants$161.GPollFunc_DOWN$MH.invokeExact(symbol, _ufds, _nfsd, _timeout_);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * guint64 (*g_thread_gettime)();
+ * }
+ */
 public interface g_thread_gettime {
 
     long apply();
-    static MemorySegment allocate(g_thread_gettime fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(g_thread_gettime.class, fi, constants$348.g_thread_gettime$FUNC, session);
+    static MemorySegment allocate(g_thread_gettime fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$352.g_thread_gettime_UP$MH, fi, constants$352.g_thread_gettime$FUNC, scope);
     }
-    static g_thread_gettime ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static g_thread_gettime ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                return (long)constants$348.g_thread_gettime$MH.invokeExact((Addressable)symbol);
+                return (long)constants$352.g_thread_gettime_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

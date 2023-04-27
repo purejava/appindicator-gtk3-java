@@ -7,60 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1586 {
+final class constants$1586 {
 
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1586() {}
+    static final FunctionDescriptor gtk_flow_box_child_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_flow_box_child_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_child_new",
+        constants$1586.gtk_flow_box_child_new$FUNC
     );
-    static final MethodHandle gtk_tree_view_column_set_sort_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_order",
-        constants$1586.gtk_tree_view_column_set_sort_order$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_flow_box_child_get_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_sort_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_order",
-        constants$1586.gtk_tree_view_column_get_sort_order$FUNC
+    static final MethodHandle gtk_flow_box_child_get_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_child_get_index",
+        constants$1586.gtk_flow_box_child_get_index$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_cell_set_cell_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_cell_set_cell_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_set_cell_data",
-        constants$1586.gtk_tree_view_column_cell_set_cell_data$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_cell_get_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_flow_box_child_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_cell_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_get_size",
-        constants$1586.gtk_tree_view_column_cell_get_size$FUNC
+    static final MethodHandle gtk_flow_box_child_is_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_child_is_selected",
+        constants$1586.gtk_flow_box_child_is_selected$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_cell_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_flow_box_child_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_cell_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_is_visible",
-        constants$1586.gtk_tree_view_column_cell_is_visible$FUNC
+    static final MethodHandle gtk_flow_box_child_changed$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_child_changed",
+        constants$1586.gtk_flow_box_child_changed$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_focus_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_flow_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_flow_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_type",
+        constants$1586.gtk_flow_box_get_type$FUNC
     );
-    static final MethodHandle gtk_tree_view_column_focus_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_focus_cell",
-        constants$1586.gtk_tree_view_column_focus_cell$FUNC
+    static final FunctionDescriptor gtk_flow_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_flow_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_new",
+        constants$1586.gtk_flow_box_new$FUNC
     );
 }
 

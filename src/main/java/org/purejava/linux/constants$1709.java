@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1709 {
+final class constants$1709 {
 
-    static final FunctionDescriptor _gtk_cell_area_box_group_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1709() {}
+    static final FunctionDescriptor gtk_notebook_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_notebook_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_type",
+        constants$1709.gtk_notebook_get_type$FUNC
     );
-    static final MethodHandle _gtk_cell_area_box_group_visible$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_area_box_group_visible",
-        constants$1709._gtk_cell_area_box_group_visible$FUNC
+    static final FunctionDescriptor gtk_notebook_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_notebook_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_new",
+        constants$1709.gtk_notebook_new$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_area_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_type",
-        constants$1709.gtk_cell_area_context_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_area",
-        constants$1709.gtk_cell_area_context_get_area$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_allocate",
-        constants$1709.gtk_cell_area_context_allocate$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_reset",
-        constants$1709.gtk_cell_area_context_reset$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_notebook_append_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_context_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_preferred_width",
-        constants$1709.gtk_cell_area_context_get_preferred_width$FUNC
+    static final MethodHandle gtk_notebook_append_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_append_page",
+        constants$1709.gtk_notebook_append_page$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_append_page_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_append_page_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_append_page_menu",
+        constants$1709.gtk_notebook_append_page_menu$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_prepend_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_prepend_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_prepend_page",
+        constants$1709.gtk_notebook_prepend_page$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_prepend_page_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_prepend_page_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_prepend_page_menu",
+        constants$1709.gtk_notebook_prepend_page_menu$FUNC
     );
 }
 

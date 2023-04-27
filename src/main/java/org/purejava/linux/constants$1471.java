@@ -7,50 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1471 {
+final class constants$1471 {
 
-    static final FunctionDescriptor gtk_application_get_menu_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1471() {}
+    static final FunctionDescriptor gtk_tree_view_collapse_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_application_get_menu_by_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_menu_by_id",
-        constants$1471.gtk_application_get_menu_by_id$FUNC
+    static final MethodHandle gtk_tree_view_collapse_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_collapse_row",
+        constants$1471.gtk_tree_view_collapse_row$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkApplication$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_map_expanded_rows$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkApplication",
-        constants$1471.glib_autoptr_clear_GtkApplication$FUNC
+    static final MethodHandle gtk_tree_view_map_expanded_rows$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_map_expanded_rows",
+        constants$1471.gtk_tree_view_map_expanded_rows$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkApplication$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_row_expanded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkApplication",
-        constants$1471.glib_autoptr_cleanup_GtkApplication$FUNC
+    static final MethodHandle gtk_tree_view_row_expanded$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_row_expanded",
+        constants$1471.gtk_tree_view_row_expanded$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkApplication$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_reorderable",
+        constants$1471.gtk_tree_view_set_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkApplication",
-        constants$1471.glib_listautoptr_cleanup_GtkApplication$FUNC
+    static final MethodHandle gtk_tree_view_get_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_reorderable",
+        constants$1471.gtk_tree_view_get_reorderable$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tree_view_set_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkApplication",
-        constants$1471.glib_slistautoptr_cleanup_GtkApplication$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkApplication",
-        constants$1471.glib_queueautoptr_cleanup_GtkApplication$FUNC
+    static final MethodHandle gtk_tree_view_set_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_cursor",
+        constants$1471.gtk_tree_view_set_cursor$FUNC
     );
 }
 

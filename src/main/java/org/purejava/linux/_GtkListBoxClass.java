@@ -7,9 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkListBoxClass {
+ *     GtkContainerClass parent_class;
+ *     void (*row_selected)(GtkListBox*,GtkListBoxRow*);
+ *     void (*row_activated)(GtkListBox*,GtkListBoxRow*);
+ *     void (*activate_cursor_row)(GtkListBox*);
+ *     void (*toggle_cursor_row)(GtkListBox*);
+ *     void (*move_cursor)(GtkListBox*,GtkMovementStep,gint);
+ *     void (*selected_rows_changed)(GtkListBox*);
+ *     void (*select_all)(GtkListBox*);
+ *     void (*unselect_all)(GtkListBox*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ * };
+ * }
+ */
 public class _GtkListBoxClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -26,7 +44,10 @@ public class _GtkListBoxClass {
                     Constants$root.C_POINTER$LAYOUT.withName("notify"),
                     Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                     Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                 ).withName("parent_class"),
                 Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                 MemoryLayout.paddingLayout(32),
@@ -126,10 +147,7 @@ public class _GtkListBoxClass {
             Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                MemoryLayout.paddingLayout(63)
-            ),
+            MemoryLayout.paddingLayout(64),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -161,20 +179,34 @@ public class _GtkListBoxClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_selected$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.row_selected$FUNC
+    static final FunctionDescriptor row_selected_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_selected_UP$MH = RuntimeHelper.upcallHandle(row_selected.class, "apply", _GtkListBoxClass.row_selected_UP$FUNC);
+    static final FunctionDescriptor row_selected_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_selected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.row_selected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*row_selected)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
     public interface row_selected {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(row_selected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_selected.class, fi, _GtkListBoxClass.row_selected$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(row_selected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.row_selected_UP$MH, fi, _GtkListBoxClass.row_selected$FUNC, scope);
         }
-        static row_selected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static row_selected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkListBoxClass.row_selected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkListBoxClass.row_selected_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -186,39 +218,65 @@ public class _GtkListBoxClass {
     public static VarHandle row_selected$VH() {
         return _GtkListBoxClass.row_selected$VH;
     }
-    public static MemoryAddress row_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.row_selected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*row_selected)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
+    public static MemorySegment row_selected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.row_selected$VH.get(seg);
     }
-    public static void row_selected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*row_selected)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
+    public static void row_selected$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.row_selected$VH.set(seg, x);
     }
-    public static MemoryAddress row_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.row_selected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_selected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.row_selected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_selected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_selected$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.row_selected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_selected row_selected (MemorySegment segment, MemorySession session) {
-        return row_selected.ofAddress(row_selected$get(segment), session);
+    public static row_selected row_selected(MemorySegment segment, SegmentScope scope) {
+        return row_selected.ofAddress(row_selected$get(segment), scope);
     }
     static final FunctionDescriptor row_activated$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_activated$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.row_activated$FUNC
+    static final FunctionDescriptor row_activated_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_activated_UP$MH = RuntimeHelper.upcallHandle(row_activated.class, "apply", _GtkListBoxClass.row_activated_UP$FUNC);
+    static final FunctionDescriptor row_activated_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_activated_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.row_activated_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*row_activated)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
     public interface row_activated {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(row_activated fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_activated.class, fi, _GtkListBoxClass.row_activated$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(row_activated fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.row_activated_UP$MH, fi, _GtkListBoxClass.row_activated$FUNC, scope);
         }
-        static row_activated ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static row_activated ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkListBoxClass.row_activated$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkListBoxClass.row_activated_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -230,38 +288,62 @@ public class _GtkListBoxClass {
     public static VarHandle row_activated$VH() {
         return _GtkListBoxClass.row_activated$VH;
     }
-    public static MemoryAddress row_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.row_activated$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*row_activated)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
+    public static MemorySegment row_activated$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.row_activated$VH.get(seg);
     }
-    public static void row_activated$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*row_activated)(GtkListBox*,GtkListBoxRow*);
+     * }
+     */
+    public static void row_activated$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.row_activated$VH.set(seg, x);
     }
-    public static MemoryAddress row_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.row_activated$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_activated$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.row_activated$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_activated$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_activated$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.row_activated$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_activated row_activated (MemorySegment segment, MemorySession session) {
-        return row_activated.ofAddress(row_activated$get(segment), session);
+    public static row_activated row_activated(MemorySegment segment, SegmentScope scope) {
+        return row_activated.ofAddress(row_activated$get(segment), scope);
     }
     static final FunctionDescriptor activate_cursor_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate_cursor_row$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.activate_cursor_row$FUNC
+    static final FunctionDescriptor activate_cursor_row_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_cursor_row_UP$MH = RuntimeHelper.upcallHandle(activate_cursor_row.class, "apply", _GtkListBoxClass.activate_cursor_row_UP$FUNC);
+    static final FunctionDescriptor activate_cursor_row_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_cursor_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.activate_cursor_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate_cursor_row)(GtkListBox*);
+     * }
+     */
     public interface activate_cursor_row {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(activate_cursor_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate_cursor_row.class, fi, _GtkListBoxClass.activate_cursor_row$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(activate_cursor_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.activate_cursor_row_UP$MH, fi, _GtkListBoxClass.activate_cursor_row$FUNC, scope);
         }
-        static activate_cursor_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static activate_cursor_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkListBoxClass.activate_cursor_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkListBoxClass.activate_cursor_row_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -273,38 +355,62 @@ public class _GtkListBoxClass {
     public static VarHandle activate_cursor_row$VH() {
         return _GtkListBoxClass.activate_cursor_row$VH;
     }
-    public static MemoryAddress activate_cursor_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.activate_cursor_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate_cursor_row)(GtkListBox*);
+     * }
+     */
+    public static MemorySegment activate_cursor_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.activate_cursor_row$VH.get(seg);
     }
-    public static void activate_cursor_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate_cursor_row)(GtkListBox*);
+     * }
+     */
+    public static void activate_cursor_row$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.activate_cursor_row$VH.set(seg, x);
     }
-    public static MemoryAddress activate_cursor_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.activate_cursor_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate_cursor_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.activate_cursor_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate_cursor_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate_cursor_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.activate_cursor_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate_cursor_row activate_cursor_row (MemorySegment segment, MemorySession session) {
-        return activate_cursor_row.ofAddress(activate_cursor_row$get(segment), session);
+    public static activate_cursor_row activate_cursor_row(MemorySegment segment, SegmentScope scope) {
+        return activate_cursor_row.ofAddress(activate_cursor_row$get(segment), scope);
     }
     static final FunctionDescriptor toggle_cursor_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle toggle_cursor_row$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.toggle_cursor_row$FUNC
+    static final FunctionDescriptor toggle_cursor_row_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle toggle_cursor_row_UP$MH = RuntimeHelper.upcallHandle(toggle_cursor_row.class, "apply", _GtkListBoxClass.toggle_cursor_row_UP$FUNC);
+    static final FunctionDescriptor toggle_cursor_row_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle toggle_cursor_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.toggle_cursor_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*toggle_cursor_row)(GtkListBox*);
+     * }
+     */
     public interface toggle_cursor_row {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(toggle_cursor_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(toggle_cursor_row.class, fi, _GtkListBoxClass.toggle_cursor_row$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(toggle_cursor_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.toggle_cursor_row_UP$MH, fi, _GtkListBoxClass.toggle_cursor_row$FUNC, scope);
         }
-        static toggle_cursor_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static toggle_cursor_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkListBoxClass.toggle_cursor_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkListBoxClass.toggle_cursor_row_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -316,40 +422,68 @@ public class _GtkListBoxClass {
     public static VarHandle toggle_cursor_row$VH() {
         return _GtkListBoxClass.toggle_cursor_row$VH;
     }
-    public static MemoryAddress toggle_cursor_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.toggle_cursor_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*toggle_cursor_row)(GtkListBox*);
+     * }
+     */
+    public static MemorySegment toggle_cursor_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.toggle_cursor_row$VH.get(seg);
     }
-    public static void toggle_cursor_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*toggle_cursor_row)(GtkListBox*);
+     * }
+     */
+    public static void toggle_cursor_row$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.toggle_cursor_row$VH.set(seg, x);
     }
-    public static MemoryAddress toggle_cursor_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.toggle_cursor_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment toggle_cursor_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.toggle_cursor_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void toggle_cursor_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void toggle_cursor_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.toggle_cursor_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static toggle_cursor_row toggle_cursor_row (MemorySegment segment, MemorySession session) {
-        return toggle_cursor_row.ofAddress(toggle_cursor_row$get(segment), session);
+    public static toggle_cursor_row toggle_cursor_row(MemorySegment segment, SegmentScope scope) {
+        return toggle_cursor_row.ofAddress(toggle_cursor_row$get(segment), scope);
     }
     static final FunctionDescriptor move_cursor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle move_cursor$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.move_cursor$FUNC
+    static final FunctionDescriptor move_cursor_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle move_cursor_UP$MH = RuntimeHelper.upcallHandle(move_cursor.class, "apply", _GtkListBoxClass.move_cursor_UP$FUNC);
+    static final FunctionDescriptor move_cursor_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle move_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.move_cursor_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*move_cursor)(GtkListBox*,GtkMovementStep,gint);
+     * }
+     */
     public interface move_cursor {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(move_cursor fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(move_cursor.class, fi, _GtkListBoxClass.move_cursor$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(move_cursor fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.move_cursor_UP$MH, fi, _GtkListBoxClass.move_cursor$FUNC, scope);
         }
-        static move_cursor ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static move_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkListBoxClass.move_cursor$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkListBoxClass.move_cursor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -361,38 +495,62 @@ public class _GtkListBoxClass {
     public static VarHandle move_cursor$VH() {
         return _GtkListBoxClass.move_cursor$VH;
     }
-    public static MemoryAddress move_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.move_cursor$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*move_cursor)(GtkListBox*,GtkMovementStep,gint);
+     * }
+     */
+    public static MemorySegment move_cursor$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.move_cursor$VH.get(seg);
     }
-    public static void move_cursor$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*move_cursor)(GtkListBox*,GtkMovementStep,gint);
+     * }
+     */
+    public static void move_cursor$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.move_cursor$VH.set(seg, x);
     }
-    public static MemoryAddress move_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment move_cursor$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void move_cursor$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void move_cursor$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.move_cursor$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_cursor move_cursor (MemorySegment segment, MemorySession session) {
-        return move_cursor.ofAddress(move_cursor$get(segment), session);
+    public static move_cursor move_cursor(MemorySegment segment, SegmentScope scope) {
+        return move_cursor.ofAddress(move_cursor$get(segment), scope);
     }
     static final FunctionDescriptor selected_rows_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle selected_rows_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.selected_rows_changed$FUNC
+    static final FunctionDescriptor selected_rows_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle selected_rows_changed_UP$MH = RuntimeHelper.upcallHandle(selected_rows_changed.class, "apply", _GtkListBoxClass.selected_rows_changed_UP$FUNC);
+    static final FunctionDescriptor selected_rows_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle selected_rows_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.selected_rows_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*selected_rows_changed)(GtkListBox*);
+     * }
+     */
     public interface selected_rows_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(selected_rows_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(selected_rows_changed.class, fi, _GtkListBoxClass.selected_rows_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(selected_rows_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.selected_rows_changed_UP$MH, fi, _GtkListBoxClass.selected_rows_changed$FUNC, scope);
         }
-        static selected_rows_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static selected_rows_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkListBoxClass.selected_rows_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkListBoxClass.selected_rows_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -404,38 +562,62 @@ public class _GtkListBoxClass {
     public static VarHandle selected_rows_changed$VH() {
         return _GtkListBoxClass.selected_rows_changed$VH;
     }
-    public static MemoryAddress selected_rows_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.selected_rows_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*selected_rows_changed)(GtkListBox*);
+     * }
+     */
+    public static MemorySegment selected_rows_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.selected_rows_changed$VH.get(seg);
     }
-    public static void selected_rows_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*selected_rows_changed)(GtkListBox*);
+     * }
+     */
+    public static void selected_rows_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.selected_rows_changed$VH.set(seg, x);
     }
-    public static MemoryAddress selected_rows_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.selected_rows_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment selected_rows_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.selected_rows_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void selected_rows_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void selected_rows_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.selected_rows_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selected_rows_changed selected_rows_changed (MemorySegment segment, MemorySession session) {
-        return selected_rows_changed.ofAddress(selected_rows_changed$get(segment), session);
+    public static selected_rows_changed selected_rows_changed(MemorySegment segment, SegmentScope scope) {
+        return selected_rows_changed.ofAddress(selected_rows_changed$get(segment), scope);
     }
     static final FunctionDescriptor select_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle select_all$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.select_all$FUNC
+    static final FunctionDescriptor select_all_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle select_all_UP$MH = RuntimeHelper.upcallHandle(select_all.class, "apply", _GtkListBoxClass.select_all_UP$FUNC);
+    static final FunctionDescriptor select_all_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle select_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.select_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*select_all)(GtkListBox*);
+     * }
+     */
     public interface select_all {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(select_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_all.class, fi, _GtkListBoxClass.select_all$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(select_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.select_all_UP$MH, fi, _GtkListBoxClass.select_all$FUNC, scope);
         }
-        static select_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static select_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkListBoxClass.select_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkListBoxClass.select_all_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -447,38 +629,62 @@ public class _GtkListBoxClass {
     public static VarHandle select_all$VH() {
         return _GtkListBoxClass.select_all$VH;
     }
-    public static MemoryAddress select_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.select_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*select_all)(GtkListBox*);
+     * }
+     */
+    public static MemorySegment select_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.select_all$VH.get(seg);
     }
-    public static void select_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*select_all)(GtkListBox*);
+     * }
+     */
+    public static void select_all$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.select_all$VH.set(seg, x);
     }
-    public static MemoryAddress select_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.select_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.select_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.select_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_all select_all (MemorySegment segment, MemorySession session) {
-        return select_all.ofAddress(select_all$get(segment), session);
+    public static select_all select_all(MemorySegment segment, SegmentScope scope) {
+        return select_all.ofAddress(select_all$get(segment), scope);
     }
     static final FunctionDescriptor unselect_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unselect_all$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass.unselect_all$FUNC
+    static final FunctionDescriptor unselect_all_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unselect_all_UP$MH = RuntimeHelper.upcallHandle(unselect_all.class, "apply", _GtkListBoxClass.unselect_all_UP$FUNC);
+    static final FunctionDescriptor unselect_all_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unselect_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass.unselect_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*unselect_all)(GtkListBox*);
+     * }
+     */
     public interface unselect_all {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(unselect_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unselect_all.class, fi, _GtkListBoxClass.unselect_all$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(unselect_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass.unselect_all_UP$MH, fi, _GtkListBoxClass.unselect_all$FUNC, scope);
         }
-        static unselect_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static unselect_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkListBoxClass.unselect_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkListBoxClass.unselect_all_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -490,36 +696,56 @@ public class _GtkListBoxClass {
     public static VarHandle unselect_all$VH() {
         return _GtkListBoxClass.unselect_all$VH;
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.unselect_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*unselect_all)(GtkListBox*);
+     * }
+     */
+    public static MemorySegment unselect_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.unselect_all$VH.get(seg);
     }
-    public static void unselect_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*unselect_all)(GtkListBox*);
+     * }
+     */
+    public static void unselect_all$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass.unselect_all$VH.set(seg, x);
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass.unselect_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unselect_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass.unselect_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unselect_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unselect_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass.unselect_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unselect_all unselect_all (MemorySegment segment, MemorySession session) {
-        return unselect_all.ofAddress(unselect_all$get(segment), session);
+    public static unselect_all unselect_all(MemorySegment segment, SegmentScope scope) {
+        return unselect_all.ofAddress(unselect_all$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkListBoxClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkListBoxClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass._gtk_reserved1_UP$MH, fi, _GtkListBoxClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkListBoxClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkListBoxClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -531,36 +757,56 @@ public class _GtkListBoxClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkListBoxClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkListBoxClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkListBoxClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass._gtk_reserved2_UP$MH, fi, _GtkListBoxClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkListBoxClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkListBoxClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -572,36 +818,56 @@ public class _GtkListBoxClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkListBoxClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkListBoxClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkListBoxClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkListBoxClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkListBoxClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkListBoxClass._gtk_reserved3_UP$MH, fi, _GtkListBoxClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkListBoxClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkListBoxClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -613,27 +879,39 @@ public class _GtkListBoxClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkListBoxClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkListBoxClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkListBoxClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkListBoxClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

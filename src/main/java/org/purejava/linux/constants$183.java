@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$183 {
+final class constants$183 {
 
-    static final  GroupLayout g_unix_fd_source_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_unix_fd_source_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_fd_source_funcs", constants$183.g_unix_fd_source_funcs$LAYOUT);
-    static final FunctionDescriptor g_unicode_script_to_iso15924$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$183() {}
+    static final FunctionDescriptor g_idle_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_unicode_script_to_iso15924$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_script_to_iso15924",
-        constants$183.g_unicode_script_to_iso15924$FUNC
+    static final MethodHandle g_idle_add$MH = RuntimeHelper.downcallHandle(
+        "g_idle_add",
+        constants$183.g_idle_add$FUNC
     );
-    static final FunctionDescriptor g_unicode_script_from_iso15924$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_idle_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_unicode_script_from_iso15924$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_script_from_iso15924",
-        constants$183.g_unicode_script_from_iso15924$FUNC
+    static final MethodHandle g_idle_add_full$MH = RuntimeHelper.downcallHandle(
+        "g_idle_add_full",
+        constants$183.g_idle_add_full$FUNC
     );
-    static final FunctionDescriptor g_unichar_isalnum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_idle_add_once$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_unichar_isalnum$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isalnum",
-        constants$183.g_unichar_isalnum$FUNC
+    static final MethodHandle g_idle_add_once$MH = RuntimeHelper.downcallHandle(
+        "g_idle_add_once",
+        constants$183.g_idle_add_once$FUNC
     );
-    static final FunctionDescriptor g_unichar_isalpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_idle_remove_by_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_unichar_isalpha$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isalpha",
-        constants$183.g_unichar_isalpha$FUNC
+    static final MethodHandle g_idle_remove_by_data$MH = RuntimeHelper.downcallHandle(
+        "g_idle_remove_by_data",
+        constants$183.g_idle_remove_by_data$FUNC
     );
-    static final FunctionDescriptor g_unichar_iscntrl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_main_context_invoke_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_unichar_iscntrl$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_iscntrl",
-        constants$183.g_unichar_iscntrl$FUNC
+    static final MethodHandle g_main_context_invoke_full$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_invoke_full",
+        constants$183.g_main_context_invoke_full$FUNC
+    );
+    static final FunctionDescriptor g_main_context_invoke$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_context_invoke$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_invoke",
+        constants$183.g_main_context_invoke$FUNC
     );
 }
 

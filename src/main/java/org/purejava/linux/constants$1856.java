@@ -7,64 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1856 {
+final class constants$1856 {
 
-    static final FunctionDescriptor gtk_icon_view_get_cell_rect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1856() {}
+    static final FunctionDescriptor gtk_tool_item_group_get_collapsed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_cell_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_cell_rect",
-        constants$1856.gtk_icon_view_get_cell_rect$FUNC
+    static final MethodHandle gtk_tool_item_group_get_collapsed$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_collapsed",
+        constants$1856.gtk_tool_item_group_get_collapsed$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_tooltip_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_tooltip_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_tooltip_item",
-        constants$1856.gtk_icon_view_set_tooltip_item$FUNC
+    static final MethodHandle gtk_tool_item_group_get_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_ellipsize",
+        constants$1856.gtk_tool_item_group_get_ellipsize$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_tooltip_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_get_header_relief$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_tooltip_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_tooltip_cell",
-        constants$1856.gtk_icon_view_set_tooltip_cell$FUNC
+    static final MethodHandle gtk_tool_item_group_get_header_relief$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_header_relief",
+        constants$1856.gtk_tool_item_group_get_header_relief$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_tooltip_context$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_insert$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_tooltip_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_tooltip_context",
-        constants$1856.gtk_icon_view_get_tooltip_context$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_tooltip_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_tooltip_column",
-        constants$1856.gtk_icon_view_set_tooltip_column$FUNC
+    static final MethodHandle gtk_tool_item_group_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_insert",
+        constants$1856.gtk_tool_item_group_insert$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_tooltip_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_set_item_position$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_set_item_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_item_position",
+        constants$1856.gtk_tool_item_group_set_item_position$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_get_item_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_tooltip_column",
-        constants$1856.gtk_icon_view_get_tooltip_column$FUNC
+    static final MethodHandle gtk_tool_item_group_get_item_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_item_position",
+        constants$1856.gtk_tool_item_group_get_item_position$FUNC
     );
 }
 

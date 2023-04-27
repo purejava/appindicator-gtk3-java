@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$62 {
+final class constants$62 {
 
-    static final FunctionDescriptor g_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$62() {}
+    static final FunctionDescriptor g_thread_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_trylock",
-        constants$62.g_mutex_trylock$FUNC
+    static final MethodHandle g_thread_unref$MH = RuntimeHelper.downcallHandle(
+        "g_thread_unref",
+        constants$62.g_thread_unref$FUNC
     );
-    static final FunctionDescriptor g_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_unlock",
-        constants$62.g_mutex_unlock$FUNC
+    static final MethodHandle g_thread_new$MH = RuntimeHelper.downcallHandle(
+        "g_thread_new",
+        constants$62.g_thread_new$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_init$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_try_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_init$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_init",
-        constants$62.g_rw_lock_init$FUNC
+    static final MethodHandle g_thread_try_new$MH = RuntimeHelper.downcallHandle(
+        "g_thread_try_new",
+        constants$62.g_thread_try_new$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_clear$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_self$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_thread_self$MH = RuntimeHelper.downcallHandle(
+        "g_thread_self",
+        constants$62.g_thread_self$FUNC
+    );
+    static final FunctionDescriptor g_thread_exit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_clear$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_clear",
-        constants$62.g_rw_lock_clear$FUNC
+    static final MethodHandle g_thread_exit$MH = RuntimeHelper.downcallHandle(
+        "g_thread_exit",
+        constants$62.g_thread_exit$FUNC
     );
-    static final FunctionDescriptor g_rw_lock_writer_lock$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_thread_join$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rw_lock_writer_lock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_lock",
-        constants$62.g_rw_lock_writer_lock$FUNC
-    );
-    static final FunctionDescriptor g_rw_lock_writer_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_writer_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_trylock",
-        constants$62.g_rw_lock_writer_trylock$FUNC
+    static final MethodHandle g_thread_join$MH = RuntimeHelper.downcallHandle(
+        "g_thread_join",
+        constants$62.g_thread_join$FUNC
     );
 }
 

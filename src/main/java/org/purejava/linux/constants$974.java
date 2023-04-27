@@ -7,49 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$974 {
+final class constants$974 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GTestDBus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$974() {}
+    static final FunctionDescriptor pango_renderer_draw_layout$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTestDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTestDBus",
-        constants$974.glib_autoptr_cleanup_GTestDBus$FUNC
+    static final MethodHandle pango_renderer_draw_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_layout",
+        constants$974.pango_renderer_draw_layout$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTestDBus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_renderer_draw_layout_line$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTestDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTestDBus",
-        constants$974.glib_listautoptr_cleanup_GTestDBus$FUNC
+    static final MethodHandle pango_renderer_draw_layout_line$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_layout_line",
+        constants$974.pango_renderer_draw_layout_line$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTestDBus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_renderer_draw_glyphs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTestDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTestDBus",
-        constants$974.glib_slistautoptr_cleanup_GTestDBus$FUNC
+    static final MethodHandle pango_renderer_draw_glyphs$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyphs",
+        constants$974.pango_renderer_draw_glyphs$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTestDBus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_renderer_draw_glyph_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTestDBus$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTestDBus",
-        constants$974.glib_queueautoptr_cleanup_GTestDBus$FUNC
+    static final MethodHandle pango_renderer_draw_glyph_item$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyph_item",
+        constants$974.pango_renderer_draw_glyph_item$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GThemedIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_renderer_draw_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GThemedIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GThemedIcon",
-        constants$974.glib_autoptr_clear_GThemedIcon$FUNC
+    static final MethodHandle pango_renderer_draw_rectangle$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_rectangle",
+        constants$974.pango_renderer_draw_rectangle$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GThemedIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_renderer_draw_error_underline$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GThemedIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GThemedIcon",
-        constants$974.glib_autoptr_cleanup_GThemedIcon$FUNC
+    static final MethodHandle pango_renderer_draw_error_underline$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_error_underline",
+        constants$974.pango_renderer_draw_error_underline$FUNC
     );
 }
 

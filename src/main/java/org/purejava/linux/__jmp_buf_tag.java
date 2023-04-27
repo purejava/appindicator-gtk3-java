@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct __jmp_buf_tag {
+ *     __jmp_buf __jmpbuf;
+ *     int __mask_was_saved;
+ *     __sigset_t __saved_mask;
+ * };
+ * }
+ */
 public class __jmp_buf_tag {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.sequenceLayout(8, Constants$root.C_LONG_LONG$LAYOUT).withName("__jmpbuf"),
         Constants$root.C_INT$LAYOUT.withName("__mask_was_saved"),
         MemoryLayout.paddingLayout(32),
@@ -27,10 +36,22 @@ public class __jmp_buf_tag {
     public static VarHandle __mask_was_saved$VH() {
         return __jmp_buf_tag.__mask_was_saved$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int __mask_was_saved;
+     * }
+     */
     public static int __mask_was_saved$get(MemorySegment seg) {
         return (int)__jmp_buf_tag.__mask_was_saved$VH.get(seg);
     }
-    public static void __mask_was_saved$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int __mask_was_saved;
+     * }
+     */
+    public static void __mask_was_saved$set(MemorySegment seg, int x) {
         __jmp_buf_tag.__mask_was_saved$VH.set(seg, x);
     }
     public static int __mask_was_saved$get(MemorySegment seg, long index) {
@@ -44,10 +65,10 @@ public class __jmp_buf_tag {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,51 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1137 {
+final class constants$1137 {
 
-    static final FunctionDescriptor rename$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1137() {}
+    static final FunctionDescriptor gdk_pixbuf_saturate_and_pixelate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_saturate_and_pixelate$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_saturate_and_pixelate",
+        constants$1137.gdk_pixbuf_saturate_and_pixelate$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_apply_embedded_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_apply_embedded_orientation$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_apply_embedded_orientation",
+        constants$1137.gdk_pixbuf_apply_embedded_orientation$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_set_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle rename$MH = RuntimeHelper.downcallHandle(
-        "rename",
-        constants$1137.rename$FUNC
+    static final MethodHandle gdk_pixbuf_set_option$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_set_option",
+        constants$1137.gdk_pixbuf_set_option$FUNC
     );
-    static final FunctionDescriptor renameat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_get_option$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle renameat$MH = RuntimeHelper.downcallHandle(
-        "renameat",
-        constants$1137.renameat$FUNC
+    static final MethodHandle gdk_pixbuf_get_option$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_option",
+        constants$1137.gdk_pixbuf_get_option$FUNC
     );
-    static final FunctionDescriptor fclose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_remove_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fclose$MH = RuntimeHelper.downcallHandle(
-        "fclose",
-        constants$1137.fclose$FUNC
+    static final MethodHandle gdk_pixbuf_remove_option$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_remove_option",
+        constants$1137.gdk_pixbuf_remove_option$FUNC
     );
-    static final FunctionDescriptor tmpfile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle tmpfile$MH = RuntimeHelper.downcallHandle(
-        "tmpfile",
-        constants$1137.tmpfile$FUNC
-    );
-    static final FunctionDescriptor tmpnam$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_get_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle tmpnam$MH = RuntimeHelper.downcallHandle(
-        "tmpnam",
-        constants$1137.tmpnam$FUNC
-    );
-    static final FunctionDescriptor tmpnam_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle tmpnam_r$MH = RuntimeHelper.downcallHandle(
-        "tmpnam_r",
-        constants$1137.tmpnam_r$FUNC
+    static final MethodHandle gdk_pixbuf_get_options$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_options",
+        constants$1137.gdk_pixbuf_get_options$FUNC
     );
 }
 

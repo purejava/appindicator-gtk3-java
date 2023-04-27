@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFileIOStreamPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GFileIOStreamPrivate GFileIOStreamPrivate;
+ * }
+ */
+public final class GFileIOStreamPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFileIOStreamPrivate() {}
 }
 
 

@@ -7,52 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1963 {
+final class constants$1963 {
 
-    static final FunctionDescriptor gtk_range_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_inverted",
-        constants$1963.gtk_range_get_inverted$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_flippable$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1963() {}
+    static final FunctionDescriptor gtk_paint_spinner$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_range_set_flippable$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_flippable",
-        constants$1963.gtk_range_set_flippable$FUNC
+    static final MethodHandle gtk_paint_spinner$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_spinner",
+        constants$1963.gtk_paint_spinner$FUNC
     );
-    static final FunctionDescriptor gtk_range_get_flippable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_style_get_style_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_flippable$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_flippable",
-        constants$1963.gtk_range_get_flippable$FUNC
+    static final MethodHandle gtk_style_get_style_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_get_style_property",
+        constants$1963.gtk_style_get_style_property$FUNC
     );
-    static final FunctionDescriptor gtk_range_set_slider_size_fixed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_get_valist$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_slider_size_fixed",
-        constants$1963.gtk_range_set_slider_size_fixed$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_slider_size_fixed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_slider_size_fixed",
-        constants$1963.gtk_range_get_slider_size_fixed$FUNC
+    static final MethodHandle gtk_style_get_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_get_valist",
+        constants$1963.gtk_style_get_valist$FUNC
     );
-    static final FunctionDescriptor gtk_range_set_min_slider_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_get$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_set_min_slider_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_min_slider_size",
-        constants$1963.gtk_range_set_min_slider_size$FUNC
+    static final MethodHandle gtk_style_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_get",
+        constants$1963.gtk_style_get$FUNC
+    );
+    static final FunctionDescriptor _gtk_style_new_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle _gtk_style_new_for_path$MH = RuntimeHelper.downcallHandle(
+        "_gtk_style_new_for_path",
+        constants$1963._gtk_style_new_for_path$FUNC
+    );
+    static final FunctionDescriptor _gtk_style_shade$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle _gtk_style_shade$MH = RuntimeHelper.downcallHandle(
+        "_gtk_style_shade",
+        constants$1963._gtk_style_shade$FUNC
     );
 }
 

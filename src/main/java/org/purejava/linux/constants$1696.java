@@ -7,58 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1696 {
+final class constants$1696 {
 
-    static final FunctionDescriptor gtk_builder_get_translation_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_get_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_translation_domain",
-        constants$1696.gtk_builder_get_translation_domain$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_get_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1696() {}
+    static final FunctionDescriptor gtk_size_group_add_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_get_type_from_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_type_from_name",
-        constants$1696.gtk_builder_get_type_from_name$FUNC
+    static final MethodHandle gtk_size_group_add_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_add_widget",
+        constants$1696.gtk_size_group_add_widget$FUNC
     );
-    static final FunctionDescriptor gtk_builder_value_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_size_group_remove_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_value_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_value_from_string",
-        constants$1696.gtk_builder_value_from_string$FUNC
+    static final MethodHandle gtk_size_group_remove_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_remove_widget",
+        constants$1696.gtk_size_group_remove_widget$FUNC
     );
-    static final FunctionDescriptor gtk_builder_value_from_string_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_size_group_get_widgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_value_from_string_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_value_from_string_type",
-        constants$1696.gtk_builder_value_from_string_type$FUNC
+    static final MethodHandle gtk_size_group_get_widgets$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_get_widgets",
+        constants$1696.gtk_size_group_get_widgets$FUNC
     );
-    static final FunctionDescriptor gtk_builder_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tool_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_type",
+        constants$1696.gtk_tool_item_get_type$FUNC
     );
-    static final MethodHandle gtk_builder_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new_from_file",
-        constants$1696.gtk_builder_new_from_file$FUNC
+    static final FunctionDescriptor gtk_tool_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tool_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_new",
+        constants$1696.gtk_tool_item_new$FUNC
     );
-    static final FunctionDescriptor gtk_builder_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tool_item_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_builder_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new_from_resource",
-        constants$1696.gtk_builder_new_from_resource$FUNC
+    static final MethodHandle gtk_tool_item_set_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_set_homogeneous",
+        constants$1696.gtk_tool_item_set_homogeneous$FUNC
     );
 }
 

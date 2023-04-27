@@ -7,46 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1780 {
+final class constants$1780 {
 
-    static final FunctionDescriptor gtk_file_chooser_native_set_accept_label$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1780() {}
+    static final FunctionDescriptor gtk_recent_chooser_get_show_private$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_get_show_private$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_show_private",
+        constants$1780.gtk_recent_chooser_get_show_private$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_set_show_not_found$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_set_accept_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_set_accept_label",
-        constants$1780.gtk_file_chooser_native_set_accept_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_native_get_cancel_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_get_cancel_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_get_cancel_label",
-        constants$1780.gtk_file_chooser_native_get_cancel_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_native_set_cancel_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_set_cancel_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_set_cancel_label",
-        constants$1780.gtk_file_chooser_native_set_cancel_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_widget_get_type",
-        constants$1780.gtk_file_chooser_widget_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_widget_new",
-        constants$1780.gtk_file_chooser_widget_new$FUNC
+    static final MethodHandle gtk_recent_chooser_set_show_not_found$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_set_show_not_found",
+        constants$1780.gtk_recent_chooser_set_show_not_found$FUNC
     );
-    static final FunctionDescriptor GtkFlowBoxCreateWidgetFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_recent_chooser_get_show_not_found$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_get_show_not_found$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_show_not_found",
+        constants$1780.gtk_recent_chooser_get_show_not_found$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_set_select_multiple$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_set_select_multiple$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_set_select_multiple",
+        constants$1780.gtk_recent_chooser_set_select_multiple$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_get_select_multiple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_get_select_multiple$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_select_multiple",
+        constants$1780.gtk_recent_chooser_get_select_multiple$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_set_limit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_set_limit$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_set_limit",
+        constants$1780.gtk_recent_chooser_set_limit$FUNC
     );
 }
 

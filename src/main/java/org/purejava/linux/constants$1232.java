@@ -7,48 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1232 {
+final class constants$1232 {
 
-    static final FunctionDescriptor gdk_event_get_scancode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1232() {}
+    static final FunctionDescriptor atk_relation_set_contains_target$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_scancode$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scancode",
-        constants$1232.gdk_event_get_scancode$FUNC
+    static final MethodHandle atk_relation_set_contains_target$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_contains_target",
+        constants$1232.atk_relation_set_contains_target$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_pointer_emulated$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_relation_set_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_pointer_emulated$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_pointer_emulated",
-        constants$1232.gdk_event_get_pointer_emulated$FUNC
+    static final MethodHandle atk_relation_set_remove$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_remove",
+        constants$1232.atk_relation_set_remove$FUNC
     );
-    static final FunctionDescriptor gdk_device_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_manager_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_get_type",
-        constants$1232.gdk_device_manager_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_device_manager_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_relation_set_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_manager_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_get_display",
-        constants$1232.gdk_device_manager_get_display$FUNC
+    static final MethodHandle atk_relation_set_add$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_add",
+        constants$1232.atk_relation_set_add$FUNC
     );
-    static final FunctionDescriptor gdk_device_manager_list_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_relation_set_get_n_relations$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_relation_set_get_n_relations$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_get_n_relations",
+        constants$1232.atk_relation_set_get_n_relations$FUNC
+    );
+    static final FunctionDescriptor atk_relation_set_get_relation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_device_manager_list_devices$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_list_devices",
-        constants$1232.gdk_device_manager_list_devices$FUNC
+    static final MethodHandle atk_relation_set_get_relation$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_get_relation",
+        constants$1232.atk_relation_set_get_relation$FUNC
     );
-    static final FunctionDescriptor gdk_device_manager_get_client_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_relation_set_get_relation_by_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_device_manager_get_client_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_get_client_pointer",
-        constants$1232.gdk_device_manager_get_client_pointer$FUNC
+    static final MethodHandle atk_relation_set_get_relation_by_type$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_set_get_relation_by_type",
+        constants$1232.atk_relation_set_get_relation_by_type$FUNC
     );
 }
 

@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1435 {
+final class constants$1435 {
 
-    static final FunctionDescriptor gtk_widget_set_focus_on_click$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1435() {}
+    static final FunctionDescriptor gtk_list_store_set_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_set_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_set_valist",
+        constants$1435.gtk_list_store_set_valist$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_remove",
+        constants$1435.gtk_list_store_remove$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_focus_on_click",
-        constants$1435.gtk_widget_set_focus_on_click$FUNC
+    static final MethodHandle gtk_list_store_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_insert",
+        constants$1435.gtk_list_store_insert$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_store_insert_before$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_focus_on_click",
-        constants$1435.gtk_widget_get_focus_on_click$FUNC
+    static final MethodHandle gtk_list_store_insert_before$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_insert_before",
+        constants$1435.gtk_list_store_insert_before$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_can_default$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_store_insert_after$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_insert_after$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_insert_after",
+        constants$1435.gtk_list_store_insert_after$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_insert_with_values$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_can_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_can_default",
-        constants$1435.gtk_widget_set_can_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_can_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_can_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_can_default",
-        constants$1435.gtk_widget_get_can_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_has_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_has_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_default",
-        constants$1435.gtk_widget_has_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_grab_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_grab_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_default",
-        constants$1435.gtk_widget_grab_default$FUNC
+    static final MethodHandle gtk_list_store_insert_with_values$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_list_store_insert_with_values",
+        constants$1435.gtk_list_store_insert_with_values$FUNC
     );
 }
 

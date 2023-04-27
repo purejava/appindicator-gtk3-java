@@ -7,63 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1252 {
+final class constants$1252 {
 
-    static final FunctionDescriptor gdk_window_coords_from_parent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1252() {}
+    static final FunctionDescriptor gtk_widget_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_coords_from_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_from_parent",
-        constants$1252.gdk_window_coords_from_parent$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_root_origin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_root_origin$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_root_origin",
-        constants$1252.gdk_window_get_root_origin$FUNC
+    static final MethodHandle gtk_widget_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_height_for_width",
+        constants$1252.gtk_widget_get_preferred_height_for_width$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_frame_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_frame_extents$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_frame_extents",
-        constants$1252.gdk_window_get_frame_extents$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_scale_factor",
-        constants$1252.gdk_window_get_scale_factor$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_pointer",
-        constants$1252.gdk_window_get_pointer$FUNC
+    static final MethodHandle gtk_widget_get_preferred_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_height",
+        constants$1252.gtk_widget_get_preferred_height$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_device_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_width_for_height",
+        constants$1252.gtk_widget_get_preferred_width_for_height$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_preferred_height_and_baseline_for_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_device_position$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_position",
-        constants$1252.gdk_window_get_device_position$FUNC
+    static final MethodHandle gtk_widget_get_preferred_height_and_baseline_for_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_height_and_baseline_for_width",
+        constants$1252.gtk_widget_get_preferred_height_and_baseline_for_width$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_preferred_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_preferred_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_preferred_size",
+        constants$1252.gtk_widget_get_preferred_size$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_child_requisition$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_child_requisition$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_child_requisition",
+        constants$1252.gtk_widget_get_child_requisition$FUNC
     );
 }
 

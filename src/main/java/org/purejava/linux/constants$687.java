@@ -7,60 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$687 {
+final class constants$687 {
 
-    static final FunctionDescriptor g_file_attribute_info_list_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$687() {}
+    static final FunctionDescriptor g_io_extension_ref_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_attribute_info_list_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_lookup",
-        constants$687.g_file_attribute_info_list_lookup$FUNC
+    static final MethodHandle g_io_extension_ref_class$MH = RuntimeHelper.downcallHandle(
+        "g_io_extension_ref_class",
+        constants$687.g_io_extension_ref_class$FUNC
     );
-    static final FunctionDescriptor g_file_attribute_info_list_add$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_io_module_load$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_module_load$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_load",
+        constants$687.g_io_module_load$FUNC
+    );
+    static final FunctionDescriptor g_io_module_unload$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_module_unload$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_unload",
+        constants$687.g_io_module_unload$FUNC
+    );
+    static final FunctionDescriptor g_io_module_query$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_io_module_query$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_query",
+        constants$687.g_io_module_query$FUNC
+    );
+    static final FunctionDescriptor g_io_scheduler_push_job$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_attribute_info_list_add$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_add",
-        constants$687.g_file_attribute_info_list_add$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_enumerator_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_get_type",
-        constants$687.g_file_enumerator_get_type$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_next_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_next_file$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_next_file",
-        constants$687.g_file_enumerator_next_file$FUNC
+    static final MethodHandle g_io_scheduler_push_job$MH = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_push_job",
+        constants$687.g_io_scheduler_push_job$FUNC
     );
-    static final FunctionDescriptor g_file_enumerator_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_close$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_close",
-        constants$687.g_file_enumerator_close$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_next_files_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_next_files_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_next_files_async",
-        constants$687.g_file_enumerator_next_files_async$FUNC
+    static final FunctionDescriptor g_io_scheduler_cancel_all_jobs$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_io_scheduler_cancel_all_jobs$MH = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_cancel_all_jobs",
+        constants$687.g_io_scheduler_cancel_all_jobs$FUNC
     );
 }
 

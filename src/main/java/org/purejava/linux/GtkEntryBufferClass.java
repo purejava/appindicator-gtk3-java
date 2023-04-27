@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkEntryBufferClass extends _GtkEntryBufferClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkEntryBufferClass GtkEntryBufferClass;
+ * }
+ */
+public final class GtkEntryBufferClass extends _GtkEntryBufferClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkEntryBufferClass() {}
 }
 
 

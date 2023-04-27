@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkOffscreenWindow extends _GtkOffscreenWindow {
+/**
+ * {@snippet :
+ * typedef struct _GtkOffscreenWindow GtkOffscreenWindow;
+ * }
+ */
+public final class GtkOffscreenWindow extends _GtkOffscreenWindow {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkOffscreenWindow() {}
 }
 
 

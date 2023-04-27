@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GTestFixtureFunc)(void* fixture,void* user_data);
+ * }
+ */
 public interface GTestFixtureFunc {
 
-    void apply(java.lang.foreign.MemoryAddress fixture, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GTestFixtureFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GTestFixtureFunc.class, fi, constants$309.GTestFixtureFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GTestFixtureFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$313.GTestFixtureFunc_UP$MH, fi, constants$313.GTestFixtureFunc$FUNC, scope);
     }
-    static GTestFixtureFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _fixture, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GTestFixtureFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$309.GTestFixtureFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_fixture, (java.lang.foreign.Addressable)_user_data);
+                constants$313.GTestFixtureFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

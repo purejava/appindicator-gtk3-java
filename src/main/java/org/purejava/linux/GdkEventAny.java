@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventAny extends _GdkEventAny {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventAny GdkEventAny;
+ * }
+ */
+public final class GdkEventAny extends _GdkEventAny {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventAny() {}
 }
 
 

@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$650 {
+final class constants$650 {
 
-    static final FunctionDescriptor g_drive_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$650() {}
+    static final FunctionDescriptor g_file_info_unset_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_icon",
-        constants$650.g_drive_get_icon$FUNC
+    static final MethodHandle g_file_info_unset_attribute_mask$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_unset_attribute_mask",
+        constants$650.g_file_info_unset_attribute_mask$FUNC
     );
-    static final FunctionDescriptor g_drive_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_set_file_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_info_set_file_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_file_type",
+        constants$650.g_file_info_set_file_type$FUNC
+    );
+    static final FunctionDescriptor g_file_info_set_is_hidden$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_info_set_is_hidden$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_is_hidden",
+        constants$650.g_file_info_set_is_hidden$FUNC
+    );
+    static final FunctionDescriptor g_file_info_set_is_symlink$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_info_set_is_symlink$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_is_symlink",
+        constants$650.g_file_info_set_is_symlink$FUNC
+    );
+    static final FunctionDescriptor g_file_info_set_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_symbolic_icon",
-        constants$650.g_drive_get_symbolic_icon$FUNC
+    static final MethodHandle g_file_info_set_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_name",
+        constants$650.g_file_info_set_name$FUNC
     );
-    static final FunctionDescriptor g_drive_has_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_set_display_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_has_volumes$MH = RuntimeHelper.downcallHandle(
-        "g_drive_has_volumes",
-        constants$650.g_drive_has_volumes$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_get_volumes$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_volumes",
-        constants$650.g_drive_get_volumes$FUNC
-    );
-    static final FunctionDescriptor g_drive_is_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_is_removable$MH = RuntimeHelper.downcallHandle(
-        "g_drive_is_removable",
-        constants$650.g_drive_is_removable$FUNC
-    );
-    static final FunctionDescriptor g_drive_is_media_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_is_media_removable$MH = RuntimeHelper.downcallHandle(
-        "g_drive_is_media_removable",
-        constants$650.g_drive_is_media_removable$FUNC
+    static final MethodHandle g_file_info_set_display_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_display_name",
+        constants$650.g_file_info_set_display_name$FUNC
     );
 }
 

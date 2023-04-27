@@ -7,57 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2035 {
+final class constants$2035 {
 
-    static final FunctionDescriptor gtk_text_buffer_unregister_serialize_format$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_unregister_serialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_unregister_serialize_format",
-        constants$2035.gtk_text_buffer_unregister_serialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_unregister_deserialize_format$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_unregister_deserialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_unregister_deserialize_format",
-        constants$2035.gtk_text_buffer_unregister_deserialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_deserialize_set_can_create_tags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_deserialize_set_can_create_tags$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize_set_can_create_tags",
-        constants$2035.gtk_text_buffer_deserialize_set_can_create_tags$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_deserialize_get_can_create_tags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_deserialize_get_can_create_tags$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize_get_can_create_tags",
-        constants$2035.gtk_text_buffer_deserialize_get_can_create_tags$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_serialize_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_serialize_formats$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_serialize_formats",
-        constants$2035.gtk_text_buffer_get_serialize_formats$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_deserialize_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_deserialize_formats$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_deserialize_formats",
-        constants$2035.gtk_text_buffer_get_deserialize_formats$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2035() {}
+    static final MemorySegment GTK_STYLE_CLASS_EXPANDER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("expander");
+    static final MemorySegment GTK_STYLE_CLASS_SPINBUTTON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("spinbutton");
+    static final MemorySegment GTK_STYLE_CLASS_NOTEBOOK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("notebook");
+    static final MemorySegment GTK_STYLE_CLASS_VIEW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("view");
+    static final MemorySegment GTK_STYLE_CLASS_SIDEBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("sidebar");
+    static final MemorySegment GTK_STYLE_CLASS_IMAGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image");
 }
 
 

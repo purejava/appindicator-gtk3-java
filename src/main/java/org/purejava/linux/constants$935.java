@@ -7,49 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$935 {
+final class constants$935 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$935() {}
+    static final FunctionDescriptor pango_default_break$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_default_break$MH = RuntimeHelper.downcallHandle(
+        "pango_default_break",
+        constants$935.pango_default_break$FUNC
+    );
+    static final FunctionDescriptor pango_tailor_break$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_tailor_break$MH = RuntimeHelper.downcallHandle(
+        "pango_tailor_break",
+        constants$935.pango_tailor_break$FUNC
+    );
+    static final FunctionDescriptor pango_attr_break$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_attr_break$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_break",
+        constants$935.pango_attr_break$FUNC
+    );
+    static final FunctionDescriptor pango_fontset_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_fontset_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_fontset_get_type",
+        constants$935.pango_fontset_get_type$FUNC
+    );
+    static final FunctionDescriptor PangoFontsetForeachFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMenuModel",
-        constants$935.glib_listautoptr_cleanup_GMenuModel$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor PangoFontsetForeachFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMenuModel",
-        constants$935.glib_slistautoptr_cleanup_GMenuModel$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMenuModel$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle PangoFontsetForeachFunc_UP$MH = RuntimeHelper.upcallHandle(PangoFontsetForeachFunc.class, "apply", constants$935.PangoFontsetForeachFunc_UP$FUNC);
+    static final FunctionDescriptor PangoFontsetForeachFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMenuModel",
-        constants$935.glib_queueautoptr_cleanup_GMenuModel$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GMenuAttributeIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GMenuAttributeIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMenuAttributeIter",
-        constants$935.glib_autoptr_clear_GMenuAttributeIter$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMenuAttributeIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GMenuAttributeIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMenuAttributeIter",
-        constants$935.glib_autoptr_cleanup_GMenuAttributeIter$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMenuAttributeIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GMenuAttributeIter$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMenuAttributeIter",
-        constants$935.glib_listautoptr_cleanup_GMenuAttributeIter$FUNC
+    static final MethodHandle PangoFontsetForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$935.PangoFontsetForeachFunc_DOWN$FUNC
     );
 }
 

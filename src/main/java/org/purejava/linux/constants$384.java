@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$384 {
+final class constants$384 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GHmac$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$384() {}
+    static final FunctionDescriptor g_type_get_instance_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_type_get_instance_count$MH = RuntimeHelper.downcallHandle(
+        "g_type_get_instance_count",
+        constants$384.g_type_get_instance_count$FUNC
+    );
+    static final FunctionDescriptor GBaseInitFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GHmac$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GHmac",
-        constants$384.glib_listautoptr_cleanup_GHmac$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GHmac$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GBaseInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GHmac$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GHmac",
-        constants$384.glib_slistautoptr_cleanup_GHmac$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GHmac$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GBaseInitFunc_UP$MH = RuntimeHelper.upcallHandle(GBaseInitFunc.class, "apply", constants$384.GBaseInitFunc_UP$FUNC);
+    static final FunctionDescriptor GBaseInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GHmac$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GHmac",
-        constants$384.glib_queueautoptr_cleanup_GHmac$FUNC
+    static final MethodHandle GBaseInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$384.GBaseInitFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GIOChannel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GBaseFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GIOChannel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GIOChannel",
-        constants$384.glib_autoptr_clear_GIOChannel$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GIOChannel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GBaseFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GIOChannel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GIOChannel",
-        constants$384.glib_autoptr_cleanup_GIOChannel$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GIOChannel$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GBaseFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GBaseFinalizeFunc.class, "apply", constants$384.GBaseFinalizeFunc_UP$FUNC);
+    static final FunctionDescriptor GBaseFinalizeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GIOChannel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GIOChannel",
-        constants$384.glib_listautoptr_cleanup_GIOChannel$FUNC
+    static final MethodHandle GBaseFinalizeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$384.GBaseFinalizeFunc_DOWN$FUNC
     );
+    static final FunctionDescriptor GClassInitFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GClassInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GClassInitFunc_UP$MH = RuntimeHelper.upcallHandle(GClassInitFunc.class, "apply", constants$384.GClassInitFunc_UP$FUNC);
 }
 
 

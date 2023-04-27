@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkRelation {
+ *     GObject parent;
+ *     GPtrArray* target;
+ *     AtkRelationType relationship;
+ * };
+ * }
+ */
 public class _AtkRelation {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -32,26 +41,50 @@ public class _AtkRelation {
     public static VarHandle target$VH() {
         return _AtkRelation.target$VH;
     }
-    public static MemoryAddress target$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelation.target$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GPtrArray* target;
+     * }
+     */
+    public static MemorySegment target$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkRelation.target$VH.get(seg);
     }
-    public static void target$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GPtrArray* target;
+     * }
+     */
+    public static void target$set(MemorySegment seg, MemorySegment x) {
         _AtkRelation.target$VH.set(seg, x);
     }
-    public static MemoryAddress target$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkRelation.target$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment target$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkRelation.target$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void target$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void target$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkRelation.target$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle relationship$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("relationship"));
     public static VarHandle relationship$VH() {
         return _AtkRelation.relationship$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkRelationType relationship;
+     * }
+     */
     public static int relationship$get(MemorySegment seg) {
         return (int)_AtkRelation.relationship$VH.get(seg);
     }
-    public static void relationship$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkRelationType relationship;
+     * }
+     */
+    public static void relationship$set(MemorySegment seg, int x) {
         _AtkRelation.relationship$VH.set(seg, x);
     }
     public static int relationship$get(MemorySegment seg, long index) {
@@ -62,10 +95,10 @@ public class _AtkRelation {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

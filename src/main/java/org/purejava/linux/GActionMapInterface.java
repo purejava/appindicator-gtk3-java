@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GActionMapInterface extends _GActionMapInterface {
+/**
+ * {@snippet :
+ * typedef struct _GActionMapInterface GActionMapInterface;
+ * }
+ */
+public final class GActionMapInterface extends _GActionMapInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GActionMapInterface() {}
 }
 
 

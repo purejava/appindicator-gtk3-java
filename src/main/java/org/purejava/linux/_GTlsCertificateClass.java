@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTlsCertificateClass {
+ *     GObjectClass parent_class;
+ *     GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+ *     gpointer padding[8];
+ * };
+ * }
+ */
 public class _GTlsCertificateClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +33,10 @@ public class _GTlsCertificateClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("verify"),
         MemoryLayout.sequenceLayout(8, Constants$root.C_POINTER$LAYOUT).withName("padding")
@@ -40,20 +52,36 @@ public class _GTlsCertificateClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle verify$MH = RuntimeHelper.downcallHandle(
-        _GTlsCertificateClass.verify$FUNC
+    static final FunctionDescriptor verify_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle verify_UP$MH = RuntimeHelper.upcallHandle(verify.class, "apply", _GTlsCertificateClass.verify_UP$FUNC);
+    static final FunctionDescriptor verify_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle verify_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsCertificateClass.verify_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+     * }
+     */
     public interface verify {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(verify fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(verify.class, fi, _GTlsCertificateClass.verify$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(verify fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsCertificateClass.verify_UP$MH, fi, _GTlsCertificateClass.verify$FUNC, scope);
         }
-        static verify ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static verify ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GTlsCertificateClass.verify$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GTlsCertificateClass.verify_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -65,30 +93,42 @@ public class _GTlsCertificateClass {
     public static VarHandle verify$VH() {
         return _GTlsCertificateClass.verify$VH;
     }
-    public static MemoryAddress verify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsCertificateClass.verify$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+     * }
+     */
+    public static MemorySegment verify$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsCertificateClass.verify$VH.get(seg);
     }
-    public static void verify$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+     * }
+     */
+    public static void verify$set(MemorySegment seg, MemorySegment x) {
         _GTlsCertificateClass.verify$VH.set(seg, x);
     }
-    public static MemoryAddress verify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsCertificateClass.verify$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment verify$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsCertificateClass.verify$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void verify$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void verify$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsCertificateClass.verify$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static verify verify (MemorySegment segment, MemorySession session) {
-        return verify.ofAddress(verify$get(segment), session);
+    public static verify verify(MemorySegment segment, SegmentScope scope) {
+        return verify.ofAddress(verify$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(144, 64);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

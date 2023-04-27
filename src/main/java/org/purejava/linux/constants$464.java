@@ -7,37 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$464 {
+final class constants$464 {
 
-    static final FunctionDescriptor g_io_channel_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_channel_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_type",
-        constants$464.g_io_channel_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$464() {}
+    static final FunctionDescriptor g_value_set_long$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor g_io_condition_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_condition_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_condition_get_type",
-        constants$464.g_io_condition_get_type$FUNC
+    static final MethodHandle g_value_set_long$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_long",
+        constants$464.g_value_set_long$FUNC
     );
-    static final FunctionDescriptor g_variant_builder_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_builder_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_get_type",
-        constants$464.g_variant_builder_get_type$FUNC
+    static final FunctionDescriptor g_value_get_long$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_variant_dict_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_dict_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_get_type",
-        constants$464.g_variant_dict_get_type$FUNC
+    static final MethodHandle g_value_get_long$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_long",
+        constants$464.g_value_get_long$FUNC
     );
-    static final FunctionDescriptor g_key_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_key_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_type",
-        constants$464.g_key_file_get_type$FUNC
+    static final FunctionDescriptor g_value_set_ulong$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor g_main_loop_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_main_loop_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_get_type",
-        constants$464.g_main_loop_get_type$FUNC
+    static final MethodHandle g_value_set_ulong$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_ulong",
+        constants$464.g_value_set_ulong$FUNC
+    );
+    static final FunctionDescriptor g_value_get_ulong$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_ulong$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_ulong",
+        constants$464.g_value_get_ulong$FUNC
+    );
+    static final FunctionDescriptor g_value_set_int64$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_value_set_int64$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_int64",
+        constants$464.g_value_set_int64$FUNC
+    );
+    static final FunctionDescriptor g_value_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_get_int64$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_int64",
+        constants$464.g_value_get_int64$FUNC
     );
 }
 

@@ -7,51 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1883 {
+final class constants$1883 {
 
-    static final FunctionDescriptor gtk_grab_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1883() {}
+    static final FunctionDescriptor gtk_message_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_message_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_message_type_get_type",
+        constants$1883.gtk_message_type_get_type$FUNC
     );
-    static final MethodHandle gtk_grab_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_remove",
-        constants$1883.gtk_grab_remove$FUNC
+    static final FunctionDescriptor gtk_movement_step_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_movement_step_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_movement_step_get_type",
+        constants$1883.gtk_movement_step_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_device_grab_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_scroll_step_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_scroll_step_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scroll_step_get_type",
+        constants$1883.gtk_scroll_step_get_type$FUNC
     );
-    static final MethodHandle gtk_device_grab_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_device_grab_add",
-        constants$1883.gtk_device_grab_add$FUNC
+    static final FunctionDescriptor gtk_orientation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_orientation_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_orientation_get_type",
+        constants$1883.gtk_orientation_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_device_grab_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_pack_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_pack_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_pack_type_get_type",
+        constants$1883.gtk_pack_type_get_type$FUNC
     );
-    static final MethodHandle gtk_device_grab_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_device_grab_remove",
-        constants$1883.gtk_device_grab_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_key_snooper_install$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_key_snooper_install$MH = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_install",
-        constants$1883.gtk_key_snooper_install$FUNC
-    );
-    static final FunctionDescriptor gtk_key_snooper_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_key_snooper_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_remove",
-        constants$1883.gtk_key_snooper_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_get_current_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_get_current_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event",
-        constants$1883.gtk_get_current_event$FUNC
+    static final FunctionDescriptor gtk_position_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_position_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_position_type_get_type",
+        constants$1883.gtk_position_type_get_type$FUNC
     );
 }
 

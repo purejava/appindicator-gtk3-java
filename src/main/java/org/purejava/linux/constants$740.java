@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$740 {
+final class constants$740 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GListStore$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$740() {}
+    static final FunctionDescriptor g_settings_schema_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GListStore$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GListStore",
-        constants$740.glib_slistautoptr_cleanup_GListStore$FUNC
+    static final MethodHandle g_settings_schema_get_id$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_id",
+        constants$740.g_settings_schema_get_id$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GListStore$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GListStore$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GListStore",
-        constants$740.glib_queueautoptr_cleanup_GListStore$FUNC
+    static final MethodHandle g_settings_schema_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_path",
+        constants$740.g_settings_schema_get_path$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GListStoreClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_get_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GListStoreClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GListStoreClass",
-        constants$740.glib_autoptr_clear_GListStoreClass$FUNC
+    static final MethodHandle g_settings_schema_get_key$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_key",
+        constants$740.g_settings_schema_get_key$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GListStoreClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_has_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GListStoreClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GListStoreClass",
-        constants$740.glib_autoptr_cleanup_GListStoreClass$FUNC
+    static final MethodHandle g_settings_schema_has_key$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_has_key",
+        constants$740.g_settings_schema_has_key$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GListStoreClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_list_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GListStoreClass$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GListStoreClass",
-        constants$740.glib_listautoptr_cleanup_GListStoreClass$FUNC
+    static final MethodHandle g_settings_schema_list_keys$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_list_keys",
+        constants$740.g_settings_schema_list_keys$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GListStoreClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_list_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GListStoreClass$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GListStoreClass",
-        constants$740.glib_slistautoptr_cleanup_GListStoreClass$FUNC
+    static final MethodHandle g_settings_schema_list_children$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_list_children",
+        constants$740.g_settings_schema_list_children$FUNC
     );
 }
 

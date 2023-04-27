@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAccelGroup extends _GtkAccelGroup {
+/**
+ * {@snippet :
+ * typedef struct _GtkAccelGroup GtkAccelGroup;
+ * }
+ */
+public final class GtkAccelGroup extends _GtkAccelGroup {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAccelGroup() {}
 }
 
 

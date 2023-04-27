@@ -7,68 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1986 {
+final class constants$1986 {
 
-    static final FunctionDescriptor gtk_render_handle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_handle$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_handle",
-        constants$1986.gtk_render_handle$FUNC
-    );
-    static final FunctionDescriptor gtk_render_activity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_activity$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_activity",
-        constants$1986.gtk_render_activity$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon_pixbuf",
-        constants$1986.gtk_render_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon",
-        constants$1986.gtk_render_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon_surface",
-        constants$1986.gtk_render_icon_surface$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_revealer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_type",
-        constants$1986.gtk_revealer_get_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1986() {}
+    static final MemorySegment G_GUINT32_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("u");
+    static final MemorySegment G_GINT64_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
+    static final MemorySegment G_GINT64_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("li");
+    static final MemorySegment G_GUINT64_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("lu");
+    static final MemorySegment G_GSIZE_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
+    static final MemorySegment G_GSSIZE_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
 }
 
 

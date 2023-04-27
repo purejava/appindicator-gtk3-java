@@ -7,37 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1330 {
+final class constants$1330 {
 
-    static final FunctionDescriptor gdk_window_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_type_get_type",
-        constants$1330.gdk_window_type_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1330() {}
+    static final FunctionDescriptor gtk_menu_shell_get_parent_shell$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_window_attributes_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_attributes_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_attributes_type_get_type",
-        constants$1330.gdk_window_attributes_type_get_type$FUNC
+    static final MethodHandle gtk_menu_shell_get_parent_shell$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_get_parent_shell",
+        constants$1330.gtk_menu_shell_get_parent_shell$FUNC
     );
-    static final FunctionDescriptor gdk_window_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_hints_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_hints_get_type",
-        constants$1330.gdk_window_hints_get_type$FUNC
+    static final FunctionDescriptor gtk_menu_shell_bind_model$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_wm_decoration_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_wm_decoration_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_wm_decoration_get_type",
-        constants$1330.gdk_wm_decoration_get_type$FUNC
+    static final MethodHandle gtk_menu_shell_bind_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_bind_model",
+        constants$1330.gtk_menu_shell_bind_model$FUNC
     );
-    static final FunctionDescriptor gdk_wm_function_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_wm_function_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_wm_function_get_type",
-        constants$1330.gdk_wm_function_get_type$FUNC
+    static final FunctionDescriptor GtkMenuPositionFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_gravity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_gravity_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_gravity_get_type",
-        constants$1330.gdk_gravity_get_type$FUNC
+    static final FunctionDescriptor GtkMenuPositionFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkMenuPositionFunc_UP$MH = RuntimeHelper.upcallHandle(GtkMenuPositionFunc.class, "apply", constants$1330.GtkMenuPositionFunc_UP$FUNC);
+    static final FunctionDescriptor GtkMenuPositionFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkMenuPositionFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1330.GtkMenuPositionFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkMenuDetachFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkMenuDetachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkMenuDetachFunc_UP$MH = RuntimeHelper.upcallHandle(GtkMenuDetachFunc.class, "apply", constants$1330.GtkMenuDetachFunc_UP$FUNC);
+    static final FunctionDescriptor GtkMenuDetachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkMenuDetachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1330.GtkMenuDetachFunc_DOWN$FUNC
     );
 }
 

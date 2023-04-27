@@ -7,34 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1198 {
+final class constants$1198 {
 
-    static final FunctionDescriptor cairo_raster_source_release_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1198() {}
+    static final FunctionDescriptor atk_text_clip_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_clip_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_clip_type_get_type",
+        constants$1198.atk_text_clip_type_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_key_event_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_key_event_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_key_event_type_get_type",
+        constants$1198.atk_key_event_type_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_coord_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_coord_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_coord_type_get_type",
+        constants$1198.atk_coord_type_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_value_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_value_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_value_type_get_type",
+        constants$1198.atk_value_type_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_state_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_raster_source_release_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1198.cairo_raster_source_release_func_t$FUNC
+    static final MethodHandle atk_state_type_register$MH = RuntimeHelper.downcallHandle(
+        "atk_state_type_register",
+        constants$1198.atk_state_type_register$FUNC
     );
-    static final FunctionDescriptor cairo_raster_source_snapshot_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_state_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_raster_source_snapshot_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1198.cairo_raster_source_snapshot_func_t$FUNC
-    );
-    static final FunctionDescriptor cairo_raster_source_copy_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_copy_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1198.cairo_raster_source_copy_func_t$FUNC
-    );
-    static final FunctionDescriptor cairo_raster_source_finish_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle atk_state_type_get_name$MH = RuntimeHelper.downcallHandle(
+        "atk_state_type_get_name",
+        constants$1198.atk_state_type_get_name$FUNC
     );
 }
 

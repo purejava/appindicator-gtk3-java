@@ -7,47 +7,86 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$767 {
+final class constants$767 {
 
-    static final FunctionDescriptor g_volume_monitor_get_mount_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$767() {}
+    static final FunctionDescriptor g_socket_send$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_monitor_get_mount_for_uuid$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_mount_for_uuid",
-        constants$767.g_volume_monitor_get_mount_for_uuid$FUNC
+    static final MethodHandle g_socket_send$MH = RuntimeHelper.downcallHandle(
+        "g_socket_send",
+        constants$767.g_socket_send$FUNC
     );
-    static final FunctionDescriptor g_volume_monitor_adopt_orphan_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_send_to$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_monitor_adopt_orphan_mount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_adopt_orphan_mount",
-        constants$767.g_volume_monitor_adopt_orphan_mount$FUNC
+    static final MethodHandle g_socket_send_to$MH = RuntimeHelper.downcallHandle(
+        "g_socket_send_to",
+        constants$767.g_socket_send_to$FUNC
     );
-    static final FunctionDescriptor g_native_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_native_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_native_volume_monitor_get_type",
-        constants$767.g_native_volume_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_network_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_get_type",
-        constants$767.g_network_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_receive_message$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_network_address_new$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_new",
-        constants$767.g_network_address_new$FUNC
+    static final MethodHandle g_socket_receive_message$MH = RuntimeHelper.downcallHandle(
+        "g_socket_receive_message",
+        constants$767.g_socket_receive_message$FUNC
     );
-    static final FunctionDescriptor g_network_address_new_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final FunctionDescriptor g_socket_send_message$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_network_address_new_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_new_loopback",
-        constants$767.g_network_address_new_loopback$FUNC
+    static final MethodHandle g_socket_send_message$MH = RuntimeHelper.downcallHandle(
+        "g_socket_send_message",
+        constants$767.g_socket_send_message$FUNC
+    );
+    static final FunctionDescriptor g_socket_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_receive_messages$MH = RuntimeHelper.downcallHandle(
+        "g_socket_receive_messages",
+        constants$767.g_socket_receive_messages$FUNC
+    );
+    static final FunctionDescriptor g_socket_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_send_messages$MH = RuntimeHelper.downcallHandle(
+        "g_socket_send_messages",
+        constants$767.g_socket_send_messages$FUNC
     );
 }
 

@@ -7,49 +7,84 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$409 {
+final class constants$409 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GRWLockWriterLocker$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$409() {}
+    static final FunctionDescriptor g_cclosure_marshal_VOID__ULONG$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GRWLockWriterLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GRWLockWriterLocker",
-        constants$409.glib_autoptr_clear_GRWLockWriterLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__ULONG$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__ULONG",
+        constants$409.g_cclosure_marshal_VOID__ULONG$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GRWLockWriterLocker$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__ULONGv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GRWLockWriterLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GRWLockWriterLocker",
-        constants$409.glib_autoptr_cleanup_GRWLockWriterLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__ULONGv$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__ULONGv",
+        constants$409.g_cclosure_marshal_VOID__ULONGv$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GRWLockWriterLocker$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__ENUM$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GRWLockWriterLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GRWLockWriterLocker",
-        constants$409.glib_listautoptr_cleanup_GRWLockWriterLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__ENUM$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__ENUM",
+        constants$409.g_cclosure_marshal_VOID__ENUM$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GRWLockWriterLocker$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__ENUMv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GRWLockWriterLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GRWLockWriterLocker",
-        constants$409.glib_slistautoptr_cleanup_GRWLockWriterLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__ENUMv$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__ENUMv",
+        constants$409.g_cclosure_marshal_VOID__ENUMv$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GRWLockWriterLocker$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__FLAGS$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GRWLockWriterLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GRWLockWriterLocker",
-        constants$409.glib_queueautoptr_cleanup_GRWLockWriterLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__FLAGS$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__FLAGS",
+        constants$409.g_cclosure_marshal_VOID__FLAGS$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GRWLockReaderLocker$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__FLAGSv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GRWLockReaderLocker$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GRWLockReaderLocker",
-        constants$409.glib_autoptr_clear_GRWLockReaderLocker$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__FLAGSv$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__FLAGSv",
+        constants$409.g_cclosure_marshal_VOID__FLAGSv$FUNC
     );
 }
 

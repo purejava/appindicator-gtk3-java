@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1318 {
+final class constants$1318 {
 
-    static final FunctionDescriptor gdk_cairo_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1318() {}
+    static final FunctionDescriptor gtk_window_set_interactive_debugging$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_interactive_debugging$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_interactive_debugging",
+        constants$1318.gtk_window_set_interactive_debugging$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_type",
+        constants$1318.gtk_dialog_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_dialog_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_new",
+        constants$1318.gtk_dialog_new$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_new_with_buttons$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cairo_create$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_create",
-        constants$1318.gdk_cairo_create$FUNC
+    static final MethodHandle gtk_dialog_new_with_buttons$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_dialog_new_with_buttons",
+        constants$1318.gtk_dialog_new_with_buttons$FUNC
     );
-    static final FunctionDescriptor gdk_cairo_get_clip_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_get_clip_rectangle$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_get_clip_rectangle",
-        constants$1318.gdk_cairo_get_clip_rectangle$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_set_source_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_set_source_rgba$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_rgba",
-        constants$1318.gdk_cairo_set_source_rgba$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_set_source_pixbuf$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_dialog_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_cairo_set_source_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_pixbuf",
-        constants$1318.gdk_cairo_set_source_pixbuf$FUNC
+    static final MethodHandle gtk_dialog_add_action_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_add_action_widget",
+        constants$1318.gtk_dialog_add_action_widget$FUNC
     );
-    static final FunctionDescriptor gdk_cairo_set_source_window$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_dialog_add_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_cairo_set_source_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_window",
-        constants$1318.gdk_cairo_set_source_window$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_rectangle$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_rectangle",
-        constants$1318.gdk_cairo_rectangle$FUNC
+    static final MethodHandle gtk_dialog_add_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_add_button",
+        constants$1318.gtk_dialog_add_button$FUNC
     );
 }
 

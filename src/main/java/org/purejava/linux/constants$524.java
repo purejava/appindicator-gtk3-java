@@ -7,54 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$524 {
+final class constants$524 {
 
-    static final FunctionDescriptor g_dbus_connection_unexport_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_unexport_action_group$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_unexport_action_group",
-        constants$524.g_dbus_connection_unexport_action_group$FUNC
-    );
-    static final FunctionDescriptor g_action_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_action_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_get_type",
-        constants$524.g_action_map_get_type$FUNC
-    );
-    static final FunctionDescriptor g_action_map_lookup_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_map_lookup_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_lookup_action",
-        constants$524.g_action_map_lookup_action$FUNC
-    );
-    static final FunctionDescriptor g_action_map_add_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_map_add_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_add_action",
-        constants$524.g_action_map_add_action$FUNC
-    );
-    static final FunctionDescriptor g_action_map_remove_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_map_remove_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_remove_action",
-        constants$524.g_action_map_remove_action$FUNC
-    );
-    static final FunctionDescriptor g_action_map_add_action_entries$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$524() {}
+    static final FunctionDescriptor fexecve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_action_map_add_action_entries$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_add_action_entries",
-        constants$524.g_action_map_add_action_entries$FUNC
+    static final MethodHandle fexecve$MH = RuntimeHelper.downcallHandle(
+        "fexecve",
+        constants$524.fexecve$FUNC
+    );
+    static final FunctionDescriptor execv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle execv$MH = RuntimeHelper.downcallHandle(
+        "execv",
+        constants$524.execv$FUNC
+    );
+    static final FunctionDescriptor execle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle execle$MH = RuntimeHelper.downcallHandleVariadic(
+        "execle",
+        constants$524.execle$FUNC
+    );
+    static final FunctionDescriptor execl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle execl$MH = RuntimeHelper.downcallHandleVariadic(
+        "execl",
+        constants$524.execl$FUNC
+    );
+    static final FunctionDescriptor execvp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle execvp$MH = RuntimeHelper.downcallHandle(
+        "execvp",
+        constants$524.execvp$FUNC
+    );
+    static final FunctionDescriptor execlp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle execlp$MH = RuntimeHelper.downcallHandleVariadic(
+        "execlp",
+        constants$524.execlp$FUNC
     );
 }
 

@@ -7,56 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$193 {
+final class constants$193 {
 
-    static final FunctionDescriptor g_utf8_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_strup$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_strup",
-        constants$193.g_utf8_strup$FUNC
-    );
-    static final FunctionDescriptor g_utf8_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_strdown$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_strdown",
-        constants$193.g_utf8_strdown$FUNC
-    );
-    static final FunctionDescriptor g_utf8_casefold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_casefold$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_casefold",
-        constants$193.g_utf8_casefold$FUNC
-    );
-    static final FunctionDescriptor g_utf8_normalize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$193() {}
+    static final FunctionDescriptor g_utf8_to_utf16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_utf8_normalize$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_normalize",
-        constants$193.g_utf8_normalize$FUNC
-    );
-    static final FunctionDescriptor g_utf8_collate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_utf8_collate$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate",
-        constants$193.g_utf8_collate$FUNC
+    static final MethodHandle g_utf8_to_utf16$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_to_utf16",
+        constants$193.g_utf8_to_utf16$FUNC
     );
-    static final FunctionDescriptor g_utf8_collate_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_utf8_to_ucs4$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_utf8_collate_key$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate_key",
-        constants$193.g_utf8_collate_key$FUNC
+    static final MethodHandle g_utf8_to_ucs4$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_to_ucs4",
+        constants$193.g_utf8_to_ucs4$FUNC
+    );
+    static final FunctionDescriptor g_utf8_to_ucs4_fast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_utf8_to_ucs4_fast$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_to_ucs4_fast",
+        constants$193.g_utf8_to_ucs4_fast$FUNC
+    );
+    static final FunctionDescriptor g_utf16_to_ucs4$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_utf16_to_ucs4$MH = RuntimeHelper.downcallHandle(
+        "g_utf16_to_ucs4",
+        constants$193.g_utf16_to_ucs4$FUNC
+    );
+    static final FunctionDescriptor g_utf16_to_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_utf16_to_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_utf16_to_utf8",
+        constants$193.g_utf16_to_utf8$FUNC
+    );
+    static final FunctionDescriptor g_ucs4_to_utf16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ucs4_to_utf16$MH = RuntimeHelper.downcallHandle(
+        "g_ucs4_to_utf16",
+        constants$193.g_ucs4_to_utf16$FUNC
     );
 }
 

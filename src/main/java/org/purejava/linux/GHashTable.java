@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GHashTable {
+/**
+ * {@snippet :
+ * typedef struct _GHashTable GHashTable;
+ * }
+ */
+public final class GHashTable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GHashTable() {}
 }
 
 

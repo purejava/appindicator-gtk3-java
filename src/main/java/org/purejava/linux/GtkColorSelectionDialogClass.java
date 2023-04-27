@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkColorSelectionDialogClass extends _GtkColorSelectionDialogClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkColorSelectionDialogClass GtkColorSelectionDialogClass;
+ * }
+ */
+public final class GtkColorSelectionDialogClass extends _GtkColorSelectionDialogClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkColorSelectionDialogClass() {}
 }
 
 

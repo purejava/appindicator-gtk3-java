@@ -7,56 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1940 {
+final class constants$1940 {
 
-    static final FunctionDescriptor gtk_print_settings_get_paper_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1940() {}
+    static final FunctionDescriptor gtk_hseparator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_hseparator_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_hseparator_new",
+        constants$1940.gtk_hseparator_new$FUNC
     );
-    static final MethodHandle gtk_print_settings_get_paper_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_paper_width",
-        constants$1940.gtk_print_settings_get_paper_width$FUNC
+    static final FunctionDescriptor gtk_image_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_image_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_get_type",
+        constants$1940.gtk_image_menu_item_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_paper_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_image_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_image_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_new",
+        constants$1940.gtk_image_menu_item_new$FUNC
     );
-    static final MethodHandle gtk_print_settings_set_paper_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_paper_width",
-        constants$1940.gtk_print_settings_set_paper_width$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_paper_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_paper_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_paper_height",
-        constants$1940.gtk_print_settings_get_paper_height$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_paper_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_paper_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_paper_height",
-        constants$1940.gtk_print_settings_set_paper_height$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_use_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_image_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_use_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_use_color",
-        constants$1940.gtk_print_settings_get_use_color$FUNC
+    static final MethodHandle gtk_image_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_new_with_label",
+        constants$1940.gtk_image_menu_item_new_with_label$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_use_color$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_image_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_new_with_mnemonic",
+        constants$1940.gtk_image_menu_item_new_with_mnemonic$FUNC
+    );
+    static final FunctionDescriptor gtk_image_menu_item_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_use_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_use_color",
-        constants$1940.gtk_print_settings_set_use_color$FUNC
+    static final MethodHandle gtk_image_menu_item_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_new_from_stock",
+        constants$1940.gtk_image_menu_item_new_from_stock$FUNC
     );
 }
 

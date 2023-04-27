@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSocketConnectableIface {
+ *     GTypeInterface g_iface;
+ *     GSocketAddressEnumerator* (*enumerate)(GSocketConnectable*);
+ *     GSocketAddressEnumerator* (*proxy_enumerate)(GSocketConnectable*);
+ *     gchar* (*to_string)(GSocketConnectable*);
+ * };
+ * }
+ */
 public class _GSocketConnectableIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -27,20 +37,32 @@ public class _GSocketConnectableIface {
     static final FunctionDescriptor enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle enumerate$MH = RuntimeHelper.downcallHandle(
-        _GSocketConnectableIface.enumerate$FUNC
+    static final FunctionDescriptor enumerate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle enumerate_UP$MH = RuntimeHelper.upcallHandle(enumerate.class, "apply", _GSocketConnectableIface.enumerate_UP$FUNC);
+    static final FunctionDescriptor enumerate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle enumerate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketConnectableIface.enumerate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSocketAddressEnumerator* (*enumerate)(GSocketConnectable*);
+     * }
+     */
     public interface enumerate {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(enumerate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(enumerate.class, fi, _GSocketConnectableIface.enumerate$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(enumerate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketConnectableIface.enumerate_UP$MH, fi, _GSocketConnectableIface.enumerate$FUNC, scope);
         }
-        static enumerate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static enumerate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GSocketConnectableIface.enumerate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.enumerate_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -52,38 +74,62 @@ public class _GSocketConnectableIface {
     public static VarHandle enumerate$VH() {
         return _GSocketConnectableIface.enumerate$VH;
     }
-    public static MemoryAddress enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.enumerate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSocketAddressEnumerator* (*enumerate)(GSocketConnectable*);
+     * }
+     */
+    public static MemorySegment enumerate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.enumerate$VH.get(seg);
     }
-    public static void enumerate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSocketAddressEnumerator* (*enumerate)(GSocketConnectable*);
+     * }
+     */
+    public static void enumerate$set(MemorySegment seg, MemorySegment x) {
         _GSocketConnectableIface.enumerate$VH.set(seg, x);
     }
-    public static MemoryAddress enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.enumerate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment enumerate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.enumerate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void enumerate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void enumerate$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketConnectableIface.enumerate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static enumerate enumerate (MemorySegment segment, MemorySession session) {
-        return enumerate.ofAddress(enumerate$get(segment), session);
+    public static enumerate enumerate(MemorySegment segment, SegmentScope scope) {
+        return enumerate.ofAddress(enumerate$get(segment), scope);
     }
     static final FunctionDescriptor proxy_enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle proxy_enumerate$MH = RuntimeHelper.downcallHandle(
-        _GSocketConnectableIface.proxy_enumerate$FUNC
+    static final FunctionDescriptor proxy_enumerate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle proxy_enumerate_UP$MH = RuntimeHelper.upcallHandle(proxy_enumerate.class, "apply", _GSocketConnectableIface.proxy_enumerate_UP$FUNC);
+    static final FunctionDescriptor proxy_enumerate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle proxy_enumerate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketConnectableIface.proxy_enumerate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSocketAddressEnumerator* (*proxy_enumerate)(GSocketConnectable*);
+     * }
+     */
     public interface proxy_enumerate {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(proxy_enumerate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(proxy_enumerate.class, fi, _GSocketConnectableIface.proxy_enumerate$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(proxy_enumerate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketConnectableIface.proxy_enumerate_UP$MH, fi, _GSocketConnectableIface.proxy_enumerate$FUNC, scope);
         }
-        static proxy_enumerate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static proxy_enumerate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GSocketConnectableIface.proxy_enumerate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.proxy_enumerate_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -95,38 +141,62 @@ public class _GSocketConnectableIface {
     public static VarHandle proxy_enumerate$VH() {
         return _GSocketConnectableIface.proxy_enumerate$VH;
     }
-    public static MemoryAddress proxy_enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.proxy_enumerate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSocketAddressEnumerator* (*proxy_enumerate)(GSocketConnectable*);
+     * }
+     */
+    public static MemorySegment proxy_enumerate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.proxy_enumerate$VH.get(seg);
     }
-    public static void proxy_enumerate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSocketAddressEnumerator* (*proxy_enumerate)(GSocketConnectable*);
+     * }
+     */
+    public static void proxy_enumerate$set(MemorySegment seg, MemorySegment x) {
         _GSocketConnectableIface.proxy_enumerate$VH.set(seg, x);
     }
-    public static MemoryAddress proxy_enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.proxy_enumerate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment proxy_enumerate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.proxy_enumerate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void proxy_enumerate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void proxy_enumerate$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketConnectableIface.proxy_enumerate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static proxy_enumerate proxy_enumerate (MemorySegment segment, MemorySession session) {
-        return proxy_enumerate.ofAddress(proxy_enumerate$get(segment), session);
+    public static proxy_enumerate proxy_enumerate(MemorySegment segment, SegmentScope scope) {
+        return proxy_enumerate.ofAddress(proxy_enumerate$get(segment), scope);
     }
     static final FunctionDescriptor to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle to_string$MH = RuntimeHelper.downcallHandle(
-        _GSocketConnectableIface.to_string$FUNC
+    static final FunctionDescriptor to_string_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle to_string_UP$MH = RuntimeHelper.upcallHandle(to_string.class, "apply", _GSocketConnectableIface.to_string_UP$FUNC);
+    static final FunctionDescriptor to_string_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle to_string_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketConnectableIface.to_string_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*to_string)(GSocketConnectable*);
+     * }
+     */
     public interface to_string {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(to_string fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(to_string.class, fi, _GSocketConnectableIface.to_string$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(to_string fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketConnectableIface.to_string_UP$MH, fi, _GSocketConnectableIface.to_string$FUNC, scope);
         }
-        static to_string ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static to_string ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GSocketConnectableIface.to_string$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.to_string_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -138,27 +208,39 @@ public class _GSocketConnectableIface {
     public static VarHandle to_string$VH() {
         return _GSocketConnectableIface.to_string$VH;
     }
-    public static MemoryAddress to_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.to_string$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*to_string)(GSocketConnectable*);
+     * }
+     */
+    public static MemorySegment to_string$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.to_string$VH.get(seg);
     }
-    public static void to_string$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*to_string)(GSocketConnectable*);
+     * }
+     */
+    public static void to_string$set(MemorySegment seg, MemorySegment x) {
         _GSocketConnectableIface.to_string$VH.set(seg, x);
     }
-    public static MemoryAddress to_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketConnectableIface.to_string$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment to_string$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketConnectableIface.to_string$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void to_string$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void to_string$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketConnectableIface.to_string$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_string to_string (MemorySegment segment, MemorySession session) {
-        return to_string.ofAddress(to_string$get(segment), session);
+    public static to_string to_string(MemorySegment segment, SegmentScope scope) {
+        return to_string.ofAddress(to_string$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkGLArea extends _GtkGLArea {
+/**
+ * {@snippet :
+ * typedef struct _GtkGLArea GtkGLArea;
+ * }
+ */
+public final class GtkGLArea extends _GtkGLArea {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkGLArea() {}
 }
 
 

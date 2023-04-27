@@ -7,43 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1155 {
+final class constants$1155 {
 
-    static final FunctionDescriptor cairo_read_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1155() {}
+    static final FunctionDescriptor gdk_cairo_set_source_rgba$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_set_source_rgba$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_rgba",
+        constants$1155.gdk_cairo_set_source_rgba$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_set_source_pixbuf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle cairo_read_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1155.cairo_read_func_t$FUNC
+    static final MethodHandle gdk_cairo_set_source_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_pixbuf",
+        constants$1155.gdk_cairo_set_source_pixbuf$FUNC
     );
-    static final FunctionDescriptor cairo_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_cairo_set_source_window$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_set_source_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_window",
+        constants$1155.gdk_cairo_set_source_window$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_create",
-        constants$1155.cairo_create$FUNC
+    static final MethodHandle gdk_cairo_rectangle$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_rectangle",
+        constants$1155.gdk_cairo_rectangle$FUNC
     );
-    static final FunctionDescriptor cairo_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_cairo_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_reference",
-        constants$1155.cairo_reference$FUNC
+    static final MethodHandle gdk_cairo_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_region",
+        constants$1155.gdk_cairo_region$FUNC
     );
-    static final FunctionDescriptor cairo_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_cairo_region_create_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_destroy",
-        constants$1155.cairo_destroy$FUNC
-    );
-    static final FunctionDescriptor cairo_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_reference_count",
-        constants$1155.cairo_get_reference_count$FUNC
+    static final MethodHandle gdk_cairo_region_create_from_surface$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_region_create_from_surface",
+        constants$1155.gdk_cairo_region_create_from_surface$FUNC
     );
 }
 

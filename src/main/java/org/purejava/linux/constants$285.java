@@ -7,45 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$285 {
+final class constants$285 {
 
-    static final FunctionDescriptor GSequenceIterCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$285() {}
+    static final FunctionDescriptor g_atomic_rc_box_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSequenceIterCompareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$285.GSequenceIterCompareFunc$FUNC
+    static final MethodHandle g_atomic_rc_box_dup$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_dup",
+        constants$285.g_atomic_rc_box_dup$FUNC
     );
-    static final FunctionDescriptor g_sequence_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_atomic_rc_box_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_new$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_new",
-        constants$285.g_sequence_new$FUNC
+    static final MethodHandle g_atomic_rc_box_acquire$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_acquire",
+        constants$285.g_atomic_rc_box_acquire$FUNC
     );
-    static final FunctionDescriptor g_sequence_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_atomic_rc_box_release$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_free$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_free",
-        constants$285.g_sequence_free$FUNC
+    static final MethodHandle g_atomic_rc_box_release$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_release",
+        constants$285.g_atomic_rc_box_release$FUNC
     );
-    static final FunctionDescriptor g_sequence_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_length",
-        constants$285.g_sequence_get_length$FUNC
-    );
-    static final FunctionDescriptor g_sequence_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_atomic_rc_box_release_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_foreach",
-        constants$285.g_sequence_foreach$FUNC
+    static final MethodHandle g_atomic_rc_box_release_full$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_release_full",
+        constants$285.g_atomic_rc_box_release_full$FUNC
+    );
+    static final FunctionDescriptor g_atomic_rc_box_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_rc_box_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_get_size",
+        constants$285.g_atomic_rc_box_get_size$FUNC
+    );
+    static final FunctionDescriptor g_ref_count_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ref_count_init$MH = RuntimeHelper.downcallHandle(
+        "g_ref_count_init",
+        constants$285.g_ref_count_init$FUNC
     );
 }
 

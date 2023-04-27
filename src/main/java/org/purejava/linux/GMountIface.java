@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMountIface extends _GMountIface {
+/**
+ * {@snippet :
+ * typedef struct _GMountIface GMountIface;
+ * }
+ */
+public final class GMountIface extends _GMountIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMountIface() {}
 }
 
 

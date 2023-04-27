@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1078 {
+final class constants$1078 {
 
-    static final FunctionDescriptor pango_attr_letter_spacing_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1078() {}
+    static final FunctionDescriptor gdk_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_letter_spacing_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_letter_spacing_new",
-        constants$1078.pango_attr_letter_spacing_new$FUNC
+    static final MethodHandle gdk_window_new$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_new",
+        constants$1078.gdk_window_new$FUNC
     );
-    static final FunctionDescriptor pango_attr_shape_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_shape_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_shape_new",
-        constants$1078.pango_attr_shape_new$FUNC
+    static final MethodHandle gdk_window_destroy$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_destroy",
+        constants$1078.gdk_window_destroy$FUNC
     );
-    static final FunctionDescriptor pango_attr_shape_new_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_window_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_shape_new_with_data$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_shape_new_with_data",
-        constants$1078.pango_attr_shape_new_with_data$FUNC
+    static final MethodHandle gdk_window_get_window_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_window_type",
+        constants$1078.gdk_window_get_window_type$FUNC
     );
-    static final FunctionDescriptor pango_attr_gravity_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_gravity_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_gravity_new",
-        constants$1078.pango_attr_gravity_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_gravity_hint_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_gravity_hint_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_gravity_hint_new",
-        constants$1078.pango_attr_gravity_hint_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_font_features_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_is_destroyed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_font_features_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_font_features_new",
-        constants$1078.pango_attr_font_features_new$FUNC
+    static final MethodHandle gdk_window_is_destroyed$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_is_destroyed",
+        constants$1078.gdk_window_is_destroyed$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_visual$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_visual",
+        constants$1078.gdk_window_get_visual$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_screen",
+        constants$1078.gdk_window_get_screen$FUNC
     );
 }
 

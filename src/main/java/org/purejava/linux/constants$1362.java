@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1362 {
+final class constants$1362 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkVisual$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1362() {}
+    static final FunctionDescriptor GtkTreeModelForeachFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkVisual$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkVisual",
-        constants$1362.glib_listautoptr_cleanup_GdkVisual$FUNC
+    static final MethodHandle GtkTreeModelForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1362.GtkTreeModelForeachFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkVisual$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tree_path_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_new",
+        constants$1362.gtk_tree_path_new$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkVisual$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkVisual",
-        constants$1362.glib_slistautoptr_cleanup_GdkVisual$FUNC
+    static final MethodHandle gtk_tree_path_new_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_new_from_string",
+        constants$1362.gtk_tree_path_new_from_string$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkVisual$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_path_new_from_indices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_path_new_from_indices$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_path_new_from_indices",
+        constants$1362.gtk_tree_path_new_from_indices$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_new_from_indicesv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_tree_path_new_from_indicesv$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_new_from_indicesv",
+        constants$1362.gtk_tree_path_new_from_indicesv$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_path_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkVisual$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkVisual",
-        constants$1362.glib_queueautoptr_cleanup_GdkVisual$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GdkWindow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GdkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkWindow",
-        constants$1362.glib_autoptr_clear_GdkWindow$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkWindow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GdkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkWindow",
-        constants$1362.glib_autoptr_cleanup_GdkWindow$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkWindow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GdkWindow$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkWindow",
-        constants$1362.glib_listautoptr_cleanup_GdkWindow$FUNC
+    static final MethodHandle gtk_tree_path_to_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_path_to_string",
+        constants$1362.gtk_tree_path_to_string$FUNC
     );
 }
 

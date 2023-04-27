@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMemChunk {
+/**
+ * {@snippet :
+ * typedef struct _GMemChunk GMemChunk;
+ * }
+ */
+public final class GMemChunk {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMemChunk() {}
 }
 
 

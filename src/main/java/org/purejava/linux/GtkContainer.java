@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkContainer extends _GtkContainer {
+/**
+ * {@snippet :
+ * typedef struct _GtkContainer GtkContainer;
+ * }
+ */
+public final class GtkContainer extends _GtkContainer {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkContainer() {}
 }
 
 

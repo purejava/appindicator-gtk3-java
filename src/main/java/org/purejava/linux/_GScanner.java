@@ -7,9 +7,36 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GScanner {
+ *     gpointer user_data;
+ *     guint max_parse_errors;
+ *     guint parse_errors;
+ *     const gchar* input_name;
+ *     GData* qdata;
+ *     GScannerConfig* config;
+ *     GTokenType token;
+ *     GTokenValue value;
+ *     guint line;
+ *     guint position;
+ *     GTokenType next_token;
+ *     GTokenValue next_value;
+ *     guint next_line;
+ *     guint next_position;
+ *     GHashTable* symbol_table;
+ *     gint input_fd;
+ *     const gchar* text;
+ *     const gchar* text_end;
+ *     gchar* buffer;
+ *     guint scope_id;
+ *     GScannerMsgFunc msg_handler;
+ * };
+ * }
+ */
 public class _GScanner {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("user_data"),
         Constants$root.C_INT$LAYOUT.withName("max_parse_errors"),
         Constants$root.C_INT$LAYOUT.withName("parse_errors"),
@@ -69,26 +96,50 @@ public class _GScanner {
     public static VarHandle user_data$VH() {
         return _GScanner.user_data$VH;
     }
-    public static MemoryAddress user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.user_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static MemorySegment user_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.user_data$VH.get(seg);
     }
-    public static void user_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static void user_data$set(MemorySegment seg, MemorySegment x) {
         _GScanner.user_data$VH.set(seg, x);
     }
-    public static MemoryAddress user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.user_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment user_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.user_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void user_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.user_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle max_parse_errors$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("max_parse_errors"));
     public static VarHandle max_parse_errors$VH() {
         return _GScanner.max_parse_errors$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint max_parse_errors;
+     * }
+     */
     public static int max_parse_errors$get(MemorySegment seg) {
         return (int)_GScanner.max_parse_errors$VH.get(seg);
     }
-    public static void max_parse_errors$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint max_parse_errors;
+     * }
+     */
+    public static void max_parse_errors$set(MemorySegment seg, int x) {
         _GScanner.max_parse_errors$VH.set(seg, x);
     }
     public static int max_parse_errors$get(MemorySegment seg, long index) {
@@ -101,10 +152,22 @@ public class _GScanner {
     public static VarHandle parse_errors$VH() {
         return _GScanner.parse_errors$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint parse_errors;
+     * }
+     */
     public static int parse_errors$get(MemorySegment seg) {
         return (int)_GScanner.parse_errors$VH.get(seg);
     }
-    public static void parse_errors$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint parse_errors;
+     * }
+     */
+    public static void parse_errors$set(MemorySegment seg, int x) {
         _GScanner.parse_errors$VH.set(seg, x);
     }
     public static int parse_errors$get(MemorySegment seg, long index) {
@@ -117,58 +180,106 @@ public class _GScanner {
     public static VarHandle input_name$VH() {
         return _GScanner.input_name$VH;
     }
-    public static MemoryAddress input_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.input_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* input_name;
+     * }
+     */
+    public static MemorySegment input_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.input_name$VH.get(seg);
     }
-    public static void input_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* input_name;
+     * }
+     */
+    public static void input_name$set(MemorySegment seg, MemorySegment x) {
         _GScanner.input_name$VH.set(seg, x);
     }
-    public static MemoryAddress input_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.input_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment input_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.input_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void input_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void input_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.input_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle qdata$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
     public static VarHandle qdata$VH() {
         return _GScanner.qdata$VH;
     }
-    public static MemoryAddress qdata$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.qdata$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GData* qdata;
+     * }
+     */
+    public static MemorySegment qdata$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.qdata$VH.get(seg);
     }
-    public static void qdata$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GData* qdata;
+     * }
+     */
+    public static void qdata$set(MemorySegment seg, MemorySegment x) {
         _GScanner.qdata$VH.set(seg, x);
     }
-    public static MemoryAddress qdata$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.qdata$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment qdata$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.qdata$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void qdata$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void qdata$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.qdata$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle config$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("config"));
     public static VarHandle config$VH() {
         return _GScanner.config$VH;
     }
-    public static MemoryAddress config$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.config$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GScannerConfig* config;
+     * }
+     */
+    public static MemorySegment config$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.config$VH.get(seg);
     }
-    public static void config$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GScannerConfig* config;
+     * }
+     */
+    public static void config$set(MemorySegment seg, MemorySegment x) {
         _GScanner.config$VH.set(seg, x);
     }
-    public static MemoryAddress config$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.config$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment config$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.config$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void config$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void config$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.config$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle token$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("token"));
     public static VarHandle token$VH() {
         return _GScanner.token$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTokenType token;
+     * }
+     */
     public static int token$get(MemorySegment seg) {
         return (int)_GScanner.token$VH.get(seg);
     }
-    public static void token$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTokenType token;
+     * }
+     */
+    public static void token$set(MemorySegment seg, int x) {
         _GScanner.token$VH.set(seg, x);
     }
     public static int token$get(MemorySegment seg, long index) {
@@ -184,10 +295,22 @@ public class _GScanner {
     public static VarHandle line$VH() {
         return _GScanner.line$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint line;
+     * }
+     */
     public static int line$get(MemorySegment seg) {
         return (int)_GScanner.line$VH.get(seg);
     }
-    public static void line$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint line;
+     * }
+     */
+    public static void line$set(MemorySegment seg, int x) {
         _GScanner.line$VH.set(seg, x);
     }
     public static int line$get(MemorySegment seg, long index) {
@@ -200,10 +323,22 @@ public class _GScanner {
     public static VarHandle position$VH() {
         return _GScanner.position$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint position;
+     * }
+     */
     public static int position$get(MemorySegment seg) {
         return (int)_GScanner.position$VH.get(seg);
     }
-    public static void position$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint position;
+     * }
+     */
+    public static void position$set(MemorySegment seg, int x) {
         _GScanner.position$VH.set(seg, x);
     }
     public static int position$get(MemorySegment seg, long index) {
@@ -216,10 +351,22 @@ public class _GScanner {
     public static VarHandle next_token$VH() {
         return _GScanner.next_token$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTokenType next_token;
+     * }
+     */
     public static int next_token$get(MemorySegment seg) {
         return (int)_GScanner.next_token$VH.get(seg);
     }
-    public static void next_token$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTokenType next_token;
+     * }
+     */
+    public static void next_token$set(MemorySegment seg, int x) {
         _GScanner.next_token$VH.set(seg, x);
     }
     public static int next_token$get(MemorySegment seg, long index) {
@@ -235,10 +382,22 @@ public class _GScanner {
     public static VarHandle next_line$VH() {
         return _GScanner.next_line$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint next_line;
+     * }
+     */
     public static int next_line$get(MemorySegment seg) {
         return (int)_GScanner.next_line$VH.get(seg);
     }
-    public static void next_line$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint next_line;
+     * }
+     */
+    public static void next_line$set(MemorySegment seg, int x) {
         _GScanner.next_line$VH.set(seg, x);
     }
     public static int next_line$get(MemorySegment seg, long index) {
@@ -251,10 +410,22 @@ public class _GScanner {
     public static VarHandle next_position$VH() {
         return _GScanner.next_position$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint next_position;
+     * }
+     */
     public static int next_position$get(MemorySegment seg) {
         return (int)_GScanner.next_position$VH.get(seg);
     }
-    public static void next_position$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint next_position;
+     * }
+     */
+    public static void next_position$set(MemorySegment seg, int x) {
         _GScanner.next_position$VH.set(seg, x);
     }
     public static int next_position$get(MemorySegment seg, long index) {
@@ -267,26 +438,50 @@ public class _GScanner {
     public static VarHandle symbol_table$VH() {
         return _GScanner.symbol_table$VH;
     }
-    public static MemoryAddress symbol_table$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.symbol_table$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GHashTable* symbol_table;
+     * }
+     */
+    public static MemorySegment symbol_table$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.symbol_table$VH.get(seg);
     }
-    public static void symbol_table$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GHashTable* symbol_table;
+     * }
+     */
+    public static void symbol_table$set(MemorySegment seg, MemorySegment x) {
         _GScanner.symbol_table$VH.set(seg, x);
     }
-    public static MemoryAddress symbol_table$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.symbol_table$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment symbol_table$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.symbol_table$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void symbol_table$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void symbol_table$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.symbol_table$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle input_fd$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("input_fd"));
     public static VarHandle input_fd$VH() {
         return _GScanner.input_fd$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint input_fd;
+     * }
+     */
     public static int input_fd$get(MemorySegment seg) {
         return (int)_GScanner.input_fd$VH.get(seg);
     }
-    public static void input_fd$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint input_fd;
+     * }
+     */
+    public static void input_fd$set(MemorySegment seg, int x) {
         _GScanner.input_fd$VH.set(seg, x);
     }
     public static int input_fd$get(MemorySegment seg, long index) {
@@ -299,58 +494,106 @@ public class _GScanner {
     public static VarHandle text$VH() {
         return _GScanner.text$VH;
     }
-    public static MemoryAddress text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.text$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* text;
+     * }
+     */
+    public static MemorySegment text$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.text$VH.get(seg);
     }
-    public static void text$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* text;
+     * }
+     */
+    public static void text$set(MemorySegment seg, MemorySegment x) {
         _GScanner.text$VH.set(seg, x);
     }
-    public static MemoryAddress text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.text$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment text$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.text$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void text$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void text$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.text$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle text_end$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("text_end"));
     public static VarHandle text_end$VH() {
         return _GScanner.text_end$VH;
     }
-    public static MemoryAddress text_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.text_end$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* text_end;
+     * }
+     */
+    public static MemorySegment text_end$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.text_end$VH.get(seg);
     }
-    public static void text_end$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* text_end;
+     * }
+     */
+    public static void text_end$set(MemorySegment seg, MemorySegment x) {
         _GScanner.text_end$VH.set(seg, x);
     }
-    public static MemoryAddress text_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.text_end$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment text_end$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.text_end$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void text_end$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void text_end$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.text_end$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle buffer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
     public static VarHandle buffer$VH() {
         return _GScanner.buffer$VH;
     }
-    public static MemoryAddress buffer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.buffer$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* buffer;
+     * }
+     */
+    public static MemorySegment buffer$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.buffer$VH.get(seg);
     }
-    public static void buffer$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* buffer;
+     * }
+     */
+    public static void buffer$set(MemorySegment seg, MemorySegment x) {
         _GScanner.buffer$VH.set(seg, x);
     }
-    public static MemoryAddress buffer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.buffer$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment buffer$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.buffer$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void buffer$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void buffer$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.buffer$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle scope_id$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("scope_id"));
     public static VarHandle scope_id$VH() {
         return _GScanner.scope_id$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint scope_id;
+     * }
+     */
     public static int scope_id$get(MemorySegment seg) {
         return (int)_GScanner.scope_id$VH.get(seg);
     }
-    public static void scope_id$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint scope_id;
+     * }
+     */
+    public static void scope_id$set(MemorySegment seg, int x) {
         _GScanner.scope_id$VH.set(seg, x);
     }
     public static int scope_id$get(MemorySegment seg, long index) {
@@ -363,27 +606,39 @@ public class _GScanner {
     public static VarHandle msg_handler$VH() {
         return _GScanner.msg_handler$VH;
     }
-    public static MemoryAddress msg_handler$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.msg_handler$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GScannerMsgFunc msg_handler;
+     * }
+     */
+    public static MemorySegment msg_handler$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GScanner.msg_handler$VH.get(seg);
     }
-    public static void msg_handler$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GScannerMsgFunc msg_handler;
+     * }
+     */
+    public static void msg_handler$set(MemorySegment seg, MemorySegment x) {
         _GScanner.msg_handler$VH.set(seg, x);
     }
-    public static MemoryAddress msg_handler$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GScanner.msg_handler$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment msg_handler$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GScanner.msg_handler$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void msg_handler$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void msg_handler$set(MemorySegment seg, long index, MemorySegment x) {
         _GScanner.msg_handler$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GScannerMsgFunc msg_handler (MemorySegment segment, MemorySession session) {
-        return GScannerMsgFunc.ofAddress(msg_handler$get(segment), session);
+    public static GScannerMsgFunc msg_handler(MemorySegment segment, SegmentScope scope) {
+        return GScannerMsgFunc.ofAddress(msg_handler$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

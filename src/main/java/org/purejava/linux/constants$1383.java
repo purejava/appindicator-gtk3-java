@@ -7,29 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1383 {
+final class constants$1383 {
 
-    static final FunctionDescriptor AtkEventListener$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1383() {}
+    static final FunctionDescriptor gtk_cell_area_get_current_path_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle AtkEventListener$MH = RuntimeHelper.downcallHandle(
-        constants$1383.AtkEventListener$FUNC
+    static final MethodHandle gtk_cell_area_get_current_path_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_current_path_string",
+        constants$1383.gtk_cell_area_get_current_path_string$FUNC
     );
-    static final FunctionDescriptor AtkEventListenerInit$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle AtkEventListenerInit$MH = RuntimeHelper.downcallHandle(
-        constants$1383.AtkEventListenerInit$FUNC
+    static final FunctionDescriptor gtk_cell_area_apply_attributes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor AtkKeySnoopFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle gtk_cell_area_apply_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_apply_attributes",
+        constants$1383.gtk_cell_area_apply_attributes$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_attribute_connect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_attribute_connect$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_attribute_connect",
+        constants$1383.gtk_cell_area_attribute_connect$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_attribute_disconnect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle AtkKeySnoopFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1383.AtkKeySnoopFunc$FUNC
+    static final MethodHandle gtk_cell_area_attribute_disconnect$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_attribute_disconnect",
+        constants$1383.gtk_cell_area_attribute_disconnect$FUNC
     );
-    static final FunctionDescriptor atk_util_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_util_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_util_get_type",
-        constants$1383.atk_util_get_type$FUNC
+    static final FunctionDescriptor gtk_cell_area_attribute_get_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_attribute_get_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_attribute_get_column",
+        constants$1383.gtk_cell_area_attribute_get_column$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_class_install_cell_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_class_install_cell_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_class_install_cell_property",
+        constants$1383.gtk_cell_area_class_install_cell_property$FUNC
     );
 }
 

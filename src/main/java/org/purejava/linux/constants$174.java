@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$174 {
+final class constants$174 {
 
-    static final FunctionDescriptor g_source_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$174() {}
+    static final FunctionDescriptor g_main_loop_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_priority",
-        constants$174.g_source_get_priority$FUNC
+    static final MethodHandle g_main_loop_is_running$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_is_running",
+        constants$174.g_main_loop_is_running$FUNC
     );
-    static final FunctionDescriptor g_source_set_can_recurse$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_main_loop_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_loop_get_context$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_get_context",
+        constants$174.g_main_loop_get_context$FUNC
+    );
+    static final FunctionDescriptor g_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_source_set_can_recurse$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_can_recurse",
-        constants$174.g_source_set_can_recurse$FUNC
+    static final MethodHandle g_source_new$MH = RuntimeHelper.downcallHandle(
+        "g_source_new",
+        constants$174.g_source_new$FUNC
     );
-    static final FunctionDescriptor g_source_get_can_recurse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_get_can_recurse$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_can_recurse",
-        constants$174.g_source_get_can_recurse$FUNC
-    );
-    static final FunctionDescriptor g_source_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_get_id$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_id",
-        constants$174.g_source_get_id$FUNC
-    );
-    static final FunctionDescriptor g_source_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_get_context$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_context",
-        constants$174.g_source_get_context$FUNC
-    );
-    static final FunctionDescriptor g_source_set_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_source_set_dispose_function$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_callback$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_callback",
-        constants$174.g_source_set_callback$FUNC
+    static final MethodHandle g_source_set_dispose_function$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_dispose_function",
+        constants$174.g_source_set_dispose_function$FUNC
+    );
+    static final FunctionDescriptor g_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_ref$MH = RuntimeHelper.downcallHandle(
+        "g_source_ref",
+        constants$174.g_source_ref$FUNC
+    );
+    static final FunctionDescriptor g_source_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_unref$MH = RuntimeHelper.downcallHandle(
+        "g_source_unref",
+        constants$174.g_source_unref$FUNC
     );
 }
 

@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkGLAreaClass {
+ *     GtkWidgetClass parent_class;
+ *     gboolean (*render)(GtkGLArea*,GdkGLContext*);
+ *     void (*resize)(GtkGLArea*,int,int);
+ *     GdkGLContext* (*create_context)(GtkGLArea*);
+ *     gpointer _padding[6];
+ * };
+ * }
+ */
 public class _GtkGLAreaClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +36,10 @@ public class _GtkGLAreaClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent_class"),
             Constants$root.C_INT$LAYOUT.withName("activate_signal"),
             MemoryLayout.paddingLayout(32),
@@ -130,20 +144,34 @@ public class _GtkGLAreaClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle render$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.render$FUNC
+    static final FunctionDescriptor render_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle render_UP$MH = RuntimeHelper.upcallHandle(render.class, "apply", _GtkGLAreaClass.render_UP$FUNC);
+    static final FunctionDescriptor render_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle render_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkGLAreaClass.render_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+     * }
+     */
     public interface render {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(render fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(render.class, fi, _GtkGLAreaClass.render$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(render fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkGLAreaClass.render_UP$MH, fi, _GtkGLAreaClass.render$FUNC, scope);
         }
-        static render ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static render ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkGLAreaClass.render$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkGLAreaClass.render_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -155,40 +183,68 @@ public class _GtkGLAreaClass {
     public static VarHandle render$VH() {
         return _GtkGLAreaClass.render$VH;
     }
-    public static MemoryAddress render$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.render$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+     * }
+     */
+    public static MemorySegment render$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.render$VH.get(seg);
     }
-    public static void render$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+     * }
+     */
+    public static void render$set(MemorySegment seg, MemorySegment x) {
         _GtkGLAreaClass.render$VH.set(seg, x);
     }
-    public static MemoryAddress render$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.render$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment render$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.render$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void render$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void render$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkGLAreaClass.render$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static render render (MemorySegment segment, MemorySession session) {
-        return render.ofAddress(render$get(segment), session);
+    public static render render(MemorySegment segment, SegmentScope scope) {
+        return render.ofAddress(render$get(segment), scope);
     }
     static final FunctionDescriptor resize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle resize$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.resize$FUNC
+    static final FunctionDescriptor resize_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle resize_UP$MH = RuntimeHelper.upcallHandle(resize.class, "apply", _GtkGLAreaClass.resize_UP$FUNC);
+    static final FunctionDescriptor resize_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle resize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkGLAreaClass.resize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*resize)(GtkGLArea*,int,int);
+     * }
+     */
     public interface resize {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(resize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(resize.class, fi, _GtkGLAreaClass.resize$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(resize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkGLAreaClass.resize_UP$MH, fi, _GtkGLAreaClass.resize$FUNC, scope);
         }
-        static resize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static resize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkGLAreaClass.resize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkGLAreaClass.resize_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -200,38 +256,62 @@ public class _GtkGLAreaClass {
     public static VarHandle resize$VH() {
         return _GtkGLAreaClass.resize$VH;
     }
-    public static MemoryAddress resize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.resize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*resize)(GtkGLArea*,int,int);
+     * }
+     */
+    public static MemorySegment resize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.resize$VH.get(seg);
     }
-    public static void resize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*resize)(GtkGLArea*,int,int);
+     * }
+     */
+    public static void resize$set(MemorySegment seg, MemorySegment x) {
         _GtkGLAreaClass.resize$VH.set(seg, x);
     }
-    public static MemoryAddress resize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.resize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment resize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.resize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void resize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void resize$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkGLAreaClass.resize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static resize resize (MemorySegment segment, MemorySession session) {
-        return resize.ofAddress(resize$get(segment), session);
+    public static resize resize(MemorySegment segment, SegmentScope scope) {
+        return resize.ofAddress(resize$get(segment), scope);
     }
     static final FunctionDescriptor create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle create_context$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.create_context$FUNC
+    static final FunctionDescriptor create_context_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle create_context_UP$MH = RuntimeHelper.upcallHandle(create_context.class, "apply", _GtkGLAreaClass.create_context_UP$FUNC);
+    static final FunctionDescriptor create_context_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle create_context_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkGLAreaClass.create_context_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GdkGLContext* (*create_context)(GtkGLArea*);
+     * }
+     */
     public interface create_context {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(create_context fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_context.class, fi, _GtkGLAreaClass.create_context$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(create_context fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkGLAreaClass.create_context_UP$MH, fi, _GtkGLAreaClass.create_context$FUNC, scope);
         }
-        static create_context ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static create_context ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkGLAreaClass.create_context$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -243,30 +323,42 @@ public class _GtkGLAreaClass {
     public static VarHandle create_context$VH() {
         return _GtkGLAreaClass.create_context$VH;
     }
-    public static MemoryAddress create_context$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.create_context$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkGLContext* (*create_context)(GtkGLArea*);
+     * }
+     */
+    public static MemorySegment create_context$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context$VH.get(seg);
     }
-    public static void create_context$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkGLContext* (*create_context)(GtkGLArea*);
+     * }
+     */
+    public static void create_context$set(MemorySegment seg, MemorySegment x) {
         _GtkGLAreaClass.create_context$VH.set(seg, x);
     }
-    public static MemoryAddress create_context$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkGLAreaClass.create_context$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_context$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_context$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_context$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkGLAreaClass.create_context$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_context create_context (MemorySegment segment, MemorySession session) {
-        return create_context.ofAddress(create_context$get(segment), session);
+    public static create_context create_context(MemorySegment segment, SegmentScope scope) {
+        return create_context.ofAddress(create_context$get(segment), scope);
     }
     public static MemorySegment _padding$slice(MemorySegment seg) {
         return seg.asSlice(848, 48);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

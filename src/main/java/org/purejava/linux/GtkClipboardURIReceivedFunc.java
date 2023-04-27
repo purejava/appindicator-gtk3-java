@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardURIReceivedFunc)(struct _GtkClipboard* clipboard,char** uris,void* data);
+ * }
+ */
 public interface GtkClipboardURIReceivedFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress uris, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkClipboardURIReceivedFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardURIReceivedFunc.class, fi, constants$1729.GtkClipboardURIReceivedFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkClipboardURIReceivedFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1538.GtkClipboardURIReceivedFunc_UP$MH, fi, constants$1538.GtkClipboardURIReceivedFunc$FUNC, scope);
     }
-    static GtkClipboardURIReceivedFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _uris, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkClipboardURIReceivedFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1729.GtkClipboardURIReceivedFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_uris, (java.lang.foreign.Addressable)_data);
+                constants$1539.GtkClipboardURIReceivedFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

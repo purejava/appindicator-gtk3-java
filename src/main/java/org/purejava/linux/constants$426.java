@@ -7,38 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$426 {
+final class constants$426 {
 
-    static final FunctionDescriptor GInterfaceFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$426() {}
+    static final FunctionDescriptor g_thread_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_thread_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_thread_get_type",
+        constants$426.g_thread_get_type$FUNC
     );
-    static final MethodHandle GInterfaceFinalizeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$426.GInterfaceFinalizeFunc$FUNC
+    static final FunctionDescriptor g_checksum_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_checksum_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_checksum_get_type",
+        constants$426.g_checksum_get_type$FUNC
     );
-    static final FunctionDescriptor GTypeClassCacheFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_markup_parse_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_markup_parse_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_type",
+        constants$426.g_markup_parse_context_get_type$FUNC
     );
-    static final MethodHandle GTypeClassCacheFunc$MH = RuntimeHelper.downcallHandle(
-        constants$426.GTypeClassCacheFunc$FUNC
+    static final FunctionDescriptor g_mapped_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mapped_file_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_get_type",
+        constants$426.g_mapped_file_get_type$FUNC
     );
-    static final FunctionDescriptor GTypeInterfaceCheckFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_option_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_option_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_get_type",
+        constants$426.g_option_group_get_type$FUNC
     );
-    static final MethodHandle GTypeInterfaceCheckFunc$MH = RuntimeHelper.downcallHandle(
-        constants$426.GTypeInterfaceCheckFunc$FUNC
-    );
-    static final FunctionDescriptor g_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_static",
-        constants$426.g_type_register_static$FUNC
+    static final FunctionDescriptor g_uri_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_uri_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_type",
+        constants$426.g_uri_get_type$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkProgressBar extends _GtkProgressBar {
+/**
+ * {@snippet :
+ * typedef struct _GtkProgressBar GtkProgressBar;
+ * }
+ */
+public final class GtkProgressBar extends _GtkProgressBar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkProgressBar() {}
 }
 
 

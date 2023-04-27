@@ -7,44 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1879 {
+final class constants$1879 {
 
-    static final FunctionDescriptor gtk_get_minor_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_minor_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_minor_version",
-        constants$1879.gtk_get_minor_version$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1879() {}
+    static final FunctionDescriptor gtk_button_box_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_button_box_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_box_style_get_type",
+        constants$1879.gtk_button_box_style_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_get_micro_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_micro_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_micro_version",
-        constants$1879.gtk_get_micro_version$FUNC
+    static final FunctionDescriptor gtk_builder_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_builder_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_error_get_type",
+        constants$1879.gtk_builder_error_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_get_binary_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_binary_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_binary_age",
-        constants$1879.gtk_get_binary_age$FUNC
+    static final FunctionDescriptor gtk_calendar_display_options_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_calendar_display_options_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_display_options_get_type",
+        constants$1879.gtk_calendar_display_options_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_get_interface_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_interface_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_interface_age",
-        constants$1879.gtk_get_interface_age$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_state_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_state_get_type",
+        constants$1879.gtk_cell_renderer_state_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_check_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_mode_get_type",
+        constants$1879.gtk_cell_renderer_mode_get_type$FUNC
     );
-    static final MethodHandle gtk_check_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_version",
-        constants$1879.gtk_check_version$FUNC
-    );
-    static final FunctionDescriptor gtk_parse_args$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_parse_args$MH = RuntimeHelper.downcallHandle(
-        "gtk_parse_args",
-        constants$1879.gtk_parse_args$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_accel_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_accel_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_accel_mode_get_type",
+        constants$1879.gtk_cell_renderer_accel_mode_get_type$FUNC
     );
 }
 

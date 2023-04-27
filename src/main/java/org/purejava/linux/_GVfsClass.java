@@ -7,9 +7,33 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GVfsClass {
+ *     GObjectClass parent_class;
+ *     gboolean (*is_active)(GVfs*);
+ *     GFile* (*get_file_for_path)(GVfs*,char*);
+ *     GFile* (*get_file_for_uri)(GVfs*,char*);
+ *     const gchar** (*get_supported_uri_schemes)(GVfs*);
+ *     GFile* (*parse_name)(GVfs*,char*);
+ *     void (*local_file_add_info)(GVfs*,char*,guint64,GFileAttributeMatcher*,GFileInfo*,GCancellable*,gpointer*,GDestroyNotify*);
+ *     void (*add_writable_namespaces)(GVfs*,GFileAttributeInfoList*);
+ *     gboolean (*local_file_set_attributes)(GVfs*,char*,GFileInfo*,GFileQueryInfoFlags,GCancellable*,GError**);
+ *     void (*local_file_removed)(GVfs*,char*);
+ *     void (*local_file_moved)(GVfs*,char*,char*);
+ *     GIcon* (*deserialize_icon)(GVfs*,GVariant*);
+ *     void (*_g_reserved1)();
+ *     void (*_g_reserved2)();
+ *     void (*_g_reserved3)();
+ *     void (*_g_reserved4)();
+ *     void (*_g_reserved5)();
+ *     void (*_g_reserved6)();
+ * };
+ * }
+ */
 public class _GVfsClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +48,10 @@ public class _GVfsClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("is_active"),
         Constants$root.C_POINTER$LAYOUT.withName("get_file_for_path"),
@@ -53,20 +80,32 @@ public class _GVfsClass {
     static final FunctionDescriptor is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_active$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.is_active$FUNC
+    static final FunctionDescriptor is_active_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_active_UP$MH = RuntimeHelper.upcallHandle(is_active.class, "apply", _GVfsClass.is_active_UP$FUNC);
+    static final FunctionDescriptor is_active_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_active_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.is_active_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_active)(GVfs*);
+     * }
+     */
     public interface is_active {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_active fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_active.class, fi, _GVfsClass.is_active$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_active fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.is_active_UP$MH, fi, _GVfsClass.is_active$FUNC, scope);
         }
-        static is_active ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_active ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GVfsClass.is_active$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GVfsClass.is_active_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -78,39 +117,65 @@ public class _GVfsClass {
     public static VarHandle is_active$VH() {
         return _GVfsClass.is_active$VH;
     }
-    public static MemoryAddress is_active$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.is_active$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_active)(GVfs*);
+     * }
+     */
+    public static MemorySegment is_active$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.is_active$VH.get(seg);
     }
-    public static void is_active$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_active)(GVfs*);
+     * }
+     */
+    public static void is_active$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.is_active$VH.set(seg, x);
     }
-    public static MemoryAddress is_active$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.is_active$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_active$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.is_active$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_active$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_active$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.is_active$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_active is_active (MemorySegment segment, MemorySession session) {
-        return is_active.ofAddress(is_active$get(segment), session);
+    public static is_active is_active(MemorySegment segment, SegmentScope scope) {
+        return is_active.ofAddress(is_active$get(segment), scope);
     }
     static final FunctionDescriptor get_file_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_file_for_path$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.get_file_for_path$FUNC
+    static final FunctionDescriptor get_file_for_path_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_file_for_path_UP$MH = RuntimeHelper.upcallHandle(get_file_for_path.class, "apply", _GVfsClass.get_file_for_path_UP$FUNC);
+    static final FunctionDescriptor get_file_for_path_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_file_for_path_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.get_file_for_path_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GFile* (*get_file_for_path)(GVfs*,char*);
+     * }
+     */
     public interface get_file_for_path {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_file_for_path fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_file_for_path.class, fi, _GVfsClass.get_file_for_path$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_file_for_path fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.get_file_for_path_UP$MH, fi, _GVfsClass.get_file_for_path$FUNC, scope);
         }
-        static get_file_for_path ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_file_for_path ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_path$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_path_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -122,39 +187,65 @@ public class _GVfsClass {
     public static VarHandle get_file_for_path$VH() {
         return _GVfsClass.get_file_for_path$VH;
     }
-    public static MemoryAddress get_file_for_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_path$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFile* (*get_file_for_path)(GVfs*,char*);
+     * }
+     */
+    public static MemorySegment get_file_for_path$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_path$VH.get(seg);
     }
-    public static void get_file_for_path$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFile* (*get_file_for_path)(GVfs*,char*);
+     * }
+     */
+    public static void get_file_for_path$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.get_file_for_path$VH.set(seg, x);
     }
-    public static MemoryAddress get_file_for_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_path$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_file_for_path$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_path$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_file_for_path$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_file_for_path$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.get_file_for_path$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_file_for_path get_file_for_path (MemorySegment segment, MemorySession session) {
-        return get_file_for_path.ofAddress(get_file_for_path$get(segment), session);
+    public static get_file_for_path get_file_for_path(MemorySegment segment, SegmentScope scope) {
+        return get_file_for_path.ofAddress(get_file_for_path$get(segment), scope);
     }
     static final FunctionDescriptor get_file_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_file_for_uri$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.get_file_for_uri$FUNC
+    static final FunctionDescriptor get_file_for_uri_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_file_for_uri_UP$MH = RuntimeHelper.upcallHandle(get_file_for_uri.class, "apply", _GVfsClass.get_file_for_uri_UP$FUNC);
+    static final FunctionDescriptor get_file_for_uri_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_file_for_uri_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.get_file_for_uri_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GFile* (*get_file_for_uri)(GVfs*,char*);
+     * }
+     */
     public interface get_file_for_uri {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_file_for_uri fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_file_for_uri.class, fi, _GVfsClass.get_file_for_uri$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_file_for_uri fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.get_file_for_uri_UP$MH, fi, _GVfsClass.get_file_for_uri$FUNC, scope);
         }
-        static get_file_for_uri ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_file_for_uri ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_uri$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_uri_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -166,38 +257,62 @@ public class _GVfsClass {
     public static VarHandle get_file_for_uri$VH() {
         return _GVfsClass.get_file_for_uri$VH;
     }
-    public static MemoryAddress get_file_for_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFile* (*get_file_for_uri)(GVfs*,char*);
+     * }
+     */
+    public static MemorySegment get_file_for_uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_uri$VH.get(seg);
     }
-    public static void get_file_for_uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFile* (*get_file_for_uri)(GVfs*,char*);
+     * }
+     */
+    public static void get_file_for_uri$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.get_file_for_uri$VH.set(seg, x);
     }
-    public static MemoryAddress get_file_for_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_file_for_uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_file_for_uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_file_for_uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_file_for_uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_file_for_uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.get_file_for_uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_file_for_uri get_file_for_uri (MemorySegment segment, MemorySession session) {
-        return get_file_for_uri.ofAddress(get_file_for_uri$get(segment), session);
+    public static get_file_for_uri get_file_for_uri(MemorySegment segment, SegmentScope scope) {
+        return get_file_for_uri.ofAddress(get_file_for_uri$get(segment), scope);
     }
     static final FunctionDescriptor get_supported_uri_schemes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_supported_uri_schemes$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.get_supported_uri_schemes$FUNC
+    static final FunctionDescriptor get_supported_uri_schemes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_supported_uri_schemes_UP$MH = RuntimeHelper.upcallHandle(get_supported_uri_schemes.class, "apply", _GVfsClass.get_supported_uri_schemes_UP$FUNC);
+    static final FunctionDescriptor get_supported_uri_schemes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_supported_uri_schemes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.get_supported_uri_schemes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar** (*get_supported_uri_schemes)(GVfs*);
+     * }
+     */
     public interface get_supported_uri_schemes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_supported_uri_schemes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_supported_uri_schemes.class, fi, _GVfsClass.get_supported_uri_schemes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_supported_uri_schemes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.get_supported_uri_schemes_UP$MH, fi, _GVfsClass.get_supported_uri_schemes$FUNC, scope);
         }
-        static get_supported_uri_schemes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_supported_uri_schemes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVfsClass.get_supported_uri_schemes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVfsClass.get_supported_uri_schemes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -209,39 +324,65 @@ public class _GVfsClass {
     public static VarHandle get_supported_uri_schemes$VH() {
         return _GVfsClass.get_supported_uri_schemes$VH;
     }
-    public static MemoryAddress get_supported_uri_schemes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_supported_uri_schemes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar** (*get_supported_uri_schemes)(GVfs*);
+     * }
+     */
+    public static MemorySegment get_supported_uri_schemes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_supported_uri_schemes$VH.get(seg);
     }
-    public static void get_supported_uri_schemes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar** (*get_supported_uri_schemes)(GVfs*);
+     * }
+     */
+    public static void get_supported_uri_schemes$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.get_supported_uri_schemes$VH.set(seg, x);
     }
-    public static MemoryAddress get_supported_uri_schemes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.get_supported_uri_schemes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_supported_uri_schemes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.get_supported_uri_schemes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_supported_uri_schemes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_supported_uri_schemes$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.get_supported_uri_schemes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_supported_uri_schemes get_supported_uri_schemes (MemorySegment segment, MemorySession session) {
-        return get_supported_uri_schemes.ofAddress(get_supported_uri_schemes$get(segment), session);
+    public static get_supported_uri_schemes get_supported_uri_schemes(MemorySegment segment, SegmentScope scope) {
+        return get_supported_uri_schemes.ofAddress(get_supported_uri_schemes$get(segment), scope);
     }
     static final FunctionDescriptor parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle parse_name$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.parse_name$FUNC
+    static final FunctionDescriptor parse_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle parse_name_UP$MH = RuntimeHelper.upcallHandle(parse_name.class, "apply", _GVfsClass.parse_name_UP$FUNC);
+    static final FunctionDescriptor parse_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle parse_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.parse_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GFile* (*parse_name)(GVfs*,char*);
+     * }
+     */
     public interface parse_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(parse_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(parse_name.class, fi, _GVfsClass.parse_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(parse_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.parse_name_UP$MH, fi, _GVfsClass.parse_name$FUNC, scope);
         }
-        static parse_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static parse_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVfsClass.parse_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVfsClass.parse_name_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -253,20 +394,32 @@ public class _GVfsClass {
     public static VarHandle parse_name$VH() {
         return _GVfsClass.parse_name$VH;
     }
-    public static MemoryAddress parse_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.parse_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFile* (*parse_name)(GVfs*,char*);
+     * }
+     */
+    public static MemorySegment parse_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.parse_name$VH.get(seg);
     }
-    public static void parse_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFile* (*parse_name)(GVfs*,char*);
+     * }
+     */
+    public static void parse_name$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.parse_name$VH.set(seg, x);
     }
-    public static MemoryAddress parse_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.parse_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment parse_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.parse_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void parse_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void parse_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.parse_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static parse_name parse_name (MemorySegment segment, MemorySession session) {
-        return parse_name.ofAddress(parse_name$get(segment), session);
+    public static parse_name parse_name(MemorySegment segment, SegmentScope scope) {
+        return parse_name.ofAddress(parse_name$get(segment), scope);
     }
     static final FunctionDescriptor local_file_add_info$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -278,20 +431,46 @@ public class _GVfsClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle local_file_add_info$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.local_file_add_info$FUNC
+    static final FunctionDescriptor local_file_add_info_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle local_file_add_info_UP$MH = RuntimeHelper.upcallHandle(local_file_add_info.class, "apply", _GVfsClass.local_file_add_info_UP$FUNC);
+    static final FunctionDescriptor local_file_add_info_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle local_file_add_info_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.local_file_add_info_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*local_file_add_info)(GVfs*,char*,guint64,GFileAttributeMatcher*,GFileInfo*,GCancellable*,gpointer*,GDestroyNotify*);
+     * }
+     */
     public interface local_file_add_info {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6, java.lang.foreign.MemoryAddress _x7);
-        static MemorySegment allocate(local_file_add_info fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(local_file_add_info.class, fi, _GVfsClass.local_file_add_info$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7);
+        static MemorySegment allocate(local_file_add_info fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.local_file_add_info_UP$MH, fi, _GVfsClass.local_file_add_info$FUNC, scope);
         }
-        static local_file_add_info ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6, java.lang.foreign.MemoryAddress __x7) -> {
+        static local_file_add_info ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7) -> {
                 try {
-                    _GVfsClass.local_file_add_info$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6, (java.lang.foreign.Addressable)__x7);
+                    _GVfsClass.local_file_add_info_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -303,39 +482,65 @@ public class _GVfsClass {
     public static VarHandle local_file_add_info$VH() {
         return _GVfsClass.local_file_add_info$VH;
     }
-    public static MemoryAddress local_file_add_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_add_info$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*local_file_add_info)(GVfs*,char*,guint64,GFileAttributeMatcher*,GFileInfo*,GCancellable*,gpointer*,GDestroyNotify*);
+     * }
+     */
+    public static MemorySegment local_file_add_info$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_add_info$VH.get(seg);
     }
-    public static void local_file_add_info$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*local_file_add_info)(GVfs*,char*,guint64,GFileAttributeMatcher*,GFileInfo*,GCancellable*,gpointer*,GDestroyNotify*);
+     * }
+     */
+    public static void local_file_add_info$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.local_file_add_info$VH.set(seg, x);
     }
-    public static MemoryAddress local_file_add_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_add_info$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment local_file_add_info$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_add_info$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void local_file_add_info$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void local_file_add_info$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.local_file_add_info$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static local_file_add_info local_file_add_info (MemorySegment segment, MemorySession session) {
-        return local_file_add_info.ofAddress(local_file_add_info$get(segment), session);
+    public static local_file_add_info local_file_add_info(MemorySegment segment, SegmentScope scope) {
+        return local_file_add_info.ofAddress(local_file_add_info$get(segment), scope);
     }
     static final FunctionDescriptor add_writable_namespaces$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_writable_namespaces$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.add_writable_namespaces$FUNC
+    static final FunctionDescriptor add_writable_namespaces_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_writable_namespaces_UP$MH = RuntimeHelper.upcallHandle(add_writable_namespaces.class, "apply", _GVfsClass.add_writable_namespaces_UP$FUNC);
+    static final FunctionDescriptor add_writable_namespaces_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_writable_namespaces_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.add_writable_namespaces_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*add_writable_namespaces)(GVfs*,GFileAttributeInfoList*);
+     * }
+     */
     public interface add_writable_namespaces {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_writable_namespaces fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_writable_namespaces.class, fi, _GVfsClass.add_writable_namespaces$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(add_writable_namespaces fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.add_writable_namespaces_UP$MH, fi, _GVfsClass.add_writable_namespaces$FUNC, scope);
         }
-        static add_writable_namespaces ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_writable_namespaces ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVfsClass.add_writable_namespaces$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVfsClass.add_writable_namespaces_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -347,20 +552,32 @@ public class _GVfsClass {
     public static VarHandle add_writable_namespaces$VH() {
         return _GVfsClass.add_writable_namespaces$VH;
     }
-    public static MemoryAddress add_writable_namespaces$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.add_writable_namespaces$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*add_writable_namespaces)(GVfs*,GFileAttributeInfoList*);
+     * }
+     */
+    public static MemorySegment add_writable_namespaces$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.add_writable_namespaces$VH.get(seg);
     }
-    public static void add_writable_namespaces$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*add_writable_namespaces)(GVfs*,GFileAttributeInfoList*);
+     * }
+     */
+    public static void add_writable_namespaces$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.add_writable_namespaces$VH.set(seg, x);
     }
-    public static MemoryAddress add_writable_namespaces$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.add_writable_namespaces$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_writable_namespaces$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.add_writable_namespaces$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_writable_namespaces$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_writable_namespaces$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.add_writable_namespaces$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_writable_namespaces add_writable_namespaces (MemorySegment segment, MemorySession session) {
-        return add_writable_namespaces.ofAddress(add_writable_namespaces$get(segment), session);
+    public static add_writable_namespaces add_writable_namespaces(MemorySegment segment, SegmentScope scope) {
+        return add_writable_namespaces.ofAddress(add_writable_namespaces$get(segment), scope);
     }
     static final FunctionDescriptor local_file_set_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -370,20 +587,42 @@ public class _GVfsClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle local_file_set_attributes$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.local_file_set_attributes$FUNC
+    static final FunctionDescriptor local_file_set_attributes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle local_file_set_attributes_UP$MH = RuntimeHelper.upcallHandle(local_file_set_attributes.class, "apply", _GVfsClass.local_file_set_attributes_UP$FUNC);
+    static final FunctionDescriptor local_file_set_attributes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle local_file_set_attributes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.local_file_set_attributes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*local_file_set_attributes)(GVfs*,char*,GFileInfo*,GFileQueryInfoFlags,GCancellable*,GError**);
+     * }
+     */
     public interface local_file_set_attributes {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(local_file_set_attributes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(local_file_set_attributes.class, fi, _GVfsClass.local_file_set_attributes$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(local_file_set_attributes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.local_file_set_attributes_UP$MH, fi, _GVfsClass.local_file_set_attributes$FUNC, scope);
         }
-        static local_file_set_attributes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static local_file_set_attributes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (int)_GVfsClass.local_file_set_attributes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    return (int)_GVfsClass.local_file_set_attributes_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -395,39 +634,65 @@ public class _GVfsClass {
     public static VarHandle local_file_set_attributes$VH() {
         return _GVfsClass.local_file_set_attributes$VH;
     }
-    public static MemoryAddress local_file_set_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_set_attributes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*local_file_set_attributes)(GVfs*,char*,GFileInfo*,GFileQueryInfoFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment local_file_set_attributes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_set_attributes$VH.get(seg);
     }
-    public static void local_file_set_attributes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*local_file_set_attributes)(GVfs*,char*,GFileInfo*,GFileQueryInfoFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void local_file_set_attributes$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.local_file_set_attributes$VH.set(seg, x);
     }
-    public static MemoryAddress local_file_set_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_set_attributes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment local_file_set_attributes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_set_attributes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void local_file_set_attributes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void local_file_set_attributes$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.local_file_set_attributes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static local_file_set_attributes local_file_set_attributes (MemorySegment segment, MemorySession session) {
-        return local_file_set_attributes.ofAddress(local_file_set_attributes$get(segment), session);
+    public static local_file_set_attributes local_file_set_attributes(MemorySegment segment, SegmentScope scope) {
+        return local_file_set_attributes.ofAddress(local_file_set_attributes$get(segment), scope);
     }
     static final FunctionDescriptor local_file_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle local_file_removed$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.local_file_removed$FUNC
+    static final FunctionDescriptor local_file_removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle local_file_removed_UP$MH = RuntimeHelper.upcallHandle(local_file_removed.class, "apply", _GVfsClass.local_file_removed_UP$FUNC);
+    static final FunctionDescriptor local_file_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle local_file_removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.local_file_removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*local_file_removed)(GVfs*,char*);
+     * }
+     */
     public interface local_file_removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(local_file_removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(local_file_removed.class, fi, _GVfsClass.local_file_removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(local_file_removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.local_file_removed_UP$MH, fi, _GVfsClass.local_file_removed$FUNC, scope);
         }
-        static local_file_removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static local_file_removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GVfsClass.local_file_removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GVfsClass.local_file_removed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -439,40 +704,68 @@ public class _GVfsClass {
     public static VarHandle local_file_removed$VH() {
         return _GVfsClass.local_file_removed$VH;
     }
-    public static MemoryAddress local_file_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*local_file_removed)(GVfs*,char*);
+     * }
+     */
+    public static MemorySegment local_file_removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_removed$VH.get(seg);
     }
-    public static void local_file_removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*local_file_removed)(GVfs*,char*);
+     * }
+     */
+    public static void local_file_removed$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.local_file_removed$VH.set(seg, x);
     }
-    public static MemoryAddress local_file_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment local_file_removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void local_file_removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void local_file_removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.local_file_removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static local_file_removed local_file_removed (MemorySegment segment, MemorySession session) {
-        return local_file_removed.ofAddress(local_file_removed$get(segment), session);
+    public static local_file_removed local_file_removed(MemorySegment segment, SegmentScope scope) {
+        return local_file_removed.ofAddress(local_file_removed$get(segment), scope);
     }
     static final FunctionDescriptor local_file_moved$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle local_file_moved$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.local_file_moved$FUNC
+    static final FunctionDescriptor local_file_moved_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle local_file_moved_UP$MH = RuntimeHelper.upcallHandle(local_file_moved.class, "apply", _GVfsClass.local_file_moved_UP$FUNC);
+    static final FunctionDescriptor local_file_moved_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle local_file_moved_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.local_file_moved_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*local_file_moved)(GVfs*,char*,char*);
+     * }
+     */
     public interface local_file_moved {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(local_file_moved fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(local_file_moved.class, fi, _GVfsClass.local_file_moved$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(local_file_moved fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.local_file_moved_UP$MH, fi, _GVfsClass.local_file_moved$FUNC, scope);
         }
-        static local_file_moved ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static local_file_moved ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GVfsClass.local_file_moved$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GVfsClass.local_file_moved_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -484,39 +777,65 @@ public class _GVfsClass {
     public static VarHandle local_file_moved$VH() {
         return _GVfsClass.local_file_moved$VH;
     }
-    public static MemoryAddress local_file_moved$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_moved$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*local_file_moved)(GVfs*,char*,char*);
+     * }
+     */
+    public static MemorySegment local_file_moved$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_moved$VH.get(seg);
     }
-    public static void local_file_moved$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*local_file_moved)(GVfs*,char*,char*);
+     * }
+     */
+    public static void local_file_moved$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.local_file_moved$VH.set(seg, x);
     }
-    public static MemoryAddress local_file_moved$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.local_file_moved$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment local_file_moved$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.local_file_moved$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void local_file_moved$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void local_file_moved$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.local_file_moved$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static local_file_moved local_file_moved (MemorySegment segment, MemorySession session) {
-        return local_file_moved.ofAddress(local_file_moved$get(segment), session);
+    public static local_file_moved local_file_moved(MemorySegment segment, SegmentScope scope) {
+        return local_file_moved.ofAddress(local_file_moved$get(segment), scope);
     }
     static final FunctionDescriptor deserialize_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle deserialize_icon$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass.deserialize_icon$FUNC
+    static final FunctionDescriptor deserialize_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle deserialize_icon_UP$MH = RuntimeHelper.upcallHandle(deserialize_icon.class, "apply", _GVfsClass.deserialize_icon_UP$FUNC);
+    static final FunctionDescriptor deserialize_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle deserialize_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass.deserialize_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*deserialize_icon)(GVfs*,GVariant*);
+     * }
+     */
     public interface deserialize_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(deserialize_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(deserialize_icon.class, fi, _GVfsClass.deserialize_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(deserialize_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass.deserialize_icon_UP$MH, fi, _GVfsClass.deserialize_icon$FUNC, scope);
         }
-        static deserialize_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static deserialize_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVfsClass.deserialize_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVfsClass.deserialize_icon_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -528,36 +847,56 @@ public class _GVfsClass {
     public static VarHandle deserialize_icon$VH() {
         return _GVfsClass.deserialize_icon$VH;
     }
-    public static MemoryAddress deserialize_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.deserialize_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*deserialize_icon)(GVfs*,GVariant*);
+     * }
+     */
+    public static MemorySegment deserialize_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.deserialize_icon$VH.get(seg);
     }
-    public static void deserialize_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*deserialize_icon)(GVfs*,GVariant*);
+     * }
+     */
+    public static void deserialize_icon$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass.deserialize_icon$VH.set(seg, x);
     }
-    public static MemoryAddress deserialize_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass.deserialize_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment deserialize_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass.deserialize_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void deserialize_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void deserialize_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass.deserialize_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static deserialize_icon deserialize_icon (MemorySegment segment, MemorySession session) {
-        return deserialize_icon.ofAddress(deserialize_icon$get(segment), session);
+    public static deserialize_icon deserialize_icon(MemorySegment segment, SegmentScope scope) {
+        return deserialize_icon.ofAddress(deserialize_icon$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved1$FUNC
+    static final FunctionDescriptor _g_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved1_UP$MH = RuntimeHelper.upcallHandle(_g_reserved1.class, "apply", _GVfsClass._g_reserved1_UP$FUNC);
+    static final FunctionDescriptor _g_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved1)();
+     * }
+     */
     public interface _g_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved1.class, fi, _GVfsClass._g_reserved1$FUNC, session);
+        static MemorySegment allocate(_g_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved1_UP$MH, fi, _GVfsClass._g_reserved1$FUNC, scope);
         }
-        static _g_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -569,36 +908,56 @@ public class _GVfsClass {
     public static VarHandle _g_reserved1$VH() {
         return _GVfsClass._g_reserved1$VH;
     }
-    public static MemoryAddress _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved1)();
+     * }
+     */
+    public static MemorySegment _g_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved1$VH.get(seg);
     }
-    public static void _g_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved1)();
+     * }
+     */
+    public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved1 _g_reserved1 (MemorySegment segment, MemorySession session) {
-        return _g_reserved1.ofAddress(_g_reserved1$get(segment), session);
+    public static _g_reserved1 _g_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved2$FUNC
+    static final FunctionDescriptor _g_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved2_UP$MH = RuntimeHelper.upcallHandle(_g_reserved2.class, "apply", _GVfsClass._g_reserved2_UP$FUNC);
+    static final FunctionDescriptor _g_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved2)();
+     * }
+     */
     public interface _g_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved2.class, fi, _GVfsClass._g_reserved2$FUNC, session);
+        static MemorySegment allocate(_g_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved2_UP$MH, fi, _GVfsClass._g_reserved2$FUNC, scope);
         }
-        static _g_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -610,36 +969,56 @@ public class _GVfsClass {
     public static VarHandle _g_reserved2$VH() {
         return _GVfsClass._g_reserved2$VH;
     }
-    public static MemoryAddress _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved2)();
+     * }
+     */
+    public static MemorySegment _g_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved2$VH.get(seg);
     }
-    public static void _g_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved2)();
+     * }
+     */
+    public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved2 _g_reserved2 (MemorySegment segment, MemorySession session) {
-        return _g_reserved2.ofAddress(_g_reserved2$get(segment), session);
+    public static _g_reserved2 _g_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved3$FUNC
+    static final FunctionDescriptor _g_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved3_UP$MH = RuntimeHelper.upcallHandle(_g_reserved3.class, "apply", _GVfsClass._g_reserved3_UP$FUNC);
+    static final FunctionDescriptor _g_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved3)();
+     * }
+     */
     public interface _g_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved3.class, fi, _GVfsClass._g_reserved3$FUNC, session);
+        static MemorySegment allocate(_g_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved3_UP$MH, fi, _GVfsClass._g_reserved3$FUNC, scope);
         }
-        static _g_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -651,36 +1030,56 @@ public class _GVfsClass {
     public static VarHandle _g_reserved3$VH() {
         return _GVfsClass._g_reserved3$VH;
     }
-    public static MemoryAddress _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved3)();
+     * }
+     */
+    public static MemorySegment _g_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved3$VH.get(seg);
     }
-    public static void _g_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved3)();
+     * }
+     */
+    public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved3 _g_reserved3 (MemorySegment segment, MemorySession session) {
-        return _g_reserved3.ofAddress(_g_reserved3$get(segment), session);
+    public static _g_reserved3 _g_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved4$FUNC
+    static final FunctionDescriptor _g_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_UP$MH = RuntimeHelper.upcallHandle(_g_reserved4.class, "apply", _GVfsClass._g_reserved4_UP$FUNC);
+    static final FunctionDescriptor _g_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved4)();
+     * }
+     */
     public interface _g_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved4.class, fi, _GVfsClass._g_reserved4$FUNC, session);
+        static MemorySegment allocate(_g_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved4_UP$MH, fi, _GVfsClass._g_reserved4$FUNC, scope);
         }
-        static _g_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -692,36 +1091,56 @@ public class _GVfsClass {
     public static VarHandle _g_reserved4$VH() {
         return _GVfsClass._g_reserved4$VH;
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static MemorySegment _g_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved4$VH.get(seg);
     }
-    public static void _g_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved4 _g_reserved4 (MemorySegment segment, MemorySession session) {
-        return _g_reserved4.ofAddress(_g_reserved4$get(segment), session);
+    public static _g_reserved4 _g_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved5$FUNC
+    static final FunctionDescriptor _g_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_UP$MH = RuntimeHelper.upcallHandle(_g_reserved5.class, "apply", _GVfsClass._g_reserved5_UP$FUNC);
+    static final FunctionDescriptor _g_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved5)();
+     * }
+     */
     public interface _g_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved5.class, fi, _GVfsClass._g_reserved5$FUNC, session);
+        static MemorySegment allocate(_g_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved5_UP$MH, fi, _GVfsClass._g_reserved5$FUNC, scope);
         }
-        static _g_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -733,36 +1152,56 @@ public class _GVfsClass {
     public static VarHandle _g_reserved5$VH() {
         return _GVfsClass._g_reserved5$VH;
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static MemorySegment _g_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved5$VH.get(seg);
     }
-    public static void _g_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved5 _g_reserved5 (MemorySegment segment, MemorySession session) {
-        return _g_reserved5.ofAddress(_g_reserved5$get(segment), session);
+    public static _g_reserved5 _g_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GVfsClass._g_reserved6$FUNC
+    static final FunctionDescriptor _g_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_UP$MH = RuntimeHelper.upcallHandle(_g_reserved6.class, "apply", _GVfsClass._g_reserved6_UP$FUNC);
+    static final FunctionDescriptor _g_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVfsClass._g_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved6)();
+     * }
+     */
     public interface _g_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved6.class, fi, _GVfsClass._g_reserved6$FUNC, session);
+        static MemorySegment allocate(_g_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVfsClass._g_reserved6_UP$MH, fi, _GVfsClass._g_reserved6$FUNC, scope);
         }
-        static _g_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GVfsClass._g_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GVfsClass._g_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -774,27 +1213,39 @@ public class _GVfsClass {
     public static VarHandle _g_reserved6$VH() {
         return _GVfsClass._g_reserved6$VH;
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static MemorySegment _g_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved6$VH.get(seg);
     }
-    public static void _g_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GVfsClass._g_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVfsClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVfsClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GVfsClass._g_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved6 _g_reserved6 (MemorySegment segment, MemorySession session) {
-        return _g_reserved6.ofAddress(_g_reserved6$get(segment), session);
+    public static _g_reserved6 _g_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

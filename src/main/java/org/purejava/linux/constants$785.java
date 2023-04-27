@@ -7,55 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$785 {
+final class constants$785 {
 
-    static final FunctionDescriptor g_remote_action_group_change_action_state_full$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$785() {}
+    static final FunctionDescriptor g_subprocess_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_wait$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait",
+        constants$785.g_subprocess_wait$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_wait_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_remote_action_group_change_action_state_full$MH = RuntimeHelper.downcallHandle(
-        "g_remote_action_group_change_action_state_full",
-        constants$785.g_remote_action_group_change_action_state_full$FUNC
+    static final MethodHandle g_subprocess_wait_async$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_async",
+        constants$785.g_subprocess_wait_async$FUNC
     );
-    static final FunctionDescriptor g_resolver_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resolver_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_get_type",
-        constants$785.g_resolver_get_type$FUNC
-    );
-    static final FunctionDescriptor g_resolver_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_resolver_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_get_default",
-        constants$785.g_resolver_get_default$FUNC
-    );
-    static final FunctionDescriptor g_resolver_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_set_default$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_set_default",
-        constants$785.g_resolver_set_default$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_wait_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name",
-        constants$785.g_resolver_lookup_by_name$FUNC
+    static final MethodHandle g_subprocess_wait_finish$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_finish",
+        constants$785.g_subprocess_wait_finish$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_by_name_async$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_subprocess_wait_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_wait_check$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_check",
+        constants$785.g_subprocess_wait_check$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_wait_check_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_by_name_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_async",
-        constants$785.g_resolver_lookup_by_name_async$FUNC
+    static final MethodHandle g_subprocess_wait_check_async$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_check_async",
+        constants$785.g_subprocess_wait_check_async$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_wait_check_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_wait_check_finish$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_check_finish",
+        constants$785.g_subprocess_wait_check_finish$FUNC
     );
 }
 

@@ -7,59 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$43 {
+final class constants$43 {
 
-    static final FunctionDescriptor strtoul$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$43() {}
+    static final FunctionDescriptor g_atexit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atexit$MH = RuntimeHelper.downcallHandle(
+        "g_atexit",
+        constants$43.g_atexit$FUNC
+    );
+    static final FunctionDescriptor g_find_program_in_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_find_program_in_path$MH = RuntimeHelper.downcallHandle(
+        "g_find_program_in_path",
+        constants$43.g_find_program_in_path$FUNC
+    );
+    static final FunctionDescriptor g_bit_nth_lsf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle strtoul$MH = RuntimeHelper.downcallHandle(
-        "strtoul",
-        constants$43.strtoul$FUNC
+    static final MethodHandle g_bit_nth_lsf$MH = RuntimeHelper.downcallHandle(
+        "g_bit_nth_lsf",
+        constants$43.g_bit_nth_lsf$FUNC
     );
-    static final FunctionDescriptor strtoq$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_bit_nth_msf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle strtoq$MH = RuntimeHelper.downcallHandle(
-        "strtoq",
-        constants$43.strtoq$FUNC
+    static final MethodHandle g_bit_nth_msf$MH = RuntimeHelper.downcallHandle(
+        "g_bit_nth_msf",
+        constants$43.g_bit_nth_msf$FUNC
     );
-    static final FunctionDescriptor strtouq$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle strtouq$MH = RuntimeHelper.downcallHandle(
-        "strtouq",
-        constants$43.strtouq$FUNC
-    );
-    static final FunctionDescriptor strtoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle strtoll$MH = RuntimeHelper.downcallHandle(
-        "strtoll",
-        constants$43.strtoll$FUNC
-    );
-    static final FunctionDescriptor strtoull$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle strtoull$MH = RuntimeHelper.downcallHandle(
-        "strtoull",
-        constants$43.strtoull$FUNC
-    );
-    static final FunctionDescriptor l64a$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_bit_storage$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle l64a$MH = RuntimeHelper.downcallHandle(
-        "l64a",
-        constants$43.l64a$FUNC
+    static final MethodHandle g_bit_storage$MH = RuntimeHelper.downcallHandle(
+        "g_bit_storage",
+        constants$43.g_bit_storage$FUNC
+    );
+    static final FunctionDescriptor __ctype_get_mb_cur_max$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle __ctype_get_mb_cur_max$MH = RuntimeHelper.downcallHandle(
+        "__ctype_get_mb_cur_max",
+        constants$43.__ctype_get_mb_cur_max$FUNC
     );
 }
 

@@ -7,51 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1382 {
+final class constants$1382 {
 
-    static final FunctionDescriptor atk_action_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1382() {}
+    static final FunctionDescriptor gtk_cell_area_copy_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_action_get_description$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_description",
-        constants$1382.atk_action_get_description$FUNC
+    static final MethodHandle gtk_cell_area_copy_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_copy_context",
+        constants$1382.gtk_cell_area_copy_context$FUNC
     );
-    static final FunctionDescriptor atk_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_cell_area_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_get_request_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_request_mode",
+        constants$1382.gtk_cell_area_get_request_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_action_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_name",
-        constants$1382.atk_action_get_name$FUNC
-    );
-    static final FunctionDescriptor atk_action_get_keybinding$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_action_get_keybinding$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_keybinding",
-        constants$1382.atk_action_get_keybinding$FUNC
+    static final MethodHandle gtk_cell_area_get_preferred_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_preferred_width",
+        constants$1382.gtk_cell_area_get_preferred_width$FUNC
     );
-    static final FunctionDescriptor atk_action_set_description$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_area_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_action_set_description$MH = RuntimeHelper.downcallHandle(
-        "atk_action_set_description",
-        constants$1382.atk_action_set_description$FUNC
-    );
-    static final FunctionDescriptor atk_action_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_action_get_localized_name$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_localized_name",
-        constants$1382.atk_action_get_localized_name$FUNC
-    );
-    static final FunctionDescriptor AtkEventListener$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_preferred_height_for_width",
+        constants$1382.gtk_cell_area_get_preferred_height_for_width$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_get_preferred_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_preferred_height",
+        constants$1382.gtk_cell_area_get_preferred_height$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_preferred_width_for_height",
+        constants$1382.gtk_cell_area_get_preferred_width_for_height$FUNC
     );
 }
 

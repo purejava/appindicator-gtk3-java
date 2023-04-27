@@ -7,63 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1296 {
+final class constants$1296 {
 
-    static final FunctionDescriptor gdk_pixbuf_copy_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_copy_area$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy_area",
-        constants$1296.gdk_pixbuf_copy_area$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_saturate_and_pixelate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_saturate_and_pixelate$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_saturate_and_pixelate",
-        constants$1296.gdk_pixbuf_saturate_and_pixelate$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_apply_embedded_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_apply_embedded_orientation$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_apply_embedded_orientation",
-        constants$1296.gdk_pixbuf_apply_embedded_orientation$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_set_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1296() {}
+    static final FunctionDescriptor gtk_container_child_get$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_set_option$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_set_option",
-        constants$1296.gdk_pixbuf_set_option$FUNC
+    static final MethodHandle gtk_container_child_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_container_child_get",
+        constants$1296.gtk_container_child_get$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_option$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_child_set_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_option$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_option",
-        constants$1296.gdk_pixbuf_get_option$FUNC
+    static final MethodHandle gtk_container_child_set_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_set_valist",
+        constants$1296.gtk_container_child_set_valist$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_remove_option$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_container_child_get_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_remove_option$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_remove_option",
-        constants$1296.gdk_pixbuf_remove_option$FUNC
+    static final MethodHandle gtk_container_child_get_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_get_valist",
+        constants$1296.gtk_container_child_get_valist$FUNC
+    );
+    static final FunctionDescriptor gtk_container_child_set_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_child_set_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_set_property",
+        constants$1296.gtk_container_child_set_property$FUNC
+    );
+    static final FunctionDescriptor gtk_container_child_get_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_child_get_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_get_property",
+        constants$1296.gtk_container_child_get_property$FUNC
+    );
+    static final FunctionDescriptor gtk_container_child_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_child_notify$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_notify",
+        constants$1296.gtk_container_child_notify$FUNC
     );
 }
 

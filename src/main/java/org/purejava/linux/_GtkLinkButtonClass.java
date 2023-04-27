@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkLinkButtonClass {
+ *     GtkButtonClass parent_class;
+ *     gboolean (*activate_link)(GtkLinkButton*);
+ *     void (*_gtk_padding1)();
+ *     void (*_gtk_padding2)();
+ *     void (*_gtk_padding3)();
+ *     void (*_gtk_padding4)();
+ * };
+ * }
+ */
 public class _GtkLinkButtonClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -28,7 +40,10 @@ public class _GtkLinkButtonClass {
                             Constants$root.C_POINTER$LAYOUT.withName("notify"),
                             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                         ).withName("parent_class"),
                         Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                         MemoryLayout.paddingLayout(32),
@@ -128,10 +143,7 @@ public class _GtkLinkButtonClass {
                     Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                    MemoryLayout.structLayout(
-                        MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                        MemoryLayout.paddingLayout(63)
-                    ),
+                    MemoryLayout.paddingLayout(64),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -172,20 +184,32 @@ public class _GtkLinkButtonClass {
     static final FunctionDescriptor activate_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate_link$MH = RuntimeHelper.downcallHandle(
-        _GtkLinkButtonClass.activate_link$FUNC
+    static final FunctionDescriptor activate_link_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_link_UP$MH = RuntimeHelper.upcallHandle(activate_link.class, "apply", _GtkLinkButtonClass.activate_link_UP$FUNC);
+    static final FunctionDescriptor activate_link_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_link_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLinkButtonClass.activate_link_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*activate_link)(GtkLinkButton*);
+     * }
+     */
     public interface activate_link {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(activate_link fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate_link.class, fi, _GtkLinkButtonClass.activate_link$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(activate_link fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLinkButtonClass.activate_link_UP$MH, fi, _GtkLinkButtonClass.activate_link$FUNC, scope);
         }
-        static activate_link ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static activate_link ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkLinkButtonClass.activate_link$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkLinkButtonClass.activate_link_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -197,36 +221,56 @@ public class _GtkLinkButtonClass {
     public static VarHandle activate_link$VH() {
         return _GtkLinkButtonClass.activate_link$VH;
     }
-    public static MemoryAddress activate_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass.activate_link$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*activate_link)(GtkLinkButton*);
+     * }
+     */
+    public static MemorySegment activate_link$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass.activate_link$VH.get(seg);
     }
-    public static void activate_link$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*activate_link)(GtkLinkButton*);
+     * }
+     */
+    public static void activate_link$set(MemorySegment seg, MemorySegment x) {
         _GtkLinkButtonClass.activate_link$VH.set(seg, x);
     }
-    public static MemoryAddress activate_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass.activate_link$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate_link$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass.activate_link$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate_link$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate_link$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLinkButtonClass.activate_link$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate_link activate_link (MemorySegment segment, MemorySession session) {
-        return activate_link.ofAddress(activate_link$get(segment), session);
+    public static activate_link activate_link(MemorySegment segment, SegmentScope scope) {
+        return activate_link.ofAddress(activate_link$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_padding1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_padding1$MH = RuntimeHelper.downcallHandle(
-        _GtkLinkButtonClass._gtk_padding1$FUNC
+    static final FunctionDescriptor _gtk_padding1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding1_UP$MH = RuntimeHelper.upcallHandle(_gtk_padding1.class, "apply", _GtkLinkButtonClass._gtk_padding1_UP$FUNC);
+    static final FunctionDescriptor _gtk_padding1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLinkButtonClass._gtk_padding1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_padding1)();
+     * }
+     */
     public interface _gtk_padding1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_padding1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_padding1.class, fi, _GtkLinkButtonClass._gtk_padding1$FUNC, session);
+        static MemorySegment allocate(_gtk_padding1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLinkButtonClass._gtk_padding1_UP$MH, fi, _GtkLinkButtonClass._gtk_padding1$FUNC, scope);
         }
-        static _gtk_padding1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_padding1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLinkButtonClass._gtk_padding1$MH.invokeExact((Addressable)symbol);
+                    _GtkLinkButtonClass._gtk_padding1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -238,36 +282,56 @@ public class _GtkLinkButtonClass {
     public static VarHandle _gtk_padding1$VH() {
         return _GtkLinkButtonClass._gtk_padding1$VH;
     }
-    public static MemoryAddress _gtk_padding1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_padding1)();
+     * }
+     */
+    public static MemorySegment _gtk_padding1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding1$VH.get(seg);
     }
-    public static void _gtk_padding1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_padding1)();
+     * }
+     */
+    public static void _gtk_padding1$set(MemorySegment seg, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_padding1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_padding1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_padding1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_padding1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_padding1 _gtk_padding1 (MemorySegment segment, MemorySession session) {
-        return _gtk_padding1.ofAddress(_gtk_padding1$get(segment), session);
+    public static _gtk_padding1 _gtk_padding1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_padding1.ofAddress(_gtk_padding1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_padding2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_padding2$MH = RuntimeHelper.downcallHandle(
-        _GtkLinkButtonClass._gtk_padding2$FUNC
+    static final FunctionDescriptor _gtk_padding2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding2_UP$MH = RuntimeHelper.upcallHandle(_gtk_padding2.class, "apply", _GtkLinkButtonClass._gtk_padding2_UP$FUNC);
+    static final FunctionDescriptor _gtk_padding2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLinkButtonClass._gtk_padding2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_padding2)();
+     * }
+     */
     public interface _gtk_padding2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_padding2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_padding2.class, fi, _GtkLinkButtonClass._gtk_padding2$FUNC, session);
+        static MemorySegment allocate(_gtk_padding2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLinkButtonClass._gtk_padding2_UP$MH, fi, _GtkLinkButtonClass._gtk_padding2$FUNC, scope);
         }
-        static _gtk_padding2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_padding2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLinkButtonClass._gtk_padding2$MH.invokeExact((Addressable)symbol);
+                    _GtkLinkButtonClass._gtk_padding2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -279,36 +343,56 @@ public class _GtkLinkButtonClass {
     public static VarHandle _gtk_padding2$VH() {
         return _GtkLinkButtonClass._gtk_padding2$VH;
     }
-    public static MemoryAddress _gtk_padding2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_padding2)();
+     * }
+     */
+    public static MemorySegment _gtk_padding2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding2$VH.get(seg);
     }
-    public static void _gtk_padding2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_padding2)();
+     * }
+     */
+    public static void _gtk_padding2$set(MemorySegment seg, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_padding2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_padding2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_padding2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_padding2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_padding2 _gtk_padding2 (MemorySegment segment, MemorySession session) {
-        return _gtk_padding2.ofAddress(_gtk_padding2$get(segment), session);
+    public static _gtk_padding2 _gtk_padding2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_padding2.ofAddress(_gtk_padding2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_padding3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_padding3$MH = RuntimeHelper.downcallHandle(
-        _GtkLinkButtonClass._gtk_padding3$FUNC
+    static final FunctionDescriptor _gtk_padding3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding3_UP$MH = RuntimeHelper.upcallHandle(_gtk_padding3.class, "apply", _GtkLinkButtonClass._gtk_padding3_UP$FUNC);
+    static final FunctionDescriptor _gtk_padding3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLinkButtonClass._gtk_padding3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_padding3)();
+     * }
+     */
     public interface _gtk_padding3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_padding3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_padding3.class, fi, _GtkLinkButtonClass._gtk_padding3$FUNC, session);
+        static MemorySegment allocate(_gtk_padding3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLinkButtonClass._gtk_padding3_UP$MH, fi, _GtkLinkButtonClass._gtk_padding3$FUNC, scope);
         }
-        static _gtk_padding3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_padding3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLinkButtonClass._gtk_padding3$MH.invokeExact((Addressable)symbol);
+                    _GtkLinkButtonClass._gtk_padding3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -320,36 +404,56 @@ public class _GtkLinkButtonClass {
     public static VarHandle _gtk_padding3$VH() {
         return _GtkLinkButtonClass._gtk_padding3$VH;
     }
-    public static MemoryAddress _gtk_padding3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_padding3)();
+     * }
+     */
+    public static MemorySegment _gtk_padding3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding3$VH.get(seg);
     }
-    public static void _gtk_padding3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_padding3)();
+     * }
+     */
+    public static void _gtk_padding3$set(MemorySegment seg, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_padding3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_padding3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_padding3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_padding3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_padding3 _gtk_padding3 (MemorySegment segment, MemorySession session) {
-        return _gtk_padding3.ofAddress(_gtk_padding3$get(segment), session);
+    public static _gtk_padding3 _gtk_padding3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_padding3.ofAddress(_gtk_padding3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_padding4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_padding4$MH = RuntimeHelper.downcallHandle(
-        _GtkLinkButtonClass._gtk_padding4$FUNC
+    static final FunctionDescriptor _gtk_padding4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding4_UP$MH = RuntimeHelper.upcallHandle(_gtk_padding4.class, "apply", _GtkLinkButtonClass._gtk_padding4_UP$FUNC);
+    static final FunctionDescriptor _gtk_padding4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_padding4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkLinkButtonClass._gtk_padding4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_padding4)();
+     * }
+     */
     public interface _gtk_padding4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_padding4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_padding4.class, fi, _GtkLinkButtonClass._gtk_padding4$FUNC, session);
+        static MemorySegment allocate(_gtk_padding4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkLinkButtonClass._gtk_padding4_UP$MH, fi, _GtkLinkButtonClass._gtk_padding4$FUNC, scope);
         }
-        static _gtk_padding4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_padding4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkLinkButtonClass._gtk_padding4$MH.invokeExact((Addressable)symbol);
+                    _GtkLinkButtonClass._gtk_padding4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -361,27 +465,39 @@ public class _GtkLinkButtonClass {
     public static VarHandle _gtk_padding4$VH() {
         return _GtkLinkButtonClass._gtk_padding4$VH;
     }
-    public static MemoryAddress _gtk_padding4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_padding4)();
+     * }
+     */
+    public static MemorySegment _gtk_padding4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding4$VH.get(seg);
     }
-    public static void _gtk_padding4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_padding4)();
+     * }
+     */
+    public static void _gtk_padding4$set(MemorySegment seg, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_padding4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkLinkButtonClass._gtk_padding4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_padding4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkLinkButtonClass._gtk_padding4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_padding4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_padding4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkLinkButtonClass._gtk_padding4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_padding4 _gtk_padding4 (MemorySegment segment, MemorySession session) {
-        return _gtk_padding4.ofAddress(_gtk_padding4$get(segment), session);
+    public static _gtk_padding4 _gtk_padding4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_padding4.ofAddress(_gtk_padding4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

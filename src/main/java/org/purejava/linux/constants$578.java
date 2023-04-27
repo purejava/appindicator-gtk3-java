@@ -7,42 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$578 {
+final class constants$578 {
 
-    static final FunctionDescriptor tcsetpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle tcsetpgrp$MH = RuntimeHelper.downcallHandle(
-        "tcsetpgrp",
-        constants$578.tcsetpgrp$FUNC
-    );
-    static final FunctionDescriptor getlogin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle getlogin$MH = RuntimeHelper.downcallHandle(
-        "getlogin",
-        constants$578.getlogin$FUNC
-    );
-    static final FunctionDescriptor getlogin_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$578() {}
+    static final FunctionDescriptor g_dbus_message_to_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle getlogin_r$MH = RuntimeHelper.downcallHandle(
-        "getlogin_r",
-        constants$578.getlogin_r$FUNC
-    );
-    static final FunctionDescriptor setlogin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle setlogin$MH = RuntimeHelper.downcallHandle(
-        "setlogin",
-        constants$578.setlogin$FUNC
+    static final MethodHandle g_dbus_message_to_blob$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_to_blob",
+        constants$578.g_dbus_message_to_blob$FUNC
     );
-    static final  OfAddress optarg$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle optarg$VH = constants$578.optarg$LAYOUT.varHandle();
-    static final MemorySegment optarg$SEGMENT = RuntimeHelper.lookupGlobalVariable("optarg", constants$578.optarg$LAYOUT);
-    static final  OfInt optind$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle optind$VH = constants$578.optind$LAYOUT.varHandle();
-    static final MemorySegment optind$SEGMENT = RuntimeHelper.lookupGlobalVariable("optind", constants$578.optind$LAYOUT);
+    static final FunctionDescriptor g_dbus_message_to_gerror$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_to_gerror$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_to_gerror",
+        constants$578.g_dbus_message_to_gerror$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_method_invocation_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_type",
+        constants$578.g_dbus_method_invocation_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_get_sender$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_get_sender$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_sender",
+        constants$578.g_dbus_method_invocation_get_sender$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_get_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_object_path",
+        constants$578.g_dbus_method_invocation_get_object_path$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_invocation_get_interface_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_method_invocation_get_interface_name$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_interface_name",
+        constants$578.g_dbus_method_invocation_get_interface_name$FUNC
+    );
 }
 
 

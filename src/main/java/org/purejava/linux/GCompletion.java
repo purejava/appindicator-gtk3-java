@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GCompletion extends _GCompletion {
+/**
+ * {@snippet :
+ * typedef struct _GCompletion GCompletion;
+ * }
+ */
+public final class GCompletion extends _GCompletion {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GCompletion() {}
 }
 
 

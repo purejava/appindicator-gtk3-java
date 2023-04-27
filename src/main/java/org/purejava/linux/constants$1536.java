@@ -7,56 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1536 {
+final class constants$1536 {
 
-    static final FunctionDescriptor gtk_accel_map_add_entry$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1536() {}
+    static final FunctionDescriptor gtk_check_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_check_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_new_with_label",
+        constants$1536.gtk_check_menu_item_new_with_label$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_check_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_new_with_mnemonic",
+        constants$1536.gtk_check_menu_item_new_with_mnemonic$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_set_active$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_add_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_add_entry",
-        constants$1536.gtk_accel_map_add_entry$FUNC
+    static final MethodHandle gtk_check_menu_item_set_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_set_active",
+        constants$1536.gtk_check_menu_item_set_active$FUNC
     );
-    static final FunctionDescriptor gtk_accel_map_lookup_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_check_menu_item_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_lookup_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_lookup_entry",
-        constants$1536.gtk_accel_map_lookup_entry$FUNC
+    static final MethodHandle gtk_check_menu_item_get_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_active",
+        constants$1536.gtk_check_menu_item_get_active$FUNC
     );
-    static final FunctionDescriptor gtk_accel_map_change_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_check_menu_item_toggled$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_check_menu_item_toggled$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_toggled",
+        constants$1536.gtk_check_menu_item_toggled$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_set_inconsistent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_change_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_change_entry",
-        constants$1536.gtk_accel_map_change_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_load$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_load$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_load",
-        constants$1536.gtk_accel_map_load$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_save$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_save$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_save",
-        constants$1536.gtk_accel_map_save$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_foreach",
-        constants$1536.gtk_accel_map_foreach$FUNC
+    static final MethodHandle gtk_check_menu_item_set_inconsistent$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_set_inconsistent",
+        constants$1536.gtk_check_menu_item_set_inconsistent$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GObject {
+ *     GTypeInstance g_type_instance;
+ *     guint ref_count;
+ *     GData* qdata;
+ * };
+ * }
+ */
 public class _GObject {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_POINTER$LAYOUT.withName("g_class")
         ).withName("g_type_instance"),
@@ -27,10 +36,22 @@ public class _GObject {
     public static VarHandle ref_count$VH() {
         return _GObject.ref_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint ref_count;
+     * }
+     */
     public static int ref_count$get(MemorySegment seg) {
         return (int)_GObject.ref_count$VH.get(seg);
     }
-    public static void ref_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint ref_count;
+     * }
+     */
+    public static void ref_count$set(MemorySegment seg, int x) {
         _GObject.ref_count$VH.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
@@ -43,24 +64,36 @@ public class _GObject {
     public static VarHandle qdata$VH() {
         return _GObject.qdata$VH;
     }
-    public static MemoryAddress qdata$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GObject.qdata$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GData* qdata;
+     * }
+     */
+    public static MemorySegment qdata$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GObject.qdata$VH.get(seg);
     }
-    public static void qdata$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GData* qdata;
+     * }
+     */
+    public static void qdata$set(MemorySegment seg, MemorySegment x) {
         _GObject.qdata$VH.set(seg, x);
     }
-    public static MemoryAddress qdata$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GObject.qdata$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment qdata$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GObject.qdata$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void qdata$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void qdata$set(MemorySegment seg, long index, MemorySegment x) {
         _GObject.qdata$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,51 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1519 {
+final class constants$1519 {
 
-    static final FunctionDescriptor gtk_menu_reposition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_reposition$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_reposition",
-        constants$1519.gtk_menu_reposition$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_popdown$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_popdown$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_popdown",
-        constants$1519.gtk_menu_popdown$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_active",
-        constants$1519.gtk_menu_get_active$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_set_active$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1519() {}
+    static final FunctionDescriptor gtk_cell_area_context_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_context_get_preferred_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_preferred_width",
+        constants$1519.gtk_cell_area_context_get_preferred_width$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_context_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_context_get_preferred_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_preferred_height",
+        constants$1519.gtk_cell_area_context_get_preferred_height$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_context_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_context_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_preferred_height_for_width",
+        constants$1519.gtk_cell_area_context_get_preferred_height_for_width$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_context_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_context_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_preferred_width_for_height",
+        constants$1519.gtk_cell_area_context_get_preferred_width_for_height$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_context_get_allocation$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_context_get_allocation$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_allocation",
+        constants$1519.gtk_cell_area_context_get_allocation$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_context_push_preferred_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_active",
-        constants$1519.gtk_menu_set_active$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_set_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_accel_group",
-        constants$1519.gtk_menu_set_accel_group$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_accel_group",
-        constants$1519.gtk_menu_get_accel_group$FUNC
+    static final MethodHandle gtk_cell_area_context_push_preferred_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_push_preferred_width",
+        constants$1519.gtk_cell_area_context_push_preferred_width$FUNC
     );
 }
 

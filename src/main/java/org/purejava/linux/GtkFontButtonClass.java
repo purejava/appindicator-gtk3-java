@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFontButtonClass extends _GtkFontButtonClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkFontButtonClass GtkFontButtonClass;
+ * }
+ */
+public final class GtkFontButtonClass extends _GtkFontButtonClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFontButtonClass() {}
 }
 
 

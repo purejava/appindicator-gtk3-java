@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$763 {
+final class constants$763 {
 
-    static final FunctionDescriptor g_mount_operation_set_password$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$763() {}
+    static final FunctionDescriptor g_socket_get_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_password$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_password",
-        constants$763.g_mount_operation_set_password$FUNC
+    static final MethodHandle g_socket_get_ttl$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_ttl",
+        constants$763.g_socket_get_ttl$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_get_anonymous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_anonymous$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_anonymous",
-        constants$763.g_mount_operation_get_anonymous$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_set_anonymous$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_set_ttl$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_anonymous$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_anonymous",
-        constants$763.g_mount_operation_set_anonymous$FUNC
+    static final MethodHandle g_socket_set_ttl$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_ttl",
+        constants$763.g_socket_set_ttl$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_get_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_get_broadcast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_get_domain$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_domain",
-        constants$763.g_mount_operation_get_domain$FUNC
+    static final MethodHandle g_socket_get_broadcast$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_broadcast",
+        constants$763.g_socket_get_broadcast$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_set_domain$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_set_broadcast$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_set_broadcast$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_broadcast",
+        constants$763.g_socket_set_broadcast$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_multicast_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_domain$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_domain",
-        constants$763.g_mount_operation_set_domain$FUNC
+    static final MethodHandle g_socket_get_multicast_loopback$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_multicast_loopback",
+        constants$763.g_socket_get_multicast_loopback$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_get_password_save$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_socket_set_multicast_loopback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_mount_operation_get_password_save$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_password_save",
-        constants$763.g_mount_operation_get_password_save$FUNC
+    static final MethodHandle g_socket_set_multicast_loopback$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_multicast_loopback",
+        constants$763.g_socket_set_multicast_loopback$FUNC
     );
 }
 

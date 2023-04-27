@@ -7,33 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1654 {
+final class constants$1654 {
 
-    static final FunctionDescriptor GtkTreeViewRowSeparatorFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1654() {}
+    static final FunctionDescriptor gtk_icon_view_get_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeViewRowSeparatorFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1654.GtkTreeViewRowSeparatorFunc$FUNC
+    static final MethodHandle gtk_icon_view_get_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_spacing",
+        constants$1654.gtk_icon_view_get_spacing$FUNC
     );
-    static final FunctionDescriptor GtkTreeViewSearchPositionFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_set_row_spacing$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_row_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_row_spacing",
+        constants$1654.gtk_icon_view_set_row_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeViewSearchPositionFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1654.GtkTreeViewSearchPositionFunc$FUNC
+    static final MethodHandle gtk_icon_view_get_row_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_row_spacing",
+        constants$1654.gtk_icon_view_get_row_spacing$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_view_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_type",
-        constants$1654.gtk_tree_view_get_type$FUNC
+    static final FunctionDescriptor gtk_icon_view_set_column_spacing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_tree_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tree_view_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_new",
-        constants$1654.gtk_tree_view_new$FUNC
+    static final MethodHandle gtk_icon_view_set_column_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_column_spacing",
+        constants$1654.gtk_icon_view_set_column_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_column_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_column_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_column_spacing",
+        constants$1654.gtk_icon_view_get_column_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_set_margin$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_margin",
+        constants$1654.gtk_icon_view_set_margin$FUNC
     );
 }
 

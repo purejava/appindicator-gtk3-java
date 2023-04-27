@@ -7,49 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1314 {
+final class constants$1314 {
 
-    static final FunctionDescriptor pango_cairo_font_map_set_resolution$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1314() {}
+    static final FunctionDescriptor gtk_window_begin_resize_drag$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_set_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_set_resolution",
-        constants$1314.pango_cairo_font_map_set_resolution$FUNC
+    static final MethodHandle gtk_window_begin_resize_drag$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_begin_resize_drag",
+        constants$1314.gtk_window_begin_resize_drag$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_map_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_window_begin_move_drag$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_get_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_get_resolution",
-        constants$1314.pango_cairo_font_map_get_resolution$FUNC
+    static final MethodHandle gtk_window_begin_move_drag$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_begin_move_drag",
+        constants$1314.gtk_window_begin_move_drag$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_map_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_window_set_default_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_create_context$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_create_context",
-        constants$1314.pango_cairo_font_map_create_context$FUNC
+    static final MethodHandle gtk_window_set_default_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default_size",
+        constants$1314.gtk_window_set_default_size$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_cairo_font_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_get_type",
-        constants$1314.pango_cairo_font_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_font_get_scaled_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_font_get_scaled_font$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_get_scaled_font",
-        constants$1314.pango_cairo_font_get_scaled_font$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_update_context$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_window_get_default_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_update_context$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_update_context",
-        constants$1314.pango_cairo_update_context$FUNC
+    static final MethodHandle gtk_window_get_default_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_default_size",
+        constants$1314.gtk_window_get_default_size$FUNC
+    );
+    static final FunctionDescriptor gtk_window_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_resize$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_resize",
+        constants$1314.gtk_window_resize$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_size",
+        constants$1314.gtk_window_get_size$FUNC
     );
 }
 

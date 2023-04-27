@@ -7,55 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$297 {
+final class constants$297 {
 
-    static final FunctionDescriptor g_strcanon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_strcanon$MH = RuntimeHelper.downcallHandle(
-        "g_strcanon",
-        constants$297.g_strcanon$FUNC
-    );
-    static final FunctionDescriptor g_strerror$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_strerror$MH = RuntimeHelper.downcallHandle(
-        "g_strerror",
-        constants$297.g_strerror$FUNC
-    );
-    static final FunctionDescriptor g_strsignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_strsignal$MH = RuntimeHelper.downcallHandle(
-        "g_strsignal",
-        constants$297.g_strsignal$FUNC
-    );
-    static final FunctionDescriptor g_strreverse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$297() {}
+    static final FunctionDescriptor g_scanner_cur_value$FUNC = FunctionDescriptor.of(MemoryLayout.unionLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("v_symbol"),
+        Constants$root.C_POINTER$LAYOUT.withName("v_identifier"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("v_binary"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("v_octal"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
+        Constants$root.C_DOUBLE$LAYOUT.withName("v_float"),
+        Constants$root.C_LONG_LONG$LAYOUT.withName("v_hex"),
+        Constants$root.C_POINTER$LAYOUT.withName("v_string"),
+        Constants$root.C_POINTER$LAYOUT.withName("v_comment"),
+        Constants$root.C_CHAR$LAYOUT.withName("v_char"),
+        Constants$root.C_INT$LAYOUT.withName("v_error")
+    ).withName("_GTokenValue"),
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strreverse$MH = RuntimeHelper.downcallHandle(
-        "g_strreverse",
-        constants$297.g_strreverse$FUNC
+    static final MethodHandle g_scanner_cur_value$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_value",
+        constants$297.g_scanner_cur_value$FUNC
     );
-    static final FunctionDescriptor g_strlcpy$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_scanner_cur_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strlcpy$MH = RuntimeHelper.downcallHandle(
-        "g_strlcpy",
-        constants$297.g_strlcpy$FUNC
+    static final MethodHandle g_scanner_cur_line$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_line",
+        constants$297.g_scanner_cur_line$FUNC
     );
-    static final FunctionDescriptor g_strlcat$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_scanner_cur_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_strlcat$MH = RuntimeHelper.downcallHandle(
-        "g_strlcat",
-        constants$297.g_strlcat$FUNC
+    static final MethodHandle g_scanner_cur_position$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_position",
+        constants$297.g_scanner_cur_position$FUNC
+    );
+    static final FunctionDescriptor g_scanner_eof$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_scanner_eof$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_eof",
+        constants$297.g_scanner_eof$FUNC
+    );
+    static final FunctionDescriptor g_scanner_set_scope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_scanner_set_scope$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_set_scope",
+        constants$297.g_scanner_set_scope$FUNC
+    );
+    static final FunctionDescriptor g_scanner_scope_add_symbol$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_scanner_scope_add_symbol$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_scope_add_symbol",
+        constants$297.g_scanner_scope_add_symbol$FUNC
     );
 }
 

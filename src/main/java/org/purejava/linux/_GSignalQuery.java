@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSignalQuery {
+ *     guint signal_id;
+ *     const gchar* signal_name;
+ *     GType itype;
+ *     GSignalFlags signal_flags;
+ *     GType return_type;
+ *     guint n_params;
+ *     const GType* param_types;
+ * };
+ * }
+ */
 public class _GSignalQuery {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("signal_id"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("signal_name"),
@@ -28,10 +41,22 @@ public class _GSignalQuery {
     public static VarHandle signal_id$VH() {
         return _GSignalQuery.signal_id$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint signal_id;
+     * }
+     */
     public static int signal_id$get(MemorySegment seg) {
         return (int)_GSignalQuery.signal_id$VH.get(seg);
     }
-    public static void signal_id$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint signal_id;
+     * }
+     */
+    public static void signal_id$set(MemorySegment seg, int x) {
         _GSignalQuery.signal_id$VH.set(seg, x);
     }
     public static int signal_id$get(MemorySegment seg, long index) {
@@ -44,26 +69,50 @@ public class _GSignalQuery {
     public static VarHandle signal_name$VH() {
         return _GSignalQuery.signal_name$VH;
     }
-    public static MemoryAddress signal_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSignalQuery.signal_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* signal_name;
+     * }
+     */
+    public static MemorySegment signal_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSignalQuery.signal_name$VH.get(seg);
     }
-    public static void signal_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* signal_name;
+     * }
+     */
+    public static void signal_name$set(MemorySegment seg, MemorySegment x) {
         _GSignalQuery.signal_name$VH.set(seg, x);
     }
-    public static MemoryAddress signal_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSignalQuery.signal_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment signal_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSignalQuery.signal_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void signal_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void signal_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GSignalQuery.signal_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle itype$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("itype"));
     public static VarHandle itype$VH() {
         return _GSignalQuery.itype$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GType itype;
+     * }
+     */
     public static long itype$get(MemorySegment seg) {
         return (long)_GSignalQuery.itype$VH.get(seg);
     }
-    public static void itype$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GType itype;
+     * }
+     */
+    public static void itype$set(MemorySegment seg, long x) {
         _GSignalQuery.itype$VH.set(seg, x);
     }
     public static long itype$get(MemorySegment seg, long index) {
@@ -76,10 +125,22 @@ public class _GSignalQuery {
     public static VarHandle signal_flags$VH() {
         return _GSignalQuery.signal_flags$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSignalFlags signal_flags;
+     * }
+     */
     public static int signal_flags$get(MemorySegment seg) {
         return (int)_GSignalQuery.signal_flags$VH.get(seg);
     }
-    public static void signal_flags$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSignalFlags signal_flags;
+     * }
+     */
+    public static void signal_flags$set(MemorySegment seg, int x) {
         _GSignalQuery.signal_flags$VH.set(seg, x);
     }
     public static int signal_flags$get(MemorySegment seg, long index) {
@@ -92,10 +153,22 @@ public class _GSignalQuery {
     public static VarHandle return_type$VH() {
         return _GSignalQuery.return_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GType return_type;
+     * }
+     */
     public static long return_type$get(MemorySegment seg) {
         return (long)_GSignalQuery.return_type$VH.get(seg);
     }
-    public static void return_type$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GType return_type;
+     * }
+     */
+    public static void return_type$set(MemorySegment seg, long x) {
         _GSignalQuery.return_type$VH.set(seg, x);
     }
     public static long return_type$get(MemorySegment seg, long index) {
@@ -108,10 +181,22 @@ public class _GSignalQuery {
     public static VarHandle n_params$VH() {
         return _GSignalQuery.n_params$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint n_params;
+     * }
+     */
     public static int n_params$get(MemorySegment seg) {
         return (int)_GSignalQuery.n_params$VH.get(seg);
     }
-    public static void n_params$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint n_params;
+     * }
+     */
+    public static void n_params$set(MemorySegment seg, int x) {
         _GSignalQuery.n_params$VH.set(seg, x);
     }
     public static int n_params$get(MemorySegment seg, long index) {
@@ -124,24 +209,36 @@ public class _GSignalQuery {
     public static VarHandle param_types$VH() {
         return _GSignalQuery.param_types$VH;
     }
-    public static MemoryAddress param_types$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSignalQuery.param_types$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const GType* param_types;
+     * }
+     */
+    public static MemorySegment param_types$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSignalQuery.param_types$VH.get(seg);
     }
-    public static void param_types$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const GType* param_types;
+     * }
+     */
+    public static void param_types$set(MemorySegment seg, MemorySegment x) {
         _GSignalQuery.param_types$VH.set(seg, x);
     }
-    public static MemoryAddress param_types$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSignalQuery.param_types$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment param_types$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSignalQuery.param_types$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void param_types$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void param_types$set(MemorySegment seg, long index, MemorySegment x) {
         _GSignalQuery.param_types$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

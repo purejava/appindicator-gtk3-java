@@ -7,65 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$347 {
+final class constants$347 {
 
-    static final FunctionDescriptor g_relation_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_relation_exists$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_relation_exists",
-        constants$347.g_relation_exists$FUNC
-    );
-    static final FunctionDescriptor g_relation_print$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_relation_print$MH = RuntimeHelper.downcallHandle(
-        "g_relation_print",
-        constants$347.g_relation_print$FUNC
-    );
-    static final FunctionDescriptor g_tuples_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tuples_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_tuples_destroy",
-        constants$347.g_tuples_destroy$FUNC
-    );
-    static final FunctionDescriptor g_tuples_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$347() {}
+    static final FunctionDescriptor g_cache_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tuples_index$MH = RuntimeHelper.downcallHandle(
-        "g_tuples_index",
-        constants$347.g_tuples_index$FUNC
+    static final MethodHandle g_cache_new$MH = RuntimeHelper.downcallHandle(
+        "g_cache_new",
+        constants$347.g_cache_new$FUNC
     );
-    static final  GroupLayout g_thread_functions_for_glib_use$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("mutex_new"),
-        Constants$root.C_POINTER$LAYOUT.withName("mutex_lock"),
-        Constants$root.C_POINTER$LAYOUT.withName("mutex_trylock"),
-        Constants$root.C_POINTER$LAYOUT.withName("mutex_unlock"),
-        Constants$root.C_POINTER$LAYOUT.withName("mutex_free"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_new"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_signal"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_broadcast"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_wait"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_timed_wait"),
-        Constants$root.C_POINTER$LAYOUT.withName("cond_free"),
-        Constants$root.C_POINTER$LAYOUT.withName("private_new"),
-        Constants$root.C_POINTER$LAYOUT.withName("private_get"),
-        Constants$root.C_POINTER$LAYOUT.withName("private_set"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_create"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_yield"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_join"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_exit"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_set_priority"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_self"),
-        Constants$root.C_POINTER$LAYOUT.withName("thread_equal")
-    ).withName("_GThreadFunctions");
-    static final MemorySegment g_thread_functions_for_glib_use$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_functions_for_glib_use", constants$347.g_thread_functions_for_glib_use$LAYOUT);
-    static final  OfInt g_thread_use_default_impl$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle g_thread_use_default_impl$VH = constants$347.g_thread_use_default_impl$LAYOUT.varHandle();
-    static final MemorySegment g_thread_use_default_impl$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_use_default_impl", constants$347.g_thread_use_default_impl$LAYOUT);
+    static final FunctionDescriptor g_cache_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cache_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_cache_destroy",
+        constants$347.g_cache_destroy$FUNC
+    );
+    static final FunctionDescriptor g_cache_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cache_insert$MH = RuntimeHelper.downcallHandle(
+        "g_cache_insert",
+        constants$347.g_cache_insert$FUNC
+    );
+    static final FunctionDescriptor g_cache_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cache_remove$MH = RuntimeHelper.downcallHandle(
+        "g_cache_remove",
+        constants$347.g_cache_remove$FUNC
+    );
+    static final FunctionDescriptor g_cache_key_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cache_key_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_cache_key_foreach",
+        constants$347.g_cache_key_foreach$FUNC
+    );
+    static final FunctionDescriptor g_cache_value_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cache_value_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_cache_value_foreach",
+        constants$347.g_cache_value_foreach$FUNC
+    );
 }
 
 

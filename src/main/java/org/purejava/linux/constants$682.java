@@ -7,81 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$682 {
+final class constants$682 {
 
-    static final FunctionDescriptor g_file_measure_disk_usage$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$682() {}
+    static final FunctionDescriptor GModuleUnload_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GModuleUnload_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$682.GModuleUnload_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_module_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_module_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_module_error_quark",
+        constants$682.g_module_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_module_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_module_supported$MH = RuntimeHelper.downcallHandle(
+        "g_module_supported",
+        constants$682.g_module_supported$FUNC
+    );
+    static final FunctionDescriptor g_module_open$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_module_open$MH = RuntimeHelper.downcallHandle(
+        "g_module_open",
+        constants$682.g_module_open$FUNC
+    );
+    static final FunctionDescriptor g_module_open_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_measure_disk_usage$MH = RuntimeHelper.downcallHandle(
-        "g_file_measure_disk_usage",
-        constants$682.g_file_measure_disk_usage$FUNC
+    static final MethodHandle g_module_open_full$MH = RuntimeHelper.downcallHandle(
+        "g_module_open_full",
+        constants$682.g_module_open_full$FUNC
     );
-    static final FunctionDescriptor g_file_measure_disk_usage_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_module_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_measure_disk_usage_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_measure_disk_usage_async",
-        constants$682.g_file_measure_disk_usage_async$FUNC
-    );
-    static final FunctionDescriptor g_file_measure_disk_usage_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_measure_disk_usage_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_measure_disk_usage_finish",
-        constants$682.g_file_measure_disk_usage_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_start_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_start_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_start_mountable",
-        constants$682.g_file_start_mountable$FUNC
-    );
-    static final FunctionDescriptor g_file_start_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_start_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_start_mountable_finish",
-        constants$682.g_file_start_mountable_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_stop_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_stop_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable",
-        constants$682.g_file_stop_mountable$FUNC
+    static final MethodHandle g_module_close$MH = RuntimeHelper.downcallHandle(
+        "g_module_close",
+        constants$682.g_module_close$FUNC
     );
 }
 

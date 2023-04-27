@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoGlyphGeometry extends _PangoGlyphGeometry {
+/**
+ * {@snippet :
+ * typedef struct _PangoGlyphGeometry PangoGlyphGeometry;
+ * }
+ */
+public final class PangoGlyphGeometry extends _PangoGlyphGeometry {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoGlyphGeometry() {}
 }
 
 

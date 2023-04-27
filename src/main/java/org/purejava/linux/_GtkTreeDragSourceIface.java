@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTreeDragSourceIface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*row_draggable)(GtkTreeDragSource*,GtkTreePath*);
+ *     gboolean (*drag_data_get)(GtkTreeDragSource*,GtkTreePath*,GtkSelectionData*);
+ *     gboolean (*drag_data_delete)(GtkTreeDragSource*,GtkTreePath*);
+ * };
+ * }
+ */
 public class _GtkTreeDragSourceIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -28,20 +38,34 @@ public class _GtkTreeDragSourceIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_draggable$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeDragSourceIface.row_draggable$FUNC
+    static final FunctionDescriptor row_draggable_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_draggable_UP$MH = RuntimeHelper.upcallHandle(row_draggable.class, "apply", _GtkTreeDragSourceIface.row_draggable_UP$FUNC);
+    static final FunctionDescriptor row_draggable_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_draggable_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeDragSourceIface.row_draggable_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*row_draggable)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
     public interface row_draggable {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(row_draggable fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_draggable.class, fi, _GtkTreeDragSourceIface.row_draggable$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(row_draggable fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeDragSourceIface.row_draggable_UP$MH, fi, _GtkTreeDragSourceIface.row_draggable$FUNC, scope);
         }
-        static row_draggable ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static row_draggable ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkTreeDragSourceIface.row_draggable$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkTreeDragSourceIface.row_draggable_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -53,40 +77,68 @@ public class _GtkTreeDragSourceIface {
     public static VarHandle row_draggable$VH() {
         return _GtkTreeDragSourceIface.row_draggable$VH;
     }
-    public static MemoryAddress row_draggable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.row_draggable$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*row_draggable)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment row_draggable$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.row_draggable$VH.get(seg);
     }
-    public static void row_draggable$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*row_draggable)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
+    public static void row_draggable$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeDragSourceIface.row_draggable$VH.set(seg, x);
     }
-    public static MemoryAddress row_draggable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.row_draggable$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_draggable$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.row_draggable$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_draggable$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_draggable$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeDragSourceIface.row_draggable$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_draggable row_draggable (MemorySegment segment, MemorySession session) {
-        return row_draggable.ofAddress(row_draggable$get(segment), session);
+    public static row_draggable row_draggable(MemorySegment segment, SegmentScope scope) {
+        return row_draggable.ofAddress(row_draggable$get(segment), scope);
     }
     static final FunctionDescriptor drag_data_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drag_data_get$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeDragSourceIface.drag_data_get$FUNC
+    static final FunctionDescriptor drag_data_get_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drag_data_get_UP$MH = RuntimeHelper.upcallHandle(drag_data_get.class, "apply", _GtkTreeDragSourceIface.drag_data_get_UP$FUNC);
+    static final FunctionDescriptor drag_data_get_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drag_data_get_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeDragSourceIface.drag_data_get_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*drag_data_get)(GtkTreeDragSource*,GtkTreePath*,GtkSelectionData*);
+     * }
+     */
     public interface drag_data_get {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(drag_data_get fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drag_data_get.class, fi, _GtkTreeDragSourceIface.drag_data_get$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(drag_data_get fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeDragSourceIface.drag_data_get_UP$MH, fi, _GtkTreeDragSourceIface.drag_data_get$FUNC, scope);
         }
-        static drag_data_get ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static drag_data_get ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkTreeDragSourceIface.drag_data_get$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkTreeDragSourceIface.drag_data_get_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -98,39 +150,65 @@ public class _GtkTreeDragSourceIface {
     public static VarHandle drag_data_get$VH() {
         return _GtkTreeDragSourceIface.drag_data_get$VH;
     }
-    public static MemoryAddress drag_data_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.drag_data_get$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*drag_data_get)(GtkTreeDragSource*,GtkTreePath*,GtkSelectionData*);
+     * }
+     */
+    public static MemorySegment drag_data_get$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.drag_data_get$VH.get(seg);
     }
-    public static void drag_data_get$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*drag_data_get)(GtkTreeDragSource*,GtkTreePath*,GtkSelectionData*);
+     * }
+     */
+    public static void drag_data_get$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeDragSourceIface.drag_data_get$VH.set(seg, x);
     }
-    public static MemoryAddress drag_data_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.drag_data_get$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drag_data_get$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.drag_data_get$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drag_data_get$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drag_data_get$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeDragSourceIface.drag_data_get$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_get drag_data_get (MemorySegment segment, MemorySession session) {
-        return drag_data_get.ofAddress(drag_data_get$get(segment), session);
+    public static drag_data_get drag_data_get(MemorySegment segment, SegmentScope scope) {
+        return drag_data_get.ofAddress(drag_data_get$get(segment), scope);
     }
     static final FunctionDescriptor drag_data_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle drag_data_delete$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeDragSourceIface.drag_data_delete$FUNC
+    static final FunctionDescriptor drag_data_delete_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle drag_data_delete_UP$MH = RuntimeHelper.upcallHandle(drag_data_delete.class, "apply", _GtkTreeDragSourceIface.drag_data_delete_UP$FUNC);
+    static final FunctionDescriptor drag_data_delete_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle drag_data_delete_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeDragSourceIface.drag_data_delete_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*drag_data_delete)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
     public interface drag_data_delete {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(drag_data_delete fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(drag_data_delete.class, fi, _GtkTreeDragSourceIface.drag_data_delete$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(drag_data_delete fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeDragSourceIface.drag_data_delete_UP$MH, fi, _GtkTreeDragSourceIface.drag_data_delete$FUNC, scope);
         }
-        static drag_data_delete ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static drag_data_delete ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkTreeDragSourceIface.drag_data_delete$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkTreeDragSourceIface.drag_data_delete_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -142,27 +220,39 @@ public class _GtkTreeDragSourceIface {
     public static VarHandle drag_data_delete$VH() {
         return _GtkTreeDragSourceIface.drag_data_delete$VH;
     }
-    public static MemoryAddress drag_data_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.drag_data_delete$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment drag_data_delete$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.drag_data_delete$VH.get(seg);
     }
-    public static void drag_data_delete$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource*,GtkTreePath*);
+     * }
+     */
+    public static void drag_data_delete$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeDragSourceIface.drag_data_delete$VH.set(seg, x);
     }
-    public static MemoryAddress drag_data_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeDragSourceIface.drag_data_delete$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment drag_data_delete$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeDragSourceIface.drag_data_delete$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void drag_data_delete$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void drag_data_delete$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeDragSourceIface.drag_data_delete$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_delete drag_data_delete (MemorySegment segment, MemorySession session) {
-        return drag_data_delete.ofAddress(drag_data_delete$get(segment), session);
+    public static drag_data_delete drag_data_delete(MemorySegment segment, SegmentScope scope) {
+        return drag_data_delete.ofAddress(drag_data_delete$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

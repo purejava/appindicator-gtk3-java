@@ -7,60 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$831 {
+final class constants$831 {
 
-    static final FunctionDescriptor g_socket_connection_connect_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_connect_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_async",
-        constants$831.g_socket_connection_connect_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_connect_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_finish",
-        constants$831.g_socket_connection_connect_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_get_socket$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_get_socket$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_socket",
-        constants$831.g_socket_connection_get_socket$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_local_address",
-        constants$831.g_socket_connection_get_local_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_get_remote_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_get_remote_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_remote_address",
-        constants$831.g_socket_connection_get_remote_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_factory_register_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$831() {}
+    static final FunctionDescriptor hb_direction_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_socket_connection_factory_register_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_register_type",
-        constants$831.g_socket_connection_factory_register_type$FUNC
+    static final MethodHandle hb_direction_to_string$MH = RuntimeHelper.downcallHandle(
+        "hb_direction_to_string",
+        constants$831.hb_direction_to_string$FUNC
+    );
+    static final FunctionDescriptor hb_language_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_language_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_language_from_string",
+        constants$831.hb_language_from_string$FUNC
+    );
+    static final FunctionDescriptor hb_language_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_language_to_string$MH = RuntimeHelper.downcallHandle(
+        "hb_language_to_string",
+        constants$831.hb_language_to_string$FUNC
+    );
+    static final FunctionDescriptor hb_language_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_language_get_default$MH = RuntimeHelper.downcallHandle(
+        "hb_language_get_default",
+        constants$831.hb_language_get_default$FUNC
+    );
+    static final FunctionDescriptor hb_language_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_language_matches$MH = RuntimeHelper.downcallHandle(
+        "hb_language_matches",
+        constants$831.hb_language_matches$FUNC
+    );
+    static final FunctionDescriptor hb_script_from_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_script_from_iso15924_tag$MH = RuntimeHelper.downcallHandle(
+        "hb_script_from_iso15924_tag",
+        constants$831.hb_script_from_iso15924_tag$FUNC
     );
 }
 

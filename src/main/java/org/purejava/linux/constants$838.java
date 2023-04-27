@@ -7,52 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$838 {
+final class constants$838 {
 
-    static final FunctionDescriptor g_subprocess_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_subprocess_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_type",
-        constants$838.g_subprocess_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$838() {}
+    static final FunctionDescriptor hb_unicode_funcs_make_immutable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_subprocess_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final MethodHandle hb_unicode_funcs_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_make_immutable",
+        constants$838.hb_unicode_funcs_make_immutable$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_funcs_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_unicode_funcs_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_is_immutable",
+        constants$838.hb_unicode_funcs_is_immutable$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_funcs_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_unicode_funcs_get_parent$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_get_parent",
+        constants$838.hb_unicode_funcs_get_parent$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_combining_class_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_subprocess_new",
-        constants$838.g_subprocess_new$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_combining_class_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_newv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_newv",
-        constants$838.g_subprocess_newv$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_stdin_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle hb_unicode_combining_class_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_combining_class_func_t.class, "apply", constants$838.hb_unicode_combining_class_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_unicode_combining_class_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_get_stdin_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stdin_pipe",
-        constants$838.g_subprocess_get_stdin_pipe$FUNC
+    static final MethodHandle hb_unicode_combining_class_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$838.hb_unicode_combining_class_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor g_subprocess_get_stdout_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_general_category_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_get_stdout_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stdout_pipe",
-        constants$838.g_subprocess_get_stdout_pipe$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_stderr_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_general_category_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_get_stderr_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stderr_pipe",
-        constants$838.g_subprocess_get_stderr_pipe$FUNC
-    );
+    static final MethodHandle hb_unicode_general_category_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_general_category_func_t.class, "apply", constants$838.hb_unicode_general_category_func_t_UP$FUNC);
 }
 
 

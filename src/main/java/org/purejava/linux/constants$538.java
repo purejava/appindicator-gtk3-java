@@ -7,54 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$538 {
+final class constants$538 {
 
-    static final FunctionDescriptor g_application_mark_busy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_mark_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_mark_busy",
-        constants$538.g_application_mark_busy$FUNC
-    );
-    static final FunctionDescriptor g_application_unmark_busy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_unmark_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_unmark_busy",
-        constants$538.g_application_unmark_busy$FUNC
-    );
-    static final FunctionDescriptor g_application_get_is_busy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_is_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_busy",
-        constants$538.g_application_get_is_busy$FUNC
-    );
-    static final FunctionDescriptor g_application_send_notification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$538() {}
+    static final FunctionDescriptor crypt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_send_notification$MH = RuntimeHelper.downcallHandle(
-        "g_application_send_notification",
-        constants$538.g_application_send_notification$FUNC
+    static final MethodHandle crypt$MH = RuntimeHelper.downcallHandle(
+        "crypt",
+        constants$538.crypt$FUNC
     );
-    static final FunctionDescriptor g_application_withdraw_notification$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor getentropy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle getentropy$MH = RuntimeHelper.downcallHandle(
+        "getentropy",
+        constants$538.getentropy$FUNC
+    );
+    static final FunctionDescriptor g_credentials_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_credentials_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_get_type",
+        constants$538.g_credentials_get_type$FUNC
+    );
+    static final FunctionDescriptor g_credentials_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_credentials_new$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_new",
+        constants$538.g_credentials_new$FUNC
+    );
+    static final FunctionDescriptor g_credentials_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_withdraw_notification$MH = RuntimeHelper.downcallHandle(
-        "g_application_withdraw_notification",
-        constants$538.g_application_withdraw_notification$FUNC
+    static final MethodHandle g_credentials_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_to_string",
+        constants$538.g_credentials_to_string$FUNC
     );
-    static final FunctionDescriptor g_application_bind_busy_property$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_credentials_get_native$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_application_bind_busy_property$MH = RuntimeHelper.downcallHandle(
-        "g_application_bind_busy_property",
-        constants$538.g_application_bind_busy_property$FUNC
+    static final MethodHandle g_credentials_get_native$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_get_native",
+        constants$538.g_credentials_get_native$FUNC
     );
 }
 

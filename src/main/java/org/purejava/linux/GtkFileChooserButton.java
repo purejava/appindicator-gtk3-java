@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFileChooserButton extends _GtkFileChooserButton {
+/**
+ * {@snippet :
+ * typedef struct _GtkFileChooserButton GtkFileChooserButton;
+ * }
+ */
+public final class GtkFileChooserButton extends _GtkFileChooserButton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFileChooserButton() {}
 }
 
 

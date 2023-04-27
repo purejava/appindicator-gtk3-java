@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1933 {
+final class constants$1933 {
 
-    static final FunctionDescriptor gtk_print_context_get_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_page_setup",
-        constants$1933.gtk_print_context_get_page_setup$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_width",
-        constants$1933.gtk_print_context_get_width$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_height",
-        constants$1933.gtk_print_context_get_height$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_dpi_x$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_dpi_x$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_x",
-        constants$1933.gtk_print_context_get_dpi_x$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_dpi_y$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_dpi_y$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_y",
-        constants$1933.gtk_print_context_get_dpi_y$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_hard_margins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1933() {}
+    static final FunctionDescriptor gtk_symbolic_color_new_win32$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_symbolic_color_new_win32$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_new_win32",
+        constants$1933.gtk_symbolic_color_new_win32$FUNC
+    );
+    static final FunctionDescriptor gtk_symbolic_color_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_symbolic_color_ref$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_ref",
+        constants$1933.gtk_symbolic_color_ref$FUNC
+    );
+    static final FunctionDescriptor gtk_symbolic_color_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_symbolic_color_unref$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_unref",
+        constants$1933.gtk_symbolic_color_unref$FUNC
+    );
+    static final FunctionDescriptor gtk_symbolic_color_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_symbolic_color_to_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_to_string",
+        constants$1933.gtk_symbolic_color_to_string$FUNC
+    );
+    static final FunctionDescriptor gtk_symbolic_color_resolve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_context_get_hard_margins$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_hard_margins",
-        constants$1933.gtk_print_context_get_hard_margins$FUNC
+    static final MethodHandle gtk_symbolic_color_resolve$MH = RuntimeHelper.downcallHandle(
+        "gtk_symbolic_color_resolve",
+        constants$1933.gtk_symbolic_color_resolve$FUNC
+    );
+    static final FunctionDescriptor gtk_gradient_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gradient_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_get_type",
+        constants$1933.gtk_gradient_get_type$FUNC
     );
 }
 

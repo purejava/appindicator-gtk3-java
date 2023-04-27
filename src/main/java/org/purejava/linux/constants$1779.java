@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1779 {
+final class constants$1779 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkFileChooserNativeClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkFileChooserNativeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkFileChooserNativeClass",
-        constants$1779.glib_slistautoptr_cleanup_GtkFileChooserNativeClass$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkFileChooserNativeClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkFileChooserNativeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkFileChooserNativeClass",
-        constants$1779.glib_queueautoptr_cleanup_GtkFileChooserNativeClass$FUNC
-    );
-    static final FunctionDescriptor GTK_FILE_CHOOSER_NATIVE$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTK_FILE_CHOOSER_NATIVE$MH = RuntimeHelper.downcallHandle(
-        "GTK_FILE_CHOOSER_NATIVE",
-        constants$1779.GTK_FILE_CHOOSER_NATIVE$FUNC
-    );
-    static final FunctionDescriptor GTK_IS_FILE_CHOOSER_NATIVE$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTK_IS_FILE_CHOOSER_NATIVE$MH = RuntimeHelper.downcallHandle(
-        "GTK_IS_FILE_CHOOSER_NATIVE",
-        constants$1779.GTK_IS_FILE_CHOOSER_NATIVE$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_native_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1779() {}
+    static final FunctionDescriptor gtk_recent_filter_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_native_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_new",
-        constants$1779.gtk_file_chooser_native_new$FUNC
+    static final MethodHandle gtk_recent_filter_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_filter",
+        constants$1779.gtk_recent_filter_filter$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_native_get_accept_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkRecentSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_native_get_accept_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_get_accept_label",
-        constants$1779.gtk_file_chooser_native_get_accept_label$FUNC
+    static final FunctionDescriptor GtkRecentSortFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkRecentSortFunc_UP$MH = RuntimeHelper.upcallHandle(GtkRecentSortFunc.class, "apply", constants$1779.GtkRecentSortFunc_UP$FUNC);
+    static final FunctionDescriptor GtkRecentSortFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkRecentSortFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1779.GtkRecentSortFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_recent_chooser_error_quark$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_error_quark",
+        constants$1779.gtk_recent_chooser_error_quark$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_chooser_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_type",
+        constants$1779.gtk_recent_chooser_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_set_show_private$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_set_show_private$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_set_show_private",
+        constants$1779.gtk_recent_chooser_set_show_private$FUNC
     );
 }
 

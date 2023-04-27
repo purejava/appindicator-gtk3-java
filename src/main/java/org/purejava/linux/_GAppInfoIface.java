@@ -7,9 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GAppInfoIface {
+ *     GTypeInterface g_iface;
+ *     GAppInfo* (*dup)(GAppInfo*);
+ *     gboolean (*equal)(GAppInfo*,GAppInfo*);
+ *     char* (*get_id)(GAppInfo*);
+ *     char* (*get_name)(GAppInfo*);
+ *     char* (*get_description)(GAppInfo*);
+ *     char* (*get_executable)(GAppInfo*);
+ *     GIcon* (*get_icon)(GAppInfo*);
+ *     gboolean (*launch)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+ *     gboolean (*supports_uris)(GAppInfo*);
+ *     gboolean (*supports_files)(GAppInfo*);
+ *     gboolean (*launch_uris)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+ *     gboolean (*should_show)(GAppInfo*);
+ *     gboolean (*set_as_default_for_type)(GAppInfo*,char*,GError**);
+ *     gboolean (*set_as_default_for_extension)(GAppInfo*,char*,GError**);
+ *     gboolean (*add_supports_type)(GAppInfo*,char*,GError**);
+ *     gboolean (*can_remove_supports_type)(GAppInfo*);
+ *     gboolean (*remove_supports_type)(GAppInfo*,char*,GError**);
+ *     gboolean (*can_delete)(GAppInfo*);
+ *     gboolean (*do_delete)(GAppInfo*);
+ *     char* (*get_commandline)(GAppInfo*);
+ *     char* (*get_display_name)(GAppInfo*);
+ *     gboolean (*set_as_last_used_for_type)(GAppInfo*,char*,GError**);
+ *     char** (*get_supported_types)(GAppInfo*);
+ *     void (*launch_uris_async)(GAppInfo*,GList*,GAppLaunchContext*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*launch_uris_finish)(GAppInfo*,GAsyncResult*,GError**);
+ * };
+ * }
+ */
 public class _GAppInfoIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -49,20 +81,32 @@ public class _GAppInfoIface {
     static final FunctionDescriptor dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle dup$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.dup$FUNC
+    static final FunctionDescriptor dup_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle dup_UP$MH = RuntimeHelper.upcallHandle(dup.class, "apply", _GAppInfoIface.dup_UP$FUNC);
+    static final FunctionDescriptor dup_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle dup_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.dup_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GAppInfo* (*dup)(GAppInfo*);
+     * }
+     */
     public interface dup {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(dup fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(dup.class, fi, _GAppInfoIface.dup$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(dup fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.dup_UP$MH, fi, _GAppInfoIface.dup$FUNC, scope);
         }
-        static dup ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static dup ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.dup$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.dup_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -74,39 +118,65 @@ public class _GAppInfoIface {
     public static VarHandle dup$VH() {
         return _GAppInfoIface.dup$VH;
     }
-    public static MemoryAddress dup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.dup$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GAppInfo* (*dup)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment dup$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.dup$VH.get(seg);
     }
-    public static void dup$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GAppInfo* (*dup)(GAppInfo*);
+     * }
+     */
+    public static void dup$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.dup$VH.set(seg, x);
     }
-    public static MemoryAddress dup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.dup$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dup$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.dup$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dup$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dup$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.dup$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dup dup (MemorySegment segment, MemorySession session) {
-        return dup.ofAddress(dup$get(segment), session);
+    public static dup dup(MemorySegment segment, SegmentScope scope) {
+        return dup.ofAddress(dup$get(segment), scope);
     }
     static final FunctionDescriptor equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle equal$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.equal$FUNC
+    static final FunctionDescriptor equal_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle equal_UP$MH = RuntimeHelper.upcallHandle(equal.class, "apply", _GAppInfoIface.equal_UP$FUNC);
+    static final FunctionDescriptor equal_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle equal_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.equal_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*equal)(GAppInfo*,GAppInfo*);
+     * }
+     */
     public interface equal {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(equal fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(equal.class, fi, _GAppInfoIface.equal$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(equal fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.equal_UP$MH, fi, _GAppInfoIface.equal$FUNC, scope);
         }
-        static equal ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static equal ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GAppInfoIface.equal$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GAppInfoIface.equal_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -118,38 +188,62 @@ public class _GAppInfoIface {
     public static VarHandle equal$VH() {
         return _GAppInfoIface.equal$VH;
     }
-    public static MemoryAddress equal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.equal$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*equal)(GAppInfo*,GAppInfo*);
+     * }
+     */
+    public static MemorySegment equal$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.equal$VH.get(seg);
     }
-    public static void equal$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*equal)(GAppInfo*,GAppInfo*);
+     * }
+     */
+    public static void equal$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.equal$VH.set(seg, x);
     }
-    public static MemoryAddress equal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.equal$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment equal$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.equal$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void equal$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void equal$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.equal$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static equal equal (MemorySegment segment, MemorySession session) {
-        return equal.ofAddress(equal$get(segment), session);
+    public static equal equal(MemorySegment segment, SegmentScope scope) {
+        return equal.ofAddress(equal$get(segment), scope);
     }
     static final FunctionDescriptor get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_id$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_id$FUNC
+    static final FunctionDescriptor get_id_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_id_UP$MH = RuntimeHelper.upcallHandle(get_id.class, "apply", _GAppInfoIface.get_id_UP$FUNC);
+    static final FunctionDescriptor get_id_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_id_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_id_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_id)(GAppInfo*);
+     * }
+     */
     public interface get_id {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_id fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_id.class, fi, _GAppInfoIface.get_id$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_id fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_id_UP$MH, fi, _GAppInfoIface.get_id$FUNC, scope);
         }
-        static get_id ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_id ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_id$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_id_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -161,38 +255,62 @@ public class _GAppInfoIface {
     public static VarHandle get_id$VH() {
         return _GAppInfoIface.get_id$VH;
     }
-    public static MemoryAddress get_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_id$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_id)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_id$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_id$VH.get(seg);
     }
-    public static void get_id$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_id)(GAppInfo*);
+     * }
+     */
+    public static void get_id$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_id$VH.set(seg, x);
     }
-    public static MemoryAddress get_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_id$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_id$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_id$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_id$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_id$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_id$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_id get_id (MemorySegment segment, MemorySession session) {
-        return get_id.ofAddress(get_id$get(segment), session);
+    public static get_id get_id(MemorySegment segment, SegmentScope scope) {
+        return get_id.ofAddress(get_id$get(segment), scope);
     }
     static final FunctionDescriptor get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_name$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_name$FUNC
+    static final FunctionDescriptor get_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_name_UP$MH = RuntimeHelper.upcallHandle(get_name.class, "apply", _GAppInfoIface.get_name_UP$FUNC);
+    static final FunctionDescriptor get_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_name)(GAppInfo*);
+     * }
+     */
     public interface get_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_name.class, fi, _GAppInfoIface.get_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_name_UP$MH, fi, _GAppInfoIface.get_name$FUNC, scope);
         }
-        static get_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_name_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -204,38 +322,62 @@ public class _GAppInfoIface {
     public static VarHandle get_name$VH() {
         return _GAppInfoIface.get_name$VH;
     }
-    public static MemoryAddress get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_name)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_name$VH.get(seg);
     }
-    public static void get_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_name)(GAppInfo*);
+     * }
+     */
+    public static void get_name$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_name get_name (MemorySegment segment, MemorySession session) {
-        return get_name.ofAddress(get_name$get(segment), session);
+    public static get_name get_name(MemorySegment segment, SegmentScope scope) {
+        return get_name.ofAddress(get_name$get(segment), scope);
     }
     static final FunctionDescriptor get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_description$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_description$FUNC
+    static final FunctionDescriptor get_description_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_description_UP$MH = RuntimeHelper.upcallHandle(get_description.class, "apply", _GAppInfoIface.get_description_UP$FUNC);
+    static final FunctionDescriptor get_description_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_description_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_description_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_description)(GAppInfo*);
+     * }
+     */
     public interface get_description {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_description fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_description.class, fi, _GAppInfoIface.get_description$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_description fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_description_UP$MH, fi, _GAppInfoIface.get_description$FUNC, scope);
         }
-        static get_description ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_description ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_description$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_description_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -247,38 +389,62 @@ public class _GAppInfoIface {
     public static VarHandle get_description$VH() {
         return _GAppInfoIface.get_description$VH;
     }
-    public static MemoryAddress get_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_description)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_description$VH.get(seg);
     }
-    public static void get_description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_description)(GAppInfo*);
+     * }
+     */
+    public static void get_description$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_description$VH.set(seg, x);
     }
-    public static MemoryAddress get_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_description$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_description$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_description get_description (MemorySegment segment, MemorySession session) {
-        return get_description.ofAddress(get_description$get(segment), session);
+    public static get_description get_description(MemorySegment segment, SegmentScope scope) {
+        return get_description.ofAddress(get_description$get(segment), scope);
     }
     static final FunctionDescriptor get_executable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_executable$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_executable$FUNC
+    static final FunctionDescriptor get_executable_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_executable_UP$MH = RuntimeHelper.upcallHandle(get_executable.class, "apply", _GAppInfoIface.get_executable_UP$FUNC);
+    static final FunctionDescriptor get_executable_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_executable_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_executable_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_executable)(GAppInfo*);
+     * }
+     */
     public interface get_executable {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_executable fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_executable.class, fi, _GAppInfoIface.get_executable$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_executable fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_executable_UP$MH, fi, _GAppInfoIface.get_executable$FUNC, scope);
         }
-        static get_executable ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_executable ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_executable$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_executable_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -290,38 +456,62 @@ public class _GAppInfoIface {
     public static VarHandle get_executable$VH() {
         return _GAppInfoIface.get_executable$VH;
     }
-    public static MemoryAddress get_executable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_executable$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_executable)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_executable$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_executable$VH.get(seg);
     }
-    public static void get_executable$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_executable)(GAppInfo*);
+     * }
+     */
+    public static void get_executable$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_executable$VH.set(seg, x);
     }
-    public static MemoryAddress get_executable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_executable$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_executable$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_executable$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_executable$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_executable$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_executable$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_executable get_executable (MemorySegment segment, MemorySession session) {
-        return get_executable.ofAddress(get_executable$get(segment), session);
+    public static get_executable get_executable(MemorySegment segment, SegmentScope scope) {
+        return get_executable.ofAddress(get_executable$get(segment), scope);
     }
     static final FunctionDescriptor get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_icon$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_icon$FUNC
+    static final FunctionDescriptor get_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_icon_UP$MH = RuntimeHelper.upcallHandle(get_icon.class, "apply", _GAppInfoIface.get_icon_UP$FUNC);
+    static final FunctionDescriptor get_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*get_icon)(GAppInfo*);
+     * }
+     */
     public interface get_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_icon.class, fi, _GAppInfoIface.get_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_icon_UP$MH, fi, _GAppInfoIface.get_icon$FUNC, scope);
         }
-        static get_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_icon_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -333,20 +523,32 @@ public class _GAppInfoIface {
     public static VarHandle get_icon$VH() {
         return _GAppInfoIface.get_icon$VH;
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_icon$VH.get(seg);
     }
-    public static void get_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GAppInfo*);
+     * }
+     */
+    public static void get_icon$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_icon$VH.set(seg, x);
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_icon get_icon (MemorySegment segment, MemorySession session) {
-        return get_icon.ofAddress(get_icon$get(segment), session);
+    public static get_icon get_icon(MemorySegment segment, SegmentScope scope) {
+        return get_icon.ofAddress(get_icon$get(segment), scope);
     }
     static final FunctionDescriptor launch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -354,20 +556,38 @@ public class _GAppInfoIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle launch$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.launch$FUNC
+    static final FunctionDescriptor launch_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle launch_UP$MH = RuntimeHelper.upcallHandle(launch.class, "apply", _GAppInfoIface.launch_UP$FUNC);
+    static final FunctionDescriptor launch_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle launch_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.launch_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*launch)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
     public interface launch {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(launch fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(launch.class, fi, _GAppInfoIface.launch$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(launch fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.launch_UP$MH, fi, _GAppInfoIface.launch$FUNC, scope);
         }
-        static launch ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static launch ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GAppInfoIface.launch$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GAppInfoIface.launch_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -379,38 +599,62 @@ public class _GAppInfoIface {
     public static VarHandle launch$VH() {
         return _GAppInfoIface.launch$VH;
     }
-    public static MemoryAddress launch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*launch)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
+    public static MemorySegment launch$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch$VH.get(seg);
     }
-    public static void launch$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*launch)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
+    public static void launch$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.launch$VH.set(seg, x);
     }
-    public static MemoryAddress launch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment launch$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void launch$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void launch$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.launch$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static launch launch (MemorySegment segment, MemorySession session) {
-        return launch.ofAddress(launch$get(segment), session);
+    public static launch launch(MemorySegment segment, SegmentScope scope) {
+        return launch.ofAddress(launch$get(segment), scope);
     }
     static final FunctionDescriptor supports_uris$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle supports_uris$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.supports_uris$FUNC
+    static final FunctionDescriptor supports_uris_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle supports_uris_UP$MH = RuntimeHelper.upcallHandle(supports_uris.class, "apply", _GAppInfoIface.supports_uris_UP$FUNC);
+    static final FunctionDescriptor supports_uris_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle supports_uris_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.supports_uris_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*supports_uris)(GAppInfo*);
+     * }
+     */
     public interface supports_uris {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(supports_uris fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(supports_uris.class, fi, _GAppInfoIface.supports_uris$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(supports_uris fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.supports_uris_UP$MH, fi, _GAppInfoIface.supports_uris$FUNC, scope);
         }
-        static supports_uris ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static supports_uris ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.supports_uris$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.supports_uris_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -422,38 +666,62 @@ public class _GAppInfoIface {
     public static VarHandle supports_uris$VH() {
         return _GAppInfoIface.supports_uris$VH;
     }
-    public static MemoryAddress supports_uris$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.supports_uris$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*supports_uris)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment supports_uris$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.supports_uris$VH.get(seg);
     }
-    public static void supports_uris$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*supports_uris)(GAppInfo*);
+     * }
+     */
+    public static void supports_uris$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.supports_uris$VH.set(seg, x);
     }
-    public static MemoryAddress supports_uris$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.supports_uris$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment supports_uris$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.supports_uris$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void supports_uris$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void supports_uris$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.supports_uris$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static supports_uris supports_uris (MemorySegment segment, MemorySession session) {
-        return supports_uris.ofAddress(supports_uris$get(segment), session);
+    public static supports_uris supports_uris(MemorySegment segment, SegmentScope scope) {
+        return supports_uris.ofAddress(supports_uris$get(segment), scope);
     }
     static final FunctionDescriptor supports_files$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle supports_files$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.supports_files$FUNC
+    static final FunctionDescriptor supports_files_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle supports_files_UP$MH = RuntimeHelper.upcallHandle(supports_files.class, "apply", _GAppInfoIface.supports_files_UP$FUNC);
+    static final FunctionDescriptor supports_files_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle supports_files_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.supports_files_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*supports_files)(GAppInfo*);
+     * }
+     */
     public interface supports_files {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(supports_files fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(supports_files.class, fi, _GAppInfoIface.supports_files$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(supports_files fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.supports_files_UP$MH, fi, _GAppInfoIface.supports_files$FUNC, scope);
         }
-        static supports_files ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static supports_files ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.supports_files$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.supports_files_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -465,20 +733,32 @@ public class _GAppInfoIface {
     public static VarHandle supports_files$VH() {
         return _GAppInfoIface.supports_files$VH;
     }
-    public static MemoryAddress supports_files$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.supports_files$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*supports_files)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment supports_files$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.supports_files$VH.get(seg);
     }
-    public static void supports_files$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*supports_files)(GAppInfo*);
+     * }
+     */
+    public static void supports_files$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.supports_files$VH.set(seg, x);
     }
-    public static MemoryAddress supports_files$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.supports_files$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment supports_files$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.supports_files$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void supports_files$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void supports_files$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.supports_files$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static supports_files supports_files (MemorySegment segment, MemorySession session) {
-        return supports_files.ofAddress(supports_files$get(segment), session);
+    public static supports_files supports_files(MemorySegment segment, SegmentScope scope) {
+        return supports_files.ofAddress(supports_files$get(segment), scope);
     }
     static final FunctionDescriptor launch_uris$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -486,20 +766,38 @@ public class _GAppInfoIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle launch_uris$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.launch_uris$FUNC
+    static final FunctionDescriptor launch_uris_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle launch_uris_UP$MH = RuntimeHelper.upcallHandle(launch_uris.class, "apply", _GAppInfoIface.launch_uris_UP$FUNC);
+    static final FunctionDescriptor launch_uris_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle launch_uris_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.launch_uris_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*launch_uris)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
     public interface launch_uris {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(launch_uris fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(launch_uris.class, fi, _GAppInfoIface.launch_uris$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(launch_uris fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.launch_uris_UP$MH, fi, _GAppInfoIface.launch_uris$FUNC, scope);
         }
-        static launch_uris ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static launch_uris ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GAppInfoIface.launch_uris$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GAppInfoIface.launch_uris_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -511,38 +809,62 @@ public class _GAppInfoIface {
     public static VarHandle launch_uris$VH() {
         return _GAppInfoIface.launch_uris$VH;
     }
-    public static MemoryAddress launch_uris$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*launch_uris)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
+    public static MemorySegment launch_uris$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris$VH.get(seg);
     }
-    public static void launch_uris$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*launch_uris)(GAppInfo*,GList*,GAppLaunchContext*,GError**);
+     * }
+     */
+    public static void launch_uris$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.launch_uris$VH.set(seg, x);
     }
-    public static MemoryAddress launch_uris$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment launch_uris$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void launch_uris$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void launch_uris$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.launch_uris$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static launch_uris launch_uris (MemorySegment segment, MemorySession session) {
-        return launch_uris.ofAddress(launch_uris$get(segment), session);
+    public static launch_uris launch_uris(MemorySegment segment, SegmentScope scope) {
+        return launch_uris.ofAddress(launch_uris$get(segment), scope);
     }
     static final FunctionDescriptor should_show$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle should_show$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.should_show$FUNC
+    static final FunctionDescriptor should_show_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle should_show_UP$MH = RuntimeHelper.upcallHandle(should_show.class, "apply", _GAppInfoIface.should_show_UP$FUNC);
+    static final FunctionDescriptor should_show_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle should_show_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.should_show_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*should_show)(GAppInfo*);
+     * }
+     */
     public interface should_show {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(should_show fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(should_show.class, fi, _GAppInfoIface.should_show$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(should_show fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.should_show_UP$MH, fi, _GAppInfoIface.should_show$FUNC, scope);
         }
-        static should_show ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static should_show ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.should_show$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.should_show_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -554,40 +876,68 @@ public class _GAppInfoIface {
     public static VarHandle should_show$VH() {
         return _GAppInfoIface.should_show$VH;
     }
-    public static MemoryAddress should_show$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.should_show$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*should_show)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment should_show$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.should_show$VH.get(seg);
     }
-    public static void should_show$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*should_show)(GAppInfo*);
+     * }
+     */
+    public static void should_show$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.should_show$VH.set(seg, x);
     }
-    public static MemoryAddress should_show$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.should_show$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment should_show$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.should_show$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void should_show$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void should_show$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.should_show$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static should_show should_show (MemorySegment segment, MemorySession session) {
-        return should_show.ofAddress(should_show$get(segment), session);
+    public static should_show should_show(MemorySegment segment, SegmentScope scope) {
+        return should_show.ofAddress(should_show$get(segment), scope);
     }
     static final FunctionDescriptor set_as_default_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_as_default_for_type$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.set_as_default_for_type$FUNC
+    static final FunctionDescriptor set_as_default_for_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_as_default_for_type_UP$MH = RuntimeHelper.upcallHandle(set_as_default_for_type.class, "apply", _GAppInfoIface.set_as_default_for_type_UP$FUNC);
+    static final FunctionDescriptor set_as_default_for_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_as_default_for_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.set_as_default_for_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_as_default_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
     public interface set_as_default_for_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(set_as_default_for_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_as_default_for_type.class, fi, _GAppInfoIface.set_as_default_for_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(set_as_default_for_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.set_as_default_for_type_UP$MH, fi, _GAppInfoIface.set_as_default_for_type$FUNC, scope);
         }
-        static set_as_default_for_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static set_as_default_for_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.set_as_default_for_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.set_as_default_for_type_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -599,40 +949,68 @@ public class _GAppInfoIface {
     public static VarHandle set_as_default_for_type$VH() {
         return _GAppInfoIface.set_as_default_for_type$VH;
     }
-    public static MemoryAddress set_as_default_for_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_default_for_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_as_default_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static MemorySegment set_as_default_for_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_default_for_type$VH.get(seg);
     }
-    public static void set_as_default_for_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_as_default_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static void set_as_default_for_type$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.set_as_default_for_type$VH.set(seg, x);
     }
-    public static MemoryAddress set_as_default_for_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_default_for_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_as_default_for_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_default_for_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_as_default_for_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_as_default_for_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.set_as_default_for_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_as_default_for_type set_as_default_for_type (MemorySegment segment, MemorySession session) {
-        return set_as_default_for_type.ofAddress(set_as_default_for_type$get(segment), session);
+    public static set_as_default_for_type set_as_default_for_type(MemorySegment segment, SegmentScope scope) {
+        return set_as_default_for_type.ofAddress(set_as_default_for_type$get(segment), scope);
     }
     static final FunctionDescriptor set_as_default_for_extension$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_as_default_for_extension$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.set_as_default_for_extension$FUNC
+    static final FunctionDescriptor set_as_default_for_extension_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_as_default_for_extension_UP$MH = RuntimeHelper.upcallHandle(set_as_default_for_extension.class, "apply", _GAppInfoIface.set_as_default_for_extension_UP$FUNC);
+    static final FunctionDescriptor set_as_default_for_extension_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_as_default_for_extension_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.set_as_default_for_extension_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_as_default_for_extension)(GAppInfo*,char*,GError**);
+     * }
+     */
     public interface set_as_default_for_extension {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(set_as_default_for_extension fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_as_default_for_extension.class, fi, _GAppInfoIface.set_as_default_for_extension$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(set_as_default_for_extension fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.set_as_default_for_extension_UP$MH, fi, _GAppInfoIface.set_as_default_for_extension$FUNC, scope);
         }
-        static set_as_default_for_extension ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static set_as_default_for_extension ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.set_as_default_for_extension$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.set_as_default_for_extension_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -644,40 +1022,68 @@ public class _GAppInfoIface {
     public static VarHandle set_as_default_for_extension$VH() {
         return _GAppInfoIface.set_as_default_for_extension$VH;
     }
-    public static MemoryAddress set_as_default_for_extension$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_default_for_extension$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_as_default_for_extension)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static MemorySegment set_as_default_for_extension$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_default_for_extension$VH.get(seg);
     }
-    public static void set_as_default_for_extension$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_as_default_for_extension)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static void set_as_default_for_extension$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.set_as_default_for_extension$VH.set(seg, x);
     }
-    public static MemoryAddress set_as_default_for_extension$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_default_for_extension$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_as_default_for_extension$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_default_for_extension$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_as_default_for_extension$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_as_default_for_extension$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.set_as_default_for_extension$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_as_default_for_extension set_as_default_for_extension (MemorySegment segment, MemorySession session) {
-        return set_as_default_for_extension.ofAddress(set_as_default_for_extension$get(segment), session);
+    public static set_as_default_for_extension set_as_default_for_extension(MemorySegment segment, SegmentScope scope) {
+        return set_as_default_for_extension.ofAddress(set_as_default_for_extension$get(segment), scope);
     }
     static final FunctionDescriptor add_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_supports_type$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.add_supports_type$FUNC
+    static final FunctionDescriptor add_supports_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_supports_type_UP$MH = RuntimeHelper.upcallHandle(add_supports_type.class, "apply", _GAppInfoIface.add_supports_type_UP$FUNC);
+    static final FunctionDescriptor add_supports_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_supports_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.add_supports_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*add_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
     public interface add_supports_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(add_supports_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_supports_type.class, fi, _GAppInfoIface.add_supports_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(add_supports_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.add_supports_type_UP$MH, fi, _GAppInfoIface.add_supports_type$FUNC, scope);
         }
-        static add_supports_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static add_supports_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.add_supports_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.add_supports_type_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -689,38 +1095,62 @@ public class _GAppInfoIface {
     public static VarHandle add_supports_type$VH() {
         return _GAppInfoIface.add_supports_type$VH;
     }
-    public static MemoryAddress add_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.add_supports_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*add_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static MemorySegment add_supports_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.add_supports_type$VH.get(seg);
     }
-    public static void add_supports_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*add_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static void add_supports_type$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.add_supports_type$VH.set(seg, x);
     }
-    public static MemoryAddress add_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.add_supports_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_supports_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.add_supports_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_supports_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.add_supports_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_supports_type add_supports_type (MemorySegment segment, MemorySession session) {
-        return add_supports_type.ofAddress(add_supports_type$get(segment), session);
+    public static add_supports_type add_supports_type(MemorySegment segment, SegmentScope scope) {
+        return add_supports_type.ofAddress(add_supports_type$get(segment), scope);
     }
     static final FunctionDescriptor can_remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_remove_supports_type$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.can_remove_supports_type$FUNC
+    static final FunctionDescriptor can_remove_supports_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_remove_supports_type_UP$MH = RuntimeHelper.upcallHandle(can_remove_supports_type.class, "apply", _GAppInfoIface.can_remove_supports_type_UP$FUNC);
+    static final FunctionDescriptor can_remove_supports_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_remove_supports_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.can_remove_supports_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_remove_supports_type)(GAppInfo*);
+     * }
+     */
     public interface can_remove_supports_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_remove_supports_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_remove_supports_type.class, fi, _GAppInfoIface.can_remove_supports_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_remove_supports_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.can_remove_supports_type_UP$MH, fi, _GAppInfoIface.can_remove_supports_type$FUNC, scope);
         }
-        static can_remove_supports_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_remove_supports_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.can_remove_supports_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.can_remove_supports_type_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -732,40 +1162,68 @@ public class _GAppInfoIface {
     public static VarHandle can_remove_supports_type$VH() {
         return _GAppInfoIface.can_remove_supports_type$VH;
     }
-    public static MemoryAddress can_remove_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.can_remove_supports_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_remove_supports_type)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment can_remove_supports_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.can_remove_supports_type$VH.get(seg);
     }
-    public static void can_remove_supports_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_remove_supports_type)(GAppInfo*);
+     * }
+     */
+    public static void can_remove_supports_type$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.can_remove_supports_type$VH.set(seg, x);
     }
-    public static MemoryAddress can_remove_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.can_remove_supports_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_remove_supports_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.can_remove_supports_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_remove_supports_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_remove_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.can_remove_supports_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_remove_supports_type can_remove_supports_type (MemorySegment segment, MemorySession session) {
-        return can_remove_supports_type.ofAddress(can_remove_supports_type$get(segment), session);
+    public static can_remove_supports_type can_remove_supports_type(MemorySegment segment, SegmentScope scope) {
+        return can_remove_supports_type.ofAddress(can_remove_supports_type$get(segment), scope);
     }
     static final FunctionDescriptor remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle remove_supports_type$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.remove_supports_type$FUNC
+    static final FunctionDescriptor remove_supports_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle remove_supports_type_UP$MH = RuntimeHelper.upcallHandle(remove_supports_type.class, "apply", _GAppInfoIface.remove_supports_type_UP$FUNC);
+    static final FunctionDescriptor remove_supports_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle remove_supports_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.remove_supports_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*remove_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
     public interface remove_supports_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(remove_supports_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_supports_type.class, fi, _GAppInfoIface.remove_supports_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(remove_supports_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.remove_supports_type_UP$MH, fi, _GAppInfoIface.remove_supports_type$FUNC, scope);
         }
-        static remove_supports_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static remove_supports_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.remove_supports_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.remove_supports_type_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -777,38 +1235,62 @@ public class _GAppInfoIface {
     public static VarHandle remove_supports_type$VH() {
         return _GAppInfoIface.remove_supports_type$VH;
     }
-    public static MemoryAddress remove_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.remove_supports_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*remove_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static MemorySegment remove_supports_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.remove_supports_type$VH.get(seg);
     }
-    public static void remove_supports_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*remove_supports_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static void remove_supports_type$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.remove_supports_type$VH.set(seg, x);
     }
-    public static MemoryAddress remove_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.remove_supports_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_supports_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.remove_supports_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_supports_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.remove_supports_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_supports_type remove_supports_type (MemorySegment segment, MemorySession session) {
-        return remove_supports_type.ofAddress(remove_supports_type$get(segment), session);
+    public static remove_supports_type remove_supports_type(MemorySegment segment, SegmentScope scope) {
+        return remove_supports_type.ofAddress(remove_supports_type$get(segment), scope);
     }
     static final FunctionDescriptor can_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_delete$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.can_delete$FUNC
+    static final FunctionDescriptor can_delete_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_delete_UP$MH = RuntimeHelper.upcallHandle(can_delete.class, "apply", _GAppInfoIface.can_delete_UP$FUNC);
+    static final FunctionDescriptor can_delete_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_delete_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.can_delete_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_delete)(GAppInfo*);
+     * }
+     */
     public interface can_delete {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_delete fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_delete.class, fi, _GAppInfoIface.can_delete$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_delete fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.can_delete_UP$MH, fi, _GAppInfoIface.can_delete$FUNC, scope);
         }
-        static can_delete ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_delete ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.can_delete$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.can_delete_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -820,38 +1302,62 @@ public class _GAppInfoIface {
     public static VarHandle can_delete$VH() {
         return _GAppInfoIface.can_delete$VH;
     }
-    public static MemoryAddress can_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.can_delete$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_delete)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment can_delete$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.can_delete$VH.get(seg);
     }
-    public static void can_delete$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_delete)(GAppInfo*);
+     * }
+     */
+    public static void can_delete$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.can_delete$VH.set(seg, x);
     }
-    public static MemoryAddress can_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.can_delete$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_delete$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.can_delete$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_delete$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_delete$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.can_delete$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_delete can_delete (MemorySegment segment, MemorySession session) {
-        return can_delete.ofAddress(can_delete$get(segment), session);
+    public static can_delete can_delete(MemorySegment segment, SegmentScope scope) {
+        return can_delete.ofAddress(can_delete$get(segment), scope);
     }
     static final FunctionDescriptor do_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle do_delete$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.do_delete$FUNC
+    static final FunctionDescriptor do_delete_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle do_delete_UP$MH = RuntimeHelper.upcallHandle(do_delete.class, "apply", _GAppInfoIface.do_delete_UP$FUNC);
+    static final FunctionDescriptor do_delete_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle do_delete_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.do_delete_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*do_delete)(GAppInfo*);
+     * }
+     */
     public interface do_delete {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(do_delete fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(do_delete.class, fi, _GAppInfoIface.do_delete$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(do_delete fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.do_delete_UP$MH, fi, _GAppInfoIface.do_delete$FUNC, scope);
         }
-        static do_delete ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static do_delete ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GAppInfoIface.do_delete$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GAppInfoIface.do_delete_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -863,38 +1369,62 @@ public class _GAppInfoIface {
     public static VarHandle do_delete$VH() {
         return _GAppInfoIface.do_delete$VH;
     }
-    public static MemoryAddress do_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.do_delete$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*do_delete)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment do_delete$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.do_delete$VH.get(seg);
     }
-    public static void do_delete$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*do_delete)(GAppInfo*);
+     * }
+     */
+    public static void do_delete$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.do_delete$VH.set(seg, x);
     }
-    public static MemoryAddress do_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.do_delete$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment do_delete$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.do_delete$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void do_delete$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void do_delete$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.do_delete$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static do_delete do_delete (MemorySegment segment, MemorySession session) {
-        return do_delete.ofAddress(do_delete$get(segment), session);
+    public static do_delete do_delete(MemorySegment segment, SegmentScope scope) {
+        return do_delete.ofAddress(do_delete$get(segment), scope);
     }
     static final FunctionDescriptor get_commandline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_commandline$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_commandline$FUNC
+    static final FunctionDescriptor get_commandline_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_commandline_UP$MH = RuntimeHelper.upcallHandle(get_commandline.class, "apply", _GAppInfoIface.get_commandline_UP$FUNC);
+    static final FunctionDescriptor get_commandline_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_commandline_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_commandline_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_commandline)(GAppInfo*);
+     * }
+     */
     public interface get_commandline {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_commandline fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_commandline.class, fi, _GAppInfoIface.get_commandline$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_commandline fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_commandline_UP$MH, fi, _GAppInfoIface.get_commandline$FUNC, scope);
         }
-        static get_commandline ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_commandline ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_commandline$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_commandline_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -906,38 +1436,62 @@ public class _GAppInfoIface {
     public static VarHandle get_commandline$VH() {
         return _GAppInfoIface.get_commandline$VH;
     }
-    public static MemoryAddress get_commandline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_commandline$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_commandline)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_commandline$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_commandline$VH.get(seg);
     }
-    public static void get_commandline$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_commandline)(GAppInfo*);
+     * }
+     */
+    public static void get_commandline$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_commandline$VH.set(seg, x);
     }
-    public static MemoryAddress get_commandline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_commandline$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_commandline$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_commandline$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_commandline$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_commandline$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_commandline$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_commandline get_commandline (MemorySegment segment, MemorySession session) {
-        return get_commandline.ofAddress(get_commandline$get(segment), session);
+    public static get_commandline get_commandline(MemorySegment segment, SegmentScope scope) {
+        return get_commandline.ofAddress(get_commandline$get(segment), scope);
     }
     static final FunctionDescriptor get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_display_name$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_display_name$FUNC
+    static final FunctionDescriptor get_display_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_display_name_UP$MH = RuntimeHelper.upcallHandle(get_display_name.class, "apply", _GAppInfoIface.get_display_name_UP$FUNC);
+    static final FunctionDescriptor get_display_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_display_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_display_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_display_name)(GAppInfo*);
+     * }
+     */
     public interface get_display_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_display_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_display_name.class, fi, _GAppInfoIface.get_display_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_display_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_display_name_UP$MH, fi, _GAppInfoIface.get_display_name$FUNC, scope);
         }
-        static get_display_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_display_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_display_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_display_name_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -949,40 +1503,68 @@ public class _GAppInfoIface {
     public static VarHandle get_display_name$VH() {
         return _GAppInfoIface.get_display_name$VH;
     }
-    public static MemoryAddress get_display_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_display_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_display_name)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_display_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_display_name$VH.get(seg);
     }
-    public static void get_display_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_display_name)(GAppInfo*);
+     * }
+     */
+    public static void get_display_name$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_display_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_display_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_display_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_display_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_display_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_display_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_display_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_display_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_display_name get_display_name (MemorySegment segment, MemorySession session) {
-        return get_display_name.ofAddress(get_display_name$get(segment), session);
+    public static get_display_name get_display_name(MemorySegment segment, SegmentScope scope) {
+        return get_display_name.ofAddress(get_display_name$get(segment), scope);
     }
     static final FunctionDescriptor set_as_last_used_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_as_last_used_for_type$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.set_as_last_used_for_type$FUNC
+    static final FunctionDescriptor set_as_last_used_for_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_as_last_used_for_type_UP$MH = RuntimeHelper.upcallHandle(set_as_last_used_for_type.class, "apply", _GAppInfoIface.set_as_last_used_for_type_UP$FUNC);
+    static final FunctionDescriptor set_as_last_used_for_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_as_last_used_for_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.set_as_last_used_for_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_as_last_used_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
     public interface set_as_last_used_for_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(set_as_last_used_for_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_as_last_used_for_type.class, fi, _GAppInfoIface.set_as_last_used_for_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(set_as_last_used_for_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.set_as_last_used_for_type_UP$MH, fi, _GAppInfoIface.set_as_last_used_for_type$FUNC, scope);
         }
-        static set_as_last_used_for_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static set_as_last_used_for_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.set_as_last_used_for_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.set_as_last_used_for_type_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -994,38 +1576,62 @@ public class _GAppInfoIface {
     public static VarHandle set_as_last_used_for_type$VH() {
         return _GAppInfoIface.set_as_last_used_for_type$VH;
     }
-    public static MemoryAddress set_as_last_used_for_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_last_used_for_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_as_last_used_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static MemorySegment set_as_last_used_for_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_last_used_for_type$VH.get(seg);
     }
-    public static void set_as_last_used_for_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_as_last_used_for_type)(GAppInfo*,char*,GError**);
+     * }
+     */
+    public static void set_as_last_used_for_type$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.set_as_last_used_for_type$VH.set(seg, x);
     }
-    public static MemoryAddress set_as_last_used_for_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.set_as_last_used_for_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_as_last_used_for_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.set_as_last_used_for_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_as_last_used_for_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_as_last_used_for_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.set_as_last_used_for_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_as_last_used_for_type set_as_last_used_for_type (MemorySegment segment, MemorySession session) {
-        return set_as_last_used_for_type.ofAddress(set_as_last_used_for_type$get(segment), session);
+    public static set_as_last_used_for_type set_as_last_used_for_type(MemorySegment segment, SegmentScope scope) {
+        return set_as_last_used_for_type.ofAddress(set_as_last_used_for_type$get(segment), scope);
     }
     static final FunctionDescriptor get_supported_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_supported_types$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.get_supported_types$FUNC
+    static final FunctionDescriptor get_supported_types_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_supported_types_UP$MH = RuntimeHelper.upcallHandle(get_supported_types.class, "apply", _GAppInfoIface.get_supported_types_UP$FUNC);
+    static final FunctionDescriptor get_supported_types_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_supported_types_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.get_supported_types_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char** (*get_supported_types)(GAppInfo*);
+     * }
+     */
     public interface get_supported_types {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_supported_types fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_supported_types.class, fi, _GAppInfoIface.get_supported_types$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_supported_types fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.get_supported_types_UP$MH, fi, _GAppInfoIface.get_supported_types$FUNC, scope);
         }
-        static get_supported_types ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_supported_types ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GAppInfoIface.get_supported_types$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_supported_types_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1037,20 +1643,32 @@ public class _GAppInfoIface {
     public static VarHandle get_supported_types$VH() {
         return _GAppInfoIface.get_supported_types$VH;
     }
-    public static MemoryAddress get_supported_types$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_supported_types$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char** (*get_supported_types)(GAppInfo*);
+     * }
+     */
+    public static MemorySegment get_supported_types$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_supported_types$VH.get(seg);
     }
-    public static void get_supported_types$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char** (*get_supported_types)(GAppInfo*);
+     * }
+     */
+    public static void get_supported_types$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.get_supported_types$VH.set(seg, x);
     }
-    public static MemoryAddress get_supported_types$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.get_supported_types$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_supported_types$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.get_supported_types$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_supported_types$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_supported_types$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.get_supported_types$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_supported_types get_supported_types (MemorySegment segment, MemorySession session) {
-        return get_supported_types.ofAddress(get_supported_types$get(segment), session);
+    public static get_supported_types get_supported_types(MemorySegment segment, SegmentScope scope) {
+        return get_supported_types.ofAddress(get_supported_types$get(segment), scope);
     }
     static final FunctionDescriptor launch_uris_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1060,20 +1678,42 @@ public class _GAppInfoIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle launch_uris_async$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.launch_uris_async$FUNC
+    static final FunctionDescriptor launch_uris_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle launch_uris_async_UP$MH = RuntimeHelper.upcallHandle(launch_uris_async.class, "apply", _GAppInfoIface.launch_uris_async_UP$FUNC);
+    static final FunctionDescriptor launch_uris_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle launch_uris_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.launch_uris_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*launch_uris_async)(GAppInfo*,GList*,GAppLaunchContext*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface launch_uris_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(launch_uris_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(launch_uris_async.class, fi, _GAppInfoIface.launch_uris_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(launch_uris_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.launch_uris_async_UP$MH, fi, _GAppInfoIface.launch_uris_async$FUNC, scope);
         }
-        static launch_uris_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static launch_uris_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GAppInfoIface.launch_uris_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GAppInfoIface.launch_uris_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1085,40 +1725,68 @@ public class _GAppInfoIface {
     public static VarHandle launch_uris_async$VH() {
         return _GAppInfoIface.launch_uris_async$VH;
     }
-    public static MemoryAddress launch_uris_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*launch_uris_async)(GAppInfo*,GList*,GAppLaunchContext*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment launch_uris_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris_async$VH.get(seg);
     }
-    public static void launch_uris_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*launch_uris_async)(GAppInfo*,GList*,GAppLaunchContext*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void launch_uris_async$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.launch_uris_async$VH.set(seg, x);
     }
-    public static MemoryAddress launch_uris_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment launch_uris_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void launch_uris_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void launch_uris_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.launch_uris_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static launch_uris_async launch_uris_async (MemorySegment segment, MemorySession session) {
-        return launch_uris_async.ofAddress(launch_uris_async$get(segment), session);
+    public static launch_uris_async launch_uris_async(MemorySegment segment, SegmentScope scope) {
+        return launch_uris_async.ofAddress(launch_uris_async$get(segment), scope);
     }
     static final FunctionDescriptor launch_uris_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle launch_uris_finish$MH = RuntimeHelper.downcallHandle(
-        _GAppInfoIface.launch_uris_finish$FUNC
+    static final FunctionDescriptor launch_uris_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle launch_uris_finish_UP$MH = RuntimeHelper.upcallHandle(launch_uris_finish.class, "apply", _GAppInfoIface.launch_uris_finish_UP$FUNC);
+    static final FunctionDescriptor launch_uris_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle launch_uris_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GAppInfoIface.launch_uris_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*launch_uris_finish)(GAppInfo*,GAsyncResult*,GError**);
+     * }
+     */
     public interface launch_uris_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(launch_uris_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(launch_uris_finish.class, fi, _GAppInfoIface.launch_uris_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(launch_uris_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GAppInfoIface.launch_uris_finish_UP$MH, fi, _GAppInfoIface.launch_uris_finish$FUNC, scope);
         }
-        static launch_uris_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static launch_uris_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GAppInfoIface.launch_uris_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GAppInfoIface.launch_uris_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1130,27 +1798,39 @@ public class _GAppInfoIface {
     public static VarHandle launch_uris_finish$VH() {
         return _GAppInfoIface.launch_uris_finish$VH;
     }
-    public static MemoryAddress launch_uris_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*launch_uris_finish)(GAppInfo*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment launch_uris_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris_finish$VH.get(seg);
     }
-    public static void launch_uris_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*launch_uris_finish)(GAppInfo*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void launch_uris_finish$set(MemorySegment seg, MemorySegment x) {
         _GAppInfoIface.launch_uris_finish$VH.set(seg, x);
     }
-    public static MemoryAddress launch_uris_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GAppInfoIface.launch_uris_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment launch_uris_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GAppInfoIface.launch_uris_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void launch_uris_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void launch_uris_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GAppInfoIface.launch_uris_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static launch_uris_finish launch_uris_finish (MemorySegment segment, MemorySession session) {
-        return launch_uris_finish.ofAddress(launch_uris_finish$get(segment), session);
+    public static launch_uris_finish launch_uris_finish(MemorySegment segment, SegmentScope scope) {
+        return launch_uris_finish.ofAddress(launch_uris_finish$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,58 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$800 {
+final class constants$800 {
 
-    static final FunctionDescriptor g_settings_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$800() {}
+    static final FunctionDescriptor g_test_dbus_unset$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_test_dbus_unset$MH = RuntimeHelper.downcallHandle(
+        "g_test_dbus_unset",
+        constants$800.g_test_dbus_unset$FUNC
+    );
+    static final FunctionDescriptor g_themed_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_themed_icon_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_themed_icon_get_type",
+        constants$800.g_themed_icon_get_type$FUNC
+    );
+    static final FunctionDescriptor g_themed_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_settings_get",
-        constants$800.g_settings_get$FUNC
+    static final MethodHandle g_themed_icon_new$MH = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new",
+        constants$800.g_themed_icon_new$FUNC
     );
-    static final FunctionDescriptor g_settings_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_themed_icon_new_with_default_fallbacks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_reset$MH = RuntimeHelper.downcallHandle(
-        "g_settings_reset",
-        constants$800.g_settings_reset$FUNC
+    static final MethodHandle g_themed_icon_new_with_default_fallbacks$MH = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new_with_default_fallbacks",
+        constants$800.g_themed_icon_new_with_default_fallbacks$FUNC
     );
-    static final FunctionDescriptor g_settings_get_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_get_int$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_int",
-        constants$800.g_settings_get_int$FUNC
-    );
-    static final FunctionDescriptor g_settings_set_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_themed_icon_new_from_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_settings_set_int$MH = RuntimeHelper.downcallHandle(
-        "g_settings_set_int",
-        constants$800.g_settings_set_int$FUNC
+    static final MethodHandle g_themed_icon_new_from_names$MH = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new_from_names",
+        constants$800.g_themed_icon_new_from_names$FUNC
     );
-    static final FunctionDescriptor g_settings_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_themed_icon_prepend_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_int64",
-        constants$800.g_settings_get_int64$FUNC
-    );
-    static final FunctionDescriptor g_settings_set_int64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_settings_set_int64$MH = RuntimeHelper.downcallHandle(
-        "g_settings_set_int64",
-        constants$800.g_settings_set_int64$FUNC
+    static final MethodHandle g_themed_icon_prepend_name$MH = RuntimeHelper.downcallHandle(
+        "g_themed_icon_prepend_name",
+        constants$800.g_themed_icon_prepend_name$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * char* (*GtkCalendarDetailFunc)(struct _GtkCalendar* calendar,unsigned int year,unsigned int month,unsigned int day,void* user_data);
+ * }
+ */
 public interface GtkCalendarDetailFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress calendar, int year, int month, int day, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkCalendarDetailFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkCalendarDetailFunc.class, fi, constants$1705.GtkCalendarDetailFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment calendar, int year, int month, int day, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkCalendarDetailFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1514.GtkCalendarDetailFunc_UP$MH, fi, constants$1514.GtkCalendarDetailFunc$FUNC, scope);
     }
-    static GtkCalendarDetailFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _calendar, int _year, int _month, int _day, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkCalendarDetailFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _calendar, int _year, int _month, int _day, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$1705.GtkCalendarDetailFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_calendar, _year, _month, _day, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$1514.GtkCalendarDetailFunc_DOWN$MH.invokeExact(symbol, _calendar, _year, _month, _day, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$394 {
+final class constants$394 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMarkupParseContext$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$394() {}
+    static final FunctionDescriptor g_type_name_from_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMarkupParseContext$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMarkupParseContext",
-        constants$394.glib_listautoptr_cleanup_GMarkupParseContext$FUNC
+    static final MethodHandle g_type_name_from_class$MH = RuntimeHelper.downcallHandle(
+        "g_type_name_from_class",
+        constants$394.g_type_name_from_class$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMarkupParseContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GValueTransform$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMarkupParseContext$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMarkupParseContext",
-        constants$394.glib_slistautoptr_cleanup_GMarkupParseContext$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMarkupParseContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GValueTransform_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMarkupParseContext$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMarkupParseContext",
-        constants$394.glib_queueautoptr_cleanup_GMarkupParseContext$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GNode$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GValueTransform_UP$MH = RuntimeHelper.upcallHandle(GValueTransform.class, "apply", constants$394.GValueTransform_UP$FUNC);
+    static final FunctionDescriptor GValueTransform_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GNode$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GNode",
-        constants$394.glib_autoptr_clear_GNode$FUNC
+    static final MethodHandle GValueTransform_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$394.GValueTransform_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GNode$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_init$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_value_init$MH = RuntimeHelper.downcallHandle(
+        "g_value_init",
+        constants$394.g_value_init$FUNC
+    );
+    static final FunctionDescriptor g_value_copy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GNode$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GNode",
-        constants$394.glib_autoptr_cleanup_GNode$FUNC
+    static final MethodHandle g_value_copy$MH = RuntimeHelper.downcallHandle(
+        "g_value_copy",
+        constants$394.g_value_copy$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GNode$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_reset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GNode$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GNode",
-        constants$394.glib_listautoptr_cleanup_GNode$FUNC
+    static final MethodHandle g_value_reset$MH = RuntimeHelper.downcallHandle(
+        "g_value_reset",
+        constants$394.g_value_reset$FUNC
     );
 }
 

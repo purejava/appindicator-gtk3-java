@@ -7,53 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1031 {
+final class constants$1031 {
 
-    static final FunctionDescriptor hb_buffer_set_script$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_script$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_script",
-        constants$1031.hb_buffer_set_script$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1031() {}
+    static final FunctionDescriptor cairo_device_observer_fill_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_script$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_script",
-        constants$1031.hb_buffer_get_script$FUNC
+    static final MethodHandle cairo_device_observer_fill_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_fill_elapsed",
+        constants$1031.cairo_device_observer_fill_elapsed$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_language$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_device_observer_stroke_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_set_language$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_language",
-        constants$1031.hb_buffer_set_language$FUNC
+    static final MethodHandle cairo_device_observer_stroke_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_stroke_elapsed",
+        constants$1031.cairo_device_observer_stroke_elapsed$FUNC
     );
-    static final FunctionDescriptor hb_buffer_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_device_observer_glyphs_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_language$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_language",
-        constants$1031.hb_buffer_get_language$FUNC
+    static final MethodHandle cairo_device_observer_glyphs_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_glyphs_elapsed",
+        constants$1031.cairo_device_observer_glyphs_elapsed$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_segment_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_surface_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_set_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_segment_properties",
-        constants$1031.hb_buffer_set_segment_properties$FUNC
+    static final MethodHandle cairo_surface_reference$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_reference",
+        constants$1031.cairo_surface_reference$FUNC
     );
-    static final FunctionDescriptor hb_buffer_get_segment_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_surface_finish$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_segment_properties",
-        constants$1031.hb_buffer_get_segment_properties$FUNC
+    static final MethodHandle cairo_surface_finish$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_finish",
+        constants$1031.cairo_surface_finish$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_destroy$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_destroy",
+        constants$1031.cairo_surface_destroy$FUNC
     );
 }
 

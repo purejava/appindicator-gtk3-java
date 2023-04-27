@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GUriParamsIter extends _GUriParamsIter {
+/**
+ * {@snippet :
+ * typedef struct _GUriParamsIter GUriParamsIter;
+ * }
+ */
+public final class GUriParamsIter extends _GUriParamsIter {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GUriParamsIter() {}
 }
 
 

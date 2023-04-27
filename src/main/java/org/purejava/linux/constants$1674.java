@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1674 {
+final class constants$1674 {
 
-    static final FunctionDescriptor gtk_combo_box_set_column_span_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1674() {}
+    static final FunctionDescriptor gtk_list_box_row_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_list_box_row_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_new",
+        constants$1674.gtk_list_box_row_new$FUNC
     );
-    static final MethodHandle gtk_combo_box_set_column_span_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_column_span_column",
-        constants$1674.gtk_combo_box_set_column_span_column$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_get_add_tearoffs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_row_get_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_get_add_tearoffs$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_add_tearoffs",
-        constants$1674.gtk_combo_box_get_add_tearoffs$FUNC
+    static final MethodHandle gtk_list_box_row_get_header$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_get_header",
+        constants$1674.gtk_list_box_row_get_header$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_set_add_tearoffs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_set_add_tearoffs$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_add_tearoffs",
-        constants$1674.gtk_combo_box_set_add_tearoffs$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_title",
-        constants$1674.gtk_combo_box_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_set_title$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_row_set_header$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_title",
-        constants$1674.gtk_combo_box_set_title$FUNC
+    static final MethodHandle gtk_list_box_row_set_header$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_set_header",
+        constants$1674.gtk_list_box_row_set_header$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_box_row_get_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_focus_on_click",
-        constants$1674.gtk_combo_box_get_focus_on_click$FUNC
+    static final MethodHandle gtk_list_box_row_get_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_get_index",
+        constants$1674.gtk_list_box_row_get_index$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_row_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_row_changed$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_changed",
+        constants$1674.gtk_list_box_row_changed$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_row_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_row_is_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_is_selected",
+        constants$1674.gtk_list_box_row_is_selected$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTlsInteraction extends _GTlsInteraction {
+/**
+ * {@snippet :
+ * typedef struct _GTlsInteraction GTlsInteraction;
+ * }
+ */
+public final class GTlsInteraction extends _GTlsInteraction {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTlsInteraction() {}
 }
 
 

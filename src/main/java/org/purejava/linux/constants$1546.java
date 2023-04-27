@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1546 {
+final class constants$1546 {
 
-    static final FunctionDescriptor gtk_app_chooser_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_app_chooser_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_get_type",
-        constants$1546.gtk_app_chooser_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1546() {}
+    static final FunctionDescriptor gtk_color_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_dialog_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_new",
-        constants$1546.gtk_app_chooser_dialog_new$FUNC
+    static final MethodHandle gtk_color_button_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_get_title",
+        constants$1546.gtk_color_button_get_title$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_dialog_new_for_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_color_button_new_with_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_dialog_new_for_content_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_new_for_content_type",
-        constants$1546.gtk_app_chooser_dialog_new_for_content_type$FUNC
+    static final MethodHandle gtk_color_button_new_with_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_new_with_color",
+        constants$1546.gtk_color_button_new_with_color$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_dialog_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_dialog_get_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_get_widget",
-        constants$1546.gtk_app_chooser_dialog_get_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_dialog_set_heading$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_color_button_set_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_dialog_set_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_set_heading",
-        constants$1546.gtk_app_chooser_dialog_set_heading$FUNC
+    static final MethodHandle gtk_color_button_set_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_set_color",
+        constants$1546.gtk_color_button_set_color$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_dialog_get_heading$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_color_button_get_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_dialog_get_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_dialog_get_heading",
-        constants$1546.gtk_app_chooser_dialog_get_heading$FUNC
+    static final MethodHandle gtk_color_button_get_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_get_color",
+        constants$1546.gtk_color_button_get_color$FUNC
+    );
+    static final FunctionDescriptor gtk_color_button_set_alpha$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle gtk_color_button_set_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_set_alpha",
+        constants$1546.gtk_color_button_set_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_color_button_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_color_button_get_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_button_get_alpha",
+        constants$1546.gtk_color_button_get_alpha$FUNC
     );
 }
 

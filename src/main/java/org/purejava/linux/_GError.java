@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GError {
+ *     GQuark domain;
+ *     gint code;
+ *     gchar* message;
+ * };
+ * }
+ */
 public class _GError {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("domain"),
         Constants$root.C_INT$LAYOUT.withName("code"),
         Constants$root.C_POINTER$LAYOUT.withName("message")
@@ -21,10 +30,22 @@ public class _GError {
     public static VarHandle domain$VH() {
         return _GError.domain$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GQuark domain;
+     * }
+     */
     public static int domain$get(MemorySegment seg) {
         return (int)_GError.domain$VH.get(seg);
     }
-    public static void domain$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GQuark domain;
+     * }
+     */
+    public static void domain$set(MemorySegment seg, int x) {
         _GError.domain$VH.set(seg, x);
     }
     public static int domain$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class _GError {
     public static VarHandle code$VH() {
         return _GError.code$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint code;
+     * }
+     */
     public static int code$get(MemorySegment seg) {
         return (int)_GError.code$VH.get(seg);
     }
-    public static void code$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint code;
+     * }
+     */
+    public static void code$set(MemorySegment seg, int x) {
         _GError.code$VH.set(seg, x);
     }
     public static int code$get(MemorySegment seg, long index) {
@@ -53,24 +86,36 @@ public class _GError {
     public static VarHandle message$VH() {
         return _GError.message$VH;
     }
-    public static MemoryAddress message$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GError.message$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* message;
+     * }
+     */
+    public static MemorySegment message$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GError.message$VH.get(seg);
     }
-    public static void message$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* message;
+     * }
+     */
+    public static void message$set(MemorySegment seg, MemorySegment x) {
         _GError.message$VH.set(seg, x);
     }
-    public static MemoryAddress message$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GError.message$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment message$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GError.message$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void message$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void message$set(MemorySegment seg, long index, MemorySegment x) {
         _GError.message$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

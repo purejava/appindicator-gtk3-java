@@ -7,50 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1840 {
+final class constants$1840 {
 
-    static final FunctionDescriptor gtk_icon_theme_add_builtin_icon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1840() {}
+    static final FunctionDescriptor gtk_text_view_get_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_buffer$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_buffer",
+        constants$1840.gtk_text_view_get_buffer$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_scroll_to_iter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_icon_theme_add_builtin_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_add_builtin_icon",
-        constants$1840.gtk_icon_theme_add_builtin_icon$FUNC
+    static final MethodHandle gtk_text_view_scroll_to_iter$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_scroll_to_iter",
+        constants$1840.gtk_text_view_scroll_to_iter$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_icon_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_type",
-        constants$1840.gtk_icon_info_get_type$FUNC
+    static final FunctionDescriptor gtk_text_view_scroll_to_mark$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final FunctionDescriptor gtk_icon_info_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle gtk_text_view_scroll_to_mark$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_scroll_to_mark",
+        constants$1840.gtk_text_view_scroll_to_mark$FUNC
     );
-    static final MethodHandle gtk_icon_info_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_copy",
-        constants$1840.gtk_icon_info_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_free",
-        constants$1840.gtk_icon_info_free$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_new_for_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_scroll_mark_onscreen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_new_for_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_new_for_pixbuf",
-        constants$1840.gtk_icon_info_new_for_pixbuf$FUNC
+    static final MethodHandle gtk_text_view_scroll_mark_onscreen$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_scroll_mark_onscreen",
+        constants$1840.gtk_text_view_scroll_mark_onscreen$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_get_base_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_move_mark_onscreen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_get_base_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_base_size",
-        constants$1840.gtk_icon_info_get_base_size$FUNC
+    static final MethodHandle gtk_text_view_move_mark_onscreen$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_move_mark_onscreen",
+        constants$1840.gtk_text_view_move_mark_onscreen$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_place_cursor_onscreen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_place_cursor_onscreen$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_place_cursor_onscreen",
+        constants$1840.gtk_text_view_place_cursor_onscreen$FUNC
     );
 }
 

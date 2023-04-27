@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRecentManagerPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkRecentManagerPrivate GtkRecentManagerPrivate;
+ * }
+ */
+public final class GtkRecentManagerPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRecentManagerPrivate() {}
 }
 
 

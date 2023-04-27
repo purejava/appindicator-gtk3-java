@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRadioAction extends _GtkRadioAction {
+/**
+ * {@snippet :
+ * typedef struct _GtkRadioAction GtkRadioAction;
+ * }
+ */
+public final class GtkRadioAction extends _GtkRadioAction {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRadioAction() {}
 }
 
 

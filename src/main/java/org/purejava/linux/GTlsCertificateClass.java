@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTlsCertificateClass extends _GTlsCertificateClass {
+/**
+ * {@snippet :
+ * typedef struct _GTlsCertificateClass GTlsCertificateClass;
+ * }
+ */
+public final class GTlsCertificateClass extends _GTlsCertificateClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTlsCertificateClass() {}
 }
 
 

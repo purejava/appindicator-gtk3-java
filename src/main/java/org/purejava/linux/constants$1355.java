@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1355 {
+final class constants$1355 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GdkDeviceManager$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1355() {}
+    static final FunctionDescriptor gtk_adjustment_configure$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_adjustment_configure$MH = RuntimeHelper.downcallHandle(
+        "gtk_adjustment_configure",
+        constants$1355.gtk_adjustment_configure$FUNC
+    );
+    static final FunctionDescriptor gtk_adjustment_get_minimum_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GdkDeviceManager$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkDeviceManager",
-        constants$1355.glib_autoptr_clear_GdkDeviceManager$FUNC
+    static final MethodHandle gtk_adjustment_get_minimum_increment$MH = RuntimeHelper.downcallHandle(
+        "gtk_adjustment_get_minimum_increment",
+        constants$1355.gtk_adjustment_get_minimum_increment$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkDeviceManager$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_app_chooser_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_get_type",
+        constants$1355.gtk_app_chooser_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_app_chooser_get_app_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GdkDeviceManager$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkDeviceManager",
-        constants$1355.glib_autoptr_cleanup_GdkDeviceManager$FUNC
+    static final MethodHandle gtk_app_chooser_get_app_info$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_get_app_info",
+        constants$1355.gtk_app_chooser_get_app_info$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkDeviceManager$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_get_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkDeviceManager$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkDeviceManager",
-        constants$1355.glib_listautoptr_cleanup_GdkDeviceManager$FUNC
+    static final MethodHandle gtk_app_chooser_get_content_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_get_content_type",
+        constants$1355.gtk_app_chooser_get_content_type$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkDeviceManager$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_refresh$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkDeviceManager$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkDeviceManager",
-        constants$1355.glib_slistautoptr_cleanup_GdkDeviceManager$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkDeviceManager$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkDeviceManager$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkDeviceManager",
-        constants$1355.glib_queueautoptr_cleanup_GdkDeviceManager$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GdkDisplay$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GdkDisplay$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkDisplay",
-        constants$1355.glib_autoptr_clear_GdkDisplay$FUNC
+    static final MethodHandle gtk_app_chooser_refresh$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_refresh",
+        constants$1355.gtk_app_chooser_refresh$FUNC
     );
 }
 

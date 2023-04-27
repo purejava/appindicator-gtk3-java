@@ -7,50 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1377 {
+final class constants$1377 {
 
-    static final FunctionDescriptor atk_object_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1377() {}
+    static final FunctionDescriptor gtk_cell_renderer_is_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_peek_parent",
-        constants$1377.atk_object_peek_parent$FUNC
+    static final MethodHandle gtk_cell_renderer_is_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_is_activatable",
+        constants$1377.gtk_cell_renderer_is_activatable$FUNC
     );
-    static final FunctionDescriptor atk_object_get_n_accessible_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_n_accessible_children$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_n_accessible_children",
-        constants$1377.atk_object_get_n_accessible_children$FUNC
-    );
-    static final FunctionDescriptor atk_object_ref_accessible_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_cell_renderer_stop_editing$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_object_ref_accessible_child$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_accessible_child",
-        constants$1377.atk_object_ref_accessible_child$FUNC
+    static final MethodHandle gtk_cell_renderer_stop_editing$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_stop_editing",
+        constants$1377.gtk_cell_renderer_stop_editing$FUNC
     );
-    static final FunctionDescriptor atk_object_ref_relation_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor _gtk_cell_renderer_calc_offset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_ref_relation_set$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_relation_set",
-        constants$1377.atk_object_ref_relation_set$FUNC
+    static final MethodHandle _gtk_cell_renderer_calc_offset$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_renderer_calc_offset",
+        constants$1377._gtk_cell_renderer_calc_offset$FUNC
     );
-    static final FunctionDescriptor atk_object_get_role$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_renderer_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_get_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_state",
+        constants$1377.gtk_cell_renderer_get_state$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_class_set_accessible_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_class_set_accessible_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_class_set_accessible_type",
+        constants$1377.gtk_cell_renderer_class_set_accessible_type$FUNC
+    );
+    static final FunctionDescriptor _gtk_cell_renderer_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_get_role$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_role",
-        constants$1377.atk_object_get_role$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_layer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_layer$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_layer",
-        constants$1377.atk_object_get_layer$FUNC
+    static final MethodHandle _gtk_cell_renderer_get_accessible_type$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_renderer_get_accessible_type",
+        constants$1377._gtk_cell_renderer_get_accessible_type$FUNC
     );
 }
 

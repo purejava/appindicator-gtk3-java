@@ -7,55 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1228 {
+final class constants$1228 {
 
-    static final FunctionDescriptor gdk_event_get_scroll_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1228() {}
+    static final FunctionDescriptor atk_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_range_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_range_get_type",
+        constants$1228.atk_range_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_range_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_scroll_direction$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_direction",
-        constants$1228.gdk_event_get_scroll_direction$FUNC
+    static final MethodHandle atk_range_copy$MH = RuntimeHelper.downcallHandle(
+        "atk_range_copy",
+        constants$1228.atk_range_copy$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_scroll_deltas$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_range_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_scroll_deltas$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_deltas",
-        constants$1228.gdk_event_get_scroll_deltas$FUNC
+    static final MethodHandle atk_range_free$MH = RuntimeHelper.downcallHandle(
+        "atk_range_free",
+        constants$1228.atk_range_free$FUNC
     );
-    static final FunctionDescriptor gdk_event_is_scroll_stop_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_range_get_lower_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_is_scroll_stop_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_is_scroll_stop_event",
-        constants$1228.gdk_event_is_scroll_stop_event$FUNC
+    static final MethodHandle atk_range_get_lower_limit$MH = RuntimeHelper.downcallHandle(
+        "atk_range_get_lower_limit",
+        constants$1228.atk_range_get_lower_limit$FUNC
     );
-    static final FunctionDescriptor gdk_event_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_range_get_upper_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_axis$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_axis",
-        constants$1228.gdk_event_get_axis$FUNC
+    static final MethodHandle atk_range_get_upper_limit$MH = RuntimeHelper.downcallHandle(
+        "atk_range_get_upper_limit",
+        constants$1228.atk_range_get_upper_limit$FUNC
     );
-    static final FunctionDescriptor gdk_event_set_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_range_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_set_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_set_device",
-        constants$1228.gdk_event_set_device$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_device",
-        constants$1228.gdk_event_get_device$FUNC
+    static final MethodHandle atk_range_get_description$MH = RuntimeHelper.downcallHandle(
+        "atk_range_get_description",
+        constants$1228.atk_range_get_description$FUNC
     );
 }
 

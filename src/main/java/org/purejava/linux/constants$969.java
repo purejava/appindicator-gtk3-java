@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$969 {
+final class constants$969 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GSocketService$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$969() {}
+    static final FunctionDescriptor pango_layout_line_get_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSocketService",
-        constants$969.glib_autoptr_cleanup_GSocketService$FUNC
+    static final MethodHandle pango_layout_line_get_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_extents",
+        constants$969.pango_layout_line_get_extents$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSocketService$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_get_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSocketService",
-        constants$969.glib_listautoptr_cleanup_GSocketService$FUNC
+    static final MethodHandle pango_layout_line_get_height$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_height",
+        constants$969.pango_layout_line_get_height$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSocketService$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_get_pixel_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSocketService",
-        constants$969.glib_slistautoptr_cleanup_GSocketService$FUNC
+    static final MethodHandle pango_layout_line_get_pixel_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_pixel_extents",
+        constants$969.pango_layout_line_get_pixel_extents$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSocketService$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_layout_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_type",
+        constants$969.pango_layout_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSocketService",
-        constants$969.glib_queueautoptr_cleanup_GSocketService$FUNC
+    static final MethodHandle pango_layout_get_iter$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_iter",
+        constants$969.pango_layout_get_iter$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSubprocess$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSubprocess$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSubprocess",
-        constants$969.glib_autoptr_clear_GSubprocess$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSubprocess$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GSubprocess$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSubprocess",
-        constants$969.glib_autoptr_cleanup_GSubprocess$FUNC
+    static final MethodHandle pango_layout_iter_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_copy",
+        constants$969.pango_layout_iter_copy$FUNC
     );
 }
 

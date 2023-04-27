@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GObjectSetPropertyFunc)(struct _GObject* object,unsigned int property_id,struct _GValue* value,struct _GParamSpec* pspec);
+ * }
+ */
 public interface GObjectSetPropertyFunc {
 
-    void apply(java.lang.foreign.MemoryAddress object, int property_id, java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress pspec);
-    static MemorySegment allocate(GObjectSetPropertyFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GObjectSetPropertyFunc.class, fi, constants$469.GObjectSetPropertyFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment object, int property_id, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment pspec);
+    static MemorySegment allocate(GObjectSetPropertyFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$430.GObjectSetPropertyFunc_UP$MH, fi, constants$430.GObjectSetPropertyFunc$FUNC, scope);
     }
-    static GObjectSetPropertyFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _object, int _property_id, java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _pspec) -> {
+    static GObjectSetPropertyFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _object, int _property_id, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _pspec) -> {
             try {
-                constants$470.GObjectSetPropertyFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_object, _property_id, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_pspec);
+                constants$430.GObjectSetPropertyFunc_DOWN$MH.invokeExact(symbol, _object, _property_id, _value, _pspec);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

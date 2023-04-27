@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1544 {
+final class constants$1544 {
 
-    static final FunctionDescriptor gtk_adjustment_get_step_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1544() {}
+    static final FunctionDescriptor gtk_clipboard_wait_is_text_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_step_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_step_increment",
-        constants$1544.gtk_adjustment_get_step_increment$FUNC
+    static final MethodHandle gtk_clipboard_wait_is_text_available$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_is_text_available",
+        constants$1544.gtk_clipboard_wait_is_text_available$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_step_increment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_clipboard_wait_is_rich_text_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_step_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_step_increment",
-        constants$1544.gtk_adjustment_set_step_increment$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_page_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_page_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_page_increment",
-        constants$1544.gtk_adjustment_get_page_increment$FUNC
+    static final MethodHandle gtk_clipboard_wait_is_rich_text_available$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_is_rich_text_available",
+        constants$1544.gtk_clipboard_wait_is_rich_text_available$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_page_increment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_page_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_page_increment",
-        constants$1544.gtk_adjustment_set_page_increment$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_page_size$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_clipboard_wait_is_image_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_get_page_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_page_size",
-        constants$1544.gtk_adjustment_get_page_size$FUNC
+    static final MethodHandle gtk_clipboard_wait_is_image_available$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_is_image_available",
+        constants$1544.gtk_clipboard_wait_is_image_available$FUNC
     );
-    static final FunctionDescriptor gtk_adjustment_set_page_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_clipboard_wait_is_uris_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_wait_is_uris_available$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_is_uris_available",
+        constants$1544.gtk_clipboard_wait_is_uris_available$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_wait_is_target_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_adjustment_set_page_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_page_size",
-        constants$1544.gtk_adjustment_set_page_size$FUNC
+    static final MethodHandle gtk_clipboard_wait_is_target_available$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_wait_is_target_available",
+        constants$1544.gtk_clipboard_wait_is_target_available$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_set_can_store$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_set_can_store$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_set_can_store",
+        constants$1544.gtk_clipboard_set_can_store$FUNC
     );
 }
 

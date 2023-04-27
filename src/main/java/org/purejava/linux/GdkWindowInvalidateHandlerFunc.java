@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GdkWindowInvalidateHandlerFunc)(struct _GdkWindow* window,struct _cairo_region* region);
+ * }
+ */
 public interface GdkWindowInvalidateHandlerFunc {
 
-    void apply(java.lang.foreign.MemoryAddress window, java.lang.foreign.MemoryAddress region);
-    static MemorySegment allocate(GdkWindowInvalidateHandlerFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GdkWindowInvalidateHandlerFunc.class, fi, constants$1245.GdkWindowInvalidateHandlerFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GdkWindowInvalidateHandlerFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1086.GdkWindowInvalidateHandlerFunc_UP$MH, fi, constants$1086.GdkWindowInvalidateHandlerFunc$FUNC, scope);
     }
-    static GdkWindowInvalidateHandlerFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _window, java.lang.foreign.MemoryAddress _region) -> {
+    static GdkWindowInvalidateHandlerFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1245.GdkWindowInvalidateHandlerFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_window, (java.lang.foreign.Addressable)_region);
+                constants$1086.GdkWindowInvalidateHandlerFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

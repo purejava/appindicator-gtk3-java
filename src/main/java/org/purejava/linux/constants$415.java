@@ -7,49 +7,93 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$415 {
+final class constants$415 {
 
-    static final FunctionDescriptor glib_auto_cleanup_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$415() {}
+    static final FunctionDescriptor GSignalAccumulator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_auto_cleanup_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_auto_cleanup_GVariantBuilder",
-        constants$415.glib_auto_cleanup_GVariantBuilder$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GVariantIter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSignalAccumulator_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GVariantIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GVariantIter",
-        constants$415.glib_autoptr_clear_GVariantIter$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GVariantIter$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GSignalAccumulator_UP$MH = RuntimeHelper.upcallHandle(GSignalAccumulator.class, "apply", constants$415.GSignalAccumulator_UP$FUNC);
+    static final FunctionDescriptor GSignalAccumulator_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GVariantIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GVariantIter",
-        constants$415.glib_autoptr_cleanup_GVariantIter$FUNC
+    static final MethodHandle GSignalAccumulator_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$415.GSignalAccumulator_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GVariantIter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_newv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GVariantIter$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GVariantIter",
-        constants$415.glib_listautoptr_cleanup_GVariantIter$FUNC
+    static final MethodHandle g_signal_newv$MH = RuntimeHelper.downcallHandle(
+        "g_signal_newv",
+        constants$415.g_signal_newv$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GVariantIter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GVariantIter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GVariantIter",
-        constants$415.glib_slistautoptr_cleanup_GVariantIter$FUNC
+    static final MethodHandle g_signal_new_valist$MH = RuntimeHelper.downcallHandle(
+        "g_signal_new_valist",
+        constants$415.g_signal_new_valist$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVariantIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_signal_new$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVariantIter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVariantIter",
-        constants$415.glib_queueautoptr_cleanup_GVariantIter$FUNC
+    static final MethodHandle g_signal_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_new",
+        constants$415.g_signal_new$FUNC
+    );
+    static final FunctionDescriptor g_signal_new_class_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_signal_new_class_handler$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_new_class_handler",
+        constants$415.g_signal_new_class_handler$FUNC
     );
 }
 

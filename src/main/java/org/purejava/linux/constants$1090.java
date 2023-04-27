@@ -7,73 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1090 {
+final class constants$1090 {
 
-    static final FunctionDescriptor pango_reorder_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_reorder_items$MH = RuntimeHelper.downcallHandle(
-        "pango_reorder_items",
-        constants$1090.pango_reorder_items$FUNC
-    );
-    static final FunctionDescriptor pango_itemize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1090() {}
+    static final FunctionDescriptor gdk_window_set_transient_for$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_itemize$MH = RuntimeHelper.downcallHandle(
-        "pango_itemize",
-        constants$1090.pango_itemize$FUNC
+    static final MethodHandle gdk_window_set_transient_for$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_transient_for",
+        constants$1090.gdk_window_set_transient_for$FUNC
     );
-    static final FunctionDescriptor pango_itemize_with_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_window_set_background$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_itemize_with_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_itemize_with_base_dir",
-        constants$1090.pango_itemize_with_base_dir$FUNC
+    static final MethodHandle gdk_window_set_background$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_background",
+        constants$1090.gdk_window_set_background$FUNC
     );
-    static final FunctionDescriptor pango_break$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_background_rgba$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_break$MH = RuntimeHelper.downcallHandle(
-        "pango_break",
-        constants$1090.pango_break$FUNC
+    static final MethodHandle gdk_window_set_background_rgba$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_background_rgba",
+        constants$1090.gdk_window_set_background_rgba$FUNC
     );
-    static final FunctionDescriptor pango_get_log_attrs$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_background_pattern$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_get_log_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_get_log_attrs",
-        constants$1090.pango_get_log_attrs$FUNC
+    static final MethodHandle gdk_window_set_background_pattern$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_background_pattern",
+        constants$1090.gdk_window_set_background_pattern$FUNC
     );
-    static final FunctionDescriptor pango_default_break$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gdk_window_get_background_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_default_break$MH = RuntimeHelper.downcallHandle(
-        "pango_default_break",
-        constants$1090.pango_default_break$FUNC
+    static final MethodHandle gdk_window_get_background_pattern$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_background_pattern",
+        constants$1090.gdk_window_get_background_pattern$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_cursor$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_cursor",
+        constants$1090.gdk_window_set_cursor$FUNC
     );
 }
 

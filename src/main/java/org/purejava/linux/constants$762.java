@@ -7,46 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$762 {
+final class constants$762 {
 
-    static final FunctionDescriptor g_mount_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_get_sort_key$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_sort_key",
-        constants$762.g_mount_get_sort_key$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_operation_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_type",
-        constants$762.g_mount_operation_get_type$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_mount_operation_new$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_new",
-        constants$762.g_mount_operation_new$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_username$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_username$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_username",
-        constants$762.g_mount_operation_get_username$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_set_username$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$762() {}
+    static final FunctionDescriptor g_socket_set_keepalive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_set_keepalive$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_keepalive",
+        constants$762.g_socket_set_keepalive$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_keepalive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_username$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_username",
-        constants$762.g_mount_operation_set_username$FUNC
+    static final MethodHandle g_socket_get_keepalive$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_keepalive",
+        constants$762.g_socket_get_keepalive$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_get_listen_backlog$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_get_password$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_password",
-        constants$762.g_mount_operation_get_password$FUNC
+    static final MethodHandle g_socket_get_listen_backlog$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_listen_backlog",
+        constants$762.g_socket_get_listen_backlog$FUNC
+    );
+    static final FunctionDescriptor g_socket_set_listen_backlog$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_set_listen_backlog$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_listen_backlog",
+        constants$762.g_socket_set_listen_backlog$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_get_timeout$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_timeout",
+        constants$762.g_socket_get_timeout$FUNC
+    );
+    static final FunctionDescriptor g_socket_set_timeout$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_set_timeout$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_timeout",
+        constants$762.g_socket_set_timeout$FUNC
     );
 }
 

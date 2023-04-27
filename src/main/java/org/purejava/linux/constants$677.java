@@ -7,72 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$677 {
+final class constants$677 {
 
-    static final FunctionDescriptor g_file_make_symbolic_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$677() {}
+    static final FunctionDescriptor g_dbus_message_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_message_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_byte_order_get_type",
+        constants$677.g_dbus_message_byte_order_get_type$FUNC
     );
-    static final MethodHandle g_file_make_symbolic_link$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link",
-        constants$677.g_file_make_symbolic_link$FUNC
+    static final FunctionDescriptor g_application_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_application_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_application_flags_get_type",
+        constants$677.g_application_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_query_settable_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_tls_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_error_get_type",
+        constants$677.g_tls_error_get_type$FUNC
     );
-    static final MethodHandle g_file_query_settable_attributes$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_settable_attributes",
-        constants$677.g_file_query_settable_attributes$FUNC
+    static final FunctionDescriptor g_tls_certificate_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_certificate_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_flags_get_type",
+        constants$677.g_tls_certificate_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_query_writable_namespaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_tls_authentication_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_authentication_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_authentication_mode_get_type",
+        constants$677.g_tls_authentication_mode_get_type$FUNC
     );
-    static final MethodHandle g_file_query_writable_namespaces$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_writable_namespaces",
-        constants$677.g_file_query_writable_namespaces$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute",
-        constants$677.g_file_set_attribute$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attributes_from_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attributes_from_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_from_info",
-        constants$677.g_file_set_attributes_from_info$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attributes_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attributes_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_async",
-        constants$677.g_file_set_attributes_async$FUNC
+    static final FunctionDescriptor g_tls_channel_binding_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_channel_binding_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_channel_binding_type_get_type",
+        constants$677.g_tls_channel_binding_type_get_type$FUNC
     );
 }
 

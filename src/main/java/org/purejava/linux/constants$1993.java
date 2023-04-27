@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1993 {
+final class constants$1993 {
 
-    static final FunctionDescriptor gtk_scrollable_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_vadjustment",
-        constants$1993.gtk_scrollable_get_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_set_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_vadjustment",
-        constants$1993.gtk_scrollable_set_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_hscroll_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_hscroll_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_hscroll_policy",
-        constants$1993.gtk_scrollable_get_hscroll_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_set_hscroll_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_set_hscroll_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_hscroll_policy",
-        constants$1993.gtk_scrollable_set_hscroll_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_vscroll_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_vscroll_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_vscroll_policy",
-        constants$1993.gtk_scrollable_get_vscroll_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_set_vscroll_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_set_vscroll_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_vscroll_policy",
-        constants$1993.gtk_scrollable_set_vscroll_policy$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1993() {}
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("OnlyShowIn");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NotShowIn");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_TRY_EXEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("TryExec");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_EXEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Exec");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_PATH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Path");
+    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_TERMINAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Terminal");
 }
 
 

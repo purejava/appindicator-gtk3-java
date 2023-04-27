@@ -7,42 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1385 {
+final class constants$1385 {
 
-    static final FunctionDescriptor atk_add_key_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1385() {}
+    static final FunctionDescriptor gtk_cell_area_cell_get_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_add_key_event_listener$MH = RuntimeHelper.downcallHandle(
-        "atk_add_key_event_listener",
-        constants$1385.atk_add_key_event_listener$FUNC
+    static final MethodHandle gtk_cell_area_cell_get_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_cell_get_valist",
+        constants$1385.gtk_cell_area_cell_get_valist$FUNC
     );
-    static final FunctionDescriptor atk_remove_key_event_listener$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_area_cell_set_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_cell_set_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_cell_set_property",
+        constants$1385.gtk_cell_area_cell_set_property$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_cell_get_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_cell_get_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_cell_get_property",
+        constants$1385.gtk_cell_area_cell_get_property$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_is_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_is_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_is_activatable",
+        constants$1385.gtk_cell_area_is_activatable$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_remove_key_event_listener$MH = RuntimeHelper.downcallHandle(
-        "atk_remove_key_event_listener",
-        constants$1385.atk_remove_key_event_listener$FUNC
+    static final MethodHandle gtk_cell_area_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_activate",
+        constants$1385.gtk_cell_area_activate$FUNC
     );
-    static final FunctionDescriptor atk_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_get_root$MH = RuntimeHelper.downcallHandle(
-        "atk_get_root",
-        constants$1385.atk_get_root$FUNC
+    static final FunctionDescriptor gtk_cell_area_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor atk_get_focus_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_get_focus_object$MH = RuntimeHelper.downcallHandle(
-        "atk_get_focus_object",
-        constants$1385.atk_get_focus_object$FUNC
-    );
-    static final FunctionDescriptor atk_get_toolkit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_get_toolkit_name$MH = RuntimeHelper.downcallHandle(
-        "atk_get_toolkit_name",
-        constants$1385.atk_get_toolkit_name$FUNC
-    );
-    static final FunctionDescriptor atk_get_toolkit_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_get_toolkit_version$MH = RuntimeHelper.downcallHandle(
-        "atk_get_toolkit_version",
-        constants$1385.atk_get_toolkit_version$FUNC
+    static final MethodHandle gtk_cell_area_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_focus",
+        constants$1385.gtk_cell_area_focus$FUNC
     );
 }
 

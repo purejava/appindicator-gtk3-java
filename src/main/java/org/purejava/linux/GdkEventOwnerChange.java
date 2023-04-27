@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventOwnerChange extends _GdkEventOwnerChange {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventOwnerChange GdkEventOwnerChange;
+ * }
+ */
+public final class GdkEventOwnerChange extends _GdkEventOwnerChange {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventOwnerChange() {}
 }
 
 

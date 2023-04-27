@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1801 {
+final class constants$1801 {
 
-    static final FunctionDescriptor gtk_gesture_multi_press_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_multi_press_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_get_type",
-        constants$1801.gtk_gesture_multi_press_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_multi_press_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1801() {}
+    static final FunctionDescriptor gtk_scrolled_window_get_kinetic_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_multi_press_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_new",
-        constants$1801.gtk_gesture_multi_press_new$FUNC
+    static final MethodHandle gtk_scrolled_window_get_kinetic_scrolling$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_kinetic_scrolling",
+        constants$1801.gtk_scrolled_window_get_kinetic_scrolling$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_multi_press_set_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_multi_press_set_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_set_area",
-        constants$1801.gtk_gesture_multi_press_set_area$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_multi_press_get_area$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_multi_press_get_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_get_area",
-        constants$1801.gtk_gesture_multi_press_get_area$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_pan_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_get_type",
-        constants$1801.gtk_gesture_pan_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_scrolled_window_set_capture_button_press$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_pan_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_new",
-        constants$1801.gtk_gesture_pan_new$FUNC
+    static final MethodHandle gtk_scrolled_window_set_capture_button_press$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_capture_button_press",
+        constants$1801.gtk_scrolled_window_set_capture_button_press$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_get_capture_button_press$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_capture_button_press$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_capture_button_press",
+        constants$1801.gtk_scrolled_window_get_capture_button_press$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_set_overlay_scrolling$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_set_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_overlay_scrolling",
+        constants$1801.gtk_scrolled_window_set_overlay_scrolling$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_get_overlay_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_get_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_overlay_scrolling",
+        constants$1801.gtk_scrolled_window_get_overlay_scrolling$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_set_max_content_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_set_max_content_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_max_content_width",
+        constants$1801.gtk_scrolled_window_set_max_content_width$FUNC
     );
 }
 

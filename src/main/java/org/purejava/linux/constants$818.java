@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$818 {
+final class constants$818 {
 
-    static final FunctionDescriptor g_socket_set_broadcast$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$818() {}
+    static final FunctionDescriptor g_tls_password_set_description$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_broadcast$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_broadcast",
-        constants$818.g_socket_set_broadcast$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_multicast_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_multicast_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_multicast_loopback",
-        constants$818.g_socket_get_multicast_loopback$FUNC
+    static final MethodHandle g_tls_password_set_description$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_description",
+        constants$818.g_tls_password_set_description$FUNC
     );
-    static final FunctionDescriptor g_socket_set_multicast_loopback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_multicast_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_multicast_loopback",
-        constants$818.g_socket_set_multicast_loopback$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_multicast_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tls_password_get_warning$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_multicast_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_multicast_ttl",
-        constants$818.g_socket_get_multicast_ttl$FUNC
+    static final MethodHandle g_tls_password_get_warning$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_warning",
+        constants$818.g_tls_password_get_warning$FUNC
     );
-    static final FunctionDescriptor g_socket_set_multicast_ttl$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_password_set_warning$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_multicast_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_multicast_ttl",
-        constants$818.g_socket_set_multicast_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_is_connected$MH = RuntimeHelper.downcallHandle(
-        "g_socket_is_connected",
-        constants$818.g_socket_is_connected$FUNC
+    static final MethodHandle g_tls_password_set_warning$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_warning",
+        constants$818.g_tls_password_set_warning$FUNC
+    );
+    static final FunctionDescriptor g_tls_server_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_server_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_server_connection_get_type",
+        constants$818.g_tls_server_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_server_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_server_connection_new$MH = RuntimeHelper.downcallHandle(
+        "g_tls_server_connection_new",
+        constants$818.g_tls_server_connection_new$FUNC
+    );
+    static final FunctionDescriptor g_unix_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_unix_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_unix_connection_get_type",
+        constants$818.g_unix_connection_get_type$FUNC
     );
 }
 

@@ -7,96 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$600 {
+final class constants$600 {
 
-    static final FunctionDescriptor g_dbus_connection_send_message_with_reply_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$600() {}
+    static final FunctionDescriptor g_drive_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_send_message_with_reply_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message_with_reply_sync",
-        constants$600.g_dbus_connection_send_message_with_reply_sync$FUNC
+    static final MethodHandle g_drive_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_name",
+        constants$600.g_drive_get_name$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_emit_signal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_emit_signal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_emit_signal",
-        constants$600.g_dbus_connection_emit_signal$FUNC
+    static final MethodHandle g_drive_get_icon$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_icon",
+        constants$600.g_drive_get_icon$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_call$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_call$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call",
-        constants$600.g_dbus_connection_call$FUNC
+    static final MethodHandle g_drive_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_symbolic_icon",
+        constants$600.g_drive_get_symbolic_icon$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_call_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_has_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_call_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_finish",
-        constants$600.g_dbus_connection_call_finish$FUNC
+    static final MethodHandle g_drive_has_volumes$MH = RuntimeHelper.downcallHandle(
+        "g_drive_has_volumes",
+        constants$600.g_drive_has_volumes$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_call_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_call_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_sync",
-        constants$600.g_dbus_connection_call_sync$FUNC
+    static final MethodHandle g_drive_get_volumes$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_volumes",
+        constants$600.g_drive_get_volumes$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_call_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_is_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_call_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_with_unix_fd_list",
-        constants$600.g_dbus_connection_call_with_unix_fd_list$FUNC
+    static final MethodHandle g_drive_is_removable$MH = RuntimeHelper.downcallHandle(
+        "g_drive_is_removable",
+        constants$600.g_drive_is_removable$FUNC
     );
 }
 

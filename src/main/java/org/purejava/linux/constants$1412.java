@@ -7,42 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1412 {
+final class constants$1412 {
 
-    static final FunctionDescriptor atk_socket_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_socket_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_socket_get_type",
-        constants$1412.atk_socket_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_socket_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_socket_new$MH = RuntimeHelper.downcallHandle(
-        "atk_socket_new",
-        constants$1412.atk_socket_new$FUNC
-    );
-    static final FunctionDescriptor atk_socket_embed$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1412() {}
+    static final FunctionDescriptor gtk_text_iter_backward_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_cursor_positions$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_cursor_positions",
+        constants$1412.gtk_text_iter_backward_cursor_positions$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_visible_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_socket_embed$MH = RuntimeHelper.downcallHandle(
-        "atk_socket_embed",
-        constants$1412.atk_socket_embed$FUNC
+    static final MethodHandle gtk_text_iter_forward_visible_cursor_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_cursor_position",
+        constants$1412.gtk_text_iter_forward_visible_cursor_position$FUNC
     );
-    static final FunctionDescriptor atk_socket_is_occupied$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_visible_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_socket_is_occupied$MH = RuntimeHelper.downcallHandle(
-        "atk_socket_is_occupied",
-        constants$1412.atk_socket_is_occupied$FUNC
+    static final MethodHandle gtk_text_iter_backward_visible_cursor_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_visible_cursor_position",
+        constants$1412.gtk_text_iter_backward_visible_cursor_position$FUNC
     );
-    static final FunctionDescriptor atk_state_set_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_state_set_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_get_type",
-        constants$1412.atk_state_set_get_type$FUNC
+    static final FunctionDescriptor gtk_text_iter_forward_visible_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor atk_state_set_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_state_set_new$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_new",
-        constants$1412.atk_state_set_new$FUNC
+    static final MethodHandle gtk_text_iter_forward_visible_cursor_positions$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_cursor_positions",
+        constants$1412.gtk_text_iter_forward_visible_cursor_positions$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_backward_visible_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_visible_cursor_positions$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_visible_cursor_positions",
+        constants$1412.gtk_text_iter_backward_visible_cursor_positions$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_set_offset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_set_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_set_offset",
+        constants$1412.gtk_text_iter_set_offset$FUNC
     );
 }
 

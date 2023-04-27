@@ -7,8 +7,37 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$97 {
+final class constants$97 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$97() {}
+    static final FunctionDescriptor g_bookmark_file_set_added$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_set_added$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_added",
+        constants$97.g_bookmark_file_set_added$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_set_added_date_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_set_added_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_added_date_time",
+        constants$97.g_bookmark_file_set_added_date_time$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_get_added$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_get_added$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_added",
+        constants$97.g_bookmark_file_get_added$FUNC
+    );
     static final FunctionDescriptor g_bookmark_file_get_added_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -35,33 +64,6 @@ class constants$97 {
     static final MethodHandle g_bookmark_file_set_modified_date_time$MH = RuntimeHelper.downcallHandle(
         "g_bookmark_file_set_modified_date_time",
         constants$97.g_bookmark_file_set_modified_date_time$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_modified$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_modified$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_modified",
-        constants$97.g_bookmark_file_get_modified$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_modified_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_modified_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_modified_date_time",
-        constants$97.g_bookmark_file_get_modified_date_time$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_visited$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_visited$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_visited",
-        constants$97.g_bookmark_file_set_visited$FUNC
     );
 }
 

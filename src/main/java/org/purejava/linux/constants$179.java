@@ -7,42 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$179 {
+final class constants$179 {
 
-    static final FunctionDescriptor g_get_monotonic_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_get_monotonic_time$MH = RuntimeHelper.downcallHandle(
-        "g_get_monotonic_time",
-        constants$179.g_get_monotonic_time$FUNC
-    );
-    static final FunctionDescriptor g_get_real_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_get_real_time$MH = RuntimeHelper.downcallHandle(
-        "g_get_real_time",
-        constants$179.g_get_real_time$FUNC
-    );
-    static final FunctionDescriptor g_source_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_source_remove$MH = RuntimeHelper.downcallHandle(
-        "g_source_remove",
-        constants$179.g_source_remove$FUNC
-    );
-    static final FunctionDescriptor g_source_remove_by_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_remove_by_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_source_remove_by_user_data",
-        constants$179.g_source_remove_by_user_data$FUNC
-    );
-    static final FunctionDescriptor g_source_remove_by_funcs_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$179() {}
+    static final FunctionDescriptor g_source_add_child_source$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_remove_by_funcs_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_source_remove_by_funcs_user_data",
-        constants$179.g_source_remove_by_funcs_user_data$FUNC
+    static final MethodHandle g_source_add_child_source$MH = RuntimeHelper.downcallHandle(
+        "g_source_add_child_source",
+        constants$179.g_source_add_child_source$FUNC
     );
-    static final FunctionDescriptor GClearHandleFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_source_remove_child_source$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_remove_child_source$MH = RuntimeHelper.downcallHandle(
+        "g_source_remove_child_source",
+        constants$179.g_source_remove_child_source$FUNC
+    );
+    static final FunctionDescriptor g_source_get_current_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_get_current_time$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_current_time",
+        constants$179.g_source_get_current_time$FUNC
+    );
+    static final FunctionDescriptor g_source_get_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_get_time$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_time",
+        constants$179.g_source_get_time$FUNC
+    );
+    static final FunctionDescriptor g_idle_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_idle_source_new$MH = RuntimeHelper.downcallHandle(
+        "g_idle_source_new",
+        constants$179.g_idle_source_new$FUNC
+    );
+    static final FunctionDescriptor g_child_watch_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_child_watch_source_new$MH = RuntimeHelper.downcallHandle(
+        "g_child_watch_source_new",
+        constants$179.g_child_watch_source_new$FUNC
     );
 }
 

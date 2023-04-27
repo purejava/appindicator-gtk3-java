@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GTestFunc)();
+ * }
+ */
 public interface GTestFunc {
 
     void apply();
-    static MemorySegment allocate(GTestFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GTestFunc.class, fi, constants$308.GTestFunc$FUNC, session);
+    static MemorySegment allocate(GTestFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$312.GTestFunc_UP$MH, fi, constants$312.GTestFunc$FUNC, scope);
     }
-    static GTestFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static GTestFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$308.GTestFunc$MH.invokeExact((Addressable)symbol);
+                constants$312.GTestFunc_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

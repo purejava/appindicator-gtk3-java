@@ -7,9 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkEditableInterface {
+ *     GTypeInterface base_iface;
+ *     void (*insert_text)(GtkEditable*,const gchar*,gint,gint*);
+ *     void (*delete_text)(GtkEditable*,gint,gint);
+ *     void (*changed)(GtkEditable*);
+ *     void (*do_insert_text)(GtkEditable*,const gchar*,gint,gint*);
+ *     void (*do_delete_text)(GtkEditable*,gint,gint);
+ *     gchar* (*get_chars)(GtkEditable*,gint,gint);
+ *     void (*set_selection_bounds)(GtkEditable*,gint,gint);
+ *     gboolean (*get_selection_bounds)(GtkEditable*,gint*,gint*);
+ *     void (*set_position)(GtkEditable*,gint);
+ *     gint (*get_position)(GtkEditable*);
+ * };
+ * }
+ */
 public class _GtkEditableInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -37,20 +54,38 @@ public class _GtkEditableInterface {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle insert_text$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.insert_text$FUNC
+    static final FunctionDescriptor insert_text_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle insert_text_UP$MH = RuntimeHelper.upcallHandle(insert_text.class, "apply", _GtkEditableInterface.insert_text_UP$FUNC);
+    static final FunctionDescriptor insert_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle insert_text_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.insert_text_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
     public interface insert_text {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(insert_text fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(insert_text.class, fi, _GtkEditableInterface.insert_text$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(insert_text fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.insert_text_UP$MH, fi, _GtkEditableInterface.insert_text$FUNC, scope);
         }
-        static insert_text ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static insert_text ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkEditableInterface.insert_text$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkEditableInterface.insert_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -62,40 +97,68 @@ public class _GtkEditableInterface {
     public static VarHandle insert_text$VH() {
         return _GtkEditableInterface.insert_text$VH;
     }
-    public static MemoryAddress insert_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.insert_text$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
+    public static MemorySegment insert_text$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.insert_text$VH.get(seg);
     }
-    public static void insert_text$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
+    public static void insert_text$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.insert_text$VH.set(seg, x);
     }
-    public static MemoryAddress insert_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.insert_text$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment insert_text$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.insert_text$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void insert_text$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void insert_text$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.insert_text$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static insert_text insert_text (MemorySegment segment, MemorySession session) {
-        return insert_text.ofAddress(insert_text$get(segment), session);
+    public static insert_text insert_text(MemorySegment segment, SegmentScope scope) {
+        return insert_text.ofAddress(insert_text$get(segment), scope);
     }
     static final FunctionDescriptor delete_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle delete_text$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.delete_text$FUNC
+    static final FunctionDescriptor delete_text_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle delete_text_UP$MH = RuntimeHelper.upcallHandle(delete_text.class, "apply", _GtkEditableInterface.delete_text_UP$FUNC);
+    static final FunctionDescriptor delete_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle delete_text_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.delete_text_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
     public interface delete_text {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(delete_text fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(delete_text.class, fi, _GtkEditableInterface.delete_text$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(delete_text fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.delete_text_UP$MH, fi, _GtkEditableInterface.delete_text$FUNC, scope);
         }
-        static delete_text ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static delete_text ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkEditableInterface.delete_text$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkEditableInterface.delete_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -107,38 +170,62 @@ public class _GtkEditableInterface {
     public static VarHandle delete_text$VH() {
         return _GtkEditableInterface.delete_text$VH;
     }
-    public static MemoryAddress delete_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.delete_text$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static MemorySegment delete_text$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.delete_text$VH.get(seg);
     }
-    public static void delete_text$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static void delete_text$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.delete_text$VH.set(seg, x);
     }
-    public static MemoryAddress delete_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.delete_text$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment delete_text$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.delete_text$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void delete_text$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void delete_text$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.delete_text$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static delete_text delete_text (MemorySegment segment, MemorySession session) {
-        return delete_text.ofAddress(delete_text$get(segment), session);
+    public static delete_text delete_text(MemorySegment segment, SegmentScope scope) {
+        return delete_text.ofAddress(delete_text$get(segment), scope);
     }
     static final FunctionDescriptor changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle changed$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.changed$FUNC
+    static final FunctionDescriptor changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle changed_UP$MH = RuntimeHelper.upcallHandle(changed.class, "apply", _GtkEditableInterface.changed_UP$FUNC);
+    static final FunctionDescriptor changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*changed)(GtkEditable*);
+     * }
+     */
     public interface changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(changed.class, fi, _GtkEditableInterface.changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.changed_UP$MH, fi, _GtkEditableInterface.changed$FUNC, scope);
         }
-        static changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkEditableInterface.changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkEditableInterface.changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -150,20 +237,32 @@ public class _GtkEditableInterface {
     public static VarHandle changed$VH() {
         return _GtkEditableInterface.changed$VH;
     }
-    public static MemoryAddress changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*changed)(GtkEditable*);
+     * }
+     */
+    public static MemorySegment changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.changed$VH.get(seg);
     }
-    public static void changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*changed)(GtkEditable*);
+     * }
+     */
+    public static void changed$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.changed$VH.set(seg, x);
     }
-    public static MemoryAddress changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static changed changed (MemorySegment segment, MemorySession session) {
-        return changed.ofAddress(changed$get(segment), session);
+    public static changed changed(MemorySegment segment, SegmentScope scope) {
+        return changed.ofAddress(changed$get(segment), scope);
     }
     static final FunctionDescriptor do_insert_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -171,20 +270,38 @@ public class _GtkEditableInterface {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle do_insert_text$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.do_insert_text$FUNC
+    static final FunctionDescriptor do_insert_text_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle do_insert_text_UP$MH = RuntimeHelper.upcallHandle(do_insert_text.class, "apply", _GtkEditableInterface.do_insert_text_UP$FUNC);
+    static final FunctionDescriptor do_insert_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle do_insert_text_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.do_insert_text_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*do_insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
     public interface do_insert_text {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(do_insert_text fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(do_insert_text.class, fi, _GtkEditableInterface.do_insert_text$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(do_insert_text fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.do_insert_text_UP$MH, fi, _GtkEditableInterface.do_insert_text$FUNC, scope);
         }
-        static do_insert_text ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static do_insert_text ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkEditableInterface.do_insert_text$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkEditableInterface.do_insert_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -196,40 +313,68 @@ public class _GtkEditableInterface {
     public static VarHandle do_insert_text$VH() {
         return _GtkEditableInterface.do_insert_text$VH;
     }
-    public static MemoryAddress do_insert_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.do_insert_text$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*do_insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
+    public static MemorySegment do_insert_text$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.do_insert_text$VH.get(seg);
     }
-    public static void do_insert_text$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*do_insert_text)(GtkEditable*,const gchar*,gint,gint*);
+     * }
+     */
+    public static void do_insert_text$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.do_insert_text$VH.set(seg, x);
     }
-    public static MemoryAddress do_insert_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.do_insert_text$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment do_insert_text$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.do_insert_text$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void do_insert_text$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void do_insert_text$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.do_insert_text$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static do_insert_text do_insert_text (MemorySegment segment, MemorySession session) {
-        return do_insert_text.ofAddress(do_insert_text$get(segment), session);
+    public static do_insert_text do_insert_text(MemorySegment segment, SegmentScope scope) {
+        return do_insert_text.ofAddress(do_insert_text$get(segment), scope);
     }
     static final FunctionDescriptor do_delete_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle do_delete_text$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.do_delete_text$FUNC
+    static final FunctionDescriptor do_delete_text_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle do_delete_text_UP$MH = RuntimeHelper.upcallHandle(do_delete_text.class, "apply", _GtkEditableInterface.do_delete_text_UP$FUNC);
+    static final FunctionDescriptor do_delete_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle do_delete_text_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.do_delete_text_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*do_delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
     public interface do_delete_text {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(do_delete_text fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(do_delete_text.class, fi, _GtkEditableInterface.do_delete_text$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(do_delete_text fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.do_delete_text_UP$MH, fi, _GtkEditableInterface.do_delete_text$FUNC, scope);
         }
-        static do_delete_text ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static do_delete_text ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkEditableInterface.do_delete_text$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkEditableInterface.do_delete_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -241,40 +386,68 @@ public class _GtkEditableInterface {
     public static VarHandle do_delete_text$VH() {
         return _GtkEditableInterface.do_delete_text$VH;
     }
-    public static MemoryAddress do_delete_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.do_delete_text$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*do_delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static MemorySegment do_delete_text$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.do_delete_text$VH.get(seg);
     }
-    public static void do_delete_text$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*do_delete_text)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static void do_delete_text$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.do_delete_text$VH.set(seg, x);
     }
-    public static MemoryAddress do_delete_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.do_delete_text$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment do_delete_text$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.do_delete_text$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void do_delete_text$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void do_delete_text$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.do_delete_text$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static do_delete_text do_delete_text (MemorySegment segment, MemorySession session) {
-        return do_delete_text.ofAddress(do_delete_text$get(segment), session);
+    public static do_delete_text do_delete_text(MemorySegment segment, SegmentScope scope) {
+        return do_delete_text.ofAddress(do_delete_text$get(segment), scope);
     }
     static final FunctionDescriptor get_chars$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle get_chars$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.get_chars$FUNC
+    static final FunctionDescriptor get_chars_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle get_chars_UP$MH = RuntimeHelper.upcallHandle(get_chars.class, "apply", _GtkEditableInterface.get_chars_UP$FUNC);
+    static final FunctionDescriptor get_chars_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle get_chars_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.get_chars_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*get_chars)(GtkEditable*,gint,gint);
+     * }
+     */
     public interface get_chars {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(get_chars fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_chars.class, fi, _GtkEditableInterface.get_chars$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(get_chars fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.get_chars_UP$MH, fi, _GtkEditableInterface.get_chars$FUNC, scope);
         }
-        static get_chars ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static get_chars ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_chars$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_chars_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -286,40 +459,68 @@ public class _GtkEditableInterface {
     public static VarHandle get_chars$VH() {
         return _GtkEditableInterface.get_chars$VH;
     }
-    public static MemoryAddress get_chars$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_chars$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*get_chars)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static MemorySegment get_chars$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_chars$VH.get(seg);
     }
-    public static void get_chars$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*get_chars)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static void get_chars$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.get_chars$VH.set(seg, x);
     }
-    public static MemoryAddress get_chars$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_chars$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_chars$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_chars$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_chars$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_chars$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.get_chars$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_chars get_chars (MemorySegment segment, MemorySession session) {
-        return get_chars.ofAddress(get_chars$get(segment), session);
+    public static get_chars get_chars(MemorySegment segment, SegmentScope scope) {
+        return get_chars.ofAddress(get_chars$get(segment), scope);
     }
     static final FunctionDescriptor set_selection_bounds$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_selection_bounds$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.set_selection_bounds$FUNC
+    static final FunctionDescriptor set_selection_bounds_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_selection_bounds_UP$MH = RuntimeHelper.upcallHandle(set_selection_bounds.class, "apply", _GtkEditableInterface.set_selection_bounds_UP$FUNC);
+    static final FunctionDescriptor set_selection_bounds_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_selection_bounds_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.set_selection_bounds_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_selection_bounds)(GtkEditable*,gint,gint);
+     * }
+     */
     public interface set_selection_bounds {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(set_selection_bounds fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_selection_bounds.class, fi, _GtkEditableInterface.set_selection_bounds$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(set_selection_bounds fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.set_selection_bounds_UP$MH, fi, _GtkEditableInterface.set_selection_bounds$FUNC, scope);
         }
-        static set_selection_bounds ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static set_selection_bounds ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkEditableInterface.set_selection_bounds$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    _GtkEditableInterface.set_selection_bounds_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -331,40 +532,68 @@ public class _GtkEditableInterface {
     public static VarHandle set_selection_bounds$VH() {
         return _GtkEditableInterface.set_selection_bounds$VH;
     }
-    public static MemoryAddress set_selection_bounds$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.set_selection_bounds$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_selection_bounds)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static MemorySegment set_selection_bounds$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.set_selection_bounds$VH.get(seg);
     }
-    public static void set_selection_bounds$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_selection_bounds)(GtkEditable*,gint,gint);
+     * }
+     */
+    public static void set_selection_bounds$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.set_selection_bounds$VH.set(seg, x);
     }
-    public static MemoryAddress set_selection_bounds$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.set_selection_bounds$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_selection_bounds$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.set_selection_bounds$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_selection_bounds$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_selection_bounds$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.set_selection_bounds$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_selection_bounds set_selection_bounds (MemorySegment segment, MemorySession session) {
-        return set_selection_bounds.ofAddress(set_selection_bounds$get(segment), session);
+    public static set_selection_bounds set_selection_bounds(MemorySegment segment, SegmentScope scope) {
+        return set_selection_bounds.ofAddress(set_selection_bounds$get(segment), scope);
     }
     static final FunctionDescriptor get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_selection_bounds$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.get_selection_bounds$FUNC
+    static final FunctionDescriptor get_selection_bounds_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_selection_bounds_UP$MH = RuntimeHelper.upcallHandle(get_selection_bounds.class, "apply", _GtkEditableInterface.get_selection_bounds_UP$FUNC);
+    static final FunctionDescriptor get_selection_bounds_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_selection_bounds_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.get_selection_bounds_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*get_selection_bounds)(GtkEditable*,gint*,gint*);
+     * }
+     */
     public interface get_selection_bounds {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(get_selection_bounds fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_selection_bounds.class, fi, _GtkEditableInterface.get_selection_bounds$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(get_selection_bounds fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.get_selection_bounds_UP$MH, fi, _GtkEditableInterface.get_selection_bounds$FUNC, scope);
         }
-        static get_selection_bounds ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static get_selection_bounds ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkEditableInterface.get_selection_bounds$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkEditableInterface.get_selection_bounds_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -376,39 +605,65 @@ public class _GtkEditableInterface {
     public static VarHandle get_selection_bounds$VH() {
         return _GtkEditableInterface.get_selection_bounds$VH;
     }
-    public static MemoryAddress get_selection_bounds$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_selection_bounds$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*get_selection_bounds)(GtkEditable*,gint*,gint*);
+     * }
+     */
+    public static MemorySegment get_selection_bounds$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_selection_bounds$VH.get(seg);
     }
-    public static void get_selection_bounds$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*get_selection_bounds)(GtkEditable*,gint*,gint*);
+     * }
+     */
+    public static void get_selection_bounds$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.get_selection_bounds$VH.set(seg, x);
     }
-    public static MemoryAddress get_selection_bounds$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_selection_bounds$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_selection_bounds$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_selection_bounds$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_selection_bounds$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_selection_bounds$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.get_selection_bounds$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_selection_bounds get_selection_bounds (MemorySegment segment, MemorySession session) {
-        return get_selection_bounds.ofAddress(get_selection_bounds$get(segment), session);
+    public static get_selection_bounds get_selection_bounds(MemorySegment segment, SegmentScope scope) {
+        return get_selection_bounds.ofAddress(get_selection_bounds$get(segment), scope);
     }
     static final FunctionDescriptor set_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_position$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.set_position$FUNC
+    static final FunctionDescriptor set_position_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_position_UP$MH = RuntimeHelper.upcallHandle(set_position.class, "apply", _GtkEditableInterface.set_position_UP$FUNC);
+    static final FunctionDescriptor set_position_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_position_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.set_position_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_position)(GtkEditable*,gint);
+     * }
+     */
     public interface set_position {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(set_position fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_position.class, fi, _GtkEditableInterface.set_position$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(set_position fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.set_position_UP$MH, fi, _GtkEditableInterface.set_position$FUNC, scope);
         }
-        static set_position ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static set_position ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkEditableInterface.set_position$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkEditableInterface.set_position_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -420,38 +675,62 @@ public class _GtkEditableInterface {
     public static VarHandle set_position$VH() {
         return _GtkEditableInterface.set_position$VH;
     }
-    public static MemoryAddress set_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.set_position$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_position)(GtkEditable*,gint);
+     * }
+     */
+    public static MemorySegment set_position$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.set_position$VH.get(seg);
     }
-    public static void set_position$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_position)(GtkEditable*,gint);
+     * }
+     */
+    public static void set_position$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.set_position$VH.set(seg, x);
     }
-    public static MemoryAddress set_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.set_position$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_position$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.set_position$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_position$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_position$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.set_position$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_position set_position (MemorySegment segment, MemorySession session) {
-        return set_position.ofAddress(set_position$get(segment), session);
+    public static set_position set_position(MemorySegment segment, SegmentScope scope) {
+        return set_position.ofAddress(set_position$get(segment), scope);
     }
     static final FunctionDescriptor get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_position$MH = RuntimeHelper.downcallHandle(
-        _GtkEditableInterface.get_position$FUNC
+    static final FunctionDescriptor get_position_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_position_UP$MH = RuntimeHelper.upcallHandle(get_position.class, "apply", _GtkEditableInterface.get_position_UP$FUNC);
+    static final FunctionDescriptor get_position_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_position_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkEditableInterface.get_position_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_position)(GtkEditable*);
+     * }
+     */
     public interface get_position {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_position fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_position.class, fi, _GtkEditableInterface.get_position$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_position fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkEditableInterface.get_position_UP$MH, fi, _GtkEditableInterface.get_position$FUNC, scope);
         }
-        static get_position ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_position ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkEditableInterface.get_position$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkEditableInterface.get_position_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -463,27 +742,39 @@ public class _GtkEditableInterface {
     public static VarHandle get_position$VH() {
         return _GtkEditableInterface.get_position$VH;
     }
-    public static MemoryAddress get_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_position$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_position)(GtkEditable*);
+     * }
+     */
+    public static MemorySegment get_position$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_position$VH.get(seg);
     }
-    public static void get_position$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_position)(GtkEditable*);
+     * }
+     */
+    public static void get_position$set(MemorySegment seg, MemorySegment x) {
         _GtkEditableInterface.get_position$VH.set(seg, x);
     }
-    public static MemoryAddress get_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkEditableInterface.get_position$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_position$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkEditableInterface.get_position$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_position$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_position$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkEditableInterface.get_position$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_position get_position (MemorySegment segment, MemorySession session) {
-        return get_position.ofAddress(get_position$get(segment), session);
+    public static get_position get_position(MemorySegment segment, SegmentScope scope) {
+        return get_position.ofAddress(get_position$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

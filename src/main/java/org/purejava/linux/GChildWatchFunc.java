@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GChildWatchFunc)(int pid,int wait_status,void* user_data);
+ * }
+ */
 public interface GChildWatchFunc {
 
-    void apply(int pid, int wait_status, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GChildWatchFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GChildWatchFunc.class, fi, constants$165.GChildWatchFunc$FUNC, session);
+    void apply(int pid, int wait_status, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GChildWatchFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$167.GChildWatchFunc_UP$MH, fi, constants$167.GChildWatchFunc$FUNC, scope);
     }
-    static GChildWatchFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int _pid, int _wait_status, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GChildWatchFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int _pid, int _wait_status, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$165.GChildWatchFunc$MH.invokeExact((Addressable)symbol, _pid, _wait_status, (java.lang.foreign.Addressable)_user_data);
+                constants$167.GChildWatchFunc_DOWN$MH.invokeExact(symbol, _pid, _wait_status, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,37 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1329 {
+final class constants$1329 {
 
-    static final FunctionDescriptor gdk_gl_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_gl_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_error_get_type",
-        constants$1329.gdk_gl_error_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1329() {}
+    static final FunctionDescriptor gtk_menu_shell_activate_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_window_type_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_type_hint_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_type_hint_get_type",
-        constants$1329.gdk_window_type_hint_get_type$FUNC
+    static final MethodHandle gtk_menu_shell_activate_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_activate_item",
+        constants$1329.gtk_menu_shell_activate_item$FUNC
     );
-    static final FunctionDescriptor gdk_axis_use_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_axis_use_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_axis_use_get_type",
-        constants$1329.gdk_axis_use_get_type$FUNC
+    static final FunctionDescriptor gtk_menu_shell_select_first$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_axis_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_axis_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_axis_flags_get_type",
-        constants$1329.gdk_axis_flags_get_type$FUNC
+    static final MethodHandle gtk_menu_shell_select_first$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_select_first",
+        constants$1329.gtk_menu_shell_select_first$FUNC
     );
-    static final FunctionDescriptor gdk_visual_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_visual_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_type_get_type",
-        constants$1329.gdk_visual_type_get_type$FUNC
+    static final FunctionDescriptor gtk_menu_shell_cancel$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_window_window_class_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_window_class_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_window_class_get_type",
-        constants$1329.gdk_window_window_class_get_type$FUNC
+    static final MethodHandle gtk_menu_shell_cancel$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_cancel",
+        constants$1329.gtk_menu_shell_cancel$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_shell_get_take_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_shell_get_take_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_get_take_focus",
+        constants$1329.gtk_menu_shell_get_take_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_shell_set_take_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_shell_set_take_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_set_take_focus",
+        constants$1329.gtk_menu_shell_set_take_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_shell_get_selected_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_shell_get_selected_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_get_selected_item",
+        constants$1329.gtk_menu_shell_get_selected_item$FUNC
     );
 }
 

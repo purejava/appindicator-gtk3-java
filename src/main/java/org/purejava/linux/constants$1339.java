@@ -7,47 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1339 {
+final class constants$1339 {
 
-    static final FunctionDescriptor gdk_init$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1339() {}
+    static final FunctionDescriptor gtk_label_set_mnemonic_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_init$MH = RuntimeHelper.downcallHandle(
-        "gdk_init",
-        constants$1339.gdk_init$FUNC
+    static final MethodHandle gtk_label_set_mnemonic_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_mnemonic_widget",
+        constants$1339.gtk_label_set_mnemonic_widget$FUNC
     );
-    static final FunctionDescriptor gdk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_label_get_mnemonic_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_mnemonic_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_mnemonic_widget",
+        constants$1339.gtk_label_get_mnemonic_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_text_with_mnemonic$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_init_check$MH = RuntimeHelper.downcallHandle(
-        "gdk_init_check",
-        constants$1339.gdk_init_check$FUNC
+    static final MethodHandle gtk_label_set_text_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_text_with_mnemonic",
+        constants$1339.gtk_label_set_text_with_mnemonic$FUNC
     );
-    static final FunctionDescriptor gdk_add_option_entries_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_label_set_justify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_justify$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_justify",
+        constants$1339.gtk_label_set_justify$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_justify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_add_option_entries_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_add_option_entries_libgtk_only",
-        constants$1339.gdk_add_option_entries_libgtk_only$FUNC
+    static final MethodHandle gtk_label_get_justify$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_justify",
+        constants$1339.gtk_label_get_justify$FUNC
     );
-    static final FunctionDescriptor gdk_pre_parse_libgtk_only$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_pre_parse_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_pre_parse_libgtk_only",
-        constants$1339.gdk_pre_parse_libgtk_only$FUNC
+    static final FunctionDescriptor gtk_label_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_get_program_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_program_class$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_program_class",
-        constants$1339.gdk_get_program_class$FUNC
-    );
-    static final FunctionDescriptor gdk_set_program_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_set_program_class$MH = RuntimeHelper.downcallHandle(
-        "gdk_set_program_class",
-        constants$1339.gdk_set_program_class$FUNC
+    static final MethodHandle gtk_label_set_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_ellipsize",
+        constants$1339.gtk_label_set_ellipsize$FUNC
     );
 }
 

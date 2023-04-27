@@ -7,67 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$212 {
+final class constants$212 {
 
-    static final FunctionDescriptor g_key_file_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$212() {}
+    static final FunctionDescriptor GIOFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_int64",
-        constants$212.g_key_file_get_int64$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_int64$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GIOFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_int64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_int64",
-        constants$212.g_key_file_set_int64$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_uint64",
-        constants$212.g_key_file_get_uint64$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_uint64$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GIOFunc_UP$MH = RuntimeHelper.upcallHandle(GIOFunc.class, "apply", constants$212.GIOFunc_UP$FUNC);
+    static final FunctionDescriptor GIOFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_uint64",
-        constants$212.g_key_file_set_uint64$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_get_double$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_double",
-        constants$212.g_key_file_get_double$FUNC
+    static final MethodHandle GIOFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$212.GIOFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_key_file_set_double$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor g_io_channel_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_set_double$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_double",
-        constants$212.g_key_file_set_double$FUNC
+    static final MethodHandle g_io_channel_init$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_init",
+        constants$212.g_io_channel_init$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_ref$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_ref",
+        constants$212.g_io_channel_ref$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_unref$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_unref",
+        constants$212.g_io_channel_unref$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_read$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_read$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_read",
+        constants$212.g_io_channel_read$FUNC
     );
 }
 

@@ -7,53 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$521 {
+final class constants$521 {
 
-    static final FunctionDescriptor g_action_parse_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$521() {}
+    static final FunctionDescriptor pipe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_action_parse_detailed_name$MH = RuntimeHelper.downcallHandle(
-        "g_action_parse_detailed_name",
-        constants$521.g_action_parse_detailed_name$FUNC
+    static final MethodHandle pipe$MH = RuntimeHelper.downcallHandle(
+        "pipe",
+        constants$521.pipe$FUNC
     );
-    static final FunctionDescriptor g_action_print_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor alarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_action_print_detailed_name$MH = RuntimeHelper.downcallHandle(
-        "g_action_print_detailed_name",
-        constants$521.g_action_print_detailed_name$FUNC
+    static final MethodHandle alarm$MH = RuntimeHelper.downcallHandle(
+        "alarm",
+        constants$521.alarm$FUNC
     );
-    static final FunctionDescriptor g_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_type",
-        constants$521.g_action_group_get_type$FUNC
+    static final FunctionDescriptor sleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_action_group_has_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle sleep$MH = RuntimeHelper.downcallHandle(
+        "sleep",
+        constants$521.sleep$FUNC
     );
-    static final MethodHandle g_action_group_has_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_has_action",
-        constants$521.g_action_group_has_action$FUNC
+    static final FunctionDescriptor ualarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_action_group_list_actions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle ualarm$MH = RuntimeHelper.downcallHandle(
+        "ualarm",
+        constants$521.ualarm$FUNC
     );
-    static final MethodHandle g_action_group_list_actions$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_list_actions",
-        constants$521.g_action_group_list_actions$FUNC
+    static final FunctionDescriptor usleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_action_group_get_action_parameter_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle usleep$MH = RuntimeHelper.downcallHandle(
+        "usleep",
+        constants$521.usleep$FUNC
     );
-    static final MethodHandle g_action_group_get_action_parameter_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_parameter_type",
-        constants$521.g_action_group_get_action_parameter_type$FUNC
+    static final FunctionDescriptor pause$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle pause$MH = RuntimeHelper.downcallHandle(
+        "pause",
+        constants$521.pause$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkTimeCoord extends _GdkTimeCoord {
+/**
+ * {@snippet :
+ * typedef struct _GdkTimeCoord GdkTimeCoord;
+ * }
+ */
+public final class GdkTimeCoord extends _GdkTimeCoord {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkTimeCoord() {}
 }
 
 

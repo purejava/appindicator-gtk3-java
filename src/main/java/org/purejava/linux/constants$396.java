@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$396 {
+final class constants$396 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GOptionContext$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$396() {}
+    static final FunctionDescriptor g_value_type_transformable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_value_type_transformable$MH = RuntimeHelper.downcallHandle(
+        "g_value_type_transformable",
+        constants$396.g_value_type_transformable$FUNC
+    );
+    static final FunctionDescriptor g_value_transform$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GOptionContext$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GOptionContext",
-        constants$396.glib_queueautoptr_cleanup_GOptionContext$FUNC
+    static final MethodHandle g_value_transform$MH = RuntimeHelper.downcallHandle(
+        "g_value_transform",
+        constants$396.g_value_transform$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GOptionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_register_transform_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GOptionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GOptionGroup",
-        constants$396.glib_autoptr_clear_GOptionGroup$FUNC
+    static final MethodHandle g_value_register_transform_func$MH = RuntimeHelper.downcallHandle(
+        "g_value_register_transform_func",
+        constants$396.g_value_register_transform_func$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GOptionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GOptionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GOptionGroup",
-        constants$396.glib_autoptr_cleanup_GOptionGroup$FUNC
+    static final MethodHandle g_param_spec_ref$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_ref",
+        constants$396.g_param_spec_ref$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GOptionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GOptionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GOptionGroup",
-        constants$396.glib_listautoptr_cleanup_GOptionGroup$FUNC
+    static final MethodHandle g_param_spec_unref$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_unref",
+        constants$396.g_param_spec_unref$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GOptionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_sink$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GOptionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GOptionGroup",
-        constants$396.glib_slistautoptr_cleanup_GOptionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GOptionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GOptionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GOptionGroup",
-        constants$396.glib_queueautoptr_cleanup_GOptionGroup$FUNC
+    static final MethodHandle g_param_spec_sink$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_sink",
+        constants$396.g_param_spec_sink$FUNC
     );
 }
 

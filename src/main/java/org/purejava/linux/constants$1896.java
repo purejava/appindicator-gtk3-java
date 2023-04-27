@@ -7,50 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1896 {
+final class constants$1896 {
 
-    static final FunctionDescriptor gtk_tool_item_set_is_important$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1896() {}
+    static final FunctionDescriptor gtk_toolbar_space_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_toolbar_space_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_space_style_get_type",
+        constants$1896.gtk_toolbar_space_style_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_set_is_important$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_is_important",
-        constants$1896.gtk_tool_item_set_is_important$FUNC
+    static final FunctionDescriptor gtk_tool_palette_drag_targets_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_palette_drag_targets_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_drag_targets_get_type",
+        constants$1896.gtk_tool_palette_drag_targets_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_tool_item_get_ellipsize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tree_model_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_model_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_flags_get_type",
+        constants$1896.gtk_tree_model_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_get_ellipsize_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_ellipsize_mode",
-        constants$1896.gtk_tool_item_get_ellipsize_mode$FUNC
+    static final FunctionDescriptor gtk_tree_view_drop_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_view_drop_position_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_drop_position_get_type",
+        constants$1896.gtk_tree_view_drop_position_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_tool_item_get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tree_view_column_sizing_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_view_column_sizing_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_sizing_get_type",
+        constants$1896.gtk_tree_view_column_sizing_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_get_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_icon_size",
-        constants$1896.gtk_tool_item_get_icon_size$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_orientation",
-        constants$1896.gtk_tool_item_get_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_toolbar_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_toolbar_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_toolbar_style",
-        constants$1896.gtk_tool_item_get_toolbar_style$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_relief_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_relief_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_relief_style",
-        constants$1896.gtk_tool_item_get_relief_style$FUNC
+    static final FunctionDescriptor gtk_widget_help_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_widget_help_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_help_type_get_type",
+        constants$1896.gtk_widget_help_type_get_type$FUNC
     );
 }
 

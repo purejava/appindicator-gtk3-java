@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkStyleProviderIface extends _GtkStyleProviderIface {
+/**
+ * {@snippet :
+ * typedef struct _GtkStyleProviderIface GtkStyleProviderIface;
+ * }
+ */
+public final class GtkStyleProviderIface extends _GtkStyleProviderIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkStyleProviderIface() {}
 }
 
 

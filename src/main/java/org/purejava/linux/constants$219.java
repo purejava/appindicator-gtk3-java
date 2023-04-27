@@ -7,58 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$219 {
+final class constants$219 {
 
-    static final FunctionDescriptor g_markup_escape_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$219() {}
+    static final FunctionDescriptor g_key_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_key_file_new$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_new",
+        constants$219.g_key_file_new$FUNC
     );
-    static final MethodHandle g_markup_escape_text$MH = RuntimeHelper.downcallHandle(
-        "g_markup_escape_text",
-        constants$219.g_markup_escape_text$FUNC
-    );
-    static final FunctionDescriptor g_markup_printf_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_printf_escaped$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_printf_escaped",
-        constants$219.g_markup_printf_escaped$FUNC
+    static final MethodHandle g_key_file_ref$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_ref",
+        constants$219.g_key_file_ref$FUNC
     );
-    static final FunctionDescriptor g_markup_vprintf_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_vprintf_escaped$MH = RuntimeHelper.downcallHandle(
-        "g_markup_vprintf_escaped",
-        constants$219.g_markup_vprintf_escaped$FUNC
+    static final MethodHandle g_key_file_unref$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_unref",
+        constants$219.g_key_file_unref$FUNC
     );
-    static final FunctionDescriptor g_markup_collect_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_key_file_free$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_free",
+        constants$219.g_key_file_free$FUNC
+    );
+    static final FunctionDescriptor g_key_file_set_list_separator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_CHAR$LAYOUT
+    );
+    static final MethodHandle g_key_file_set_list_separator$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_set_list_separator",
+        constants$219.g_key_file_set_list_separator$FUNC
+    );
+    static final FunctionDescriptor g_key_file_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_collect_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_collect_attributes",
-        constants$219.g_markup_collect_attributes$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_string_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_string_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_is_valid",
-        constants$219.g_variant_type_string_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_string_scan$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_string_scan$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_scan",
-        constants$219.g_variant_type_string_scan$FUNC
+    static final MethodHandle g_key_file_load_from_file$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_file",
+        constants$219.g_key_file_load_from_file$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkKeymapKey extends _GdkKeymapKey {
+/**
+ * {@snippet :
+ * typedef struct _GdkKeymapKey GdkKeymapKey;
+ * }
+ */
+public final class GdkKeymapKey extends _GdkKeymapKey {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkKeymapKey() {}
 }
 
 

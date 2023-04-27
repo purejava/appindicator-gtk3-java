@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkExpander extends _GtkExpander {
+/**
+ * {@snippet :
+ * typedef struct _GtkExpander GtkExpander;
+ * }
+ */
+public final class GtkExpander extends _GtkExpander {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkExpander() {}
 }
 
 

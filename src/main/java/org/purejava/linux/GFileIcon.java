@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFileIcon {
+/**
+ * {@snippet :
+ * typedef struct _GFileIcon GFileIcon;
+ * }
+ */
+public final class GFileIcon {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFileIcon() {}
 }
 
 

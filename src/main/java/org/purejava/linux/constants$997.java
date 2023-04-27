@@ -7,57 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$997 {
+final class constants$997 {
 
-    static final FunctionDescriptor hb_unicode_compose_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_compose_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$997.hb_unicode_compose_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_decompose_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_decompose_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$997.hb_unicode_decompose_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_combining_class_func$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$997() {}
+    static final FunctionDescriptor cairo_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_combining_class_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_combining_class_func",
-        constants$997.hb_unicode_funcs_set_combining_class_func$FUNC
+    static final MethodHandle cairo_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_user_data",
+        constants$997.cairo_set_user_data$FUNC
     );
-    static final FunctionDescriptor hb_unicode_funcs_set_general_category_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_save$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_general_category_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_general_category_func",
-        constants$997.hb_unicode_funcs_set_general_category_func$FUNC
+    static final MethodHandle cairo_save$MH = RuntimeHelper.downcallHandle(
+        "cairo_save",
+        constants$997.cairo_save$FUNC
     );
-    static final FunctionDescriptor hb_unicode_funcs_set_mirroring_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_restore$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_mirroring_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_mirroring_func",
-        constants$997.hb_unicode_funcs_set_mirroring_func$FUNC
+    static final MethodHandle cairo_restore$MH = RuntimeHelper.downcallHandle(
+        "cairo_restore",
+        constants$997.cairo_restore$FUNC
+    );
+    static final FunctionDescriptor cairo_push_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_push_group$MH = RuntimeHelper.downcallHandle(
+        "cairo_push_group",
+        constants$997.cairo_push_group$FUNC
+    );
+    static final FunctionDescriptor cairo_push_group_with_content$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_push_group_with_content$MH = RuntimeHelper.downcallHandle(
+        "cairo_push_group_with_content",
+        constants$997.cairo_push_group_with_content$FUNC
+    );
+    static final FunctionDescriptor cairo_pop_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_pop_group$MH = RuntimeHelper.downcallHandle(
+        "cairo_pop_group",
+        constants$997.cairo_pop_group$FUNC
     );
 }
 

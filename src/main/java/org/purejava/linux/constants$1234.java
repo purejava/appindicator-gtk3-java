@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1234 {
+final class constants$1234 {
 
-    static final FunctionDescriptor gdk_frame_timings_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1234() {}
+    static final FunctionDescriptor atk_selection_is_child_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_selection_is_child_selected$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_is_child_selected",
+        constants$1234.atk_selection_is_child_selected$FUNC
+    );
+    static final FunctionDescriptor atk_selection_remove_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_selection_remove_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_remove_selection",
+        constants$1234.atk_selection_remove_selection$FUNC
+    );
+    static final FunctionDescriptor atk_selection_select_all_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_frame_timings_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_ref",
-        constants$1234.gdk_frame_timings_ref$FUNC
+    static final MethodHandle atk_selection_select_all_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_selection_select_all_selection",
+        constants$1234.atk_selection_select_all_selection$FUNC
     );
-    static final FunctionDescriptor gdk_frame_timings_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_socket_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_socket_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_socket_get_type",
+        constants$1234.atk_socket_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_socket_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_socket_new$MH = RuntimeHelper.downcallHandle(
+        "atk_socket_new",
+        constants$1234.atk_socket_new$FUNC
+    );
+    static final FunctionDescriptor atk_socket_embed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_frame_timings_unref$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_unref",
-        constants$1234.gdk_frame_timings_unref$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_frame_counter$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_timings_get_frame_counter$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_frame_counter",
-        constants$1234.gdk_frame_timings_get_frame_counter$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_complete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_timings_get_complete$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_complete",
-        constants$1234.gdk_frame_timings_get_complete$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_frame_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_timings_get_frame_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_frame_time",
-        constants$1234.gdk_frame_timings_get_frame_time$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_presentation_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_timings_get_presentation_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_presentation_time",
-        constants$1234.gdk_frame_timings_get_presentation_time$FUNC
+    static final MethodHandle atk_socket_embed$MH = RuntimeHelper.downcallHandle(
+        "atk_socket_embed",
+        constants$1234.atk_socket_embed$FUNC
     );
 }
 

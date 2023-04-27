@@ -7,56 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1637 {
+final class constants$1637 {
 
-    static final FunctionDescriptor gtk_image_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_clear",
-        constants$1637.gtk_image_clear$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_file$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1637() {}
+    static final FunctionDescriptor gtk_style_context_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_file",
-        constants$1637.gtk_image_set_from_file$FUNC
+    static final MethodHandle gtk_style_context_lookup_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_lookup_color",
+        constants$1637.gtk_style_context_lookup_color$FUNC
     );
-    static final FunctionDescriptor gtk_image_set_from_resource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_resource",
-        constants$1637.gtk_image_set_from_resource$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_pixbuf",
-        constants$1637.gtk_image_set_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_stock$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_context_notify_state_change$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_stock",
-        constants$1637.gtk_image_set_from_stock$FUNC
+    static final MethodHandle gtk_style_context_notify_state_change$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_notify_state_change",
+        constants$1637.gtk_style_context_notify_state_change$FUNC
     );
-    static final FunctionDescriptor gtk_image_set_from_icon_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_context_cancel_animations$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_cancel_animations$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_cancel_animations",
+        constants$1637.gtk_style_context_cancel_animations$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_scroll_animations$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_icon_set",
-        constants$1637.gtk_image_set_from_icon_set$FUNC
+    static final MethodHandle gtk_style_context_scroll_animations$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_scroll_animations",
+        constants$1637.gtk_style_context_scroll_animations$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_push_animatable_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_push_animatable_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_push_animatable_region",
+        constants$1637.gtk_style_context_push_animatable_region$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_pop_animatable_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_pop_animatable_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_pop_animatable_region",
+        constants$1637.gtk_style_context_pop_animatable_region$FUNC
     );
 }
 

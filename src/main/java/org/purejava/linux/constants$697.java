@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$697 {
+final class constants$697 {
 
-    static final FunctionDescriptor g_file_info_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$697() {}
+    static final FunctionDescriptor g_menu_attribute_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_symbolic_icon",
-        constants$697.g_file_info_get_symbolic_icon$FUNC
+    static final MethodHandle g_menu_attribute_iter_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_menu_attribute_iter_get_name",
+        constants$697.g_menu_attribute_iter_get_name$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_attribute_iter_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_content_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_content_type",
-        constants$697.g_file_info_get_content_type$FUNC
+    static final MethodHandle g_menu_attribute_iter_get_value$MH = RuntimeHelper.downcallHandle(
+        "g_menu_attribute_iter_get_value",
+        constants$697.g_menu_attribute_iter_get_value$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_menu_link_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_menu_link_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_type",
+        constants$697.g_menu_link_iter_get_type$FUNC
     );
-    static final MethodHandle g_file_info_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_size",
-        constants$697.g_file_info_get_size$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_modification_time$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_link_iter_get_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_modification_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_modification_time",
-        constants$697.g_file_info_get_modification_time$FUNC
+    static final MethodHandle g_menu_link_iter_get_next$MH = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_next",
+        constants$697.g_menu_link_iter_get_next$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_modification_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_link_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_modification_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_modification_date_time",
-        constants$697.g_file_info_get_modification_date_time$FUNC
+    static final MethodHandle g_menu_link_iter_next$MH = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_next",
+        constants$697.g_menu_link_iter_next$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_access_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_link_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_access_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_access_date_time",
-        constants$697.g_file_info_get_access_date_time$FUNC
+    static final MethodHandle g_menu_link_iter_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_name",
+        constants$697.g_menu_link_iter_get_name$FUNC
     );
 }
 

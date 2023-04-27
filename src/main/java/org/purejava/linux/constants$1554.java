@@ -7,48 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1554 {
+final class constants$1554 {
 
-    static final FunctionDescriptor gtk_tree_path_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1554() {}
+    static final FunctionDescriptor gtk_css_provider_load_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_free",
-        constants$1554.gtk_tree_path_free$FUNC
+    static final MethodHandle gtk_css_provider_load_from_data$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_load_from_data",
+        constants$1554.gtk_css_provider_load_from_data$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_copy",
-        constants$1554.gtk_tree_path_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_path_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_get_type",
-        constants$1554.gtk_tree_path_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_css_provider_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_compare$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_compare",
-        constants$1554.gtk_tree_path_compare$FUNC
+    static final MethodHandle gtk_css_provider_load_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_load_from_file",
+        constants$1554.gtk_css_provider_load_from_file$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_next$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_css_provider_load_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_next$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_next",
-        constants$1554.gtk_tree_path_next$FUNC
+    static final MethodHandle gtk_css_provider_load_from_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_load_from_path",
+        constants$1554.gtk_css_provider_load_from_path$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_prev$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_css_provider_load_from_resource$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_prev$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_prev",
-        constants$1554.gtk_tree_path_prev$FUNC
+    static final MethodHandle gtk_css_provider_load_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_load_from_resource",
+        constants$1554.gtk_css_provider_load_from_resource$FUNC
+    );
+    static final FunctionDescriptor gtk_css_provider_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_css_provider_get_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_get_default",
+        constants$1554.gtk_css_provider_get_default$FUNC
+    );
+    static final FunctionDescriptor gtk_css_provider_get_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_css_provider_get_named$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_provider_get_named",
+        constants$1554.gtk_css_provider_get_named$FUNC
     );
 }
 

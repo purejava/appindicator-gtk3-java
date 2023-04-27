@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GParamSpecClass {
+ *     GTypeClass g_type_class;
+ *     GType value_type;
+ *     void (*finalize)(GParamSpec*);
+ *     void (*value_set_default)(GParamSpec*,GValue*);
+ *     gboolean (*value_validate)(GParamSpec*,GValue*);
+ *     gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+ *     gboolean (*value_is_valid)(GParamSpec*,const GValue*);
+ *     gpointer dummy[3];
+ * };
+ * }
+ */
 public class _GParamSpecClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
         ).withName("g_type_class"),
@@ -18,7 +32,8 @@ public class _GParamSpecClass {
         Constants$root.C_POINTER$LAYOUT.withName("value_set_default"),
         Constants$root.C_POINTER$LAYOUT.withName("value_validate"),
         Constants$root.C_POINTER$LAYOUT.withName("values_cmp"),
-        MemoryLayout.sequenceLayout(4, Constants$root.C_POINTER$LAYOUT).withName("dummy")
+        Constants$root.C_POINTER$LAYOUT.withName("value_is_valid"),
+        MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("dummy")
     ).withName("_GParamSpecClass");
     public static MemoryLayout $LAYOUT() {
         return _GParamSpecClass.$struct$LAYOUT;
@@ -30,10 +45,22 @@ public class _GParamSpecClass {
     public static VarHandle value_type$VH() {
         return _GParamSpecClass.value_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GType value_type;
+     * }
+     */
     public static long value_type$get(MemorySegment seg) {
         return (long)_GParamSpecClass.value_type$VH.get(seg);
     }
-    public static void value_type$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GType value_type;
+     * }
+     */
+    public static void value_type$set(MemorySegment seg, long x) {
         _GParamSpecClass.value_type$VH.set(seg, x);
     }
     public static long value_type$get(MemorySegment seg, long index) {
@@ -45,20 +72,32 @@ public class _GParamSpecClass {
     static final FunctionDescriptor finalize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle finalize$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecClass.finalize$FUNC
+    static final FunctionDescriptor finalize_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle finalize_UP$MH = RuntimeHelper.upcallHandle(finalize.class, "apply", _GParamSpecClass.finalize_UP$FUNC);
+    static final FunctionDescriptor finalize_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle finalize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GParamSpecClass.finalize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*finalize)(GParamSpec*);
+     * }
+     */
     public interface finalize {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(finalize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(finalize.class, fi, _GParamSpecClass.finalize$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(finalize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GParamSpecClass.finalize_UP$MH, fi, _GParamSpecClass.finalize$FUNC, scope);
         }
-        static finalize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static finalize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GParamSpecClass.finalize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GParamSpecClass.finalize_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -70,39 +109,65 @@ public class _GParamSpecClass {
     public static VarHandle finalize$VH() {
         return _GParamSpecClass.finalize$VH;
     }
-    public static MemoryAddress finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.finalize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*finalize)(GParamSpec*);
+     * }
+     */
+    public static MemorySegment finalize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.finalize$VH.get(seg);
     }
-    public static void finalize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*finalize)(GParamSpec*);
+     * }
+     */
+    public static void finalize$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecClass.finalize$VH.set(seg, x);
     }
-    public static MemoryAddress finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.finalize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment finalize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.finalize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void finalize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void finalize$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecClass.finalize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static finalize finalize (MemorySegment segment, MemorySession session) {
-        return finalize.ofAddress(finalize$get(segment), session);
+    public static finalize finalize(MemorySegment segment, SegmentScope scope) {
+        return finalize.ofAddress(finalize$get(segment), scope);
     }
     static final FunctionDescriptor value_set_default$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_set_default$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecClass.value_set_default$FUNC
+    static final FunctionDescriptor value_set_default_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_set_default_UP$MH = RuntimeHelper.upcallHandle(value_set_default.class, "apply", _GParamSpecClass.value_set_default_UP$FUNC);
+    static final FunctionDescriptor value_set_default_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_set_default_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GParamSpecClass.value_set_default_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*value_set_default)(GParamSpec*,GValue*);
+     * }
+     */
     public interface value_set_default {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(value_set_default fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_set_default.class, fi, _GParamSpecClass.value_set_default$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(value_set_default fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GParamSpecClass.value_set_default_UP$MH, fi, _GParamSpecClass.value_set_default$FUNC, scope);
         }
-        static value_set_default ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static value_set_default ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GParamSpecClass.value_set_default$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GParamSpecClass.value_set_default_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -114,39 +179,65 @@ public class _GParamSpecClass {
     public static VarHandle value_set_default$VH() {
         return _GParamSpecClass.value_set_default$VH;
     }
-    public static MemoryAddress value_set_default$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.value_set_default$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*value_set_default)(GParamSpec*,GValue*);
+     * }
+     */
+    public static MemorySegment value_set_default$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_set_default$VH.get(seg);
     }
-    public static void value_set_default$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*value_set_default)(GParamSpec*,GValue*);
+     * }
+     */
+    public static void value_set_default$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecClass.value_set_default$VH.set(seg, x);
     }
-    public static MemoryAddress value_set_default$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.value_set_default$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_set_default$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_set_default$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_set_default$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_set_default$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecClass.value_set_default$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_set_default value_set_default (MemorySegment segment, MemorySession session) {
-        return value_set_default.ofAddress(value_set_default$get(segment), session);
+    public static value_set_default value_set_default(MemorySegment segment, SegmentScope scope) {
+        return value_set_default.ofAddress(value_set_default$get(segment), scope);
     }
     static final FunctionDescriptor value_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_validate$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecClass.value_validate$FUNC
+    static final FunctionDescriptor value_validate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_validate_UP$MH = RuntimeHelper.upcallHandle(value_validate.class, "apply", _GParamSpecClass.value_validate_UP$FUNC);
+    static final FunctionDescriptor value_validate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_validate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GParamSpecClass.value_validate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*value_validate)(GParamSpec*,GValue*);
+     * }
+     */
     public interface value_validate {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(value_validate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_validate.class, fi, _GParamSpecClass.value_validate$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(value_validate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GParamSpecClass.value_validate_UP$MH, fi, _GParamSpecClass.value_validate$FUNC, scope);
         }
-        static value_validate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static value_validate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GParamSpecClass.value_validate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GParamSpecClass.value_validate_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -158,40 +249,68 @@ public class _GParamSpecClass {
     public static VarHandle value_validate$VH() {
         return _GParamSpecClass.value_validate$VH;
     }
-    public static MemoryAddress value_validate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.value_validate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*value_validate)(GParamSpec*,GValue*);
+     * }
+     */
+    public static MemorySegment value_validate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_validate$VH.get(seg);
     }
-    public static void value_validate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*value_validate)(GParamSpec*,GValue*);
+     * }
+     */
+    public static void value_validate$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecClass.value_validate$VH.set(seg, x);
     }
-    public static MemoryAddress value_validate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.value_validate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_validate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_validate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_validate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_validate$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecClass.value_validate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_validate value_validate (MemorySegment segment, MemorySession session) {
-        return value_validate.ofAddress(value_validate$get(segment), session);
+    public static value_validate value_validate(MemorySegment segment, SegmentScope scope) {
+        return value_validate.ofAddress(value_validate$get(segment), scope);
     }
     static final FunctionDescriptor values_cmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle values_cmp$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecClass.values_cmp$FUNC
+    static final FunctionDescriptor values_cmp_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle values_cmp_UP$MH = RuntimeHelper.upcallHandle(values_cmp.class, "apply", _GParamSpecClass.values_cmp_UP$FUNC);
+    static final FunctionDescriptor values_cmp_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle values_cmp_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GParamSpecClass.values_cmp_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+     * }
+     */
     public interface values_cmp {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(values_cmp fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(values_cmp.class, fi, _GParamSpecClass.values_cmp$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(values_cmp fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GParamSpecClass.values_cmp_UP$MH, fi, _GParamSpecClass.values_cmp$FUNC, scope);
         }
-        static values_cmp ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static values_cmp ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GParamSpecClass.values_cmp$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GParamSpecClass.values_cmp_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -203,30 +322,112 @@ public class _GParamSpecClass {
     public static VarHandle values_cmp$VH() {
         return _GParamSpecClass.values_cmp$VH;
     }
-    public static MemoryAddress values_cmp$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.values_cmp$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+     * }
+     */
+    public static MemorySegment values_cmp$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.values_cmp$VH.get(seg);
     }
-    public static void values_cmp$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+     * }
+     */
+    public static void values_cmp$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecClass.values_cmp$VH.set(seg, x);
     }
-    public static MemoryAddress values_cmp$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecClass.values_cmp$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment values_cmp$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.values_cmp$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void values_cmp$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void values_cmp$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecClass.values_cmp$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static values_cmp values_cmp (MemorySegment segment, MemorySession session) {
-        return values_cmp.ofAddress(values_cmp$get(segment), session);
+    public static values_cmp values_cmp(MemorySegment segment, SegmentScope scope) {
+        return values_cmp.ofAddress(values_cmp$get(segment), scope);
+    }
+    static final FunctionDescriptor value_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor value_is_valid_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_is_valid_UP$MH = RuntimeHelper.upcallHandle(value_is_valid.class, "apply", _GParamSpecClass.value_is_valid_UP$FUNC);
+    static final FunctionDescriptor value_is_valid_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_is_valid_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GParamSpecClass.value_is_valid_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*value_is_valid)(GParamSpec*,const GValue*);
+     * }
+     */
+    public interface value_is_valid {
+
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(value_is_valid fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GParamSpecClass.value_is_valid_UP$MH, fi, _GParamSpecClass.value_is_valid$FUNC, scope);
+        }
+        static value_is_valid ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+                try {
+                    return (int)_GParamSpecClass.value_is_valid_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
+    static final VarHandle value_is_valid$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_is_valid"));
+    public static VarHandle value_is_valid$VH() {
+        return _GParamSpecClass.value_is_valid$VH;
+    }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*value_is_valid)(GParamSpec*,const GValue*);
+     * }
+     */
+    public static MemorySegment value_is_valid$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_is_valid$VH.get(seg);
+    }
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*value_is_valid)(GParamSpec*,const GValue*);
+     * }
+     */
+    public static void value_is_valid$set(MemorySegment seg, MemorySegment x) {
+        _GParamSpecClass.value_is_valid$VH.set(seg, x);
+    }
+    public static MemorySegment value_is_valid$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecClass.value_is_valid$VH.get(seg.asSlice(index*sizeof()));
+    }
+    public static void value_is_valid$set(MemorySegment seg, long index, MemorySegment x) {
+        _GParamSpecClass.value_is_valid$VH.set(seg.asSlice(index*sizeof()), x);
+    }
+    public static value_is_valid value_is_valid(MemorySegment segment, SegmentScope scope) {
+        return value_is_valid.ofAddress(value_is_valid$get(segment), scope);
     }
     public static MemorySegment dummy$slice(MemorySegment seg) {
-        return seg.asSlice(48, 32);
+        return seg.asSlice(56, 24);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

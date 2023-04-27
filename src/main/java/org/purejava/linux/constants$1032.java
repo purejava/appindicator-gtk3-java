@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1032 {
+final class constants$1032 {
 
-    static final FunctionDescriptor hb_buffer_guess_segment_properties$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1032() {}
+    static final FunctionDescriptor cairo_surface_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_guess_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_guess_segment_properties",
-        constants$1032.hb_buffer_guess_segment_properties$FUNC
+    static final MethodHandle cairo_surface_get_device$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_device",
+        constants$1032.cairo_surface_get_device$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_flags$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_flags",
-        constants$1032.hb_buffer_set_flags$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_surface_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_flags$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_flags",
-        constants$1032.hb_buffer_get_flags$FUNC
+    static final MethodHandle cairo_surface_get_reference_count$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_reference_count",
+        constants$1032.cairo_surface_get_reference_count$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_cluster_level$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_cluster_level$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_cluster_level",
-        constants$1032.hb_buffer_set_cluster_level$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_cluster_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_surface_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_cluster_level$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_cluster_level",
-        constants$1032.hb_buffer_get_cluster_level$FUNC
+    static final MethodHandle cairo_surface_status$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_status",
+        constants$1032.cairo_surface_status$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_replacement_codepoint$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_get_type$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_type",
+        constants$1032.cairo_surface_get_type$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_content$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_get_content$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_content",
+        constants$1032.cairo_surface_get_content$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_write_to_png$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_set_replacement_codepoint$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_replacement_codepoint",
-        constants$1032.hb_buffer_set_replacement_codepoint$FUNC
+    static final MethodHandle cairo_surface_write_to_png$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_write_to_png",
+        constants$1032.cairo_surface_write_to_png$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkEditableInterface extends _GtkEditableInterface {
+/**
+ * {@snippet :
+ * typedef struct _GtkEditableInterface GtkEditableInterface;
+ * }
+ */
+public final class GtkEditableInterface extends _GtkEditableInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkEditableInterface() {}
 }
 
 

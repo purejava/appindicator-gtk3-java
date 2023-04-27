@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class cairo_path_data_t extends _cairo_path_data_t {
+/**
+ * {@snippet :
+ * typedef union _cairo_path_data_t cairo_path_data_t;
+ * }
+ */
+public final class cairo_path_data_t extends _cairo_path_data_t {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private cairo_path_data_t() {}
 }
 
 

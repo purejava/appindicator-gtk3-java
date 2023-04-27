@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkGeometry extends _GdkGeometry {
+/**
+ * {@snippet :
+ * typedef struct _GdkGeometry GdkGeometry;
+ * }
+ */
+public final class GdkGeometry extends _GdkGeometry {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkGeometry() {}
 }
 
 

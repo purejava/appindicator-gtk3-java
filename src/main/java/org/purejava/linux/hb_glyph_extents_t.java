@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct hb_glyph_extents_t {
+ *     hb_position_t x_bearing;
+ *     hb_position_t y_bearing;
+ *     hb_position_t width;
+ *     hb_position_t height;
+ * };
+ * }
+ */
 public class hb_glyph_extents_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("x_bearing"),
         Constants$root.C_INT$LAYOUT.withName("y_bearing"),
         Constants$root.C_INT$LAYOUT.withName("width"),
@@ -22,10 +32,22 @@ public class hb_glyph_extents_t {
     public static VarHandle x_bearing$VH() {
         return hb_glyph_extents_t.x_bearing$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_position_t x_bearing;
+     * }
+     */
     public static int x_bearing$get(MemorySegment seg) {
         return (int)hb_glyph_extents_t.x_bearing$VH.get(seg);
     }
-    public static void x_bearing$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_position_t x_bearing;
+     * }
+     */
+    public static void x_bearing$set(MemorySegment seg, int x) {
         hb_glyph_extents_t.x_bearing$VH.set(seg, x);
     }
     public static int x_bearing$get(MemorySegment seg, long index) {
@@ -38,10 +60,22 @@ public class hb_glyph_extents_t {
     public static VarHandle y_bearing$VH() {
         return hb_glyph_extents_t.y_bearing$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_position_t y_bearing;
+     * }
+     */
     public static int y_bearing$get(MemorySegment seg) {
         return (int)hb_glyph_extents_t.y_bearing$VH.get(seg);
     }
-    public static void y_bearing$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_position_t y_bearing;
+     * }
+     */
+    public static void y_bearing$set(MemorySegment seg, int x) {
         hb_glyph_extents_t.y_bearing$VH.set(seg, x);
     }
     public static int y_bearing$get(MemorySegment seg, long index) {
@@ -54,10 +88,22 @@ public class hb_glyph_extents_t {
     public static VarHandle width$VH() {
         return hb_glyph_extents_t.width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_position_t width;
+     * }
+     */
     public static int width$get(MemorySegment seg) {
         return (int)hb_glyph_extents_t.width$VH.get(seg);
     }
-    public static void width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_position_t width;
+     * }
+     */
+    public static void width$set(MemorySegment seg, int x) {
         hb_glyph_extents_t.width$VH.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class hb_glyph_extents_t {
     public static VarHandle height$VH() {
         return hb_glyph_extents_t.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_position_t height;
+     * }
+     */
     public static int height$get(MemorySegment seg) {
         return (int)hb_glyph_extents_t.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_position_t height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, int x) {
         hb_glyph_extents_t.height$VH.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class hb_glyph_extents_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

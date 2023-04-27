@@ -7,59 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1256 {
+final class constants$1256 {
 
-    static final FunctionDescriptor gdk_window_set_decorations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_decorations$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_decorations",
-        constants$1256.gdk_window_set_decorations$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_decorations$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1256() {}
+    static final FunctionDescriptor gtk_widget_has_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_decorations$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_decorations",
-        constants$1256.gdk_window_get_decorations$FUNC
+    static final MethodHandle gtk_widget_has_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_focus",
+        constants$1256.gtk_widget_has_focus$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_functions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_functions$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_functions",
-        constants$1256.gdk_window_set_functions$FUNC
-    );
-    static final FunctionDescriptor gdk_window_create_similar_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_create_similar_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_create_similar_surface",
-        constants$1256.gdk_window_create_similar_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_window_create_similar_image_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_create_similar_image_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_create_similar_image_surface",
-        constants$1256.gdk_window_create_similar_image_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_window_beep$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_is_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_beep$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_beep",
-        constants$1256.gdk_window_beep$FUNC
+    static final MethodHandle gtk_widget_is_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_is_focus",
+        constants$1256.gtk_widget_is_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_has_visible_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_has_visible_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_visible_focus",
+        constants$1256.gtk_widget_has_visible_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_grab_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_grab_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_grab_focus",
+        constants$1256.gtk_widget_grab_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_focus_on_click$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_focus_on_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_focus_on_click",
+        constants$1256.gtk_widget_set_focus_on_click$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_focus_on_click",
+        constants$1256.gtk_widget_get_focus_on_click$FUNC
     );
 }
 

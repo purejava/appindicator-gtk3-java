@@ -7,51 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1895 {
+final class constants$1895 {
 
-    static final FunctionDescriptor gtk_tool_item_get_use_drag_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1895() {}
+    static final FunctionDescriptor gtk_style_context_print_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_style_context_print_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_print_flags_get_type",
+        constants$1895.gtk_style_context_print_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_get_use_drag_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_use_drag_window",
-        constants$1895.gtk_tool_item_get_use_drag_window$FUNC
+    static final FunctionDescriptor gtk_text_buffer_target_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_buffer_target_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_target_info_get_type",
+        constants$1895.gtk_text_buffer_target_info_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_tool_item_set_visible_horizontal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_text_search_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_search_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_search_flags_get_type",
+        constants$1895.gtk_text_search_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_set_visible_horizontal$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_visible_horizontal",
-        constants$1895.gtk_tool_item_set_visible_horizontal$FUNC
+    static final FunctionDescriptor gtk_text_window_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_window_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_window_type_get_type",
+        constants$1895.gtk_text_window_type_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_tool_item_get_visible_horizontal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_text_view_layer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_view_layer_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_layer_get_type",
+        constants$1895.gtk_text_view_layer_get_type$FUNC
     );
-    static final MethodHandle gtk_tool_item_get_visible_horizontal$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_visible_horizontal",
-        constants$1895.gtk_tool_item_get_visible_horizontal$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_visible_vertical$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_visible_vertical$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_visible_vertical",
-        constants$1895.gtk_tool_item_set_visible_vertical$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_visible_vertical$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_visible_vertical$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_visible_vertical",
-        constants$1895.gtk_tool_item_get_visible_vertical$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_is_important$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_is_important$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_is_important",
-        constants$1895.gtk_tool_item_get_is_important$FUNC
+    static final FunctionDescriptor gtk_text_extend_selection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_extend_selection_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_extend_selection_get_type",
+        constants$1895.gtk_text_extend_selection_get_type$FUNC
     );
 }
 

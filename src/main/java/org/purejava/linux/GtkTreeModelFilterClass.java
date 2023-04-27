@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTreeModelFilterClass extends _GtkTreeModelFilterClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkTreeModelFilterClass GtkTreeModelFilterClass;
+ * }
+ */
+public final class GtkTreeModelFilterClass extends _GtkTreeModelFilterClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTreeModelFilterClass() {}
 }
 
 

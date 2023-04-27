@@ -7,20 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTableRowCol {
+ *     guint16 requisition;
+ *     guint16 allocation;
+ *     guint16 spacing;
+ *      *     guint need_expand;
+ *     guint need_shrink;
+ *     guint expand;
+ *     guint shrink;
+ *     guint empty;
+ * };
+ * }
+ */
 public class _GtkTableRowCol {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_SHORT$LAYOUT.withName("requisition"),
         Constants$root.C_SHORT$LAYOUT.withName("allocation"),
         Constants$root.C_SHORT$LAYOUT.withName("spacing"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("need_expand"),
-            MemoryLayout.paddingLayout(1).withName("need_shrink"),
-            MemoryLayout.paddingLayout(1).withName("expand"),
-            MemoryLayout.paddingLayout(1).withName("shrink"),
-            MemoryLayout.paddingLayout(1).withName("empty"),
-            MemoryLayout.paddingLayout(11)
-        )
+        MemoryLayout.paddingLayout(16)
     ).withName("_GtkTableRowCol");
     public static MemoryLayout $LAYOUT() {
         return _GtkTableRowCol.$struct$LAYOUT;
@@ -29,10 +36,22 @@ public class _GtkTableRowCol {
     public static VarHandle requisition$VH() {
         return _GtkTableRowCol.requisition$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 requisition;
+     * }
+     */
     public static short requisition$get(MemorySegment seg) {
         return (short)_GtkTableRowCol.requisition$VH.get(seg);
     }
-    public static void requisition$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 requisition;
+     * }
+     */
+    public static void requisition$set(MemorySegment seg, short x) {
         _GtkTableRowCol.requisition$VH.set(seg, x);
     }
     public static short requisition$get(MemorySegment seg, long index) {
@@ -45,10 +64,22 @@ public class _GtkTableRowCol {
     public static VarHandle allocation$VH() {
         return _GtkTableRowCol.allocation$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 allocation;
+     * }
+     */
     public static short allocation$get(MemorySegment seg) {
         return (short)_GtkTableRowCol.allocation$VH.get(seg);
     }
-    public static void allocation$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 allocation;
+     * }
+     */
+    public static void allocation$set(MemorySegment seg, short x) {
         _GtkTableRowCol.allocation$VH.set(seg, x);
     }
     public static short allocation$get(MemorySegment seg, long index) {
@@ -61,10 +92,22 @@ public class _GtkTableRowCol {
     public static VarHandle spacing$VH() {
         return _GtkTableRowCol.spacing$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 spacing;
+     * }
+     */
     public static short spacing$get(MemorySegment seg) {
         return (short)_GtkTableRowCol.spacing$VH.get(seg);
     }
-    public static void spacing$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 spacing;
+     * }
+     */
+    public static void spacing$set(MemorySegment seg, short x) {
         _GtkTableRowCol.spacing$VH.set(seg, x);
     }
     public static short spacing$get(MemorySegment seg, long index) {
@@ -75,10 +118,10 @@ public class _GtkTableRowCol {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

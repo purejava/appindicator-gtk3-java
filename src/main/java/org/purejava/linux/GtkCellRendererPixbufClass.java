@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellRendererPixbufClass extends _GtkCellRendererPixbufClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellRendererPixbufClass GtkCellRendererPixbufClass;
+ * }
+ */
+public final class GtkCellRendererPixbufClass extends _GtkCellRendererPixbufClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellRendererPixbufClass() {}
 }
 
 

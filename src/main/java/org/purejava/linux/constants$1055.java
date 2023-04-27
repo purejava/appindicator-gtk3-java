@@ -7,56 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1055 {
+final class constants$1055 {
 
-    static final FunctionDescriptor pango_gravity_get_for_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1055() {}
+    static final FunctionDescriptor gdk_device_get_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_gravity_get_for_script$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script",
-        constants$1055.pango_gravity_get_for_script$FUNC
+    static final MethodHandle gdk_device_get_mode$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_mode",
+        constants$1055.gdk_device_get_mode$FUNC
     );
-    static final FunctionDescriptor pango_gravity_get_for_script_and_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_gravity_get_for_script_and_width$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script_and_width",
-        constants$1055.pango_gravity_get_for_script_and_width$FUNC
-    );
-    static final FunctionDescriptor pango_bidi_type_for_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_bidi_type_for_unichar$MH = RuntimeHelper.downcallHandle(
-        "pango_bidi_type_for_unichar",
-        constants$1055.pango_bidi_type_for_unichar$FUNC
-    );
-    static final FunctionDescriptor pango_unichar_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_unichar_direction$MH = RuntimeHelper.downcallHandle(
-        "pango_unichar_direction",
-        constants$1055.pango_unichar_direction$FUNC
-    );
-    static final FunctionDescriptor pango_find_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_device_set_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_find_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_find_base_dir",
-        constants$1055.pango_find_base_dir$FUNC
+    static final MethodHandle gdk_device_set_mode$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_set_mode",
+        constants$1055.gdk_device_set_mode$FUNC
     );
-    static final FunctionDescriptor pango_get_mirror_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_device_get_n_keys$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_get_mirror_char$MH = RuntimeHelper.downcallHandle(
-        "pango_get_mirror_char",
-        constants$1055.pango_get_mirror_char$FUNC
+    static final MethodHandle gdk_device_get_n_keys$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_n_keys",
+        constants$1055.gdk_device_get_n_keys$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_key$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_key",
+        constants$1055.gdk_device_get_key$FUNC
+    );
+    static final FunctionDescriptor gdk_device_set_key$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_device_set_key$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_set_key",
+        constants$1055.gdk_device_set_key$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_axis_use$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_axis_use$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axis_use",
+        constants$1055.gdk_device_get_axis_use$FUNC
     );
 }
 

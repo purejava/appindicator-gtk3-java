@@ -7,10 +7,35 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$630 {
+final class constants$630 {
 
-    static final FunctionDescriptor g_bus_watch_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$630() {}
+    static final FunctionDescriptor g_file_set_attribute_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute_uint64",
+        constants$630.g_file_set_attribute_uint64$FUNC
+    );
+    static final FunctionDescriptor g_file_set_attribute_int64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_set_attribute_int64$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute_int64",
+        constants$630.g_file_set_attribute_int64$FUNC
+    );
+    static final FunctionDescriptor g_file_mount_enclosing_volume$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -18,12 +43,20 @@ class constants$630 {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_bus_watch_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name",
-        constants$630.g_bus_watch_name$FUNC
+    static final MethodHandle g_file_mount_enclosing_volume$MH = RuntimeHelper.downcallHandle(
+        "g_file_mount_enclosing_volume",
+        constants$630.g_file_mount_enclosing_volume$FUNC
     );
-    static final FunctionDescriptor g_bus_watch_name_on_connection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_mount_enclosing_volume_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_mount_enclosing_volume_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_mount_enclosing_volume_finish",
+        constants$630.g_file_mount_enclosing_volume_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_mount_mountable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -31,43 +64,18 @@ class constants$630 {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_bus_watch_name_on_connection$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_on_connection",
-        constants$630.g_bus_watch_name_on_connection$FUNC
+    static final MethodHandle g_file_mount_mountable$MH = RuntimeHelper.downcallHandle(
+        "g_file_mount_mountable",
+        constants$630.g_file_mount_mountable$FUNC
     );
-    static final FunctionDescriptor g_bus_watch_name_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_mount_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_bus_watch_name_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_with_closures",
-        constants$630.g_bus_watch_name_with_closures$FUNC
-    );
-    static final FunctionDescriptor g_bus_watch_name_on_connection_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_watch_name_on_connection_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_on_connection_with_closures",
-        constants$630.g_bus_watch_name_on_connection_with_closures$FUNC
-    );
-    static final FunctionDescriptor g_bus_unwatch_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bus_unwatch_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_unwatch_name",
-        constants$630.g_bus_unwatch_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_type",
-        constants$630.g_dbus_object_get_type$FUNC
+    static final MethodHandle g_file_mount_mountable_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_mount_mountable_finish",
+        constants$630.g_file_mount_mountable_finish$FUNC
     );
 }
 

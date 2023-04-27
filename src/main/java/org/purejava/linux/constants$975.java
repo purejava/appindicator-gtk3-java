@@ -7,49 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$975 {
+final class constants$975 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GThemedIcon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$975() {}
+    static final FunctionDescriptor pango_renderer_draw_trapezoid$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_renderer_draw_trapezoid$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_trapezoid",
+        constants$975.pango_renderer_draw_trapezoid$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_draw_glyph$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_renderer_draw_glyph$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyph",
+        constants$975.pango_renderer_draw_glyph$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GThemedIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GThemedIcon",
-        constants$975.glib_listautoptr_cleanup_GThemedIcon$FUNC
+    static final MethodHandle pango_renderer_activate$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_activate",
+        constants$975.pango_renderer_activate$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GThemedIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_renderer_deactivate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GThemedIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GThemedIcon",
-        constants$975.glib_slistautoptr_cleanup_GThemedIcon$FUNC
+    static final MethodHandle pango_renderer_deactivate$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_deactivate",
+        constants$975.pango_renderer_deactivate$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GThemedIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_renderer_part_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_renderer_part_changed$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_part_changed",
+        constants$975.pango_renderer_part_changed$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_set_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GThemedIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GThemedIcon",
-        constants$975.glib_queueautoptr_cleanup_GThemedIcon$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GThreadedSocketService$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GThreadedSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GThreadedSocketService",
-        constants$975.glib_autoptr_clear_GThreadedSocketService$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GThreadedSocketService$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GThreadedSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GThreadedSocketService",
-        constants$975.glib_autoptr_cleanup_GThreadedSocketService$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GThreadedSocketService$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GThreadedSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GThreadedSocketService",
-        constants$975.glib_listautoptr_cleanup_GThreadedSocketService$FUNC
+    static final MethodHandle pango_renderer_set_color$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_set_color",
+        constants$975.pango_renderer_set_color$FUNC
     );
 }
 

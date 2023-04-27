@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1190 {
+final class constants$1190 {
 
-    static final FunctionDescriptor cairo_device_observer_mask_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1190() {}
+    static final FunctionDescriptor gtk_accel_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_accel_group_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_new",
+        constants$1190.gtk_accel_group_new$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_group_get_is_locked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_mask_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_mask_elapsed",
-        constants$1190.cairo_device_observer_mask_elapsed$FUNC
+    static final MethodHandle gtk_accel_group_get_is_locked$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_is_locked",
+        constants$1190.gtk_accel_group_get_is_locked$FUNC
     );
-    static final FunctionDescriptor cairo_device_observer_fill_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_fill_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_fill_elapsed",
-        constants$1190.cairo_device_observer_fill_elapsed$FUNC
+    static final MethodHandle gtk_accel_group_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_modifier_mask",
+        constants$1190.gtk_accel_group_get_modifier_mask$FUNC
     );
-    static final FunctionDescriptor cairo_device_observer_stroke_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_lock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_stroke_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_stroke_elapsed",
-        constants$1190.cairo_device_observer_stroke_elapsed$FUNC
+    static final MethodHandle gtk_accel_group_lock$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_lock",
+        constants$1190.gtk_accel_group_lock$FUNC
     );
-    static final FunctionDescriptor cairo_device_observer_glyphs_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_unlock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_glyphs_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_glyphs_elapsed",
-        constants$1190.cairo_device_observer_glyphs_elapsed$FUNC
+    static final MethodHandle gtk_accel_group_unlock$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_unlock",
+        constants$1190.gtk_accel_group_unlock$FUNC
     );
-    static final FunctionDescriptor cairo_surface_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_connect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_reference",
-        constants$1190.cairo_surface_reference$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_finish$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_finish$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_finish",
-        constants$1190.cairo_surface_finish$FUNC
+    static final MethodHandle gtk_accel_group_connect$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_connect",
+        constants$1190.gtk_accel_group_connect$FUNC
     );
 }
 

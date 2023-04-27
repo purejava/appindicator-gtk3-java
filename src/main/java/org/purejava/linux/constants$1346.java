@@ -7,69 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1346 {
+final class constants$1346 {
 
-    static final FunctionDescriptor gdk_selection_owner_set_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1346() {}
+    static final FunctionDescriptor gtk_accel_label_set_accel$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_selection_owner_set_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set_for_display",
-        constants$1346.gdk_selection_owner_set_for_display$FUNC
+    static final MethodHandle gtk_accel_label_set_accel$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_set_accel",
+        constants$1346.gtk_accel_label_set_accel$FUNC
     );
-    static final FunctionDescriptor gdk_selection_owner_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_get_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get_for_display",
-        constants$1346.gdk_selection_owner_get_for_display$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_convert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_selection_convert$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_convert",
-        constants$1346.gdk_selection_convert$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_property_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_label_get_accel$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_selection_property_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_property_get",
-        constants$1346.gdk_selection_property_get$FUNC
+    static final MethodHandle gtk_accel_label_get_accel$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_get_accel",
+        constants$1346.gtk_accel_label_get_accel$FUNC
     );
-    static final FunctionDescriptor gdk_selection_send_notify$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor _gtk_accel_label_class_get_accelerator_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_selection_send_notify$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_send_notify",
-        constants$1346.gdk_selection_send_notify$FUNC
+    static final MethodHandle _gtk_accel_label_class_get_accelerator_label$MH = RuntimeHelper.downcallHandle(
+        "_gtk_accel_label_class_get_accelerator_label",
+        constants$1346._gtk_accel_label_class_get_accelerator_label$FUNC
     );
-    static final FunctionDescriptor gdk_selection_send_notify_for_display$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkAccelMapForeach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_selection_send_notify_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_send_notify_for_display",
-        constants$1346.gdk_selection_send_notify_for_display$FUNC
+    static final FunctionDescriptor GtkAccelMapForeach_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GtkAccelMapForeach_UP$MH = RuntimeHelper.upcallHandle(GtkAccelMapForeach.class, "apply", constants$1346.GtkAccelMapForeach_UP$FUNC);
+    static final FunctionDescriptor GtkAccelMapForeach_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GtkAccelMapForeach_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1346.GtkAccelMapForeach_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_add_entry$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_add_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_add_entry",
+        constants$1346.gtk_accel_map_add_entry$FUNC
     );
 }
 

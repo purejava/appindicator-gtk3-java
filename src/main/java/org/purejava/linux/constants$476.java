@@ -7,55 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$476 {
+final class constants$476 {
 
-    static final FunctionDescriptor g_object_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_ref",
-        constants$476.g_object_ref$FUNC
-    );
-    static final FunctionDescriptor g_object_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_unref$MH = RuntimeHelper.downcallHandle(
-        "g_object_unref",
-        constants$476.g_object_unref$FUNC
-    );
-    static final FunctionDescriptor g_object_weak_ref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$476() {}
+    static final FunctionDescriptor g_action_group_change_action_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_weak_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_weak_ref",
-        constants$476.g_object_weak_ref$FUNC
+    static final MethodHandle g_action_group_change_action_state$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_change_action_state",
+        constants$476.g_action_group_change_action_state$FUNC
     );
-    static final FunctionDescriptor g_object_weak_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_action_group_activate_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_weak_unref$MH = RuntimeHelper.downcallHandle(
-        "g_object_weak_unref",
-        constants$476.g_object_weak_unref$FUNC
+    static final MethodHandle g_action_group_activate_action$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_activate_action",
+        constants$476.g_action_group_activate_action$FUNC
     );
-    static final FunctionDescriptor g_object_add_weak_pointer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_action_group_action_added$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_add_weak_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_object_add_weak_pointer",
-        constants$476.g_object_add_weak_pointer$FUNC
+    static final MethodHandle g_action_group_action_added$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_action_added",
+        constants$476.g_action_group_action_added$FUNC
     );
-    static final FunctionDescriptor g_object_remove_weak_pointer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_action_group_action_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_remove_weak_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_object_remove_weak_pointer",
-        constants$476.g_object_remove_weak_pointer$FUNC
+    static final MethodHandle g_action_group_action_removed$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_action_removed",
+        constants$476.g_action_group_action_removed$FUNC
+    );
+    static final FunctionDescriptor g_action_group_action_enabled_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_action_group_action_enabled_changed$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_action_enabled_changed",
+        constants$476.g_action_group_action_enabled_changed$FUNC
+    );
+    static final FunctionDescriptor g_action_group_action_state_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_group_action_state_changed$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_action_state_changed",
+        constants$476.g_action_group_action_state_changed$FUNC
     );
 }
 

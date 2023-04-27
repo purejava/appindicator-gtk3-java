@@ -7,58 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$188 {
+final class constants$188 {
 
-    static final FunctionDescriptor g_unichar_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$188() {}
+    static final FunctionDescriptor g_unichar_toupper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_validate$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_validate",
-        constants$188.g_unichar_validate$FUNC
+    static final MethodHandle g_unichar_toupper$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_toupper",
+        constants$188.g_unichar_toupper$FUNC
     );
-    static final FunctionDescriptor g_unichar_compose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_unichar_tolower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_compose$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_compose",
-        constants$188.g_unichar_compose$FUNC
+    static final MethodHandle g_unichar_tolower$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_tolower",
+        constants$188.g_unichar_tolower$FUNC
     );
-    static final FunctionDescriptor g_unichar_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_unichar_totitle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_decompose$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_decompose",
-        constants$188.g_unichar_decompose$FUNC
+    static final MethodHandle g_unichar_totitle$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_totitle",
+        constants$188.g_unichar_totitle$FUNC
     );
-    static final FunctionDescriptor g_unichar_fully_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_unichar_digit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_fully_decompose$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_fully_decompose",
-        constants$188.g_unichar_fully_decompose$FUNC
+    static final MethodHandle g_unichar_digit_value$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_digit_value",
+        constants$188.g_unichar_digit_value$FUNC
     );
-    static final FunctionDescriptor g_unicode_canonical_ordering$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_unichar_xdigit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unicode_canonical_ordering$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_canonical_ordering",
-        constants$188.g_unicode_canonical_ordering$FUNC
+    static final MethodHandle g_unichar_xdigit_value$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_xdigit_value",
+        constants$188.g_unichar_xdigit_value$FUNC
     );
-    static final FunctionDescriptor g_unicode_canonical_decomposition$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_unichar_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unicode_canonical_decomposition$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_canonical_decomposition",
-        constants$188.g_unicode_canonical_decomposition$FUNC
+    static final MethodHandle g_unichar_type$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_type",
+        constants$188.g_unichar_type$FUNC
     );
 }
 

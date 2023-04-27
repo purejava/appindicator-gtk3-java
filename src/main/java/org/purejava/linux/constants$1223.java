@@ -7,52 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1223 {
+final class constants$1223 {
 
-    static final FunctionDescriptor gdk_drag_drop_done$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_drop_done$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_drop_done",
-        constants$1223.gdk_drag_drop_done$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_get_drag_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1223() {}
+    static final FunctionDescriptor atk_hyperlink_is_selected_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_drag_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_drag_window",
-        constants$1223.gdk_drag_context_get_drag_window$FUNC
+    static final MethodHandle atk_hyperlink_is_selected_link$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_is_selected_link",
+        constants$1223.atk_hyperlink_is_selected_link$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_set_hotspot$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor atk_hyperlink_impl_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_hyperlink_impl_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_impl_get_type",
+        constants$1223.atk_hyperlink_impl_get_type$FUNC
     );
-    static final MethodHandle gdk_drag_context_set_hotspot$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_set_hotspot",
-        constants$1223.gdk_drag_context_set_hotspot$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_manage_dnd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_context_manage_dnd$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_manage_dnd",
-        constants$1223.gdk_drag_context_manage_dnd$FUNC
-    );
-    static final FunctionDescriptor gdk_device_tool_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_tool_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_type",
-        constants$1223.gdk_device_tool_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_device_tool_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor atk_hyperlink_impl_get_hyperlink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_tool_get_serial$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_serial",
-        constants$1223.gdk_device_tool_get_serial$FUNC
+    static final MethodHandle atk_hyperlink_impl_get_hyperlink$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_impl_get_hyperlink",
+        constants$1223.atk_hyperlink_impl_get_hyperlink$FUNC
+    );
+    static final FunctionDescriptor atk_hypertext_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_hypertext_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_hypertext_get_type",
+        constants$1223.atk_hypertext_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_hypertext_get_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_hypertext_get_link$MH = RuntimeHelper.downcallHandle(
+        "atk_hypertext_get_link",
+        constants$1223.atk_hypertext_get_link$FUNC
+    );
+    static final FunctionDescriptor atk_hypertext_get_n_links$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_hypertext_get_n_links$MH = RuntimeHelper.downcallHandle(
+        "atk_hypertext_get_n_links",
+        constants$1223.atk_hypertext_get_n_links$FUNC
     );
 }
 

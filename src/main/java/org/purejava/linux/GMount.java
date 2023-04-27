@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMount {
+/**
+ * {@snippet :
+ * typedef struct _GMount GMount;
+ * }
+ */
+public final class GMount {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMount() {}
 }
 
 

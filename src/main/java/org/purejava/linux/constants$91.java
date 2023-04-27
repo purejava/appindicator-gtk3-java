@@ -7,8 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$91 {
+final class constants$91 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$91() {}
+    static final FunctionDescriptor g_date_time_is_daylight_savings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_is_daylight_savings$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_is_daylight_savings",
+        constants$91.g_date_time_is_daylight_savings$FUNC
+    );
+    static final FunctionDescriptor g_date_time_to_timezone$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_time_to_timezone$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_to_timezone",
+        constants$91.g_date_time_to_timezone$FUNC
+    );
     static final FunctionDescriptor g_date_time_to_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -37,16 +54,6 @@ class constants$91 {
     static final MethodHandle g_date_time_format_iso8601$MH = RuntimeHelper.downcallHandle(
         "g_date_time_format_iso8601",
         constants$91.g_date_time_format_iso8601$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_bookmark_file_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_error_quark",
-        constants$91.g_bookmark_file_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_bookmark_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_new",
-        constants$91.g_bookmark_file_new$FUNC
     );
 }
 

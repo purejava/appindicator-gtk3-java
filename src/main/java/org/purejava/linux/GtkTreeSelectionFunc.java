@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeSelectionFunc)(struct _GtkTreeSelection* selection,struct _GtkTreeModel* model,struct _GtkTreePath* path,int path_currently_selected,void* data);
+ * }
+ */
 public interface GtkTreeSelectionFunc {
 
-    int apply(java.lang.foreign.MemoryAddress selection, java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress path, int path_currently_selected, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTreeSelectionFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeSelectionFunc.class, fi, constants$2066.GtkTreeSelectionFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment selection, java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, int path_currently_selected, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkTreeSelectionFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1869.GtkTreeSelectionFunc_UP$MH, fi, constants$1869.GtkTreeSelectionFunc$FUNC, scope);
     }
-    static GtkTreeSelectionFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _selection, java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _path, int _path_currently_selected, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTreeSelectionFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _selection, java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, int _path_currently_selected, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$2066.GtkTreeSelectionFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_selection, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_path, _path_currently_selected, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1869.GtkTreeSelectionFunc_DOWN$MH.invokeExact(symbol, _selection, _model, _path, _path_currently_selected, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

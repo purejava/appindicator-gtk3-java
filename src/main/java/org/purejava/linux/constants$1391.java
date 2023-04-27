@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1391 {
+final class constants$1391 {
 
-    static final FunctionDescriptor atk_text_attribute_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1391() {}
+    static final FunctionDescriptor gtk_tree_view_column_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_text_attribute_register$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_register",
-        constants$1391.atk_text_attribute_register$FUNC
+    static final MethodHandle gtk_tree_view_column_get_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_visible",
+        constants$1391.gtk_tree_view_column_get_visible$FUNC
     );
-    static final FunctionDescriptor atk_text_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_range_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_range_get_type",
-        constants$1391.atk_text_range_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_type",
-        constants$1391.atk_text_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_text_get_text$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_text",
-        constants$1391.atk_text_get_text$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_character_at_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_set_resizable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_text_get_character_at_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_character_at_offset",
-        constants$1391.atk_text_get_character_at_offset$FUNC
+    static final MethodHandle gtk_tree_view_column_set_resizable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_resizable",
+        constants$1391.gtk_tree_view_column_set_resizable$FUNC
     );
-    static final FunctionDescriptor atk_text_get_text_after_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_get_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_text_get_text_after_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_text_after_offset",
-        constants$1391.atk_text_get_text_after_offset$FUNC
+    static final MethodHandle gtk_tree_view_column_get_resizable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_resizable",
+        constants$1391.gtk_tree_view_column_get_resizable$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_set_sizing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_set_sizing$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sizing",
+        constants$1391.gtk_tree_view_column_set_sizing$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_sizing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_get_sizing$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sizing",
+        constants$1391.gtk_tree_view_column_get_sizing$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_x_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_get_x_offset$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_x_offset",
+        constants$1391.gtk_tree_view_column_get_x_offset$FUNC
     );
 }
 

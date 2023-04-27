@@ -7,49 +7,79 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$943 {
+final class constants$943 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$943() {}
+    static final FunctionDescriptor pango_glyph_string_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GOutputStream",
-        constants$943.glib_autoptr_clear_GOutputStream$FUNC
+    static final MethodHandle pango_glyph_string_get_width$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_get_width",
+        constants$943.pango_glyph_string_get_width$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_extents_range$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GOutputStream",
-        constants$943.glib_autoptr_cleanup_GOutputStream$FUNC
+    static final MethodHandle pango_glyph_string_extents_range$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_extents_range",
+        constants$943.pango_glyph_string_extents_range$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GOutputStream",
-        constants$943.glib_listautoptr_cleanup_GOutputStream$FUNC
+    static final MethodHandle pango_glyph_string_get_logical_widths$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_get_logical_widths",
+        constants$943.pango_glyph_string_get_logical_widths$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_index_to_x$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GOutputStream",
-        constants$943.glib_slistautoptr_cleanup_GOutputStream$FUNC
+    static final MethodHandle pango_glyph_string_index_to_x$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_index_to_x",
+        constants$943.pango_glyph_string_index_to_x$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_x_to_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GOutputStream",
-        constants$943.glib_queueautoptr_cleanup_GOutputStream$FUNC
+    static final MethodHandle pango_glyph_string_x_to_index$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_x_to_index",
+        constants$943.pango_glyph_string_x_to_index$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GPermission$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_string_index_to_x_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GPermission$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GPermission",
-        constants$943.glib_autoptr_clear_GPermission$FUNC
+    static final MethodHandle pango_glyph_string_index_to_x_full$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_index_to_x_full",
+        constants$943.pango_glyph_string_index_to_x_full$FUNC
     );
 }
 

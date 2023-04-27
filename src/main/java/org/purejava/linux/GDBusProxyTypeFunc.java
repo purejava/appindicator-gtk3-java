@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * unsigned long (*GDBusProxyTypeFunc)(struct _GDBusObjectManagerClient* manager,char* object_path,char* interface_name,void* data);
+ * }
+ */
 public interface GDBusProxyTypeFunc {
 
-    long apply(java.lang.foreign.MemoryAddress manager, java.lang.foreign.MemoryAddress object_path, java.lang.foreign.MemoryAddress interface_name, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GDBusProxyTypeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDBusProxyTypeFunc.class, fi, constants$519.GDBusProxyTypeFunc$FUNC, session);
+    long apply(java.lang.foreign.MemorySegment manager, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GDBusProxyTypeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$472.GDBusProxyTypeFunc_UP$MH, fi, constants$472.GDBusProxyTypeFunc$FUNC, scope);
     }
-    static GDBusProxyTypeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _manager, java.lang.foreign.MemoryAddress _object_path, java.lang.foreign.MemoryAddress _interface_name, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GDBusProxyTypeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _manager, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (long)constants$519.GDBusProxyTypeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_manager, (java.lang.foreign.Addressable)_object_path, (java.lang.foreign.Addressable)_interface_name, (java.lang.foreign.Addressable)_user_data);
+                return (long)constants$472.GDBusProxyTypeFunc_DOWN$MH.invokeExact(symbol, _manager, _object_path, _interface_name, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

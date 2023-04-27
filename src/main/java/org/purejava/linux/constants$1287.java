@@ -7,28 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1287 {
+final class constants$1287 {
 
-    static final  OfInt gdk_pixbuf_minor_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_minor_version$VH = constants$1287.gdk_pixbuf_minor_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_minor_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_minor_version", constants$1287.gdk_pixbuf_minor_version$LAYOUT);
-    static final  OfInt gdk_pixbuf_micro_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_micro_version$VH = constants$1287.gdk_pixbuf_micro_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_micro_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_micro_version", constants$1287.gdk_pixbuf_micro_version$LAYOUT);
-    static final  OfAddress gdk_pixbuf_version$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle gdk_pixbuf_version$VH = constants$1287.gdk_pixbuf_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_version", constants$1287.gdk_pixbuf_version$LAYOUT);
-    static final FunctionDescriptor GdkPixbufDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1287() {}
+    static final FunctionDescriptor gtk_widget_list_action_prefixes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_list_action_prefixes$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_list_action_prefixes",
+        constants$1287.gtk_widget_list_action_prefixes$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_font_map$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkPixbufDestroyNotify$MH = RuntimeHelper.downcallHandle(
-        constants$1287.GdkPixbufDestroyNotify$FUNC
+    static final MethodHandle gtk_widget_set_font_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_font_map",
+        constants$1287.gtk_widget_set_font_map$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_pixbuf_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_error_quark",
-        constants$1287.gdk_pixbuf_error_quark$FUNC
+    static final FunctionDescriptor gtk_widget_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_font_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_font_map",
+        constants$1287.gtk_widget_get_font_map$FUNC
+    );
+    static final FunctionDescriptor gtk_application_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_application_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_type",
+        constants$1287.gtk_application_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_application_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_application_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_new",
+        constants$1287.gtk_application_new$FUNC
+    );
+    static final FunctionDescriptor gtk_application_add_window$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_application_add_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_add_window",
+        constants$1287.gtk_application_add_window$FUNC
     );
 }
 

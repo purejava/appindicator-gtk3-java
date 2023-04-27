@@ -7,64 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1843 {
+final class constants$1843 {
 
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_context_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1843() {}
+    static final FunctionDescriptor gtk_text_view_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_context_async$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_context_async",
-        constants$1843.gtk_icon_info_load_symbolic_for_context_async$FUNC
+    static final MethodHandle gtk_text_view_get_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_hadjustment",
+        constants$1843.gtk_text_view_get_hadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_context_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_context_finish$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_context_finish",
-        constants$1843.gtk_icon_info_load_symbolic_for_context_finish$FUNC
+    static final MethodHandle gtk_text_view_get_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_vadjustment",
+        constants$1843.gtk_text_view_get_vadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_style",
-        constants$1843.gtk_icon_info_load_symbolic_for_style$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_set_raw_coordinates$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_set_raw_coordinates$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_set_raw_coordinates",
-        constants$1843.gtk_icon_info_set_raw_coordinates$FUNC
+    static final MethodHandle gtk_text_view_get_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_window",
+        constants$1843.gtk_text_view_get_window$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_get_embedded_rect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_window_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_get_embedded_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_embedded_rect",
-        constants$1843.gtk_icon_info_get_embedded_rect$FUNC
+    static final MethodHandle gtk_text_view_get_window_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_window_type",
+        constants$1843.gtk_text_view_get_window_type$FUNC
     );
-    static final FunctionDescriptor gtk_icon_info_get_attach_points$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_set_border_window_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_info_get_attach_points$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_attach_points",
-        constants$1843.gtk_icon_info_get_attach_points$FUNC
+    static final MethodHandle gtk_text_view_set_border_window_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_border_window_size",
+        constants$1843.gtk_text_view_set_border_window_size$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_border_window_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_border_window_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_border_window_size",
+        constants$1843.gtk_text_view_get_border_window_size$FUNC
     );
 }
 

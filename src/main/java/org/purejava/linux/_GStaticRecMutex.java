@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GStaticRecMutex {
+ *     GStaticMutex mutex;
+ *     guint depth;
+ *     union  unused;
+ * };
+ * }
+ */
 public class _GStaticRecMutex {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_POINTER$LAYOUT.withName("mutex"),
             MemoryLayout.unionLayout(
@@ -47,10 +56,22 @@ public class _GStaticRecMutex {
     public static VarHandle depth$VH() {
         return _GStaticRecMutex.depth$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint depth;
+     * }
+     */
     public static int depth$get(MemorySegment seg) {
         return (int)_GStaticRecMutex.depth$VH.get(seg);
     }
-    public static void depth$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint depth;
+     * }
+     */
+    public static void depth$set(MemorySegment seg, int x) {
         _GStaticRecMutex.depth$VH.set(seg, x);
     }
     public static int depth$get(MemorySegment seg, long index) {
@@ -59,9 +80,19 @@ public class _GStaticRecMutex {
     public static void depth$set(MemorySegment seg, long index, int x) {
         _GStaticRecMutex.depth$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static class unused {
+    /**
+     * {@snippet :
+     * union {
+     *     pthread_t owner;
+     *     gdouble dummy;
+     * };
+     * }
+     */
+    public static final class unused {
 
-        static final  GroupLayout unused$union$LAYOUT = MemoryLayout.unionLayout(
+        // Suppresses default constructor, ensuring non-instantiability.
+        private unused() {}
+        static final UnionLayout unused$union$LAYOUT = MemoryLayout.unionLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("owner"),
             Constants$root.C_DOUBLE$LAYOUT.withName("dummy")
         );
@@ -72,10 +103,22 @@ public class _GStaticRecMutex {
         public static VarHandle owner$VH() {
             return unused.owner$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * pthread_t owner;
+         * }
+         */
         public static long owner$get(MemorySegment seg) {
             return (long)unused.owner$VH.get(seg);
         }
-        public static void owner$set( MemorySegment seg, long x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * pthread_t owner;
+         * }
+         */
+        public static void owner$set(MemorySegment seg, long x) {
             unused.owner$VH.set(seg, x);
         }
         public static long owner$get(MemorySegment seg, long index) {
@@ -88,10 +131,22 @@ public class _GStaticRecMutex {
         public static VarHandle dummy$VH() {
             return unused.dummy$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * gdouble dummy;
+         * }
+         */
         public static double dummy$get(MemorySegment seg) {
             return (double)unused.dummy$VH.get(seg);
         }
-        public static void dummy$set( MemorySegment seg, double x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * gdouble dummy;
+         * }
+         */
+        public static void dummy$set(MemorySegment seg, double x) {
             unused.dummy$VH.set(seg, x);
         }
         public static double dummy$get(MemorySegment seg, long index) {
@@ -102,10 +157,10 @@ public class _GStaticRecMutex {
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment unused$slice(MemorySegment seg) {
@@ -113,10 +168,10 @@ public class _GStaticRecMutex {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

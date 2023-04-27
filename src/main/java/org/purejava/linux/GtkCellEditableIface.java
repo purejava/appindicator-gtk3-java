@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellEditableIface extends _GtkCellEditableIface {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellEditableIface GtkCellEditableIface;
+ * }
+ */
+public final class GtkCellEditableIface extends _GtkCellEditableIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellEditableIface() {}
 }
 
 

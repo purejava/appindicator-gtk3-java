@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCheckButton extends _GtkCheckButton {
+/**
+ * {@snippet :
+ * typedef struct _GtkCheckButton GtkCheckButton;
+ * }
+ */
+public final class GtkCheckButton extends _GtkCheckButton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCheckButton() {}
 }
 
 

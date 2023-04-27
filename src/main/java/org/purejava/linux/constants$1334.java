@@ -7,42 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1334 {
+final class constants$1334 {
 
-    static final FunctionDescriptor gdk_gl_context_realize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1334() {}
+    static final FunctionDescriptor gtk_menu_get_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_get_attach_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_attach_widget",
+        constants$1334.gtk_menu_get_attach_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_set_tearoff_state$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_set_tearoff_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_tearoff_state",
+        constants$1334.gtk_menu_set_tearoff_state$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_get_tearoff_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_get_tearoff_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_tearoff_state",
+        constants$1334.gtk_menu_get_tearoff_state$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_realize$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_realize",
-        constants$1334.gdk_gl_context_realize$FUNC
+    static final MethodHandle gtk_menu_set_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_title",
+        constants$1334.gtk_menu_set_title$FUNC
     );
-    static final FunctionDescriptor gdk_gl_context_make_current$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_make_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_make_current",
-        constants$1334.gdk_gl_context_make_current$FUNC
+    static final MethodHandle gtk_menu_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_title",
+        constants$1334.gtk_menu_get_title$FUNC
     );
-    static final FunctionDescriptor gdk_gl_context_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_gl_context_get_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_current",
-        constants$1334.gdk_gl_context_get_current$FUNC
+    static final FunctionDescriptor gtk_menu_reorder_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_gl_context_clear_current$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_gl_context_clear_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_clear_current",
-        constants$1334.gdk_gl_context_clear_current$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_keymap_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_type",
-        constants$1334.gdk_keymap_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_keymap_get_default$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_default",
-        constants$1334.gdk_keymap_get_default$FUNC
+    static final MethodHandle gtk_menu_reorder_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_reorder_child",
+        constants$1334.gtk_menu_reorder_child$FUNC
     );
 }
 

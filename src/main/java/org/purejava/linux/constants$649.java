@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$649 {
+final class constants$649 {
 
-    static final FunctionDescriptor G_IS_DEBUG_CONTROLLER_DBUS_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$649() {}
+    static final FunctionDescriptor g_file_info_get_access_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_IS_DEBUG_CONTROLLER_DBUS_CLASS$MH = RuntimeHelper.downcallHandle(
-        "G_IS_DEBUG_CONTROLLER_DBUS_CLASS",
-        constants$649.G_IS_DEBUG_CONTROLLER_DBUS_CLASS$FUNC
+    static final MethodHandle g_file_info_get_access_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_access_date_time",
+        constants$649.g_file_info_get_access_date_time$FUNC
     );
-    static final FunctionDescriptor G_DEBUG_CONTROLLER_DBUS_GET_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_creation_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_DEBUG_CONTROLLER_DBUS_GET_CLASS$MH = RuntimeHelper.downcallHandle(
-        "G_DEBUG_CONTROLLER_DBUS_GET_CLASS",
-        constants$649.G_DEBUG_CONTROLLER_DBUS_GET_CLASS$FUNC
+    static final MethodHandle g_file_info_get_creation_date_time$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_creation_date_time",
+        constants$649.g_file_info_get_creation_date_time$FUNC
     );
-    static final FunctionDescriptor g_debug_controller_dbus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_symlink_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_info_get_symlink_target$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_symlink_target",
+        constants$649.g_file_info_get_symlink_target$FUNC
+    );
+    static final FunctionDescriptor g_file_info_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_info_get_etag$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_etag",
+        constants$649.g_file_info_get_etag$FUNC
+    );
+    static final FunctionDescriptor g_file_info_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_info_get_sort_order$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_sort_order",
+        constants$649.g_file_info_get_sort_order$FUNC
+    );
+    static final FunctionDescriptor g_file_info_set_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_debug_controller_dbus_new$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_dbus_new",
-        constants$649.g_debug_controller_dbus_new$FUNC
-    );
-    static final FunctionDescriptor g_debug_controller_dbus_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_debug_controller_dbus_stop$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_dbus_stop",
-        constants$649.g_debug_controller_dbus_stop$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_drive_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_type",
-        constants$649.g_drive_get_type$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_name",
-        constants$649.g_drive_get_name$FUNC
+    static final MethodHandle g_file_info_set_attribute_mask$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_mask",
+        constants$649.g_file_info_set_attribute_mask$FUNC
     );
 }
 

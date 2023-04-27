@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeIterCompareFunc)(struct _GtkTreeModel* model,struct _GtkTreeIter* a,struct _GtkTreeIter* b,void* user_data);
+ * }
+ */
 public interface GtkTreeIterCompareFunc {
 
-    int apply(java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress a, java.lang.foreign.MemoryAddress b, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkTreeIterCompareFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeIterCompareFunc.class, fi, constants$1568.GtkTreeIterCompareFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTreeIterCompareFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1378.GtkTreeIterCompareFunc_UP$MH, fi, constants$1378.GtkTreeIterCompareFunc$FUNC, scope);
     }
-    static GtkTreeIterCompareFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _a, java.lang.foreign.MemoryAddress _b, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkTreeIterCompareFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1568.GtkTreeIterCompareFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_a, (java.lang.foreign.Addressable)_b, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1378.GtkTreeIterCompareFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

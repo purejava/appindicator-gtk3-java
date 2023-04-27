@@ -7,25 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$369 {
+final class constants$369 {
 
-    static final FunctionDescriptor pthread_getcpuclockid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$369() {}
+    static final FunctionDescriptor pthread_cond_timedwait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_getcpuclockid$MH = RuntimeHelper.downcallHandle(
-        "pthread_getcpuclockid",
-        constants$369.pthread_getcpuclockid$FUNC
+    static final MethodHandle pthread_cond_timedwait$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_timedwait",
+        constants$369.pthread_cond_timedwait$FUNC
     );
-    static final FunctionDescriptor pthread_atfork$__prepare$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__prepare$MH = RuntimeHelper.downcallHandle(
-        constants$369.pthread_atfork$__prepare$FUNC
+    static final FunctionDescriptor pthread_condattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pthread_atfork$__parent$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__parent$MH = RuntimeHelper.downcallHandle(
-        constants$369.pthread_atfork$__parent$FUNC
+    static final MethodHandle pthread_condattr_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_init",
+        constants$369.pthread_condattr_init$FUNC
     );
-    static final FunctionDescriptor pthread_atfork$__child$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor pthread_condattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_condattr_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_destroy",
+        constants$369.pthread_condattr_destroy$FUNC
+    );
+    static final FunctionDescriptor pthread_condattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_condattr_getpshared$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_getpshared",
+        constants$369.pthread_condattr_getpshared$FUNC
+    );
+    static final FunctionDescriptor pthread_condattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pthread_condattr_setpshared$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_setpshared",
+        constants$369.pthread_condattr_setpshared$FUNC
+    );
+    static final FunctionDescriptor pthread_condattr_getclock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_condattr_getclock$MH = RuntimeHelper.downcallHandle(
+        "pthread_condattr_getclock",
+        constants$369.pthread_condattr_getclock$FUNC
+    );
 }
 
 

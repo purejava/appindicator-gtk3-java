@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$366 {
+final class constants$366 {
 
-    static final FunctionDescriptor pthread_spin_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$366() {}
+    static final FunctionDescriptor pthread_rwlock_rdlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_rwlock_rdlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_rdlock",
+        constants$366.pthread_rwlock_rdlock$FUNC
+    );
+    static final FunctionDescriptor pthread_rwlock_tryrdlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_rwlock_tryrdlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_tryrdlock",
+        constants$366.pthread_rwlock_tryrdlock$FUNC
+    );
+    static final FunctionDescriptor pthread_rwlock_timedrdlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_spin_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_init",
-        constants$366.pthread_spin_init$FUNC
-    );
-    static final FunctionDescriptor pthread_spin_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_spin_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_destroy",
-        constants$366.pthread_spin_destroy$FUNC
+    static final MethodHandle pthread_rwlock_timedrdlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_timedrdlock",
+        constants$366.pthread_rwlock_timedrdlock$FUNC
     );
-    static final FunctionDescriptor pthread_spin_lock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlock_wrlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_spin_lock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_lock",
-        constants$366.pthread_spin_lock$FUNC
+    static final MethodHandle pthread_rwlock_wrlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_wrlock",
+        constants$366.pthread_rwlock_wrlock$FUNC
     );
-    static final FunctionDescriptor pthread_spin_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlock_trywrlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_spin_trylock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_trylock",
-        constants$366.pthread_spin_trylock$FUNC
+    static final MethodHandle pthread_rwlock_trywrlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_trywrlock",
+        constants$366.pthread_rwlock_trywrlock$FUNC
     );
-    static final FunctionDescriptor pthread_spin_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_spin_unlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_unlock",
-        constants$366.pthread_spin_unlock$FUNC
-    );
-    static final FunctionDescriptor pthread_barrier_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_rwlock_timedwrlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_barrier_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_init",
-        constants$366.pthread_barrier_init$FUNC
+    static final MethodHandle pthread_rwlock_timedwrlock$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_timedwrlock",
+        constants$366.pthread_rwlock_timedwrlock$FUNC
     );
 }
 

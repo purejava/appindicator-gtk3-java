@@ -7,47 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1538 {
+final class constants$1538 {
 
-    static final FunctionDescriptor gtk_accel_map_foreach_unfiltered$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1538() {}
+    static final FunctionDescriptor GtkClipboardTextReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_foreach_unfiltered$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_foreach_unfiltered",
-        constants$1538.gtk_accel_map_foreach_unfiltered$FUNC
+    static final MethodHandle GtkClipboardTextReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1538.GtkClipboardTextReceivedFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_accel_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_accel_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_get_type",
-        constants$1538.gtk_accel_map_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_accel_map_get$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_get",
-        constants$1538.gtk_accel_map_get$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GtkAccelMap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkAccelMap$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkAccelMap",
-        constants$1538.glib_autoptr_clear_GtkAccelMap$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkAccelMap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkAccelMap$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkAccelMap",
-        constants$1538.glib_autoptr_cleanup_GtkAccelMap$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkAccelMap$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GtkClipboardRichTextReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardRichTextReceivedFunc.class, "apply", constants$1538.GtkClipboardRichTextReceivedFunc_UP$FUNC);
+    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkAccelMap$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkAccelMap",
-        constants$1538.glib_listautoptr_cleanup_GtkAccelMap$FUNC
+    static final MethodHandle GtkClipboardRichTextReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1538.GtkClipboardRichTextReceivedFunc_DOWN$FUNC
     );
+    static final FunctionDescriptor GtkClipboardImageReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkClipboardImageReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkClipboardImageReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardImageReceivedFunc.class, "apply", constants$1538.GtkClipboardImageReceivedFunc_UP$FUNC);
+    static final FunctionDescriptor GtkClipboardImageReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkClipboardImageReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1538.GtkClipboardImageReceivedFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkClipboardURIReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkClipboardURIReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkClipboardURIReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardURIReceivedFunc.class, "apply", constants$1538.GtkClipboardURIReceivedFunc_UP$FUNC);
 }
 
 

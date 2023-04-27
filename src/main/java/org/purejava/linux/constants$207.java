@@ -7,47 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$207 {
+final class constants$207 {
 
-    static final  GroupLayout g_io_watch_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_io_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_io_watch_funcs", constants$207.g_io_watch_funcs$LAYOUT);
-    static final FunctionDescriptor g_key_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_key_file_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_error_quark",
-        constants$207.g_key_file_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_key_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_key_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_new",
-        constants$207.g_key_file_new$FUNC
-    );
-    static final FunctionDescriptor g_key_file_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$207() {}
+    static final FunctionDescriptor g_string_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_ref$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_ref",
-        constants$207.g_key_file_ref$FUNC
+    static final MethodHandle g_string_equal$MH = RuntimeHelper.downcallHandle(
+        "g_string_equal",
+        constants$207.g_string_equal$FUNC
     );
-    static final FunctionDescriptor g_key_file_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_string_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_unref$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_unref",
-        constants$207.g_key_file_unref$FUNC
+    static final MethodHandle g_string_hash$MH = RuntimeHelper.downcallHandle(
+        "g_string_hash",
+        constants$207.g_string_hash$FUNC
     );
-    static final FunctionDescriptor g_key_file_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_string_assign$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_free$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_free",
-        constants$207.g_key_file_free$FUNC
+    static final MethodHandle g_string_assign$MH = RuntimeHelper.downcallHandle(
+        "g_string_assign",
+        constants$207.g_string_assign$FUNC
+    );
+    static final FunctionDescriptor g_string_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_truncate$MH = RuntimeHelper.downcallHandle(
+        "g_string_truncate",
+        constants$207.g_string_truncate$FUNC
+    );
+    static final FunctionDescriptor g_string_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_set_size$MH = RuntimeHelper.downcallHandle(
+        "g_string_set_size",
+        constants$207.g_string_set_size$FUNC
+    );
+    static final FunctionDescriptor g_string_insert_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_insert_len$MH = RuntimeHelper.downcallHandle(
+        "g_string_insert_len",
+        constants$207.g_string_insert_len$FUNC
     );
 }
 

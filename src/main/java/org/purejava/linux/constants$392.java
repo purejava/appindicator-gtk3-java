@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$392 {
+final class constants$392 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GSource$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$392() {}
+    static final FunctionDescriptor g_type_value_table_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_type_value_table_peek$MH = RuntimeHelper.downcallHandle(
+        "g_type_value_table_peek",
+        constants$392.g_type_value_table_peek$FUNC
+    );
+    static final FunctionDescriptor g_type_check_instance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSource$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSource",
-        constants$392.glib_autoptr_clear_GSource$FUNC
+    static final MethodHandle g_type_check_instance$MH = RuntimeHelper.downcallHandle(
+        "g_type_check_instance",
+        constants$392.g_type_check_instance$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_check_instance_cast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSource$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSource",
-        constants$392.glib_autoptr_cleanup_GSource$FUNC
+    static final MethodHandle g_type_check_instance_cast$MH = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_cast",
+        constants$392.g_type_check_instance_cast$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_check_instance_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSource$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSource",
-        constants$392.glib_listautoptr_cleanup_GSource$FUNC
+    static final MethodHandle g_type_check_instance_is_a$MH = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_is_a",
+        constants$392.g_type_check_instance_is_a$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_check_instance_is_fundamentally_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSource$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSource",
-        constants$392.glib_slistautoptr_cleanup_GSource$FUNC
+    static final MethodHandle g_type_check_instance_is_fundamentally_a$MH = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_is_fundamentally_a",
+        constants$392.g_type_check_instance_is_fundamentally_a$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_check_class_cast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSource$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSource",
-        constants$392.glib_queueautoptr_cleanup_GSource$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GMappedFile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GMappedFile$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMappedFile",
-        constants$392.glib_autoptr_clear_GMappedFile$FUNC
+    static final MethodHandle g_type_check_class_cast$MH = RuntimeHelper.downcallHandle(
+        "g_type_check_class_cast",
+        constants$392.g_type_check_class_cast$FUNC
     );
 }
 

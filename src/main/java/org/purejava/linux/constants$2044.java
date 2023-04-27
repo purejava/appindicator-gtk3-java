@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2044 {
+final class constants$2044 {
 
-    static final FunctionDescriptor gtk_text_view_get_accepts_tab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_accepts_tab$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_accepts_tab",
-        constants$2044.gtk_text_view_get_accepts_tab$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_pixels_above_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_pixels_above_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_above_lines",
-        constants$2044.gtk_text_view_set_pixels_above_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_pixels_above_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_pixels_above_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_above_lines",
-        constants$2044.gtk_text_view_get_pixels_above_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_pixels_below_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_pixels_below_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_below_lines",
-        constants$2044.gtk_text_view_set_pixels_below_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_pixels_below_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_pixels_below_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_below_lines",
-        constants$2044.gtk_text_view_get_pixels_below_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_pixels_inside_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_pixels_inside_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_inside_wrap",
-        constants$2044.gtk_text_view_set_pixels_inside_wrap$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2044() {}
+    static final MemorySegment GTK_PAPER_NAME_LETTER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_letter");
+    static final MemorySegment GTK_PAPER_NAME_EXECUTIVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_executive");
+    static final MemorySegment GTK_PAPER_NAME_LEGAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_legal");
+    static final MemorySegment GTK_PRINT_SETTINGS_PRINTER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("printer");
+    static final MemorySegment GTK_PRINT_SETTINGS_ORIENTATION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("orientation");
+    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-format");
 }
 
 

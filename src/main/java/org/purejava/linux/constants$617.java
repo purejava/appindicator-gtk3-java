@@ -7,56 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$617 {
+final class constants$617 {
 
-    static final FunctionDescriptor g_dbus_message_new_method_error_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$617() {}
+    static final FunctionDescriptor g_file_get_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_parse_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_parse_name",
+        constants$617.g_file_get_parse_name$FUNC
+    );
+    static final FunctionDescriptor g_file_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_parent$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_parent",
+        constants$617.g_file_get_parent$FUNC
+    );
+    static final FunctionDescriptor g_file_has_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_has_parent$MH = RuntimeHelper.downcallHandle(
+        "g_file_has_parent",
+        constants$617.g_file_has_parent$FUNC
+    );
+    static final FunctionDescriptor g_file_get_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_child$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_child",
+        constants$617.g_file_get_child$FUNC
+    );
+    static final FunctionDescriptor g_file_get_child_for_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_new_method_error_valist$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_error_valist",
-        constants$617.g_dbus_message_new_method_error_valist$FUNC
+    static final MethodHandle g_file_get_child_for_display_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_child_for_display_name",
+        constants$617.g_file_get_child_for_display_name$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_new_method_error_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_method_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_error_literal",
-        constants$617.g_dbus_message_new_method_error_literal$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_print$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_print$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_print",
-        constants$617.g_dbus_message_print$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_locked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_locked$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_locked",
-        constants$617.g_dbus_message_get_locked$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_lock$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_lock",
-        constants$617.g_dbus_message_lock$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_has_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_copy$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_copy",
-        constants$617.g_dbus_message_copy$FUNC
+    static final MethodHandle g_file_has_prefix$MH = RuntimeHelper.downcallHandle(
+        "g_file_has_prefix",
+        constants$617.g_file_has_prefix$FUNC
     );
 }
 

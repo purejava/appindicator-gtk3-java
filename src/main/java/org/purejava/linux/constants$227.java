@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$227 {
+final class constants$227 {
 
-    static final FunctionDescriptor g_variant_new_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$227() {}
+    static final FunctionDescriptor g_key_file_remove_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint16",
-        constants$227.g_variant_new_uint16$FUNC
+    static final MethodHandle g_key_file_remove_group$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_remove_group",
+        constants$227.g_key_file_remove_group$FUNC
     );
-    static final FunctionDescriptor g_variant_new_int32$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_mapped_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_int32$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_int32",
-        constants$227.g_variant_new_int32$FUNC
+    static final MethodHandle g_mapped_file_new$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_new",
+        constants$227.g_mapped_file_new$FUNC
     );
-    static final FunctionDescriptor g_variant_new_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_mapped_file_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint32",
-        constants$227.g_variant_new_uint32$FUNC
+    static final MethodHandle g_mapped_file_new_from_fd$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_new_from_fd",
+        constants$227.g_mapped_file_new_from_fd$FUNC
     );
-    static final FunctionDescriptor g_variant_new_int64$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_mapped_file_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_int64$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_int64",
-        constants$227.g_variant_new_int64$FUNC
+    static final MethodHandle g_mapped_file_get_length$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_get_length",
+        constants$227.g_mapped_file_get_length$FUNC
     );
-    static final FunctionDescriptor g_variant_new_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_mapped_file_get_contents$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint64",
-        constants$227.g_variant_new_uint64$FUNC
+    static final MethodHandle g_mapped_file_get_contents$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_get_contents",
+        constants$227.g_mapped_file_get_contents$FUNC
     );
-    static final FunctionDescriptor g_variant_new_handle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_mapped_file_get_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_handle$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_handle",
-        constants$227.g_variant_new_handle$FUNC
+    static final MethodHandle g_mapped_file_get_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_mapped_file_get_bytes",
+        constants$227.g_mapped_file_get_bytes$FUNC
     );
 }
 

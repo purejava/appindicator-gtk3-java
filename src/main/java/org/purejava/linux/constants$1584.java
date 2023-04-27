@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1584 {
+final class constants$1584 {
 
-    static final FunctionDescriptor gtk_tree_view_column_set_clickable$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1584() {}
+    static final FunctionDescriptor gtk_native_dialog_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_native_dialog_run$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_run",
+        constants$1584.gtk_native_dialog_run$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_native_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_native_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_get_type",
+        constants$1584.gtk_file_chooser_native_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_native_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_clickable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_clickable",
-        constants$1584.gtk_tree_view_column_set_clickable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_clickable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_clickable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_clickable",
-        constants$1584.gtk_tree_view_column_get_clickable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_widget",
-        constants$1584.gtk_tree_view_column_set_widget$FUNC
+    static final MethodHandle gtk_file_chooser_native_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_new",
+        constants$1584.gtk_file_chooser_native_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_native_get_accept_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_widget",
-        constants$1584.gtk_tree_view_column_get_widget$FUNC
+    static final MethodHandle gtk_file_chooser_native_get_accept_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_get_accept_label",
+        constants$1584.gtk_file_chooser_native_get_accept_label$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_alignment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_chooser_native_set_accept_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_alignment",
-        constants$1584.gtk_tree_view_column_set_alignment$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_alignment",
-        constants$1584.gtk_tree_view_column_get_alignment$FUNC
+    static final MethodHandle gtk_file_chooser_native_set_accept_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_set_accept_label",
+        constants$1584.gtk_file_chooser_native_set_accept_label$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_native_get_cancel_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_native_get_cancel_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_get_cancel_label",
+        constants$1584.gtk_file_chooser_native_get_cancel_label$FUNC
     );
 }
 

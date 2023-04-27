@@ -7,54 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1827 {
+final class constants$1827 {
 
-    static final FunctionDescriptor gtk_style_context_get$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1827() {}
+    static final FunctionDescriptor gtk_text_buffer_set_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_style_context_get",
-        constants$1827.gtk_style_context_get$FUNC
+    static final MethodHandle gtk_text_buffer_set_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_set_text",
+        constants$1827.gtk_text_buffer_set_text$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_set_state$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_state",
-        constants$1827.gtk_style_context_set_state$FUNC
+    static final MethodHandle gtk_text_buffer_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert",
+        constants$1827.gtk_text_buffer_insert$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_state",
-        constants$1827.gtk_style_context_get_state$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_set_scale$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_buffer_insert_at_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_context_set_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_scale",
-        constants$1827.gtk_style_context_set_scale$FUNC
+    static final MethodHandle gtk_text_buffer_insert_at_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_at_cursor",
+        constants$1827.gtk_text_buffer_insert_at_cursor$FUNC
     );
-    static final FunctionDescriptor gtk_style_context_get_scale$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_scale",
-        constants$1827.gtk_style_context_get_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_state_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_buffer_insert_interactive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_insert_interactive$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_interactive",
+        constants$1827.gtk_text_buffer_insert_interactive$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_insert_interactive_at_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_buffer_insert_interactive_at_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_interactive_at_cursor",
+        constants$1827.gtk_text_buffer_insert_interactive_at_cursor$FUNC
+    );
+    static final FunctionDescriptor gtk_text_buffer_insert_range$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_context_state_is_running$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_state_is_running",
-        constants$1827.gtk_style_context_state_is_running$FUNC
+    static final MethodHandle gtk_text_buffer_insert_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_range",
+        constants$1827.gtk_text_buffer_insert_range$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GHookCheckFunc)(void* data);
+ * }
+ */
 public interface GHookCheckFunc {
 
-    int apply(java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GHookCheckFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GHookCheckFunc.class, fi, constants$154.GHookCheckFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GHookCheckFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$155.GHookCheckFunc_UP$MH, fi, constants$155.GHookCheckFunc$FUNC, scope);
     }
-    static GHookCheckFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data) -> {
+    static GHookCheckFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$154.GHookCheckFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data);
+                return (int)constants$156.GHookCheckFunc_DOWN$MH.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

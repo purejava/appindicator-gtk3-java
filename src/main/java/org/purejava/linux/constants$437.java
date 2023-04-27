@@ -7,57 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$437 {
+final class constants$437 {
 
-    static final FunctionDescriptor g_param_spec_set_qdata$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$437() {}
+    static final FunctionDescriptor g_object_weak_ref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_set_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata",
-        constants$437.g_param_spec_set_qdata$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_set_qdata_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_set_qdata_full$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata_full",
-        constants$437.g_param_spec_set_qdata_full$FUNC
+    static final MethodHandle g_object_weak_ref$MH = RuntimeHelper.downcallHandle(
+        "g_object_weak_ref",
+        constants$437.g_object_weak_ref$FUNC
     );
-    static final FunctionDescriptor g_param_spec_steal_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_object_weak_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_weak_unref$MH = RuntimeHelper.downcallHandle(
+        "g_object_weak_unref",
+        constants$437.g_object_weak_unref$FUNC
+    );
+    static final FunctionDescriptor g_object_add_weak_pointer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_add_weak_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_object_add_weak_pointer",
+        constants$437.g_object_add_weak_pointer$FUNC
+    );
+    static final FunctionDescriptor g_object_remove_weak_pointer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_remove_weak_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_object_remove_weak_pointer",
+        constants$437.g_object_remove_weak_pointer$FUNC
+    );
+    static final FunctionDescriptor GToggleNotify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_param_spec_steal_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_steal_qdata",
-        constants$437.g_param_spec_steal_qdata$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_get_redirect_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_redirect_target$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_redirect_target",
-        constants$437.g_param_spec_get_redirect_target$FUNC
-    );
-    static final FunctionDescriptor g_param_value_set_default$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GToggleNotify_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_value_set_default$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_set_default",
-        constants$437.g_param_value_set_default$FUNC
-    );
-    static final FunctionDescriptor g_param_value_defaults$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_param_value_defaults$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_defaults",
-        constants$437.g_param_value_defaults$FUNC
+    static final MethodHandle GToggleNotify_UP$MH = RuntimeHelper.upcallHandle(GToggleNotify.class, "apply", constants$437.GToggleNotify_UP$FUNC);
+    static final FunctionDescriptor GToggleNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GToggleNotify_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$437.GToggleNotify_DOWN$FUNC
     );
 }
 

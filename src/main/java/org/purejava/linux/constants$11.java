@@ -7,8 +7,27 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$11 {
+final class constants$11 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$11() {}
+    static final FunctionDescriptor strncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle strncpy$MH = RuntimeHelper.downcallHandle(
+        "strncpy",
+        constants$11.strncpy$FUNC
+    );
+    static final FunctionDescriptor strcat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strcat$MH = RuntimeHelper.downcallHandle(
+        "strcat",
+        constants$11.strcat$FUNC
+    );
     static final FunctionDescriptor strncat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -42,24 +61,6 @@ class constants$11 {
     static final MethodHandle strcoll$MH = RuntimeHelper.downcallHandle(
         "strcoll",
         constants$11.strcoll$FUNC
-    );
-    static final FunctionDescriptor strxfrm$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle strxfrm$MH = RuntimeHelper.downcallHandle(
-        "strxfrm",
-        constants$11.strxfrm$FUNC
-    );
-    static final FunctionDescriptor strcoll_l$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcoll_l$MH = RuntimeHelper.downcallHandle(
-        "strcoll_l",
-        constants$11.strcoll_l$FUNC
     );
 }
 

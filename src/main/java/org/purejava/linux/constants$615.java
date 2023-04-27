@@ -7,41 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$615 {
+final class constants$615 {
 
-    static final FunctionDescriptor g_dbus_signal_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_signal_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_get_type",
-        constants$615.g_dbus_signal_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_property_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_property_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_property_info_get_type",
-        constants$615.g_dbus_property_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_arg_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_arg_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_arg_info_get_type",
-        constants$615.g_dbus_arg_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_annotation_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_annotation_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_get_type",
-        constants$615.g_dbus_annotation_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_menu_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_menu_model_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_menu_model_get_type",
-        constants$615.g_dbus_menu_model_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_menu_model_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$615() {}
+    static final FunctionDescriptor g_file_new_tmp_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_menu_model_get$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_menu_model_get",
-        constants$615.g_dbus_menu_model_get$FUNC
+    static final MethodHandle g_file_new_tmp_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_tmp_finish",
+        constants$615.g_file_new_tmp_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_new_tmp_dir_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_new_tmp_dir_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_tmp_dir_async",
+        constants$615.g_file_new_tmp_dir_async$FUNC
+    );
+    static final FunctionDescriptor g_file_new_tmp_dir_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_new_tmp_dir_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_new_tmp_dir_finish",
+        constants$615.g_file_new_tmp_dir_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_parse_name$MH = RuntimeHelper.downcallHandle(
+        "g_file_parse_name",
+        constants$615.g_file_parse_name$FUNC
+    );
+    static final FunctionDescriptor g_file_new_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_new_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_file_new_build_filename",
+        constants$615.g_file_new_build_filename$FUNC
+    );
+    static final FunctionDescriptor g_file_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_dup$MH = RuntimeHelper.downcallHandle(
+        "g_file_dup",
+        constants$615.g_file_dup$FUNC
     );
 }
 

@@ -7,9 +7,30 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRecentChooserIface {
+ *     GTypeInterface base_iface;
+ *     gboolean (*set_current_uri)(GtkRecentChooser*,const gchar*,GError**);
+ *     gchar* (*get_current_uri)(GtkRecentChooser*);
+ *     gboolean (*select_uri)(GtkRecentChooser*,const gchar*,GError**);
+ *     void (*unselect_uri)(GtkRecentChooser*,const gchar*);
+ *     void (*select_all)(GtkRecentChooser*);
+ *     void (*unselect_all)(GtkRecentChooser*);
+ *     GList* (*get_items)(GtkRecentChooser*);
+ *     GtkRecentManager* (*get_recent_manager)(GtkRecentChooser*);
+ *     void (*add_filter)(GtkRecentChooser*,GtkRecentFilter*);
+ *     void (*remove_filter)(GtkRecentChooser*,GtkRecentFilter*);
+ *     GSList* (*list_filters)(GtkRecentChooser*);
+ *     void (*set_sort_func)(GtkRecentChooser*,GtkRecentSortFunc,gpointer,GDestroyNotify);
+ *     void (*item_activated)(GtkRecentChooser*);
+ *     void (*selection_changed)(GtkRecentChooser*);
+ * };
+ * }
+ */
 public class _GtkRecentChooserIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -40,20 +61,36 @@ public class _GtkRecentChooserIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_current_uri$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.set_current_uri$FUNC
+    static final FunctionDescriptor set_current_uri_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_current_uri_UP$MH = RuntimeHelper.upcallHandle(set_current_uri.class, "apply", _GtkRecentChooserIface.set_current_uri_UP$FUNC);
+    static final FunctionDescriptor set_current_uri_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_current_uri_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.set_current_uri_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_current_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
     public interface set_current_uri {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(set_current_uri fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_current_uri.class, fi, _GtkRecentChooserIface.set_current_uri$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(set_current_uri fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.set_current_uri_UP$MH, fi, _GtkRecentChooserIface.set_current_uri$FUNC, scope);
         }
-        static set_current_uri ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static set_current_uri ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkRecentChooserIface.set_current_uri$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkRecentChooserIface.set_current_uri_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -65,38 +102,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle set_current_uri$VH() {
         return _GtkRecentChooserIface.set_current_uri$VH;
     }
-    public static MemoryAddress set_current_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.set_current_uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_current_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
+    public static MemorySegment set_current_uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.set_current_uri$VH.get(seg);
     }
-    public static void set_current_uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_current_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
+    public static void set_current_uri$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.set_current_uri$VH.set(seg, x);
     }
-    public static MemoryAddress set_current_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.set_current_uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_current_uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.set_current_uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_current_uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_current_uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.set_current_uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_current_uri set_current_uri (MemorySegment segment, MemorySession session) {
-        return set_current_uri.ofAddress(set_current_uri$get(segment), session);
+    public static set_current_uri set_current_uri(MemorySegment segment, SegmentScope scope) {
+        return set_current_uri.ofAddress(set_current_uri$get(segment), scope);
     }
     static final FunctionDescriptor get_current_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_current_uri$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.get_current_uri$FUNC
+    static final FunctionDescriptor get_current_uri_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_current_uri_UP$MH = RuntimeHelper.upcallHandle(get_current_uri.class, "apply", _GtkRecentChooserIface.get_current_uri_UP$FUNC);
+    static final FunctionDescriptor get_current_uri_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_current_uri_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.get_current_uri_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*get_current_uri)(GtkRecentChooser*);
+     * }
+     */
     public interface get_current_uri {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_current_uri fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_current_uri.class, fi, _GtkRecentChooserIface.get_current_uri$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_current_uri fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.get_current_uri_UP$MH, fi, _GtkRecentChooserIface.get_current_uri$FUNC, scope);
         }
-        static get_current_uri ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_current_uri ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_current_uri$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_current_uri_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -108,40 +169,68 @@ public class _GtkRecentChooserIface {
     public static VarHandle get_current_uri$VH() {
         return _GtkRecentChooserIface.get_current_uri$VH;
     }
-    public static MemoryAddress get_current_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_current_uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*get_current_uri)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment get_current_uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_current_uri$VH.get(seg);
     }
-    public static void get_current_uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*get_current_uri)(GtkRecentChooser*);
+     * }
+     */
+    public static void get_current_uri$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.get_current_uri$VH.set(seg, x);
     }
-    public static MemoryAddress get_current_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_current_uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_current_uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_current_uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_current_uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_current_uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.get_current_uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_current_uri get_current_uri (MemorySegment segment, MemorySession session) {
-        return get_current_uri.ofAddress(get_current_uri$get(segment), session);
+    public static get_current_uri get_current_uri(MemorySegment segment, SegmentScope scope) {
+        return get_current_uri.ofAddress(get_current_uri$get(segment), scope);
     }
     static final FunctionDescriptor select_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle select_uri$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.select_uri$FUNC
+    static final FunctionDescriptor select_uri_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle select_uri_UP$MH = RuntimeHelper.upcallHandle(select_uri.class, "apply", _GtkRecentChooserIface.select_uri_UP$FUNC);
+    static final FunctionDescriptor select_uri_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle select_uri_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.select_uri_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*select_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
     public interface select_uri {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(select_uri fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_uri.class, fi, _GtkRecentChooserIface.select_uri$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(select_uri fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.select_uri_UP$MH, fi, _GtkRecentChooserIface.select_uri$FUNC, scope);
         }
-        static select_uri ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static select_uri ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkRecentChooserIface.select_uri$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkRecentChooserIface.select_uri_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -153,39 +242,65 @@ public class _GtkRecentChooserIface {
     public static VarHandle select_uri$VH() {
         return _GtkRecentChooserIface.select_uri$VH;
     }
-    public static MemoryAddress select_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.select_uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*select_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
+    public static MemorySegment select_uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.select_uri$VH.get(seg);
     }
-    public static void select_uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*select_uri)(GtkRecentChooser*,const gchar*,GError**);
+     * }
+     */
+    public static void select_uri$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.select_uri$VH.set(seg, x);
     }
-    public static MemoryAddress select_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.select_uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.select_uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.select_uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_uri select_uri (MemorySegment segment, MemorySession session) {
-        return select_uri.ofAddress(select_uri$get(segment), session);
+    public static select_uri select_uri(MemorySegment segment, SegmentScope scope) {
+        return select_uri.ofAddress(select_uri$get(segment), scope);
     }
     static final FunctionDescriptor unselect_uri$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unselect_uri$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.unselect_uri$FUNC
+    static final FunctionDescriptor unselect_uri_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unselect_uri_UP$MH = RuntimeHelper.upcallHandle(unselect_uri.class, "apply", _GtkRecentChooserIface.unselect_uri_UP$FUNC);
+    static final FunctionDescriptor unselect_uri_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unselect_uri_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.unselect_uri_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*unselect_uri)(GtkRecentChooser*,const gchar*);
+     * }
+     */
     public interface unselect_uri {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(unselect_uri fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unselect_uri.class, fi, _GtkRecentChooserIface.unselect_uri$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(unselect_uri fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.unselect_uri_UP$MH, fi, _GtkRecentChooserIface.unselect_uri$FUNC, scope);
         }
-        static unselect_uri ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static unselect_uri ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkRecentChooserIface.unselect_uri$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkRecentChooserIface.unselect_uri_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -197,38 +312,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle unselect_uri$VH() {
         return _GtkRecentChooserIface.unselect_uri$VH;
     }
-    public static MemoryAddress unselect_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.unselect_uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*unselect_uri)(GtkRecentChooser*,const gchar*);
+     * }
+     */
+    public static MemorySegment unselect_uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.unselect_uri$VH.get(seg);
     }
-    public static void unselect_uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*unselect_uri)(GtkRecentChooser*,const gchar*);
+     * }
+     */
+    public static void unselect_uri$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.unselect_uri$VH.set(seg, x);
     }
-    public static MemoryAddress unselect_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.unselect_uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unselect_uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.unselect_uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unselect_uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unselect_uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.unselect_uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unselect_uri unselect_uri (MemorySegment segment, MemorySession session) {
-        return unselect_uri.ofAddress(unselect_uri$get(segment), session);
+    public static unselect_uri unselect_uri(MemorySegment segment, SegmentScope scope) {
+        return unselect_uri.ofAddress(unselect_uri$get(segment), scope);
     }
     static final FunctionDescriptor select_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle select_all$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.select_all$FUNC
+    static final FunctionDescriptor select_all_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle select_all_UP$MH = RuntimeHelper.upcallHandle(select_all.class, "apply", _GtkRecentChooserIface.select_all_UP$FUNC);
+    static final FunctionDescriptor select_all_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle select_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.select_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*select_all)(GtkRecentChooser*);
+     * }
+     */
     public interface select_all {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(select_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_all.class, fi, _GtkRecentChooserIface.select_all$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(select_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.select_all_UP$MH, fi, _GtkRecentChooserIface.select_all$FUNC, scope);
         }
-        static select_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static select_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkRecentChooserIface.select_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkRecentChooserIface.select_all_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -240,38 +379,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle select_all$VH() {
         return _GtkRecentChooserIface.select_all$VH;
     }
-    public static MemoryAddress select_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.select_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*select_all)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment select_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.select_all$VH.get(seg);
     }
-    public static void select_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*select_all)(GtkRecentChooser*);
+     * }
+     */
+    public static void select_all$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.select_all$VH.set(seg, x);
     }
-    public static MemoryAddress select_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.select_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.select_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.select_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_all select_all (MemorySegment segment, MemorySession session) {
-        return select_all.ofAddress(select_all$get(segment), session);
+    public static select_all select_all(MemorySegment segment, SegmentScope scope) {
+        return select_all.ofAddress(select_all$get(segment), scope);
     }
     static final FunctionDescriptor unselect_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unselect_all$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.unselect_all$FUNC
+    static final FunctionDescriptor unselect_all_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unselect_all_UP$MH = RuntimeHelper.upcallHandle(unselect_all.class, "apply", _GtkRecentChooserIface.unselect_all_UP$FUNC);
+    static final FunctionDescriptor unselect_all_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unselect_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.unselect_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*unselect_all)(GtkRecentChooser*);
+     * }
+     */
     public interface unselect_all {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(unselect_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unselect_all.class, fi, _GtkRecentChooserIface.unselect_all$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(unselect_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.unselect_all_UP$MH, fi, _GtkRecentChooserIface.unselect_all$FUNC, scope);
         }
-        static unselect_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static unselect_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkRecentChooserIface.unselect_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkRecentChooserIface.unselect_all_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,38 +446,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle unselect_all$VH() {
         return _GtkRecentChooserIface.unselect_all$VH;
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.unselect_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*unselect_all)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment unselect_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.unselect_all$VH.get(seg);
     }
-    public static void unselect_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*unselect_all)(GtkRecentChooser*);
+     * }
+     */
+    public static void unselect_all$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.unselect_all$VH.set(seg, x);
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.unselect_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unselect_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.unselect_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unselect_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unselect_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.unselect_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unselect_all unselect_all (MemorySegment segment, MemorySession session) {
-        return unselect_all.ofAddress(unselect_all$get(segment), session);
+    public static unselect_all unselect_all(MemorySegment segment, SegmentScope scope) {
+        return unselect_all.ofAddress(unselect_all$get(segment), scope);
     }
     static final FunctionDescriptor get_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_items$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.get_items$FUNC
+    static final FunctionDescriptor get_items_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_items_UP$MH = RuntimeHelper.upcallHandle(get_items.class, "apply", _GtkRecentChooserIface.get_items_UP$FUNC);
+    static final FunctionDescriptor get_items_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_items_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.get_items_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_items)(GtkRecentChooser*);
+     * }
+     */
     public interface get_items {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_items fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_items.class, fi, _GtkRecentChooserIface.get_items$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_items fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.get_items_UP$MH, fi, _GtkRecentChooserIface.get_items$FUNC, scope);
         }
-        static get_items ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_items ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_items$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_items_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -326,38 +513,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle get_items$VH() {
         return _GtkRecentChooserIface.get_items$VH;
     }
-    public static MemoryAddress get_items$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_items$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_items)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment get_items$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_items$VH.get(seg);
     }
-    public static void get_items$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_items)(GtkRecentChooser*);
+     * }
+     */
+    public static void get_items$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.get_items$VH.set(seg, x);
     }
-    public static MemoryAddress get_items$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_items$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_items$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_items$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_items$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_items$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.get_items$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_items get_items (MemorySegment segment, MemorySession session) {
-        return get_items.ofAddress(get_items$get(segment), session);
+    public static get_items get_items(MemorySegment segment, SegmentScope scope) {
+        return get_items.ofAddress(get_items$get(segment), scope);
     }
     static final FunctionDescriptor get_recent_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_recent_manager$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.get_recent_manager$FUNC
+    static final FunctionDescriptor get_recent_manager_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_recent_manager_UP$MH = RuntimeHelper.upcallHandle(get_recent_manager.class, "apply", _GtkRecentChooserIface.get_recent_manager_UP$FUNC);
+    static final FunctionDescriptor get_recent_manager_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_recent_manager_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.get_recent_manager_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkRecentManager* (*get_recent_manager)(GtkRecentChooser*);
+     * }
+     */
     public interface get_recent_manager {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_recent_manager fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_recent_manager.class, fi, _GtkRecentChooserIface.get_recent_manager$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_recent_manager fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.get_recent_manager_UP$MH, fi, _GtkRecentChooserIface.get_recent_manager$FUNC, scope);
         }
-        static get_recent_manager ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_recent_manager ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_recent_manager$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_recent_manager_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -369,39 +580,65 @@ public class _GtkRecentChooserIface {
     public static VarHandle get_recent_manager$VH() {
         return _GtkRecentChooserIface.get_recent_manager$VH;
     }
-    public static MemoryAddress get_recent_manager$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_recent_manager$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkRecentManager* (*get_recent_manager)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment get_recent_manager$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_recent_manager$VH.get(seg);
     }
-    public static void get_recent_manager$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkRecentManager* (*get_recent_manager)(GtkRecentChooser*);
+     * }
+     */
+    public static void get_recent_manager$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.get_recent_manager$VH.set(seg, x);
     }
-    public static MemoryAddress get_recent_manager$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.get_recent_manager$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_recent_manager$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.get_recent_manager$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_recent_manager$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_recent_manager$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.get_recent_manager$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_recent_manager get_recent_manager (MemorySegment segment, MemorySession session) {
-        return get_recent_manager.ofAddress(get_recent_manager$get(segment), session);
+    public static get_recent_manager get_recent_manager(MemorySegment segment, SegmentScope scope) {
+        return get_recent_manager.ofAddress(get_recent_manager$get(segment), scope);
     }
     static final FunctionDescriptor add_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle add_filter$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.add_filter$FUNC
+    static final FunctionDescriptor add_filter_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle add_filter_UP$MH = RuntimeHelper.upcallHandle(add_filter.class, "apply", _GtkRecentChooserIface.add_filter_UP$FUNC);
+    static final FunctionDescriptor add_filter_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle add_filter_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.add_filter_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*add_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
     public interface add_filter {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(add_filter fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(add_filter.class, fi, _GtkRecentChooserIface.add_filter$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(add_filter fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.add_filter_UP$MH, fi, _GtkRecentChooserIface.add_filter$FUNC, scope);
         }
-        static add_filter ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static add_filter ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkRecentChooserIface.add_filter$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkRecentChooserIface.add_filter_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -413,39 +650,65 @@ public class _GtkRecentChooserIface {
     public static VarHandle add_filter$VH() {
         return _GtkRecentChooserIface.add_filter$VH;
     }
-    public static MemoryAddress add_filter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.add_filter$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*add_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
+    public static MemorySegment add_filter$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.add_filter$VH.get(seg);
     }
-    public static void add_filter$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*add_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
+    public static void add_filter$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.add_filter$VH.set(seg, x);
     }
-    public static MemoryAddress add_filter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.add_filter$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment add_filter$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.add_filter$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void add_filter$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void add_filter$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.add_filter$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_filter add_filter (MemorySegment segment, MemorySession session) {
-        return add_filter.ofAddress(add_filter$get(segment), session);
+    public static add_filter add_filter(MemorySegment segment, SegmentScope scope) {
+        return add_filter.ofAddress(add_filter$get(segment), scope);
     }
     static final FunctionDescriptor remove_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle remove_filter$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.remove_filter$FUNC
+    static final FunctionDescriptor remove_filter_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle remove_filter_UP$MH = RuntimeHelper.upcallHandle(remove_filter.class, "apply", _GtkRecentChooserIface.remove_filter_UP$FUNC);
+    static final FunctionDescriptor remove_filter_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle remove_filter_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.remove_filter_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*remove_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
     public interface remove_filter {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(remove_filter fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_filter.class, fi, _GtkRecentChooserIface.remove_filter$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(remove_filter fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.remove_filter_UP$MH, fi, _GtkRecentChooserIface.remove_filter$FUNC, scope);
         }
-        static remove_filter ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static remove_filter ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkRecentChooserIface.remove_filter$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkRecentChooserIface.remove_filter_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -457,38 +720,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle remove_filter$VH() {
         return _GtkRecentChooserIface.remove_filter$VH;
     }
-    public static MemoryAddress remove_filter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.remove_filter$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*remove_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
+    public static MemorySegment remove_filter$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.remove_filter$VH.get(seg);
     }
-    public static void remove_filter$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*remove_filter)(GtkRecentChooser*,GtkRecentFilter*);
+     * }
+     */
+    public static void remove_filter$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.remove_filter$VH.set(seg, x);
     }
-    public static MemoryAddress remove_filter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.remove_filter$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_filter$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.remove_filter$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_filter$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_filter$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.remove_filter$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_filter remove_filter (MemorySegment segment, MemorySession session) {
-        return remove_filter.ofAddress(remove_filter$get(segment), session);
+    public static remove_filter remove_filter(MemorySegment segment, SegmentScope scope) {
+        return remove_filter.ofAddress(remove_filter$get(segment), scope);
     }
     static final FunctionDescriptor list_filters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle list_filters$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.list_filters$FUNC
+    static final FunctionDescriptor list_filters_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle list_filters_UP$MH = RuntimeHelper.upcallHandle(list_filters.class, "apply", _GtkRecentChooserIface.list_filters_UP$FUNC);
+    static final FunctionDescriptor list_filters_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle list_filters_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.list_filters_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSList* (*list_filters)(GtkRecentChooser*);
+     * }
+     */
     public interface list_filters {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(list_filters fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(list_filters.class, fi, _GtkRecentChooserIface.list_filters$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(list_filters fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.list_filters_UP$MH, fi, _GtkRecentChooserIface.list_filters$FUNC, scope);
         }
-        static list_filters ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static list_filters ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.list_filters$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.list_filters_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -500,20 +787,32 @@ public class _GtkRecentChooserIface {
     public static VarHandle list_filters$VH() {
         return _GtkRecentChooserIface.list_filters$VH;
     }
-    public static MemoryAddress list_filters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.list_filters$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* (*list_filters)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment list_filters$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.list_filters$VH.get(seg);
     }
-    public static void list_filters$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* (*list_filters)(GtkRecentChooser*);
+     * }
+     */
+    public static void list_filters$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.list_filters$VH.set(seg, x);
     }
-    public static MemoryAddress list_filters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.list_filters$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment list_filters$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.list_filters$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void list_filters$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void list_filters$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.list_filters$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static list_filters list_filters (MemorySegment segment, MemorySession session) {
-        return list_filters.ofAddress(list_filters$get(segment), session);
+    public static list_filters list_filters(MemorySegment segment, SegmentScope scope) {
+        return list_filters.ofAddress(list_filters$get(segment), scope);
     }
     static final FunctionDescriptor set_sort_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -521,20 +820,38 @@ public class _GtkRecentChooserIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_sort_func$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.set_sort_func$FUNC
+    static final FunctionDescriptor set_sort_func_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_sort_func_UP$MH = RuntimeHelper.upcallHandle(set_sort_func.class, "apply", _GtkRecentChooserIface.set_sort_func_UP$FUNC);
+    static final FunctionDescriptor set_sort_func_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_sort_func_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.set_sort_func_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_sort_func)(GtkRecentChooser*,GtkRecentSortFunc,gpointer,GDestroyNotify);
+     * }
+     */
     public interface set_sort_func {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(set_sort_func fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_sort_func.class, fi, _GtkRecentChooserIface.set_sort_func$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(set_sort_func fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.set_sort_func_UP$MH, fi, _GtkRecentChooserIface.set_sort_func$FUNC, scope);
         }
-        static set_sort_func ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static set_sort_func ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkRecentChooserIface.set_sort_func$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkRecentChooserIface.set_sort_func_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -546,38 +863,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle set_sort_func$VH() {
         return _GtkRecentChooserIface.set_sort_func$VH;
     }
-    public static MemoryAddress set_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.set_sort_func$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_sort_func)(GtkRecentChooser*,GtkRecentSortFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static MemorySegment set_sort_func$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.set_sort_func$VH.get(seg);
     }
-    public static void set_sort_func$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_sort_func)(GtkRecentChooser*,GtkRecentSortFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static void set_sort_func$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.set_sort_func$VH.set(seg, x);
     }
-    public static MemoryAddress set_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.set_sort_func$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_sort_func$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.set_sort_func$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_sort_func$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.set_sort_func$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_sort_func set_sort_func (MemorySegment segment, MemorySession session) {
-        return set_sort_func.ofAddress(set_sort_func$get(segment), session);
+    public static set_sort_func set_sort_func(MemorySegment segment, SegmentScope scope) {
+        return set_sort_func.ofAddress(set_sort_func$get(segment), scope);
     }
     static final FunctionDescriptor item_activated$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle item_activated$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.item_activated$FUNC
+    static final FunctionDescriptor item_activated_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle item_activated_UP$MH = RuntimeHelper.upcallHandle(item_activated.class, "apply", _GtkRecentChooserIface.item_activated_UP$FUNC);
+    static final FunctionDescriptor item_activated_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle item_activated_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.item_activated_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*item_activated)(GtkRecentChooser*);
+     * }
+     */
     public interface item_activated {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(item_activated fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(item_activated.class, fi, _GtkRecentChooserIface.item_activated$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(item_activated fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.item_activated_UP$MH, fi, _GtkRecentChooserIface.item_activated$FUNC, scope);
         }
-        static item_activated ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static item_activated ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkRecentChooserIface.item_activated$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkRecentChooserIface.item_activated_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -589,38 +930,62 @@ public class _GtkRecentChooserIface {
     public static VarHandle item_activated$VH() {
         return _GtkRecentChooserIface.item_activated$VH;
     }
-    public static MemoryAddress item_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.item_activated$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*item_activated)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment item_activated$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.item_activated$VH.get(seg);
     }
-    public static void item_activated$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*item_activated)(GtkRecentChooser*);
+     * }
+     */
+    public static void item_activated$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.item_activated$VH.set(seg, x);
     }
-    public static MemoryAddress item_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.item_activated$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment item_activated$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.item_activated$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void item_activated$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void item_activated$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.item_activated$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static item_activated item_activated (MemorySegment segment, MemorySession session) {
-        return item_activated.ofAddress(item_activated$get(segment), session);
+    public static item_activated item_activated(MemorySegment segment, SegmentScope scope) {
+        return item_activated.ofAddress(item_activated$get(segment), scope);
     }
     static final FunctionDescriptor selection_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle selection_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkRecentChooserIface.selection_changed$FUNC
+    static final FunctionDescriptor selection_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle selection_changed_UP$MH = RuntimeHelper.upcallHandle(selection_changed.class, "apply", _GtkRecentChooserIface.selection_changed_UP$FUNC);
+    static final FunctionDescriptor selection_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle selection_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkRecentChooserIface.selection_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*selection_changed)(GtkRecentChooser*);
+     * }
+     */
     public interface selection_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(selection_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(selection_changed.class, fi, _GtkRecentChooserIface.selection_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(selection_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkRecentChooserIface.selection_changed_UP$MH, fi, _GtkRecentChooserIface.selection_changed$FUNC, scope);
         }
-        static selection_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static selection_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkRecentChooserIface.selection_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkRecentChooserIface.selection_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -632,27 +997,39 @@ public class _GtkRecentChooserIface {
     public static VarHandle selection_changed$VH() {
         return _GtkRecentChooserIface.selection_changed$VH;
     }
-    public static MemoryAddress selection_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.selection_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*selection_changed)(GtkRecentChooser*);
+     * }
+     */
+    public static MemorySegment selection_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.selection_changed$VH.get(seg);
     }
-    public static void selection_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*selection_changed)(GtkRecentChooser*);
+     * }
+     */
+    public static void selection_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentChooserIface.selection_changed$VH.set(seg, x);
     }
-    public static MemoryAddress selection_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentChooserIface.selection_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment selection_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentChooserIface.selection_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void selection_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void selection_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentChooserIface.selection_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_changed selection_changed (MemorySegment segment, MemorySession session) {
-        return selection_changed.ofAddress(selection_changed$get(segment), session);
+    public static selection_changed selection_changed(MemorySegment segment, SegmentScope scope) {
+        return selection_changed.ofAddress(selection_changed$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

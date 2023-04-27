@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoFontFaceClass extends _PangoFontFaceClass {
+/**
+ * {@snippet :
+ * typedef struct _PangoFontFaceClass PangoFontFaceClass;
+ * }
+ */
+public final class PangoFontFaceClass extends _PangoFontFaceClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoFontFaceClass() {}
 }
 
 

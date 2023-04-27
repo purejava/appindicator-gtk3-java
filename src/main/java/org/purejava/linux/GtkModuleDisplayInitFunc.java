@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkModuleDisplayInitFunc)(struct _GdkDisplay* display);
+ * }
+ */
 public interface GtkModuleDisplayInitFunc {
 
-    void apply(java.lang.foreign.MemoryAddress display);
-    static MemorySegment allocate(GtkModuleDisplayInitFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkModuleDisplayInitFunc.class, fi, constants$1904.GtkModuleDisplayInitFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GtkModuleDisplayInitFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1707.GtkModuleDisplayInitFunc_UP$MH, fi, constants$1707.GtkModuleDisplayInitFunc$FUNC, scope);
     }
-    static GtkModuleDisplayInitFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _display) -> {
+    static GtkModuleDisplayInitFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$1904.GtkModuleDisplayInitFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_display);
+                constants$1707.GtkModuleDisplayInitFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

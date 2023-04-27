@@ -7,42 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1967 {
+final class constants$1967 {
 
-    static final FunctionDescriptor gtk_range_get_round_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_round_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_round_digits",
-        constants$1967.gtk_range_get_round_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_recent_manager_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_error_quark",
-        constants$1967.gtk_recent_manager_error_quark$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_manager_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_get_type",
-        constants$1967.gtk_recent_manager_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_manager_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_new",
-        constants$1967.gtk_recent_manager_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_manager_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_get_default",
-        constants$1967.gtk_recent_manager_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_add_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1967() {}
+    static final FunctionDescriptor gtk_widget_render_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_manager_add_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_add_item",
-        constants$1967.gtk_recent_manager_add_item$FUNC
+    static final MethodHandle gtk_widget_render_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_render_icon",
+        constants$1967.gtk_widget_render_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_table_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_get_type",
+        constants$1967.gtk_table_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_table_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_new",
+        constants$1967.gtk_table_new$FUNC
+    );
+    static final FunctionDescriptor gtk_table_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_table_resize$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_resize",
+        constants$1967.gtk_table_resize$FUNC
+    );
+    static final FunctionDescriptor gtk_table_attach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_table_attach$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_attach",
+        constants$1967.gtk_table_attach$FUNC
+    );
+    static final FunctionDescriptor gtk_table_attach_defaults$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_table_attach_defaults$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_attach_defaults",
+        constants$1967.gtk_table_attach_defaults$FUNC
     );
 }
 

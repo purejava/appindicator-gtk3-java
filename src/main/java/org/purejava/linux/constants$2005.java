@@ -7,60 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2005 {
+final class constants$2005 {
 
-    static final FunctionDescriptor gtk_settings_set_property_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_set_property_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_property_value",
-        constants$2005.gtk_settings_set_property_value$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_set_string_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_set_string_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_string_property",
-        constants$2005.gtk_settings_set_string_property$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_set_long_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_set_long_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_long_property",
-        constants$2005.gtk_settings_set_long_property$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_set_double_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_set_double_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_double_property",
-        constants$2005.gtk_settings_set_double_property$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_reset_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_reset_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_reset_property",
-        constants$2005.gtk_settings_reset_property$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcut_label_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcut_label_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_get_type",
-        constants$2005.gtk_shortcut_label_get_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2005() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::hal-udi");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-start");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-start-degraded");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-stop");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::start-stop-type");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-poll");
 }
 
 

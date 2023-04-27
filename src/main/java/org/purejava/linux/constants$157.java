@@ -7,62 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$157 {
+final class constants$157 {
 
-    static final FunctionDescriptor g_hook_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find",
-        constants$157.g_hook_find$FUNC
-    );
-    static final FunctionDescriptor g_hook_find_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find_data$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find_data",
-        constants$157.g_hook_find_data$FUNC
-    );
-    static final FunctionDescriptor g_hook_find_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find_func$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find_func",
-        constants$157.g_hook_find_func$FUNC
-    );
-    static final FunctionDescriptor g_hook_find_func_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$157() {}
+    static final FunctionDescriptor g_hook_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hook_find_func_data$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find_func_data",
-        constants$157.g_hook_find_func_data$FUNC
+    static final MethodHandle g_hook_free$MH = RuntimeHelper.downcallHandle(
+        "g_hook_free",
+        constants$157.g_hook_free$FUNC
     );
-    static final FunctionDescriptor g_hook_first_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_hook_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hook_first_valid$MH = RuntimeHelper.downcallHandle(
-        "g_hook_first_valid",
-        constants$157.g_hook_first_valid$FUNC
+    static final MethodHandle g_hook_ref$MH = RuntimeHelper.downcallHandle(
+        "g_hook_ref",
+        constants$157.g_hook_ref$FUNC
     );
-    static final FunctionDescriptor g_hook_next_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_hook_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hook_next_valid$MH = RuntimeHelper.downcallHandle(
-        "g_hook_next_valid",
-        constants$157.g_hook_next_valid$FUNC
+    static final MethodHandle g_hook_unref$MH = RuntimeHelper.downcallHandle(
+        "g_hook_unref",
+        constants$157.g_hook_unref$FUNC
+    );
+    static final FunctionDescriptor g_hook_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_hook_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_hook_destroy",
+        constants$157.g_hook_destroy$FUNC
+    );
+    static final FunctionDescriptor g_hook_destroy_link$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hook_destroy_link$MH = RuntimeHelper.downcallHandle(
+        "g_hook_destroy_link",
+        constants$157.g_hook_destroy_link$FUNC
+    );
+    static final FunctionDescriptor g_hook_prepend$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hook_prepend$MH = RuntimeHelper.downcallHandle(
+        "g_hook_prepend",
+        constants$157.g_hook_prepend$FUNC
     );
 }
 

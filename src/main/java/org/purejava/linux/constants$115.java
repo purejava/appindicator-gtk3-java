@@ -7,8 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$115 {
+final class constants$115 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$115() {}
+    static final FunctionDescriptor g_date_get_monday_week_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_get_monday_week_of_year$MH = RuntimeHelper.downcallHandle(
+        "g_date_get_monday_week_of_year",
+        constants$115.g_date_get_monday_week_of_year$FUNC
+    );
+    static final FunctionDescriptor g_date_get_sunday_week_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_get_sunday_week_of_year$MH = RuntimeHelper.downcallHandle(
+        "g_date_get_sunday_week_of_year",
+        constants$115.g_date_get_sunday_week_of_year$FUNC
+    );
+    static final FunctionDescriptor g_date_get_iso8601_week_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_get_iso8601_week_of_year$MH = RuntimeHelper.downcallHandle(
+        "g_date_get_iso8601_week_of_year",
+        constants$115.g_date_get_iso8601_week_of_year$FUNC
+    );
+    static final FunctionDescriptor g_date_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_date_clear$MH = RuntimeHelper.downcallHandle(
+        "g_date_clear",
+        constants$115.g_date_clear$FUNC
+    );
     static final FunctionDescriptor g_date_set_parse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -24,38 +55,6 @@ class constants$115 {
     static final MethodHandle g_date_set_time_t$MH = RuntimeHelper.downcallHandle(
         "g_date_set_time_t",
         constants$115.g_date_set_time_t$FUNC
-    );
-    static final FunctionDescriptor g_date_set_time_val$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_set_time_val$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_time_val",
-        constants$115.g_date_set_time_val$FUNC
-    );
-    static final FunctionDescriptor g_date_set_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_set_time$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_time",
-        constants$115.g_date_set_time$FUNC
-    );
-    static final FunctionDescriptor g_date_set_month$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_set_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_month",
-        constants$115.g_date_set_month$FUNC
-    );
-    static final FunctionDescriptor g_date_set_day$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_date_set_day$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_day",
-        constants$115.g_date_set_day$FUNC
     );
 }
 

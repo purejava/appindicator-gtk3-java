@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$710 {
+final class constants$710 {
 
-    static final FunctionDescriptor g_inet_address_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$710() {}
+    static final FunctionDescriptor g_mount_operation_get_anonymous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mount_operation_get_anonymous$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_anonymous",
+        constants$710.g_mount_operation_get_anonymous$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_set_anonymous$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_inet_address_new_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_bytes",
-        constants$710.g_inet_address_new_from_bytes$FUNC
+    static final MethodHandle g_mount_operation_set_anonymous$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_anonymous",
+        constants$710.g_mount_operation_set_anonymous$FUNC
     );
-    static final FunctionDescriptor g_inet_address_new_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_mount_operation_get_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_new_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_loopback",
-        constants$710.g_inet_address_new_loopback$FUNC
+    static final MethodHandle g_mount_operation_get_domain$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_domain",
+        constants$710.g_mount_operation_get_domain$FUNC
     );
-    static final FunctionDescriptor g_inet_address_new_any$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_any$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_any",
-        constants$710.g_inet_address_new_any$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_mount_operation_set_domain$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_equal$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_equal",
-        constants$710.g_inet_address_equal$FUNC
+    static final MethodHandle g_mount_operation_set_domain$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_domain",
+        constants$710.g_mount_operation_set_domain$FUNC
     );
-    static final FunctionDescriptor g_inet_address_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_operation_get_password_save$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_string",
-        constants$710.g_inet_address_to_string$FUNC
+    static final MethodHandle g_mount_operation_get_password_save$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_password_save",
+        constants$710.g_mount_operation_get_password_save$FUNC
     );
-    static final FunctionDescriptor g_inet_address_to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_mount_operation_set_password_save$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_inet_address_to_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_bytes",
-        constants$710.g_inet_address_to_bytes$FUNC
+    static final MethodHandle g_mount_operation_set_password_save$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_password_save",
+        constants$710.g_mount_operation_set_password_save$FUNC
     );
 }
 

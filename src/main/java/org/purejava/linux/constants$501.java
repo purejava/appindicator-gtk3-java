@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$501 {
+final class constants$501 {
 
-    static final FunctionDescriptor g_value_array_get_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_array_get_nth$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_get_nth",
-        constants$501.g_value_array_get_nth$FUNC
-    );
-    static final FunctionDescriptor g_value_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_array_new$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_new",
-        constants$501.g_value_array_new$FUNC
-    );
-    static final FunctionDescriptor g_value_array_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$501() {}
+    static final FunctionDescriptor g_input_stream_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_free",
-        constants$501.g_value_array_free$FUNC
+    static final MethodHandle g_input_stream_is_closed$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_is_closed",
+        constants$501.g_input_stream_is_closed$FUNC
     );
-    static final FunctionDescriptor g_value_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_input_stream_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_copy",
-        constants$501.g_value_array_copy$FUNC
+    static final MethodHandle g_input_stream_has_pending$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_has_pending",
+        constants$501.g_input_stream_has_pending$FUNC
     );
-    static final FunctionDescriptor g_value_array_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_input_stream_set_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_prepend",
-        constants$501.g_value_array_prepend$FUNC
+    static final MethodHandle g_input_stream_set_pending$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_set_pending",
+        constants$501.g_input_stream_set_pending$FUNC
     );
-    static final FunctionDescriptor g_value_array_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_input_stream_clear_pending$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_array_append$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_append",
-        constants$501.g_value_array_append$FUNC
+    static final MethodHandle g_input_stream_clear_pending$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_clear_pending",
+        constants$501.g_input_stream_clear_pending$FUNC
+    );
+    static final FunctionDescriptor g_filter_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_filter_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_type",
+        constants$501.g_filter_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_filter_input_stream_get_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_filter_input_stream_get_base_stream$MH = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_base_stream",
+        constants$501.g_filter_input_stream_get_base_stream$FUNC
     );
 }
 

@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * union _cairo_path_data_t {
+ *     struct  header;
+ *     struct  point;
+ * };
+ * }
+ */
 public class _cairo_path_data_t {
 
-    static final  GroupLayout $union$LAYOUT = MemoryLayout.unionLayout(
+    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("type"),
             Constants$root.C_INT$LAYOUT.withName("length")
@@ -22,9 +30,19 @@ public class _cairo_path_data_t {
     public static MemoryLayout $LAYOUT() {
         return _cairo_path_data_t.$union$LAYOUT;
     }
-    public static class header {
+    /**
+     * {@snippet :
+     * struct {
+     *     cairo_path_data_type_t type;
+     *     int length;
+     * };
+     * }
+     */
+    public static final class header {
 
-        static final  GroupLayout header$struct$LAYOUT = MemoryLayout.structLayout(
+        // Suppresses default constructor, ensuring non-instantiability.
+        private header() {}
+        static final StructLayout header$struct$LAYOUT = MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("type"),
             Constants$root.C_INT$LAYOUT.withName("length")
         );
@@ -35,10 +53,22 @@ public class _cairo_path_data_t {
         public static VarHandle type$VH() {
             return header.type$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * cairo_path_data_type_t type;
+         * }
+         */
         public static int type$get(MemorySegment seg) {
             return (int)header.type$VH.get(seg);
         }
-        public static void type$set( MemorySegment seg, int x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * cairo_path_data_type_t type;
+         * }
+         */
+        public static void type$set(MemorySegment seg, int x) {
             header.type$VH.set(seg, x);
         }
         public static int type$get(MemorySegment seg, long index) {
@@ -51,10 +81,22 @@ public class _cairo_path_data_t {
         public static VarHandle length$VH() {
             return header.length$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * int length;
+         * }
+         */
         public static int length$get(MemorySegment seg) {
             return (int)header.length$VH.get(seg);
         }
-        public static void length$set( MemorySegment seg, int x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * int length;
+         * }
+         */
+        public static void length$set(MemorySegment seg, int x) {
             header.length$VH.set(seg, x);
         }
         public static int length$get(MemorySegment seg, long index) {
@@ -65,18 +107,28 @@ public class _cairo_path_data_t {
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment header$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
-    public static class point {
+    /**
+     * {@snippet :
+     * struct {
+     *     double x;
+     *     double y;
+     * };
+     * }
+     */
+    public static final class point {
 
-        static final  GroupLayout point$struct$LAYOUT = MemoryLayout.structLayout(
+        // Suppresses default constructor, ensuring non-instantiability.
+        private point() {}
+        static final StructLayout point$struct$LAYOUT = MemoryLayout.structLayout(
             Constants$root.C_DOUBLE$LAYOUT.withName("x"),
             Constants$root.C_DOUBLE$LAYOUT.withName("y")
         );
@@ -87,10 +139,22 @@ public class _cairo_path_data_t {
         public static VarHandle x$VH() {
             return point.x$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * double x;
+         * }
+         */
         public static double x$get(MemorySegment seg) {
             return (double)point.x$VH.get(seg);
         }
-        public static void x$set( MemorySegment seg, double x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * double x;
+         * }
+         */
+        public static void x$set(MemorySegment seg, double x) {
             point.x$VH.set(seg, x);
         }
         public static double x$get(MemorySegment seg, long index) {
@@ -103,10 +167,22 @@ public class _cairo_path_data_t {
         public static VarHandle y$VH() {
             return point.y$VH;
         }
+        /**
+         * Getter for field:
+         * {@snippet :
+         * double y;
+         * }
+         */
         public static double y$get(MemorySegment seg) {
             return (double)point.y$VH.get(seg);
         }
-        public static void y$set( MemorySegment seg, double x) {
+        /**
+         * Setter for field:
+         * {@snippet :
+         * double y;
+         * }
+         */
+        public static void y$set(MemorySegment seg, double x) {
             point.y$VH.set(seg, x);
         }
         public static double y$get(MemorySegment seg, long index) {
@@ -117,10 +193,10 @@ public class _cairo_path_data_t {
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment point$slice(MemorySegment seg) {
@@ -128,10 +204,10 @@ public class _cairo_path_data_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,53 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1086 {
+final class constants$1086 {
 
-    static final FunctionDescriptor pango_attr_iterator_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1086() {}
+    static final FunctionDescriptor GdkWindowInvalidateHandlerFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GdkWindowInvalidateHandlerFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GdkWindowInvalidateHandlerFunc_UP$MH = RuntimeHelper.upcallHandle(GdkWindowInvalidateHandlerFunc.class, "apply", constants$1086.GdkWindowInvalidateHandlerFunc_UP$FUNC);
+    static final FunctionDescriptor GdkWindowInvalidateHandlerFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GdkWindowInvalidateHandlerFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1086.GdkWindowInvalidateHandlerFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_invalidate_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_invalidate_handler$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_invalidate_handler",
+        constants$1086.gdk_window_set_invalidate_handler$FUNC
+    );
+    static final FunctionDescriptor gdk_window_has_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_has_native$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_has_native",
+        constants$1086.gdk_window_has_native$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_type_hint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_iterator_get$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get",
-        constants$1086.pango_attr_iterator_get$FUNC
+    static final MethodHandle gdk_window_set_type_hint$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_type_hint",
+        constants$1086.gdk_window_set_type_hint$FUNC
     );
-    static final FunctionDescriptor pango_attr_iterator_get_font$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_type_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_iterator_get_font$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_font",
-        constants$1086.pango_attr_iterator_get_font$FUNC
-    );
-    static final FunctionDescriptor pango_attr_iterator_get_attrs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_iterator_get_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_attrs",
-        constants$1086.pango_attr_iterator_get_attrs$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_PangoAttribute$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_PangoAttribute$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoAttribute",
-        constants$1086.glib_autoptr_clear_PangoAttribute$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoAttribute$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_PangoAttribute$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoAttribute",
-        constants$1086.glib_autoptr_cleanup_PangoAttribute$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoAttribute$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_PangoAttribute$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoAttribute",
-        constants$1086.glib_listautoptr_cleanup_PangoAttribute$FUNC
+    static final MethodHandle gdk_window_get_type_hint$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_type_hint",
+        constants$1086.gdk_window_get_type_hint$FUNC
     );
 }
 

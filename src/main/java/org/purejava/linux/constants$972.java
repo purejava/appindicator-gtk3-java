@@ -7,49 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$972 {
+final class constants$972 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTask$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$972() {}
+    static final FunctionDescriptor pango_layout_iter_get_char_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTask$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTask",
-        constants$972.glib_queueautoptr_cleanup_GTask$FUNC
+    static final MethodHandle pango_layout_iter_get_char_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_char_extents",
+        constants$972.pango_layout_iter_get_char_extents$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTcpConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_cluster_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTcpConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTcpConnection",
-        constants$972.glib_autoptr_clear_GTcpConnection$FUNC
+    static final MethodHandle pango_layout_iter_get_cluster_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_cluster_extents",
+        constants$972.pango_layout_iter_get_cluster_extents$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTcpConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_run_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTcpConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTcpConnection",
-        constants$972.glib_autoptr_cleanup_GTcpConnection$FUNC
+    static final MethodHandle pango_layout_iter_get_run_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_run_extents",
+        constants$972.pango_layout_iter_get_run_extents$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTcpConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_line_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTcpConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTcpConnection",
-        constants$972.glib_listautoptr_cleanup_GTcpConnection$FUNC
+    static final MethodHandle pango_layout_iter_get_line_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line_extents",
+        constants$972.pango_layout_iter_get_line_extents$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTcpConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_line_yrange$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTcpConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTcpConnection",
-        constants$972.glib_slistautoptr_cleanup_GTcpConnection$FUNC
+    static final MethodHandle pango_layout_iter_get_line_yrange$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line_yrange",
+        constants$972.pango_layout_iter_get_line_yrange$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTcpConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_layout_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTcpConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTcpConnection",
-        constants$972.glib_queueautoptr_cleanup_GTcpConnection$FUNC
+    static final MethodHandle pango_layout_iter_get_layout_extents$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_layout_extents",
+        constants$972.pango_layout_iter_get_layout_extents$FUNC
     );
 }
 

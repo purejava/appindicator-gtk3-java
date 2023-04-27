@@ -7,30 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$133 {
+final class constants$133 {
 
-    static final  OfAddress glib_mem_profiler_table$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$133() {}
+    static final FunctionDescriptor g_aligned_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_aligned_free$MH = RuntimeHelper.downcallHandle(
+        "g_aligned_free",
+        constants$133.g_aligned_free$FUNC
+    );
+    static final FunctionDescriptor g_aligned_free_sized$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_aligned_free_sized$MH = RuntimeHelper.downcallHandle(
+        "g_aligned_free_sized",
+        constants$133.g_aligned_free_sized$FUNC
+    );
+    static final FunctionDescriptor g_mem_set_vtable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mem_set_vtable$MH = RuntimeHelper.downcallHandle(
+        "g_mem_set_vtable",
+        constants$133.g_mem_set_vtable$FUNC
+    );
+    static final FunctionDescriptor g_mem_is_system_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_mem_is_system_malloc$MH = RuntimeHelper.downcallHandle(
+        "g_mem_is_system_malloc",
+        constants$133.g_mem_is_system_malloc$FUNC
+    );
+    static final OfInt g_mem_gc_friendly$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle g_mem_gc_friendly$VH = constants$133.g_mem_gc_friendly$LAYOUT.varHandle();
+    static final MemorySegment g_mem_gc_friendly$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_mem_gc_friendly", constants$133.g_mem_gc_friendly$LAYOUT);
+    static final OfAddress glib_mem_profiler_table$LAYOUT = Constants$root.C_POINTER$LAYOUT;
     static final VarHandle glib_mem_profiler_table$VH = constants$133.glib_mem_profiler_table$LAYOUT.varHandle();
     static final MemorySegment glib_mem_profiler_table$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_mem_profiler_table", constants$133.glib_mem_profiler_table$LAYOUT);
-    static final FunctionDescriptor g_mem_profile$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_mem_profile$MH = RuntimeHelper.downcallHandle(
-        "g_mem_profile",
-        constants$133.g_mem_profile$FUNC
-    );
-    static final FunctionDescriptor GNodeTraverseFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeTraverseFunc$MH = RuntimeHelper.downcallHandle(
-        constants$133.GNodeTraverseFunc$FUNC
-    );
-    static final FunctionDescriptor GNodeForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeForeachFunc$MH = RuntimeHelper.downcallHandle(
-        constants$133.GNodeForeachFunc$FUNC
-    );
 }
 
 

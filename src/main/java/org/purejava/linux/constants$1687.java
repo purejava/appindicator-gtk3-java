@@ -7,59 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1687 {
+final class constants$1687 {
 
-    static final FunctionDescriptor gtk_assistant_append_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1687() {}
+    static final FunctionDescriptor gtk_get_current_event_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_current_event_time$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_current_event_time",
+        constants$1687.gtk_get_current_event_time$FUNC
+    );
+    static final FunctionDescriptor gtk_get_current_event_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_get_current_event_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_current_event_state",
+        constants$1687.gtk_get_current_event_state$FUNC
+    );
+    static final FunctionDescriptor gtk_get_current_event_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_get_current_event_device$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_current_event_device",
+        constants$1687.gtk_get_current_event_device$FUNC
+    );
+    static final FunctionDescriptor gtk_get_event_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_get_event_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_event_widget",
+        constants$1687.gtk_get_event_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_propagate_event$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_append_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_append_page",
-        constants$1687.gtk_assistant_append_page$FUNC
+    static final MethodHandle gtk_propagate_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_propagate_event",
+        constants$1687.gtk_propagate_event$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_insert_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_insert_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_insert_page",
-        constants$1687.gtk_assistant_insert_page$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_remove_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_remove_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_remove_page",
-        constants$1687.gtk_assistant_remove_page$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_forward_page_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_forward_page_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_forward_page_func",
-        constants$1687.gtk_assistant_set_forward_page_func$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_page_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_page_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_type",
-        constants$1687.gtk_assistant_set_page_type$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_get_page_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_get_page_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_type",
-        constants$1687.gtk_assistant_get_page_type$FUNC
+    static final FunctionDescriptor gtk_menu_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_menu_bar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_bar_get_type",
+        constants$1687.gtk_menu_bar_get_type$FUNC
     );
 }
 

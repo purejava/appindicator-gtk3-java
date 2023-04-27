@@ -7,55 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1809 {
+final class constants$1809 {
 
-    static final FunctionDescriptor gtk_grid_insert_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_insert_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_insert_column",
-        constants$1809.gtk_grid_insert_column$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_remove_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_remove_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_remove_row",
-        constants$1809.gtk_grid_remove_row$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_remove_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_remove_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_remove_column",
-        constants$1809.gtk_grid_remove_column$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_insert_next_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_insert_next_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_insert_next_to",
-        constants$1809.gtk_grid_insert_next_to$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_set_row_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_row_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_row_homogeneous",
-        constants$1809.gtk_grid_set_row_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_row_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1809() {}
+    static final FunctionDescriptor gtk_shortcut_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_grid_get_row_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_row_homogeneous",
-        constants$1809.gtk_grid_get_row_homogeneous$FUNC
+    static final MethodHandle gtk_shortcut_label_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcut_label_new",
+        constants$1809.gtk_shortcut_label_new$FUNC
+    );
+    static final FunctionDescriptor gtk_shortcut_label_get_accelerator$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_shortcut_label_get_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcut_label_get_accelerator",
+        constants$1809.gtk_shortcut_label_get_accelerator$FUNC
+    );
+    static final FunctionDescriptor gtk_shortcut_label_set_accelerator$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_shortcut_label_set_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcut_label_set_accelerator",
+        constants$1809.gtk_shortcut_label_set_accelerator$FUNC
+    );
+    static final FunctionDescriptor gtk_shortcut_label_get_disabled_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_shortcut_label_get_disabled_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcut_label_get_disabled_text",
+        constants$1809.gtk_shortcut_label_get_disabled_text$FUNC
+    );
+    static final FunctionDescriptor gtk_shortcut_label_set_disabled_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_shortcut_label_set_disabled_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcut_label_set_disabled_text",
+        constants$1809.gtk_shortcut_label_set_disabled_text$FUNC
+    );
+    static final FunctionDescriptor gtk_shortcuts_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_shortcuts_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcuts_group_get_type",
+        constants$1809.gtk_shortcuts_group_get_type$FUNC
     );
 }
 

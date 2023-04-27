@@ -7,64 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$806 {
+final class constants$806 {
 
-    static final FunctionDescriptor g_settings_bind_with_mapping$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$806() {}
+    static final FunctionDescriptor g_tls_certificate_get_issuer_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_bind_with_mapping$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_with_mapping",
-        constants$806.g_settings_bind_with_mapping$FUNC
+    static final MethodHandle g_tls_certificate_get_issuer_name$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_issuer_name",
+        constants$806.g_tls_certificate_get_issuer_name$FUNC
     );
-    static final FunctionDescriptor g_settings_bind_writable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_certificate_get_dns_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_get_dns_names$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_dns_names",
+        constants$806.g_tls_certificate_get_dns_names$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_get_ip_addresses$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_get_ip_addresses$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_ip_addresses",
+        constants$806.g_tls_certificate_get_ip_addresses$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_type",
+        constants$806.g_tls_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_set_use_system_certdb$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_settings_bind_writable$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_writable",
-        constants$806.g_settings_bind_writable$FUNC
+    static final MethodHandle g_tls_connection_set_use_system_certdb$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_use_system_certdb",
+        constants$806.g_tls_connection_set_use_system_certdb$FUNC
     );
-    static final FunctionDescriptor g_settings_unbind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_connection_get_use_system_certdb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_unbind$MH = RuntimeHelper.downcallHandle(
-        "g_settings_unbind",
-        constants$806.g_settings_unbind$FUNC
-    );
-    static final FunctionDescriptor g_settings_create_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_create_action$MH = RuntimeHelper.downcallHandle(
-        "g_settings_create_action",
-        constants$806.g_settings_create_action$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_mapped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_get_mapped$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_mapped",
-        constants$806.g_settings_get_mapped$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_get_type",
-        constants$806.g_simple_action_get_type$FUNC
+    static final MethodHandle g_tls_connection_get_use_system_certdb$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_use_system_certdb",
+        constants$806.g_tls_connection_get_use_system_certdb$FUNC
     );
 }
 

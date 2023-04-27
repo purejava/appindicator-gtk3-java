@@ -7,8 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$18 {
+final class constants$18 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$18() {}
+    static final FunctionDescriptor __stpncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle __stpncpy$MH = RuntimeHelper.downcallHandle(
+        "__stpncpy",
+        constants$18.__stpncpy$FUNC
+    );
+    static final FunctionDescriptor stpncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle stpncpy$MH = RuntimeHelper.downcallHandle(
+        "stpncpy",
+        constants$18.stpncpy$FUNC
+    );
     static final FunctionDescriptor g_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
@@ -18,6 +38,25 @@ class constants$18 {
         "g_array_new",
         constants$18.g_array_new$FUNC
     );
+    static final FunctionDescriptor g_array_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_array_new_take$MH = RuntimeHelper.downcallHandle(
+        "g_array_new_take",
+        constants$18.g_array_new_take$FUNC
+    );
+    static final FunctionDescriptor g_array_new_take_zero_terminated$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_array_new_take_zero_terminated$MH = RuntimeHelper.downcallHandle(
+        "g_array_new_take_zero_terminated",
+        constants$18.g_array_new_take_zero_terminated$FUNC
+    );
     static final FunctionDescriptor g_array_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -25,38 +64,6 @@ class constants$18 {
     static final MethodHandle g_array_steal$MH = RuntimeHelper.downcallHandle(
         "g_array_steal",
         constants$18.g_array_steal$FUNC
-    );
-    static final FunctionDescriptor g_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_array_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_array_sized_new",
-        constants$18.g_array_sized_new$FUNC
-    );
-    static final FunctionDescriptor g_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_array_copy",
-        constants$18.g_array_copy$FUNC
-    );
-    static final FunctionDescriptor g_array_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_array_free",
-        constants$18.g_array_free$FUNC
-    );
-    static final FunctionDescriptor g_array_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_ref$MH = RuntimeHelper.downcallHandle(
-        "g_array_ref",
-        constants$18.g_array_ref$FUNC
     );
 }
 

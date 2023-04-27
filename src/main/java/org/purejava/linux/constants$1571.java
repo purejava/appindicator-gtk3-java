@@ -7,78 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1571 {
+final class constants$1571 {
 
-    static final FunctionDescriptor gtk_cell_area_foreach_alloc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1571() {}
+    static final FunctionDescriptor gtk_file_chooser_get_show_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_foreach_alloc$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_foreach_alloc",
-        constants$1571.gtk_cell_area_foreach_alloc$FUNC
+    static final MethodHandle gtk_file_chooser_get_show_hidden$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_show_hidden",
+        constants$1571.gtk_file_chooser_get_show_hidden$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_set_do_overwrite_confirmation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_event",
-        constants$1571.gtk_cell_area_event$FUNC
+    static final MethodHandle gtk_file_chooser_set_do_overwrite_confirmation$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_do_overwrite_confirmation",
+        constants$1571.gtk_file_chooser_set_do_overwrite_confirmation$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_render$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_chooser_get_do_overwrite_confirmation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_get_do_overwrite_confirmation$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_do_overwrite_confirmation",
+        constants$1571.gtk_file_chooser_get_do_overwrite_confirmation$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_set_create_folders$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_render",
-        constants$1571.gtk_cell_area_render$FUNC
+    static final MethodHandle gtk_file_chooser_set_create_folders$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_create_folders",
+        constants$1571.gtk_file_chooser_set_create_folders$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_get_cell_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_get_create_folders$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_get_create_folders$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_create_folders",
+        constants$1571.gtk_file_chooser_get_create_folders$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_set_current_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_get_cell_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_allocation",
-        constants$1571.gtk_cell_area_get_cell_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_get_cell_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_cell_at_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_at_position",
-        constants$1571.gtk_cell_area_get_cell_at_position$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_create_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_create_context",
-        constants$1571.gtk_cell_area_create_context$FUNC
+    static final MethodHandle gtk_file_chooser_set_current_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_current_name",
+        constants$1571.gtk_file_chooser_set_current_name$FUNC
     );
 }
 

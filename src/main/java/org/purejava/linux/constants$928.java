@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$928 {
+final class constants$928 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GInputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$928() {}
+    static final FunctionDescriptor pango_attribute_as_int$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GInputStream",
-        constants$928.glib_autoptr_clear_GInputStream$FUNC
+    static final MethodHandle pango_attribute_as_int$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_int",
+        constants$928.pango_attribute_as_int$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_as_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GInputStream",
-        constants$928.glib_autoptr_cleanup_GInputStream$FUNC
+    static final MethodHandle pango_attribute_as_size$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_size",
+        constants$928.pango_attribute_as_size$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_as_float$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GInputStream",
-        constants$928.glib_listautoptr_cleanup_GInputStream$FUNC
+    static final MethodHandle pango_attribute_as_float$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_float",
+        constants$928.pango_attribute_as_float$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_as_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GInputStream",
-        constants$928.glib_slistautoptr_cleanup_GInputStream$FUNC
+    static final MethodHandle pango_attribute_as_color$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_color",
+        constants$928.pango_attribute_as_color$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_as_font_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GInputStream",
-        constants$928.glib_queueautoptr_cleanup_GInputStream$FUNC
+    static final MethodHandle pango_attribute_as_font_desc$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_desc",
+        constants$928.pango_attribute_as_font_desc$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GIOModule$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attribute_as_shape$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GIOModule$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GIOModule",
-        constants$928.glib_autoptr_clear_GIOModule$FUNC
+    static final MethodHandle pango_attribute_as_shape$MH = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_shape",
+        constants$928.pango_attribute_as_shape$FUNC
     );
 }
 

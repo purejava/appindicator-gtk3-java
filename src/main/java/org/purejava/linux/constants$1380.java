@@ -7,53 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1380 {
+final class constants$1380 {
 
-    static final FunctionDescriptor atk_role_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_role_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_role_get_name",
-        constants$1380.atk_role_get_name$FUNC
-    );
-    static final FunctionDescriptor atk_role_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_role_for_name$MH = RuntimeHelper.downcallHandle(
-        "atk_role_for_name",
-        constants$1380.atk_role_for_name$FUNC
-    );
-    static final FunctionDescriptor atk_object_add_relationship$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1380() {}
+    static final FunctionDescriptor GtkCellAllocCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_add_relationship$MH = RuntimeHelper.downcallHandle(
-        "atk_object_add_relationship",
-        constants$1380.atk_object_add_relationship$FUNC
-    );
-    static final FunctionDescriptor atk_object_remove_relationship$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_remove_relationship$MH = RuntimeHelper.downcallHandle(
-        "atk_object_remove_relationship",
-        constants$1380.atk_object_remove_relationship$FUNC
+    static final MethodHandle GtkCellAllocCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1380.GtkCellAllocCallback_DOWN$FUNC
     );
-    static final FunctionDescriptor atk_role_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_cell_area_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_area_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_type",
+        constants$1380.gtk_cell_area_get_type$FUNC
     );
-    static final MethodHandle atk_role_get_localized_name$MH = RuntimeHelper.downcallHandle(
-        "atk_role_get_localized_name",
-        constants$1380.atk_role_get_localized_name$FUNC
-    );
-    static final FunctionDescriptor atk_role_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_area_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_role_register$MH = RuntimeHelper.downcallHandle(
-        "atk_role_register",
-        constants$1380.atk_role_register$FUNC
+    static final MethodHandle gtk_cell_area_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_add",
+        constants$1380.gtk_cell_area_add$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_remove",
+        constants$1380.gtk_cell_area_remove$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_has_renderer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_has_renderer$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_has_renderer",
+        constants$1380.gtk_cell_area_has_renderer$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_area_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_area_foreach$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_foreach",
+        constants$1380.gtk_cell_area_foreach$FUNC
     );
 }
 

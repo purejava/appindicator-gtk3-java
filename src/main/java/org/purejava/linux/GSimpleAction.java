@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSimpleAction {
+/**
+ * {@snippet :
+ * typedef struct _GSimpleAction GSimpleAction;
+ * }
+ */
+public final class GSimpleAction {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSimpleAction() {}
 }
 
 

@@ -7,54 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1156 {
+final class constants$1156 {
 
-    static final FunctionDescriptor cairo_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1156() {}
+    static final FunctionDescriptor gdk_cairo_set_source_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_user_data",
-        constants$1156.cairo_get_user_data$FUNC
+    static final MethodHandle gdk_cairo_set_source_color$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_color",
+        constants$1156.gdk_cairo_set_source_color$FUNC
     );
-    static final FunctionDescriptor cairo_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_cairo_surface_create_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_surface_create_from_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_surface_create_from_pixbuf",
+        constants$1156.gdk_cairo_surface_create_from_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_draw_from_gl$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_cairo_draw_from_gl$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_draw_from_gl",
+        constants$1156.gdk_cairo_draw_from_gl$FUNC
+    );
+    static final FunctionDescriptor gdk_cairo_get_drawing_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_user_data",
-        constants$1156.cairo_set_user_data$FUNC
+    static final MethodHandle gdk_cairo_get_drawing_context$MH = RuntimeHelper.downcallHandle(
+        "gdk_cairo_get_drawing_context",
+        constants$1156.gdk_cairo_get_drawing_context$FUNC
     );
-    static final FunctionDescriptor cairo_save$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_cursor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_cursor_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_type",
+        constants$1156.gdk_cursor_get_type$FUNC
     );
-    static final MethodHandle cairo_save$MH = RuntimeHelper.downcallHandle(
-        "cairo_save",
-        constants$1156.cairo_save$FUNC
-    );
-    static final FunctionDescriptor cairo_restore$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_restore$MH = RuntimeHelper.downcallHandle(
-        "cairo_restore",
-        constants$1156.cairo_restore$FUNC
-    );
-    static final FunctionDescriptor cairo_push_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_push_group$MH = RuntimeHelper.downcallHandle(
-        "cairo_push_group",
-        constants$1156.cairo_push_group$FUNC
-    );
-    static final FunctionDescriptor cairo_push_group_with_content$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_cursor_new_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_push_group_with_content$MH = RuntimeHelper.downcallHandle(
-        "cairo_push_group_with_content",
-        constants$1156.cairo_push_group_with_content$FUNC
+    static final MethodHandle gdk_cursor_new_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_for_display",
+        constants$1156.gdk_cursor_new_for_display$FUNC
     );
 }
 

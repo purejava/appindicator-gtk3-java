@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFileInputStreamClass extends _GFileInputStreamClass {
+/**
+ * {@snippet :
+ * typedef struct _GFileInputStreamClass GFileInputStreamClass;
+ * }
+ */
+public final class GFileInputStreamClass extends _GFileInputStreamClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFileInputStreamClass() {}
 }
 
 

@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1549 {
+final class constants$1549 {
 
-    static final FunctionDescriptor gtk_box_set_child_packing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1549() {}
+    static final FunctionDescriptor gtk_color_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_color_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_chooser_widget_get_type",
+        constants$1549.gtk_color_chooser_widget_get_type$FUNC
     );
-    static final MethodHandle gtk_box_set_child_packing$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_set_child_packing",
-        constants$1549.gtk_box_set_child_packing$FUNC
+    static final FunctionDescriptor gtk_color_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_color_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_chooser_widget_new",
+        constants$1549.gtk_color_chooser_widget_new$FUNC
     );
-    static final FunctionDescriptor gtk_box_set_center_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_hsv_to_rgb$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_box_set_center_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_set_center_widget",
-        constants$1549.gtk_box_set_center_widget$FUNC
+    static final MethodHandle gtk_hsv_to_rgb$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_to_rgb",
+        constants$1549.gtk_hsv_to_rgb$FUNC
     );
-    static final FunctionDescriptor gtk_box_get_center_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_box_get_center_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_get_center_widget",
-        constants$1549.gtk_box_get_center_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_app_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_type",
-        constants$1549.gtk_app_chooser_widget_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_new",
-        constants$1549.gtk_app_chooser_widget_new$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_set_show_default$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_rgb_to_hsv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_widget_set_show_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_default",
-        constants$1549.gtk_app_chooser_widget_set_show_default$FUNC
+    static final MethodHandle gtk_rgb_to_hsv$MH = RuntimeHelper.downcallHandle(
+        "gtk_rgb_to_hsv",
+        constants$1549.gtk_rgb_to_hsv$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_combo_box_text_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_get_type",
+        constants$1549.gtk_combo_box_text_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_text_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_combo_box_text_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_new",
+        constants$1549.gtk_combo_box_text_new$FUNC
     );
 }
 

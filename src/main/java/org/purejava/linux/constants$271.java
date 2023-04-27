@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$271 {
+final class constants$271 {
 
-    static final FunctionDescriptor g_atomic_rc_box_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$271() {}
+    static final FunctionDescriptor g_path_buf_pop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_rc_box_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_acquire",
-        constants$271.g_atomic_rc_box_acquire$FUNC
+    static final MethodHandle g_path_buf_pop$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_pop",
+        constants$271.g_path_buf_pop$FUNC
     );
-    static final FunctionDescriptor g_atomic_rc_box_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_release$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_release",
-        constants$271.g_atomic_rc_box_release$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_release_full$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_path_buf_set_filename$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_rc_box_release_full$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_release_full",
-        constants$271.g_atomic_rc_box_release_full$FUNC
+    static final MethodHandle g_path_buf_set_filename$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_set_filename",
+        constants$271.g_path_buf_set_filename$FUNC
     );
-    static final FunctionDescriptor g_atomic_rc_box_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_path_buf_set_extension$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_rc_box_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_get_size",
-        constants$271.g_atomic_rc_box_get_size$FUNC
+    static final MethodHandle g_path_buf_set_extension$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_set_extension",
+        constants$271.g_path_buf_set_extension$FUNC
     );
-    static final FunctionDescriptor g_ref_count_init$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_path_buf_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_count_init$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_init",
-        constants$271.g_ref_count_init$FUNC
+    static final MethodHandle g_path_buf_to_path$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_to_path",
+        constants$271.g_path_buf_to_path$FUNC
     );
-    static final FunctionDescriptor g_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_path_buf_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_count_inc$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_inc",
-        constants$271.g_ref_count_inc$FUNC
+    static final MethodHandle g_path_buf_equal$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_equal",
+        constants$271.g_path_buf_equal$FUNC
+    );
+    static final FunctionDescriptor g_pattern_spec_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pattern_spec_new$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_new",
+        constants$271.g_pattern_spec_new$FUNC
     );
 }
 

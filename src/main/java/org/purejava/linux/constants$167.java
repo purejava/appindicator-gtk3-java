@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$167 {
+final class constants$167 {
 
-    static final FunctionDescriptor g_main_context_unref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$167() {}
+    static final FunctionDescriptor GSourceOnceFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_unref$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_unref",
-        constants$167.g_main_context_unref$FUNC
-    );
-    static final FunctionDescriptor g_main_context_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_main_context_default$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_default",
-        constants$167.g_main_context_default$FUNC
-    );
-    static final FunctionDescriptor g_main_context_iteration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_main_context_iteration$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_iteration",
-        constants$167.g_main_context_iteration$FUNC
-    );
-    static final FunctionDescriptor g_main_context_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GSourceOnceFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_pending$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_pending",
-        constants$167.g_main_context_pending$FUNC
-    );
-    static final FunctionDescriptor g_main_context_find_source_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_main_context_find_source_by_id$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_id",
-        constants$167.g_main_context_find_source_by_id$FUNC
-    );
-    static final FunctionDescriptor g_main_context_find_source_by_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GSourceOnceFunc_UP$MH = RuntimeHelper.upcallHandle(GSourceOnceFunc.class, "apply", constants$167.GSourceOnceFunc_UP$FUNC);
+    static final FunctionDescriptor GSourceOnceFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_find_source_by_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_user_data",
-        constants$167.g_main_context_find_source_by_user_data$FUNC
+    static final MethodHandle GSourceOnceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$167.GSourceOnceFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GChildWatchFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GChildWatchFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GChildWatchFunc_UP$MH = RuntimeHelper.upcallHandle(GChildWatchFunc.class, "apply", constants$167.GChildWatchFunc_UP$FUNC);
+    static final FunctionDescriptor GChildWatchFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GChildWatchFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$167.GChildWatchFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GSourceDisposeFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GSourceDisposeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSourceDisposeFunc_UP$MH = RuntimeHelper.upcallHandle(GSourceDisposeFunc.class, "apply", constants$167.GSourceDisposeFunc_UP$FUNC);
+    static final FunctionDescriptor GSourceDisposeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSourceDisposeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$167.GSourceDisposeFunc_DOWN$FUNC
     );
 }
 

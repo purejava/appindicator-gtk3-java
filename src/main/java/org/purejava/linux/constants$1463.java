@@ -7,57 +7,78 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1463 {
+final class constants$1463 {
 
-    static final FunctionDescriptor gtk_widget_class_set_css_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1463() {}
+    static final FunctionDescriptor GtkTreeViewColumnDropFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_set_css_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_css_name",
-        constants$1463.gtk_widget_class_set_css_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_get_css_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_get_css_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_get_css_name",
-        constants$1463.gtk_widget_class_get_css_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_modifier_mask",
-        constants$1463.gtk_widget_get_modifier_mask$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_insert_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_insert_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_insert_action_group",
-        constants$1463.gtk_widget_insert_action_group$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_add_tick_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_add_tick_callback$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_tick_callback",
-        constants$1463.gtk_widget_add_tick_callback$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_remove_tick_callback$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTreeViewColumnDropFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_remove_tick_callback$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_tick_callback",
-        constants$1463.gtk_widget_remove_tick_callback$FUNC
+    static final MethodHandle GtkTreeViewColumnDropFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeViewColumnDropFunc.class, "apply", constants$1463.GtkTreeViewColumnDropFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeViewColumnDropFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewColumnDropFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1463.GtkTreeViewColumnDropFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkTreeViewMappingFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkTreeViewMappingFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewMappingFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeViewMappingFunc.class, "apply", constants$1463.GtkTreeViewMappingFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeViewMappingFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewMappingFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1463.GtkTreeViewMappingFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkTreeViewSearchEqualFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkTreeViewSearchEqualFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewSearchEqualFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeViewSearchEqualFunc.class, "apply", constants$1463.GtkTreeViewSearchEqualFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeViewSearchEqualFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewSearchEqualFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1463.GtkTreeViewSearchEqualFunc_DOWN$FUNC
     );
 }
 

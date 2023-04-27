@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1116 {
+final class constants$1116 {
 
-    static final FunctionDescriptor pango_layout_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1116() {}
+    static final FunctionDescriptor gdk_display_request_selection_notification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_width$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_width",
-        constants$1116.pango_layout_get_width$FUNC
+    static final MethodHandle gdk_display_request_selection_notification$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_request_selection_notification",
+        constants$1116.gdk_display_request_selection_notification$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_height$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_supports_clipboard_persistence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_supports_clipboard_persistence$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_clipboard_persistence",
+        constants$1116.gdk_display_supports_clipboard_persistence$FUNC
+    );
+    static final FunctionDescriptor gdk_display_store_clipboard$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_set_height$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_height",
-        constants$1116.pango_layout_set_height$FUNC
+    static final MethodHandle gdk_display_store_clipboard$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_store_clipboard",
+        constants$1116.gdk_display_store_clipboard$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_display_supports_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_height$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_height",
-        constants$1116.pango_layout_get_height$FUNC
+    static final MethodHandle gdk_display_supports_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_shapes",
+        constants$1116.gdk_display_supports_shapes$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_wrap$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_wrap",
-        constants$1116.pango_layout_set_wrap$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_display_supports_input_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_wrap$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_wrap",
-        constants$1116.pango_layout_get_wrap$FUNC
+    static final MethodHandle gdk_display_supports_input_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_input_shapes",
+        constants$1116.gdk_display_supports_input_shapes$FUNC
     );
-    static final FunctionDescriptor pango_layout_is_wrapped$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_display_supports_composite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_is_wrapped$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_is_wrapped",
-        constants$1116.pango_layout_is_wrapped$FUNC
+    static final MethodHandle gdk_display_supports_composite$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_composite",
+        constants$1116.gdk_display_supports_composite$FUNC
     );
 }
 

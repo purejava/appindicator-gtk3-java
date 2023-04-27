@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPlacesSidebar {
+/**
+ * {@snippet :
+ * typedef struct _GtkPlacesSidebar GtkPlacesSidebar;
+ * }
+ */
+public final class GtkPlacesSidebar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPlacesSidebar() {}
 }
 
 

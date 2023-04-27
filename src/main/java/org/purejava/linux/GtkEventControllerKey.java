@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkEventControllerKey {
+/**
+ * {@snippet :
+ * typedef struct _GtkEventControllerKey GtkEventControllerKey;
+ * }
+ */
+public final class GtkEventControllerKey {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkEventControllerKey() {}
 }
 
 

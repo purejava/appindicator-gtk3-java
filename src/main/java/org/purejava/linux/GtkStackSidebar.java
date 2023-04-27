@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkStackSidebar extends _GtkStackSidebar {
+/**
+ * {@snippet :
+ * typedef struct _GtkStackSidebar GtkStackSidebar;
+ * }
+ */
+public final class GtkStackSidebar extends _GtkStackSidebar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkStackSidebar() {}
 }
 
 

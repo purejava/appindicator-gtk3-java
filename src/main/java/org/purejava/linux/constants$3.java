@@ -7,17 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$3 {
+final class constants$3 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$3() {}
     static final FunctionDescriptor tzset$FUNC = FunctionDescriptor.ofVoid();
     static final MethodHandle tzset$MH = RuntimeHelper.downcallHandle(
         "tzset",
         constants$3.tzset$FUNC
     );
-    static final  OfInt daylight$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final OfInt daylight$LAYOUT = Constants$root.C_INT$LAYOUT;
     static final VarHandle daylight$VH = constants$3.daylight$LAYOUT.varHandle();
     static final MemorySegment daylight$SEGMENT = RuntimeHelper.lookupGlobalVariable("daylight", constants$3.daylight$LAYOUT);
-    static final  OfLong timezone$LAYOUT = Constants$root.C_LONG_LONG$LAYOUT;
+    static final OfLong timezone$LAYOUT = Constants$root.C_LONG_LONG$LAYOUT;
     static final VarHandle timezone$VH = constants$3.timezone$LAYOUT.varHandle();
     static final MemorySegment timezone$SEGMENT = RuntimeHelper.lookupGlobalVariable("timezone", constants$3.timezone$LAYOUT);
     static final FunctionDescriptor timegm$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,

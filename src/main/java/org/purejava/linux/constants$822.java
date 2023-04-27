@@ -7,71 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$822 {
+final class constants$822 {
 
-    static final FunctionDescriptor g_socket_send_message$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$822() {}
+    static final FunctionDescriptor g_unix_fd_list_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_message$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_message",
-        constants$822.g_socket_send_message$FUNC
-    );
-    static final FunctionDescriptor g_socket_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_receive_messages$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive_messages",
-        constants$822.g_socket_receive_messages$FUNC
-    );
-    static final FunctionDescriptor g_socket_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_messages$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_messages",
-        constants$822.g_socket_send_messages$FUNC
-    );
-    static final FunctionDescriptor g_socket_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_close$MH = RuntimeHelper.downcallHandle(
-        "g_socket_close",
-        constants$822.g_socket_close$FUNC
-    );
-    static final FunctionDescriptor g_socket_shutdown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_shutdown$MH = RuntimeHelper.downcallHandle(
-        "g_socket_shutdown",
-        constants$822.g_socket_shutdown$FUNC
+    static final MethodHandle g_unix_fd_list_get$MH = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_get",
+        constants$822.g_unix_fd_list_get$FUNC
     );
-    static final FunctionDescriptor g_socket_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unix_fd_list_peek_fds$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_socket_is_closed",
-        constants$822.g_socket_is_closed$FUNC
+    static final MethodHandle g_unix_fd_list_peek_fds$MH = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_peek_fds",
+        constants$822.g_unix_fd_list_peek_fds$FUNC
+    );
+    static final FunctionDescriptor g_unix_fd_list_steal_fds$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_unix_fd_list_steal_fds$MH = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_steal_fds",
+        constants$822.g_unix_fd_list_steal_fds$FUNC
+    );
+    static final FunctionDescriptor g_unix_socket_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_unix_socket_address_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_get_type",
+        constants$822.g_unix_socket_address_get_type$FUNC
+    );
+    static final FunctionDescriptor g_unix_socket_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_unix_socket_address_new$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_new",
+        constants$822.g_unix_socket_address_new$FUNC
+    );
+    static final FunctionDescriptor g_unix_socket_address_new_abstract$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_unix_socket_address_new_abstract$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_new_abstract",
+        constants$822.g_unix_socket_address_new_abstract$FUNC
     );
 }
 

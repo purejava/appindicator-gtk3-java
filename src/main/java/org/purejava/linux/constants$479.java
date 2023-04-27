@@ -7,63 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$479 {
+final class constants$479 {
 
-    static final FunctionDescriptor g_object_set_data_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$479() {}
+    static final FunctionDescriptor g_app_info_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_set_data_full$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_data_full",
-        constants$479.g_object_set_data_full$FUNC
+    static final MethodHandle g_app_info_get_id$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_id",
+        constants$479.g_app_info_get_id$FUNC
     );
-    static final FunctionDescriptor g_object_steal_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_info_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_steal_data$MH = RuntimeHelper.downcallHandle(
-        "g_object_steal_data",
-        constants$479.g_object_steal_data$FUNC
+    static final MethodHandle g_app_info_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_name",
+        constants$479.g_app_info_get_name$FUNC
     );
-    static final FunctionDescriptor g_object_dup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_dup_data$MH = RuntimeHelper.downcallHandle(
-        "g_object_dup_data",
-        constants$479.g_object_dup_data$FUNC
+    static final MethodHandle g_app_info_get_display_name$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_display_name",
+        constants$479.g_app_info_get_display_name$FUNC
     );
-    static final FunctionDescriptor g_object_replace_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_info_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_replace_data$MH = RuntimeHelper.downcallHandle(
-        "g_object_replace_data",
-        constants$479.g_object_replace_data$FUNC
+    static final MethodHandle g_app_info_get_description$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_description",
+        constants$479.g_app_info_get_description$FUNC
     );
-    static final FunctionDescriptor g_object_watch_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_info_get_executable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_watch_closure$MH = RuntimeHelper.downcallHandle(
-        "g_object_watch_closure",
-        constants$479.g_object_watch_closure$FUNC
+    static final MethodHandle g_app_info_get_executable$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_executable",
+        constants$479.g_app_info_get_executable$FUNC
     );
-    static final FunctionDescriptor g_cclosure_new_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_app_info_get_commandline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_new_object$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_new_object",
-        constants$479.g_cclosure_new_object$FUNC
+    static final MethodHandle g_app_info_get_commandline$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_commandline",
+        constants$479.g_app_info_get_commandline$FUNC
     );
 }
 

@@ -7,53 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$42 {
+final class constants$42 {
 
-    static final FunctionDescriptor atoi$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$42() {}
+    static final FunctionDescriptor g_nullify_pointer$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atoi$MH = RuntimeHelper.downcallHandle(
-        "atoi",
-        constants$42.atoi$FUNC
+    static final MethodHandle g_nullify_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_nullify_pointer",
+        constants$42.g_nullify_pointer$FUNC
     );
-    static final FunctionDescriptor atol$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atol$MH = RuntimeHelper.downcallHandle(
-        "atol",
-        constants$42.atol$FUNC
-    );
-    static final FunctionDescriptor atoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atoll$MH = RuntimeHelper.downcallHandle(
-        "atoll",
-        constants$42.atoll$FUNC
-    );
-    static final FunctionDescriptor strtod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtod$MH = RuntimeHelper.downcallHandle(
-        "strtod",
-        constants$42.strtod$FUNC
-    );
-    static final FunctionDescriptor strtof$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtof$MH = RuntimeHelper.downcallHandle(
-        "strtof",
-        constants$42.strtof$FUNC
-    );
-    static final FunctionDescriptor strtol$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_format_size_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle strtol$MH = RuntimeHelper.downcallHandle(
-        "strtol",
-        constants$42.strtol$FUNC
+    static final MethodHandle g_format_size_full$MH = RuntimeHelper.downcallHandle(
+        "g_format_size_full",
+        constants$42.g_format_size_full$FUNC
+    );
+    static final FunctionDescriptor g_format_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_format_size$MH = RuntimeHelper.downcallHandle(
+        "g_format_size",
+        constants$42.g_format_size$FUNC
+    );
+    static final FunctionDescriptor g_format_size_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_format_size_for_display$MH = RuntimeHelper.downcallHandle(
+        "g_format_size_for_display",
+        constants$42.g_format_size_for_display$FUNC
+    );
+    static final FunctionDescriptor GVoidFunc$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor GVoidFunc_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GVoidFunc_UP$MH = RuntimeHelper.upcallHandle(GVoidFunc.class, "apply", constants$42.GVoidFunc_UP$FUNC);
+    static final FunctionDescriptor GVoidFunc_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GVoidFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$42.GVoidFunc_DOWN$FUNC
     );
 }
 

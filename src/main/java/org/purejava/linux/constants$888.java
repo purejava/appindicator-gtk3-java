@@ -7,49 +7,79 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$888 {
+final class constants$888 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GBufferedOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$888() {}
+    static final FunctionDescriptor hb_buffer_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_serialize$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize",
+        constants$888.hb_buffer_serialize$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_deserialize_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_deserialize_glyphs$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_deserialize_glyphs",
+        constants$888.hb_buffer_deserialize_glyphs$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_deserialize_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_deserialize_unicode$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_deserialize_unicode",
+        constants$888.hb_buffer_deserialize_unicode$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_diff$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_diff$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_diff",
+        constants$888.hb_buffer_diff$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_message_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GBufferedOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GBufferedOutputStream",
-        constants$888.glib_autoptr_clear_GBufferedOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GBufferedOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_message_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GBufferedOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GBufferedOutputStream",
-        constants$888.glib_autoptr_cleanup_GBufferedOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GBufferedOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle hb_buffer_message_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_buffer_message_func_t.class, "apply", constants$888.hb_buffer_message_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_buffer_message_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GBufferedOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GBufferedOutputStream",
-        constants$888.glib_listautoptr_cleanup_GBufferedOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GBufferedOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GBufferedOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GBufferedOutputStream",
-        constants$888.glib_slistautoptr_cleanup_GBufferedOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GBufferedOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GBufferedOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GBufferedOutputStream",
-        constants$888.glib_queueautoptr_cleanup_GBufferedOutputStream$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GBytesIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GBytesIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GBytesIcon",
-        constants$888.glib_autoptr_clear_GBytesIcon$FUNC
+    static final MethodHandle hb_buffer_message_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$888.hb_buffer_message_func_t_DOWN$FUNC
     );
 }
 

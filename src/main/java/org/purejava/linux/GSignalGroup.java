@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSignalGroup {
+/**
+ * {@snippet :
+ * typedef struct _GSignalGroup GSignalGroup;
+ * }
+ */
+public final class GSignalGroup {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSignalGroup() {}
 }
 
 

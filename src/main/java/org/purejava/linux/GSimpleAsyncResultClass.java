@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSimpleAsyncResultClass {
+/**
+ * {@snippet :
+ * typedef struct _GSimpleAsyncResultClass GSimpleAsyncResultClass;
+ * }
+ */
+public final class GSimpleAsyncResultClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSimpleAsyncResultClass() {}
 }
 
 

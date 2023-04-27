@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMenuLinkIterClass extends _GMenuLinkIterClass {
+/**
+ * {@snippet :
+ * typedef struct _GMenuLinkIterClass GMenuLinkIterClass;
+ * }
+ */
+public final class GMenuLinkIterClass extends _GMenuLinkIterClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMenuLinkIterClass() {}
 }
 
 

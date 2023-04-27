@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1036 {
+final class constants$1036 {
 
-    static final FunctionDescriptor hb_buffer_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1036() {}
+    static final FunctionDescriptor cairo_surface_has_show_text_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_length$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_length",
-        constants$1036.hb_buffer_get_length$FUNC
+    static final MethodHandle cairo_surface_has_show_text_glyphs$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_has_show_text_glyphs",
+        constants$1036.cairo_surface_has_show_text_glyphs$FUNC
     );
-    static final FunctionDescriptor hb_buffer_get_glyph_infos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_glyph_infos$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_glyph_infos",
-        constants$1036.hb_buffer_get_glyph_infos$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_glyph_positions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_glyph_positions$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_glyph_positions",
-        constants$1036.hb_buffer_get_glyph_positions$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_has_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_has_positions$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_has_positions",
-        constants$1036.hb_buffer_has_positions$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_normalize_glyphs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_normalize_glyphs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_normalize_glyphs",
-        constants$1036.hb_buffer_normalize_glyphs$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_serialize_format_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_image_surface_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_buffer_serialize_format_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_format_from_string",
-        constants$1036.hb_buffer_serialize_format_from_string$FUNC
+    static final MethodHandle cairo_image_surface_create$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_create",
+        constants$1036.cairo_image_surface_create$FUNC
+    );
+    static final FunctionDescriptor cairo_format_stride_for_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_format_stride_for_width$MH = RuntimeHelper.downcallHandle(
+        "cairo_format_stride_for_width",
+        constants$1036.cairo_format_stride_for_width$FUNC
+    );
+    static final FunctionDescriptor cairo_image_surface_create_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_image_surface_create_for_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_create_for_data",
+        constants$1036.cairo_image_surface_create_for_data$FUNC
+    );
+    static final FunctionDescriptor cairo_image_surface_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_image_surface_get_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_get_data",
+        constants$1036.cairo_image_surface_get_data$FUNC
+    );
+    static final FunctionDescriptor cairo_image_surface_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_image_surface_get_format$MH = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_get_format",
+        constants$1036.cairo_image_surface_get_format$FUNC
     );
 }
 

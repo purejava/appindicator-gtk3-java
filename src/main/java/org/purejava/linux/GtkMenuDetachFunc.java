@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkMenuDetachFunc)(struct _GtkWidget* attach_widget,struct _GtkMenu* menu);
+ * }
+ */
 public interface GtkMenuDetachFunc {
 
-    void apply(java.lang.foreign.MemoryAddress attach_widget, java.lang.foreign.MemoryAddress menu);
-    static MemorySegment allocate(GtkMenuDetachFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkMenuDetachFunc.class, fi, constants$1517.GtkMenuDetachFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkMenuDetachFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1330.GtkMenuDetachFunc_UP$MH, fi, constants$1330.GtkMenuDetachFunc$FUNC, scope);
     }
-    static GtkMenuDetachFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _attach_widget, java.lang.foreign.MemoryAddress _menu) -> {
+    static GtkMenuDetachFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1517.GtkMenuDetachFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_attach_widget, (java.lang.foreign.Addressable)_menu);
+                constants$1330.GtkMenuDetachFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

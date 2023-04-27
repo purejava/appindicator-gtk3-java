@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkPixbufAnimation {
+/**
+ * {@snippet :
+ * typedef struct _GdkPixbufAnimation GdkPixbufAnimation;
+ * }
+ */
+public final class GdkPixbufAnimation {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkPixbufAnimation() {}
 }
 
 

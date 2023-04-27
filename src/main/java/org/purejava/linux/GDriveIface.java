@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDriveIface extends _GDriveIface {
+/**
+ * {@snippet :
+ * typedef struct _GDriveIface GDriveIface;
+ * }
+ */
+public final class GDriveIface extends _GDriveIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDriveIface() {}
 }
 
 

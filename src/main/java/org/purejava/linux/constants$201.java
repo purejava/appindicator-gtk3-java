@@ -7,59 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$201 {
+final class constants$201 {
 
-    static final FunctionDescriptor g_io_channel_unref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$201() {}
+    static final FunctionDescriptor g_strcasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_unref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_unref",
-        constants$201.g_io_channel_unref$FUNC
+    static final MethodHandle g_strcasecmp$MH = RuntimeHelper.downcallHandle(
+        "g_strcasecmp",
+        constants$201.g_strcasecmp$FUNC
     );
-    static final FunctionDescriptor g_io_channel_read$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_strncasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read",
-        constants$201.g_io_channel_read$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_write$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_write$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_write",
-        constants$201.g_io_channel_write$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_channel_seek$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_seek",
-        constants$201.g_io_channel_seek$FUNC
+    static final MethodHandle g_strncasecmp$MH = RuntimeHelper.downcallHandle(
+        "g_strncasecmp",
+        constants$201.g_strncasecmp$FUNC
     );
-    static final FunctionDescriptor g_io_channel_close$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_close$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_close",
-        constants$201.g_io_channel_close$FUNC
+    static final MethodHandle g_strdown$MH = RuntimeHelper.downcallHandle(
+        "g_strdown",
+        constants$201.g_strdown$FUNC
     );
-    static final FunctionDescriptor g_io_channel_shutdown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_shutdown$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_shutdown",
-        constants$201.g_io_channel_shutdown$FUNC
+    static final MethodHandle g_strup$MH = RuntimeHelper.downcallHandle(
+        "g_strup",
+        constants$201.g_strup$FUNC
+    );
+    static final FunctionDescriptor g_strdup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strdup$MH = RuntimeHelper.downcallHandle(
+        "g_strdup",
+        constants$201.g_strdup$FUNC
+    );
+    static final FunctionDescriptor g_strdup_printf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strdup_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_strdup_printf",
+        constants$201.g_strdup_printf$FUNC
     );
 }
 

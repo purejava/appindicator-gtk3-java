@@ -7,45 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1804 {
+final class constants$1804 {
 
-    static final FunctionDescriptor gtk_gesture_swipe_get_velocity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1804() {}
+    static final FunctionDescriptor gtk_search_bar_get_show_close_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_search_bar_get_show_close_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_get_show_close_button",
+        constants$1804.gtk_search_bar_get_show_close_button$FUNC
+    );
+    static final FunctionDescriptor gtk_search_bar_set_show_close_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_search_bar_set_show_close_button$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_set_show_close_button",
+        constants$1804.gtk_search_bar_set_show_close_button$FUNC
+    );
+    static final FunctionDescriptor gtk_search_bar_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_swipe_get_velocity$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_velocity",
-        constants$1804.gtk_gesture_swipe_get_velocity$FUNC
+    static final MethodHandle gtk_search_bar_handle_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_handle_event",
+        constants$1804.gtk_search_bar_handle_event$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_zoom_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_zoom_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_zoom_get_type",
-        constants$1804.gtk_gesture_zoom_get_type$FUNC
+    static final FunctionDescriptor gtk_search_entry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_search_entry_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_entry_get_type",
+        constants$1804.gtk_search_entry_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_zoom_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_search_entry_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_search_entry_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_entry_new",
+        constants$1804.gtk_search_entry_new$FUNC
+    );
+    static final FunctionDescriptor gtk_search_entry_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_zoom_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_zoom_new",
-        constants$1804.gtk_gesture_zoom_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_zoom_get_scale_delta$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_zoom_get_scale_delta$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_zoom_get_scale_delta",
-        constants$1804.gtk_gesture_zoom_get_scale_delta$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gl_area_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_type",
-        constants$1804.gtk_gl_area_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_gl_area_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_new",
-        constants$1804.gtk_gl_area_new$FUNC
+    static final MethodHandle gtk_search_entry_handle_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_entry_handle_event",
+        constants$1804.gtk_search_entry_handle_event$FUNC
     );
 }
 

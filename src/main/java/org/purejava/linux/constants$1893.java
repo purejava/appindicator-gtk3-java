@@ -7,48 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1893 {
+final class constants$1893 {
 
-    static final FunctionDescriptor gtk_size_group_add_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1893() {}
+    static final FunctionDescriptor gtk_recent_sort_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_sort_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_sort_type_get_type",
+        constants$1893.gtk_recent_sort_type_get_type$FUNC
     );
-    static final MethodHandle gtk_size_group_add_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_add_widget",
-        constants$1893.gtk_size_group_add_widget$FUNC
+    static final FunctionDescriptor gtk_recent_chooser_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_chooser_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_error_get_type",
+        constants$1893.gtk_recent_chooser_error_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_size_group_remove_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_recent_filter_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_filter_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_flags_get_type",
+        constants$1893.gtk_recent_filter_flags_get_type$FUNC
     );
-    static final MethodHandle gtk_size_group_remove_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_remove_widget",
-        constants$1893.gtk_size_group_remove_widget$FUNC
+    static final FunctionDescriptor gtk_recent_manager_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_manager_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_error_get_type",
+        constants$1893.gtk_recent_manager_error_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_size_group_get_widgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_revealer_transition_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_revealer_transition_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_revealer_transition_type_get_type",
+        constants$1893.gtk_revealer_transition_type_get_type$FUNC
     );
-    static final MethodHandle gtk_size_group_get_widgets$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_widgets",
-        constants$1893.gtk_size_group_get_widgets$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tool_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_type",
-        constants$1893.gtk_tool_item_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tool_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_new",
-        constants$1893.gtk_tool_item_new$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_homogeneous",
-        constants$1893.gtk_tool_item_set_homogeneous$FUNC
+    static final FunctionDescriptor gtk_corner_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_corner_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_corner_type_get_type",
+        constants$1893.gtk_corner_type_get_type$FUNC
     );
 }
 

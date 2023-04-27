@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkFontChooserIface {
+ *     GTypeInterface base_iface;
+ *     PangoFontFamily* (*get_font_family)(GtkFontChooser*);
+ *     PangoFontFace* (*get_font_face)(GtkFontChooser*);
+ *     gint (*get_font_size)(GtkFontChooser*);
+ *     void (*set_filter_func)(GtkFontChooser*,GtkFontFilterFunc,gpointer,GDestroyNotify);
+ *     void (*font_activated)(GtkFontChooser*,const gchar*);
+ *     void (*set_font_map)(GtkFontChooser*,PangoFontMap*);
+ *     PangoFontMap* (*get_font_map)(GtkFontChooser*);
+ *     gpointer padding[10];
+ * };
+ * }
+ */
 public class _GtkFontChooserIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -32,20 +47,32 @@ public class _GtkFontChooserIface {
     static final FunctionDescriptor get_font_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_font_family$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.get_font_family$FUNC
+    static final FunctionDescriptor get_font_family_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_font_family_UP$MH = RuntimeHelper.upcallHandle(get_font_family.class, "apply", _GtkFontChooserIface.get_font_family_UP$FUNC);
+    static final FunctionDescriptor get_font_family_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_font_family_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.get_font_family_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontFamily* (*get_font_family)(GtkFontChooser*);
+     * }
+     */
     public interface get_font_family {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_font_family fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_font_family.class, fi, _GtkFontChooserIface.get_font_family$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_font_family fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.get_font_family_UP$MH, fi, _GtkFontChooserIface.get_font_family$FUNC, scope);
         }
-        static get_font_family ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_font_family ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_family$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_family_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -57,38 +84,62 @@ public class _GtkFontChooserIface {
     public static VarHandle get_font_family$VH() {
         return _GtkFontChooserIface.get_font_family$VH;
     }
-    public static MemoryAddress get_font_family$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_family$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontFamily* (*get_font_family)(GtkFontChooser*);
+     * }
+     */
+    public static MemorySegment get_font_family$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_family$VH.get(seg);
     }
-    public static void get_font_family$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontFamily* (*get_font_family)(GtkFontChooser*);
+     * }
+     */
+    public static void get_font_family$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.get_font_family$VH.set(seg, x);
     }
-    public static MemoryAddress get_font_family$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_family$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_font_family$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_family$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_font_family$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_font_family$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.get_font_family$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_font_family get_font_family (MemorySegment segment, MemorySession session) {
-        return get_font_family.ofAddress(get_font_family$get(segment), session);
+    public static get_font_family get_font_family(MemorySegment segment, SegmentScope scope) {
+        return get_font_family.ofAddress(get_font_family$get(segment), scope);
     }
     static final FunctionDescriptor get_font_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_font_face$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.get_font_face$FUNC
+    static final FunctionDescriptor get_font_face_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_font_face_UP$MH = RuntimeHelper.upcallHandle(get_font_face.class, "apply", _GtkFontChooserIface.get_font_face_UP$FUNC);
+    static final FunctionDescriptor get_font_face_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_font_face_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.get_font_face_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontFace* (*get_font_face)(GtkFontChooser*);
+     * }
+     */
     public interface get_font_face {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_font_face fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_font_face.class, fi, _GtkFontChooserIface.get_font_face$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_font_face fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.get_font_face_UP$MH, fi, _GtkFontChooserIface.get_font_face$FUNC, scope);
         }
-        static get_font_face ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_font_face ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_face$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_face_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -100,38 +151,62 @@ public class _GtkFontChooserIface {
     public static VarHandle get_font_face$VH() {
         return _GtkFontChooserIface.get_font_face$VH;
     }
-    public static MemoryAddress get_font_face$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_face$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontFace* (*get_font_face)(GtkFontChooser*);
+     * }
+     */
+    public static MemorySegment get_font_face$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_face$VH.get(seg);
     }
-    public static void get_font_face$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontFace* (*get_font_face)(GtkFontChooser*);
+     * }
+     */
+    public static void get_font_face$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.get_font_face$VH.set(seg, x);
     }
-    public static MemoryAddress get_font_face$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_face$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_font_face$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_face$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_font_face$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_font_face$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.get_font_face$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_font_face get_font_face (MemorySegment segment, MemorySession session) {
-        return get_font_face.ofAddress(get_font_face$get(segment), session);
+    public static get_font_face get_font_face(MemorySegment segment, SegmentScope scope) {
+        return get_font_face.ofAddress(get_font_face$get(segment), scope);
     }
     static final FunctionDescriptor get_font_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_font_size$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.get_font_size$FUNC
+    static final FunctionDescriptor get_font_size_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_font_size_UP$MH = RuntimeHelper.upcallHandle(get_font_size.class, "apply", _GtkFontChooserIface.get_font_size_UP$FUNC);
+    static final FunctionDescriptor get_font_size_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_font_size_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.get_font_size_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_font_size)(GtkFontChooser*);
+     * }
+     */
     public interface get_font_size {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_font_size fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_font_size.class, fi, _GtkFontChooserIface.get_font_size$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_font_size fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.get_font_size_UP$MH, fi, _GtkFontChooserIface.get_font_size$FUNC, scope);
         }
-        static get_font_size ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_font_size ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkFontChooserIface.get_font_size$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkFontChooserIface.get_font_size_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -143,20 +218,32 @@ public class _GtkFontChooserIface {
     public static VarHandle get_font_size$VH() {
         return _GtkFontChooserIface.get_font_size$VH;
     }
-    public static MemoryAddress get_font_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_size$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_font_size)(GtkFontChooser*);
+     * }
+     */
+    public static MemorySegment get_font_size$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_size$VH.get(seg);
     }
-    public static void get_font_size$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_font_size)(GtkFontChooser*);
+     * }
+     */
+    public static void get_font_size$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.get_font_size$VH.set(seg, x);
     }
-    public static MemoryAddress get_font_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_size$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_font_size$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_size$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_font_size$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_font_size$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.get_font_size$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_font_size get_font_size (MemorySegment segment, MemorySession session) {
-        return get_font_size.ofAddress(get_font_size$get(segment), session);
+    public static get_font_size get_font_size(MemorySegment segment, SegmentScope scope) {
+        return get_font_size.ofAddress(get_font_size$get(segment), scope);
     }
     static final FunctionDescriptor set_filter_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -164,20 +251,38 @@ public class _GtkFontChooserIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_filter_func$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.set_filter_func$FUNC
+    static final FunctionDescriptor set_filter_func_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_filter_func_UP$MH = RuntimeHelper.upcallHandle(set_filter_func.class, "apply", _GtkFontChooserIface.set_filter_func_UP$FUNC);
+    static final FunctionDescriptor set_filter_func_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_filter_func_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.set_filter_func_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_filter_func)(GtkFontChooser*,GtkFontFilterFunc,gpointer,GDestroyNotify);
+     * }
+     */
     public interface set_filter_func {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(set_filter_func fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_filter_func.class, fi, _GtkFontChooserIface.set_filter_func$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(set_filter_func fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.set_filter_func_UP$MH, fi, _GtkFontChooserIface.set_filter_func$FUNC, scope);
         }
-        static set_filter_func ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static set_filter_func ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkFontChooserIface.set_filter_func$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkFontChooserIface.set_filter_func_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -189,39 +294,65 @@ public class _GtkFontChooserIface {
     public static VarHandle set_filter_func$VH() {
         return _GtkFontChooserIface.set_filter_func$VH;
     }
-    public static MemoryAddress set_filter_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.set_filter_func$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_filter_func)(GtkFontChooser*,GtkFontFilterFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static MemorySegment set_filter_func$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.set_filter_func$VH.get(seg);
     }
-    public static void set_filter_func$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_filter_func)(GtkFontChooser*,GtkFontFilterFunc,gpointer,GDestroyNotify);
+     * }
+     */
+    public static void set_filter_func$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.set_filter_func$VH.set(seg, x);
     }
-    public static MemoryAddress set_filter_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.set_filter_func$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_filter_func$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.set_filter_func$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_filter_func$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_filter_func$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.set_filter_func$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_filter_func set_filter_func (MemorySegment segment, MemorySession session) {
-        return set_filter_func.ofAddress(set_filter_func$get(segment), session);
+    public static set_filter_func set_filter_func(MemorySegment segment, SegmentScope scope) {
+        return set_filter_func.ofAddress(set_filter_func$get(segment), scope);
     }
     static final FunctionDescriptor font_activated$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle font_activated$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.font_activated$FUNC
+    static final FunctionDescriptor font_activated_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle font_activated_UP$MH = RuntimeHelper.upcallHandle(font_activated.class, "apply", _GtkFontChooserIface.font_activated_UP$FUNC);
+    static final FunctionDescriptor font_activated_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle font_activated_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.font_activated_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*font_activated)(GtkFontChooser*,const gchar*);
+     * }
+     */
     public interface font_activated {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(font_activated fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(font_activated.class, fi, _GtkFontChooserIface.font_activated$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(font_activated fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.font_activated_UP$MH, fi, _GtkFontChooserIface.font_activated$FUNC, scope);
         }
-        static font_activated ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static font_activated ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkFontChooserIface.font_activated$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkFontChooserIface.font_activated_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -233,39 +364,65 @@ public class _GtkFontChooserIface {
     public static VarHandle font_activated$VH() {
         return _GtkFontChooserIface.font_activated$VH;
     }
-    public static MemoryAddress font_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.font_activated$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*font_activated)(GtkFontChooser*,const gchar*);
+     * }
+     */
+    public static MemorySegment font_activated$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.font_activated$VH.get(seg);
     }
-    public static void font_activated$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*font_activated)(GtkFontChooser*,const gchar*);
+     * }
+     */
+    public static void font_activated$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.font_activated$VH.set(seg, x);
     }
-    public static MemoryAddress font_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.font_activated$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment font_activated$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.font_activated$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void font_activated$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void font_activated$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.font_activated$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static font_activated font_activated (MemorySegment segment, MemorySession session) {
-        return font_activated.ofAddress(font_activated$get(segment), session);
+    public static font_activated font_activated(MemorySegment segment, SegmentScope scope) {
+        return font_activated.ofAddress(font_activated$get(segment), scope);
     }
     static final FunctionDescriptor set_font_map$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_font_map$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.set_font_map$FUNC
+    static final FunctionDescriptor set_font_map_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_font_map_UP$MH = RuntimeHelper.upcallHandle(set_font_map.class, "apply", _GtkFontChooserIface.set_font_map_UP$FUNC);
+    static final FunctionDescriptor set_font_map_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_font_map_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.set_font_map_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_font_map)(GtkFontChooser*,PangoFontMap*);
+     * }
+     */
     public interface set_font_map {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_font_map fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_font_map.class, fi, _GtkFontChooserIface.set_font_map$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_font_map fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.set_font_map_UP$MH, fi, _GtkFontChooserIface.set_font_map$FUNC, scope);
         }
-        static set_font_map ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_font_map ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkFontChooserIface.set_font_map$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkFontChooserIface.set_font_map_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -277,38 +434,62 @@ public class _GtkFontChooserIface {
     public static VarHandle set_font_map$VH() {
         return _GtkFontChooserIface.set_font_map$VH;
     }
-    public static MemoryAddress set_font_map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.set_font_map$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_font_map)(GtkFontChooser*,PangoFontMap*);
+     * }
+     */
+    public static MemorySegment set_font_map$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.set_font_map$VH.get(seg);
     }
-    public static void set_font_map$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_font_map)(GtkFontChooser*,PangoFontMap*);
+     * }
+     */
+    public static void set_font_map$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.set_font_map$VH.set(seg, x);
     }
-    public static MemoryAddress set_font_map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.set_font_map$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_font_map$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.set_font_map$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_font_map$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_font_map$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.set_font_map$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_font_map set_font_map (MemorySegment segment, MemorySession session) {
-        return set_font_map.ofAddress(set_font_map$get(segment), session);
+    public static set_font_map set_font_map(MemorySegment segment, SegmentScope scope) {
+        return set_font_map.ofAddress(set_font_map$get(segment), scope);
     }
     static final FunctionDescriptor get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_font_map$MH = RuntimeHelper.downcallHandle(
-        _GtkFontChooserIface.get_font_map$FUNC
+    static final FunctionDescriptor get_font_map_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_font_map_UP$MH = RuntimeHelper.upcallHandle(get_font_map.class, "apply", _GtkFontChooserIface.get_font_map_UP$FUNC);
+    static final FunctionDescriptor get_font_map_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_font_map_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkFontChooserIface.get_font_map_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontMap* (*get_font_map)(GtkFontChooser*);
+     * }
+     */
     public interface get_font_map {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_font_map fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_font_map.class, fi, _GtkFontChooserIface.get_font_map$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_font_map fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkFontChooserIface.get_font_map_UP$MH, fi, _GtkFontChooserIface.get_font_map$FUNC, scope);
         }
-        static get_font_map ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_font_map ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_map$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_map_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -320,30 +501,42 @@ public class _GtkFontChooserIface {
     public static VarHandle get_font_map$VH() {
         return _GtkFontChooserIface.get_font_map$VH;
     }
-    public static MemoryAddress get_font_map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_map$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontMap* (*get_font_map)(GtkFontChooser*);
+     * }
+     */
+    public static MemorySegment get_font_map$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_map$VH.get(seg);
     }
-    public static void get_font_map$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontMap* (*get_font_map)(GtkFontChooser*);
+     * }
+     */
+    public static void get_font_map$set(MemorySegment seg, MemorySegment x) {
         _GtkFontChooserIface.get_font_map$VH.set(seg, x);
     }
-    public static MemoryAddress get_font_map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkFontChooserIface.get_font_map$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_font_map$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkFontChooserIface.get_font_map$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_font_map$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_font_map$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkFontChooserIface.get_font_map$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_font_map get_font_map (MemorySegment segment, MemorySession session) {
-        return get_font_map.ofAddress(get_font_map$get(segment), session);
+    public static get_font_map get_font_map(MemorySegment segment, SegmentScope scope) {
+        return get_font_map.ofAddress(get_font_map$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(72, 80);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

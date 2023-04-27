@@ -7,67 +7,42 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$427 {
+final class constants$427 {
 
-    static final FunctionDescriptor g_type_register_static_simple$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$427() {}
+    static final FunctionDescriptor g_tree_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tree_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tree_get_type",
+        constants$427.g_tree_get_type$FUNC
     );
-    static final MethodHandle g_type_register_static_simple$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_static_simple",
-        constants$427.g_type_register_static_simple$FUNC
+    static final FunctionDescriptor g_pattern_spec_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_pattern_spec_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_get_type",
+        constants$427.g_pattern_spec_get_type$FUNC
     );
-    static final FunctionDescriptor g_type_register_dynamic$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_bookmark_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_bookmark_file_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_type",
+        constants$427.g_bookmark_file_get_type$FUNC
     );
-    static final MethodHandle g_type_register_dynamic$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_dynamic",
-        constants$427.g_type_register_dynamic$FUNC
+    static final FunctionDescriptor g_variant_get_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_variant_get_gtype$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_gtype",
+        constants$427.g_variant_get_gtype$FUNC
     );
-    static final FunctionDescriptor g_type_register_fundamental$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_register_fundamental$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_fundamental",
-        constants$427.g_type_register_fundamental$FUNC
-    );
-    static final FunctionDescriptor g_type_add_interface_static$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor GBoxedCopyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_add_interface_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_static",
-        constants$427.g_type_add_interface_static$FUNC
-    );
-    static final FunctionDescriptor g_type_add_interface_dynamic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor GBoxedCopyFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_add_interface_dynamic$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_dynamic",
-        constants$427.g_type_add_interface_dynamic$FUNC
+    static final MethodHandle GBoxedCopyFunc_UP$MH = RuntimeHelper.upcallHandle(GBoxedCopyFunc.class, "apply", constants$427.GBoxedCopyFunc_UP$FUNC);
+    static final FunctionDescriptor GBoxedCopyFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_type_interface_add_prerequisite$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_interface_add_prerequisite$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_add_prerequisite",
-        constants$427.g_type_interface_add_prerequisite$FUNC
+    static final MethodHandle GBoxedCopyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$427.GBoxedCopyFunc_DOWN$FUNC
     );
 }
 

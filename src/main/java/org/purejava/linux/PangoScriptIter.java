@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoScriptIter {
+/**
+ * {@snippet :
+ * typedef struct _PangoScriptIter PangoScriptIter;
+ * }
+ */
+public final class PangoScriptIter {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoScriptIter() {}
 }
 
 

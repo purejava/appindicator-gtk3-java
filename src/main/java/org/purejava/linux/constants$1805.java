@@ -7,55 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1805 {
+final class constants$1805 {
 
-    static final FunctionDescriptor gtk_gl_area_set_use_es$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1805() {}
+    static final FunctionDescriptor gtk_separator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_separator_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_get_type",
+        constants$1805.gtk_separator_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_separator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_set_use_es$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_use_es",
-        constants$1805.gtk_gl_area_set_use_es$FUNC
+    static final MethodHandle gtk_separator_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_new",
+        constants$1805.gtk_separator_new$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_get_use_es$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_separator_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_separator_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_menu_item_get_type",
+        constants$1805.gtk_separator_menu_item_get_type$FUNC
     );
-    static final MethodHandle gtk_gl_area_get_use_es$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_use_es",
-        constants$1805.gtk_gl_area_get_use_es$FUNC
+    static final FunctionDescriptor gtk_separator_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_separator_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_menu_item_new",
+        constants$1805.gtk_separator_menu_item_new$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_set_required_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_separator_tool_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_separator_tool_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_tool_item_get_type",
+        constants$1805.gtk_separator_tool_item_get_type$FUNC
     );
-    static final MethodHandle gtk_gl_area_set_required_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_required_version",
-        constants$1805.gtk_gl_area_set_required_version$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_get_required_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_get_required_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_required_version",
-        constants$1805.gtk_gl_area_get_required_version$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_get_has_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_get_has_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_alpha",
-        constants$1805.gtk_gl_area_get_has_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_set_has_alpha$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_set_has_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_alpha",
-        constants$1805.gtk_gl_area_set_has_alpha$FUNC
+    static final FunctionDescriptor gtk_separator_tool_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_separator_tool_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_tool_item_new",
+        constants$1805.gtk_separator_tool_item_new$FUNC
     );
 }
 

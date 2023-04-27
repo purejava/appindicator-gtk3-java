@@ -7,67 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1344 {
+final class constants$1344 {
 
-    static final FunctionDescriptor gdk_pango_layout_line_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pango_layout_line_get_clip_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_pango_layout_line_get_clip_region",
-        constants$1344.gdk_pango_layout_line_get_clip_region$FUNC
-    );
-    static final FunctionDescriptor gdk_pango_layout_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pango_layout_get_clip_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_pango_layout_get_clip_region",
-        constants$1344.gdk_pango_layout_get_clip_region$FUNC
-    );
-    static final FunctionDescriptor gdk_atom_intern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_atom_intern$MH = RuntimeHelper.downcallHandle(
-        "gdk_atom_intern",
-        constants$1344.gdk_atom_intern$FUNC
-    );
-    static final FunctionDescriptor gdk_atom_intern_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1344() {}
+    static final FunctionDescriptor gtk_label_get_track_visited_links$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_atom_intern_static_string$MH = RuntimeHelper.downcallHandle(
-        "gdk_atom_intern_static_string",
-        constants$1344.gdk_atom_intern_static_string$FUNC
+    static final MethodHandle gtk_label_get_track_visited_links$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_track_visited_links",
+        constants$1344.gtk_label_get_track_visited_links$FUNC
     );
-    static final FunctionDescriptor gdk_atom_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_label_set_xalign$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_xalign$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_xalign",
+        constants$1344.gtk_label_set_xalign$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_xalign$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_atom_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_atom_name",
-        constants$1344.gdk_atom_name$FUNC
+    static final MethodHandle gtk_label_get_xalign$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_xalign",
+        constants$1344.gtk_label_get_xalign$FUNC
     );
-    static final FunctionDescriptor gdk_property_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_label_set_yalign$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_yalign$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_yalign",
+        constants$1344.gtk_label_set_yalign$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_yalign$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_property_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_property_get",
-        constants$1344.gdk_property_get$FUNC
+    static final MethodHandle gtk_label_get_yalign$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_yalign",
+        constants$1344.gtk_label_get_yalign$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_label_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_accel_label_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_label_get_type",
+        constants$1344.gtk_accel_label_get_type$FUNC
     );
 }
 

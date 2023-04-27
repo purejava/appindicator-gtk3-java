@@ -7,47 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1143 {
+final class constants$1143 {
 
-    static final FunctionDescriptor getchar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getchar$MH = RuntimeHelper.downcallHandle(
-        "getchar",
-        constants$1143.getchar$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1143() {}
+    static final FunctionDescriptor gdk_pixbuf_simple_anim_set_loop$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor getc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle gdk_pixbuf_simple_anim_set_loop$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_simple_anim_set_loop",
+        constants$1143.gdk_pixbuf_simple_anim_set_loop$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_simple_anim_get_loop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle getc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "getc_unlocked",
-        constants$1143.getc_unlocked$FUNC
+    static final MethodHandle gdk_pixbuf_simple_anim_get_loop$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_simple_anim_get_loop",
+        constants$1143.gdk_pixbuf_simple_anim_get_loop$FUNC
     );
-    static final FunctionDescriptor getchar_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getchar_unlocked$MH = RuntimeHelper.downcallHandle(
-        "getchar_unlocked",
-        constants$1143.getchar_unlocked$FUNC
-    );
-    static final FunctionDescriptor fgetc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_init_modules$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fgetc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fgetc_unlocked",
-        constants$1143.fgetc_unlocked$FUNC
+    static final MethodHandle gdk_pixbuf_init_modules$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_init_modules",
+        constants$1143.gdk_pixbuf_init_modules$FUNC
     );
-    static final FunctionDescriptor fputc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_pixbuf_format_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_type",
+        constants$1143.gdk_pixbuf_format_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_pixbuf_get_formats$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_formats",
+        constants$1143.gdk_pixbuf_get_formats$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_format_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fputc$MH = RuntimeHelper.downcallHandle(
-        "fputc",
-        constants$1143.fputc$FUNC
-    );
-    static final FunctionDescriptor putc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle putc$MH = RuntimeHelper.downcallHandle(
-        "putc",
-        constants$1143.putc$FUNC
+    static final MethodHandle gdk_pixbuf_format_get_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_name",
+        constants$1143.gdk_pixbuf_format_get_name$FUNC
     );
 }
 

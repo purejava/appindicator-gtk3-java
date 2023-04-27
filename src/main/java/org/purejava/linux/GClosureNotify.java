@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GClosureNotify)(void* data,struct _GClosure* closure);
+ * }
+ */
 public interface GClosureNotify {
 
-    void apply(java.lang.foreign.MemoryAddress data, java.lang.foreign.MemoryAddress closure);
-    static MemorySegment allocate(GClosureNotify fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GClosureNotify.class, fi, constants$442.GClosureNotify$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GClosureNotify fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$402.GClosureNotify_UP$MH, fi, constants$402.GClosureNotify$FUNC, scope);
     }
-    static GClosureNotify ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data, java.lang.foreign.MemoryAddress _closure) -> {
+    static GClosureNotify ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$442.GClosureNotify$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data, (java.lang.foreign.Addressable)_closure);
+                constants$402.GClosureNotify_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

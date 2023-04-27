@@ -7,8 +7,32 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$101 {
+final class constants$101 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$101() {}
+    static final FunctionDescriptor g_bytes_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_get_data$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_get_data",
+        constants$101.g_bytes_get_data$FUNC
+    );
+    static final FunctionDescriptor g_bytes_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_get_size",
+        constants$101.g_bytes_get_size$FUNC
+    );
+    static final FunctionDescriptor g_bytes_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_ref$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_ref",
+        constants$101.g_bytes_ref$FUNC
+    );
     static final FunctionDescriptor g_bytes_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
@@ -30,29 +54,6 @@ class constants$101 {
     static final MethodHandle g_bytes_unref_to_array$MH = RuntimeHelper.downcallHandle(
         "g_bytes_unref_to_array",
         constants$101.g_bytes_unref_to_array$FUNC
-    );
-    static final FunctionDescriptor g_bytes_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_hash$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_hash",
-        constants$101.g_bytes_hash$FUNC
-    );
-    static final FunctionDescriptor g_bytes_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_equal$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_equal",
-        constants$101.g_bytes_equal$FUNC
-    );
-    static final FunctionDescriptor g_bytes_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_compare$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_compare",
-        constants$101.g_bytes_compare$FUNC
     );
 }
 

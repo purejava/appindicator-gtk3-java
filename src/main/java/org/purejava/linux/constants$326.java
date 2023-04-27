@@ -7,53 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$326 {
+final class constants$326 {
 
-    static final FunctionDescriptor GTraverseNodeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$326() {}
+    static final FunctionDescriptor g_thread_pool_set_max_unused_threads$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GTraverseNodeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$326.GTraverseNodeFunc$FUNC
+    static final MethodHandle g_thread_pool_set_max_unused_threads$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_set_max_unused_threads",
+        constants$326.g_thread_pool_set_max_unused_threads$FUNC
     );
-    static final FunctionDescriptor g_tree_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_thread_pool_get_max_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_thread_pool_get_max_unused_threads$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_max_unused_threads",
+        constants$326.g_thread_pool_get_max_unused_threads$FUNC
     );
-    static final MethodHandle g_tree_new$MH = RuntimeHelper.downcallHandle(
-        "g_tree_new",
-        constants$326.g_tree_new$FUNC
+    static final FunctionDescriptor g_thread_pool_get_num_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_thread_pool_get_num_unused_threads$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_num_unused_threads",
+        constants$326.g_thread_pool_get_num_unused_threads$FUNC
     );
-    static final FunctionDescriptor g_tree_new_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_thread_pool_stop_unused_threads$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_thread_pool_stop_unused_threads$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_stop_unused_threads",
+        constants$326.g_thread_pool_stop_unused_threads$FUNC
     );
-    static final MethodHandle g_tree_new_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_tree_new_with_data",
-        constants$326.g_tree_new_with_data$FUNC
+    static final FunctionDescriptor g_thread_pool_set_max_idle_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_tree_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_thread_pool_set_max_idle_time$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_set_max_idle_time",
+        constants$326.g_thread_pool_set_max_idle_time$FUNC
     );
-    static final MethodHandle g_tree_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_tree_new_full",
-        constants$326.g_tree_new_full$FUNC
-    );
-    static final FunctionDescriptor g_tree_node_first$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_node_first$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_first",
-        constants$326.g_tree_node_first$FUNC
-    );
-    static final FunctionDescriptor g_tree_node_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_node_last$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_last",
-        constants$326.g_tree_node_last$FUNC
+    static final FunctionDescriptor g_thread_pool_get_max_idle_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_thread_pool_get_max_idle_time$MH = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_max_idle_time",
+        constants$326.g_thread_pool_get_max_idle_time$FUNC
     );
 }
 

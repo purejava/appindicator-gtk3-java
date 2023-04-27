@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$919 {
+final class constants$919 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GFileIOStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$919() {}
+    static final FunctionDescriptor pango_color_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GFileIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GFileIOStream",
-        constants$919.glib_autoptr_cleanup_GFileIOStream$FUNC
+    static final MethodHandle pango_color_parse$MH = RuntimeHelper.downcallHandle(
+        "pango_color_parse",
+        constants$919.pango_color_parse$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GFileIOStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_color_parse_with_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GFileIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GFileIOStream",
-        constants$919.glib_listautoptr_cleanup_GFileIOStream$FUNC
+    static final MethodHandle pango_color_parse_with_alpha$MH = RuntimeHelper.downcallHandle(
+        "pango_color_parse_with_alpha",
+        constants$919.pango_color_parse_with_alpha$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GFileIOStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_color_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GFileIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GFileIOStream",
-        constants$919.glib_slistautoptr_cleanup_GFileIOStream$FUNC
+    static final MethodHandle pango_color_to_string$MH = RuntimeHelper.downcallHandle(
+        "pango_color_to_string",
+        constants$919.pango_color_to_string$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GFileIOStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor PangoAttrFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GFileIOStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GFileIOStream",
-        constants$919.glib_queueautoptr_cleanup_GFileIOStream$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GFileMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor PangoAttrFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GFileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GFileMonitor",
-        constants$919.glib_autoptr_clear_GFileMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GFileMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle PangoAttrFilterFunc_UP$MH = RuntimeHelper.upcallHandle(PangoAttrFilterFunc.class, "apply", constants$919.PangoAttrFilterFunc_UP$FUNC);
+    static final FunctionDescriptor PangoAttrFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GFileMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GFileMonitor",
-        constants$919.glib_autoptr_cleanup_GFileMonitor$FUNC
+    static final MethodHandle PangoAttrFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$919.PangoAttrFilterFunc_DOWN$FUNC
     );
+    static final FunctionDescriptor PangoAttrDataCopyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor PangoAttrDataCopyFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle PangoAttrDataCopyFunc_UP$MH = RuntimeHelper.upcallHandle(PangoAttrDataCopyFunc.class, "apply", constants$919.PangoAttrDataCopyFunc_UP$FUNC);
 }
 
 

@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSocketAddressEnumeratorClass {
+ *     GObjectClass parent_class;
+ *     GSocketAddress* (*next)(GSocketAddressEnumerator*,GCancellable*,GError**);
+ *     void (*next_async)(GSocketAddressEnumerator*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     GSocketAddress* (*next_finish)(GSocketAddressEnumerator*,GAsyncResult*,GError**);
+ * };
+ * }
+ */
 public class _GSocketAddressEnumeratorClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +34,10 @@ public class _GSocketAddressEnumeratorClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("next"),
         Constants$root.C_POINTER$LAYOUT.withName("next_async"),
@@ -41,20 +54,36 @@ public class _GSocketAddressEnumeratorClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressEnumeratorClass.next$FUNC
+    static final FunctionDescriptor next_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_UP$MH = RuntimeHelper.upcallHandle(next.class, "apply", _GSocketAddressEnumeratorClass.next_UP$FUNC);
+    static final FunctionDescriptor next_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressEnumeratorClass.next_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSocketAddress* (*next)(GSocketAddressEnumerator*,GCancellable*,GError**);
+     * }
+     */
     public interface next {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(next fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next.class, fi, _GSocketAddressEnumeratorClass.next$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(next fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressEnumeratorClass.next_UP$MH, fi, _GSocketAddressEnumeratorClass.next$FUNC, scope);
         }
-        static next ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static next ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -66,20 +95,32 @@ public class _GSocketAddressEnumeratorClass {
     public static VarHandle next$VH() {
         return _GSocketAddressEnumeratorClass.next$VH;
     }
-    public static MemoryAddress next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSocketAddress* (*next)(GSocketAddressEnumerator*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment next$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next$VH.get(seg);
     }
-    public static void next$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSocketAddress* (*next)(GSocketAddressEnumerator*,GCancellable*,GError**);
+     * }
+     */
+    public static void next$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next$VH.set(seg, x);
     }
-    public static MemoryAddress next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next next (MemorySegment segment, MemorySession session) {
-        return next.ofAddress(next$get(segment), session);
+    public static next next(MemorySegment segment, SegmentScope scope) {
+        return next.ofAddress(next$get(segment), scope);
     }
     static final FunctionDescriptor next_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -87,20 +128,38 @@ public class _GSocketAddressEnumeratorClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next_async$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressEnumeratorClass.next_async$FUNC
+    static final FunctionDescriptor next_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_async_UP$MH = RuntimeHelper.upcallHandle(next_async.class, "apply", _GSocketAddressEnumeratorClass.next_async_UP$FUNC);
+    static final FunctionDescriptor next_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressEnumeratorClass.next_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*next_async)(GSocketAddressEnumerator*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface next_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(next_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next_async.class, fi, _GSocketAddressEnumeratorClass.next_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(next_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressEnumeratorClass.next_async_UP$MH, fi, _GSocketAddressEnumeratorClass.next_async$FUNC, scope);
         }
-        static next_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static next_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GSocketAddressEnumeratorClass.next_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GSocketAddressEnumeratorClass.next_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -112,40 +171,68 @@ public class _GSocketAddressEnumeratorClass {
     public static VarHandle next_async$VH() {
         return _GSocketAddressEnumeratorClass.next_async$VH;
     }
-    public static MemoryAddress next_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*next_async)(GSocketAddressEnumerator*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment next_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_async$VH.get(seg);
     }
-    public static void next_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*next_async)(GSocketAddressEnumerator*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void next_async$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next_async$VH.set(seg, x);
     }
-    public static MemoryAddress next_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next_async next_async (MemorySegment segment, MemorySession session) {
-        return next_async.ofAddress(next_async$get(segment), session);
+    public static next_async next_async(MemorySegment segment, SegmentScope scope) {
+        return next_async.ofAddress(next_async$get(segment), scope);
     }
     static final FunctionDescriptor next_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next_finish$MH = RuntimeHelper.downcallHandle(
-        _GSocketAddressEnumeratorClass.next_finish$FUNC
+    static final FunctionDescriptor next_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_finish_UP$MH = RuntimeHelper.upcallHandle(next_finish.class, "apply", _GSocketAddressEnumeratorClass.next_finish_UP$FUNC);
+    static final FunctionDescriptor next_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSocketAddressEnumeratorClass.next_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSocketAddress* (*next_finish)(GSocketAddressEnumerator*,GAsyncResult*,GError**);
+     * }
+     */
     public interface next_finish {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(next_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next_finish.class, fi, _GSocketAddressEnumeratorClass.next_finish$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(next_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSocketAddressEnumeratorClass.next_finish_UP$MH, fi, _GSocketAddressEnumeratorClass.next_finish$FUNC, scope);
         }
-        static next_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static next_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,27 +244,39 @@ public class _GSocketAddressEnumeratorClass {
     public static VarHandle next_finish$VH() {
         return _GSocketAddressEnumeratorClass.next_finish$VH;
     }
-    public static MemoryAddress next_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSocketAddress* (*next_finish)(GSocketAddressEnumerator*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment next_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_finish$VH.get(seg);
     }
-    public static void next_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSocketAddress* (*next_finish)(GSocketAddressEnumerator*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void next_finish$set(MemorySegment seg, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next_finish$VH.set(seg, x);
     }
-    public static MemoryAddress next_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSocketAddressEnumeratorClass.next_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSocketAddressEnumeratorClass.next_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GSocketAddressEnumeratorClass.next_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next_finish next_finish (MemorySegment segment, MemorySession session) {
-        return next_finish.ofAddress(next_finish$get(segment), session);
+    public static next_finish next_finish(MemorySegment segment, SegmentScope scope) {
+        return next_finish.ofAddress(next_finish$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

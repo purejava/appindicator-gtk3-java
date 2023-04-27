@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSettingsClass {
+ *     GObjectClass parent_class;
+ *     void (*writable_changed)(GSettings*,const gchar*);
+ *     void (*changed)(GSettings*,const gchar*);
+ *     gboolean (*writable_change_event)(GSettings*,GQuark);
+ *     gboolean (*change_event)(GSettings*,const GQuark*,gint);
+ *     gpointer padding[20];
+ * };
+ * }
+ */
 public class _GSettingsClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +36,10 @@ public class _GSettingsClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("writable_changed"),
         Constants$root.C_POINTER$LAYOUT.withName("changed"),
@@ -42,20 +57,34 @@ public class _GSettingsClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle writable_changed$MH = RuntimeHelper.downcallHandle(
-        _GSettingsClass.writable_changed$FUNC
+    static final FunctionDescriptor writable_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle writable_changed_UP$MH = RuntimeHelper.upcallHandle(writable_changed.class, "apply", _GSettingsClass.writable_changed_UP$FUNC);
+    static final FunctionDescriptor writable_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle writable_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSettingsClass.writable_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*writable_changed)(GSettings*,const gchar*);
+     * }
+     */
     public interface writable_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(writable_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writable_changed.class, fi, _GSettingsClass.writable_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(writable_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSettingsClass.writable_changed_UP$MH, fi, _GSettingsClass.writable_changed$FUNC, scope);
         }
-        static writable_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static writable_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GSettingsClass.writable_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GSettingsClass.writable_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -67,39 +96,65 @@ public class _GSettingsClass {
     public static VarHandle writable_changed$VH() {
         return _GSettingsClass.writable_changed$VH;
     }
-    public static MemoryAddress writable_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.writable_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*writable_changed)(GSettings*,const gchar*);
+     * }
+     */
+    public static MemorySegment writable_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.writable_changed$VH.get(seg);
     }
-    public static void writable_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*writable_changed)(GSettings*,const gchar*);
+     * }
+     */
+    public static void writable_changed$set(MemorySegment seg, MemorySegment x) {
         _GSettingsClass.writable_changed$VH.set(seg, x);
     }
-    public static MemoryAddress writable_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.writable_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writable_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.writable_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writable_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writable_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GSettingsClass.writable_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writable_changed writable_changed (MemorySegment segment, MemorySession session) {
-        return writable_changed.ofAddress(writable_changed$get(segment), session);
+    public static writable_changed writable_changed(MemorySegment segment, SegmentScope scope) {
+        return writable_changed.ofAddress(writable_changed$get(segment), scope);
     }
     static final FunctionDescriptor changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle changed$MH = RuntimeHelper.downcallHandle(
-        _GSettingsClass.changed$FUNC
+    static final FunctionDescriptor changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle changed_UP$MH = RuntimeHelper.upcallHandle(changed.class, "apply", _GSettingsClass.changed_UP$FUNC);
+    static final FunctionDescriptor changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSettingsClass.changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*changed)(GSettings*,const gchar*);
+     * }
+     */
     public interface changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(changed.class, fi, _GSettingsClass.changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSettingsClass.changed_UP$MH, fi, _GSettingsClass.changed$FUNC, scope);
         }
-        static changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GSettingsClass.changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GSettingsClass.changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -111,39 +166,65 @@ public class _GSettingsClass {
     public static VarHandle changed$VH() {
         return _GSettingsClass.changed$VH;
     }
-    public static MemoryAddress changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*changed)(GSettings*,const gchar*);
+     * }
+     */
+    public static MemorySegment changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.changed$VH.get(seg);
     }
-    public static void changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*changed)(GSettings*,const gchar*);
+     * }
+     */
+    public static void changed$set(MemorySegment seg, MemorySegment x) {
         _GSettingsClass.changed$VH.set(seg, x);
     }
-    public static MemoryAddress changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GSettingsClass.changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static changed changed (MemorySegment segment, MemorySession session) {
-        return changed.ofAddress(changed$get(segment), session);
+    public static changed changed(MemorySegment segment, SegmentScope scope) {
+        return changed.ofAddress(changed$get(segment), scope);
     }
     static final FunctionDescriptor writable_change_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle writable_change_event$MH = RuntimeHelper.downcallHandle(
-        _GSettingsClass.writable_change_event$FUNC
+    static final FunctionDescriptor writable_change_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle writable_change_event_UP$MH = RuntimeHelper.upcallHandle(writable_change_event.class, "apply", _GSettingsClass.writable_change_event_UP$FUNC);
+    static final FunctionDescriptor writable_change_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle writable_change_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSettingsClass.writable_change_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*writable_change_event)(GSettings*,GQuark);
+     * }
+     */
     public interface writable_change_event {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(writable_change_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writable_change_event.class, fi, _GSettingsClass.writable_change_event$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(writable_change_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSettingsClass.writable_change_event_UP$MH, fi, _GSettingsClass.writable_change_event$FUNC, scope);
         }
-        static writable_change_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static writable_change_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GSettingsClass.writable_change_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GSettingsClass.writable_change_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -155,40 +236,68 @@ public class _GSettingsClass {
     public static VarHandle writable_change_event$VH() {
         return _GSettingsClass.writable_change_event$VH;
     }
-    public static MemoryAddress writable_change_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.writable_change_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*writable_change_event)(GSettings*,GQuark);
+     * }
+     */
+    public static MemorySegment writable_change_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.writable_change_event$VH.get(seg);
     }
-    public static void writable_change_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*writable_change_event)(GSettings*,GQuark);
+     * }
+     */
+    public static void writable_change_event$set(MemorySegment seg, MemorySegment x) {
         _GSettingsClass.writable_change_event$VH.set(seg, x);
     }
-    public static MemoryAddress writable_change_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.writable_change_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writable_change_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.writable_change_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writable_change_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writable_change_event$set(MemorySegment seg, long index, MemorySegment x) {
         _GSettingsClass.writable_change_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writable_change_event writable_change_event (MemorySegment segment, MemorySession session) {
-        return writable_change_event.ofAddress(writable_change_event$get(segment), session);
+    public static writable_change_event writable_change_event(MemorySegment segment, SegmentScope scope) {
+        return writable_change_event.ofAddress(writable_change_event$get(segment), scope);
     }
     static final FunctionDescriptor change_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle change_event$MH = RuntimeHelper.downcallHandle(
-        _GSettingsClass.change_event$FUNC
+    static final FunctionDescriptor change_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle change_event_UP$MH = RuntimeHelper.upcallHandle(change_event.class, "apply", _GSettingsClass.change_event_UP$FUNC);
+    static final FunctionDescriptor change_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle change_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GSettingsClass.change_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*change_event)(GSettings*,const GQuark*,gint);
+     * }
+     */
     public interface change_event {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(change_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(change_event.class, fi, _GSettingsClass.change_event$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(change_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GSettingsClass.change_event_UP$MH, fi, _GSettingsClass.change_event$FUNC, scope);
         }
-        static change_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static change_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    return (int)_GSettingsClass.change_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    return (int)_GSettingsClass.change_event_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -200,30 +309,42 @@ public class _GSettingsClass {
     public static VarHandle change_event$VH() {
         return _GSettingsClass.change_event$VH;
     }
-    public static MemoryAddress change_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.change_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*change_event)(GSettings*,const GQuark*,gint);
+     * }
+     */
+    public static MemorySegment change_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.change_event$VH.get(seg);
     }
-    public static void change_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*change_event)(GSettings*,const GQuark*,gint);
+     * }
+     */
+    public static void change_event$set(MemorySegment seg, MemorySegment x) {
         _GSettingsClass.change_event$VH.set(seg, x);
     }
-    public static MemoryAddress change_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GSettingsClass.change_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment change_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GSettingsClass.change_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void change_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void change_event$set(MemorySegment seg, long index, MemorySegment x) {
         _GSettingsClass.change_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_event change_event (MemorySegment segment, MemorySession session) {
-        return change_event.ofAddress(change_event$get(segment), session);
+    public static change_event change_event(MemorySegment segment, SegmentScope scope) {
+        return change_event.ofAddress(change_event$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(168, 160);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

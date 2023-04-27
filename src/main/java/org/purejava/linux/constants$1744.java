@@ -7,46 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1744 {
+final class constants$1744 {
 
-    static final FunctionDescriptor gtk_css_section_get_end_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1744() {}
+    static final FunctionDescriptor gtk_print_settings_get_collate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_css_section_get_end_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_end_position",
-        constants$1744.gtk_css_section_get_end_position$FUNC
+    static final MethodHandle gtk_print_settings_get_collate$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_collate",
+        constants$1744.gtk_print_settings_get_collate$FUNC
     );
-    static final FunctionDescriptor gtk_css_provider_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_css_provider_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_error_quark",
-        constants$1744.gtk_css_provider_error_quark$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_css_provider_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_type",
-        constants$1744.gtk_css_provider_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_css_provider_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_new",
-        constants$1744.gtk_css_provider_new$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_to_string",
-        constants$1744.gtk_css_provider_to_string$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_load_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_set_collate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_collate$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_collate",
+        constants$1744.gtk_print_settings_set_collate$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_reverse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_css_provider_load_from_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_data",
-        constants$1744.gtk_css_provider_load_from_data$FUNC
+    static final MethodHandle gtk_print_settings_get_reverse$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_reverse",
+        constants$1744.gtk_print_settings_get_reverse$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_set_reverse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_reverse$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_reverse",
+        constants$1744.gtk_print_settings_set_reverse$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_duplex$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_duplex$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_duplex",
+        constants$1744.gtk_print_settings_get_duplex$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_set_duplex$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_duplex$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_duplex",
+        constants$1744.gtk_print_settings_set_duplex$FUNC
     );
 }
 

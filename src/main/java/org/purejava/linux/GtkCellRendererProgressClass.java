@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellRendererProgressClass extends _GtkCellRendererProgressClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellRendererProgressClass GtkCellRendererProgressClass;
+ * }
+ */
+public final class GtkCellRendererProgressClass extends _GtkCellRendererProgressClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellRendererProgressClass() {}
 }
 
 

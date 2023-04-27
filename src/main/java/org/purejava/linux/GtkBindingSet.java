@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkBindingSet extends _GtkBindingSet {
+/**
+ * {@snippet :
+ * typedef struct _GtkBindingSet GtkBindingSet;
+ * }
+ */
+public final class GtkBindingSet extends _GtkBindingSet {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkBindingSet() {}
 }
 
 

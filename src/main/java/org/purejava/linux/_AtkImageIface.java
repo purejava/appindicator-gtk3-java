@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkImageIface {
+ *     GTypeInterface parent;
+ *     void (*get_image_position)(AtkImage*,gint*,gint*,AtkCoordType);
+ *     const gchar* (*get_image_description)(AtkImage*);
+ *     void (*get_image_size)(AtkImage*,gint*,gint*);
+ *     gboolean (*set_image_description)(AtkImage*,const gchar*);
+ *     const gchar* (*get_image_locale)(AtkImage*);
+ * };
+ * }
+ */
 public class _AtkImageIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -32,20 +44,38 @@ public class _AtkImageIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle get_image_position$MH = RuntimeHelper.downcallHandle(
-        _AtkImageIface.get_image_position$FUNC
+    static final FunctionDescriptor get_image_position_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle get_image_position_UP$MH = RuntimeHelper.upcallHandle(get_image_position.class, "apply", _AtkImageIface.get_image_position_UP$FUNC);
+    static final FunctionDescriptor get_image_position_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle get_image_position_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkImageIface.get_image_position_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*get_image_position)(AtkImage*,gint*,gint*,AtkCoordType);
+     * }
+     */
     public interface get_image_position {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3);
-        static MemorySegment allocate(get_image_position fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_image_position.class, fi, _AtkImageIface.get_image_position$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        static MemorySegment allocate(get_image_position fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkImageIface.get_image_position_UP$MH, fi, _AtkImageIface.get_image_position$FUNC, scope);
         }
-        static get_image_position ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3) -> {
+        static get_image_position ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    _AtkImageIface.get_image_position$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3);
+                    _AtkImageIface.get_image_position_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -57,38 +87,62 @@ public class _AtkImageIface {
     public static VarHandle get_image_position$VH() {
         return _AtkImageIface.get_image_position$VH;
     }
-    public static MemoryAddress get_image_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_position$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*get_image_position)(AtkImage*,gint*,gint*,AtkCoordType);
+     * }
+     */
+    public static MemorySegment get_image_position$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_position$VH.get(seg);
     }
-    public static void get_image_position$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*get_image_position)(AtkImage*,gint*,gint*,AtkCoordType);
+     * }
+     */
+    public static void get_image_position$set(MemorySegment seg, MemorySegment x) {
         _AtkImageIface.get_image_position$VH.set(seg, x);
     }
-    public static MemoryAddress get_image_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_position$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_image_position$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_position$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_image_position$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_image_position$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkImageIface.get_image_position$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_image_position get_image_position (MemorySegment segment, MemorySession session) {
-        return get_image_position.ofAddress(get_image_position$get(segment), session);
+    public static get_image_position get_image_position(MemorySegment segment, SegmentScope scope) {
+        return get_image_position.ofAddress(get_image_position$get(segment), scope);
     }
     static final FunctionDescriptor get_image_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_image_description$MH = RuntimeHelper.downcallHandle(
-        _AtkImageIface.get_image_description$FUNC
+    static final FunctionDescriptor get_image_description_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_image_description_UP$MH = RuntimeHelper.upcallHandle(get_image_description.class, "apply", _AtkImageIface.get_image_description_UP$FUNC);
+    static final FunctionDescriptor get_image_description_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_image_description_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkImageIface.get_image_description_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_image_description)(AtkImage*);
+     * }
+     */
     public interface get_image_description {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_image_description fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_image_description.class, fi, _AtkImageIface.get_image_description$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_image_description fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkImageIface.get_image_description_UP$MH, fi, _AtkImageIface.get_image_description$FUNC, scope);
         }
-        static get_image_description ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_image_description ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_description$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_description_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -100,40 +154,68 @@ public class _AtkImageIface {
     public static VarHandle get_image_description$VH() {
         return _AtkImageIface.get_image_description$VH;
     }
-    public static MemoryAddress get_image_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_image_description)(AtkImage*);
+     * }
+     */
+    public static MemorySegment get_image_description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_description$VH.get(seg);
     }
-    public static void get_image_description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_image_description)(AtkImage*);
+     * }
+     */
+    public static void get_image_description$set(MemorySegment seg, MemorySegment x) {
         _AtkImageIface.get_image_description$VH.set(seg, x);
     }
-    public static MemoryAddress get_image_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_image_description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_image_description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_image_description$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkImageIface.get_image_description$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_image_description get_image_description (MemorySegment segment, MemorySession session) {
-        return get_image_description.ofAddress(get_image_description$get(segment), session);
+    public static get_image_description get_image_description(MemorySegment segment, SegmentScope scope) {
+        return get_image_description.ofAddress(get_image_description$get(segment), scope);
     }
     static final FunctionDescriptor get_image_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_image_size$MH = RuntimeHelper.downcallHandle(
-        _AtkImageIface.get_image_size$FUNC
+    static final FunctionDescriptor get_image_size_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_image_size_UP$MH = RuntimeHelper.upcallHandle(get_image_size.class, "apply", _AtkImageIface.get_image_size_UP$FUNC);
+    static final FunctionDescriptor get_image_size_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_image_size_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkImageIface.get_image_size_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*get_image_size)(AtkImage*,gint*,gint*);
+     * }
+     */
     public interface get_image_size {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(get_image_size fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_image_size.class, fi, _AtkImageIface.get_image_size$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_image_size fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkImageIface.get_image_size_UP$MH, fi, _AtkImageIface.get_image_size$FUNC, scope);
         }
-        static get_image_size ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static get_image_size ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _AtkImageIface.get_image_size$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _AtkImageIface.get_image_size_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -145,39 +227,65 @@ public class _AtkImageIface {
     public static VarHandle get_image_size$VH() {
         return _AtkImageIface.get_image_size$VH;
     }
-    public static MemoryAddress get_image_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_size$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*get_image_size)(AtkImage*,gint*,gint*);
+     * }
+     */
+    public static MemorySegment get_image_size$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_size$VH.get(seg);
     }
-    public static void get_image_size$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*get_image_size)(AtkImage*,gint*,gint*);
+     * }
+     */
+    public static void get_image_size$set(MemorySegment seg, MemorySegment x) {
         _AtkImageIface.get_image_size$VH.set(seg, x);
     }
-    public static MemoryAddress get_image_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_size$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_image_size$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_size$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_image_size$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_image_size$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkImageIface.get_image_size$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_image_size get_image_size (MemorySegment segment, MemorySession session) {
-        return get_image_size.ofAddress(get_image_size$get(segment), session);
+    public static get_image_size get_image_size(MemorySegment segment, SegmentScope scope) {
+        return get_image_size.ofAddress(get_image_size$get(segment), scope);
     }
     static final FunctionDescriptor set_image_description$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_image_description$MH = RuntimeHelper.downcallHandle(
-        _AtkImageIface.set_image_description$FUNC
+    static final FunctionDescriptor set_image_description_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_image_description_UP$MH = RuntimeHelper.upcallHandle(set_image_description.class, "apply", _AtkImageIface.set_image_description_UP$FUNC);
+    static final FunctionDescriptor set_image_description_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_image_description_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkImageIface.set_image_description_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_image_description)(AtkImage*,const gchar*);
+     * }
+     */
     public interface set_image_description {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_image_description fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_image_description.class, fi, _AtkImageIface.set_image_description$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(set_image_description fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkImageIface.set_image_description_UP$MH, fi, _AtkImageIface.set_image_description$FUNC, scope);
         }
-        static set_image_description ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_image_description ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkImageIface.set_image_description$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_AtkImageIface.set_image_description_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -189,38 +297,62 @@ public class _AtkImageIface {
     public static VarHandle set_image_description$VH() {
         return _AtkImageIface.set_image_description$VH;
     }
-    public static MemoryAddress set_image_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.set_image_description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_image_description)(AtkImage*,const gchar*);
+     * }
+     */
+    public static MemorySegment set_image_description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.set_image_description$VH.get(seg);
     }
-    public static void set_image_description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_image_description)(AtkImage*,const gchar*);
+     * }
+     */
+    public static void set_image_description$set(MemorySegment seg, MemorySegment x) {
         _AtkImageIface.set_image_description$VH.set(seg, x);
     }
-    public static MemoryAddress set_image_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.set_image_description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_image_description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.set_image_description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_image_description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_image_description$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkImageIface.set_image_description$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_image_description set_image_description (MemorySegment segment, MemorySession session) {
-        return set_image_description.ofAddress(set_image_description$get(segment), session);
+    public static set_image_description set_image_description(MemorySegment segment, SegmentScope scope) {
+        return set_image_description.ofAddress(set_image_description$get(segment), scope);
     }
     static final FunctionDescriptor get_image_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_image_locale$MH = RuntimeHelper.downcallHandle(
-        _AtkImageIface.get_image_locale$FUNC
+    static final FunctionDescriptor get_image_locale_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_image_locale_UP$MH = RuntimeHelper.upcallHandle(get_image_locale.class, "apply", _AtkImageIface.get_image_locale_UP$FUNC);
+    static final FunctionDescriptor get_image_locale_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_image_locale_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkImageIface.get_image_locale_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_image_locale)(AtkImage*);
+     * }
+     */
     public interface get_image_locale {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_image_locale fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_image_locale.class, fi, _AtkImageIface.get_image_locale$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_image_locale fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkImageIface.get_image_locale_UP$MH, fi, _AtkImageIface.get_image_locale$FUNC, scope);
         }
-        static get_image_locale ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_image_locale ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_locale$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_locale_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -232,27 +364,39 @@ public class _AtkImageIface {
     public static VarHandle get_image_locale$VH() {
         return _AtkImageIface.get_image_locale$VH;
     }
-    public static MemoryAddress get_image_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_locale$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_image_locale)(AtkImage*);
+     * }
+     */
+    public static MemorySegment get_image_locale$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_locale$VH.get(seg);
     }
-    public static void get_image_locale$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_image_locale)(AtkImage*);
+     * }
+     */
+    public static void get_image_locale$set(MemorySegment seg, MemorySegment x) {
         _AtkImageIface.get_image_locale$VH.set(seg, x);
     }
-    public static MemoryAddress get_image_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkImageIface.get_image_locale$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_image_locale$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkImageIface.get_image_locale$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_image_locale$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_image_locale$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkImageIface.get_image_locale$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_image_locale get_image_locale (MemorySegment segment, MemorySession session) {
-        return get_image_locale.ofAddress(get_image_locale$get(segment), session);
+    public static get_image_locale get_image_locale(MemorySegment segment, SegmentScope scope) {
+        return get_image_locale.ofAddress(get_image_locale$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

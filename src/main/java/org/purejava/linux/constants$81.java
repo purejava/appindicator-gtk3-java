@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$81 {
+final class constants$81 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$81() {}
+    static final FunctionDescriptor g_pointer_bit_lock$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_pointer_bit_lock$MH = RuntimeHelper.downcallHandle(
+        "g_pointer_bit_lock",
+        constants$81.g_pointer_bit_lock$FUNC
+    );
+    static final FunctionDescriptor g_pointer_bit_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_pointer_bit_trylock$MH = RuntimeHelper.downcallHandle(
+        "g_pointer_bit_trylock",
+        constants$81.g_pointer_bit_trylock$FUNC
+    );
     static final FunctionDescriptor g_pointer_bit_unlock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
@@ -35,18 +53,6 @@ class constants$81 {
     static final MethodHandle g_time_zone_new_utc$MH = RuntimeHelper.downcallHandle(
         "g_time_zone_new_utc",
         constants$81.g_time_zone_new_utc$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_new_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_time_zone_new_local$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_new_local",
-        constants$81.g_time_zone_new_local$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_new_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_time_zone_new_offset$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_new_offset",
-        constants$81.g_time_zone_new_offset$FUNC
     );
 }
 

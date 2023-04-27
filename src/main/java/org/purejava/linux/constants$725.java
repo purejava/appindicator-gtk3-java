@@ -7,37 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$725 {
+final class constants$725 {
 
-    static final FunctionDescriptor g_dbus_server_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_server_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_server_flags_get_type",
-        constants$725.g_dbus_server_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$725() {}
+    static final FunctionDescriptor g_power_profile_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_power_profile_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_power_profile_monitor_get_type",
+        constants$725.g_power_profile_monitor_get_type$FUNC
     );
-    static final FunctionDescriptor g_dbus_signal_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_signal_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_flags_get_type",
-        constants$725.g_dbus_signal_flags_get_type$FUNC
+    static final FunctionDescriptor g_power_profile_monitor_dup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_power_profile_monitor_dup_default$MH = RuntimeHelper.downcallHandle(
+        "g_power_profile_monitor_dup_default",
+        constants$725.g_power_profile_monitor_dup_default$FUNC
     );
-    static final FunctionDescriptor g_dbus_send_message_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_send_message_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_send_message_flags_get_type",
-        constants$725.g_dbus_send_message_flags_get_type$FUNC
+    static final FunctionDescriptor g_power_profile_monitor_get_power_saver_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_credentials_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_credentials_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_type_get_type",
-        constants$725.g_credentials_type_get_type$FUNC
+    static final MethodHandle g_power_profile_monitor_get_power_saver_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_power_profile_monitor_get_power_saver_enabled",
+        constants$725.g_power_profile_monitor_get_power_saver_enabled$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_byte_order_get_type",
-        constants$725.g_dbus_message_byte_order_get_type$FUNC
+    static final FunctionDescriptor g_property_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_property_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_property_action_get_type",
+        constants$725.g_property_action_get_type$FUNC
     );
-    static final FunctionDescriptor g_application_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_application_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_application_flags_get_type",
-        constants$725.g_application_flags_get_type$FUNC
+    static final FunctionDescriptor g_property_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_property_action_new$MH = RuntimeHelper.downcallHandle(
+        "g_property_action_new",
+        constants$725.g_property_action_new$FUNC
+    );
+    static final FunctionDescriptor g_proxy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_proxy_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_proxy_get_type",
+        constants$725.g_proxy_get_type$FUNC
     );
 }
 

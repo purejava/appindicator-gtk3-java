@@ -7,9 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDriveIface {
+ *     GTypeInterface g_iface;
+ *     void (*changed)(GDrive*);
+ *     void (*disconnected)(GDrive*);
+ *     void (*eject_button)(GDrive*);
+ *     char* (*get_name)(GDrive*);
+ *     GIcon* (*get_icon)(GDrive*);
+ *     gboolean (*has_volumes)(GDrive*);
+ *     GList* (*get_volumes)(GDrive*);
+ *     gboolean (*is_media_removable)(GDrive*);
+ *     gboolean (*has_media)(GDrive*);
+ *     gboolean (*is_media_check_automatic)(GDrive*);
+ *     gboolean (*can_eject)(GDrive*);
+ *     gboolean (*can_poll_for_media)(GDrive*);
+ *     void (*eject)(GDrive*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*eject_finish)(GDrive*,GAsyncResult*,GError**);
+ *     void (*poll_for_media)(GDrive*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*poll_for_media_finish)(GDrive*,GAsyncResult*,GError**);
+ *     char* (*get_identifier)(GDrive*,char*);
+ *     char** (*enumerate_identifiers)(GDrive*);
+ *     GDriveStartStopType (*get_start_stop_type)(GDrive*);
+ *     gboolean (*can_start)(GDrive*);
+ *     gboolean (*can_start_degraded)(GDrive*);
+ *     void (*start)(GDrive*,GDriveStartFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*start_finish)(GDrive*,GAsyncResult*,GError**);
+ *     gboolean (*can_stop)(GDrive*);
+ *     void (*stop)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*stop_finish)(GDrive*,GAsyncResult*,GError**);
+ *     void (*stop_button)(GDrive*);
+ *     void (*eject_with_operation)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*eject_with_operation_finish)(GDrive*,GAsyncResult*,GError**);
+ *     const gchar* (*get_sort_key)(GDrive*);
+ *     GIcon* (*get_symbolic_icon)(GDrive*);
+ *     gboolean (*is_removable)(GDrive*);
+ * };
+ * }
+ */
 public class _GDriveIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -56,20 +95,32 @@ public class _GDriveIface {
     static final FunctionDescriptor changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle changed$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.changed$FUNC
+    static final FunctionDescriptor changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle changed_UP$MH = RuntimeHelper.upcallHandle(changed.class, "apply", _GDriveIface.changed_UP$FUNC);
+    static final FunctionDescriptor changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*changed)(GDrive*);
+     * }
+     */
     public interface changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(changed.class, fi, _GDriveIface.changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.changed_UP$MH, fi, _GDriveIface.changed$FUNC, scope);
         }
-        static changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GDriveIface.changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GDriveIface.changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -81,38 +132,62 @@ public class _GDriveIface {
     public static VarHandle changed$VH() {
         return _GDriveIface.changed$VH;
     }
-    public static MemoryAddress changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*changed)(GDrive*);
+     * }
+     */
+    public static MemorySegment changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.changed$VH.get(seg);
     }
-    public static void changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*changed)(GDrive*);
+     * }
+     */
+    public static void changed$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.changed$VH.set(seg, x);
     }
-    public static MemoryAddress changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static changed changed (MemorySegment segment, MemorySession session) {
-        return changed.ofAddress(changed$get(segment), session);
+    public static changed changed(MemorySegment segment, SegmentScope scope) {
+        return changed.ofAddress(changed$get(segment), scope);
     }
     static final FunctionDescriptor disconnected$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle disconnected$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.disconnected$FUNC
+    static final FunctionDescriptor disconnected_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle disconnected_UP$MH = RuntimeHelper.upcallHandle(disconnected.class, "apply", _GDriveIface.disconnected_UP$FUNC);
+    static final FunctionDescriptor disconnected_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle disconnected_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.disconnected_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*disconnected)(GDrive*);
+     * }
+     */
     public interface disconnected {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(disconnected fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(disconnected.class, fi, _GDriveIface.disconnected$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(disconnected fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.disconnected_UP$MH, fi, _GDriveIface.disconnected$FUNC, scope);
         }
-        static disconnected ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static disconnected ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GDriveIface.disconnected$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GDriveIface.disconnected_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -124,38 +199,62 @@ public class _GDriveIface {
     public static VarHandle disconnected$VH() {
         return _GDriveIface.disconnected$VH;
     }
-    public static MemoryAddress disconnected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.disconnected$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*disconnected)(GDrive*);
+     * }
+     */
+    public static MemorySegment disconnected$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.disconnected$VH.get(seg);
     }
-    public static void disconnected$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*disconnected)(GDrive*);
+     * }
+     */
+    public static void disconnected$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.disconnected$VH.set(seg, x);
     }
-    public static MemoryAddress disconnected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.disconnected$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment disconnected$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.disconnected$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void disconnected$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void disconnected$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.disconnected$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static disconnected disconnected (MemorySegment segment, MemorySession session) {
-        return disconnected.ofAddress(disconnected$get(segment), session);
+    public static disconnected disconnected(MemorySegment segment, SegmentScope scope) {
+        return disconnected.ofAddress(disconnected$get(segment), scope);
     }
     static final FunctionDescriptor eject_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_button$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.eject_button$FUNC
+    static final FunctionDescriptor eject_button_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_button_UP$MH = RuntimeHelper.upcallHandle(eject_button.class, "apply", _GDriveIface.eject_button_UP$FUNC);
+    static final FunctionDescriptor eject_button_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_button_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.eject_button_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*eject_button)(GDrive*);
+     * }
+     */
     public interface eject_button {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(eject_button fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_button.class, fi, _GDriveIface.eject_button$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(eject_button fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.eject_button_UP$MH, fi, _GDriveIface.eject_button$FUNC, scope);
         }
-        static eject_button ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static eject_button ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GDriveIface.eject_button$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GDriveIface.eject_button_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -167,38 +266,62 @@ public class _GDriveIface {
     public static VarHandle eject_button$VH() {
         return _GDriveIface.eject_button$VH;
     }
-    public static MemoryAddress eject_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_button$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*eject_button)(GDrive*);
+     * }
+     */
+    public static MemorySegment eject_button$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_button$VH.get(seg);
     }
-    public static void eject_button$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*eject_button)(GDrive*);
+     * }
+     */
+    public static void eject_button$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.eject_button$VH.set(seg, x);
     }
-    public static MemoryAddress eject_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_button$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_button$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_button$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_button$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_button$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.eject_button$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_button eject_button (MemorySegment segment, MemorySession session) {
-        return eject_button.ofAddress(eject_button$get(segment), session);
+    public static eject_button eject_button(MemorySegment segment, SegmentScope scope) {
+        return eject_button.ofAddress(eject_button$get(segment), scope);
     }
     static final FunctionDescriptor get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_name$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_name$FUNC
+    static final FunctionDescriptor get_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_name_UP$MH = RuntimeHelper.upcallHandle(get_name.class, "apply", _GDriveIface.get_name_UP$FUNC);
+    static final FunctionDescriptor get_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_name)(GDrive*);
+     * }
+     */
     public interface get_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_name.class, fi, _GDriveIface.get_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_name_UP$MH, fi, _GDriveIface.get_name$FUNC, scope);
         }
-        static get_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_name_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -210,38 +333,62 @@ public class _GDriveIface {
     public static VarHandle get_name$VH() {
         return _GDriveIface.get_name$VH;
     }
-    public static MemoryAddress get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_name)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_name$VH.get(seg);
     }
-    public static void get_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_name)(GDrive*);
+     * }
+     */
+    public static void get_name$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_name get_name (MemorySegment segment, MemorySession session) {
-        return get_name.ofAddress(get_name$get(segment), session);
+    public static get_name get_name(MemorySegment segment, SegmentScope scope) {
+        return get_name.ofAddress(get_name$get(segment), scope);
     }
     static final FunctionDescriptor get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_icon$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_icon$FUNC
+    static final FunctionDescriptor get_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_icon_UP$MH = RuntimeHelper.upcallHandle(get_icon.class, "apply", _GDriveIface.get_icon_UP$FUNC);
+    static final FunctionDescriptor get_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*get_icon)(GDrive*);
+     * }
+     */
     public interface get_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_icon.class, fi, _GDriveIface.get_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_icon_UP$MH, fi, _GDriveIface.get_icon$FUNC, scope);
         }
-        static get_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_icon_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -253,38 +400,62 @@ public class _GDriveIface {
     public static VarHandle get_icon$VH() {
         return _GDriveIface.get_icon$VH;
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_icon$VH.get(seg);
     }
-    public static void get_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GDrive*);
+     * }
+     */
+    public static void get_icon$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_icon$VH.set(seg, x);
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_icon get_icon (MemorySegment segment, MemorySession session) {
-        return get_icon.ofAddress(get_icon$get(segment), session);
+    public static get_icon get_icon(MemorySegment segment, SegmentScope scope) {
+        return get_icon.ofAddress(get_icon$get(segment), scope);
     }
     static final FunctionDescriptor has_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle has_volumes$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.has_volumes$FUNC
+    static final FunctionDescriptor has_volumes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle has_volumes_UP$MH = RuntimeHelper.upcallHandle(has_volumes.class, "apply", _GDriveIface.has_volumes_UP$FUNC);
+    static final FunctionDescriptor has_volumes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle has_volumes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.has_volumes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*has_volumes)(GDrive*);
+     * }
+     */
     public interface has_volumes {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(has_volumes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(has_volumes.class, fi, _GDriveIface.has_volumes$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(has_volumes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.has_volumes_UP$MH, fi, _GDriveIface.has_volumes$FUNC, scope);
         }
-        static has_volumes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static has_volumes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.has_volumes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.has_volumes_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -296,38 +467,62 @@ public class _GDriveIface {
     public static VarHandle has_volumes$VH() {
         return _GDriveIface.has_volumes$VH;
     }
-    public static MemoryAddress has_volumes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.has_volumes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*has_volumes)(GDrive*);
+     * }
+     */
+    public static MemorySegment has_volumes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.has_volumes$VH.get(seg);
     }
-    public static void has_volumes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*has_volumes)(GDrive*);
+     * }
+     */
+    public static void has_volumes$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.has_volumes$VH.set(seg, x);
     }
-    public static MemoryAddress has_volumes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.has_volumes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment has_volumes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.has_volumes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void has_volumes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void has_volumes$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.has_volumes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static has_volumes has_volumes (MemorySegment segment, MemorySession session) {
-        return has_volumes.ofAddress(has_volumes$get(segment), session);
+    public static has_volumes has_volumes(MemorySegment segment, SegmentScope scope) {
+        return has_volumes.ofAddress(has_volumes$get(segment), scope);
     }
     static final FunctionDescriptor get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_volumes$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_volumes$FUNC
+    static final FunctionDescriptor get_volumes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_volumes_UP$MH = RuntimeHelper.upcallHandle(get_volumes.class, "apply", _GDriveIface.get_volumes_UP$FUNC);
+    static final FunctionDescriptor get_volumes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_volumes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_volumes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*get_volumes)(GDrive*);
+     * }
+     */
     public interface get_volumes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_volumes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_volumes.class, fi, _GDriveIface.get_volumes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_volumes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_volumes_UP$MH, fi, _GDriveIface.get_volumes$FUNC, scope);
         }
-        static get_volumes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_volumes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_volumes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_volumes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -339,38 +534,62 @@ public class _GDriveIface {
     public static VarHandle get_volumes$VH() {
         return _GDriveIface.get_volumes$VH;
     }
-    public static MemoryAddress get_volumes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_volumes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*get_volumes)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_volumes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_volumes$VH.get(seg);
     }
-    public static void get_volumes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*get_volumes)(GDrive*);
+     * }
+     */
+    public static void get_volumes$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_volumes$VH.set(seg, x);
     }
-    public static MemoryAddress get_volumes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_volumes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_volumes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_volumes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_volumes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_volumes$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_volumes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_volumes get_volumes (MemorySegment segment, MemorySession session) {
-        return get_volumes.ofAddress(get_volumes$get(segment), session);
+    public static get_volumes get_volumes(MemorySegment segment, SegmentScope scope) {
+        return get_volumes.ofAddress(get_volumes$get(segment), scope);
     }
     static final FunctionDescriptor is_media_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_media_removable$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.is_media_removable$FUNC
+    static final FunctionDescriptor is_media_removable_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_media_removable_UP$MH = RuntimeHelper.upcallHandle(is_media_removable.class, "apply", _GDriveIface.is_media_removable_UP$FUNC);
+    static final FunctionDescriptor is_media_removable_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_media_removable_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.is_media_removable_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_media_removable)(GDrive*);
+     * }
+     */
     public interface is_media_removable {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_media_removable fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_media_removable.class, fi, _GDriveIface.is_media_removable$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_media_removable fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.is_media_removable_UP$MH, fi, _GDriveIface.is_media_removable$FUNC, scope);
         }
-        static is_media_removable ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_media_removable ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.is_media_removable$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.is_media_removable_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -382,38 +601,62 @@ public class _GDriveIface {
     public static VarHandle is_media_removable$VH() {
         return _GDriveIface.is_media_removable$VH;
     }
-    public static MemoryAddress is_media_removable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_media_removable$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_media_removable)(GDrive*);
+     * }
+     */
+    public static MemorySegment is_media_removable$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_media_removable$VH.get(seg);
     }
-    public static void is_media_removable$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_media_removable)(GDrive*);
+     * }
+     */
+    public static void is_media_removable$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.is_media_removable$VH.set(seg, x);
     }
-    public static MemoryAddress is_media_removable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_media_removable$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_media_removable$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_media_removable$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_media_removable$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_media_removable$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.is_media_removable$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_media_removable is_media_removable (MemorySegment segment, MemorySession session) {
-        return is_media_removable.ofAddress(is_media_removable$get(segment), session);
+    public static is_media_removable is_media_removable(MemorySegment segment, SegmentScope scope) {
+        return is_media_removable.ofAddress(is_media_removable$get(segment), scope);
     }
     static final FunctionDescriptor has_media$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle has_media$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.has_media$FUNC
+    static final FunctionDescriptor has_media_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle has_media_UP$MH = RuntimeHelper.upcallHandle(has_media.class, "apply", _GDriveIface.has_media_UP$FUNC);
+    static final FunctionDescriptor has_media_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle has_media_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.has_media_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*has_media)(GDrive*);
+     * }
+     */
     public interface has_media {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(has_media fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(has_media.class, fi, _GDriveIface.has_media$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(has_media fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.has_media_UP$MH, fi, _GDriveIface.has_media$FUNC, scope);
         }
-        static has_media ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static has_media ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.has_media$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.has_media_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -425,38 +668,62 @@ public class _GDriveIface {
     public static VarHandle has_media$VH() {
         return _GDriveIface.has_media$VH;
     }
-    public static MemoryAddress has_media$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.has_media$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*has_media)(GDrive*);
+     * }
+     */
+    public static MemorySegment has_media$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.has_media$VH.get(seg);
     }
-    public static void has_media$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*has_media)(GDrive*);
+     * }
+     */
+    public static void has_media$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.has_media$VH.set(seg, x);
     }
-    public static MemoryAddress has_media$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.has_media$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment has_media$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.has_media$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void has_media$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void has_media$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.has_media$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static has_media has_media (MemorySegment segment, MemorySession session) {
-        return has_media.ofAddress(has_media$get(segment), session);
+    public static has_media has_media(MemorySegment segment, SegmentScope scope) {
+        return has_media.ofAddress(has_media$get(segment), scope);
     }
     static final FunctionDescriptor is_media_check_automatic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_media_check_automatic$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.is_media_check_automatic$FUNC
+    static final FunctionDescriptor is_media_check_automatic_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_media_check_automatic_UP$MH = RuntimeHelper.upcallHandle(is_media_check_automatic.class, "apply", _GDriveIface.is_media_check_automatic_UP$FUNC);
+    static final FunctionDescriptor is_media_check_automatic_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_media_check_automatic_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.is_media_check_automatic_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_media_check_automatic)(GDrive*);
+     * }
+     */
     public interface is_media_check_automatic {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_media_check_automatic fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_media_check_automatic.class, fi, _GDriveIface.is_media_check_automatic$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_media_check_automatic fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.is_media_check_automatic_UP$MH, fi, _GDriveIface.is_media_check_automatic$FUNC, scope);
         }
-        static is_media_check_automatic ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_media_check_automatic ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.is_media_check_automatic$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.is_media_check_automatic_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -468,38 +735,62 @@ public class _GDriveIface {
     public static VarHandle is_media_check_automatic$VH() {
         return _GDriveIface.is_media_check_automatic$VH;
     }
-    public static MemoryAddress is_media_check_automatic$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_media_check_automatic$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_media_check_automatic)(GDrive*);
+     * }
+     */
+    public static MemorySegment is_media_check_automatic$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_media_check_automatic$VH.get(seg);
     }
-    public static void is_media_check_automatic$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_media_check_automatic)(GDrive*);
+     * }
+     */
+    public static void is_media_check_automatic$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.is_media_check_automatic$VH.set(seg, x);
     }
-    public static MemoryAddress is_media_check_automatic$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_media_check_automatic$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_media_check_automatic$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_media_check_automatic$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_media_check_automatic$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_media_check_automatic$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.is_media_check_automatic$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_media_check_automatic is_media_check_automatic (MemorySegment segment, MemorySession session) {
-        return is_media_check_automatic.ofAddress(is_media_check_automatic$get(segment), session);
+    public static is_media_check_automatic is_media_check_automatic(MemorySegment segment, SegmentScope scope) {
+        return is_media_check_automatic.ofAddress(is_media_check_automatic$get(segment), scope);
     }
     static final FunctionDescriptor can_eject$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_eject$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.can_eject$FUNC
+    static final FunctionDescriptor can_eject_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_eject_UP$MH = RuntimeHelper.upcallHandle(can_eject.class, "apply", _GDriveIface.can_eject_UP$FUNC);
+    static final FunctionDescriptor can_eject_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_eject_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.can_eject_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_eject)(GDrive*);
+     * }
+     */
     public interface can_eject {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_eject fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_eject.class, fi, _GDriveIface.can_eject$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_eject fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.can_eject_UP$MH, fi, _GDriveIface.can_eject$FUNC, scope);
         }
-        static can_eject ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_eject ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.can_eject$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.can_eject_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -511,38 +802,62 @@ public class _GDriveIface {
     public static VarHandle can_eject$VH() {
         return _GDriveIface.can_eject$VH;
     }
-    public static MemoryAddress can_eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_eject$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_eject)(GDrive*);
+     * }
+     */
+    public static MemorySegment can_eject$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_eject$VH.get(seg);
     }
-    public static void can_eject$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_eject)(GDrive*);
+     * }
+     */
+    public static void can_eject$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.can_eject$VH.set(seg, x);
     }
-    public static MemoryAddress can_eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_eject$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_eject$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_eject$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_eject$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_eject$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.can_eject$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_eject can_eject (MemorySegment segment, MemorySession session) {
-        return can_eject.ofAddress(can_eject$get(segment), session);
+    public static can_eject can_eject(MemorySegment segment, SegmentScope scope) {
+        return can_eject.ofAddress(can_eject$get(segment), scope);
     }
     static final FunctionDescriptor can_poll_for_media$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_poll_for_media$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.can_poll_for_media$FUNC
+    static final FunctionDescriptor can_poll_for_media_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_poll_for_media_UP$MH = RuntimeHelper.upcallHandle(can_poll_for_media.class, "apply", _GDriveIface.can_poll_for_media_UP$FUNC);
+    static final FunctionDescriptor can_poll_for_media_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_poll_for_media_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.can_poll_for_media_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_poll_for_media)(GDrive*);
+     * }
+     */
     public interface can_poll_for_media {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_poll_for_media fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_poll_for_media.class, fi, _GDriveIface.can_poll_for_media$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_poll_for_media fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.can_poll_for_media_UP$MH, fi, _GDriveIface.can_poll_for_media$FUNC, scope);
         }
-        static can_poll_for_media ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_poll_for_media ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.can_poll_for_media$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.can_poll_for_media_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -554,20 +869,32 @@ public class _GDriveIface {
     public static VarHandle can_poll_for_media$VH() {
         return _GDriveIface.can_poll_for_media$VH;
     }
-    public static MemoryAddress can_poll_for_media$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_poll_for_media$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_poll_for_media)(GDrive*);
+     * }
+     */
+    public static MemorySegment can_poll_for_media$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_poll_for_media$VH.get(seg);
     }
-    public static void can_poll_for_media$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_poll_for_media)(GDrive*);
+     * }
+     */
+    public static void can_poll_for_media$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.can_poll_for_media$VH.set(seg, x);
     }
-    public static MemoryAddress can_poll_for_media$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_poll_for_media$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_poll_for_media$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_poll_for_media$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_poll_for_media$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_poll_for_media$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.can_poll_for_media$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_poll_for_media can_poll_for_media (MemorySegment segment, MemorySession session) {
-        return can_poll_for_media.ofAddress(can_poll_for_media$get(segment), session);
+    public static can_poll_for_media can_poll_for_media(MemorySegment segment, SegmentScope scope) {
+        return can_poll_for_media.ofAddress(can_poll_for_media$get(segment), scope);
     }
     static final FunctionDescriptor eject$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -576,20 +903,40 @@ public class _GDriveIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.eject$FUNC
+    static final FunctionDescriptor eject_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_UP$MH = RuntimeHelper.upcallHandle(eject.class, "apply", _GDriveIface.eject_UP$FUNC);
+    static final FunctionDescriptor eject_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.eject_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*eject)(GDrive*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface eject {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(eject fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject.class, fi, _GDriveIface.eject$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(eject fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.eject_UP$MH, fi, _GDriveIface.eject$FUNC, scope);
         }
-        static eject ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static eject ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GDriveIface.eject$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GDriveIface.eject_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -601,40 +948,68 @@ public class _GDriveIface {
     public static VarHandle eject$VH() {
         return _GDriveIface.eject$VH;
     }
-    public static MemoryAddress eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*eject)(GDrive*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment eject$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject$VH.get(seg);
     }
-    public static void eject$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*eject)(GDrive*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void eject$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.eject$VH.set(seg, x);
     }
-    public static MemoryAddress eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.eject$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject eject (MemorySegment segment, MemorySession session) {
-        return eject.ofAddress(eject$get(segment), session);
+    public static eject eject(MemorySegment segment, SegmentScope scope) {
+        return eject.ofAddress(eject$get(segment), scope);
     }
     static final FunctionDescriptor eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_finish$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.eject_finish$FUNC
+    static final FunctionDescriptor eject_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_finish_UP$MH = RuntimeHelper.upcallHandle(eject_finish.class, "apply", _GDriveIface.eject_finish_UP$FUNC);
+    static final FunctionDescriptor eject_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.eject_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*eject_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
     public interface eject_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(eject_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_finish.class, fi, _GDriveIface.eject_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(eject_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.eject_finish_UP$MH, fi, _GDriveIface.eject_finish$FUNC, scope);
         }
-        static eject_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static eject_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDriveIface.eject_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDriveIface.eject_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -646,20 +1021,32 @@ public class _GDriveIface {
     public static VarHandle eject_finish$VH() {
         return _GDriveIface.eject_finish$VH;
     }
-    public static MemoryAddress eject_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*eject_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment eject_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_finish$VH.get(seg);
     }
-    public static void eject_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*eject_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void eject_finish$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.eject_finish$VH.set(seg, x);
     }
-    public static MemoryAddress eject_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.eject_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_finish eject_finish (MemorySegment segment, MemorySession session) {
-        return eject_finish.ofAddress(eject_finish$get(segment), session);
+    public static eject_finish eject_finish(MemorySegment segment, SegmentScope scope) {
+        return eject_finish.ofAddress(eject_finish$get(segment), scope);
     }
     static final FunctionDescriptor poll_for_media$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -667,20 +1054,38 @@ public class _GDriveIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle poll_for_media$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.poll_for_media$FUNC
+    static final FunctionDescriptor poll_for_media_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle poll_for_media_UP$MH = RuntimeHelper.upcallHandle(poll_for_media.class, "apply", _GDriveIface.poll_for_media_UP$FUNC);
+    static final FunctionDescriptor poll_for_media_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle poll_for_media_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.poll_for_media_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*poll_for_media)(GDrive*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface poll_for_media {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(poll_for_media fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(poll_for_media.class, fi, _GDriveIface.poll_for_media$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(poll_for_media fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.poll_for_media_UP$MH, fi, _GDriveIface.poll_for_media$FUNC, scope);
         }
-        static poll_for_media ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static poll_for_media ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GDriveIface.poll_for_media$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GDriveIface.poll_for_media_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -692,40 +1097,68 @@ public class _GDriveIface {
     public static VarHandle poll_for_media$VH() {
         return _GDriveIface.poll_for_media$VH;
     }
-    public static MemoryAddress poll_for_media$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.poll_for_media$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*poll_for_media)(GDrive*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment poll_for_media$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.poll_for_media$VH.get(seg);
     }
-    public static void poll_for_media$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*poll_for_media)(GDrive*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void poll_for_media$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.poll_for_media$VH.set(seg, x);
     }
-    public static MemoryAddress poll_for_media$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.poll_for_media$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment poll_for_media$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.poll_for_media$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void poll_for_media$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void poll_for_media$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.poll_for_media$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static poll_for_media poll_for_media (MemorySegment segment, MemorySession session) {
-        return poll_for_media.ofAddress(poll_for_media$get(segment), session);
+    public static poll_for_media poll_for_media(MemorySegment segment, SegmentScope scope) {
+        return poll_for_media.ofAddress(poll_for_media$get(segment), scope);
     }
     static final FunctionDescriptor poll_for_media_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle poll_for_media_finish$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.poll_for_media_finish$FUNC
+    static final FunctionDescriptor poll_for_media_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle poll_for_media_finish_UP$MH = RuntimeHelper.upcallHandle(poll_for_media_finish.class, "apply", _GDriveIface.poll_for_media_finish_UP$FUNC);
+    static final FunctionDescriptor poll_for_media_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle poll_for_media_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.poll_for_media_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*poll_for_media_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
     public interface poll_for_media_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(poll_for_media_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(poll_for_media_finish.class, fi, _GDriveIface.poll_for_media_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(poll_for_media_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.poll_for_media_finish_UP$MH, fi, _GDriveIface.poll_for_media_finish$FUNC, scope);
         }
-        static poll_for_media_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static poll_for_media_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDriveIface.poll_for_media_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDriveIface.poll_for_media_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -737,39 +1170,65 @@ public class _GDriveIface {
     public static VarHandle poll_for_media_finish$VH() {
         return _GDriveIface.poll_for_media_finish$VH;
     }
-    public static MemoryAddress poll_for_media_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.poll_for_media_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*poll_for_media_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment poll_for_media_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.poll_for_media_finish$VH.get(seg);
     }
-    public static void poll_for_media_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*poll_for_media_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void poll_for_media_finish$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.poll_for_media_finish$VH.set(seg, x);
     }
-    public static MemoryAddress poll_for_media_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.poll_for_media_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment poll_for_media_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.poll_for_media_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void poll_for_media_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void poll_for_media_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.poll_for_media_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static poll_for_media_finish poll_for_media_finish (MemorySegment segment, MemorySession session) {
-        return poll_for_media_finish.ofAddress(poll_for_media_finish$get(segment), session);
+    public static poll_for_media_finish poll_for_media_finish(MemorySegment segment, SegmentScope scope) {
+        return poll_for_media_finish.ofAddress(poll_for_media_finish$get(segment), scope);
     }
     static final FunctionDescriptor get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_identifier$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_identifier$FUNC
+    static final FunctionDescriptor get_identifier_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_identifier_UP$MH = RuntimeHelper.upcallHandle(get_identifier.class, "apply", _GDriveIface.get_identifier_UP$FUNC);
+    static final FunctionDescriptor get_identifier_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_identifier_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_identifier_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_identifier)(GDrive*,char*);
+     * }
+     */
     public interface get_identifier {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_identifier fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_identifier.class, fi, _GDriveIface.get_identifier$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_identifier fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_identifier_UP$MH, fi, _GDriveIface.get_identifier$FUNC, scope);
         }
-        static get_identifier ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_identifier ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_identifier$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_identifier_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -781,38 +1240,62 @@ public class _GDriveIface {
     public static VarHandle get_identifier$VH() {
         return _GDriveIface.get_identifier$VH;
     }
-    public static MemoryAddress get_identifier$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_identifier$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_identifier)(GDrive*,char*);
+     * }
+     */
+    public static MemorySegment get_identifier$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_identifier$VH.get(seg);
     }
-    public static void get_identifier$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_identifier)(GDrive*,char*);
+     * }
+     */
+    public static void get_identifier$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_identifier$VH.set(seg, x);
     }
-    public static MemoryAddress get_identifier$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_identifier$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_identifier$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_identifier$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_identifier$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_identifier$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_identifier$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_identifier get_identifier (MemorySegment segment, MemorySession session) {
-        return get_identifier.ofAddress(get_identifier$get(segment), session);
+    public static get_identifier get_identifier(MemorySegment segment, SegmentScope scope) {
+        return get_identifier.ofAddress(get_identifier$get(segment), scope);
     }
     static final FunctionDescriptor enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.enumerate_identifiers$FUNC
+    static final FunctionDescriptor enumerate_identifiers_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle enumerate_identifiers_UP$MH = RuntimeHelper.upcallHandle(enumerate_identifiers.class, "apply", _GDriveIface.enumerate_identifiers_UP$FUNC);
+    static final FunctionDescriptor enumerate_identifiers_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle enumerate_identifiers_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.enumerate_identifiers_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char** (*enumerate_identifiers)(GDrive*);
+     * }
+     */
     public interface enumerate_identifiers {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(enumerate_identifiers fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(enumerate_identifiers.class, fi, _GDriveIface.enumerate_identifiers$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(enumerate_identifiers fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.enumerate_identifiers_UP$MH, fi, _GDriveIface.enumerate_identifiers$FUNC, scope);
         }
-        static enumerate_identifiers ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static enumerate_identifiers ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.enumerate_identifiers$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.enumerate_identifiers_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -824,38 +1307,62 @@ public class _GDriveIface {
     public static VarHandle enumerate_identifiers$VH() {
         return _GDriveIface.enumerate_identifiers$VH;
     }
-    public static MemoryAddress enumerate_identifiers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.enumerate_identifiers$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char** (*enumerate_identifiers)(GDrive*);
+     * }
+     */
+    public static MemorySegment enumerate_identifiers$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.enumerate_identifiers$VH.get(seg);
     }
-    public static void enumerate_identifiers$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char** (*enumerate_identifiers)(GDrive*);
+     * }
+     */
+    public static void enumerate_identifiers$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.enumerate_identifiers$VH.set(seg, x);
     }
-    public static MemoryAddress enumerate_identifiers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.enumerate_identifiers$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment enumerate_identifiers$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.enumerate_identifiers$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void enumerate_identifiers$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void enumerate_identifiers$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.enumerate_identifiers$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static enumerate_identifiers enumerate_identifiers (MemorySegment segment, MemorySession session) {
-        return enumerate_identifiers.ofAddress(enumerate_identifiers$get(segment), session);
+    public static enumerate_identifiers enumerate_identifiers(MemorySegment segment, SegmentScope scope) {
+        return enumerate_identifiers.ofAddress(enumerate_identifiers$get(segment), scope);
     }
     static final FunctionDescriptor get_start_stop_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_start_stop_type$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_start_stop_type$FUNC
+    static final FunctionDescriptor get_start_stop_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_start_stop_type_UP$MH = RuntimeHelper.upcallHandle(get_start_stop_type.class, "apply", _GDriveIface.get_start_stop_type_UP$FUNC);
+    static final FunctionDescriptor get_start_stop_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_start_stop_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_start_stop_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GDriveStartStopType (*get_start_stop_type)(GDrive*);
+     * }
+     */
     public interface get_start_stop_type {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_start_stop_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_start_stop_type.class, fi, _GDriveIface.get_start_stop_type$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_start_stop_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_start_stop_type_UP$MH, fi, _GDriveIface.get_start_stop_type$FUNC, scope);
         }
-        static get_start_stop_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_start_stop_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.get_start_stop_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.get_start_stop_type_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -867,38 +1374,62 @@ public class _GDriveIface {
     public static VarHandle get_start_stop_type$VH() {
         return _GDriveIface.get_start_stop_type$VH;
     }
-    public static MemoryAddress get_start_stop_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_start_stop_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDriveStartStopType (*get_start_stop_type)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_start_stop_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_start_stop_type$VH.get(seg);
     }
-    public static void get_start_stop_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDriveStartStopType (*get_start_stop_type)(GDrive*);
+     * }
+     */
+    public static void get_start_stop_type$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_start_stop_type$VH.set(seg, x);
     }
-    public static MemoryAddress get_start_stop_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_start_stop_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_start_stop_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_start_stop_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_start_stop_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_start_stop_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_start_stop_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_start_stop_type get_start_stop_type (MemorySegment segment, MemorySession session) {
-        return get_start_stop_type.ofAddress(get_start_stop_type$get(segment), session);
+    public static get_start_stop_type get_start_stop_type(MemorySegment segment, SegmentScope scope) {
+        return get_start_stop_type.ofAddress(get_start_stop_type$get(segment), scope);
     }
     static final FunctionDescriptor can_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_start$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.can_start$FUNC
+    static final FunctionDescriptor can_start_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_start_UP$MH = RuntimeHelper.upcallHandle(can_start.class, "apply", _GDriveIface.can_start_UP$FUNC);
+    static final FunctionDescriptor can_start_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_start_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.can_start_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_start)(GDrive*);
+     * }
+     */
     public interface can_start {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_start fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_start.class, fi, _GDriveIface.can_start$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_start fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.can_start_UP$MH, fi, _GDriveIface.can_start$FUNC, scope);
         }
-        static can_start ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_start ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.can_start$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.can_start_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -910,38 +1441,62 @@ public class _GDriveIface {
     public static VarHandle can_start$VH() {
         return _GDriveIface.can_start$VH;
     }
-    public static MemoryAddress can_start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_start$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_start)(GDrive*);
+     * }
+     */
+    public static MemorySegment can_start$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_start$VH.get(seg);
     }
-    public static void can_start$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_start)(GDrive*);
+     * }
+     */
+    public static void can_start$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.can_start$VH.set(seg, x);
     }
-    public static MemoryAddress can_start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_start$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_start$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_start$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_start$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_start$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.can_start$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_start can_start (MemorySegment segment, MemorySession session) {
-        return can_start.ofAddress(can_start$get(segment), session);
+    public static can_start can_start(MemorySegment segment, SegmentScope scope) {
+        return can_start.ofAddress(can_start$get(segment), scope);
     }
     static final FunctionDescriptor can_start_degraded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_start_degraded$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.can_start_degraded$FUNC
+    static final FunctionDescriptor can_start_degraded_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_start_degraded_UP$MH = RuntimeHelper.upcallHandle(can_start_degraded.class, "apply", _GDriveIface.can_start_degraded_UP$FUNC);
+    static final FunctionDescriptor can_start_degraded_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_start_degraded_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.can_start_degraded_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_start_degraded)(GDrive*);
+     * }
+     */
     public interface can_start_degraded {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_start_degraded fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_start_degraded.class, fi, _GDriveIface.can_start_degraded$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_start_degraded fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.can_start_degraded_UP$MH, fi, _GDriveIface.can_start_degraded$FUNC, scope);
         }
-        static can_start_degraded ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_start_degraded ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.can_start_degraded$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.can_start_degraded_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -953,20 +1508,32 @@ public class _GDriveIface {
     public static VarHandle can_start_degraded$VH() {
         return _GDriveIface.can_start_degraded$VH;
     }
-    public static MemoryAddress can_start_degraded$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_start_degraded$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_start_degraded)(GDrive*);
+     * }
+     */
+    public static MemorySegment can_start_degraded$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_start_degraded$VH.get(seg);
     }
-    public static void can_start_degraded$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_start_degraded)(GDrive*);
+     * }
+     */
+    public static void can_start_degraded$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.can_start_degraded$VH.set(seg, x);
     }
-    public static MemoryAddress can_start_degraded$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_start_degraded$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_start_degraded$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_start_degraded$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_start_degraded$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_start_degraded$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.can_start_degraded$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_start_degraded can_start_degraded (MemorySegment segment, MemorySession session) {
-        return can_start_degraded.ofAddress(can_start_degraded$get(segment), session);
+    public static can_start_degraded can_start_degraded(MemorySegment segment, SegmentScope scope) {
+        return can_start_degraded.ofAddress(can_start_degraded$get(segment), scope);
     }
     static final FunctionDescriptor start$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -976,20 +1543,42 @@ public class _GDriveIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle start$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.start$FUNC
+    static final FunctionDescriptor start_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle start_UP$MH = RuntimeHelper.upcallHandle(start.class, "apply", _GDriveIface.start_UP$FUNC);
+    static final FunctionDescriptor start_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle start_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.start_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*start)(GDrive*,GDriveStartFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface start {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(start fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(start.class, fi, _GDriveIface.start$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(start fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.start_UP$MH, fi, _GDriveIface.start$FUNC, scope);
         }
-        static start ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static start ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GDriveIface.start$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GDriveIface.start_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1001,40 +1590,68 @@ public class _GDriveIface {
     public static VarHandle start$VH() {
         return _GDriveIface.start$VH;
     }
-    public static MemoryAddress start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.start$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*start)(GDrive*,GDriveStartFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment start$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.start$VH.get(seg);
     }
-    public static void start$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*start)(GDrive*,GDriveStartFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void start$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.start$VH.set(seg, x);
     }
-    public static MemoryAddress start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.start$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment start$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.start$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void start$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void start$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.start$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static start start (MemorySegment segment, MemorySession session) {
-        return start.ofAddress(start$get(segment), session);
+    public static start start(MemorySegment segment, SegmentScope scope) {
+        return start.ofAddress(start$get(segment), scope);
     }
     static final FunctionDescriptor start_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle start_finish$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.start_finish$FUNC
+    static final FunctionDescriptor start_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle start_finish_UP$MH = RuntimeHelper.upcallHandle(start_finish.class, "apply", _GDriveIface.start_finish_UP$FUNC);
+    static final FunctionDescriptor start_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle start_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.start_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*start_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
     public interface start_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(start_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(start_finish.class, fi, _GDriveIface.start_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(start_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.start_finish_UP$MH, fi, _GDriveIface.start_finish$FUNC, scope);
         }
-        static start_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static start_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDriveIface.start_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDriveIface.start_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1046,38 +1663,62 @@ public class _GDriveIface {
     public static VarHandle start_finish$VH() {
         return _GDriveIface.start_finish$VH;
     }
-    public static MemoryAddress start_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.start_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*start_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment start_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.start_finish$VH.get(seg);
     }
-    public static void start_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*start_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void start_finish$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.start_finish$VH.set(seg, x);
     }
-    public static MemoryAddress start_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.start_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment start_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.start_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void start_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void start_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.start_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static start_finish start_finish (MemorySegment segment, MemorySession session) {
-        return start_finish.ofAddress(start_finish$get(segment), session);
+    public static start_finish start_finish(MemorySegment segment, SegmentScope scope) {
+        return start_finish.ofAddress(start_finish$get(segment), scope);
     }
     static final FunctionDescriptor can_stop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_stop$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.can_stop$FUNC
+    static final FunctionDescriptor can_stop_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_stop_UP$MH = RuntimeHelper.upcallHandle(can_stop.class, "apply", _GDriveIface.can_stop_UP$FUNC);
+    static final FunctionDescriptor can_stop_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_stop_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.can_stop_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_stop)(GDrive*);
+     * }
+     */
     public interface can_stop {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_stop fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_stop.class, fi, _GDriveIface.can_stop$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_stop fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.can_stop_UP$MH, fi, _GDriveIface.can_stop$FUNC, scope);
         }
-        static can_stop ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_stop ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.can_stop$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.can_stop_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1089,20 +1730,32 @@ public class _GDriveIface {
     public static VarHandle can_stop$VH() {
         return _GDriveIface.can_stop$VH;
     }
-    public static MemoryAddress can_stop$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_stop$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_stop)(GDrive*);
+     * }
+     */
+    public static MemorySegment can_stop$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_stop$VH.get(seg);
     }
-    public static void can_stop$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_stop)(GDrive*);
+     * }
+     */
+    public static void can_stop$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.can_stop$VH.set(seg, x);
     }
-    public static MemoryAddress can_stop$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.can_stop$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_stop$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.can_stop$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_stop$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_stop$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.can_stop$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_stop can_stop (MemorySegment segment, MemorySession session) {
-        return can_stop.ofAddress(can_stop$get(segment), session);
+    public static can_stop can_stop(MemorySegment segment, SegmentScope scope) {
+        return can_stop.ofAddress(can_stop$get(segment), scope);
     }
     static final FunctionDescriptor stop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1112,20 +1765,42 @@ public class _GDriveIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle stop$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.stop$FUNC
+    static final FunctionDescriptor stop_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle stop_UP$MH = RuntimeHelper.upcallHandle(stop.class, "apply", _GDriveIface.stop_UP$FUNC);
+    static final FunctionDescriptor stop_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle stop_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.stop_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*stop)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface stop {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(stop fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(stop.class, fi, _GDriveIface.stop$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(stop fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.stop_UP$MH, fi, _GDriveIface.stop$FUNC, scope);
         }
-        static stop ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static stop ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GDriveIface.stop$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GDriveIface.stop_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1137,40 +1812,68 @@ public class _GDriveIface {
     public static VarHandle stop$VH() {
         return _GDriveIface.stop$VH;
     }
-    public static MemoryAddress stop$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*stop)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment stop$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop$VH.get(seg);
     }
-    public static void stop$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*stop)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void stop$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.stop$VH.set(seg, x);
     }
-    public static MemoryAddress stop$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stop$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stop$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stop$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.stop$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static stop stop (MemorySegment segment, MemorySession session) {
-        return stop.ofAddress(stop$get(segment), session);
+    public static stop stop(MemorySegment segment, SegmentScope scope) {
+        return stop.ofAddress(stop$get(segment), scope);
     }
     static final FunctionDescriptor stop_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle stop_finish$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.stop_finish$FUNC
+    static final FunctionDescriptor stop_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle stop_finish_UP$MH = RuntimeHelper.upcallHandle(stop_finish.class, "apply", _GDriveIface.stop_finish_UP$FUNC);
+    static final FunctionDescriptor stop_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle stop_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.stop_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*stop_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
     public interface stop_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(stop_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(stop_finish.class, fi, _GDriveIface.stop_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(stop_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.stop_finish_UP$MH, fi, _GDriveIface.stop_finish$FUNC, scope);
         }
-        static stop_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static stop_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDriveIface.stop_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDriveIface.stop_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1182,38 +1885,62 @@ public class _GDriveIface {
     public static VarHandle stop_finish$VH() {
         return _GDriveIface.stop_finish$VH;
     }
-    public static MemoryAddress stop_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*stop_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment stop_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop_finish$VH.get(seg);
     }
-    public static void stop_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*stop_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void stop_finish$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.stop_finish$VH.set(seg, x);
     }
-    public static MemoryAddress stop_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stop_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stop_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stop_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.stop_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static stop_finish stop_finish (MemorySegment segment, MemorySession session) {
-        return stop_finish.ofAddress(stop_finish$get(segment), session);
+    public static stop_finish stop_finish(MemorySegment segment, SegmentScope scope) {
+        return stop_finish.ofAddress(stop_finish$get(segment), scope);
     }
     static final FunctionDescriptor stop_button$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle stop_button$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.stop_button$FUNC
+    static final FunctionDescriptor stop_button_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle stop_button_UP$MH = RuntimeHelper.upcallHandle(stop_button.class, "apply", _GDriveIface.stop_button_UP$FUNC);
+    static final FunctionDescriptor stop_button_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle stop_button_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.stop_button_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*stop_button)(GDrive*);
+     * }
+     */
     public interface stop_button {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(stop_button fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(stop_button.class, fi, _GDriveIface.stop_button$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(stop_button fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.stop_button_UP$MH, fi, _GDriveIface.stop_button$FUNC, scope);
         }
-        static stop_button ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static stop_button ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GDriveIface.stop_button$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GDriveIface.stop_button_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1225,20 +1952,32 @@ public class _GDriveIface {
     public static VarHandle stop_button$VH() {
         return _GDriveIface.stop_button$VH;
     }
-    public static MemoryAddress stop_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop_button$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*stop_button)(GDrive*);
+     * }
+     */
+    public static MemorySegment stop_button$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop_button$VH.get(seg);
     }
-    public static void stop_button$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*stop_button)(GDrive*);
+     * }
+     */
+    public static void stop_button$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.stop_button$VH.set(seg, x);
     }
-    public static MemoryAddress stop_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.stop_button$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stop_button$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.stop_button$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stop_button$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stop_button$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.stop_button$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static stop_button stop_button (MemorySegment segment, MemorySession session) {
-        return stop_button.ofAddress(stop_button$get(segment), session);
+    public static stop_button stop_button(MemorySegment segment, SegmentScope scope) {
+        return stop_button.ofAddress(stop_button$get(segment), scope);
     }
     static final FunctionDescriptor eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -1248,20 +1987,42 @@ public class _GDriveIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.eject_with_operation$FUNC
+    static final FunctionDescriptor eject_with_operation_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_with_operation_UP$MH = RuntimeHelper.upcallHandle(eject_with_operation.class, "apply", _GDriveIface.eject_with_operation_UP$FUNC);
+    static final FunctionDescriptor eject_with_operation_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_with_operation_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.eject_with_operation_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*eject_with_operation)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface eject_with_operation {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(eject_with_operation fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_with_operation.class, fi, _GDriveIface.eject_with_operation$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(eject_with_operation fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.eject_with_operation_UP$MH, fi, _GDriveIface.eject_with_operation$FUNC, scope);
         }
-        static eject_with_operation ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static eject_with_operation ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GDriveIface.eject_with_operation$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GDriveIface.eject_with_operation_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1273,40 +2034,68 @@ public class _GDriveIface {
     public static VarHandle eject_with_operation$VH() {
         return _GDriveIface.eject_with_operation$VH;
     }
-    public static MemoryAddress eject_with_operation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_with_operation$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*eject_with_operation)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment eject_with_operation$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_with_operation$VH.get(seg);
     }
-    public static void eject_with_operation$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*eject_with_operation)(GDrive*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void eject_with_operation$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.eject_with_operation$VH.set(seg, x);
     }
-    public static MemoryAddress eject_with_operation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_with_operation$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_with_operation$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_with_operation$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_with_operation$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_with_operation$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.eject_with_operation$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_with_operation eject_with_operation (MemorySegment segment, MemorySession session) {
-        return eject_with_operation.ofAddress(eject_with_operation$get(segment), session);
+    public static eject_with_operation eject_with_operation(MemorySegment segment, SegmentScope scope) {
+        return eject_with_operation.ofAddress(eject_with_operation$get(segment), scope);
     }
     static final FunctionDescriptor eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.eject_with_operation_finish$FUNC
+    static final FunctionDescriptor eject_with_operation_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_with_operation_finish_UP$MH = RuntimeHelper.upcallHandle(eject_with_operation_finish.class, "apply", _GDriveIface.eject_with_operation_finish_UP$FUNC);
+    static final FunctionDescriptor eject_with_operation_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_with_operation_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.eject_with_operation_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*eject_with_operation_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
     public interface eject_with_operation_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(eject_with_operation_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_with_operation_finish.class, fi, _GDriveIface.eject_with_operation_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(eject_with_operation_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.eject_with_operation_finish_UP$MH, fi, _GDriveIface.eject_with_operation_finish$FUNC, scope);
         }
-        static eject_with_operation_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static eject_with_operation_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GDriveIface.eject_with_operation_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GDriveIface.eject_with_operation_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1318,38 +2107,62 @@ public class _GDriveIface {
     public static VarHandle eject_with_operation_finish$VH() {
         return _GDriveIface.eject_with_operation_finish$VH;
     }
-    public static MemoryAddress eject_with_operation_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_with_operation_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*eject_with_operation_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_with_operation_finish$VH.get(seg);
     }
-    public static void eject_with_operation_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*eject_with_operation_finish)(GDrive*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void eject_with_operation_finish$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.eject_with_operation_finish$VH.set(seg, x);
     }
-    public static MemoryAddress eject_with_operation_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.eject_with_operation_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.eject_with_operation_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.eject_with_operation_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_with_operation_finish eject_with_operation_finish (MemorySegment segment, MemorySession session) {
-        return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), session);
+    public static eject_with_operation_finish eject_with_operation_finish(MemorySegment segment, SegmentScope scope) {
+        return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), scope);
     }
     static final FunctionDescriptor get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_sort_key$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_sort_key$FUNC
+    static final FunctionDescriptor get_sort_key_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_sort_key_UP$MH = RuntimeHelper.upcallHandle(get_sort_key.class, "apply", _GDriveIface.get_sort_key_UP$FUNC);
+    static final FunctionDescriptor get_sort_key_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_sort_key_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_sort_key_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_sort_key)(GDrive*);
+     * }
+     */
     public interface get_sort_key {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_sort_key fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_sort_key.class, fi, _GDriveIface.get_sort_key$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_sort_key fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_sort_key_UP$MH, fi, _GDriveIface.get_sort_key$FUNC, scope);
         }
-        static get_sort_key ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_sort_key ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_sort_key$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_sort_key_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1361,38 +2174,62 @@ public class _GDriveIface {
     public static VarHandle get_sort_key$VH() {
         return _GDriveIface.get_sort_key$VH;
     }
-    public static MemoryAddress get_sort_key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_sort_key$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_sort_key)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_sort_key$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_sort_key$VH.get(seg);
     }
-    public static void get_sort_key$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_sort_key)(GDrive*);
+     * }
+     */
+    public static void get_sort_key$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_sort_key$VH.set(seg, x);
     }
-    public static MemoryAddress get_sort_key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_sort_key$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_sort_key$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_sort_key$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_sort_key$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_sort_key$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_sort_key$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_sort_key get_sort_key (MemorySegment segment, MemorySession session) {
-        return get_sort_key.ofAddress(get_sort_key$get(segment), session);
+    public static get_sort_key get_sort_key(MemorySegment segment, SegmentScope scope) {
+        return get_sort_key.ofAddress(get_sort_key$get(segment), scope);
     }
     static final FunctionDescriptor get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.get_symbolic_icon$FUNC
+    static final FunctionDescriptor get_symbolic_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_symbolic_icon_UP$MH = RuntimeHelper.upcallHandle(get_symbolic_icon.class, "apply", _GDriveIface.get_symbolic_icon_UP$FUNC);
+    static final FunctionDescriptor get_symbolic_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_symbolic_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.get_symbolic_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*get_symbolic_icon)(GDrive*);
+     * }
+     */
     public interface get_symbolic_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_symbolic_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_symbolic_icon.class, fi, _GDriveIface.get_symbolic_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_symbolic_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.get_symbolic_icon_UP$MH, fi, _GDriveIface.get_symbolic_icon$FUNC, scope);
         }
-        static get_symbolic_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_symbolic_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GDriveIface.get_symbolic_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GDriveIface.get_symbolic_icon_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1404,38 +2241,62 @@ public class _GDriveIface {
     public static VarHandle get_symbolic_icon$VH() {
         return _GDriveIface.get_symbolic_icon$VH;
     }
-    public static MemoryAddress get_symbolic_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_symbolic_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*get_symbolic_icon)(GDrive*);
+     * }
+     */
+    public static MemorySegment get_symbolic_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_symbolic_icon$VH.get(seg);
     }
-    public static void get_symbolic_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*get_symbolic_icon)(GDrive*);
+     * }
+     */
+    public static void get_symbolic_icon$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.get_symbolic_icon$VH.set(seg, x);
     }
-    public static MemoryAddress get_symbolic_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.get_symbolic_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_symbolic_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.get_symbolic_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_symbolic_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_symbolic_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.get_symbolic_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_symbolic_icon get_symbolic_icon (MemorySegment segment, MemorySession session) {
-        return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), session);
+    public static get_symbolic_icon get_symbolic_icon(MemorySegment segment, SegmentScope scope) {
+        return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), scope);
     }
     static final FunctionDescriptor is_removable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_removable$MH = RuntimeHelper.downcallHandle(
-        _GDriveIface.is_removable$FUNC
+    static final FunctionDescriptor is_removable_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_removable_UP$MH = RuntimeHelper.upcallHandle(is_removable.class, "apply", _GDriveIface.is_removable_UP$FUNC);
+    static final FunctionDescriptor is_removable_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_removable_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDriveIface.is_removable_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_removable)(GDrive*);
+     * }
+     */
     public interface is_removable {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_removable fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_removable.class, fi, _GDriveIface.is_removable$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_removable fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDriveIface.is_removable_UP$MH, fi, _GDriveIface.is_removable$FUNC, scope);
         }
-        static is_removable ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_removable ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GDriveIface.is_removable$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GDriveIface.is_removable_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1447,27 +2308,39 @@ public class _GDriveIface {
     public static VarHandle is_removable$VH() {
         return _GDriveIface.is_removable$VH;
     }
-    public static MemoryAddress is_removable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_removable$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_removable)(GDrive*);
+     * }
+     */
+    public static MemorySegment is_removable$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_removable$VH.get(seg);
     }
-    public static void is_removable$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_removable)(GDrive*);
+     * }
+     */
+    public static void is_removable$set(MemorySegment seg, MemorySegment x) {
         _GDriveIface.is_removable$VH.set(seg, x);
     }
-    public static MemoryAddress is_removable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDriveIface.is_removable$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_removable$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDriveIface.is_removable$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_removable$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_removable$set(MemorySegment seg, long index, MemorySegment x) {
         _GDriveIface.is_removable$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_removable is_removable (MemorySegment segment, MemorySession session) {
-        return is_removable.ofAddress(is_removable$get(segment), session);
+    public static is_removable is_removable(MemorySegment segment, SegmentScope scope) {
+        return is_removable.ofAddress(is_removable$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

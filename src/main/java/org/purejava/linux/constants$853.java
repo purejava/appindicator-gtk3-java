@@ -7,49 +7,108 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$853 {
+final class constants$853 {
 
-    static final FunctionDescriptor g_test_dbus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_test_dbus_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_type",
-        constants$853.g_test_dbus_get_type$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_new$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_new",
-        constants$853.g_test_dbus_new$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$853() {}
+    static final FunctionDescriptor hb_draw_line_to_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_flags",
-        constants$853.g_test_dbus_get_flags$FUNC
+    static final MethodHandle hb_draw_line_to_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$853.hb_draw_line_to_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor g_test_dbus_get_bus_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_draw_quadratic_to_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_get_bus_address$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_bus_address",
-        constants$853.g_test_dbus_get_bus_address$FUNC
+    static final FunctionDescriptor hb_draw_quadratic_to_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_test_dbus_add_service_dir$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle hb_draw_quadratic_to_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_draw_quadratic_to_func_t.class, "apply", constants$853.hb_draw_quadratic_to_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_draw_quadratic_to_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_quadratic_to_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$853.hb_draw_quadratic_to_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_draw_cubic_to_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_draw_cubic_to_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_cubic_to_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_draw_cubic_to_func_t.class, "apply", constants$853.hb_draw_cubic_to_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_draw_cubic_to_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_draw_cubic_to_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$853.hb_draw_cubic_to_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_draw_close_path_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_add_service_dir$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_add_service_dir",
-        constants$853.g_test_dbus_add_service_dir$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_up$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_draw_close_path_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_dbus_up$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_up",
-        constants$853.g_test_dbus_up$FUNC
-    );
+    static final MethodHandle hb_draw_close_path_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_draw_close_path_func_t.class, "apply", constants$853.hb_draw_close_path_func_t_UP$FUNC);
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusAnnotationInfo extends _GDBusAnnotationInfo {
+/**
+ * {@snippet :
+ * typedef struct _GDBusAnnotationInfo GDBusAnnotationInfo;
+ * }
+ */
+public final class GDBusAnnotationInfo extends _GDBusAnnotationInfo {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusAnnotationInfo() {}
 }
 
 

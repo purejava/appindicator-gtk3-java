@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1680 {
+final class constants$1680 {
 
-    static final FunctionDescriptor gtk_app_chooser_button_get_show_dialog_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1680() {}
+    static final FunctionDescriptor gtk_list_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_get_show_dialog_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_show_dialog_item",
-        constants$1680.gtk_app_chooser_button_get_show_dialog_item$FUNC
+    static final MethodHandle gtk_list_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_get_activate_on_single_click",
+        constants$1680.gtk_list_box_get_activate_on_single_click$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_button_set_heading$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_drag_unhighlight_row$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_box_drag_unhighlight_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_drag_unhighlight_row",
+        constants$1680.gtk_list_box_drag_unhighlight_row$FUNC
+    );
+    static final FunctionDescriptor gtk_list_box_drag_highlight_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_set_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_heading",
-        constants$1680.gtk_app_chooser_button_set_heading$FUNC
+    static final MethodHandle gtk_list_box_drag_highlight_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_drag_highlight_row",
+        constants$1680.gtk_list_box_drag_highlight_row$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_button_get_heading$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_list_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_list_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_new",
+        constants$1680.gtk_list_box_new$FUNC
     );
-    static final MethodHandle gtk_app_chooser_button_get_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_heading",
-        constants$1680.gtk_app_chooser_button_get_heading$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_set_show_default_item$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_box_bind_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_set_show_default_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_show_default_item",
-        constants$1680.gtk_app_chooser_button_set_show_default_item$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_get_show_default_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_button_get_show_default_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_show_default_item",
-        constants$1680.gtk_app_chooser_button_get_show_default_item$FUNC
+    static final MethodHandle gtk_list_box_bind_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_box_bind_model",
+        constants$1680.gtk_list_box_bind_model$FUNC
     );
-    static final FunctionDescriptor gtk_shortcuts_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcuts_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcuts_window_get_type",
-        constants$1680.gtk_shortcuts_window_get_type$FUNC
+    static final FunctionDescriptor gtk_lock_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_lock_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_lock_button_get_type",
+        constants$1680.gtk_lock_button_get_type$FUNC
     );
 }
 

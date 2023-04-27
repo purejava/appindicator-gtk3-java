@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1683 {
+final class constants$1683 {
 
-    static final FunctionDescriptor gtk_frame_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_frame_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_get_type",
-        constants$1683.gtk_frame_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_frame_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_frame_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_new",
-        constants$1683.gtk_frame_new$FUNC
-    );
-    static final FunctionDescriptor gtk_frame_set_label$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1683() {}
+    static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_frame_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_set_label",
-        constants$1683.gtk_frame_set_label$FUNC
+    static final MethodHandle gtk_init$MH = RuntimeHelper.downcallHandle(
+        "gtk_init",
+        constants$1683.gtk_init$FUNC
     );
-    static final FunctionDescriptor gtk_frame_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_frame_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_get_label",
-        constants$1683.gtk_frame_get_label$FUNC
-    );
-    static final FunctionDescriptor gtk_frame_set_label_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_frame_set_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_set_label_widget",
-        constants$1683.gtk_frame_set_label_widget$FUNC
+    static final MethodHandle gtk_init_check$MH = RuntimeHelper.downcallHandle(
+        "gtk_init_check",
+        constants$1683.gtk_init_check$FUNC
     );
-    static final FunctionDescriptor gtk_frame_get_label_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_init_with_args$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_frame_get_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_frame_get_label_widget",
-        constants$1683.gtk_frame_get_label_widget$FUNC
+    static final MethodHandle gtk_init_with_args$MH = RuntimeHelper.downcallHandle(
+        "gtk_init_with_args",
+        constants$1683.gtk_init_with_args$FUNC
+    );
+    static final FunctionDescriptor gtk_get_option_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_get_option_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_option_group",
+        constants$1683.gtk_get_option_group$FUNC
+    );
+    static final FunctionDescriptor gtk_disable_setlocale$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_disable_setlocale$MH = RuntimeHelper.downcallHandle(
+        "gtk_disable_setlocale",
+        constants$1683.gtk_disable_setlocale$FUNC
+    );
+    static final FunctionDescriptor gtk_get_default_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_get_default_language$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_default_language",
+        constants$1683.gtk_get_default_language$FUNC
     );
 }
 

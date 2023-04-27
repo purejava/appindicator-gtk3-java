@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1600 {
+final class constants$1600 {
 
-    static final FunctionDescriptor gtk_text_iter_backward_visible_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1600() {}
+    static final FunctionDescriptor gtk_gesture_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_get_device$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_device",
+        constants$1600.gtk_gesture_get_device$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_set_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_visible_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_lines",
-        constants$1600.gtk_text_iter_backward_visible_lines$FUNC
+    static final MethodHandle gtk_gesture_set_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_set_state",
+        constants$1600.gtk_gesture_set_state$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_word_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_sequence_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_visible_word_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_word_end",
-        constants$1600.gtk_text_iter_forward_visible_word_end$FUNC
+    static final MethodHandle gtk_gesture_get_sequence_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_sequence_state",
+        constants$1600.gtk_gesture_get_sequence_state$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_visible_word_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_visible_word_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_word_start",
-        constants$1600.gtk_text_iter_backward_visible_word_start$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_word_ends$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_set_sequence_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_visible_word_ends$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_word_ends",
-        constants$1600.gtk_text_iter_forward_visible_word_ends$FUNC
+    static final MethodHandle gtk_gesture_set_sequence_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_set_sequence_state",
+        constants$1600.gtk_gesture_set_sequence_state$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_visible_word_starts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_visible_word_starts$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_word_starts",
-        constants$1600.gtk_text_iter_backward_visible_word_starts$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_sentence_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_sequences$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_sentence_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_sentence_end",
-        constants$1600.gtk_text_iter_forward_sentence_end$FUNC
+    static final MethodHandle gtk_gesture_get_sequences$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_sequences",
+        constants$1600.gtk_gesture_get_sequences$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_get_last_updated_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_get_last_updated_sequence$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_last_updated_sequence",
+        constants$1600.gtk_gesture_get_last_updated_sequence$FUNC
     );
 }
 

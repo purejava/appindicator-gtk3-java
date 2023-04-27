@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkDevicePadInterface {
+/**
+ * {@snippet :
+ * typedef struct _GdkDevicePadInterface GdkDevicePadInterface;
+ * }
+ */
+public final class GdkDevicePadInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkDevicePadInterface() {}
 }
 
 

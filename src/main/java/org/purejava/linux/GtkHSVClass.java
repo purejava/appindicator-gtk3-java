@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHSVClass extends _GtkHSVClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkHSVClass GtkHSVClass;
+ * }
+ */
+public final class GtkHSVClass extends _GtkHSVClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHSVClass() {}
 }
 
 

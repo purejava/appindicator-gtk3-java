@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1409 {
+final class constants$1409 {
 
-    static final FunctionDescriptor atk_relation_set_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_relation_set_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_get_type",
-        constants$1409.atk_relation_set_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1409() {}
+    static final FunctionDescriptor gtk_text_iter_backward_word_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor atk_relation_set_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_relation_set_new$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_new",
-        constants$1409.atk_relation_set_new$FUNC
+    static final MethodHandle gtk_text_iter_backward_word_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_word_start",
+        constants$1409.gtk_text_iter_backward_word_start$FUNC
     );
-    static final FunctionDescriptor atk_relation_set_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_word_ends$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_relation_set_contains$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_contains",
-        constants$1409.atk_relation_set_contains$FUNC
+    static final MethodHandle gtk_text_iter_forward_word_ends$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_word_ends",
+        constants$1409.gtk_text_iter_forward_word_ends$FUNC
     );
-    static final FunctionDescriptor atk_relation_set_contains_target$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_word_starts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_word_starts$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_word_starts",
+        constants$1409.gtk_text_iter_backward_word_starts$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_visible_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_set_contains_target$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_contains_target",
-        constants$1409.atk_relation_set_contains_target$FUNC
+    static final MethodHandle gtk_text_iter_forward_visible_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_line",
+        constants$1409.gtk_text_iter_forward_visible_line$FUNC
     );
-    static final FunctionDescriptor atk_relation_set_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_visible_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_set_remove$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_remove",
-        constants$1409.atk_relation_set_remove$FUNC
+    static final MethodHandle gtk_text_iter_backward_visible_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_visible_line",
+        constants$1409.gtk_text_iter_backward_visible_line$FUNC
     );
-    static final FunctionDescriptor atk_relation_set_add$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_iter_forward_visible_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_relation_set_add$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_add",
-        constants$1409.atk_relation_set_add$FUNC
+    static final MethodHandle gtk_text_iter_forward_visible_lines$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_lines",
+        constants$1409.gtk_text_iter_forward_visible_lines$FUNC
     );
 }
 

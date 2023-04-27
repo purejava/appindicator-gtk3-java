@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$41 {
+final class constants$41 {
 
-    static final FunctionDescriptor g_bit_storage$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$41() {}
+    static final FunctionDescriptor g_get_system_config_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_system_config_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_get_system_config_dirs",
+        constants$41.g_get_system_config_dirs$FUNC
     );
-    static final MethodHandle g_bit_storage$MH = RuntimeHelper.downcallHandle(
-        "g_bit_storage",
-        constants$41.g_bit_storage$FUNC
+    static final FunctionDescriptor g_get_user_runtime_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_user_runtime_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_runtime_dir",
+        constants$41.g_get_user_runtime_dir$FUNC
     );
-    static final FunctionDescriptor g_bit_nth_lsf_impl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_get_user_special_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_bit_nth_lsf_impl$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_lsf_impl",
-        constants$41.g_bit_nth_lsf_impl$FUNC
+    static final MethodHandle g_get_user_special_dir$MH = RuntimeHelper.downcallHandle(
+        "g_get_user_special_dir",
+        constants$41.g_get_user_special_dir$FUNC
     );
-    static final FunctionDescriptor g_bit_nth_msf_impl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_parse_debug_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_bit_nth_msf_impl$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_msf_impl",
-        constants$41.g_bit_nth_msf_impl$FUNC
+    static final MethodHandle g_parse_debug_string$MH = RuntimeHelper.downcallHandle(
+        "g_parse_debug_string",
+        constants$41.g_parse_debug_string$FUNC
     );
-    static final FunctionDescriptor g_bit_storage_impl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bit_storage_impl$MH = RuntimeHelper.downcallHandle(
-        "g_bit_storage_impl",
-        constants$41.g_bit_storage_impl$FUNC
-    );
-    static final FunctionDescriptor __ctype_get_mb_cur_max$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle __ctype_get_mb_cur_max$MH = RuntimeHelper.downcallHandle(
-        "__ctype_get_mb_cur_max",
-        constants$41.__ctype_get_mb_cur_max$FUNC
-    );
-    static final FunctionDescriptor atof$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor g_snprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atof$MH = RuntimeHelper.downcallHandle(
-        "atof",
-        constants$41.atof$FUNC
+    static final MethodHandle g_snprintf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_snprintf",
+        constants$41.g_snprintf$FUNC
+    );
+    static final FunctionDescriptor g_vsnprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_vsnprintf$MH = RuntimeHelper.downcallHandle(
+        "g_vsnprintf",
+        constants$41.g_vsnprintf$FUNC
     );
 }
 
