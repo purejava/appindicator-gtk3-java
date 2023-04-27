@@ -7,8 +7,10 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$6 {
+final class constants$6 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$6() {}
     static final FunctionDescriptor gtk_ui_manager_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
     static final MethodHandle gtk_ui_manager_new$MH = RuntimeHelper.downcallHandle(
         "gtk_ui_manager_new",

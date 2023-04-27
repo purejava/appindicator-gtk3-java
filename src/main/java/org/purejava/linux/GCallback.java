@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GCallback)();
+ * }
+ */
 public interface GCallback {
 
     void apply();
-    static MemorySegment allocate(GCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GCallback.class, fi, constants$0.GCallback$FUNC, session);
+    static MemorySegment allocate(GCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$0.GCallback_UP$MH, fi, constants$0.GCallback$FUNC, scope);
     }
-    static GCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static GCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$0.GCallback$MH.invokeExact((Addressable)symbol);
+                constants$0.GCallback_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

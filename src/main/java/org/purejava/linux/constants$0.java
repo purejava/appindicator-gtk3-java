@@ -7,8 +7,10 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$0 {
+final class constants$0 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$0() {}
     static final FunctionDescriptor g_error_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
@@ -17,8 +19,11 @@ class constants$0 {
         constants$0.g_error_free$FUNC
     );
     static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback$MH = RuntimeHelper.downcallHandle(
-        constants$0.GCallback$FUNC
+    static final FunctionDescriptor GCallback_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GCallback_UP$MH = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$0.GCallback_UP$FUNC);
+    static final FunctionDescriptor GCallback_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$0.GCallback_DOWN$FUNC
     );
     static final FunctionDescriptor g_object_set_data_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
