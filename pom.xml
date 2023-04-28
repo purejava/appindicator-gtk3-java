@@ -40,7 +40,7 @@
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <junit.version>5.9.2</junit.version>
+        <junit.version>5.9.3</junit.version>
         <slf4j.version>2.0.7</slf4j.version>
     </properties>
 
@@ -198,7 +198,7 @@
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.9.2</version>
+                        <version>${junit.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
