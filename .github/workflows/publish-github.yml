@@ -1,4 +1,4 @@
-name: Publish libayatana-appindicator-java-full to GitHub Packages
+name: Publish appindicator-gtk3-java (libayatana-appindicator-full) to GitHub Packages
 on:
   release:
     types: [published]

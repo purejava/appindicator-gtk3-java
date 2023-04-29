@@ -1,4 +1,4 @@
-name: Publish libappindicator-gtk3-java-minimal to Maven Central
+name: Publish appindicator-gtk3-java (libayatana-appindicator-libappindicator-minimal) to Maven Central
 on:
   release:
     types: [published]

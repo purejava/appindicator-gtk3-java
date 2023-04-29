@@ -1,4 +1,4 @@
-module libayatana.appindicator.java.full {
+module org.purejava.appindicator {
     requires org.slf4j;
-    exports org.purejava.linux;
+    exports org.purejava.appindicator;
 }
