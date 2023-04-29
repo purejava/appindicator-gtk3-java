@@ -1,4 +1,4 @@
-# libappindicator-gtk3-java
+# appindicator-gtk3-java
 ![appindicator-gtk3-java](appindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/appindicator-gtk3-java.svg)](https://github.com/purejava/appindicator-gtk3-java/blob/master/LICENSE)
