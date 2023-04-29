@@ -1,4 +1,4 @@
-name: Publish libappindicator-gtk3-java-full to GitHub Packages
+name: Publish appindicator-gtk3-java to GitHub Packages
 on:
   release:
     types: [published]

@@ -1,4 +1,4 @@
-package org.purejava.linux;
+package org.purejava.appindicator;
 
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentScope;
