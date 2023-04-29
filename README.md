@@ -2,6 +2,7 @@
 ![appindicator-gtk3-java](appindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/appindicator-gtk3-java.svg)](https://github.com/purejava/appindicator-gtk3-java/blob/master/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/appindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=appindicator-gtk3-java&smo=true&namespace=org.purejava)
 
 Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
 
@@ -25,12 +26,12 @@ The bindings come in three flavors:
 - atk-1.0
 - harfbuzz
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-full&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-java-full</artifactId>
-    <version>1.2.0</version>
+    <artifactId>appindicator-gtk3-java</artifactId>
+    <version>1.3.0</version>
+    <classifier>libappindicator-full</classifier>
 </dependency>
 ```
 
@@ -96,16 +97,16 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 - gtk_ui_manager_new
 - GCallback
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-minimal.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-minimal&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-java-minimal</artifactId>
-    <version>1.2.0</version>
+    <artifactId>appindicator-gtk3-java</artifactId>
+    <version>1.3.0</version>
+    <classifier>libayatana-appindicator-libappindicator-minimal</classifier>
 </dependency>
 ```
-### libappindicator-gtk3-java-minimal 1.1.0 - minimal is compatible to both libraries
-Starting with version 1.1.0, the `minimal` artifact is compatible to libayatana-appindicator and libappindicator. When either of these two is installed on your system, this library will bind to it.
+### libayatana-appindicator-libappindicator-minimal is compatible to both libraries
+Starting with version 1.3.0, the `-minimal` artifact is compatible to libayatana-appindicator and libappindicator. When either of these two is installed on your system, this library will bind to it.
 ## Dependency including *all bindings* related to libayatana-appindicator:
 - gtk-3.0
 - glib-2.0
@@ -115,15 +116,15 @@ Starting with version 1.1.0, the `minimal` artifact is compatible to libayatana-
 - atk-1.0
 - harfbuzz
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libayatana-appindicator-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libayatana-appindicator-java-full&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
-    <artifactId>libayatana-appindicator-java-full</artifactId>
-    <version>1.2.0</version>
+    <artifactId>appindicator-gtk3-java</artifactId>
+    <version>1.3.0</version>
+    <classifier>libayatana-appindicator-full</classifier>
 </dependency>
 ```
 # Copyright
 Copyright (C) 2023 Ralph Plawetzki
 
-The libappindicator-gtk3-java logo is made from [Icon Fonts](http://www.onlinewebfonts.com/icon) and is licensed by CC BY 3.0
+The appindicator-gtk3-java logo is made from [Icon Fonts](http://www.onlinewebfonts.com/icon) and is licensed by CC BY 3.0
