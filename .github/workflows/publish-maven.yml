@@ -1,4 +1,4 @@
-name: Publish libappindicator-gtk3-java-full to Maven Central
+name: Publish appindicator-gtk3-java (libappindicator-full) to Maven Central
 on:
   release:
     types: [published]

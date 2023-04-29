@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-java-full</artifactId>
+    <artifactId>appindicator-gtk3-java</artifactId>
     <version>1.2.1-SNAPSHOT</version>
 
-    <name>libappindicator-gtk3-java-full</name>
+    <name>appindicator-gtk3-java</name>
     <description>Java bindings for libappindicator-gtk3 in 100% pure Java</description>
-    <url>https://github.com/purejava/libappindicator-gtk3-java/</url>
+    <url>https://github.com/purejava/appindicator-gtk3-java/</url>
 
     <licenses>
         <license>
@@ -30,9 +30,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:purejava/libappindicator-gtk3-java.git</connection>
-        <developerConnection>scm:git:git@github.com:purejava/libappindicator-gtk3-java.git</developerConnection>
-        <url>git@github.com:purejava/libappindicator-gtk3-java.git</url>
+        <connection>scm:git:git@github.com:purejava/appindicator-gtk3-java.git</connection>
+        <developerConnection>scm:git:git@github.com:purejava/appindicator-gtk3-java.git</developerConnection>
+        <url>git@github.com:purejava/appindicator-gtk3-java.git</url>
     </scm>
 
     <properties>
@@ -106,6 +106,17 @@
                     <configuration>
                         <skipIfEmpty>true</skipIfEmpty>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>Arbitrary</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <classifier>libappindicator-full</classifier>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
