@@ -2,7 +2,7 @@
 ![appindicator-gtk3-java](appindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/appindicator-gtk3-java.svg)](https://github.com/purejava/appindicator-gtk3-java/blob/master/LICENSE)
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/appindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=appindicator-gtk3-java&smo=true&namespace=org.purejava)
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/appindicator-gtk3-java.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=appindicator-gtk3-java&smo=true&namespace=org.purejava)
 
 Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
 
