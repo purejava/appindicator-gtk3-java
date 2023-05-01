@@ -124,6 +124,10 @@ Starting with version 1.3.0, the `-minimal` artifact is compatible to libayatana
     <classifier>libayatana-appindicator-full</classifier>
 </dependency>
 ```
+
+# Documentation
+For documentation please take a look at the [Wiki](https://github.com/purejava/appindicator-gtk3-java/wiki).
+
 # Copyright
 Copyright (C) 2023 Ralph Plawetzki
 
