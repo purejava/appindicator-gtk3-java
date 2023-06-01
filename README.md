@@ -47,6 +47,7 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 - app_indicator_get_status
 - app_indicator_get_title
 - app_indicator_new
+- app_indicator_new_with_path
 - app_indicator_set_attention_icon
 - app_indicator_set_icon
 - app_indicator_set_label

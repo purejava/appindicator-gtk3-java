@@ -18,6 +18,16 @@ final class constants$7 {
         "app_indicator_new",
         constants$7.app_indicator_new$FUNC
     );
+    static final FunctionDescriptor app_indicator_new_with_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_new_with_path$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_new_with_path",
+        constants$7.app_indicator_new_with_path$FUNC
+    );
     static final FunctionDescriptor app_indicator_set_status$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
@@ -49,15 +59,6 @@ final class constants$7 {
     static final MethodHandle app_indicator_set_icon$MH = RuntimeHelper.downcallHandle(
         "app_indicator_set_icon",
         constants$7.app_indicator_set_icon$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_label",
-        constants$7.app_indicator_set_label$FUNC
     );
 }
 

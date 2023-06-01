@@ -9,6 +9,13 @@ final class constants$9 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$9() {}
+    static final FunctionDescriptor app_indicator_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_icon",
+        constants$9.app_indicator_get_icon$FUNC
+    );
     static final FunctionDescriptor app_indicator_get_attention_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -43,15 +50,6 @@ final class constants$9 {
     static final MethodHandle app_indicator_get_ordering_index$MH = RuntimeHelper.downcallHandle(
         "app_indicator_get_ordering_index",
         constants$9.app_indicator_get_ordering_index$FUNC
-    );
-    static final FunctionDescriptor app_indicator_build_menu_from_desktop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_build_menu_from_desktop$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_build_menu_from_desktop",
-        constants$9.app_indicator_build_menu_from_desktop$FUNC
     );
 }
 

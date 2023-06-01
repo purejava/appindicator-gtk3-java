@@ -695,6 +695,22 @@ public class app_indicator_h  {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle app_indicator_new_with_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$7.app_indicator_new_with_path$MH,"app_indicator_new_with_path");
+    }
+    /**
+     * {@snippet :
+     * AppIndicator* app_indicator_new_with_path(const gchar* id, const gchar* icon_name, AppIndicatorCategory category, const gchar* icon_theme_path);
+     * }
+     */
+    public static MemorySegment app_indicator_new_with_path(MemorySegment id, MemorySegment icon_name, int category, MemorySegment icon_theme_path) {
+        var mh$ = app_indicator_new_with_path$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle app_indicator_set_status$MH() {
         return RuntimeHelper.requireNonNull(constants$7.app_indicator_set_status$MH,"app_indicator_set_status");
     }
@@ -760,7 +776,7 @@ public class app_indicator_h  {
         }
     }
     public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.app_indicator_set_label$MH,"app_indicator_set_label");
+        return RuntimeHelper.requireNonNull(constants$8.app_indicator_set_label$MH,"app_indicator_set_label");
     }
     /**
      * {@snippet :
@@ -856,7 +872,7 @@ public class app_indicator_h  {
         }
     }
     public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.app_indicator_get_icon$MH,"app_indicator_get_icon");
+        return RuntimeHelper.requireNonNull(constants$9.app_indicator_get_icon$MH,"app_indicator_get_icon");
     }
     /**
      * {@snippet :
@@ -952,7 +968,7 @@ public class app_indicator_h  {
         }
     }
     public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.app_indicator_build_menu_from_desktop$MH,"app_indicator_build_menu_from_desktop");
+        return RuntimeHelper.requireNonNull(constants$10.app_indicator_build_menu_from_desktop$MH,"app_indicator_build_menu_from_desktop");
     }
     /**
      * {@snippet :
