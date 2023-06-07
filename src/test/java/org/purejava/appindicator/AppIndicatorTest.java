@@ -19,7 +19,7 @@ class AppIndicatorTest {
             System.loadLibrary("appindicator3");
             LOG.debug("Native code library appindicator3 successfully loaded");
         } catch (UnsatisfiedLinkError e) {
-            LOG.error("Native code library failed to load.\n", e);
+            LOG.info("Native code library appindicator3 failed to load");
         }
     }
 }
