@@ -19,12 +19,12 @@ class AppIndicatorTest {
             System.loadLibrary("ayatana-appindicator3");
             LOG.debug("Native code library ayatana-appindicator3 successfully loaded");
         } catch (UnsatisfiedLinkError e) {
-            LOG.error("Native code library failed to load.\n", e);
+            LOG.info("Native code library ayatana-appindicator3 failed to load");
             try {
                 System.loadLibrary("appindicator3");
                 LOG.debug("Native code library appindicator3 successfully loaded");
             } catch (UnsatisfiedLinkError e2) {
-                LOG.error("Native code library failed to load.\n", e2);
+                LOG.info("Native code library appindicator3 failed to load");
             }
         }
     }
