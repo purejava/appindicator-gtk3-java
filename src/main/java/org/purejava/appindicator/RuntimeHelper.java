@@ -4,10 +4,17 @@ package org.purejava.appindicator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.foreign.*;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Stream;
 
 import static java.lang.foreign.ValueLayout.*;
 
@@ -19,26 +26,49 @@ final class RuntimeHelper {
     private static final SymbolLookup SYMBOL_LOOKUP;
     private static final SegmentAllocator THROWING_ALLOCATOR = (x, y) -> { throw new AssertionError("should not reach here"); };
     private static boolean isLoaded = false;
+    private static boolean ayatana = false;
+    private static boolean appindicator = false;
+    private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
+    private static final String APPINDICATOR_VERSION = "libappindicator3.so.1";
+    private static final String AYATANA_APPINDICATOR_VERSION = "libayatana-appindicator3.so.1";
+    private static  List<String> allPath = new LinkedList<>();
     private static final Logger LOG = LoggerFactory.getLogger(RuntimeHelper.class);
 
     final static SegmentAllocator CONSTANT_ALLOCATOR =
             (size, align) -> MemorySegment.allocateNative(size, align, SegmentScope.auto());
 
     static {
-        try {
-            System.loadLibrary("ayatana-appindicator3");
-            LOG.debug("Native code library ayatana-appindicator3 successfully loaded");
-            isLoaded = true;
-        } catch (UnsatisfiedLinkError e) {
-            LOG.info("Native code library ayatana-appindicator3 failed to load");
+        try (Stream<Path> paths = Files.list(Path.of(LD_CONFIG))) {
+            paths.forEach((file) -> {
+                try (Stream<String> lines = Files.lines(file)) {
+                    List<String> collection = lines.filter(line -> line.startsWith("/")).toList();
+                    allPath.addAll(collection);
+                } catch (IOException e) {
+                    LOG.error("File '{}' could not be loaded", file);
+                }
+            });
+        } catch (IOException e) {
+            LOG.error("Directory '{}' does not exist", LD_CONFIG);
+        }
+
+        allPath.add("/usr/lib"); // for systems, that don't implement multiarch
+        for (String path : allPath) {
             try {
-                System.loadLibrary("appindicator3");
-                LOG.debug("Native code library appindicator3 successfully loaded");
+                System.load(path + File.separator + AYATANA_APPINDICATOR_VERSION);
                 isLoaded = true;
-            } catch (UnsatisfiedLinkError e2) {
-                LOG.info("Native code library appindicator3 failed to load");
+                ayatana = true;
+                break;
+            } catch (UnsatisfiedLinkError e) {
+                try {
+                    System.load(path + File.separator + APPINDICATOR_VERSION);
+                    isLoaded = true;
+                    appindicator = true;
+                    break;
+                } catch (UnsatisfiedLinkError ignored) { }
             }
         }
+        LOG.info(ayatana ? "Native code library " + AYATANA_APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + AYATANA_APPINDICATOR_VERSION + " failed to load");
+        LOG.info(appindicator ? "Native code library " + APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + APPINDICATOR_VERSION + " failed to load");
         SymbolLookup loaderLookup = SymbolLookup.loaderLookup();
         SYMBOL_LOOKUP = name -> loaderLookup.find(name).or(() -> LINKER.defaultLookup().find(name));
     }

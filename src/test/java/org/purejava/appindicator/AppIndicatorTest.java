@@ -1,3 +1,5 @@
+package org.purejava.appindicator;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -6,26 +8,59 @@ import org.junit.jupiter.api.condition.OS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Stream;
 
 class AppIndicatorTest {
     private static final Logger LOG = LoggerFactory.getLogger(AppIndicatorTest.class);
+    private static boolean isLoaded = false;
+    private static boolean ayatana = false;
+    private static boolean appindicator = false;
+    private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
+    private static final String APPINDICATOR_VERSION = "libappindicator3.so.1";
+    private static final String AYATANA_APPINDICATOR_VERSION = "libayatana-appindicator3.so.1";
+    private static  List<String> allPath = new LinkedList<>();
+
     @Test
     @Order(1)
     @DisplayName("Testing availability of native lib")
     @EnabledOnOs(OS.LINUX)
     public void shouldHaveNoErrors() {
-        try {
-            System.loadLibrary("ayatana-appindicator3");
-            LOG.debug("Native code library ayatana-appindicator3 successfully loaded");
-        } catch (UnsatisfiedLinkError e) {
-            LOG.info("Native code library ayatana-appindicator3 failed to load");
+        try (Stream<Path> paths = Files.list(Path.of(LD_CONFIG))) {
+            paths.forEach((file) -> {
+                try (Stream<String> lines = Files.lines(file)) {
+                    List<String> collection = lines.filter(line -> line.startsWith("/")).toList();
+                    allPath.addAll(collection);
+                } catch (IOException e) {
+                    LOG.error("File '{}' could not be loaded", file);
+                }
+            });
+        } catch (IOException e) {
+            LOG.error("Directory '{}' does not exist", LD_CONFIG);
+        }
+
+        allPath.add("/usr/lib"); // for systems, that don't implement multiarch
+        for (String path : allPath) {
             try {
-                System.loadLibrary("appindicator3");
-                LOG.debug("Native code library appindicator3 successfully loaded");
-            } catch (UnsatisfiedLinkError e2) {
-                LOG.info("Native code library appindicator3 failed to load");
+                System.load(path + File.separator + AYATANA_APPINDICATOR_VERSION);
+                isLoaded = true;
+                ayatana = true;
+                break;
+            } catch (UnsatisfiedLinkError e) {
+                try {
+                    System.load(path + File.separator + APPINDICATOR_VERSION);
+                    isLoaded = true;
+                    appindicator = true;
+                    break;
+                } catch (UnsatisfiedLinkError ignored) { }
             }
         }
+        LOG.info(ayatana ? "Native code library " + AYATANA_APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + AYATANA_APPINDICATOR_VERSION + " failed to load");
+        LOG.info(appindicator ? "Native code library " + APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + APPINDICATOR_VERSION + " failed to load");
     }
 }
