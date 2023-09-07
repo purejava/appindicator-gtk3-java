@@ -12,14 +12,14 @@ import java.lang.foreign.*;
 public interface GCallback {
 
     void apply();
-    static MemorySegment allocate(GCallback fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$0.GCallback_UP$MH, fi, constants$0.GCallback$FUNC, scope);
+    static MemorySegment allocate(GCallback fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$0.const$3, fi, constants$0.const$2, scope);
     }
-    static GCallback ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GCallback ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$0.GCallback_DOWN$MH.invokeExact(symbol);
+                constants$0.const$4.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

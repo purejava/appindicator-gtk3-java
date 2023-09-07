@@ -3,39 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-final class constants$10 {
+final class constants$11 {
 
     // Suppresses default constructor, ensuring non-instantiability.
-    private constants$10() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    private constants$11() {}
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "app_indicator_set_menu",
+        constants$2.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "app_indicator_new",
-        constants$10.const$0
+        "app_indicator_set_icon",
+        constants$2.const$1
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_INT,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "app_indicator_new_with_path",
-        constants$10.const$2
+        "app_indicator_set_label",
+        constants$11.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_status",
+        "app_indicator_set_ordering_index",
         constants$6.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_attention_icon",
+        "app_indicator_set_title",
         constants$2.const$1
     );
 }

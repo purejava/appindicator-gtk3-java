@@ -4,67 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$5 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$5() {}
-    static final FunctionDescriptor gtk_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new",
+        constants$4.const$4
     );
-    static final MethodHandle gtk_action_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_name",
-        constants$5.gtk_action_get_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_submenu",
+        constants$2.const$1
     );
-    static final FunctionDescriptor gtk_action_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_label",
+        constants$2.const$1
     );
-    static final MethodHandle gtk_action_group_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_group_new",
-        constants$5.gtk_action_group_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_init",
+        constants$2.const$1
     );
-    static final FunctionDescriptor gtk_action_group_add_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$0.const$2
     );
-    static final MethodHandle gtk_action_group_add_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_action",
-        constants$5.gtk_action_group_add_action$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_action_group_add_actions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_group_add_actions$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_actions",
-        constants$5.gtk_action_group_add_actions$FUNC
-    );
-    static final FunctionDescriptor gtk_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_new",
-        constants$5.gtk_table_new$FUNC
-    );
-    static final FunctionDescriptor gtk_table_attach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_attach$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_attach",
-        constants$5.gtk_table_attach$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_message_dialog_new",
+        constants$5.const$5
     );
 }
 

@@ -4,49 +4,33 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$3 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3() {}
-    static final FunctionDescriptor gtk_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_new",
-        constants$3.gtk_menu_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_container_add",
+        constants$2.const$1
     );
-    static final FunctionDescriptor gtk_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new",
-        constants$3.gtk_menu_item_new$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_window_new",
+        constants$3.const$1
     );
-    static final MethodHandle gtk_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_submenu",
-        constants$3.gtk_menu_item_set_submenu$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_title",
+        constants$2.const$1
     );
-    static final FunctionDescriptor gtk_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_window_add_accel_group",
+        constants$2.const$1
     );
-    static final MethodHandle gtk_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_label",
-        constants$3.gtk_menu_item_set_label$FUNC
-    );
-    static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_init$MH = RuntimeHelper.downcallHandle(
-        "gtk_init",
-        constants$3.gtk_init$FUNC
-    );
-    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
-        "gtk_main",
-        constants$3.gtk_main$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_icon",
+        constants$2.const$1
     );
 }
 

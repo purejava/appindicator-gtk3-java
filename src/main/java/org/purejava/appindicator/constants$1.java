@@ -4,54 +4,35 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1() {}
-    static final FunctionDescriptor gtk_widget_destroyed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$0.const$0
     );
-    static final MethodHandle gtk_widget_destroyed$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_destroyed",
-        constants$1.gtk_widget_destroyed$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_widget_show$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_set_data_full",
+        constants$1.const$1
     );
-    static final MethodHandle gtk_widget_show$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show",
-        constants$1.gtk_widget_show$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_connect_object$c_handler.class, "apply", constants$0.const$2);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_widget_show_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show_all",
-        constants$1.gtk_widget_show_all$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_grab_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_grab_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_focus",
-        constants$1.gtk_widget_grab_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_container_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_add",
-        constants$1.gtk_container_add$FUNC
-    );
-    static final FunctionDescriptor gtk_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_new",
-        constants$1.gtk_window_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_connect_object",
+        constants$1.const$4
     );
 }
 

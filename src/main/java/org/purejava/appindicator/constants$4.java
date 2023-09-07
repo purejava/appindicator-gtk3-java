@@ -4,56 +4,32 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$4 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$4() {}
-    static final FunctionDescriptor gtk_message_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_icon_name",
+        constants$2.const$1
     );
-    static final MethodHandle gtk_message_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_new",
-        constants$4.gtk_message_dialog_new$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_scrolled_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default_size",
+        constants$4.const$1
     );
-    static final MethodHandle gtk_scrolled_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_new",
-        constants$4.gtk_scrolled_window_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_append",
+        constants$2.const$1
     );
-    static final FunctionDescriptor gtk_scrolled_window_set_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_policy",
-        constants$4.gtk_scrolled_window_set_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_shadow_type",
-        constants$4.gtk_scrolled_window_set_shadow_type$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_statusbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_new",
-        constants$4.gtk_statusbar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_text_view_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_new",
-        constants$4.gtk_text_view_new$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_menu_new",
+        constants$4.const$4
     );
 }
 

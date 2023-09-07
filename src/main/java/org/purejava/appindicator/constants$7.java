@@ -4,61 +4,39 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$7 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$7() {}
-    static final FunctionDescriptor app_indicator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_text_view_new",
+        constants$4.const$4
     );
-    static final MethodHandle app_indicator_new$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_new",
-        constants$7.app_indicator_new$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor app_indicator_new_with_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_name",
+        constants$7.const$1
     );
-    static final MethodHandle app_indicator_new_with_path$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_new_with_path",
-        constants$7.app_indicator_new_with_path$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_new",
+        constants$7.const$1
     );
-    static final FunctionDescriptor app_indicator_set_status$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_action",
+        constants$2.const$1
     );
-    static final MethodHandle app_indicator_set_status$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_status",
-        constants$7.app_indicator_set_status$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor app_indicator_set_attention_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_attention_icon$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_attention_icon",
-        constants$7.app_indicator_set_attention_icon$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_menu$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_menu",
-        constants$7.app_indicator_set_menu$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_icon$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon",
-        constants$7.app_indicator_set_icon$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_actions",
+        constants$7.const$5
     );
 }
 

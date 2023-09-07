@@ -4,53 +4,24 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$0 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$0() {}
-    static final FunctionDescriptor g_error_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_error_free$MH = RuntimeHelper.downcallHandle(
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
         "g_error_free",
-        constants$0.g_error_free$FUNC
+        constants$0.const$0
     );
-    static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor GCallback_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback_UP$MH = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$0.GCallback_UP$FUNC);
-    static final FunctionDescriptor GCallback_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$0.GCallback_DOWN$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid();
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$0.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$0.const$2
     );
-    static final FunctionDescriptor g_object_set_data_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_set_data_full$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_data_full",
-        constants$0.g_object_set_data_full$FUNC
-    );
-    static final FunctionDescriptor g_signal_connect_object$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_connect_object$MH = RuntimeHelper.downcallHandle(
-        "g_signal_connect_object",
-        constants$0.g_signal_connect_object$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_destroy$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_destroy",
-        constants$0.gtk_widget_destroy$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_object_set_data_full$destroy.class, "apply", constants$0.const$0);
 }
 
 

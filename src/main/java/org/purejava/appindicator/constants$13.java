@@ -5,33 +5,29 @@ package org.purejava.appindicator;
 import java.lang.invoke.MethodHandle;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-final class constants$2 {
+final class constants$13 {
 
     // Suppresses default constructor, ensuring non-instantiability.
-    private constants$2() {}
+    private constants$13() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_destroy",
-        constants$0.const$0
+        "app_indicator_get_title",
+        constants$7.const$1
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_menu",
+        constants$7.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_destroyed",
-        constants$2.const$1
+        "app_indicator_get_label",
+        constants$7.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_show",
-        constants$0.const$0
+        "app_indicator_get_ordering_index",
+        constants$12.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_show_all",
-        constants$0.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_focus",
-        constants$0.const$0
+        "app_indicator_build_menu_from_desktop",
+        constants$11.const$2
     );
 }
 
